@@ -406,6 +406,16 @@ class ResearchOnly(BaseModel):
     active_production_labs: list[str] = Field(default_factory=list)
     notes: str | None = None
 
+    @model_validator(mode="after")
+    def total_ever_produced_is_stock(self) -> "ResearchOnly":
+        q = self.total_ever_produced
+        if q is not None and q.is_flow:
+            raise ValueError(
+                f"ResearchOnly.total_ever_produced must be a stock quantity "
+                f"(atoms_ever_synthesized, kg, ...), got flow unit {q.unit.value!r}"
+            )
+        return self
+
 
 class IsotopeMarket(BaseModel):
     """Economic activity centered on a single isotope rather than the element as a whole.
@@ -428,6 +438,25 @@ class IsotopeMarket(BaseModel):
     delivery_form: str | None = Field(default=None, description="e.g. 'sealed sources', 'generator column'.")
     reporting_year: int
     notes: str | None = None
+
+    @model_validator(mode="after")
+    def production_quantity_is_flow(self) -> "IsotopeMarket":
+        if self.production_quantity is not None and self.production_quantity.is_stock:
+            raise ValueError(
+                f"IsotopeMarket.production_quantity must be a flow quantity, "
+                f"got stock unit {self.production_quantity.unit.value!r}"
+            )
+        return self
+
+    @model_validator(mode="after")
+    def producer_country_quantities_are_flows(self) -> "IsotopeMarket":
+        for i, s in enumerate(self.producers.shares):
+            if s.quantity is not None and s.quantity.is_stock:
+                raise ValueError(
+                    f"IsotopeMarket.producers[{i}].quantity must be a flow quantity, "
+                    f"got stock unit {s.quantity.unit.value!r}"
+                )
+        return self
 
 
 class ProductionBlock(BaseModel):
@@ -457,6 +486,22 @@ class ProductionBlock(BaseModel):
         return self
 
     @model_validator(mode="after")
+    def country_share_quantities_are_flows(self) -> "ProductionBlock":
+        """Nested CountryShare.quantity inside a ProductionBlock represents a
+        country's output (mining or refining) — always a flow."""
+        for field_name, share_list in (
+            ("mining_by_country", self.mining_by_country),
+            ("refining_by_country", self.refining_by_country),
+        ):
+            for i, s in enumerate(share_list.shares):
+                if s.quantity is not None and s.quantity.is_stock:
+                    raise ValueError(
+                        f"ProductionBlock.{field_name}[{i}].quantity must be a flow quantity, "
+                        f"got stock unit {s.quantity.unit.value!r}"
+                    )
+        return self
+
+    @model_validator(mode="after")
     def grouped_reporting_consistent(self) -> "ProductionBlock":
         if self.grouped_reporting and not self.commodity_group:
             raise ValueError("grouped_reporting=true requires commodity_group to be set")
@@ -478,6 +523,18 @@ class Reserves(BaseModel):
         for name, q in (("economic_reserves", self.economic_reserves), ("resources", self.resources)):
             if q is not None and q.is_flow:
                 raise ValueError(f"Reserves.{name} must be a stock quantity, got flow unit {q.unit.value!r}")
+        return self
+
+    @model_validator(mode="after")
+    def reserves_country_share_quantities_are_stocks(self) -> "Reserves":
+        """Nested CountryShare.quantity inside reserves_by_country is a per-country
+        share of the economic reserve stock — always a stock unit."""
+        for i, s in enumerate(self.reserves_by_country.shares):
+            if s.quantity is not None and s.quantity.is_flow:
+                raise ValueError(
+                    f"Reserves.reserves_by_country[{i}].quantity must be a stock quantity, "
+                    f"got flow unit {s.quantity.unit.value!r}"
+                )
         return self
 
 
