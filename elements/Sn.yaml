@@ -1,0 +1,644 @@
+symbol: Sn
+atomic_number: 50
+name: tin
+category: post_transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports all tin production data in metric tons, tin content, unless
+  otherwise specified. Tin alloy and waste/scrap import/export statistics are reported
+  in gross weight. LME cash prices are quoted in cents per pound (c/lb); converted to
+  USD per metric ton using the factor 22.0462 (2,204.623 lb/tonne ÷ 100 c/USD). The
+  USGS MCS 2025 tin chapter publishes a single world mine production table; no separate
+  world smelter or refinery production table by country appears in MCS 2025. Commercial
+  trade forms include unwrought refined tin (99.85%+ purity, LME grade), tin alloys,
+  tin concentrate (cassiterite), and tinplate (electrolytic tin-coated steel). Standard
+  temperature conventions do not apply to this chapter.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 300000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.184–185: world total mine production (tin content) 2024e = 300,000
+      metric tons (rounded), down from 305,000 metric tons in 2023. The United States has
+      had no domestic tin mine production since 1993 and no domestic tin smelting since 1989.
+      US net import reliance for refined tin = 73% in 2024 (same as 2023). US apparent
+      consumption of refined tin 2024e = 37,000 metric tons; US refined tin imports 2024e =
+      25,000 metric tons.
+    source_id: usgs_mcs_2025_tin
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 23.0
+        quantity:
+          value: 69000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: China 69,000 metric tons (estimated) 2024e, down from
+          70,000 in 2023. China is the world's largest tin producer and also dominant
+          refiner and consumer. In September 2024, a state-owned Chinese refined-tin
+          producer entered a strategic partnership with Indonesia's state-owned tin producer.
+        source_id: usgs_mcs_2025_tin
+      - country: ID
+        share_pct: 16.7
+        quantity:
+          value: 50000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Indonesia 50,000 metric tons 2024e, a significant decline
+          from 69,000 in 2023 (−28%). Indonesia's Bangka and Belitung islands host major
+          cassiterite deposits. A state-owned Indonesian refined-tin producer entered
+          a strategic partnership with its Chinese counterpart in September 2024 covering
+          mining, smelting, refining, trading, and downstream development.
+        source_id: usgs_mcs_2025_tin
+      - country: MM
+        share_pct: 11.3
+        quantity:
+          value: 34000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Burma (Myanmar) 34,000 metric tons (estimated) 2024e,
+          unchanged from 2023e. Burma is the world's third-largest tin producer; output
+          is primarily from the Wa region near the Chinese border and is largely exported
+          to China for smelting.
+        source_id: usgs_mcs_2025_tin
+      - country: PE
+        share_pct: 10.3
+        quantity:
+          value: 31000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Peru 31,000 metric tons (estimated) 2024e, up from
+          26,200 in 2023. Peru is the leading supplier of refined tin to the United States,
+          accounting for 30% of US refined tin imports in 2020–23.
+        source_id: usgs_mcs_2025_tin
+      - country: BR
+        share_pct: 9.7
+        quantity:
+          value: 29000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Brazil 29,000 metric tons (estimated) 2024e, essentially
+          unchanged from 29,300 in 2023. Brazil accounted for 11% of US refined tin
+          imports in 2020–23. The Rondônia and Pará states are major producing regions.
+        source_id: usgs_mcs_2025_tin
+      - country: CD
+        share_pct: 8.3
+        quantity:
+          value: 25000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Congo (Kinshasa) 25,000 metric tons (estimated) 2024e,
+          up from 20,000e in 2023. In May 2024, a Mauritius-based company began production
+          at a new processing plant in North Kivu Province; annual tin output was expected
+          to increase from approximately 12,000 to 20,000 metric tons from that single
+          operation.
+        source_id: usgs_mcs_2025_tin
+      - country: BO
+        share_pct: 7.0
+        quantity:
+          value: 21000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Bolivia 21,000 metric tons 2024e, up from 18,700 in 2023.
+          Bolivia accounted for 23% of US refined tin imports in 2020–23. Tin is produced
+          primarily from polymetallic vein deposits in the Andes.
+        source_id: usgs_mcs_2025_tin
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 9900
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: |
+          USGS MCS 2025 table: Australia 9,900 metric tons 2024e, essentially unchanged
+          from 9,850 in 2023. Australia holds JORC-compliant or equivalent reserves of
+          320,000 metric tons (footnote 7), out of total reserves of 620,000 metric tons.
+        source_id: usgs_mcs_2025_tin
+      - country: NG
+        share_pct: 2.3
+        quantity:
+          value: 7000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Nigeria 7,000 metric tons (estimated) 2024e, same as 2023e."
+        source_id: usgs_mcs_2025_tin
+      - country: VN
+        share_pct: 2.2
+        quantity:
+          value: 6700
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Vietnam 6,700 metric tons (estimated) 2024e, down from 7,600 in 2023. Reserves revised based on company and Government reports."
+        source_id: usgs_mcs_2025_tin
+      - country: RW
+        share_pct: 1.2
+        quantity:
+          value: 3600
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Rwanda 3,600 metric tons (estimated) 2024e, same as 2023e."
+        source_id: usgs_mcs_2025_tin
+      - country: MY
+        share_pct: 1.0
+        quantity:
+          value: 3000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Malaysia 3,000 metric tons (estimated) 2024e, down from 3,770 in 2023."
+        source_id: usgs_mcs_2025_tin
+      - country: RU
+        share_pct: 1.0
+        quantity:
+          value: 3000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Russia 3,000 metric tons (estimated) 2024e, up from 2,700 in 2023."
+        source_id: usgs_mcs_2025_tin
+      - country: LA
+        share_pct: 0.5
+        quantity:
+          value: 1500
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Laos 1,500 metric tons (estimated) 2024e, down from 1,700e in 2023."
+        source_id: usgs_mcs_2025_tin
+      - country: ZZ
+        share_pct: 0.6
+        quantity:
+          value: 1800
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 'Other countries' row: 1,800 metric tons (estimated) 2024e, down from 1,840 in 2023."
+        source_id: usgs_mcs_2025_tin
+    completeness: complete
+  notes: |
+    Sum of listed country values: 295,500 metric tons vs. stated rounded world total
+    of 300,000 metric tons — a 1.5% discrepancy attributable to rounding of individual
+    estimated country values. Share percentages computed with denominator = 300,000.
+    US mine production: zero in 2023 and 2024 (last mined in 1993; last smelted in 1989).
+    US primary import sources 2020–23 (refined tin): Peru 30%, Bolivia 23%,
+    Indonesia 20%, Brazil 11%, other 16%.
+
+reserves:
+  economic_reserves:
+    value: 4200000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS MCS 2025 p.185: world total reserves stated as >4,200,000 metric tons
+      (tin content). Stated as a minimum (">"). Sum of quantified country reserves
+      in the table = 4,183,000 metric tons; several countries (Indonesia, Laos,
+      Malaysia, Nigeria, Rwanda) are listed as NA (not available). China reserves
+      revised based on company and Government reports; Vietnam reserves also revised.
+      For Australia, JORC-compliant or equivalent reserves = 320,000 metric tons
+      (footnote 7), against total reported Australian reserves of 620,000 metric tons.
+    source_id: usgs_mcs_2025_tin
+  resources:
+    value: 0
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025: "World resources, principally in western Africa, southeastern Asia,
+      Australia, Bolivia, Brazil, Indonesia, and Russia, are extensive and, if developed,
+      could sustain recent annual production rates well into the future." No explicit
+      global resource tonnage is given. US identified resources (primarily in Alaska)
+      are described as insignificant compared with those in the rest of the world.
+      Value set to 0 as placeholder; treat as null (no quantified global resource figure).
+    source_id: usgs_mcs_2025_tin
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 23.8
+        quantity:
+          value: 1000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: China 1,000,000 metric tons. Reserves revised based on company and Government reports."
+        source_id: usgs_mcs_2025_tin
+      - country: MM
+        share_pct: 16.7
+        quantity:
+          value: 700000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Burma (Myanmar) 700,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+      - country: AU
+        share_pct: 14.8
+        quantity:
+          value: 620000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Australia 620,000 metric tons total reported reserves; JORC-compliant subset = 320,000 metric tons (footnote 7)."
+        source_id: usgs_mcs_2025_tin
+      - country: BR
+        share_pct: 10.0
+        quantity:
+          value: 420000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Brazil 420,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+      - country: BO
+        share_pct: 9.5
+        quantity:
+          value: 400000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Bolivia 400,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+      - country: RU
+        share_pct: 11.0
+        quantity:
+          value: 460000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Russia 460,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+      - country: PE
+        share_pct: 3.1
+        quantity:
+          value: 130000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Peru 130,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+      - country: CD
+        share_pct: 2.9
+        quantity:
+          value: 120000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Congo (Kinshasa) 120,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+      - country: VN
+        share_pct: 0.5
+        quantity:
+          value: 23000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Vietnam 23,000 metric tons. Reserves revised based on company and Government reports."
+        source_id: usgs_mcs_2025_tin
+      - country: ZZ
+        share_pct: 7.4
+        quantity:
+          value: 310000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tin
+        notes: "USGS MCS 2025 table: Other countries 310,000 metric tons."
+        source_id: usgs_mcs_2025_tin
+    completeness: partial
+  notes: |
+    Indonesia, Laos, Malaysia, Nigeria, and Rwanda are listed as NA (not available)
+    in the USGS reserves table and are excluded from the by-country list. The sum of
+    quantified reserves = 4,183,000 metric tons against a stated world total of
+    >4,200,000 metric tons — the ">" implies additional reserves in countries listed
+    as NA or not separately enumerated. Share percentages computed with denominator
+    = 4,200,000 metric tons (the stated world minimum). China holds the largest single
+    national reserve (23.8%), followed by Burma/Myanmar (16.7%) and Australia (14.8%).
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: cassiterite
+    typical_concentration_pct: null
+    notes: |
+      Cassiterite (SnO₂, tin dioxide) is the overwhelmingly dominant ore mineral for
+      commercial tin production globally, accounting for the large majority of mined
+      tin content. It occurs in primary hard-rock deposits (greisen-type, skarn,
+      and hydrothermal vein systems associated with granite intrusions) and as alluvial
+      placer deposits derived from the erosion of primary cassiterite deposits. The major
+      producing countries (China, Indonesia, Burma, Peru, Brazil, Bolivia) all rely on
+      cassiterite as the primary feedstock.
+    source_id: usgs_mcs_2025_tin
+  - substrate: stannite_polymetallic_ores
+    typical_concentration_pct: null
+    notes: |
+      Stannite (Cu₂FeSnS₄) and related sulfosalt minerals contribute to tin production
+      in some polymetallic sulfide deposits, particularly in Bolivia's Andes vein systems.
+      These deposits yield tin as a secondary product alongside copper, zinc, and silver.
+      Production from stannite ores is smaller than cassiterite-based production.
+    source_id: usgs_mcs_2025_tin
+
+substitutes:
+  - application: cans_and_containers
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Aluminum, glass, paper, plastic, or
+      tin-free steel substitute for tin in cans and containers." Tin-free steel
+      (TFS, using chromium or chromium oxide coating) is a significant substitute
+      for tinplate in food and beverage packaging. The availability of full
+      substitutes in packaging restrains tin demand growth from this segment.
+    source_id: usgs_mcs_2025_tin
+  - application: solder
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Epoxy resins [substitute] for solder."
+      The transition to lead-free solders (mandated under the EU RoHS directive and
+      widely adopted globally) actually increased tin content in solder alloys.
+      Conductive epoxy adhesives partially substitute in some electronics applications
+      but cannot replace solder in most through-hole and surface-mount assemblies
+      without performance trade-offs.
+    source_id: usgs_mcs_2025_tin
+  - application: bronze_and_copper_alloys
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Aluminum alloys, alternative copper-base
+      alloys, and plastics [substitute] for bronze." Aluminum bronzes and other
+      tin-free copper alloys can replace tin bronzes in some structural and bearing
+      applications, but tin bronzes retain performance advantages in corrosion
+      resistance and bearing properties for specific end uses.
+    source_id: usgs_mcs_2025_tin
+  - application: bearing_metals
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Plastics [substitute] for bearing metals
+      that contain tin." High-performance engineering plastics (PTFE composites, nylon,
+      acetal) replace babbitt metal (tin-base alloy) in many light-duty bearings.
+      Heavy-duty industrial bearings under high loads still often use tin-base babbitt
+      for its superior conformability and embeddability properties.
+    source_id: usgs_mcs_2025_tin
+  - application: tin_chemicals
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Compounds of lead and sodium [substitute]
+      for some tin chemicals." Organotin stabilizers for PVC have been partially replaced
+      by calcium-zinc, barium-zinc, or organic stabilizer systems in regions where
+      organotin compounds face regulatory restrictions. However, tin chemicals retain
+      strong positions in specialized applications such as electronic-grade tin oxide
+      and inorganic tin compounds.
+    source_id: usgs_mcs_2025_tin
+
+end_uses:
+  uses:
+    - application: tinplate_cans_containers
+      share_pct: 23
+      confidence: high
+      notes: |
+        USGS MCS 2025 domestic production and use section: tinplate = 23% of US tin
+        consumption in 2024. Tinplate (electrolytically tin-coated steel) is the
+        largest single US end use, primarily for food and beverage cans. Global
+        share is broadly similar; tinplate is historically the dominant end use worldwide.
+      source_id: usgs_mcs_2025_tin
+    - application: tin_chemicals
+      share_pct: 22
+      confidence: high
+      notes: |
+        USGS MCS 2025: chemicals = 22% of US tin consumption in 2024. Includes
+        inorganic tin compounds (SnCl₂, SnO₂, tin fluoride for toothpaste) and
+        organotin compounds (PVC heat stabilizers, biocides, catalysts).
+      source_id: usgs_mcs_2025_tin
+    - application: solder
+      share_pct: 11
+      confidence: high
+      notes: |
+        USGS MCS 2025: solder = 11% of US tin consumption in 2024. Lead-free solder
+        alloys (predominantly Sn-Ag-Cu, SAC alloys) have increased tin content per
+        unit compared with traditional Sn-Pb solders, supporting solder demand
+        from electronics assembly.
+      source_id: usgs_mcs_2025_tin
+    - application: alloys_other
+      share_pct: 10
+      confidence: high
+      notes: |
+        USGS MCS 2025: alloys = 10% of US tin consumption in 2024. Covers tin
+        alloys not separately classified (pewter, low-melting alloys, bearing alloys
+        beyond babbitt).
+      source_id: usgs_mcs_2025_tin
+    - application: babbitt_brass_bronze_tinning
+      share_pct: 6
+      confidence: high
+      notes: |
+        USGS MCS 2025: babbitt, brass and bronze, and tinning = 6% of US tin
+        consumption in 2024 (combined). Babbitt metal (tin-base bearing alloy)
+        is used in heavy machinery, marine, and rail applications. Hot-dip tinning
+        is used for copper wire and other industrial coatings.
+      source_id: usgs_mcs_2025_tin
+    - application: bar_tin
+      share_pct: 2
+      confidence: high
+      notes: "USGS MCS 2025: bar tin = 2% of US tin consumption in 2024. Bar tin is high-purity refined tin (99.85%+) sold in ingot or bar form for downstream alloying and coating applications."
+      source_id: usgs_mcs_2025_tin
+    - application: other_uses
+      share_pct: 26
+      confidence: high
+      notes: |
+        USGS MCS 2025: other uses = 26% of US tin consumption in 2024. This catch-all
+        category includes a range of smaller applications such as electroplating,
+        glass coatings (SnO₂ coatings for glass bottles and architectural glass),
+        and other industrial uses not individually enumerated.
+      source_id: usgs_mcs_2025_tin
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_2022_critical_minerals_list
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Tin is included on the US 2022 final Critical Minerals List (Federal Register
+    Vol. 87, No. 37, February 22, 2022). The DoD Defense Production Act Title III
+    award of $19 million in September 2024 for a domestic tin smelting, refining,
+    and recycling facility in Coatesville, PA reflects ongoing US Government concern
+    about supply-chain resilience: the United States has had no domestic tin smelting
+    since 1989 and no mining since 1993, with net import reliance of 73% for refined
+    tin in 2024. Tin does not appear on either the EU Critical Raw Materials list or
+    the EU Strategic Raw Materials list under Regulation (EU) 2024/1252 as of 2024.
+
+prices:
+  - year: 2024
+    value: 30865
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: GB
+    notes: |
+      USGS MCS 2025 salient statistics: LME cash average 2024e = 1,400 cents per pound
+      (+19% vs. 2023 average of 1,177 c/lb). Converted to USD/t: 1,400 × 22.0462 =
+      $30,865/t. Source: S&P Global Platts Metals Week. The NY dealer price was also
+      1,400 c/lb in 2024e (+11% vs. 2023).
+    source_id: usgs_mcs_2025_tin
+  - year: 2023
+    value: 25948
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: GB
+    notes: "USGS MCS 2025 salient statistics: LME cash 2023 = 1,177 c/lb × 22.0462 = $25,948/t. NY dealer = 1,256 c/lb."
+    source_id: usgs_mcs_2025_tin
+  - year: 2022
+    value: 31372
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: GB
+    notes: "USGS MCS 2025 salient statistics: LME cash 2022 = 1,423 c/lb × 22.0462 = $31,372/t. NY dealer = 1,546 c/lb."
+    source_id: usgs_mcs_2025_tin
+  - year: 2021
+    value: 32584
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: GB
+    notes: "USGS MCS 2025 salient statistics: LME cash 2021 = 1,478 c/lb × 22.0462 = $32,584/t. NY dealer = 1,580 c/lb. Reflects global supply-chain disruptions post-COVID and strong electronics demand."
+    source_id: usgs_mcs_2025_tin
+  - year: 2020
+    value: 17130
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: GB
+    notes: "USGS MCS 2025 salient statistics: LME cash 2020 = 777 c/lb × 22.0462 = $17,130/t. NY dealer = 799 c/lb."
+    source_id: usgs_mcs_2025_tin
+
+geopolitical_events:
+  - date: 2024-09
+    event: "US DoD awards $19 million under Defense Production Act Title III to establish a tin smelting, refining, and recycling facility in Coatesville, PA"
+    impact: |
+      First significant US investment in domestic tin smelting capacity since the last
+      US tin smelter closed in 1989. Reflects US Government concern over supply-chain
+      exposure: net import reliance for refined tin = 73%, with the leading sources
+      (Peru, Bolivia, Indonesia, Brazil) all outside North America. The DPA Title III
+      mechanism is reserved for materials deemed critical to national defense.
+    source_id: usgs_mcs_2025_tin
+  - date: 2024-09
+    event: "State-owned leading refined-tin producers from China and Indonesia enter strategic partnership covering mining, smelting, refining, trading, and downstream development"
+    impact: |
+      China and Indonesia together account for approximately 40% of world mine
+      production (2024e: CN 69,000 t + ID 50,000 t = 119,000 t of 300,000 t world
+      total). A formal strategic partnership between the dominant state-owned producers
+      in both countries could influence global tin pricing and trade flows; both countries
+      are also major tin refiners. The partnership may also affect supply to Western
+      markets that have been diversifying away from Chinese-controlled supply chains.
+    source_id: usgs_mcs_2025_tin
+  - date: 2024-05
+    event: "Mauritius-based company begins production at new tin processing plant in North Kivu Province, Congo (Kinshasa); annual output expected to rise from 12,000 to 20,000 metric tons"
+    impact: |
+      If realized, the North Kivu expansion would add approximately 8,000 metric tons
+      per year of Congolese tin output — increasing DRC's share of world production
+      from ~8% to ~12–13%. DRC production has grown from 20,000 t (2023) to 25,000 t
+      (2024e). Conflict minerals transparency requirements (US Dodd-Frank Section 1502,
+      EU Conflict Minerals Regulation) apply to tin from the DRC and adjoining countries.
+    source_id: usgs_mcs_2025_tin
+  - date: 2024-04
+    event: "Uganda-based tin-mining company commissions a tin refinery in Mbarara, Uganda, expected to produce ~1,000 metric tons per year of 99%+ pure tin ingots"
+    impact: |
+      Establishment of a Uganda-based refining operation marks growth in African
+      in-country value addition for tin. Historically, Central and East African tin
+      concentrate has been exported to China or Europe for refining; domestic refining
+      capacity enables greater economic capture. Uganda is a relatively small tin
+      producer but a growing one.
+    source_id: usgs_mcs_2025_tin
+  - date: 2024-01
+    event: "US Department of Commerce proposes antidumping and countervailing duties on tin mill product imports from Canada, China, Germany, and Republic of Korea; US ITC concludes no material injury — duties not implemented"
+    impact: |
+      The investigation reflected US domestic tin mill products industry concerns
+      about import competition, but the US International Trade Commission's
+      non-injury determination precluded implementation of duties. The outcome
+      maintained US access to imported tin mill products (tinplate) from major
+      supplier nations. This does not directly affect raw tin supply chains but
+      signals ongoing trade friction around downstream tin products.
+    source_id: usgs_mcs_2025_tin
+
+narrative: |
+  Tin is a post-transition metal with a tightly concentrated global supply chain and
+  no domestic US production at either the mine or smelter level. World mine output
+  (tin content) reached an estimated 300,000 metric tons in 2024, led by China (23%)
+  and Indonesia (17%), which together account for roughly 40% of global production.
+  Burma/Myanmar (11%), Peru (10%), Brazil (10%), and the Democratic Republic of Congo
+  (8%) are the next-largest producers, giving six countries control of about 80% of
+  global supply. The United States has not mined tin since 1993 or smelted it since
+  1989, running a 73% import reliance on refined tin in 2024, sourced primarily from
+  Peru (30%), Bolivia (23%), Indonesia (20%), and Brazil (11%).
+
+  LME cash tin prices rebounded 19% in 2024 to approximately $30,865 per metric ton
+  ($1,400/c/lb), recovering from a 2023 low of ~$25,948/t after a 2021 peak of
+  ~$32,584/t driven by post-COVID supply-chain stress and electronics demand. The 2024
+  price recovery reflected supply concerns — Indonesia's output fell sharply from 69,000
+  to 50,000 metric tons — alongside steady demand from the solder and electronics
+  sectors. US domestic recycling supplied approximately 18,000 metric tons of tin in
+  2024 (27% of apparent consumption), a meaningful but insufficient offset to import
+  dependence. The US DoD awarded $19 million under the Defense Production Act Title III
+  in September 2024 to establish a domestic tin smelting facility in Pennsylvania —
+  the first meaningful investment in US tin smelting capacity in over three decades.
+
+  Tin's end-use profile in the United States spans packaging (tinplate, 23%), chemicals
+  (22%), solder (11%), and a range of alloy and industrial applications. Lead-free
+  solder mandates have structurally increased tin intensity in electronics assembly, and
+  the growing electronics sector has supported solder demand even as tin-free steel
+  (chromium-coated) competes in the packaging segment. The September 2024 strategic
+  partnership between China's and Indonesia's state-owned tin producers — the two largest
+  national suppliers — adds a geopolitical dimension to an already concentrated supply
+  landscape. World reserves exceed 4.2 million metric tons (principally in China, Burma,
+  Australia, Russia, and Brazil), and global resources are described by USGS as extensive
+  relative to current production rates, providing a long-term geological buffer against
+  scarcity.
+
+sources:
+  - id: usgs_mcs_2025_tin
+    title: Mineral Commodity Summaries 2025 — Tin
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-tin.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_2022_critical_minerals_list
+    title: "2022 Final List of Critical Minerals (Federal Register Vol. 87, No. 37, February 22, 2022)"
+    publisher: US Geological Survey / US Department of the Interior
+    url: https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals
+    retrieved: 2026-04-11
+    publication_year: 2022
+    source_tier: primary
