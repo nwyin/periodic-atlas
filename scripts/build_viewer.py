@@ -93,6 +93,10 @@ CSS = """\
   --badge-eu-crm:        #7c3aed;
   --badge-eu-strategic:  #9333ea;
   --badge-doe:           #d97706;
+
+  --tier-primary:        #0369a1;
+  --tier-secondary:      #6b7280;
+  --tier-tertiary:       #92400e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -181,6 +185,11 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .badge-eu-strategic  { background: var(--badge-eu-strategic); }
 .badge-doe           { background: var(--badge-doe); color: #fff; }
 
+/* ── source tier badges — distinct colors required by INV-2 ── */
+.badge-tier-primary   { background: var(--tier-primary); }
+.badge-tier-secondary { background: var(--tier-secondary); }
+.badge-tier-tertiary  { background: var(--tier-tertiary); }
+
 /* ── element page ── */
 .el-header {
   display: flex;
@@ -215,10 +224,46 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   margin: 1.25rem 0;
 }
 
-/* ── sources ── */
-.sources-section h2 { font-size: 1rem; margin-bottom: 0.5rem; }
-.sources-section ul { padding-left: 1.25rem; font-size: 0.85rem; line-height: 1.8; }
-.sources-section li .source-id { color: var(--muted); font-family: monospace; margin-right: 0.4em; }
+/* ── sources panel ── */
+.sources-panel { margin: 1.5rem 0; }
+.sources-panel h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+
+.source-cards { display: grid; gap: 0.75rem; }
+
+.source-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+.source-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.source-card-header a { font-weight: 600; font-size: 0.9rem; }
+.source-card-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.45rem; }
+.source-card-superseded {
+  font-size: 0.8rem;
+  color: var(--badge-us-critical);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.source-card-refs { font-size: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+.source-card-refs .refs-label { color: var(--muted); margin-right: 0.1rem; }
+
+.ref-chip {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  font-size: 0.75rem;
+  color: var(--text);
+  white-space: nowrap;
+}
 
 /* ── footer ── */
 footer {
@@ -230,6 +275,89 @@ footer {
 }
 footer a { color: var(--muted); }
 """
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Sources data builder
+# ─────────────────────────────────────────────────────────────────────────────
+
+#: Tables and their source_id column names for referenced_by counting.
+_REF_TABLES: list[tuple[str, str, str]] = [
+    ("production", "atlas_production", "source_id"),
+    ("shares", "atlas_shares", "source_id"),
+    ("reserves", "atlas_reserves", "source_id"),
+    ("end_uses", "atlas_end_uses", "source_id"),
+    ("prices", "atlas_prices", "source_id"),
+    ("events", "atlas_events", "source_id"),
+    ("isotope_markets", "atlas_isotope_markets", "production_source_id"),
+    ("feedstocks", "atlas_feedstocks", "source_id"),
+    ("substitutes", "atlas_substitutes", "source_id"),
+    ("criticality", "atlas_criticality", "source_id"),
+]
+
+
+def _build_sources_data(con: "duckdb.DuckDBPyConnection", symbol: str) -> list[dict]:  # type: ignore[name-defined]
+    """Return enriched source records for *symbol* with referenced_by counts.
+
+    Each record:
+        source_id, title, publisher, url, retrieved, publication_year,
+        source_tier, superseded_by, referenced_by (dict category->count)
+    """
+    sources_df = con.execute(
+        """
+        SELECT source_id, title, publisher, url, retrieved, publication_year,
+               source_tier, superseded_by
+        FROM atlas_sources
+        WHERE symbol = ?
+        ORDER BY source_id
+        """,
+        [symbol],
+    ).df()
+
+    if sources_df.empty:
+        return []
+
+    # Build referenced_by counts via UNION ALL — one pass over all fact tables.
+    union_clauses = "\n    UNION ALL\n    ".join(
+        f"SELECT {sid_col} AS source_id, '{cat}' AS cat FROM {table} WHERE symbol = ?" for cat, table, sid_col in _REF_TABLES
+    )
+    refs_query = f"""
+    WITH all_refs AS (
+        {union_clauses}
+    )
+    SELECT source_id, cat, COUNT(*) AS cnt
+    FROM all_refs
+    WHERE source_id IS NOT NULL
+    GROUP BY source_id, cat
+    """
+    refs_df = con.execute(refs_query, [symbol] * len(_REF_TABLES)).df()
+
+    # Build dict: source_id -> {category: count}
+    refs_by_source: dict[str, dict[str, int]] = {}
+    for row in refs_df.itertuples(index=False):
+        refs_by_source.setdefault(row.source_id, {})[row.cat] = int(row.cnt)
+
+    result: list[dict] = []
+    for row in sources_df.to_dict(orient="records"):
+        sid = str(row["source_id"])
+        superseded = row.get("superseded_by")
+        # Normalise pandas NaN / None to None
+        if superseded is not None and str(superseded) in ("nan", "None", ""):
+            superseded = None
+        result.append(
+            {
+                "source_id": sid,
+                "title": row.get("title"),
+                "publisher": row.get("publisher"),
+                "url": row.get("url"),
+                "retrieved": row.get("retrieved"),
+                "publication_year": row.get("publication_year"),
+                "source_tier": row.get("source_tier") or "secondary",
+                "superseded_by": superseded,
+                "referenced_by": refs_by_source.get(sid, {}),
+            }
+        )
+    return result
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -342,6 +470,93 @@ def _index_body(elements: list[dict], stats: dict, snapshot_year: int) -> str:
 </table>"""
 
 
+def _render_sources_panel(sources: list[dict]) -> str:
+    """Render the #sources-panel div from enriched source records."""
+    if not sources:
+        return '<div id="sources-panel" class="sources-panel"><h2>Sources</h2><p><em>No sources recorded.</em></p></div>'
+
+    REF_ORDER = [
+        "production",
+        "shares",
+        "reserves",
+        "end_uses",
+        "prices",
+        "events",
+        "isotope_markets",
+        "feedstocks",
+        "substitutes",
+        "criticality",
+    ]
+
+    cards_html = ""
+    for s in sources:
+        sid = str(s.get("source_id", ""))
+        title_raw = str(s.get("title") or sid)
+        publisher = str(s.get("publisher") or "")
+        url_raw = str(s.get("url") or "")
+        retrieved = str(s.get("retrieved") or "")
+        pub_year = s.get("publication_year")
+        tier = str(s.get("source_tier") or "secondary")
+        superseded_by = s.get("superseded_by")
+        referenced_by: dict = s.get("referenced_by") or {}
+
+        # Title — linked if URL present
+        if url_raw and url_raw not in ("nan", "None"):
+            title_html = f'<a href="{_html_escape(url_raw)}" target="_blank" rel="noopener">{_html_escape(title_raw)}</a>'
+        else:
+            title_html = _html_escape(title_raw)
+
+        # Tier badge
+        tier_safe = tier if tier in ("primary", "secondary", "tertiary") else "secondary"
+        tier_badge = f'<span class="badge badge-tier-{tier_safe}">{_html_escape(tier_safe)}</span>'
+
+        # Meta line: publisher · year · retrieved
+        meta_parts = []
+        if publisher and publisher not in ("nan", "None"):
+            meta_parts.append(_html_escape(publisher))
+        if pub_year is not None and str(pub_year) not in ("nan", "None", ""):
+            meta_parts.append(str(int(float(str(pub_year)))))
+        if retrieved and retrieved not in ("nan", "None"):
+            meta_parts.append(f"retrieved {_html_escape(retrieved)}")
+        meta_html = " &bull; ".join(meta_parts) if meta_parts else ""
+
+        # Superseded-by warning
+        superseded_html = ""
+        if superseded_by is not None and str(superseded_by) not in ("nan", "None", ""):
+            superseded_html = f'<div class="source-card-superseded">&#9888; superseded by <code>{_html_escape(str(superseded_by))}</code></div>'
+
+        # Referenced-by chips
+        chips = ""
+        total_refs = sum(referenced_by.values())
+        if total_refs > 0:
+            for cat in REF_ORDER:
+                cnt = referenced_by.get(cat, 0)
+                if cnt:
+                    chips += f'<span class="ref-chip">{_html_escape(cat)} {cnt}</span>'
+        refs_html = ""
+        if chips:
+            refs_html = f'<div class="source-card-refs"><span class="refs-label">referenced by:</span>{chips}</div>'
+
+        cards_html += f"""\
+  <div class="source-card" data-source-id="{_html_escape(sid)}">
+    <div class="source-card-header">
+      {tier_badge}
+      {title_html}
+    </div>
+    {"<div class='source-card-meta'>" + meta_html + "</div>" if meta_html else ""}
+    {superseded_html}
+    {refs_html}
+  </div>
+"""
+
+    return f"""\
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources ({len(sources)})</h2>
+  <div class="source-cards">
+{cards_html}  </div>
+</div>"""
+
+
 def _element_body(el: dict, sources: list[dict]) -> str:
     symbol = el["symbol"]
     atomic = el["atomic_number"]
@@ -357,30 +572,14 @@ def _element_body(el: dict, sources: list[dict]) -> str:
     if el.get("narrative") and str(el["narrative"]) not in ("nan", "None", ""):
         narrative_html = f'<div class="narrative-block">{_html_escape(str(el["narrative"]))}</div>'
 
+    # Build placeholders — skip sources-panel since we render it separately below
     placeholders_html = ""
     for div_id, label in CHART_PLACEHOLDERS:
+        if div_id == "sources-panel":
+            continue  # replaced by the real sources panel below
         placeholders_html += f'<div id="{div_id}" class="chart-placeholder">{_html_escape(label)}</div>\n'
 
-    sources_html = ""
-    if sources:
-        items = ""
-        for s in sources:
-            sid = _html_escape(str(s.get("source_id", "")))
-            title = _html_escape(str(s.get("title", "")))
-            publisher = _html_escape(str(s.get("publisher", "")))
-            url = str(s.get("url", "") or "")
-            if url and url not in ("nan", "None"):
-                title_link = f'<a href="{_html_escape(url)}" target="_blank" rel="noopener">{title}</a>'
-            else:
-                title_link = title
-            pub_str = f" — {publisher}" if publisher else ""
-            items += f"<li><span class='source-id'>{sid}</span>{title_link}{_html_escape(pub_str)}</li>\n"
-        sources_html = f"""\
-<div class="sources-section">
-  <h2>Sources</h2>
-  <ul>
-{items}  </ul>
-</div>"""
+    sources_panel_html = _render_sources_panel(sources)
 
     no_commercial_note = ""
     if not commercial:
@@ -401,7 +600,7 @@ def _element_body(el: dict, sources: list[dict]) -> str:
 {no_commercial_note}
 {narrative_html}
 {placeholders_html}
-{sources_html}"""
+{sources_panel_html}"""
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -468,12 +667,10 @@ def generate_viewer(
 
         elements_list = elements_df.to_dict(orient="records")
 
-        # Prepare sources dict: symbol -> list of source dicts
-        sources_df = con.execute("SELECT source_id, symbol, title, publisher, url FROM atlas_sources ORDER BY source_id").df()
+        # Build enriched sources data per symbol (includes referenced_by counts)
         sources_by_symbol: dict[str, list[dict]] = {}
-        for row in sources_df.to_dict(orient="records"):
-            sym = row["symbol"]
-            sources_by_symbol.setdefault(sym, []).append(row)
+        for sym in [el["symbol"] for el in elements_list]:
+            sources_by_symbol[sym] = _build_sources_data(con, sym)
 
     finally:
         con.close()

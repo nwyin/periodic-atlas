@@ -52,6 +52,7 @@ BUILD_DIR = ROOT / "build"
 # flatteners — one function per table
 # =============================================================================
 
+
 def _quantity_fields(q: Quantity | None, prefix: str = "") -> dict[str, Any]:
     """Expand a Quantity into flat columns for a parquet row."""
     if q is None:
@@ -79,37 +80,39 @@ def flatten_elements(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         reporting_year = max((pb.reporting_year for pb in el.production), default=None)
-        rows.append({
-            "symbol": el.symbol,
-            "atomic_number": el.atomic_number,
-            "name": el.name,
-            "category": el.category.value,
-            "industrial_tier": el.industrial_tier.value,
-            "commercial_production": el.commercial_production,
-            "snapshot_year": el.snapshot_year,
-            "reporting_year": reporting_year,
-            "form_notes": el.form_notes,
-            "narrative": el.narrative,
-            "has_production": bool(el.production),
-            "num_production_blocks": len(el.production),
-            "has_reserves": el.reserves is not None,
-            "has_research_only": el.research_only is not None,
-            "has_ownership_concentration": el.ownership_concentration is not None,
-            "num_isotope_markets": len(el.isotope_markets),
-            "num_end_uses": len(el.end_uses.uses),
-            "end_uses_completeness": el.end_uses.completeness,
-            "num_feedstocks": len(el.feedstock_origins),
-            "num_byproducts": len(el.byproduct_of),
-            "num_substitutes": len(el.substitutes),
-            "num_prices": len(el.prices),
-            "num_events": len(el.geopolitical_events),
-            "num_sources": len(el.sources),
-            "us_critical_list_as_of_2025": el.criticality.us_critical_list_as_of_2025,
-            "eu_crm_list_as_of_2024": el.criticality.eu_crm_list_as_of_2024,
-            "eu_strategic_list_as_of_2024": el.criticality.eu_strategic_list_as_of_2024,
-            "doe_short_term_criticality_rank": el.criticality.doe_short_term_criticality_rank,
-            "criticality_source_id": el.criticality.source_id,
-        })
+        rows.append(
+            {
+                "symbol": el.symbol,
+                "atomic_number": el.atomic_number,
+                "name": el.name,
+                "category": el.category.value,
+                "industrial_tier": el.industrial_tier.value,
+                "commercial_production": el.commercial_production,
+                "snapshot_year": el.snapshot_year,
+                "reporting_year": reporting_year,
+                "form_notes": el.form_notes,
+                "narrative": el.narrative,
+                "has_production": bool(el.production),
+                "num_production_blocks": len(el.production),
+                "has_reserves": el.reserves is not None,
+                "has_research_only": el.research_only is not None,
+                "has_ownership_concentration": el.ownership_concentration is not None,
+                "num_isotope_markets": len(el.isotope_markets),
+                "num_end_uses": len(el.end_uses.uses),
+                "end_uses_completeness": el.end_uses.completeness,
+                "num_feedstocks": len(el.feedstock_origins),
+                "num_byproducts": len(el.byproduct_of),
+                "num_substitutes": len(el.substitutes),
+                "num_prices": len(el.prices),
+                "num_events": len(el.geopolitical_events),
+                "num_sources": len(el.sources),
+                "us_critical_list_as_of_2025": el.criticality.us_critical_list_as_of_2025,
+                "eu_crm_list_as_of_2024": el.criticality.eu_crm_list_as_of_2024,
+                "eu_strategic_list_as_of_2024": el.criticality.eu_strategic_list_as_of_2024,
+                "doe_short_term_criticality_rank": el.criticality.doe_short_term_criticality_rank,
+                "criticality_source_id": el.criticality.source_id,
+            }
+        )
     return pd.DataFrame(rows)
 
 
@@ -157,6 +160,7 @@ def flatten_shares(elements: list[Element]) -> pd.DataFrame:
     """Unified long table for mining/refining/reserves/isotope_producers shares."""
     rows = []
     for el in elements:
+
         def emit_share_list(
             share_type: str,
             sl: Any,
@@ -165,23 +169,25 @@ def flatten_shares(elements: list[Element]) -> pd.DataFrame:
         ) -> None:
             for s in sl.shares:
                 q = s.quantity
-                rows.append({
-                    "symbol": el.symbol,
-                    "snapshot_year": el.snapshot_year,
-                    "share_type": share_type,
-                    "stream": stream,
-                    "isotope": isotope,
-                    "country": s.country,
-                    "share_pct": s.share_pct,
-                    "confidence": s.confidence,
-                    "quantity_value": q.value if q else None,
-                    "quantity_unit": q.unit.value if q else None,
-                    "quantity_form": q.form if q else None,
-                    "quantity_source_id": q.source_id if q else None,
-                    "completeness": sl.completeness,
-                    "source_id": s.source_id,
-                    "notes": s.notes,
-                })
+                rows.append(
+                    {
+                        "symbol": el.symbol,
+                        "snapshot_year": el.snapshot_year,
+                        "share_type": share_type,
+                        "stream": stream,
+                        "isotope": isotope,
+                        "country": s.country,
+                        "share_pct": s.share_pct,
+                        "confidence": s.confidence,
+                        "quantity_value": q.value if q else None,
+                        "quantity_unit": q.unit.value if q else None,
+                        "quantity_form": q.form if q else None,
+                        "quantity_source_id": q.source_id if q else None,
+                        "completeness": sl.completeness,
+                        "source_id": s.source_id,
+                        "notes": s.notes,
+                    }
+                )
 
         for pb in el.production:
             emit_share_list("mining", pb.mining_by_country, stream=pb.stream)
@@ -198,15 +204,17 @@ def flatten_end_uses(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for u in el.end_uses.uses:
-            rows.append({
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "application": u.application,
-                "share_pct": u.share_pct,
-                "completeness": el.end_uses.completeness,
-                "source_id": u.source_id,
-                "notes": u.notes,
-            })
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "application": u.application,
+                    "share_pct": u.share_pct,
+                    "completeness": el.end_uses.completeness,
+                    "source_id": u.source_id,
+                    "notes": u.notes,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -214,18 +222,20 @@ def flatten_prices(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for p in el.prices:
-            rows.append({
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "year": p.year,
-                "value": p.value,
-                "unit": p.unit.value,
-                "form": p.form,
-                "basis": p.basis,
-                "region": p.region,
-                "source_id": p.source_id,
-                "notes": p.notes,
-            })
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "year": p.year,
+                    "value": p.value,
+                    "unit": p.unit.value,
+                    "form": p.form,
+                    "basis": p.basis,
+                    "region": p.region,
+                    "source_id": p.source_id,
+                    "notes": p.notes,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -233,14 +243,16 @@ def flatten_events(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for ev in el.geopolitical_events:
-            rows.append({
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "date": ev.date,
-                "event": ev.event,
-                "impact": ev.impact,
-                "source_id": ev.source_id,
-            })
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "date": ev.date,
+                    "event": ev.event,
+                    "impact": ev.impact,
+                    "source_id": ev.source_id,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -248,18 +260,25 @@ def flatten_sources(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for s in el.sources:
-            rows.append({
-                "source_id": s.id,
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "title": s.title,
-                "publisher": s.publisher,
-                "url": s.url,
-                "retrieved": s.retrieved,
-                "publication_year": s.publication_year,
-                "superseded_by": s.superseded_by,
-            })
-    return pd.DataFrame(rows)
+            rows.append(
+                {
+                    "source_id": s.id,
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "title": s.title,
+                    "publisher": s.publisher,
+                    "url": s.url,
+                    "retrieved": s.retrieved,
+                    "publication_year": s.publication_year,
+                    "superseded_by": s.superseded_by,
+                    "source_tier": s.source_tier,
+                }
+            )
+    df = pd.DataFrame(rows)
+    # Ensure superseded_by is VARCHAR in DuckDB (pandas infers INTEGER when all NULL)
+    if "superseded_by" in df.columns:
+        df["superseded_by"] = df["superseded_by"].astype("string")
+    return df
 
 
 def flatten_isotope_markets(elements: list[Element]) -> pd.DataFrame:
@@ -288,14 +307,16 @@ def flatten_feedstocks(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for f in el.feedstock_origins:
-            rows.append({
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "substrate": f.substrate,
-                "typical_concentration_pct": f.typical_concentration_pct,
-                "source_id": f.source_id,
-                "notes": f.notes,
-            })
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "substrate": f.substrate,
+                    "typical_concentration_pct": f.typical_concentration_pct,
+                    "source_id": f.source_id,
+                    "notes": f.notes,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -303,11 +324,13 @@ def flatten_byproducts(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for parent in el.byproduct_of:
-            rows.append({
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "parent_symbol": parent,
-            })
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "parent_symbol": parent,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -315,14 +338,16 @@ def flatten_substitutes(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         for sub in el.substitutes:
-            rows.append({
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "application": sub.application,
-                "availability": sub.availability,
-                "notes": sub.notes,
-                "source_id": sub.source_id,
-            })
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "application": sub.application,
+                    "availability": sub.availability,
+                    "notes": sub.notes,
+                    "source_id": sub.source_id,
+                }
+            )
     return pd.DataFrame(rows)
 
 
@@ -344,28 +369,33 @@ def flatten_criticality(elements: list[Element]) -> pd.DataFrame:
             ("eu_strategic_list_as_of_2024", c.eu_strategic_list_as_of_2024),
         ]
         for flag_name, value in flag_pairs:
-            rows.append({
+            rows.append(
+                {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "flag_name": flag_name,
+                    "value": bool(value),
+                    "rank_value": None,
+                    "source_id": c.source_id,
+                }
+            )
+        rows.append(
+            {
                 "symbol": el.symbol,
                 "snapshot_year": el.snapshot_year,
-                "flag_name": flag_name,
-                "value": bool(value),
-                "rank_value": None,
+                "flag_name": "doe_short_term_criticality_rank",
+                "value": None,
+                "rank_value": c.doe_short_term_criticality_rank,
                 "source_id": c.source_id,
-            })
-        rows.append({
-            "symbol": el.symbol,
-            "snapshot_year": el.snapshot_year,
-            "flag_name": "doe_short_term_criticality_rank",
-            "value": None,
-            "rank_value": c.doe_short_term_criticality_rank,
-            "source_id": c.source_id,
-        })
+            }
+        )
     return pd.DataFrame(rows)
 
 
 # =============================================================================
 # coverage report
 # =============================================================================
+
 
 def coverage_report(elements: list[Element]) -> dict[str, Any]:
     total = len(elements)
@@ -392,10 +422,7 @@ def coverage_report(elements: list[Element]) -> dict[str, Any]:
         "has_substitutes": count(lambda e: bool(e.substitutes)),
         "us_critical_list_as_of_2025": count(lambda e: e.criticality.us_critical_list_as_of_2025),
         "eu_crm_list_as_of_2024": count(lambda e: e.criticality.eu_crm_list_as_of_2024),
-        "by_tier": {
-            str(tier): count(lambda e, t=tier: e.industrial_tier.value == t)
-            for tier in (0, 1, 2, 3, 4)
-        },
+        "by_tier": {str(tier): count(lambda e, t=tier: e.industrial_tier.value == t) for tier in (0, 1, 2, 3, 4)},
     }
 
 
@@ -473,7 +500,7 @@ def main() -> None:
 
     cov = coverage_report(elements)
     (BUILD_DIR / "coverage.json").write_text(json.dumps(cov, indent=2))
-    console.print(f"[green]wrote[/green] build/coverage.json")
+    console.print("[green]wrote[/green] build/coverage.json")
 
     console.print()
     table = Table(title=f"Atlas {snapshot_year} coverage")

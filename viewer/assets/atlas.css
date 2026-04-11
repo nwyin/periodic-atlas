@@ -13,6 +13,10 @@
   --badge-eu-crm:        #7c3aed;
   --badge-eu-strategic:  #9333ea;
   --badge-doe:           #d97706;
+
+  --tier-primary:        #0369a1;
+  --tier-secondary:      #6b7280;
+  --tier-tertiary:       #92400e;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -101,6 +105,11 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .badge-eu-strategic  { background: var(--badge-eu-strategic); }
 .badge-doe           { background: var(--badge-doe); color: #fff; }
 
+/* ── source tier badges — distinct colors required by INV-2 ── */
+.badge-tier-primary   { background: var(--tier-primary); }
+.badge-tier-secondary { background: var(--tier-secondary); }
+.badge-tier-tertiary  { background: var(--tier-tertiary); }
+
 /* ── element page ── */
 .el-header {
   display: flex;
@@ -135,10 +144,46 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   margin: 1.25rem 0;
 }
 
-/* ── sources ── */
-.sources-section h2 { font-size: 1rem; margin-bottom: 0.5rem; }
-.sources-section ul { padding-left: 1.25rem; font-size: 0.85rem; line-height: 1.8; }
-.sources-section li .source-id { color: var(--muted); font-family: monospace; margin-right: 0.4em; }
+/* ── sources panel ── */
+.sources-panel { margin: 1.5rem 0; }
+.sources-panel h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+
+.source-cards { display: grid; gap: 0.75rem; }
+
+.source-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+.source-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.3rem;
+}
+.source-card-header a { font-weight: 600; font-size: 0.9rem; }
+.source-card-meta { font-size: 0.8rem; color: var(--muted); margin-bottom: 0.45rem; }
+.source-card-superseded {
+  font-size: 0.8rem;
+  color: var(--badge-us-critical);
+  margin-bottom: 0.4rem;
+  font-weight: 600;
+}
+.source-card-refs { font-size: 0.8rem; display: flex; flex-wrap: wrap; gap: 0.3rem; align-items: center; }
+.source-card-refs .refs-label { color: var(--muted); margin-right: 0.1rem; }
+
+.ref-chip {
+  display: inline-block;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 0.1em 0.45em;
+  font-size: 0.75rem;
+  color: var(--text);
+  white-space: nowrap;
+}
 
 /* ── footer ── */
 footer {
