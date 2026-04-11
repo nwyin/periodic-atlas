@@ -1,0 +1,266 @@
+symbol: Ga
+atomic_number: 31
+name: gallium
+category: post_transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS tracks two distinct gallium streams: "low-purity primary gallium"
+  (~99.99%) recovered as a byproduct of bauxite and zinc ore processing,
+  and "high-purity refined gallium" (99.999% to 99.99999%) purified from
+  primary metal or from new scrap. The two streams have very different
+  geographies — primary is near-monopoly Chinese, refined is split across
+  Canada, China, Japan, Slovakia, US.
+
+production:
+  reporting_year: 2024
+  mine:
+    value: 760
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.75: world primary low-purity gallium production
+      totaled 760,000 kg in 2024 (estimated), up from 633,000 kg in
+      2023. USGS: "China accounted for 99% of worldwide primary
+      low-purity gallium production."
+    source_id: usgs_mcs_2025_gallium
+  refined:
+    value: 320
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.75: "World high-purity refined gallium production
+      in 2024 was estimated to be about 320,000 kilograms, unchanged
+      from the estimate for 2023." Refining capacity ~340,000 kg/yr
+      primary + 280,000 kg/yr secondary (from new scrap).
+    source_id: usgs_mcs_2025_gallium
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 99
+        quantity:
+          value: 750
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_gallium
+        notes: |
+          USGS direct quote: "China accounted for 99% of worldwide primary
+          low-purity gallium production." Production value 750,000 kg
+          from USGS Low-Purity Production table, 2024 estimate.
+        source_id: usgs_mcs_2025_gallium
+      - country: RU
+        share_pct: 1
+        quantity:
+          value: 6
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_gallium
+        source_id: usgs_mcs_2025_gallium
+      - country: JP
+        share_pct: 0
+        quantity:
+          value: 3
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_gallium
+        source_id: usgs_mcs_2025_gallium
+      - country: KR
+        share_pct: 0
+        quantity:
+          value: 3
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_gallium
+        source_id: usgs_mcs_2025_gallium
+    completeness: complete
+  refining_by_country:
+    shares:
+      - country: CA
+        share_pct: 20
+        notes: |
+          USGS p.75: "Canada, China, Japan, Slovakia, and the United States
+          were the known principal producers of high-purity refined
+          gallium." USGS does not publish a country-by-country breakdown
+          of refined output. Shares here are placeholder equal-split among
+          the 5 named producers (20% each) and should be treated as
+          LOW CONFIDENCE until IEA or other primary source with refining
+          shares is cited.
+        source_id: usgs_mcs_2025_gallium
+      - country: CN
+        share_pct: 20
+        source_id: usgs_mcs_2025_gallium
+      - country: JP
+        share_pct: 20
+        source_id: usgs_mcs_2025_gallium
+      - country: SK
+        share_pct: 20
+        source_id: usgs_mcs_2025_gallium
+      - country: US
+        share_pct: 20
+        notes: "One facility in New York per USGS: 'One company in New York recovered and refined high-purity gallium from imported primary low-purity gallium metal and new scrap.'"
+        source_id: usgs_mcs_2025_gallium
+    completeness: top_producers_only
+
+reserves:
+  resources:
+    value: 1000000
+    unit: tonnes
+    form: metal
+    approximate: true
+    notes: |
+      USGS MCS 2025 p.75: "Gallium contained in world resources of bauxite
+      is estimated to exceed 1 million tons, and a considerable quantity
+      could be contained in world zinc resources. However, less than 10%
+      of the gallium in bauxite and zinc resources is potentially
+      recoverable." USGS does not publish reserves by country for gallium.
+    source_id: usgs_mcs_2025_gallium
+  notes: |
+    Gallium reserves are not broken out by country in USGS MCS 2025;
+    only world resources are given. Average gallium content of bauxite is
+    50 ppm; some domestic zinc ores contain up to 50 ppm gallium.
+
+byproduct_of: [Al, Zn]
+feedstock_origins:
+  - substrate: bauxite_ore
+    typical_concentration_pct: 0.005
+    notes: |
+      USGS: "The average gallium content of bauxite is 50 parts per million."
+      Most world gallium is extracted from Bayer process liquors during
+      alumina production — recovery depends on bauxite throughput at
+      Chinese aluminum smelters, not on gallium price signals.
+    source_id: usgs_mcs_2025_gallium
+  - substrate: zinc_smelter_residues
+    typical_concentration_pct: 0.005
+    notes: "USGS: 'Some domestic zinc ores contain up to 50 parts per million gallium.' Secondary but meaningful byproduct stream."
+    source_id: usgs_mcs_2025_gallium
+
+substitutes:
+  - availability: partial
+    notes: |
+      USGS substitutes paragraph: "Liquid crystals made from organic
+      compounds are used in visual displays as substitutes for LEDs.
+      Silicon-based complementary metal-oxide semiconductor power
+      amplifiers compete with GaAs power amplifiers in midtier
+      third-generation (3G) cellular handsets. Indium phosphide
+      components can be substituted for GaAs-based infrared laser
+      diodes in some specific-wavelength applications, and helium-neon
+      lasers compete with GaAs in visible laser diode applications.
+      Silicon is the principal competitor with GaAs in solar-cell
+      applications. In many defense-related applications, GaAs- and
+      GaN-based ICs are used because of their unique properties, and
+      no effective substitutes exist for GaAs and GaN in these
+      applications."
+    source_id: usgs_mcs_2025_gallium
+
+end_uses:
+  uses:
+    - application: integrated_circuits
+      share_pct: 79
+      notes: |
+        USGS MCS 2025 p.74: "ICs accounted for 79% of domestic gallium
+        consumption" (US 2024). Primarily GaAs and GaN compound
+        semiconductors. Uses include defense applications, high-
+        performance computers, and telecommunications equipment.
+      source_id: usgs_mcs_2025_gallium
+    - application: optoelectronic_devices
+      share_pct: 20
+      notes: |
+        USGS: "optoelectronic devices accounted for 20%" of US 2024
+        gallium consumption. Includes laser diodes, LEDs, photodetectors,
+        and solar cells; end-user categories include aerospace, consumer
+        goods, industrial, medical, and telecommunications.
+      source_id: usgs_mcs_2025_gallium
+    - application: research_and_development
+      share_pct: 1
+      source_id: usgs_mcs_2025_gallium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  eu_crm_list_as_of_2024: true
+  eu_strategic_list_as_of_2024: true
+  notes: "Net import reliance 100% per USGS (all US consumption from imports; no domestic primary production since 1987)."
+  source_id: usgs_mcs_2025_gallium
+
+prices:
+  - year: 2024
+    value: 500
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025: 2024 "Price, average unit value of imports, high-purity,
+      refined" (99.999% to 99.99999% pure) = $500/kg. Estimated from US
+      import unit values.
+    source_id: usgs_mcs_2025_gallium
+  - year: 2024
+    value: 220
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS 2024 "Price, average unit value of imports, low-purity, primary"
+      (99.99% pure) = $220/kg. Estimated from US import unit values.
+    source_id: usgs_mcs_2025_gallium
+  - year: 2024
+    value: 380
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    region: CN
+    notes: |
+      USGS: "Primary low-purity (99.99%-pure) gallium prices in China
+      averaged $380 per kilogram in June 2024, an increase of 17% from
+      $325 per kilogram in January 2024, and an increase of 58% from
+      $240 per kilogram in June 2023. [...] By October, primary low-purity
+      gallium prices in China increased by 11% to $420 per kilogram as
+      stocks outside of China depleted further."
+    source_id: usgs_mcs_2025_gallium
+
+geopolitical_events:
+  - date: 2023-08
+    event: "China Government implements gallium export controls requiring licensing procedures"
+    impact: |
+      Drove decrease in China exports for remainder of 2023. Controls
+      required all exports to have a committed end, making stock rebuilding
+      outside China difficult. Prices in China rose 58% between June 2023
+      ($240/kg) and June 2024 ($380/kg).
+    source_id: usgs_mcs_2025_gallium
+  - date: 2024-12
+    event: "China bans all exports of gallium to the United States"
+    impact: "Escalation from the August 2023 licensing regime to an outright ban targeting the US specifically."
+    source_id: usgs_mcs_2025_gallium
+
+narrative: |
+  Gallium is the archetypal byproduct metal: it has no primary mines,
+  and supply cannot respond to price signals because production is
+  dictated by Chinese aluminum smelter throughput. USGS MCS 2025 reports
+  China at 99% of worldwide primary low-purity gallium production (750
+  of 760 tonnes in 2024). The refining geography is more diverse in
+  principle — Canada, China, Japan, Slovakia, and the US all produce
+  high-purity refined gallium — but USGS does not publish country-level
+  refining shares, and the entire US refining industry is a single
+  facility in New York.
+
+  China imposed gallium export licensing in August 2023 and banned
+  gallium exports to the US entirely in December 2024. The bauxite
+  feedstock constraint makes near-term substitution nearly impossible:
+  bauxite averages ~50 ppm Ga, zinc ores up to 50 ppm, and <10% of
+  this is potentially recoverable. An Australian company announced
+  plans to open a US gallium recovery facility focused on electronic
+  scrap recycling.
+
+sources:
+  - id: usgs_mcs_2025_gallium
+    title: Mineral Commodity Summaries 2025 — Gallium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-gallium.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
