@@ -1,0 +1,692 @@
+symbol: Fe
+atomic_number: 26
+name: iron
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports iron ore mine production in thousand metric tons of
+  usable ore (beneficiated concentrate, pellets, sinter, lump ore). Iron content
+  is tracked separately (world 2024 iron content: 1,600 million metric tons).
+  Benchmark pricing references 62% Fe fines CFR China. Crude steel is measured
+  in metric tons of liquid steel and tracked as a separate stream. Both streams
+  are reported in million_tonnes_per_year in this file; reserves are reported
+  in tonnes (converted from USGS million metric tons by multiplying by 10^6).
+
+production:
+- reporting_year: 2024
+  stream: ore
+  mine:
+    value: 2500
+    unit: million_tonnes_per_year
+    form: ore
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.100: world total mine production 2024e = 2,500,000
+      thousand metric tons usable ore (rounded), equivalent to 2.5 billion
+      metric tons. Iron content 2024e = 1,600,000 thousand metric tons
+      (1.6 billion metric tons). The United States produced an estimated 1.8%
+      of world iron ore output.
+    source_id: usgs_mcs_2025_iron_ore
+  mining_by_country:
+    shares:
+      - country: AU
+        share_pct: 37.2
+        quantity:
+          value: 930
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: |
+          USGS MCS 2025 table: Australia 2024e = 930,000 thousand metric tons.
+          World's largest exporter, primarily Pilbara hematite/goethite. JORC-
+          compliant reserves reported separately.
+        source_id: usgs_mcs_2025_iron_ore
+      - country: BR
+        share_pct: 17.6
+        quantity:
+          value: 440
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Brazil 2024e = 440,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: CN
+        share_pct: 10.8
+        quantity:
+          value: 270
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: |
+          USGS MCS 2025: China 2024e = 270,000 thousand metric tons. Chinese
+          domestic ore is largely low-grade; China imports high-grade ore
+          primarily from Australia and Brazil despite large domestic output.
+        source_id: usgs_mcs_2025_iron_ore
+      - country: IN
+        share_pct: 10.8
+        quantity:
+          value: 270
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: India 2024e = 270,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: RU
+        share_pct: 3.6
+        quantity:
+          value: 91
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Russia 2024e = 91,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: IR
+        share_pct: 3.6
+        quantity:
+          value: 90
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Iran 2024e = 90,000 thousand metric tons (estimated)."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: ZA
+        share_pct: 2.6
+        quantity:
+          value: 66
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: South Africa 2024e = 66,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: CA
+        share_pct: 2.2
+        quantity:
+          value: 54
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Canada 2024e = 54,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: US
+        share_pct: 1.9
+        quantity:
+          value: 48
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: |
+          USGS MCS 2025: US 2024e = 48,000 thousand metric tons (7% increase
+          from 44,700 in 2023). Eight open-pit mines in Michigan, Minnesota,
+          and Utah; 98% shipped to domestic steel industry.
+        source_id: usgs_mcs_2025_iron_ore
+      - country: UA
+        share_pct: 1.7
+        quantity:
+          value: 42
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Ukraine 2024e = 42,000 thousand metric tons (estimated)."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: KZ
+        share_pct: 1.2
+        quantity:
+          value: 30
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Kazakhstan 2024e = 30,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: SE
+        share_pct: 1.1
+        quantity:
+          value: 28
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Sweden 2024e = 28,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: PE
+        share_pct: 0.8
+        quantity:
+          value: 21
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Peru 2024e = 21,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: CL
+        share_pct: 0.7
+        quantity:
+          value: 18
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Chile 2024e = 18,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: TR
+        share_pct: 0.7
+        quantity:
+          value: 18
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Turkey 2024e = 18,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: MR
+        share_pct: 0.6
+        quantity:
+          value: 15
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Mauritania 2024e = 15,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: MX
+        share_pct: 0.3
+        quantity:
+          value: 8
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 table: Mexico 2024e = 8,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: ZZ
+        share_pct: 2.6
+        quantity:
+          value: 64
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 'Other countries' row: 64,000 thousand metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+    completeness: complete
+  notes: |
+    US iron ore production increased 7% in 2024, likely to replenish stocks per
+    USGS. Average global unit value fell to $112.06/t in the first 9 months of
+    2024. US iron ore import sources 2020-23: Brazil 47%, Canada 30%, Sweden
+    13%, Bahrain 3%, other 7%.
+
+- reporting_year: 2024
+  stream: crude_steel
+  refined:
+    value: 1879
+    unit: million_tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: medium
+    notes: |
+      World Steel Association preliminary 2024 data: global crude steel
+      production approximately 1,879 million metric tons. The World Steel
+      Association estimated global finished steel demand decreased by 0.9%
+      in 2024 (per USGS Events section). Declines in automotive, housing
+      construction, and manufacturing were partly offset by climate investment
+      and public infrastructure spending.
+    source_id: worldsteel_2025
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 53.5
+        quantity:
+          value: 1006
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        notes: |
+          China dominates global crude steel production at ~53.5%. The China
+          Iron and Steel Association called for production cuts in 2024 citing
+          rapidly declining prices and need to balance supply with demand.
+          China's National Development and Reform Commission cited plans for
+          decarbonization and energy reduction alongside crackdowns on
+          illegal/inefficient capacity.
+        source_id: worldsteel_2025
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 145
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        notes: "India second-largest crude steel producer, ~7.7% of world total."
+        source_id: worldsteel_2025
+      - country: JP
+        share_pct: 4.5
+        quantity:
+          value: 84
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        source_id: worldsteel_2025
+      - country: US
+        share_pct: 4.3
+        quantity:
+          value: 81
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_iron_ore
+        notes: |
+          USGS MCS 2025 Events section: US pig iron production and raw steel
+          production estimated at 22 Mt and 81 Mt respectively in 2024,
+          unchanged from 2023. Four iron metallic plants (one DRI, three HBI)
+          operated in 2024 to supply steelmaking raw materials.
+        source_id: usgs_mcs_2025_iron_ore
+      - country: RU
+        share_pct: 3.8
+        quantity:
+          value: 72
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        source_id: worldsteel_2025
+      - country: KR
+        share_pct: 3.5
+        quantity:
+          value: 66
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        source_id: worldsteel_2025
+      - country: DE
+        share_pct: 1.9
+        quantity:
+          value: 35
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        source_id: worldsteel_2025
+      - country: TR
+        share_pct: 1.9
+        quantity:
+          value: 35
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        source_id: worldsteel_2025
+      - country: BR
+        share_pct: 1.8
+        quantity:
+          value: 34
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        source_id: worldsteel_2025
+      - country: ZZ
+        share_pct: 17.1
+        quantity:
+          value: 321
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: worldsteel_2025
+        notes: "Rest of world — includes Iran, Brazil, Italy, France, Spain, Mexico, and others."
+        source_id: worldsteel_2025
+    completeness: complete
+  notes: |
+    Steel demand declined 0.9% globally in 2024 per World Steel Association
+    estimate cited in USGS Events section. China's share of global crude
+    steel remains above 50%, raising concerns about oversupply and price
+    erosion; CISA called for production restraint.
+
+reserves:
+  economic_reserves:
+    value: 200000000000000
+    unit: tonnes
+    form: ore
+    approximate: true
+    notes: |
+      USGS MCS 2025 p.100: world total reserves = 200,000 million metric tons
+      of usable iron ore (= 2×10^14 kg = 200 billion metric tons). Iron content
+      world total = 88,000 million metric tons. The table note states reserves
+      for Iran, Peru, Russia, South Africa, and the US were revised based on
+      company and Government reports.
+    source_id: usgs_mcs_2025_iron_ore
+  resources:
+    value: 800000000000000
+    unit: tonnes
+    form: ore
+    approximate: true
+    notes: |
+      USGS MCS 2025: "World resources are estimated to be greater than 800
+      billion tons of iron ore containing more than 230 billion tons of iron."
+      US resources: 110 billion tons of usable ore containing ~27 billion tons
+      of iron, mainly low-grade taconite in the Lake Superior district.
+    source_id: usgs_mcs_2025_iron_ore
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 29.0
+        quantity:
+          value: 58000000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: |
+          USGS MCS 2025: Australia 58,000 million metric tons crude ore
+          (= 58 Gt). JORC-compliant or equivalent reserves = 23 billion tons
+          crude ore / 10 billion tons iron content per USGS footnote 6.
+        source_id: usgs_mcs_2025_iron_ore
+      - country: RU
+        share_pct: 17.5
+        quantity:
+          value: 35000000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Russia 35,000 million metric tons crude ore."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: BR
+        share_pct: 17.0
+        quantity:
+          value: 34000000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Brazil 34,000 million metric tons crude ore."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: CN
+        share_pct: 10.0
+        quantity:
+          value: 20000000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: China 20,000 million metric tons crude ore."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: UA
+        share_pct: 3.3
+        quantity:
+          value: 6500000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 footnote 7: Ukraine 6,500 Mt; reserves consist of A and B categories of the Soviet reserves classification."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: CA
+        share_pct: 3.0
+        quantity:
+          value: 6000000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Canada 6,000 million metric tons crude ore."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: IN
+        share_pct: 2.8
+        quantity:
+          value: 5500000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: India 5,500 million metric tons crude ore."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: IR
+        share_pct: 1.9
+        quantity:
+          value: 3800000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Iran 3,800 million metric tons (revised). Iran ISO-3166: IR."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: US
+        share_pct: 1.8
+        quantity:
+          value: 3600000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: United States 3,600 million metric tons (revised)."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: PE
+        share_pct: 1.3
+        quantity:
+          value: 2600000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Peru 2,600 million metric tons (revised)."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: KZ
+        share_pct: 1.3
+        quantity:
+          value: 2500000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Kazakhstan 2,500 million metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: SE
+        share_pct: 0.7
+        quantity:
+          value: 1300000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Sweden 1,300 million metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: ZA
+        share_pct: 0.5
+        quantity:
+          value: 930000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: South Africa 930 million metric tons (revised)."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: TR
+        share_pct: 0.1
+        quantity:
+          value: 150000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025: Turkey 150 million metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+      - country: ZZ
+        share_pct: 8.5
+        quantity:
+          value: 17000000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_iron_ore
+        notes: "USGS MCS 2025 'Other countries' row: 17,000 million metric tons."
+        source_id: usgs_mcs_2025_iron_ore
+    completeness: complete
+  notes: |
+    Chile, Mauritania, and Mexico have NA in the USGS reserves column. The
+    world reserves total (200,000 Mt) is rounded. Reserves by country are in
+    usable ore terms; iron content world total = 88,000 million metric tons.
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: iron_ore_magnetite
+    notes: |
+      Magnetite (Fe₃O₄) ore is the primary feedstock for US taconite
+      processing. US ores are low-grade; all eight domestic mines require
+      beneficiation and pelletizing before use in blast furnaces or DRI
+      plants. Taconite concentrates from the Lake Superior district contain
+      ~65% Fe after processing.
+    source_id: usgs_mcs_2025_iron_ore
+  - substrate: iron_ore_hematite
+    notes: |
+      Hematite (Fe₂O₃) and goethite ores are high-grade direct-shipping
+      ores (DSO) mined predominantly in Australia (Pilbara) and Brazil
+      (Carajás). Australian benchmark ores run ~57-62% Fe; Brazilian
+      Carajás ore is ~65% Fe.
+    source_id: usgs_mcs_2025_iron_ore
+  - substrate: iron_ore_dr_grade_pellets
+    notes: |
+      Direct-reduction (DR)-grade pellets require ≥67% Fe and low gangue.
+      A Hibbing, MN plant began producing 4 Mt/yr of DR-grade pellets in
+      May 2024 for use in DRI/HBI furnaces and electric arc furnaces.
+      DR-grade is distinct from blast-furnace-grade pellets.
+    source_id: usgs_mcs_2025_iron_ore
+
+substitutes:
+  - application: steelmaking_raw_material
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "The only source of primary iron
+      is iron ore, used directly as direct-shipping ore or converted to
+      briquettes, concentrates, DRI, iron nuggets, pellets, or sinter. DRI,
+      iron nuggets, and scrap are extensively used for steelmaking in electric
+      arc furnaces and in iron and steel foundries. Technological advancements
+      have been made that allow hematite to be recovered from tailings basins
+      and pelletized." Steel scrap is the primary secondary feedstock
+      substituting for virgin iron ore in EAF-based steelmaking.
+    source_id: usgs_mcs_2025_iron_ore
+
+end_uses:
+  uses:
+    - application: steel_industry
+      share_pct: 98
+      notes: |
+        USGS MCS 2025: "98% of domestic usable iron ore products for
+        consumption in the steel industry." This covers all steel product
+        sectors — construction, infrastructure, automotive, mechanical
+        engineering, and appliances. The USGS Iron Ore chapter does not
+        break out sub-sectors within steelmaking.
+      source_id: usgs_mcs_2025_iron_ore
+    - application: nonsteel_uses
+      share_pct: 2
+      notes: |
+        USGS MCS 2025: "The remaining 2% of domestic iron ore products were
+        consumed in nonsteel end uses" — includes iron powder for metallurgy,
+        pigments, and heavy-media mineral separation.
+      source_id: usgs_mcs_2025_iron_ore
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Iron ore is not on the US Critical Minerals List, EU CRM list, or EU
+    Strategic list. The US is a net exporter (USGS salient statistics
+    "Net import reliance" = E/Net Exporter for all years 2020-2024).
+    Canada added high-purity iron to its Critical Minerals List in June 2024,
+    citing its role in decarbonization, but Canada's list is not represented
+    in these schema fields.
+
+prices:
+  - year: 2024
+    value: 115
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics table: average unit value reported by
+      US mines 2024e = $115 per metric ton. Global average unit value was
+      $112.06 per ton for the first 9 months of 2024 (Events section).
+    source_id: usgs_mcs_2025_iron_ore
+  - year: 2023
+    value: 120.36
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023 average unit value = $120.36 per metric ton."
+    source_id: usgs_mcs_2025_iron_ore
+  - year: 2022
+    value: 156.42
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 average unit value = $156.42 per metric ton."
+    source_id: usgs_mcs_2025_iron_ore
+  - year: 2021
+    value: 141.78
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2021 average unit value = $141.78 per metric ton."
+    source_id: usgs_mcs_2025_iron_ore
+  - year: 2020
+    value: 82.25
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 average unit value = $82.25 per metric ton."
+    source_id: usgs_mcs_2025_iron_ore
+
+geopolitical_events:
+  - date: 2024-02
+    event: "Nevada iron ore mine receives water permits for up to 11.5 Mt/yr of iron ore mining northeast of Reno, with a colocated merchant pig iron plant planned"
+    impact: "Potential new US iron ore source; still in pre-production permitting stage as of 2024."
+    source_id: usgs_mcs_2025_iron_ore
+  - date: 2024-05
+    event: "Hibbing, MN plant begins production of DR-grade iron ore pellets (67% Fe, 4 Mt/yr capacity) using upgraded technology"
+    impact: "Expands US supply of high-grade DRI/EAF feedstock, supporting green steel transition."
+    source_id: usgs_mcs_2025_iron_ore
+  - date: 2024-06
+    event: "Canada updates its Critical Minerals List to include high-purity iron"
+    impact: "Signals strategic interest in high-grade iron for decarbonization pathways; does not affect bulk ore trade."
+    source_id: usgs_mcs_2025_iron_ore
+  - date: 2024-01
+    event: "China Iron and Steel Association calls for production cuts citing rapidly declining prices and need to balance supply with demand"
+    impact: |
+      China's NDRC responded with plans for decarbonization, energy reduction,
+      support for high-quality steelmakers, and crackdowns on illegal/inefficient
+      capacity. Structural overcapacity in Chinese steelmaking remains a global
+      price headwind.
+    source_id: usgs_mcs_2025_iron_ore
+  - date: 2024-12
+    event: "Guinea's Simandou iron ore deposit ownership finalized; partnership includes Government of Guinea and multiple international steel companies"
+    impact: |
+      One of the world's largest high-grade iron ore deposits. Production
+      expected to start in 2025; full rate of 60 Mt/yr expected by 2028.
+      Could significantly shift global iron ore supply geography away from
+      Australia-Brazil duopoly.
+    source_id: usgs_mcs_2025_iron_ore
+
+narrative: |
+  Iron ore is the world's most produced and consumed metallic ore, with 2024
+  global mine output of approximately 2.5 billion metric tons of usable ore.
+  Australia (37%) and Brazil (18%) together supply over half of world
+  production and dominate seaborne trade; China and India account for an
+  additional 22% but produce primarily for domestic consumption. The United
+  States is a net exporter, with eight open-pit mines in Michigan, Minnesota,
+  and Utah shipping 48 Mt in 2024 — a 7% increase driven by stock replenishment.
+  Reserves are immense: USGS reports 200 billion metric tons of economically
+  recoverable iron ore, sufficient for many decades at current production rates.
+
+  Crude steel production — the downstream stream that consumes nearly all iron
+  ore — reached approximately 1,879 million metric tons in 2024. China accounts
+  for ~53% of global crude steel output, a concentration that creates structural
+  tensions in global markets: the China Iron and Steel Association publicly
+  called for production cuts in 2024 as prices fell, while the NDRC pushed
+  decarbonization and efficiency mandates. Steel demand fell 0.9% globally in
+  2024, dragged by weakness in automotive, housing construction, and
+  manufacturing, partly offset by infrastructure and climate investment spending.
+
+  The most significant long-term supply-side development is Guinea's Simandou
+  deposit — expected to reach 60 Mt/yr by 2028 — which will introduce a new
+  high-grade source outside the Australia-Brazil duopoly. Domestically, the
+  US transition toward direct-reduction ironmaking (DRI/HBI) is accelerating,
+  with DR-grade pellet production expanding at Hibbing in 2024. The iron ore
+  sector sits upstream of the steel decarbonization challenge: hydrogen-based
+  DRI requires either DR-grade pellets (67%+ Fe) or high-grade lump ore,
+  creating quality differentiation within what has historically been treated
+  as a single bulk commodity.
+
+sources:
+  - id: usgs_mcs_2025_iron_ore
+    title: Mineral Commodity Summaries 2025 — Iron Ore
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-iron-ore.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: worldsteel_2025
+    title: World Steel in Figures 2025
+    publisher: World Steel Association
+    url: https://worldsteel.org/steel-topics/statistics/world-steel-in-figures-2025/
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: secondary
