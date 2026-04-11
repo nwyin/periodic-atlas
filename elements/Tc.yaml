@@ -1,0 +1,138 @@
+symbol: Tc
+atomic_number: 43
+name: technetium
+category: transition_metal
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Technetium has no stable isotopes and is not mined — the commercial
+  reality is a medical isotope market centered on Tc-99m (metastable
+  technetium-99), delivered as Mo-99/Tc-99m generators. Tc-99m itself
+  has a 6-hour half-life and cannot be stockpiled or shipped directly;
+  what is actually shipped is its 66-hour precursor Mo-99, from which
+  hospitals elute Tc-99m on demand.
+
+isotope_markets:
+  - isotope: Tc-99m
+    half_life_seconds: 21624
+    production_mode: reactor_generated
+    reporting_year: 2024
+    precursor: |
+      Mo-99 (half-life 65.932 hours = ~2.75 days). Most Mo-99 is produced
+      by neutron irradiation of highly enriched or low enriched uranium
+      targets in research reactors; the resulting U fission products
+      include Mo-99 which is chemically separated. Mo-99 then decays to
+      Tc-99m via beta emission, and hospitals extract the Tc-99m by
+      saline elution from a "generator" column containing the Mo-99.
+    delivery_form: |
+      Mo-99/Tc-99m generator: a small shielded column of alumina loaded
+      with ~0.1-100 GBq of Mo-99 (on the day of calibration), eluted
+      with saline to produce pertechnetate (TcO4-) for radiopharmaceutical
+      preparation. Generators are shipped by specialized
+      radiopharmaceutical companies worldwide. Typical generator is
+      useful for ~1 week before Mo-99 depletion.
+    producers:
+      shares:
+        - country: NL
+          share_pct: 25
+          notes: |
+            High Flux Reactor (HFR) at Petten. One of the three reactors
+            supplying Curium's global Mo-99 distribution. Per industry
+            reports, HFR had urgent pipe-deformation repairs in late
+            2024 that coincided with scheduled maintenance at BR-2 and
+            Maria, causing a global Mo-99 shortage of up to 50% for
+            approximately three weeks.
+          source_id: wikipedia_tc99m
+        - country: BE
+          share_pct: 25
+          notes: "BR2 reactor in Mol. Second primary Mo-99 source."
+          source_id: wikipedia_tc99m
+        - country: ZA
+          share_pct: 20
+          notes: "SAFARI-1 reactor."
+          source_id: wikipedia_tc99m
+        - country: AU
+          share_pct: 15
+          notes: "OPAL reactor operated by ANSTO."
+          source_id: wikipedia_tc99m
+        - country: PL
+          share_pct: 5
+          notes: "Maria reactor in Warsaw. Third reactor in Curium's supply chain."
+          source_id: wikipedia_tc99m
+        - country: ZZ
+          share_pct: 10
+          notes: |
+            Other reactors listed by Wikipedia as active Mo-99 producers:
+            MPR RSG-GAS (Indonesia), RA-3 (Argentina), LVR-15 (Czech
+            Republic). Share breakdown not published; 10% rest-of-world
+            is a placeholder.
+          source_id: wikipedia_tc99m
+      completeness: top_producers_only
+    notes: |
+      MEDIUM-LOW CONFIDENCE on producer shares. Neither the OECD/NEA
+      High-level Group on Medical Radioisotope Supply nor Wikipedia
+      publishes precise country-level Mo-99 production shares. The
+      shares above are placeholders derived from the qualitative
+      importance of each reactor (HFR/BR2/Maria are Curium's primary
+      suppliers; SAFARI-1 and OPAL are the other large-scale producers;
+      RA-3/MPR/LVR-15 contribute less). Should be replaced with cited
+      OECD/NEA data during step 3.
+
+substitutes:
+  - availability: partial
+    notes: |
+      For specific scans, alternatives include F-18 FDG (for PET), In-111,
+      I-123/I-131, and Ga-67/Ga-68 — but for the majority of the ~20
+      million annual Tc-99m scans, there is no drop-in replacement, and
+      Mo-99 supply disruptions (like the late 2024 HFR event) cause
+      direct patient-care impact. This substitutes note is not sourced
+      from a primary quantitative reference.
+    source_id: wikipedia_tc99m
+
+end_uses:
+  uses:
+    - application: medical_imaging_spect
+      share_pct: 100
+      notes: |
+        Wikipedia: "Approximately 85% of diagnostic imaging procedures in
+        nuclear medicine use this isotope" and "used in 20 million
+        diagnostic nuclear medical procedures every year". Tc-99m has
+        essentially no non-medical uses. The 85% figure is Tc-99m's
+        share of nuclear medicine; the 100% figure here is the share
+        of Tc-99m production consumed by medical imaging.
+      source_id: wikipedia_tc99m
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Not on mainstream critical-materials lists — market is measured in
+    medical procedure counts and curies of Mo-99 activity, not in tonnes,
+    and the supply chain is monitored by OECD/NEA High-level Group on
+    Medical Radioisotope Supply rather than commodity agencies.
+
+narrative: |
+  Technetium is a test case for the "isotope market with no element
+  market" pattern. No one trades technetium as a metal; the entire
+  industrial reality is the Tc-99m medical imaging supply chain,
+  supported by the 6-hour half-life Tc-99m daughter of 66-hour Mo-99
+  eluted from generator columns at hospital pharmacies. The supply
+  chain bottleneck is research reactor availability, not ore grade:
+  roughly 8 reactors worldwide (HFR Petten, BR2 Mol, Maria Warsaw,
+  SAFARI-1, OPAL, MPR RSG-GAS, RA-3, LVR-15) irradiate uranium targets
+  to produce Mo-99 which is then chemically separated and shipped to
+  generator manufacturers. The late-2024 HFR pipe-deformation incident
+  caused a ~50% global Mo-99 supply shortfall for three weeks,
+  illustrating how fragile the system is when multiple reactors
+  schedule overlapping maintenance windows.
+
+sources:
+  - id: wikipedia_tc99m
+    title: "Technetium-99m"
+    publisher: Wikipedia
+    url: https://en.wikipedia.org/wiki/Technetium-99m
+    retrieved: 2026-04-11
+    publication_year: 2024
