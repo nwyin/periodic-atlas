@@ -1,0 +1,630 @@
+symbol: Pb
+atomic_number: 82
+name: lead
+category: post_transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports salient statistics "in thousand metric tons, lead content,
+  unless otherwise specified." World mine production table values are in thousand
+  metric tons of lead content. In this file, quantities are converted from USGS
+  thousand metric tons to tonnes (×1,000). Prices are from S&P Global Platts
+  Metals Week and are quoted as North American average in cents per pound; stored
+  here as USD per pound (÷100). Lead is produced both as primary mine concentrate
+  (mined galena/PbS ore) and as secondary refined metal, principally from recycled
+  lead-acid batteries. The US has had no primary lead refinery since 2013; nearly
+  all domestic lead concentrate is exported.
+
+production:
+- reporting_year: 2024
+  stream: mine
+  mine:
+    value: 4300000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.107: world total (rounded) mine production 2024e = 4,300
+      thousand metric tons lead content, down slightly from 4,370 kt in 2023.
+      Individual country rows sum to 4,340 kt; stated world total is rounded to
+      4,300 kt. US domestic mine production of recoverable lead = 290 kt in 2024e,
+      up 10% from 263 kt in 2023.
+    source_id: usgs_mcs_2025_lead
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 44.19
+        quantity:
+          value: 1900000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: China 1,900 kt lead content 2024e (down from 1,960 kt in
+          2023). World's largest lead mining nation; also the dominant refined-lead
+          producer and consumer globally.
+        source_id: usgs_mcs_2025_lead
+      - country: AU
+        share_pct: 10.00
+        quantity:
+          value: 430000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Australia 430 kt lead content 2024e (unchanged from 2023).
+          Major polymetallic Pb-Zn-Ag operations (Broken Hill, Mount Isa, McArthur
+          River). JORC-compliant reserves footnote: 10 million tons.
+        source_id: usgs_mcs_2025_lead
+      - country: US
+        share_pct: 6.98
+        quantity:
+          value: 300000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: United States 300 kt lead content 2024e (mine, lead in
+          concentrates = 300 kt; recoverable lead = 290 kt). Five lead mines in
+          Missouri plus byproduct at two zinc mines in Alaska and two silver mines
+          in Idaho. Value of recoverable lead from ore = ~$670 million in 2024.
+          Nearly all concentrate exported since last primary refinery closed in 2013.
+        source_id: usgs_mcs_2025_lead
+      - country: PE
+        share_pct: 6.28
+        quantity:
+          value: 270000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Peru 270 kt lead content 2024e (down slightly from 273 kt
+          in 2023). Lead produced from polymetallic Pb-Zn-Ag deposits in the Andes.
+          Peru is also the fifth-largest zinc producer globally.
+        source_id: usgs_mcs_2025_lead
+      - country: RU
+        share_pct: 5.12
+        quantity:
+          value: 220000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Russia 220 kt lead content 2024e (estimated; up slightly
+          from 218 kt in 2023). Russian lead reserves revised in 2025 based on a
+          Government report.
+        source_id: usgs_mcs_2025_lead
+      - country: IN
+        share_pct: 5.12
+        quantity:
+          value: 220000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: India 220 kt lead content 2024e (down slightly from 226 kt
+          in 2023). Lead-zinc deposits concentrated in Rajasthan (Hindustan Zinc).
+        source_id: usgs_mcs_2025_lead
+      - country: MX
+        share_pct: 4.19
+        quantity:
+          value: 180000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Mexico 180 kt lead content 2024e (down from 183 kt in 2023).
+          Mexico was a source of 14% of US refined lead imports 2020–23 and has
+          significant polymetallic silver-lead-zinc deposits.
+        source_id: usgs_mcs_2025_lead
+      - country: TR
+        share_pct: 1.63
+        quantity:
+          value: 70000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Turkey 70 kt lead content 2024e (estimated; up from 68 kt in 2023)."
+        source_id: usgs_mcs_2025_lead
+      - country: SE
+        share_pct: 1.63
+        quantity:
+          value: 70000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Sweden 70 kt lead content 2024e (down from 72 kt in 2023)."
+        source_id: usgs_mcs_2025_lead
+      - country: BO
+        share_pct: 1.40
+        quantity:
+          value: 60000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Bolivia 60 kt lead content 2024e (unchanged from 2023)."
+        source_id: usgs_mcs_2025_lead
+      - country: IR
+        share_pct: 1.40
+        quantity:
+          value: 60000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Iran 60 kt lead content 2024e (estimated; unchanged from 2023)."
+        source_id: usgs_mcs_2025_lead
+      - country: TJ
+        share_pct: 0.93
+        quantity:
+          value: 40000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Tajikistan 40 kt lead content 2024e (estimated; up from
+          39 kt in 2023). USGS lists Tajikistan reserves as NA (not available).
+        source_id: usgs_mcs_2025_lead
+      - country: ZZ
+        share_pct: 12.09
+        quantity:
+          value: 520000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025 'Other countries' row: 520 kt lead content 2024e (up from 511 kt in 2023)."
+        source_id: usgs_mcs_2025_lead
+    completeness: complete
+  notes: |
+    World mine production 2024e = 4,300 kt lead content (rounded). Individual country
+    rows sum to 4,340 kt; stated rounded total = 4,300 kt; share_pcts computed against
+    4,300 kt denominator, summing to 100.9% — within the 95–105% completeness tolerance.
+    US net import reliance for refined metal = 28% in 2024e (down from 33% in 2023).
+    Canada (32%), Republic of Korea (16%), Mexico (14%), and Australia (11%) supplied
+    US refined lead imports 2020–23.
+
+- reporting_year: 2024
+  stream: refined
+  refined:
+    value: 13500000
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: medium
+    notes: |
+      ILZSG (as cited in USGS MCS 2025, footnote 5): global refined lead production
+      2024 forecast to increase 2.4% to 13.5 million tons. Source: International Lead
+      and Zinc Study Group press release, Lisbon, Portugal, September 30, 2024.
+      US secondary refinery production (old scrap) 2024e = 1,000 kt per USGS salient
+      statistics, essentially unchanged from 1,010 kt in 2023. US has no primary
+      lead refinery since 2013 (primary refined = zero all years 2020–2024).
+    source_id: usgs_mcs_2025_lead
+  notes: |
+    Global refined lead production (13.5 Mt) substantially exceeds world mine production
+    (4.3 Mt) because secondary smelting of recycled lead-acid batteries contributes
+    roughly 9.2 Mt globally. In the US, secondary production (1.0 Mt) equals 70% of
+    apparent consumption (1.4 Mt). Nearly all secondary lead is recovered from old
+    scrap, predominantly spent lead-acid batteries. ILZSG also forecast global refined
+    lead consumption of 13.1 Mt in 2024, implying a small global surplus of ~0.4 Mt.
+
+reserves:
+  economic_reserves:
+    value: 96000000
+    unit: tonnes
+    form: contained_element
+    approximate: false
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.107: world total reserves = 96,000 thousand metric tons lead
+      content. China and Russia reserves revised in 2025 based on Government reports.
+      Australia footnote (footnote 7): JORC-compliant reserves = 10 million tons
+      (less than the USGS 35,000 kt due to different resource-category definitions).
+      Sum of all country-level values (excluding Tajikistan NA) = 95,800 kt = 99.8%
+      of stated total.
+    source_id: usgs_mcs_2025_lead
+  resources:
+    value: 2000000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025 p.107: "Identified world lead resources total more than 2 billion
+      tons." In recent years, significant lead resources identified in association with
+      zinc and/or silver or copper deposits in Australia, China, Ireland, Mexico, Peru,
+      Portugal, Russia, and the United States (Alaska). Interpreted as metric tons
+      consistent with USGS metric-unit reporting convention.
+    source_id: usgs_mcs_2025_lead
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 36.46
+        quantity:
+          value: 35000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Australia 35,000 kt lead content — world's largest national
+          lead reserves. JORC-compliant subset = 10 million tons (footnote 7).
+          Major Pb-Zn-Ag deposits: Broken Hill (NSW), Mount Isa (QLD), McArthur River
+          (NT), Century (QLD).
+        source_id: usgs_mcs_2025_lead
+      - country: CN
+        share_pct: 22.92
+        quantity:
+          value: 22000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: China 22,000 kt lead content. Revised in 2025 based on a
+          Government report. China holds the second-largest reserves and is the
+          dominant global mine producer and refiner.
+        source_id: usgs_mcs_2025_lead
+      - country: RU
+        share_pct: 9.27
+        quantity:
+          value: 8900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: Russia 8,900 kt lead content. Revised in 2025 based on a
+          Government report. Russia holds the third-largest quantified lead reserves.
+        source_id: usgs_mcs_2025_lead
+      - country: MX
+        share_pct: 5.83
+        quantity:
+          value: 5600000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Mexico 5,600 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: PE
+        share_pct: 5.21
+        quantity:
+          value: 5000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Peru 5,000 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: ZZ
+        share_pct: 6.15
+        quantity:
+          value: 5900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025 'Other countries' row: 5,900 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: US
+        share_pct: 4.79
+        quantity:
+          value: 4600000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: |
+          USGS MCS 2025: United States 4,600 kt lead content reserves. Principal
+          resources in the Mississippi Valley-type (MVT) deposits of Missouri and
+          the Red Dog district in Alaska (with zinc).
+        source_id: usgs_mcs_2025_lead
+      - country: IR
+        share_pct: 2.08
+        quantity:
+          value: 2000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Iran 2,000 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: IN
+        share_pct: 1.98
+        quantity:
+          value: 1900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: India 1,900 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: SE
+        share_pct: 1.77
+        quantity:
+          value: 1700000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Sweden 1,700 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: BO
+        share_pct: 1.67
+        quantity:
+          value: 1600000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Bolivia 1,600 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+      - country: TR
+        share_pct: 1.67
+        quantity:
+          value: 1600000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_lead
+        notes: "USGS MCS 2025: Turkey 1,600 kt lead content reserves."
+        source_id: usgs_mcs_2025_lead
+    completeness: complete
+  notes: |
+    Sum of quantified country reserves (all named rows, including Other countries,
+    excluding Tajikistan which = NA) = 95,800 kt vs. stated world total 96,000 kt
+    (99.8%). China and Russia reserves revised in 2025 based on Government reports.
+    Australia's JORC-compliant reserves (10 Mt) are lower than USGS total (35,000 kt)
+    reflecting different resource-category definitions. Share_pcts computed as
+    country_kt / 96,000 kt stated world total.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: galena_ore
+    notes: |
+      Lead is extracted primarily from galena (PbS, lead sulfide), the principal lead
+      ore mineral. Galena occurs in three main deposit types: Mississippi Valley-type
+      (MVT) carbonate-hosted deposits (Missouri, USA); sediment-hosted massive sulfide
+      (SHMS) deposits (McArthur River, Australia); and volcanogenic massive sulfide /
+      polymetallic skarn deposits (Broken Hill, Mount Isa, Red Dog). Ore grades at
+      producing mines typically range from 1% to 12% Pb; lead is almost always
+      co-mined with zinc, silver, or copper. US lead is produced from five dedicated
+      lead mines in Missouri and as byproduct at two zinc mines in Alaska and two
+      silver mines in Idaho.
+    source_id: usgs_mcs_2025_lead
+  - substrate: recycled_lead_acid_batteries
+    notes: |
+      Secondary lead — produced by smelting spent lead-acid batteries (both SLI and
+      industrial types) — is the dominant supply stream in mature markets. In the US,
+      ~1.0 Mt secondary lead was produced in 2024 from old scrap, principally used
+      lead-acid batteries, representing 70% of apparent domestic consumption. The
+      closed-loop battery → secondary smelter → new battery cycle achieves >99%
+      collection rates for SLI batteries in North America and Europe. Globally,
+      secondary production (~9.2 Mt implied) exceeds primary mine output (4.3 Mt)
+      by a factor of ~2.1×.
+    source_id: usgs_mcs_2025_lead
+
+substitutes:
+  - application: cable_covering
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes: "Substitution by plastics has reduced the use of
+      lead in cable covering." Polyvinyl chloride (PVC) and polyethylene have largely
+      replaced lead sheathing in telecommunications and power cables; the transition
+      is substantially complete in most markets.
+    source_id: usgs_mcs_2025_lead
+  - application: food_cans
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes: "Substitution by plastics has reduced the use of
+      lead in cans." Lead solder in food-can seams has been eliminated in most
+      countries due to food safety regulations; tin-free and aluminum cans replaced
+      lead-soldered cans.
+    source_id: usgs_mcs_2025_lead
+  - application: potable_water_solder
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes: "Tin has replaced lead in solder for potable water
+      systems." Lead-free tin-silver and tin-copper solders mandated in plumbing for
+      drinking water in the US (Safe Drinking Water Act amendments, 1986, 2011) and
+      EU. The substitution is regulatory-enforced and essentially complete.
+    source_id: usgs_mcs_2025_lead
+  - application: electronics_soldering
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes: "The electronics industry has moved toward lead-free
+      solders." RoHS Directive (EU, 2003, revised 2011) and similar regulations globally
+      mandated transition to tin-silver-copper (SAC) alloy solders in consumer
+      electronics. The transition is largely complete for most product categories.
+    source_id: usgs_mcs_2025_lead
+  - application: crt_shielding
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes: "flat-panel displays that do not require lead
+      shielding." CRT televisions and monitors used lead in glass for X-ray shielding;
+      LCD/OLED flat panels eliminated this application. CRT production has effectively
+      ceased in consumer markets.
+    source_id: usgs_mcs_2025_lead
+  - application: wheel_weights
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes: "Steel and zinc are common substitutes for lead in
+      wheel weights." Regulatory bans in several US states and the EU have driven
+      widespread adoption of steel and zinc wheel weights, reducing a once-significant
+      lead end use.
+    source_id: usgs_mcs_2025_lead
+
+end_uses:
+  uses:
+    - application: lead_acid_batteries
+      share_pct: 86
+      confidence: high
+      notes: |
+        USGS MCS 2025: "Lead-acid battery industry accounted for an estimated 86%
+        of reported U.S. lead consumption during 2024." End uses within this category:
+        starting-lighting-ignition (SLI) batteries for automobiles; industrial
+        batteries for standby power (computer and telecommunications network backup);
+        motive power batteries for forklifts, golf carts, etc. In the first 9 months
+        of 2024, 20 million spent SLI batteries were exported (up 11% from same
+        period 2023), reflecting strong US recycling flows to offshore smelters.
+      source_id: usgs_mcs_2025_lead
+    - application: ammunition_shot_and_weights
+      share_pct: 6
+      confidence: low
+      notes: |
+        Ammunition (bullets, shot, primers) and weights are traditional lead end uses.
+        Historical USGS data places ammunition at ~4–7% of US consumption. MCS 2025
+        does not provide an explicit percentage; share inferred from historical USGS
+        lead end-use tables.
+      source_id: usgs_mcs_2025_lead
+    - application: other_industrial_uses
+      share_pct: 8
+      confidence: low
+      notes: |
+        Residual uses include sheet lead and building products, lead oxides for
+        glass/ceramics/pigments, cable sheathing in specialty applications, radiation
+        shielding, and miscellaneous castings. Historical USGS data places this
+        combined category at ~8–10% of US consumption. MCS 2025 does not provide
+        explicit percentages for these sub-uses.
+      source_id: usgs_mcs_2025_lead
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Lead is not on the US 2022 Critical Minerals List or the EU Critical Raw Materials
+    list. It is an abundant commodity with well-diversified global mine production
+    (China 44%, Australia 10%, US 7%, Peru 6%, Russia 5%, India 5%), large identified
+    reserves (96,000 kt), and extensive secondary production (recycling) that reduces
+    primary supply dependence. The principal supply-chain concern for lead is not
+    scarcity but ongoing regulatory pressure to eliminate lead from traditional
+    applications due to toxicity (neurotoxin), which continues to erode non-battery
+    end uses.
+
+prices:
+  - year: 2024
+    value: 1.10
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: North America
+    notes: |
+      USGS MCS 2025 salient statistics: North American average price 2024e =
+      110 cents per pound ($1.10/lb). Source: S&P Global Platts Metals Week (footnote 3).
+      Events section notes the first 9-month 2024 average = 110 c/lb, 4% below
+      the 2023 full-year average of 114.1 c/lb, driven by higher LME warehouse
+      stocks (199,000 t at end-September 2024, up 49% from yearend 2023).
+    source_id: usgs_mcs_2025_lead
+  - year: 2023
+    value: 1.141
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: North America
+    notes: "USGS MCS 2025 salient statistics: North American average 2023 = 114.1 cents per pound ($1.141/lb)."
+    source_id: usgs_mcs_2025_lead
+  - year: 2022
+    value: 1.165
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: North America
+    notes: "USGS MCS 2025 salient statistics: North American average 2022 = 116.5 cents per pound ($1.165/lb)."
+    source_id: usgs_mcs_2025_lead
+  - year: 2021
+    value: 1.130
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: North America
+    notes: "USGS MCS 2025 salient statistics: North American average 2021 = 113.0 cents per pound ($1.130/lb)."
+    source_id: usgs_mcs_2025_lead
+  - year: 2020
+    value: 0.913
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: North America
+    notes: "USGS MCS 2025 salient statistics: North American average 2020 = 91.3 cents per pound ($0.913/lb)."
+    source_id: usgs_mcs_2025_lead
+
+geopolitical_events:
+  - date: 2024-01
+    event: "US domestic lead mine production of recoverable lead increased 10% from 2023 to 290 kt in 2024e"
+    impact: |
+      US mine production recovery increased net mine output by ~27 kt, modestly
+      reducing import dependence. Nonetheless, net import reliance for refined metal
+      remained 28% in 2024e. All US lead concentrate continues to be exported for
+      overseas refining; the US has had no primary lead smelter since 2013.
+    source_id: usgs_mcs_2025_lead
+  - date: 2024-09
+    event: "Global LME lead warehouse stocks reached 199,000 tons at end of September 2024, up 49% from yearend 2023"
+    impact: |
+      Elevated LME warehouse inventories dampened North American lead prices; the
+      2024 average price of 110 c/lb was 4% below the 2023 annual average. Higher
+      global stocks reflect ILZSG's forecast of global refined production (13.5 Mt)
+      exceeding consumption (13.1 Mt) by ~400 kt in 2024.
+    source_id: usgs_mcs_2025_lead
+  - date: 2024-09
+    event: "ILZSG forecasts global refined lead production +2.4% to 13.5 Mt and consumption +0.2% to 13.1 Mt in 2024"
+    impact: |
+      The global lead market moved into slight surplus in 2024. Increased refined
+      production outpaced modest consumption growth, contributing to higher LME
+      inventory levels. Source: International Lead and Zinc Study Group press release,
+      Lisbon, Portugal, September 30, 2024 (cited as footnote 5 in USGS MCS 2025).
+    source_id: usgs_mcs_2025_lead
+  - date: 2024-01
+    event: "20 million spent SLI lead-acid batteries exported in first 9 months of 2024, up 11% from same period in 2023"
+    impact: |
+      Growing US exports of spent batteries reflect the shift in secondary lead
+      processing to offshore smelters (Mexico, South Korea, Canada). Battery export
+      trade flows are a key indicator of secondary supply dynamics; US secondary
+      production (1.0 Mt) remained roughly stable even as battery exports grew.
+    source_id: usgs_mcs_2025_lead
+  - date: 2025-01
+    event: "China and Russia lead reserves revised upward in USGS MCS 2025 based on Government reports"
+    impact: |
+      China reserves revised to 22,000 kt and Russia to 8,900 kt. China's revised
+      reserves reinforce its position as the world's second-largest reserve holder
+      (after Australia's 35,000 kt). These revisions do not materially change the
+      near-term supply outlook given both nations' existing production levels, but
+      extend the long-term resource base.
+    source_id: usgs_mcs_2025_lead
+
+narrative: |
+  Lead is a high-volume industrial metal whose commercial reality is dominated by
+  the lead-acid battery supply chain. The lead-acid battery industry absorbed an
+  estimated 86% of US lead consumption in 2024, and the metal's economics are
+  deeply intertwined with automotive SLI batteries, standby power systems, and
+  industrial motive power. The most distinctive feature of the lead market is its
+  closed-loop recycling infrastructure: in the United States, secondary production
+  (~1.0 Mt in 2024) accounts for 70% of apparent consumption, and globally,
+  secondary smelting of recycled batteries contributes an estimated 9.2 Mt of the
+  ~13.5 Mt total refined supply — more than double the 4.3 Mt contributed by
+  primary mining. This gives lead among the highest secondary-production ratios
+  of any major industrial metal.
+
+  China dominates primary mine production at 44% of the 4.3 Mt global 2024 total,
+  followed by Australia (10%), the United States (7%), Peru (6%), Russia (5%), and
+  India (5%). Australia holds the world's largest identified lead reserves at 35 Mt
+  (lead content), with giant Pb-Zn-Ag deposits at Broken Hill, Mount Isa, and
+  McArthur River. The United States has not had an operating primary lead refinery
+  since 2013; all domestic lead concentrate is exported for overseas smelting, and
+  refined metal is reimported mainly from Canada (32%), South Korea (16%), Mexico
+  (14%), and Australia (11%). US net import reliance for refined metal was 28% in
+  2024e, down from a peak of 38% in 2022. The global refined market moved into
+  modest surplus in 2024 per ILZSG forecasts, with LME lead warehouse stocks rising
+  49% over the year, pressuring North American prices to 110 c/lb — a 4% decline
+  from 2023.
+
+  Lead's long-run demand trajectory faces secular headwinds from environmental and
+  health regulation. Lead has been progressively eliminated from cable sheathing
+  (replaced by PVC), food-can solder (banned by food safety rules), potable water
+  plumbing (replaced by tin alloys), electronics (RoHS-driven shift to SAC alloys),
+  CRT displays (rendered obsolete by flat panels), and wheel weights (steel and zinc
+  alternatives mandated in many jurisdictions). These substitutions continue to
+  erode non-battery uses, concentrating lead demand ever more tightly in the battery
+  sector. The trajectory of battery technology — whether competing chemistries such
+  as lithium-ion can displace lead-acid in automotive and stationary applications —
+  represents the key demand uncertainty for the lead market over the coming decades.
+
+sources:
+  - id: usgs_mcs_2025_lead
+    title: Mineral Commodity Summaries 2025 — Lead
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lead.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
