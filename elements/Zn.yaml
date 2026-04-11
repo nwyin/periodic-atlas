@@ -1,0 +1,561 @@
+symbol: Zn
+atomic_number: 30
+name: zinc
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports zinc production on a zinc-content basis (metal equivalent),
+  not gross ore or concentrate tonnage. The salient statistics table header reads:
+  "Data in thousand metric tons, zinc content, unless otherwise specified."
+  The primary commercial forms are Special High Grade (SHG) zinc metal (≥99.995% Zn)
+  traded on the LME, and zinc concentrate (zinc sulfide/sphalerite, typically 50–55% Zn).
+  Prices in the USGS salient statistics table are in U.S. cents per pound; price entries
+  below convert to USD per pound. LME prices are for SHG zinc (Grade A equivalent).
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 12000000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total mine production 2024e: 12,000,000 tonnes (zinc content
+      of concentrates and direct shipping ores, rounded). 2023 world total was 12,100,000 tonnes.
+    source_id: usgs_mcs_2025_zinc
+  refined:
+    value: 13700000
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: medium
+    notes: |
+      ILZSG September 2024 forecast: global refined zinc production in 2024 was estimated
+      to decrease by 1.8% to 13.7 million tons owing to limited availability of concentrates.
+      Global metal consumption forecast to increase by 1.8% to 13.8 million tons, resulting
+      in a production-to-consumption deficit of approximately 164,000 tons. Cited in USGS
+      MCS 2025 chapter text (footnote 8).
+    source_id: ilzsg_2024_forecast
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 33.33
+        quantity:
+          value: 4000000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "China 2024e: 4,000,000 tonnes zinc content. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: PE
+        share_pct: 10.83
+        quantity:
+          value: 1300000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Peru 2024e: 1,300,000 tonnes. Down from 1,470,000 tonnes in 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: AU
+        share_pct: 9.17
+        quantity:
+          value: 1100000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: |
+          Australia 2024e: 1,100,000 tonnes. Up slightly from 1,090,000 in 2023. USGS footnote:
+          JORC-compliant or equivalent reserves were 21 million tons.
+        source_id: usgs_mcs_2025_zinc
+      - country: IN
+        share_pct: 7.17
+        quantity:
+          value: 860000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_zinc
+        notes: "India 2024e: 860,000 tonnes (estimated). Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: US
+        share_pct: 6.25
+        quantity:
+          value: 750000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_zinc
+        notes: |
+          US 2024e: 750,000 tonnes. Mined in five states at six operations by five companies.
+          Slight decrease from 767,000 tonnes in 2023. Middle Tennessee zinc mines suspended
+          November 2023; no production there in 2024. Drilling conducted to define additional
+          zinc, germanium, and gallium resources. Reserves revised 2024.
+        source_id: usgs_mcs_2025_zinc
+      - country: MX
+        share_pct: 5.83
+        quantity:
+          value: 700000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Mexico 2024e: 700,000 tonnes. Up significantly from 584,000 tonnes in 2023."
+        source_id: usgs_mcs_2025_zinc
+      - country: BO
+        share_pct: 4.25
+        quantity:
+          value: 510000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Bolivia 2024e: 510,000 tonnes. Up from 492,000 in 2023. Reserves: NA (not available)."
+        source_id: usgs_mcs_2025_zinc
+      - country: KZ
+        share_pct: 3.08
+        quantity:
+          value: 370000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Kazakhstan 2024e: 370,000 tonnes. Up from 340,000 in 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: RU
+        share_pct: 2.58
+        quantity:
+          value: 310000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_zinc
+        notes: "Russia 2024e: 310,000 tonnes (estimated). Up from 300,000 in 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: SE
+        share_pct: 2.00
+        quantity:
+          value: 240000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Sweden 2024e: 240,000 tonnes. Up from 218,000 in 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: ZA
+        share_pct: 1.00
+        quantity:
+          value: 120000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "South Africa 2024e: 120,000 tonnes. Down sharply from 198,000 in 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: ZZ
+        share_pct: 14.17
+        quantity:
+          value: 1700000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "USGS 'Other countries' row 2024e: 1,700,000 tonnes."
+        source_id: usgs_mcs_2025_zinc
+    completeness: complete
+  notes: |
+    World mine production decreased slightly from 12,100,000 tonnes (2023) to 12,000,000 tonnes
+    (2024e, rounded). China dominates with ~33% of world output. Peru declined notably (−12%)
+    while Mexico gained significantly (+20%). Named country entries sum to 11,960,000 tonnes;
+    difference from 12,000,000 world total is rounding.
+
+reserves:
+  economic_reserves:
+    value: 230000000
+    unit: tonnes
+    form: contained_element
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total reserves: 230,000,000 tonnes zinc content (rounded).
+      Reserves for China, India, Kazakhstan, Peru, Russia, South Africa, Sweden, and the
+      United States were revised based on company and Government reports.
+    source_id: usgs_mcs_2025_zinc
+  resources:
+    value: 1900000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: "USGS MCS 2025: 'Identified zinc resources of the world are about 1.9 billion tons.'"
+    source_id: usgs_mcs_2025_zinc
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 27.83
+        quantity:
+          value: 64000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: |
+          Australia: 64,000,000 tonnes. USGS footnote: JORC-compliant or equivalent reserves
+          were 21 million tons (highlighting that USGS-format reserves include inferred
+          resources beyond strict JORC economic reserves).
+        source_id: usgs_mcs_2025_zinc
+      - country: CN
+        share_pct: 20.00
+        quantity:
+          value: 46000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "China: 46,000,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: RU
+        share_pct: 12.61
+        quantity:
+          value: 29000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Russia: 29,000,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: PE
+        share_pct: 8.70
+        quantity:
+          value: 20000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Peru: 20,000,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: ZZ
+        share_pct: 10.87
+        quantity:
+          value: 25000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "USGS 'Other countries' reserves row: 25,000,000 tonnes."
+        source_id: usgs_mcs_2025_zinc
+      - country: MX
+        share_pct: 6.09
+        quantity:
+          value: 14000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        source_id: usgs_mcs_2025_zinc
+      - country: IN
+        share_pct: 4.26
+        quantity:
+          value: 9800000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "India: 9,800,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: US
+        share_pct: 4.00
+        quantity:
+          value: 9200000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "US: 9,200,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: KZ
+        share_pct: 3.30
+        quantity:
+          value: 7600000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Kazakhstan: 7,600,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: ZA
+        share_pct: 2.57
+        quantity:
+          value: 5900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "South Africa: 5,900,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+      - country: SE
+        share_pct: 1.70
+        quantity:
+          value: 3900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_zinc
+        notes: "Sweden: 3,900,000 tonnes. Revised 2024."
+        source_id: usgs_mcs_2025_zinc
+    completeness: partial
+  notes: |
+    Bolivia has NA (not available) reserves per USGS MCS 2025, so the list is partial.
+    Named-country entries sum to 234,400,000 tonnes vs. the world total of 230,000,000 tonnes
+    (rounded); ~102% of world total is within schema tolerance and consistent with USGS
+    rounding conventions.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: zinc_sulfide_ore
+    notes: |
+      Sphalerite (ZnS, iron-bearing marmatite) is the dominant zinc ore mineral, typically
+      grading 3–15% Zn. Primary mining districts include Red Dog (Alaska, US), Mount Isa and
+      Century (Australia), Antamina (Peru), Peñasquito (Mexico), and Yunnan/Hunan/Guangxi
+      provinces (China). Mined ore is concentrated to ~50–55% Zn for smelter feed.
+    source_id: usgs_mcs_2025_zinc
+  - substrate: electric_arc_furnace_dust
+    notes: |
+      USGS MCS 2025 recycling section: "crude zinc oxide recovered from electric arc furnace
+      dust" is a key secondary feedstock. EAF dust (generated in electric steelmaking) typically
+      contains 15–30% Zn and is processed by Waelz kiln or equivalent to produce crude zinc
+      oxide that feeds into primary or secondary zinc smelters.
+    source_id: usgs_mcs_2025_zinc
+  - substrate: galvanizing_residues
+    notes: |
+      USGS MCS 2025 recycling section: "galvanizing residues" are a secondary zinc feedstock
+      recovered at both primary and secondary US smelters. Includes zinc dross and zinc ash
+      from hot-dip galvanizing lines.
+    source_id: usgs_mcs_2025_zinc
+
+substitutes:
+  - application: galvanized_steel
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Aluminum and plastics substitute for galvanized sheet in automobiles."
+      Aluminum-coated steel (Galvalume/Zincalume) and high-strength low-alloy steels with
+      organic coatings are the main competitive alternatives in automotive applications.
+      Galvanized steel remains preferred for most structural and infrastructure applications.
+    source_id: usgs_mcs_2025_zinc
+  - application: protective_coatings
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Aluminum alloys, cadmium, paint, and plastic coatings replace zinc
+      coatings in other applications." Organic paint systems and thermal spray aluminum are
+      used where hot-dip galvanizing is impractical; cadmium has been largely phased out for
+      environmental reasons.
+    source_id: usgs_mcs_2025_zinc
+  - application: zinc_base_alloys
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Aluminum- and magnesium-base alloys are major substitutes for zinc-base
+      diecasting alloys." Aluminum die casting is the most common competitive form for structural
+      components; magnesium alloys serve weight-sensitive applications.
+    source_id: usgs_mcs_2025_zinc
+  - application: chemical_electronic_pigment
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Many elements are substitutes for zinc in chemical, electronic, and
+      pigment uses." Examples include titanium dioxide in white pigments and alternative
+      semiconductor materials in electronics.
+    source_id: usgs_mcs_2025_zinc
+
+end_uses:
+  uses:
+    - application: galvanized_steel
+      share_pct: 50
+      confidence: low
+      notes: |
+        USGS MCS 2025: "most was used to produce galvanized steel." No explicit percentage given
+        in the chapter. Estimated ~50% based on typical US and global zinc consumption patterns.
+        Galvanizing—applying a zinc coating to steel for corrosion protection—is the largest
+        single end use of zinc worldwide.
+      source_id: usgs_mcs_2025_zinc
+    - application: brass_and_bronze
+      share_pct: 17
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists brass and bronze as the second-largest US end use after galvanized
+        steel. Estimated ~17%. Brass (Cu-Zn alloy) is used extensively in plumbing fixtures,
+        electrical connectors, and musical instruments.
+      source_id: usgs_mcs_2025_zinc
+    - application: zinc_base_alloys
+      share_pct: 16
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists zinc-base alloys as the third-largest US end use. Estimated ~16%.
+        Primarily high-pressure die casting alloys (Zamak family) for automotive, electronics,
+        and consumer hardware components.
+      source_id: usgs_mcs_2025_zinc
+    - application: other_uses
+      share_pct: 17
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists "other uses" as the remaining category. Estimated ~17% residual.
+        Includes zinc oxide (rubber vulcanization, ceramics, sunscreen), zinc chemicals,
+        architectural rolled zinc sheet and strip, and miscellaneous industrial applications.
+      source_id: usgs_mcs_2025_zinc
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Zinc is not on the US 2022 Critical Minerals List, the EU CRM 2023 list, or the EU
+    Strategic Raw Materials list (CRMA 2024). It is a tier-4 high-volume workhorse metal with
+    geographically diversified production (China 33%, Peru 11%, Australia 9%, India 7%, US 6%,
+    Mexico 6%). US net import reliance on refined zinc was 73% in 2024e per USGS salient
+    statistics, but abundant global reserves (230 million tonnes) and multiple large producing
+    nations preclude critical designation.
+
+prices:
+  - year: 2024
+    value: 1.44
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: North American SHG zinc (S&P Global Platts Metals Week,
+      LME cash price plus premium) 2024e: 144 cents per pound = $1.44/lb. Annual LME cash price
+      decreased approximately 5% from 2023 level per chapter text. North American premium
+      continued to decrease in 2024 but remained high compared with historical levels.
+    source_id: usgs_mcs_2025_zinc
+  - year: 2024
+    value: 1.26
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME cash (SHG zinc) 2024e: 126 cents per pound = $1.26/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2023
+    value: 1.513
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "North American SHG zinc 2023: 151.3 cents per pound = $1.513/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2023
+    value: 1.201
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME cash 2023: 120.1 cents per pound = $1.201/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2022
+    value: 1.902
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "North American SHG zinc 2022: 190.2 cents per pound = $1.902/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2022
+    value: 1.581
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME cash 2022: 158.1 cents per pound = $1.581/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2021
+    value: 1.458
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "North American SHG zinc 2021: 145.8 cents per pound = $1.458/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2021
+    value: 1.363
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME cash 2021: 136.3 cents per pound = $1.363/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2020
+    value: 1.108
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "North American SHG zinc 2020: 110.8 cents per pound = $1.108/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+  - year: 2020
+    value: 1.027
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME cash 2020: 102.7 cents per pound = $1.027/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_zinc
+
+geopolitical_events:
+  - date: "2023-11"
+    event: "Middle Tennessee zinc mines (US) suspend operations"
+    impact: |
+      Operations suspended November 2023. No production from these mines in 2024. During the
+      closure, drilling work was conducted to define additional zinc, germanium, and gallium
+      resources, indicating potential future value beyond zinc alone. Contributed to the slight
+      decline in US mine production from 767,000 to 750,000 tonnes.
+    source_id: usgs_mcs_2025_zinc
+  - date: "2024-09"
+    event: "US Department of Commerce initiates antidumping and countervailing duty investigations on corrosion-resistant (galvanized) steel from 10 trading partners"
+    impact: |
+      Investigations cover galvanized steel imported from multiple countries. Creates policy
+      uncertainty for US zinc-consuming galvanized steel manufacturers and may affect domestic
+      demand for zinc if investigations result in tariffs that curtail galvanized steel imports
+      or stimulate domestic production.
+    source_id: usgs_mcs_2025_zinc
+  - date: "2024-10"
+    event: "US International Trade Commission makes preliminary injury determination on galvanized steel imports"
+    impact: |
+      ITC preliminarily determined that US industry was materially injured by corrosion-resistant
+      steel imports. Final determinations expected in 2025. Potential tariff imposition could
+      shift competitive dynamics between domestic and imported galvanized steel.
+    source_id: usgs_mcs_2025_zinc
+  - date: "2024-09"
+    event: "ILZSG Lisbon session projects 2024 global zinc refined production-to-consumption deficit of 164,000 tonnes"
+    impact: |
+      International Lead and Zinc Study Group (September 30, 2024) forecasts global refined
+      zinc production declining 1.8% to 13.7 million tonnes due to limited concentrate
+      availability, while consumption rises 1.8% to 13.8 million tonnes. The projected deficit
+      contrasts with the modest LME price decline in 2024, suggesting inventory drawdown
+      rather than immediate price relief.
+    source_id: ilzsg_2024_forecast
+
+narrative: |
+  Zinc is the world's fourth most consumed metal, with approximately 12 million tonnes of mine
+  production per year (zinc content), concentrated primarily in China (33%), Peru (11%), and
+  Australia (9%). The metal's commercial identity is inseparable from its galvanizing function:
+  roughly half of all zinc produced ends up as a sacrificial corrosion-protection coating on
+  steel, exploiting zinc's electrochemical preference to corrode before the underlying iron.
+  Galvanized steel is a foundational input for construction, automotive, and infrastructure.
+
+  Pricing in 2024 reflected tightening concentrate supply: the LME cash average for Special
+  High Grade zinc was approximately $1.26/lb (~$2,778/tonne), down 5% from 2023, yet the
+  International Lead and Zinc Study Group projected a 164,000-tonne production-consumption
+  deficit as smelters faced limited concentrate availability. The North American SHG premium
+  over LME narrowed in 2024 but remained elevated. US apparent consumption of refined zinc
+  fell 11% to 820,000 tonnes in 2024e, while net import reliance on refined metal reached 73%.
+  Canada supplied 59% of US refined zinc imports (2020–23 average), with Mexico and Korea also
+  significant. US concentrate exports (primarily to Asia) made the US a net exporter of zinc
+  in ore form despite relying heavily on imports for refined metal.
+
+  World reserves stand at 230 million tonnes — approximately 19 years of current production —
+  and identified resources total approximately 1.9 billion tonnes, with additional undiscovered
+  resources in polymetallic volcanic massive sulfide (VMS) and sediment-hosted (SEDEX) systems.
+  Australia alone holds 28% of world reserves, reflecting the scale of the McArthur River and
+  Mount Isa districts. Zinc is not on the US 2022 Critical Minerals List or EU CRMA lists,
+  reflecting its broad geographic distribution, large resource base, and the absence of any
+  single controlling supplier.
+
+sources:
+  - id: usgs_mcs_2025_zinc
+    title: Mineral Commodity Summaries 2025 — Zinc
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-zinc.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: ilzsg_2024_forecast
+    title: "ILZSG Session Forecasts — September 2024 (Lisbon press release)"
+    publisher: International Lead and Zinc Study Group
+    url: https://ilzsg.org
+    retrieved: 2026-04-11
+    publication_year: 2024
+    source_tier: secondary
