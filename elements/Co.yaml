@@ -1,0 +1,107 @@
+symbol: Co
+atomic_number: 27
+name: cobalt
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+form_notes: Traded as concentrate, hydroxide, sulfate, and refined metal. Production figures report metal equivalent.
+
+production:
+  year: 2024
+  mine:
+    value: 240000
+    unit: tonnes_per_year
+    approximate: true
+    source_id: usgs_mcs_2025_cobalt
+  refined:
+    value: 240000
+    unit: tonnes_per_year
+    approximate: true
+    notes: Refined output roughly matches mine output at the global level; inventories are the wedge.
+    source_id: usgs_mcs_2025_cobalt
+  production_form: metal_equivalent
+  mining_by_country:
+    - {country: CD, share_pct: 76, notes: "DRC; includes both industrial and artisanal"}
+    - {country: ID, share_pct: 10, notes: "Rapid growth as HPAL nickel byproduct"}
+    - {country: RU, share_pct: 4}
+    - {country: AU, share_pct: 3}
+    - {country: PH, share_pct: 2}
+    - {country: CA, share_pct: 2}
+  refining_by_country:
+    - {country: CN, share_pct: 80, notes: "Processes DRC-sourced hydroxide; dominates cathode-precursor chemistry"}
+    - {country: FI, share_pct: 6}
+    - {country: CA, share_pct: 3}
+    - {country: JP, share_pct: 3}
+
+reserves:
+  economic_reserves:
+    value: 11000000
+    unit: tonnes
+    source_id: usgs_mcs_2025_cobalt
+  reserves_by_country:
+    - {country: CD, share_pct: 55}
+    - {country: AU, share_pct: 16}
+    - {country: ID, share_pct: 5}
+    - {country: CU, share_pct: 5}
+
+ownership_concentration:
+  notes: "Chinese companies own or finance 15 of 19 cobalt-producing mines in the DRC. No single company dominates refining, but the sector is highly concentrated within China."
+
+byproduct_of: [Cu, Ni]
+substitutes_available: partial
+substitutes_notes: LFP battery chemistry eliminates cobalt at the cost of energy density. Nickel-rich NMC cathodes (NMC-811, NMC-955) reduce but do not eliminate cobalt content.
+
+end_uses:
+  - {application: batteries_nmc_cathodes, share_pct: 40, notes: "EV batteries dominate; consumer electronics the rest"}
+  - {application: superalloys, share_pct: 17, notes: "Jet engine turbine blades, gas turbines"}
+  - {application: hard_metals_and_tools, share_pct: 9}
+  - {application: catalysts, share_pct: 8, notes: "Desulfurization, Fischer-Tropsch"}
+  - {application: magnets, share_pct: 7, notes: "SmCo and Alnico magnets"}
+  - {application: ceramics_and_pigments, share_pct: 6}
+  - {application: other, share_pct: 13}
+
+criticality:
+  us_critical_2025: true
+  eu_crm_2024: true
+  eu_strategic_2024: true
+  notes: Listed on every major government critical materials list since 2018.
+
+prices:
+  - {year: 2018, value: 95, unit: usd_per_kg, source_id: usgs_mcs_2025_cobalt, notes: "Peak of the 2017-18 EV demand speculation cycle"}
+  - {year: 2022, value: 82, unit: usd_per_kg, source_id: usgs_mcs_2025_cobalt}
+  - {year: 2024, value: 24, unit: usd_per_kg, source_id: usgs_mcs_2025_cobalt, notes: "Collapse driven by LFP adoption and Indonesian HPAL supply"}
+
+geopolitical_events:
+  - date: 2025-02-22
+    event: "DRC imposes four-month cobalt export ban to stabilize prices"
+    impact: "Cobalt prices bounced ~20% on announcement; underlying oversupply unresolved"
+    source_id: drc_export_ban_2025
+  - date: 2024-01-01
+    event: "Indonesia's HPAL nickel plants begin producing cobalt as byproduct at scale"
+    impact: "Structural shift in supply geography away from DRC single-source risk"
+    source_id: iea_cmo_2025
+
+narrative: |
+  Cobalt is the canonical example of a material where the mining geography
+  (DRC dominance) is decoupled from the refining geography (Chinese
+  dominance). Chinese firms control both the DRC mine ownership and the
+  processing stage, so even the February 2025 DRC export ban did not shift
+  the chokepoint materially. LFP battery chemistry is the most important
+  demand-side dynamic: every percentage point of LFP market share erodes
+  cobalt's structural demand floor.
+
+sources:
+  - id: usgs_mcs_2025_cobalt
+    title: Mineral Commodity Summaries 2025 — Cobalt
+    publisher: USGS
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cobalt.pdf
+    retrieved: 2026-04-11
+  - id: iea_cmo_2025
+    title: Global Critical Minerals Outlook 2025
+    publisher: IEA
+    url: https://www.iea.org/reports/global-critical-minerals-outlook-2025
+    retrieved: 2026-04-11
+  - id: drc_export_ban_2025
+    title: DRC Cobalt Export Ban Announcement
+    publisher: Reuters
+    retrieved: 2026-04-11

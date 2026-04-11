@@ -1,0 +1,95 @@
+symbol: He
+atomic_number: 2
+name: helium
+category: noble_gas
+industrial_tier: 3
+commercial_production: true
+form_notes: Traded as compressed or liquid He-4. Tracked in gaseous volume at standard conditions, not mass.
+
+production:
+  year: 2025
+  mine:
+    value: 190
+    unit: million_m3_per_year
+    approximate: true
+    notes: Extracted from natural gas wells with helium concentrations above ~0.3%.
+    source_id: usgs_mcs_2025_helium
+  production_form: gas_crude_helium
+  mining_by_country:
+    - {country: US, share_pct: 43, notes: "Federal Helium Reserve divestiture completed 2024; private producers now dominant"}
+    - {country: QA, share_pct: 33, notes: "Qatargas RasGas helium plants; co-produced with LNG"}
+    - {country: DZ, share_pct: 8}
+    - {country: RU, share_pct: 7, notes: "Amur GPP ramp-up ongoing"}
+    - {country: AU, share_pct: 3}
+    - {country: PL, share_pct: 2}
+
+reserves:
+  economic_reserves:
+    value: 520
+    unit: million_m3_per_year
+    notes: USGS reports reserves in volumetric flow-equivalent terms; this is a USGS convention quirk, not our schema.
+    source_id: usgs_mcs_2025_helium
+
+byproduct_of: [natural_gas]
+substitutes_available: none
+substitutes_notes: "No substitute below -429 F (4 K). Hydrogen can replace helium in some lifting and welding applications but not in cryogenics."
+
+end_uses:
+  - {application: semiconductors_fabrication, share_pct: 22, notes: "Wafer cooling, chamber purge, EUV lithography. Surpassed MRI as largest use in 2024."}
+  - {application: mri_cryogenics, share_pct: 21, notes: "Cooling superconducting magnets in MRI scanners"}
+  - {application: welding_shield_gas, share_pct: 14}
+  - {application: fiber_optics_manufacturing, share_pct: 9, notes: "Draw-tower atmosphere"}
+  - {application: leak_detection, share_pct: 8}
+  - {application: aerospace_and_rocketry, share_pct: 7, notes: "Tank pressurization; NASA is the world's single largest consumer"}
+  - {application: lifting_gas_and_balloons, share_pct: 7}
+  - {application: other, share_pct: 12}
+
+criticality:
+  us_critical_2025: true
+  eu_crm_2024: true
+  eu_strategic_2024: false
+
+prices:
+  - {year: 2022, value: 280, unit: usd_per_kg, source_id: usgs_mcs_2025_helium, notes: "Helium Shortage 4.0 spot pricing"}
+  - {year: 2025, value: 340, unit: usd_per_kg, source_id: usgs_mcs_2025_helium, notes: "Post-Qatar-disruption spot pricing"}
+
+geopolitical_events:
+  - date: 2022-01-01
+    event: "Helium Shortage 4.0 begins — simultaneous outages at Cliffside, Amur, and Algeria"
+    impact: "Semiconductor fabs begin aggressive recovery programs"
+    source_id: gasworld_he_survey_2024
+  - date: 2024-06-01
+    event: "Helium Shortage 4.0 ends as Amur GPP fully ramps and Cliffside recovers"
+    source_id: gasworld_he_survey_2024
+  - date: 2026-03-15
+    event: "Attack on Qatari LNG facilities removes ~33% of global helium supply overnight"
+    impact: "Spot prices doubled within 48 hours; long-term contracts force majeured"
+    source_id: qatar_disruption_2026
+
+narrative: |
+  Helium is non-renewable on any human timescale. Once released to the
+  atmosphere it escapes to space. The US Federal Helium Reserve — which
+  anchored global supply for seven decades — was fully divested in 2024,
+  handing pricing power to a handful of private producers in five
+  countries. Semiconductor manufacturing overtook MRI as the single
+  largest end use in 2024, driven by EUV lithography and AI chip
+  production. This shift matters because MRI demand is price-inelastic
+  (hospitals will pay whatever it takes to keep magnets cold) but
+  semiconductor demand is cyclical — future shortages will hit medical
+  imaging harder than chips.
+
+sources:
+  - id: usgs_mcs_2025_helium
+    title: Mineral Commodity Summaries 2025 — Helium
+    publisher: USGS
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-helium.pdf
+    retrieved: 2026-04-11
+  - id: gasworld_he_survey_2024
+    title: Gasworld Helium Annual Survey 2024
+    publisher: Gasworld
+    url: https://www.gasworld.com/
+    retrieved: 2026-04-11
+  - id: qatar_disruption_2026
+    title: Qatar LNG Facility Disruption Coverage
+    publisher: Reuters
+    retrieved: 2026-04-11

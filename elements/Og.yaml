@@ -1,0 +1,36 @@
+symbol: Og
+atomic_number: 118
+name: oganesson
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+
+research_only:
+  longest_lived_isotope: Og-294
+  half_life_seconds: 0.00069
+  discovered_year: 2002
+  discovered_at: JINR Dubna (Russia) / LLNL (US) collaboration
+  total_ever_produced:
+    value: 5
+    unit: atoms_ever_synthesized
+    approximate: true
+    notes: "Fewer than 10 atoms ever unambiguously detected; exact count disputed."
+    source_id: nndc_og294
+  active_production_labs:
+    - JINR Dubna
+    - RIKEN Nishina Center
+  notes: |
+    The heaviest and highest-atomic-number element ever synthesized.
+    Produced by bombarding californium-249 with calcium-48 ions in a
+    heavy-ion accelerator. Producing a single gram would require
+    bombardment lasting longer than a billion times the age of the
+    universe.
+
+substitutes_available: none
+
+sources:
+  - id: nndc_og294
+    title: NNDC Chart of Nuclides — Og-294
+    publisher: Brookhaven National Laboratory National Nuclear Data Center
+    url: https://www.nndc.bnl.gov/nudat3/
+    retrieved: 2026-04-11

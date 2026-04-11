@@ -1,0 +1,60 @@
+symbol: Am
+atomic_number: 95
+name: americium
+category: actinide
+industrial_tier: 2
+commercial_production: true
+form_notes: "Traded almost exclusively as Am-241 dioxide sealed sources for ionization smoke detectors and well logging."
+
+production:
+  year: 2024
+  refined:
+    value: 1500
+    unit: grams_per_year
+    approximate: true
+    notes: "Order-of-magnitude estimate. Sum of LANL restart output and legacy inventory drawdown."
+    source_id: doe_isotope_program_2024
+  production_form: Am-241 dioxide sealed sources
+  refining_by_country:
+    - {country: US, share_pct: 60, notes: "LANL restarted Am-241 production line in 2021 after a supply gap"}
+    - {country: RU, share_pct: 30, notes: "Mayak PA — reprocesses legacy plutonium stockpiles"}
+    - {country: GB, share_pct: 10, notes: "Sellafield — recovers Am from aged Pu stocks"}
+
+byproduct_of: [Pu]
+substitutes_available: partial
+substitutes_notes: "Photoelectric smoke detectors can replace ionization detectors but are less sensitive to flaming fires. Ni-63 is an alternative for some ionization applications."
+
+end_uses:
+  - {application: smoke_detectors_ionization, share_pct: 90, notes: "Every ionization smoke detector contains ~0.29 micrograms; a single gram equips ~3 million units"}
+  - {application: oil_well_logging, share_pct: 8, notes: "Am-Be neutron sources for porosity measurement"}
+  - {application: research_and_calibration, share_pct: 2}
+
+criticality:
+  us_critical_2025: false
+  eu_crm_2024: false
+  notes: "Not on any critical materials list despite LANL-supply-gap history — considered too small a market."
+
+prices:
+  - {year: 2024, value: 1500, unit: usd_per_gram, source_id: doe_isotope_program_2024, notes: "LANL bulk Am-241 dioxide pricing; individual sealed sources priced 10x higher"}
+
+geopolitical_events:
+  - date: 2021-01-01
+    event: "LANL restarts Am-241 production after multi-year gap"
+    impact: "Resolved US sole-supplier risk; smoke detector industry had been drawing down legacy stock"
+    source_id: doe_isotope_program_2024
+
+narrative: |
+  Americium is the most industrially-deployed transuranic element by
+  installation count, if not by mass. Every ionization smoke detector in
+  the world — roughly 3 billion installed globally — contains about a
+  third of a microgram of Am-241. The entire annual supply is measured
+  in kilograms, not tonnes, and the US dependency on a single facility
+  at Los Alamos nearly became a crisis during the 2015-2020 production
+  gap before the line was restarted in 2021.
+
+sources:
+  - id: doe_isotope_program_2024
+    title: DOE Isotope Program — Heavy Element Production Catalog
+    publisher: US Department of Energy
+    url: https://isotopes.gov/
+    retrieved: 2026-04-11
