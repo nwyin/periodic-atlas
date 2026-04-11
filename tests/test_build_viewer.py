@@ -652,6 +652,27 @@ def _extract_production_json(html: str) -> dict:
     return _json.loads(m.group(1))
 
 
+# =============================================================================
+# B5 — Isotope markets panel tests
+# =============================================================================
+
+#: Elements that have rows in atlas_isotope_markets (currently Am and Tc).
+ISOTOPE_ELEMENTS = {"Am", "Tc"}
+#: All other elements in the test set have no isotope market data.
+NON_ISOTOPE_ELEMENTS = set(EXPECTED_SYMBOLS) - ISOTOPE_ELEMENTS
+
+
+def _extract_isotope_data(html: str) -> list[dict] | None:
+    """Parse the inline isotope-data JSON from an element page.
+
+    Returns None if the script tag is absent (element has no isotope data).
+    """
+    m = _re.search(r'<script id="isotope-data" type="application/json">(.*?)</script>', html, _re.DOTALL)
+    if not m:
+        return None
+    return _json.loads(m.group(1))
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # B1-INV-1: Every element with production data gets a filled #production-chart section
 # ─────────────────────────────────────────────────────────────────────────────
@@ -842,3 +863,178 @@ def test_b1_production_data_script_in_all_element_pages(viewer_dir):
     for sym in EXPECTED_SYMBOLS:
         text = (viewer_dir / "elements" / f"{sym}.html").read_text()
         assert 'id="production-data"' in text, f"{sym}.html missing production-data script block"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B5-INV-1: Am and Tc render isotope panel content; others keep the placeholder
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b5_inv1_isotope_panel_present_for_all_elements(viewer_dir):
+    """Every element page has id='isotope-panel', regardless of whether it has data."""
+    for sym in EXPECTED_SYMBOLS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert 'id="isotope-panel"' in text, f"{sym}.html missing #isotope-panel div"
+
+
+def test_b5_inv1_am_and_tc_have_isotope_data(viewer_dir):
+    """Am and Tc must have a non-empty isotope-data JSON block (real panel rendered)."""
+    for sym in ISOTOPE_ELEMENTS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        data = _extract_isotope_data(text)
+        assert data is not None, f"{sym}.html missing isotope-data script block"
+        assert len(data) > 0, f"{sym}.html has empty isotope-data list"
+
+
+def test_b5_inv1_non_isotope_elements_have_no_isotope_data_script(viewer_dir):
+    """Elements without isotope_markets rows must NOT have an isotope-data script block."""
+    for sym in NON_ISOTOPE_ELEMENTS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        data = _extract_isotope_data(text)
+        assert data is None, f"{sym}.html unexpectedly has an isotope-data JSON block"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B5-INV-2: Half-life renders in human units
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b5_inv2_am241_half_life_in_years(viewer_dir):
+    """Am-241 half-life (~432.4 years) must display with 'years' unit."""
+    text = (viewer_dir / "elements" / "Am.html").read_text()
+    data = _extract_isotope_data(text)
+    assert data is not None
+    am241 = next((d for d in data if d["isotope"] == "Am-241"), None)
+    assert am241 is not None, "Am isotope-data missing Am-241 entry"
+
+    hl = am241.get("half_life_display", "")
+    assert "year" in hl, f"Am-241 half_life_display should contain 'year', got: {hl!r}"
+    # ~432.4 years — check the numeric part starts in the 430s
+    numeric = _re.search(r"(\d+(?:\.\d+)?)", hl)
+    assert numeric, f"No number found in Am-241 half_life_display: {hl!r}"
+    value = float(numeric.group(1))
+    assert 430 < value < 435, f"Am-241 half-life value {value} not in expected range 430-435 years"
+
+
+def test_b5_inv2_tc99m_half_life_in_hours(viewer_dir):
+    """Tc-99m half-life (~6 hours) must display with 'hours' unit."""
+    text = (viewer_dir / "elements" / "Tc.html").read_text()
+    data = _extract_isotope_data(text)
+    assert data is not None
+    tc99m = next((d for d in data if d["isotope"] == "Tc-99m"), None)
+    assert tc99m is not None, "Tc isotope-data missing Tc-99m entry"
+
+    hl = tc99m.get("half_life_display", "")
+    assert "hour" in hl, f"Tc-99m half_life_display should contain 'hour', got: {hl!r}"
+    numeric = _re.search(r"(\d+(?:\.\d+)?)", hl)
+    assert numeric, f"No number found in Tc-99m half_life_display: {hl!r}"
+    value = float(numeric.group(1))
+    assert 5.5 < value < 6.5, f"Tc-99m half-life value {value} not in expected range 5.5-6.5 hours"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B5-INV-3: Low-confidence producers are visually distinct
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b5_inv3_low_confidence_producers_in_json(viewer_dir):
+    """All current producers for Am and Tc have confidence=low in the JSON data."""
+    for sym in ISOTOPE_ELEMENTS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        data = _extract_isotope_data(text)
+        assert data is not None
+        for iso in data:
+            for p in iso.get("producers", []):
+                assert "confidence" in p, f"{sym}/{iso['isotope']}: producer missing confidence field"
+
+
+def test_b5_inv3_low_confidence_css_class_in_html(viewer_dir):
+    """Am and Tc pages must contain the producer-low-confidence CSS class
+    (both in the stylesheet and in the rendered HTML table rows)."""
+    css = (viewer_dir / "assets" / "atlas.css").read_text()
+    assert "producer-low-confidence" in css, "CSS missing .producer-low-confidence rule"
+
+    for sym in ISOTOPE_ELEMENTS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert "producer-low-confidence" in text, f"{sym}.html missing producer-low-confidence class in rendered HTML"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B5-INV-4: Multi-isotope future-proofing — one JSON entry per isotope row
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b5_inv4_one_json_entry_per_isotope(viewer_dir):
+    """isotope-data JSON has exactly one entry per row in atlas_isotope_markets."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        rows = con.execute("SELECT symbol, COUNT(*) AS cnt FROM atlas_isotope_markets GROUP BY symbol").fetchall()
+    finally:
+        con.close()
+
+    for sym, expected_count in rows:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        data = _extract_isotope_data(text)
+        assert data is not None, f"{sym}.html missing isotope-data block"
+        assert len(data) == expected_count, (
+            f"{sym}.html isotope-data has {len(data)} entries but atlas_isotope_markets has {expected_count} rows"
+        )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B5: charts_isotopes.js deployed and referenced
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b5_charts_isotopes_js_deployed(viewer_dir):
+    """charts_isotopes.js must be written into assets/ during generation."""
+    assert (viewer_dir / "assets" / "charts_isotopes.js").exists()
+
+
+def test_b5_charts_isotopes_js_referenced_in_element_pages(viewer_dir):
+    """Every element page must reference charts_isotopes.js."""
+    for sym in EXPECTED_SYMBOLS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert "charts_isotopes.js" in text, f"{sym}.html missing charts_isotopes.js reference"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B5: _format_half_life unit helper
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b5_format_half_life_years():
+    """Half-lives ≥ 1 year render with 'years'."""
+    result = build_viewer._format_half_life(1.365e10)  # Am-241
+    assert "year" in result, f"Expected 'year' in {result!r}"
+    numeric = float(_re.search(r"[\d.]+", result).group())
+    assert 430 < numeric < 435
+
+
+def test_b5_format_half_life_hours():
+    """Half-lives in the hours range render with 'hours'."""
+    result = build_viewer._format_half_life(21624)  # Tc-99m
+    assert "hour" in result, f"Expected 'hour' in {result!r}"
+    numeric = float(_re.search(r"[\d.]+", result).group())
+    assert 5.5 < numeric < 6.5
+
+
+def test_b5_format_half_life_days():
+    result = build_viewer._format_half_life(3 * 86400)  # 3 days
+    assert "day" in result, f"Expected 'day' in {result!r}"
+    numeric = float(_re.search(r"[\d.]+", result).group())
+    assert abs(numeric - 3.0) < 0.1
+
+
+def test_b5_format_half_life_minutes():
+    result = build_viewer._format_half_life(90)  # 1.5 min
+    assert "minute" in result, f"Expected 'minute' in {result!r}"
+    numeric = float(_re.search(r"[\d.]+", result).group())
+    assert abs(numeric - 1.5) < 0.1
+
+
+def test_b5_format_half_life_seconds():
+    result = build_viewer._format_half_life(30)
+    assert "second" in result, f"Expected 'second' in {result!r}"
+    numeric = float(_re.search(r"[\d.]+", result).group())
+    assert abs(numeric - 30.0) < 0.1

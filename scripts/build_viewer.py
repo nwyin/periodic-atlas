@@ -27,6 +27,7 @@ BUILD_DIR = ROOT / "build"
 VIEWER_DIR = ROOT / "viewer"
 CHARTS_PRICES_JS = ROOT / "viewer" / "assets" / "charts_prices.js"
 CHARTS_PRODUCTION_JS = ROOT / "viewer" / "assets" / "charts_production.js"
+CHARTS_ISOTOPES_JS = ROOT / "viewer" / "assets" / "charts_isotopes.js"
 
 # 1 lb = 0.4536 kg; usd_per_lb → usd_per_kg by dividing by this factor.
 # Preferred normalisation unit for price charts: usd_per_kg.
@@ -59,6 +60,158 @@ def _normalize_price_units(prices: list[dict]) -> list[dict]:
         if p.get("unit") == "usd_per_lb":
             p = {**p, "value": round(p["value"] / _LB_TO_KG, 4), "unit": "usd_per_kg"}
         result.append(p)
+    return result
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Half-life formatting
+# ─────────────────────────────────────────────────────────────────────────────
+
+_YEAR_S = 365.25 * 86400  # seconds per Julian year
+_DAY_S = 86400
+_HOUR_S = 3600
+_MINUTE_S = 60
+
+
+def _format_half_life(seconds: float) -> str:
+    """Convert a half-life in seconds to a human-readable string.
+
+    Examples:
+        1.365e10  → "432.4 years"
+        21624     → "6.0 hours"
+        7200      → "2.0 hours"
+        90        → "1.5 minutes"
+        45        → "45.0 seconds"
+    """
+    if seconds >= _YEAR_S:
+        years = seconds / _YEAR_S
+        if years >= 1_000:
+            return f"{years:,.0f} years"
+        if years >= 10:
+            return f"{years:.1f} years"
+        return f"{years:.2f} years"
+    if seconds >= _DAY_S:
+        days = seconds / _DAY_S
+        return f"{days:.1f} days"
+    if seconds >= _HOUR_S:
+        hours = seconds / _HOUR_S
+        return f"{hours:.1f} hours"
+    if seconds >= _MINUTE_S:
+        minutes = seconds / _MINUTE_S
+        return f"{minutes:.1f} minutes"
+    return f"{seconds:.1f} seconds"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Isotope markets data builder
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _build_isotope_data(con: "duckdb.DuckDBPyConnection", symbol: str) -> list[dict]:  # type: ignore[name-defined]
+    """Return isotope market records for *symbol*, each with embedded producer shares.
+
+    Each record shape:
+        isotope, half_life_seconds, half_life_display, production_mode,
+        precursor, delivery_form, reporting_year,
+        production_quantity: {value, unit},
+        producers: [{country, share_pct, confidence, notes}, ...],
+        producers_completeness, notes
+    """
+    markets_df = con.execute(
+        """
+        SELECT isotope, half_life_seconds, production_mode, reporting_year,
+               precursor, delivery_form, producers_completeness, notes,
+               production_value, production_unit
+        FROM atlas_isotope_markets
+        WHERE symbol = ?
+        ORDER BY isotope
+        """,
+        [symbol],
+    ).df()
+
+    if markets_df.empty:
+        return []
+
+    # Producer shares per isotope
+    shares_df = con.execute(
+        """
+        SELECT isotope, country, share_pct, confidence, notes
+        FROM atlas_shares
+        WHERE symbol = ? AND share_type = 'isotope_producers'
+        ORDER BY isotope, share_pct DESC
+        """,
+        [symbol],
+    ).df()
+
+    shares_by_isotope: dict[str, list[dict]] = {}
+    for row in shares_df.to_dict(orient="records"):
+        iso = str(row["isotope"])
+        shares_by_isotope.setdefault(iso, []).append(
+            {
+                "country": str(row["country"]) if row["country"] else "",
+                "share_pct": float(row["share_pct"]) if row["share_pct"] is not None else None,
+                "confidence": str(row["confidence"]) if row["confidence"] else "unknown",
+                "notes": str(row["notes"]) if row["notes"] and str(row["notes"]) not in ("nan", "None") else None,
+            }
+        )
+
+    def _safe_float(v) -> float | None:
+        if v is None:
+            return None
+        try:
+            f = float(v)
+            return None if (f != f) else f
+        except (TypeError, ValueError):
+            return None
+
+    result: list[dict] = []
+    for row in markets_df.to_dict(orient="records"):
+        iso = str(row["isotope"])
+        hl_sec = _safe_float(row.get("half_life_seconds"))
+        hl_display = _format_half_life(hl_sec) if hl_sec is not None else "unknown"
+
+        precursor = row.get("precursor")
+        if precursor and str(precursor) not in ("nan", "None"):
+            precursor = str(precursor).strip()
+        else:
+            precursor = None
+
+        delivery_form = row.get("delivery_form")
+        if delivery_form and str(delivery_form) not in ("nan", "None"):
+            delivery_form = str(delivery_form).strip()
+        else:
+            delivery_form = None
+
+        notes = row.get("notes")
+        if notes and str(notes) not in ("nan", "None"):
+            notes = str(notes).strip()
+        else:
+            notes = None
+
+        completeness = row.get("producers_completeness")
+        if completeness and str(completeness) not in ("nan", "None"):
+            completeness = str(completeness)
+        else:
+            completeness = "unknown"
+
+        result.append(
+            {
+                "isotope": iso,
+                "half_life_seconds": hl_sec,
+                "half_life_display": hl_display,
+                "production_mode": str(row.get("production_mode") or ""),
+                "precursor": precursor,
+                "delivery_form": delivery_form,
+                "reporting_year": int(row["reporting_year"]) if row.get("reporting_year") is not None else None,
+                "production_quantity": {
+                    "value": _safe_float(row.get("production_value")),
+                    "unit": str(row["production_unit"]) if row.get("production_unit") and str(row.get("production_unit")) not in ("nan", "None") else None,
+                },
+                "producers": shares_by_isotope.get(iso, []),
+                "producers_completeness": completeness,
+                "notes": notes,
+            }
+        )
     return result
 
 
@@ -293,6 +446,50 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   white-space: nowrap;
 }
 
+/* ── isotope panel ── */
+.isotope-panel { margin: 1.5rem 0; }
+.isotope-panel > h2 { font-size: 1rem; margin: 0 0 0.75rem; }
+
+.isotope-cards { display: grid; gap: 1rem; }
+
+.isotope-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+.isotope-card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.isotope-card-header h3 { margin: 0; font-size: 1rem; font-weight: 700; }
+.isotope-meta { font-size: 0.85rem; color: var(--muted); margin-bottom: 0.75rem; }
+.isotope-meta-row { margin-bottom: 0.2rem; }
+.isotope-meta-label { font-weight: 600; color: var(--text); }
+
+/* production mode badge colors */
+.badge-mode-stockpile_separated   { background: #7c3aed; }
+.badge-mode-reactor_generated     { background: #0369a1; }
+.badge-mode-accelerator_generated { background: #b45309; }
+.badge-mode-decay_product         { background: #059669; }
+.badge-mode-naturally_occurring   { background: #6b7280; }
+
+/* producers section */
+.producers-section { margin-top: 0.75rem; }
+.producers-section h4 {
+  font-size: 0.85rem; margin: 0 0 0.5rem;
+  color: var(--muted); font-weight: 600;
+}
+
+/* low-confidence producers are visually distinct */
+.producer-low-confidence {
+  opacity: 0.7;
+  font-style: italic;
+}
+
 /* ── footer ── */
 footer {
   border-top: 1px solid var(--border);
@@ -429,6 +626,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -586,6 +784,106 @@ def _render_sources_panel(sources: list[dict]) -> str:
 <div id="sources-panel" class="sources-panel">
   <h2>Sources ({len(sources)})</h2>
   <div class="source-cards">
+{cards_html}  </div>
+</div>"""
+
+
+def _render_isotope_panel(isotopes: list[dict]) -> str:
+    """Render the #isotope-panel div.
+
+    If *isotopes* is empty, returns a placeholder div (same style as other placeholders).
+    Otherwise returns a full panel with one card per isotope plus an inline JSON data block
+    for the charts_isotopes.js bar chart renderer.
+    """
+    if not isotopes:
+        return '<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>'
+
+    # Inline JSON for the JS renderer (bar chart + low-confidence styling)
+    isotope_json = json.dumps(isotopes, ensure_ascii=False, separators=(",", ":"))
+    inline_script = f'<script id="isotope-data" type="application/json">{isotope_json}</script>'
+
+    cards_html = ""
+    for iso in isotopes:
+        isotope_name = str(iso.get("isotope", ""))
+        hl_display = str(iso.get("half_life_display", ""))
+        prod_mode = str(iso.get("production_mode", ""))
+        precursor = iso.get("precursor")
+        delivery_form = iso.get("delivery_form")
+        reporting_year = iso.get("reporting_year")
+        completeness = str(iso.get("producers_completeness", ""))
+        producers = iso.get("producers") or []
+
+        # Production mode badge — use a known CSS class or fallback
+        safe_mode = prod_mode if prod_mode in (
+            "stockpile_separated", "reactor_generated", "accelerator_generated",
+            "decay_product", "naturally_occurring",
+        ) else "unknown"
+        mode_badge = f'<span class="badge badge-mode-{_html_escape(safe_mode)}">{_html_escape(prod_mode or "unknown")}</span>'
+
+        # Meta rows: half-life, precursor, delivery form
+        meta_rows = f'<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> {_html_escape(hl_display)}</div>\n'
+        if precursor:
+            meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> {_html_escape(precursor)}</div>\n'
+        if delivery_form:
+            meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> {_html_escape(delivery_form)}</div>\n'
+        if reporting_year:
+            meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> {reporting_year}</div>\n'
+
+        # Producers: build an HTML table; JS will optionally replace with bar chart
+        if producers:
+            completeness_label = completeness.replace("_", " ").title() if completeness else ""
+            completeness_badge = f'<span class="badge badge-no-commercial" style="font-size:0.7rem">{_html_escape(completeness_label)}</span>' if completeness_label else ""
+            producer_rows_html = ""
+            for p in producers:
+                country = str(p.get("country") or "")
+                share = p.get("share_pct")
+                conf = str(p.get("confidence") or "")
+                low_class = " producer-low-confidence" if conf == "low" else ""
+                share_str = f"{share:.0f}%" if share is not None else "?"
+                producer_rows_html += f"""\
+    <tr class="producer-row{low_class}">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">{_html_escape(country)}</td>
+      <td style="padding:0.2rem 0.5rem">{share_str}</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">{_html_escape(conf)}</td>
+    </tr>
+"""
+            producers_html = f"""\
+<div class="producers-section">
+  <h4>Producers {completeness_badge}</h4>
+  <div class="producers-chart" data-isotope="{_html_escape(isotope_name)}">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+{producer_rows_html}      </tbody>
+    </table>
+  </div>
+</div>"""
+        else:
+            producers_html = ""
+
+        cards_html += f"""\
+  <div class="isotope-card" data-isotope="{_html_escape(isotope_name)}">
+    <div class="isotope-card-header">
+      <h3>{_html_escape(isotope_name)}</h3>
+      {mode_badge}
+    </div>
+    <div class="isotope-meta">
+{meta_rows}    </div>
+    {producers_html}
+  </div>
+"""
+
+    return f"""\
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets ({len(isotopes)})</h2>
+  {inline_script}
+  <div class="isotope-cards">
 {cards_html}  </div>
 </div>"""
 
@@ -818,6 +1116,7 @@ def _element_body(
     reserves_data: str = "{}",
     chart_data: dict | None = None,
     production_data: str = '{"streams":[]}',
+    isotope_panel_html: str = "",
 ) -> str:
     symbol = el["symbol"]
     atomic = el["atomic_number"]
@@ -833,17 +1132,17 @@ def _element_body(
     if el.get("narrative") and str(el["narrative"]) not in ("nan", "None", ""):
         narrative_html = f'<div class="narrative-block">{_html_escape(str(el["narrative"]))}</div>'
 
-    # Build placeholders — skip sources-panel (rendered separately) and production-chart
-    # (rendered with its own data script tag below).
+    # Build placeholders — skip panels rendered separately below
     placeholders_html = ""
     for div_id, label in CHART_PLACEHOLDERS:
-        if div_id == "sources-panel":
-            continue  # replaced by the real sources panel below
-        if div_id == "production-chart":
-            continue  # inserted explicitly with its data script tag below
+        if div_id in ("sources-panel", "production-chart", "isotope-panel"):
+            continue  # rendered separately below
         placeholders_html += f'<div id="{div_id}" class="chart-placeholder">{_html_escape(label)}</div>\n'
 
     sources_panel_html = _render_sources_panel(sources)
+    # isotope_panel_html is passed in from generate_viewer; default is a placeholder div
+    if not isotope_panel_html:
+        isotope_panel_html = '<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>'
 
     no_commercial_note = ""
     if not commercial:
@@ -872,6 +1171,7 @@ def _element_body(
 <div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{reserves_data}</script>
 {placeholders_html}
+{isotope_panel_html}
 {sources_panel_html}"""
 
 
@@ -1033,6 +1333,12 @@ def generate_viewer(
                 sym = row["symbol"]
                 mining_refining_shares_by_symbol.setdefault(sym, []).append(row)
 
+        # Isotope markets per symbol (B5)
+        isotope_data_by_symbol: dict[str, list[dict]] = {el["symbol"]: [] for el in elements_list}
+        if "atlas_isotope_markets" in tables and "atlas_shares" in tables:
+            for sym in [el["symbol"] for el in elements_list]:
+                isotope_data_by_symbol[sym] = _build_isotope_data(con, sym)
+
     finally:
         con.close()
 
@@ -1053,6 +1359,10 @@ def generate_viewer(
     # charts_production.js — copy from project source
     if CHARTS_PRODUCTION_JS.exists():
         (assets_dir / "charts_production.js").write_text(CHARTS_PRODUCTION_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # charts_isotopes.js — copy from project source
+    if CHARTS_ISOTOPES_JS.exists():
+        (assets_dir / "charts_isotopes.js").write_text(CHARTS_ISOTOPES_JS.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Footer shared across pages
     repo_url = "https://github.com/anomalyco/opencode"
@@ -1081,7 +1391,9 @@ def generate_viewer(
             "prices": prices_by_symbol.get(sym, []),
             "events": events_by_symbol.get(sym, []),
         }
-        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data, production_data=prod_json)
+        isotope_data = isotope_data_by_symbol.get(sym, [])
+        iso_panel_html = _render_isotope_panel(isotope_data)
+        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data, production_data=prod_json, isotope_panel_html=iso_panel_html)
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
         html = _element_page_shell(title, body, footer_element)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
@@ -1094,6 +1406,8 @@ def generate_viewer(
         print("viewer/assets/charts_prices.js written")
     if CHARTS_PRODUCTION_JS.exists():
         print("viewer/assets/charts_production.js written")
+    if CHARTS_ISOTOPES_JS.exists():
+        print("viewer/assets/charts_isotopes.js written")
 
 
 def main() -> None:
