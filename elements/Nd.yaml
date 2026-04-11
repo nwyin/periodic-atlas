@@ -1,0 +1,139 @@
+# SCHEMA SPIKE — exercises grouped_reporting, commodity_group, NdFeB end-use pattern.
+# Numbers are drawn from inquiries/periodic-elements-industrial-contribution.md and
+# should be refined against primary USGS + IEA sources during step 2 or during the
+# full agent ingest pass. This file exists primarily to stress-test the v0.2 schema.
+
+symbol: Nd
+atomic_number: 60
+name: neodymium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS reports rare earth elements as a single commodity chapter ("rare earths")
+  rather than per-element. Per-element attribution requires multiplying the
+  aggregate by Nd's typical share of the REE basket, which varies by deposit.
+
+production:
+  reporting_year: 2024
+  mine:
+    value: 75000
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: medium
+    notes: |
+      Estimate derived from ~390 kt 2024 total REE oxide production multiplied
+      by Nd's ~18-20% share of the global REE basket. Not directly reported by
+      USGS; the grouped-reporting flag is set accordingly.
+    source_id: inquiry_periodic_elements_2025
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 70
+        notes: "Share of REE group, not Nd specifically"
+        source_id: inquiry_periodic_elements_2025
+      - country: US
+        share_pct: 12
+        notes: "MP Materials Mountain Pass"
+        source_id: inquiry_periodic_elements_2025
+      - country: MM
+        share_pct: 11
+        notes: "Myanmar heavy REE production, often routed through China"
+        source_id: inquiry_periodic_elements_2025
+      - country: AU
+        share_pct: 5
+        source_id: inquiry_periodic_elements_2025
+      - country: ZZ
+        share_pct: 2
+        notes: "Rest of world"
+        source_id: inquiry_periodic_elements_2025
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 91
+        notes: "China controls ~91% of global REE separation and 94% of sintered NdFeB magnet manufacturing"
+        source_id: inquiry_periodic_elements_2025
+      - country: ZZ
+        share_pct: 9
+        notes: "Lynas in Malaysia + early MP Materials separation capacity"
+        source_id: inquiry_periodic_elements_2025
+    completeness: complete
+
+end_uses:
+  uses:
+    - application: magnets_ndfeb_permanent
+      share_pct: 85
+      notes: "EV traction motors (1-2 kg/vehicle), wind turbine generators (~600 kg/turbine), F-35 actuators, data center cooling fans"
+      source_id: inquiry_periodic_elements_2025
+    - application: metallurgical_additives
+      share_pct: 5
+      source_id: inquiry_periodic_elements_2025
+    - application: catalysts
+      share_pct: 5
+      source_id: inquiry_periodic_elements_2025
+    - application: other
+      share_pct: 5
+      source_id: inquiry_periodic_elements_2025
+  completeness: complete
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 4
+    notes: "Primary LREE source; NdPr typically 18-22% of the REE basket in bastnaesite"
+    source_id: inquiry_periodic_elements_2025
+  - substrate: monazite_sand
+    typical_concentration_pct: 18
+    notes: "Heavy-mineral-sand byproduct stream; thorium contamination complicates processing"
+    source_id: inquiry_periodic_elements_2025
+
+substitutes:
+  - availability: partial
+    notes: |
+      Ferrite magnets substitute for NdFeB in low-performance applications but
+      with dramatically lower energy density. No substitute exists for the
+      combination of field strength and thermal stability NdFeB provides in
+      EV traction and wind turbine applications.
+    source_id: inquiry_periodic_elements_2025
+
+criticality:
+  us_critical_list_as_of_2025: true
+  eu_crm_list_as_of_2024: true
+  eu_strategic_list_as_of_2024: true
+  doe_short_term_criticality_rank: 2
+  notes: "Listed under 'rare earths' on US list; NdPr specifically flagged as high-criticality by DOE"
+  source_id: inquiry_periodic_elements_2025
+
+geopolitical_events:
+  - date: 2025-04
+    event: "China imposes export controls on 7 REEs including Sm, Gd, Tb, Dy, Lu, Sc, Y — Nd not directly controlled but basket dynamics affected"
+    impact: "Heavy REE prices rose sharply; NdPr indirectly supported via substitution pressure"
+    source_id: inquiry_periodic_elements_2025
+  - date: 2025-10
+    event: "China expands REE controls to 5 additional elements plus processing equipment and technology"
+    impact: "Suspended one-year post Xi-Trump November summit; underlying architecture remains"
+    source_id: inquiry_periodic_elements_2025
+
+narrative: |
+  Neodymium exemplifies the rare-earth paradox: the element itself is not
+  geologically rare, but separation from the REE basket and downstream
+  magnet manufacturing are near-monopolized by China (91% separation, 94%
+  of sintered NdFeB magnets). NdFeB permanent magnets drive ~85% of Nd
+  demand, with EV traction motors and wind turbines the fastest-growing
+  segments. The "balance problem" of rare earths means you cannot scale
+  Nd production independently of Dy, Tb, or less-valuable Ce/La —
+  mining produces fixed ratios.
+
+sources:
+  - id: inquiry_periodic_elements_2025
+    title: "Every element on the periodic table, ranked by industrial relevance (inquiries/periodic-elements-industrial-contribution.md)"
+    publisher: egotheism project
+    url: null
+    retrieved: 2026-04-11
+    publication_year: 2026
+    superseded_by: null

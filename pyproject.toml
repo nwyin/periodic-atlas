@@ -1,6 +1,6 @@
 [project]
 name = "atlas"
-version = "0.1.0"
+version = "0.2.0"
 description = "Periodic element supply chain atlas — structured data snapshot"
 requires-python = ">=3.12"
 dependencies = [
@@ -11,6 +11,15 @@ dependencies = [
     "duckdb>=1.1",
     "rich>=13.9",
 ]
+
+[dependency-groups]
+dev = [
+    "pytest>=9.0",
+]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
 
 [build-system]
 requires = ["hatchling"]

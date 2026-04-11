@@ -1,0 +1,127 @@
+# SCHEMA SPIKE — exercises compound-traded form. F is traded as fluorspar (CaF2)
+# rather than elemental fluorine. Production is reported as tonnes of fluorspar
+# concentrate at ~97% CaF2 purity; elemental F content is ~48.7% of CaF2 by mass.
+# This tests whether the v0.2 `form` enum can represent the ore/concentrate/compound
+# flow without losing dimensional information.
+
+symbol: F
+atomic_number: 9
+name: fluorine
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Elemental fluorine is essentially never traded; the commercial stream is
+  fluorspar (CaF2, aka calcium fluoride) extracted as a mineral concentrate.
+  Downstream chemistry: fluorspar + sulfuric acid → HF → fluorochemicals,
+  aluminum electrolysis flux, steel fluxing, uranium hexafluoride.
+
+production:
+  reporting_year: 2024
+  mine:
+    value: 9500000
+    unit: tonnes_per_year
+    form: halide
+    approximate: true
+    confidence: medium
+    notes: |
+      Tonnes of fluorspar concentrate (CaF2 basis), not elemental F.
+      Elemental F equivalent is ~51% of this figure (~4.85 Mt/yr).
+      From inquiries/periodic-elements-industrial-contribution.md.
+    source_id: inquiry_periodic_elements_2025
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 63
+        notes: "Dominant producer; also largest consumer via domestic fluorochemicals industry"
+        source_id: inquiry_periodic_elements_2025
+      - country: MX
+        share_pct: 16
+        source_id: inquiry_periodic_elements_2025
+      - country: MN
+        share_pct: 8
+        source_id: inquiry_periodic_elements_2025
+      - country: ZA
+        share_pct: 4
+        source_id: inquiry_periodic_elements_2025
+      - country: ZZ
+        share_pct: 9
+        notes: "Rest of world (Vietnam, Spain, others)"
+        source_id: inquiry_periodic_elements_2025
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 320000000
+    unit: tonnes
+    form: halide
+    approximate: true
+    notes: "Global fluorspar reserves (CaF2 basis)"
+    source_id: inquiry_periodic_elements_2025
+
+end_uses:
+  uses:
+    - application: fluorochemicals
+      share_pct: 60
+      notes: "Fluoropolymers (PTFE/Teflon), refrigerants, pharmaceuticals, agrochemicals, Li-ion battery electrolytes (LiPF6)"
+      source_id: inquiry_periodic_elements_2025
+    - application: aluminum_smelting_flux
+      share_pct: 15
+      notes: "AlF3 and cryolite for Hall-Heroult cell electrolyte"
+      source_id: inquiry_periodic_elements_2025
+    - application: steel_fluxing
+      share_pct: 15
+      source_id: inquiry_periodic_elements_2025
+    - application: uranium_hexafluoride_enrichment
+      share_pct: 3
+      notes: "UF6 for nuclear fuel enrichment"
+      source_id: inquiry_periodic_elements_2025
+    - application: semiconductor_etching
+      share_pct: 2
+      notes: "NF3, SF6, WF6 for wafer processing"
+      source_id: inquiry_periodic_elements_2025
+    - application: other
+      share_pct: 5
+      source_id: inquiry_periodic_elements_2025
+  completeness: complete
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: fluorspar_ore
+    typical_concentration_pct: 48.7
+    notes: "Elemental F content of CaF2 by mass. 'Acid-grade' fluorspar is ≥97% CaF2."
+    source_id: inquiry_periodic_elements_2025
+  - substrate: phosphate_rock
+    typical_concentration_pct: 3
+    notes: |
+      Fluorosilicic acid is a byproduct of phosphoric acid production; a
+      meaningful secondary source of fluorine in fertilizer-producing regions
+      but not economically competitive with fluorspar for primary supply.
+    source_id: inquiry_periodic_elements_2025
+
+criticality:
+  us_critical_list_as_of_2025: true
+  eu_crm_list_as_of_2024: true
+  eu_strategic_list_as_of_2024: false
+  notes: "Fluorspar on both lists; elemental fluorine not separately tracked"
+  source_id: inquiry_periodic_elements_2025
+
+narrative: |
+  Fluorine is the canonical example of an element traded entirely as a
+  compound. Elemental F2 is too reactive to ship; the commercial stream
+  begins with fluorspar (CaF2) mined as a concentrate, reacted with
+  sulfuric acid to make HF, and from there branching into fluorochemicals,
+  aluminum smelting flux, and uranium enrichment. Any schema that tries
+  to express "F production" in tonnes of elemental F will silently
+  misrepresent the industry — the production figures reported by USGS,
+  BGS, and IEA are all CaF2 tonnage, not F tonnage.
+
+sources:
+  - id: inquiry_periodic_elements_2025
+    title: "Every element on the periodic table, ranked by industrial relevance (inquiries/periodic-elements-industrial-contribution.md)"
+    publisher: egotheism project
+    url: null
+    retrieved: 2026-04-11
+    publication_year: 2026
+    superseded_by: null
