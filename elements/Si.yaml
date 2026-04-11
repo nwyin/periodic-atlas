@@ -1,0 +1,607 @@
+symbol: Si
+atomic_number: 14
+name: silicon
+category: metalloid
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports silicon quantities on a silicon-content basis in
+  thousand metric tons. Silicon has two distinct commercial streams: ferrosilicon
+  (an iron-silicon alloy, typically 50–90% Si by weight, used in steel and
+  foundry) and silicon metal (>98.5% Si, used in aluminum alloys, silicones,
+  and polysilicon). Both are smelted from quartzite (silica) in electric arc
+  furnaces with carbon reducing agents (coal, coke, wood chips). Silicon metal
+  may be further refined to polysilicon — semiconductor-grade (>99.9999%) or
+  solar-grade (>99.999%) — via the Siemens process or fluidized-bed reactors.
+  All production quantities below are reported as silicon content (not gross
+  alloy or product weight). US domestic production is withheld (W) in USGS
+  tables to avoid disclosing proprietary company data; world totals therefore
+  exclude the United States.
+
+production:
+- reporting_year: 2024
+  stream: ferrosilicon
+  mine:
+    value: 5100000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world mine production table: ferrosilicon world total
+      (rounded) 5,100 thousand metric tons silicon content for 2024e. This
+      figure excludes U.S. production (withheld). China accounted for ~69%
+      of the reported non-US world total.
+    source_id: usgs_mcs_2025_silicon
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 68.6
+        quantity:
+          value: 3500000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 3,500 kt Si content. Dominant global producer of ferrosilicon."
+        source_id: usgs_mcs_2025_silicon
+      - country: RU
+        share_pct: 9.2
+        quantity:
+          value: 470000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 470 kt. Leading US import source (37% of FeSi imports, 2020–23 avg)."
+        source_id: usgs_mcs_2025_silicon
+      - country: BR
+        share_pct: 3.9
+        quantity:
+          value: 200000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 200 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: "NO"
+        share_pct: 3.5
+        quantity:
+          value: 180000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 180 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: MY
+        share_pct: 2.5
+        quantity:
+          value: 130000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 130 kt (up from 91 kt in 2023)."
+        source_id: usgs_mcs_2025_silicon
+      - country: KZ
+        share_pct: 2.5
+        quantity:
+          value: 130000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 130 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: BT
+        share_pct: 1.6
+        quantity:
+          value: 80000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 80 kt. Bhutan."
+        source_id: usgs_mcs_2025_silicon
+      - country: IS
+        share_pct: 1.4
+        quantity:
+          value: 70000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 70 kt. Iceland uses geothermal electricity for smelting."
+        source_id: usgs_mcs_2025_silicon
+      - country: IN
+        share_pct: 1.2
+        quantity:
+          value: 60000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 60 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: ZA
+        share_pct: 0.8
+        quantity:
+          value: 40000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 40 kt. South Africa."
+        source_id: usgs_mcs_2025_silicon
+      - country: ES
+        share_pct: 0.8
+        quantity:
+          value: 40000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 40 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: PL
+        share_pct: 0.6
+        quantity:
+          value: 30000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 30 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: FR
+        share_pct: 0.4
+        quantity:
+          value: 20000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 20 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: CA
+        share_pct: 0.4
+        quantity:
+          value: 20000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 20 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: ZZ
+        share_pct: 2.5
+        quantity:
+          value: 130000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 'Other countries' row 2024e: 130 kt. US production excluded (withheld)."
+        source_id: usgs_mcs_2025_silicon
+    completeness: complete
+  notes: |
+    US ferrosilicon production withheld (W) per USGS to avoid disclosing
+    company proprietary data. Five facilities operated east of the Mississippi
+    River in 2024. World total excludes the US per USGS methodology.
+    USGS states combined silicon materials production (FeSi + Si metal)
+    was "estimated to have increased slightly" from 2023.
+
+- reporting_year: 2024
+  stream: silicon_metal
+  mine:
+    value: 4600000
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world mine production table: silicon metal world total
+      (rounded) 4,600 thousand metric tons silicon content for 2024e, up
+      from 4,280 kt in 2023. Excludes U.S. production (withheld). China
+      accounted for ~85% of the reported non-US world total.
+    source_id: usgs_mcs_2025_silicon
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 84.8
+        quantity:
+          value: 3900000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 3,900 kt (up from 3,630 kt in 2023). China dominant in solar-grade and metallurgical Si metal."
+        source_id: usgs_mcs_2025_silicon
+      - country: BR
+        share_pct: 4.1
+        quantity:
+          value: 190000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 190 kt. Second-largest producer. Leading US import source (38% of Si metal imports, 2020–23 avg)."
+        source_id: usgs_mcs_2025_silicon
+      - country: "NO"
+        share_pct: 2.6
+        quantity:
+          value: 120000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 120 kt. Uses hydroelectric power for low-carbon smelting."
+        source_id: usgs_mcs_2025_silicon
+      - country: FR
+        share_pct: 2.0
+        quantity:
+          value: 90000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 90 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: DE
+        share_pct: 1.3
+        quantity:
+          value: 60000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 60 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: RU
+        share_pct: 1.1
+        quantity:
+          value: 50000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 50 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: AU
+        share_pct: 0.9
+        quantity:
+          value: 40000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 40 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: CA
+        share_pct: 0.7
+        quantity:
+          value: 30000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 30 kt. Second-largest US import source (28% of Si metal imports, 2020–23 avg)."
+        source_id: usgs_mcs_2025_silicon
+      - country: IS
+        share_pct: 0.4
+        quantity:
+          value: 20000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 20 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: ZA
+        share_pct: 0.2
+        quantity:
+          value: 10000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 10 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: KZ
+        share_pct: 0.2
+        quantity:
+          value: 7000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 7 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: ES
+        share_pct: 0.1
+        quantity:
+          value: 5000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 2024e: 5 kt."
+        source_id: usgs_mcs_2025_silicon
+      - country: ZZ
+        share_pct: 1.7
+        quantity:
+          value: 78000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_silicon
+        notes: "USGS 'Other countries' row 2024e: 78 kt (up from 11 kt in 2023). US production excluded (withheld)."
+        source_id: usgs_mcs_2025_silicon
+    completeness: complete
+  notes: |
+    US silicon metal production withheld (W) per USGS. Four companies produced
+    polysilicon in the United States in 2024. An additional silicon metal
+    facility was idled at end of 2023 due to poor market conditions. World
+    total excludes US per USGS methodology.
+
+reserves:
+  notes: |
+    USGS MCS 2025: "World and domestic resources for making silicon metal
+    and alloys are abundant and, in most producing countries, adequate to
+    supply world requirements for many decades. The source of the silicon is
+    silica in various natural forms, such as quartzite." No numeric world
+    reserves or resources figures are published — silica (SiO2) constitutes
+    approximately 28% of the Earth's crust by weight, making silicon the
+    second most abundant element. Depletion is not a supply constraint for
+    silicon; energy cost and processing capacity are the binding limits.
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: quartzite_silica
+    typical_concentration_pct: 97
+    notes: |
+      Primary feedstock for both ferrosilicon and silicon metal production.
+      High-purity quartzite (97%+ SiO2) is required for silicon metal;
+      lower purity quartzite is acceptable for ferrosilicon. USGS: "The
+      source of the silicon is silica in various natural forms, such as
+      quartzite." US ferrosilicon is "sourced primarily from domestic
+      quartzite (silica)."
+    source_id: usgs_mcs_2025_silicon
+  - substrate: coal_and_coke
+    notes: |
+      Carbon reducing agents (coal, coke, wood chips, charcoal) react with
+      SiO2 at ~1500–2000°C in electric arc furnaces to produce silicon.
+      Energy intensity is high: approximately 11–14 MWh per tonne of
+      silicon metal. Electricity cost is therefore a primary location driver.
+    source_id: usgs_mcs_2025_silicon
+
+substitutes:
+  - application: ferrosilicon_steel_and_foundry
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Aluminum, silicon carbide, and
+      silicomanganese can be substituted for ferrosilicon in some applications."
+      These alternatives are partial substitutes only — aluminum cannot match
+      silicon's deoxidation efficiency in all steelmaking contexts.
+    source_id: usgs_mcs_2025_silicon
+  - application: semiconductor_and_infrared
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Gallium arsenide and germanium are the principal
+      substitutes for silicon in semiconductor and infrared applications."
+      GaAs and Ge offer superior electron mobility and direct bandgap for
+      optoelectronics and high-frequency devices, but cost 100–1000x more
+      than silicon per wafer. Silicon remains dominant in logic, memory,
+      and solar photovoltaics with no economically viable substitute at scale.
+    source_id: usgs_mcs_2025_silicon
+
+end_uses:
+  uses:
+    - application: steel_deoxidation_and_alloying
+      share_pct: 35
+      confidence: medium
+      notes: |
+        Ferrosilicon primary use: added to steel during refining to remove
+        dissolved oxygen (deoxidation) and to impart silicon content for
+        electrical steels, spring steels, and cast iron. USGS: "Most
+        ferrosilicon was consumed in the ferrous foundry and steel industries."
+        Share estimated from USGS qualitative description and industry context;
+        exact global percentage not stated in USGS MCS 2025.
+      source_id: usgs_mcs_2025_silicon
+    - application: aluminum_alloys
+      share_pct: 25
+      confidence: medium
+      notes: |
+        Silicon metal primary use: alloying addition to aluminum (typically
+        5–20% Si) for automotive castings, die castings, and wrought alloys.
+        Ferrosilicon is also used in some aluminum alloying. USGS: "The main
+        consumers of silicon metal were producers of aluminum alloys."
+        Share estimated from USGS qualitative description.
+      source_id: usgs_mcs_2025_silicon
+    - application: silicones_and_chemicals
+      share_pct: 20
+      confidence: medium
+      notes: |
+        Silicon metal is the feedstock for silicone polymers (polysiloxanes)
+        used in sealants, lubricants, medical devices, personal care products,
+        and industrial fluids. USGS: "the chemical industry, in particular for
+        the manufacture of silicones" is a main consumer of silicon metal.
+        Share estimated from USGS qualitative description.
+      source_id: usgs_mcs_2025_silicon
+    - application: polysilicon_solar_and_semiconductors
+      share_pct: 15
+      confidence: medium
+      notes: |
+        Silicon metal is refined into polysilicon for photovoltaic cells
+        (solar-grade, ~99.999% Si) and integrated circuits (semiconductor-grade,
+        ~99.9999999% Si via Siemens process). USGS: "Silicon metal may be
+        further processed into ultra-high-purity semiconductor- or solar-grades,
+        commonly referred to as polysilicon. Four companies produced polysilicon
+        in the United States." Share estimated; solar PV is the fastest-growing
+        demand segment.
+      source_id: usgs_mcs_2025_silicon
+    - application: other_metallurgical_uses
+      share_pct: 5
+      confidence: medium
+      notes: |
+        Includes ferrosilicon in copper and other nonferrous alloy production,
+        silicon in welding electrode coatings, and other industrial uses not
+        separately enumerated in USGS MCS 2025.
+      source_id: usgs_mcs_2025_silicon
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_annex_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_annex_2024
+  notes: |
+    Silicon metal is listed as a Strategic Raw Material in the EU Critical Raw
+    Materials Act (CRMA) owing to its importance in semiconductor chips,
+    electronics, and solar power generation. Silicon is also on the EU Critical
+    Raw Materials list (Annex II of CRMA). Not on the US Critical Minerals
+    List (2022 revision). Canada added silicon metal to its critical minerals
+    list in 2024 per USGS chapter text.
+
+prices:
+  - year: 2024
+    value: 1.30
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: ferrosilicon 75%-grade mean import
+      price, Jan–Sep 2024 average = 130 cents per pound of silicon content
+      (S&P Global Platts Metals Week monthly averages). Almost 9% below the
+      2023 annual average of 142.23 cents/lb.
+    source_id: usgs_mcs_2025_silicon
+  - year: 2023
+    value: 1.4223
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: FeSi 75% annual average 142.23 cents/lb (S&P Global Platts Metals Week mean import prices)."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2022
+    value: 3.121
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: FeSi 75% annual average 312.10 cents/lb — peak year driven by energy crisis and supply disruptions."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2021
+    value: 1.9228
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: FeSi 75% annual average 192.28 cents/lb."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2020
+    value: 0.874
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: FeSi 75% annual average 87.40 cents/lb."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2024
+    value: 1.80
+    unit: usd_per_lb
+    form: metal
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: silicon metal (metallurgical-grade)
+      average U.S. spot price, Jan–Sep 2024 = 180.00 cents per pound of silicon.
+      Essentially flat versus 2023 average of 179.69 cents/lb.
+    source_id: usgs_mcs_2025_silicon
+  - year: 2023
+    value: 1.7969
+    unit: usd_per_lb
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025: Silicon metal metallurgical-grade US spot price annual average 179.69 cents/lb."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2022
+    value: 3.6186
+    unit: usd_per_lb
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025: Silicon metal US spot price annual average 361.86 cents/lb — peak year."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2021
+    value: 2.2031
+    unit: usd_per_lb
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025: Silicon metal US spot price annual average 220.31 cents/lb."
+    source_id: usgs_mcs_2025_silicon
+  - year: 2020
+    value: 0.9684
+    unit: usd_per_lb
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025: Silicon metal US spot price annual average 96.84 cents/lb."
+    source_id: usgs_mcs_2025_silicon
+
+geopolitical_events:
+  - date: 2022-08
+    event: "CHIPS and Science Act signed into law; as of October 2024 preliminary agreements cover 32 semiconductor manufacturing projects in 20 US states totaling ~$34B of $39B in direct funding allocated"
+    impact: |
+      Major expansion of US domestic semiconductor manufacturing creates
+      growing demand for ultra-high-purity polysilicon. As of October 2024,
+      almost all CHIPS Act direct funding ($34B of $39B) has been committed
+      across 20 companies.
+    source_id: usgs_mcs_2025_silicon
+  - date: 2024-04
+    event: "Silicon solar module production began at new integrated supply-chain facility in Georgia, manufacturing silicon ingots, wafers, cells, and modules"
+    impact: |
+      First US integrated silicon solar supply chain facility; expected fully
+      operational in 2025. Reduces US dependence on Chinese solar supply chain.
+    source_id: usgs_mcs_2025_silicon
+  - date: 2024-01
+    event: "Solar-grade polysilicon production facility in Washington state restarted after being idle since 2019; shipments pending third-party quality certification"
+    impact: "Adds US solar-grade polysilicon capacity; shipments subject to quality testing completion."
+    source_id: usgs_mcs_2025_silicon
+  - date: 2024-01
+    event: "Montana electronic-grade polysilicon facility ceased production to focus on silicon gas production"
+    impact: "Loss of US electronic-grade polysilicon capacity as facility pivots to silicon gas."
+    source_id: usgs_mcs_2025_silicon
+  - date: 2024-01
+    event: "EU Critical Raw Materials Act designates silicon metal as a Strategic Raw Material; Canada adds silicon metal to its critical minerals list"
+    impact: |
+      Formal recognition of silicon's strategic role in semiconductor chips,
+      electronics, and solar energy. Triggers EU domestic supply investment
+      requirements and partner-country sourcing preferences.
+    source_id: usgs_mcs_2025_silicon
+
+narrative: |
+  Silicon is the second most abundant element in Earth's crust and forms the
+  foundation of two industrial streams: ferrosilicon (5.1 Mt Si content in
+  2024, used in steelmaking and foundry) and silicon metal (4.6 Mt Si content,
+  used in aluminum alloys, silicones, and polysilicon). Both are produced by
+  carbothermic reduction of quartzite in electric arc furnaces — energy-intensive
+  processes that favor locations with cheap, reliable electricity. China dominates
+  both streams: 69% of global ferrosilicon output and 85% of silicon metal, with
+  USGS estimating China at "almost 80%" of combined global silicon materials
+  production in 2024. US production is withheld in USGS tables but five facilities
+  operated east of the Mississippi in 2024.
+
+  Silicon metal prices have been remarkably stable in 2023–2024, averaging
+  ~$1.80/lb (metallurgical grade spot), a sharp pullback from the 2022 peak of
+  $3.62/lb driven by the European energy crisis. Ferrosilicon 75% similarly
+  fell from $3.12/lb (2022) to $1.30/lb (Jan–Sep 2024 average, S&P Global
+  Platts mean import basis). The downstream polysilicon and semiconductor
+  sectors are undergoing rapid US capacity expansion under the CHIPS and Science
+  Act ($34B committed as of October 2024) and complementary investment in
+  US-based solar supply chains.
+
+  The EU CRMA (2024) designated silicon metal a Strategic Raw Material owing to
+  semiconductor, electronics, and solar dependencies on Chinese supply.
+  Canada took similar action in 2024. While silicon itself is geologically
+  unlimited, processing capacity, energy access, and the downstream refining
+  steps to semiconductor-grade polysilicon create chokepoints that justify the
+  strategic designation. For silicon metal imports, the US relies primarily on
+  Brazil (38%), Canada (28%), and Norway (13%) — all stable trading partners —
+  providing meaningful import source diversification relative to most critical
+  materials.
+
+sources:
+  - id: usgs_mcs_2025_silicon
+    title: Mineral Commodity Summaries 2025 — Silicon
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-silicon.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_annex_2024
+    title: "Regulation (EU) 2024/1252 — Critical Raw Materials Act, Annex I (Strategic and Critical Raw Materials)"
+    publisher: European Commission
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-11
+    publication_year: 2024
+    source_tier: primary
