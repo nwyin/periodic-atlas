@@ -19,12 +19,20 @@ B2 invariants:
   B2-INV-3: elements without reserves/end_uses get null economic_reserves and empty uses (no crash)
   B2-INV-4: low-confidence entries are serialized with their confidence field
 
+Invariants verified (B3 — price + events charts):
+  B3-INV-1: Co JSON has 6 price points across 2 (basis, region) groups
+  B3-INV-2: Co event dates appear in chronological order in the injected JSON
+  B3-INV-3: Co prices are normalised to usd_per_kg (originally usd_per_lb in YAML)
+  B3-INV-4: Og (no prices, no events) → empty arrays in JSON; charts_prices.js
+             carries "No price history" and "No geopolitical events recorded" strings
+
 Critical paths:
   - fresh run into tmpdir produces index.html + 9 per-element pages
   - every chart-placeholder div id is present in each per-element stub
   - Co renders reserves (11M econ, 25M resources) + 12 country bars + 4-slice donut
   - Am (no reserves, has end_uses) has null reserves + 3 low-confidence uses
   - charts_reserves.js is referenced in every element page
+  - charts_prices.js is copied into assets dir during generation
 
 Failure modes:
   - missing duckdb → clear error message, sys.exit non-zero
@@ -35,6 +43,9 @@ from __future__ import annotations
 
 import json
 import re
+
+_json = json
+_re = re
 import subprocess
 import sys
 from pathlib import Path
@@ -497,3 +508,133 @@ def test_b2_charts_reserves_js_in_pages(viewer_dir):
     for sym in EXPECTED_SYMBOLS:
         page = (viewer_dir / "elements" / f"{sym}.html").read_text()
         assert "charts_reserves.js" in page, f"{sym}.html missing charts_reserves.js reference"
+
+
+# =============================================================================
+# B3 — Price chart + events timeline tests
+# =============================================================================
+
+
+def _extract_chart_data(html_text: str) -> dict:
+    """Parse the inline atlas-chart-data JSON from an element page."""
+    m = _re.search(r'id="atlas-chart-data">(.*?)</script>', html_text, _re.DOTALL)
+    assert m, "atlas-chart-data script block not found in page"
+    return _json.loads(m.group(1))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B3-INV-1: Co has 6 price points across 2 (basis, region) groups
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b3_inv1_co_price_points_and_groups(viewer_dir):
+    """Co has exactly 6 price records across 2 distinct (basis, region) series."""
+    text = (viewer_dir / "elements" / "Co.html").read_text()
+    data = _extract_chart_data(text)
+
+    prices = data["prices"]
+    assert len(prices) == 6, f"Expected 6 Co price points, got {len(prices)}"
+
+    groups = {(p["basis"], p["region"]) for p in prices}
+    # Current data has us_domestic/US (2020-2024) and lme/global (2024)
+    assert len(groups) == 2, f"Expected 2 (basis, region) groups for Co, got {sorted(groups)}"
+    assert ("us_domestic", "US") in groups
+    assert ("lme", "global") in groups
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B3-INV-2: Events appear in chronological order
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b3_inv2_events_chronological_order(viewer_dir):
+    """Co events must be sorted from earliest to latest date in the injected JSON."""
+    text = (viewer_dir / "elements" / "Co.html").read_text()
+    data = _extract_chart_data(text)
+
+    events = data["events"]
+    assert len(events) >= 2, "Co must have at least 2 events to test ordering"
+    dates = [e["date"] for e in events]
+    assert dates == sorted(dates), f"Co events not in chronological order: {dates}"
+
+    # Verify the specific known ordering for Co
+    assert dates[0] == "2024-01"
+    assert dates[-1] == "2025-02"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B3-INV-3: Co prices normalised to usd_per_kg (no usd_per_lb in injected data)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b3_inv3_co_prices_normalised_to_kg(viewer_dir):
+    """Co is priced in usd_per_lb in the YAML; the generator must convert to usd_per_kg."""
+    text = (viewer_dir / "elements" / "Co.html").read_text()
+    data = _extract_chart_data(text)
+
+    prices = data["prices"]
+    assert prices, "Co price list must not be empty"
+    for p in prices:
+        assert p["unit"] == "usd_per_kg", f"Expected usd_per_kg but got {p['unit']!r} for {p}"
+
+
+def test_b3_inv3_normalise_unit_helper():
+    """_normalize_price_units converts usd_per_lb values and leaves other units intact."""
+    raw = [
+        {"year": 2024, "value": 17.0, "unit": "usd_per_lb", "form": "metal", "basis": "x", "region": "US"},
+        {"year": 2024, "value": 500.0, "unit": "usd_per_kg", "form": "metal", "basis": "y", "region": "US"},
+        {"year": 2023, "value": 14.0, "unit": "usd_per_m3", "form": "gas", "basis": "z", "region": "US"},
+    ]
+    normalised = build_viewer._normalize_price_units(raw)
+
+    assert normalised[0]["unit"] == "usd_per_kg"
+    # 17 / 0.4536 ≈ 37.478
+    assert abs(normalised[0]["value"] - 17.0 / 0.4536) < 0.01
+    assert normalised[1]["unit"] == "usd_per_kg"  # already correct, untouched
+    assert normalised[1]["value"] == 500.0
+    assert normalised[2]["unit"] == "usd_per_m3"  # non-lb unit untouched
+    assert normalised[2]["value"] == 14.0
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B3-INV-4: empty states — Og has no prices/events; JS strings verified in asset
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b3_inv4_og_empty_prices_and_events(viewer_dir):
+    """Og has no YAML prices or events; injected JSON must have empty arrays."""
+    text = (viewer_dir / "elements" / "Og.html").read_text()
+    data = _extract_chart_data(text)
+    assert data["prices"] == [], f"Og prices should be empty, got {data['prices']}"
+    assert data["events"] == [], f"Og events should be empty, got {data['events']}"
+
+
+def test_b3_inv4_empty_state_strings_in_js(viewer_dir):
+    """charts_prices.js must contain the empty-state messages used when data is absent."""
+    js_text = (viewer_dir / "assets" / "charts_prices.js").read_text()
+    assert "No price history" in js_text
+    assert "No geopolitical events recorded" in js_text
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B3: charts_prices.js present in assets and referenced by element pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b3_charts_prices_js_deployed(viewer_dir):
+    """charts_prices.js must be written into assets/ during generation."""
+    assert (viewer_dir / "assets" / "charts_prices.js").exists()
+
+
+def test_b3_charts_prices_js_referenced_in_element_pages(viewer_dir):
+    """Every element page must reference charts_prices.js."""
+    for sym in EXPECTED_SYMBOLS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert "charts_prices.js" in text, f"{sym}.html missing charts_prices.js reference"
+
+
+def test_b3_atlas_chart_data_present_in_all_element_pages(viewer_dir):
+    """Every element page must have an atlas-chart-data script block."""
+    for sym in EXPECTED_SYMBOLS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert 'id="atlas-chart-data"' in text, f"{sym}.html missing atlas-chart-data block"

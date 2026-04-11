@@ -25,6 +25,12 @@ import duckdb
 ROOT = Path(__file__).resolve().parents[1]
 BUILD_DIR = ROOT / "build"
 VIEWER_DIR = ROOT / "viewer"
+CHARTS_PRICES_JS = ROOT / "viewer" / "assets" / "charts_prices.js"
+
+# 1 lb = 0.4536 kg; usd_per_lb → usd_per_kg by dividing by this factor.
+# Preferred normalisation unit for price charts: usd_per_kg.
+# See also: viewer/assets/charts_prices.js — same rationale documented there.
+_LB_TO_KG = 0.4536
 
 CHART_PLACEHOLDERS = [
     ("production-chart", "Production charts — see B1"),
@@ -33,6 +39,26 @@ CHART_PLACEHOLDERS = [
     ("sources-panel", "Sources — see B4"),
     ("isotope-panel", "Isotope markets — see B5"),
 ]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Unit normalisation
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _normalize_price_units(prices: list[dict]) -> list[dict]:
+    """Convert usd_per_lb → usd_per_kg so all price series share a common y-axis.
+
+    price_per_kg = price_per_lb / _LB_TO_KG  (i.e. × 2.2046…)
+    The same normalisation is documented in viewer/assets/charts_prices.js.
+    Other unit pairs (usd_per_m3, usd_per_tonne, …) are left unchanged.
+    """
+    result = []
+    for p in prices:
+        if p.get("unit") == "usd_per_lb":
+            p = {**p, "value": round(p["value"] / _LB_TO_KG, 4), "unit": "usd_per_kg"}
+        result.append(p)
+    return result
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -389,7 +415,9 @@ def _page_shell(title: str, body: str, footer: str) -> str:
 
 
 def _element_page_shell(title: str, body: str, footer: str) -> str:
-    """Same as _page_shell but with ../ prefix for the CSS href."""
+    """Same as _page_shell but with ../ prefix for the CSS href.
+    Also loads d3 v7 + charts_prices.js (B3 charts).
+    """
     return f"""\
 <!DOCTYPE html>
 <html lang="en">
@@ -399,6 +427,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
   <title>{_html_escape(title)}</title>
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -635,7 +664,7 @@ def _reserves_json(reserves_rows: list[dict], shares_rows: list[dict], end_uses_
     return json.dumps(payload, separators=(",", ":"))
 
 
-def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}") -> str:
+def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}", chart_data: dict | None = None) -> str:
     symbol = el["symbol"]
     atomic = el["atomic_number"]
     name = el["name"]
@@ -663,7 +692,12 @@ def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}") -> s
     if not commercial:
         no_commercial_note = '<p class="no-commercial-note"><em>No commercial production.</em></p>'
 
+    # Inline JSON data for B3 charts (charts_prices.js reads this on DOMContentLoaded)
+    chart_data_json = json.dumps(chart_data or {}, ensure_ascii=False, separators=(",", ":"))
+    inline_data_script = f'<script type="application/json" id="atlas-chart-data">{chart_data_json}</script>'
+
     return f"""\
+{inline_data_script}
 <p><a href="../index.html">&larr; Back to index</a></p>
 <div class="el-header">
   <span class="el-symbol">{_html_escape(symbol)}</span>
@@ -781,6 +815,39 @@ def generate_viewer(
             sym = row["symbol"]
             end_uses_by_symbol.setdefault(sym, []).append(row)
 
+        # Prices per symbol (B3) — normalise usd_per_lb → usd_per_kg
+        prices_by_symbol: dict[str, list[dict]] = {}
+        if "atlas_prices" in tables:
+            prices_df = con.execute("SELECT symbol, year, value, unit, form, basis, region FROM atlas_prices ORDER BY symbol, year").df()
+            for row in prices_df.to_dict(orient="records"):
+                sym = row["symbol"]
+                prices_by_symbol.setdefault(sym, []).append(
+                    {
+                        "year": int(row["year"]),
+                        "value": float(row["value"]),
+                        "unit": str(row["unit"]),
+                        "form": str(row["form"]) if row["form"] else "",
+                        "basis": str(row["basis"]) if row["basis"] else "",
+                        "region": str(row["region"]) if row["region"] else "",
+                    }
+                )
+            for sym in prices_by_symbol:
+                prices_by_symbol[sym] = _normalize_price_units(prices_by_symbol[sym])
+
+        # Events per symbol (B3)
+        events_by_symbol: dict[str, list[dict]] = {}
+        if "atlas_events" in tables:
+            events_df = con.execute("SELECT symbol, date, event, impact FROM atlas_events ORDER BY symbol, date").df()
+            for row in events_df.to_dict(orient="records"):
+                sym = row["symbol"]
+                events_by_symbol.setdefault(sym, []).append(
+                    {
+                        "date": str(row["date"]),
+                        "event": str(row["event"]) if row["event"] else "",
+                        "impact": str(row["impact"]) if row["impact"] else "",
+                    }
+                )
+
     finally:
         con.close()
 
@@ -793,6 +860,10 @@ def generate_viewer(
 
     # CSS
     (assets_dir / "atlas.css").write_text(CSS, encoding="utf-8")
+
+    # charts_prices.js — copy from project source so tests in tmpdirs get the file too
+    if CHARTS_PRICES_JS.exists():
+        (assets_dir / "charts_prices.js").write_text(CHARTS_PRICES_JS.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Footer shared across pages
     repo_url = "https://github.com/anomalyco/opencode"
@@ -813,7 +884,11 @@ def generate_viewer(
             shares_by_symbol.get(sym, []),
             end_uses_by_symbol.get(sym, []),
         )
-        body = _element_body(el, el_sources, reserves_data=res_json)
+        chart_data = {
+            "prices": prices_by_symbol.get(sym, []),
+            "events": events_by_symbol.get(sym, []),
+        }
+        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data)
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
         html = _element_page_shell(title, body, footer_element)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
@@ -822,6 +897,8 @@ def generate_viewer(
     for el in elements_list:
         print(f"viewer/elements/{el['symbol']}.html written")
     print("viewer/assets/atlas.css written")
+    if CHARTS_PRICES_JS.exists():
+        print("viewer/assets/charts_prices.js written")
 
 
 def main() -> None:
