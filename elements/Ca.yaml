@@ -1,0 +1,545 @@
+symbol: Ca
+atomic_number: 20
+name: calcium
+category: alkaline_earth
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports lime production in "thousand metric tons" and covers quicklime
+  (calcium oxide, CaO), hydrated lime (calcium hydroxide, Ca(OH)₂), and refractory
+  dead-burned dolomite. Data are for production sold or used by producers; independent
+  commercial hydrators that purchase quicklime for hydration are excluded to avoid
+  double counting. Only countries producing ≥1 million tons of lime per year are listed
+  separately; smaller producers are aggregated as "Other countries." Prices are average
+  value in dollars per metric ton at plant, reported separately for quicklime and hydrated
+  lime. All production quantities are converted to million_tonnes_per_year (1,000 thousand
+  metric tons = 1 Mt). Note: elemental calcium metal (used as a reducing agent in
+  metallurgy and in alloying) is a small niche market not separately tracked in this
+  USGS chapter; the dominant commercial calcium supply chain is lime.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 420.0
+    unit: million_tonnes_per_year
+    form: unspecified
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.108-109: world total lime production 2024e = 420,000 thousand
+      metric tons (rounded), down slightly from 424,000 kt in 2023. Covers quicklime
+      (CaO), hydrated lime (Ca(OH)₂), and refractory dead-burned dolomite. China alone
+      accounts for ~74% of world lime output. US production 2024e = 16,000 thousand
+      metric tons, valued at about $3.2 billion.
+    source_id: usgs_mcs_2025_lime
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 73.81
+        quantity:
+          value: 310.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: China 2024e = 310,000 thousand metric tons. By far the world's largest lime producer."
+        source_id: usgs_mcs_2025_lime
+      - country: IN
+        share_pct: 4.05
+        quantity:
+          value: 17.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: India 2024e = 17,000 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: US
+        share_pct: 3.81
+        quantity:
+          value: 16.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: |
+          USGS MCS 2025 table: United States 2024e = 16,000 thousand metric tons
+          (unchanged from 2023). Produced by 26 companies at 73 primary lime plants
+          in 28 States and Puerto Rico. Five leading companies account for ~80% of US
+          production. Principal producing States: Alabama, Missouri, Ohio, and Texas.
+        source_id: usgs_mcs_2025_lime
+      - country: RU
+        share_pct: 2.62
+        quantity:
+          value: 11.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Russia (industrial and construction) 2024e = 11,000 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: BR
+        share_pct: 1.93
+        quantity:
+          value: 8.1
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Brazil 2024e = 8,100 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: JP
+        share_pct: 1.43
+        quantity:
+          value: 6.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Japan 2024e = 6,000 thousand metric tons (quicklime only)."
+        source_id: usgs_mcs_2025_lime
+      - country: DE
+        share_pct: 1.36
+        quantity:
+          value: 5.7
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Germany 2024e = 5,700 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: KR
+        share_pct: 1.21
+        quantity:
+          value: 5.1
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Korea, Republic of 2024e = 5,100 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: TR
+        share_pct: 0.98
+        quantity:
+          value: 4.1
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Turkey 2024e = 4,100 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: IR
+        share_pct: 0.95
+        quantity:
+          value: 4.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Iran 2024e = 4,000 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: FR
+        share_pct: 0.83
+        quantity:
+          value: 3.5
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: France 2024e = 3,500 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: IT
+        share_pct: 0.57
+        quantity:
+          value: 2.4
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Italy 2024e = 2,400 thousand metric tons (includes hydraulic lime)."
+        source_id: usgs_mcs_2025_lime
+      - country: AU
+        share_pct: 0.48
+        quantity:
+          value: 2.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Australia 2024e = 2,000 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: CA
+        share_pct: 0.45
+        quantity:
+          value: 1.9
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: |
+          USGS MCS 2025 table: Canada 2024e = 1,900 thousand metric tons. Canada is
+          also the dominant source of US lime imports (82% of US imports 2020-23).
+        source_id: usgs_mcs_2025_lime
+      - country: ES
+        share_pct: 0.40
+        quantity:
+          value: 1.7
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Spain 2024e = 1,700 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: MY
+        share_pct: 0.36
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Malaysia 2024e = 1,500 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: GB
+        share_pct: 0.33
+        quantity:
+          value: 1.4
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: United Kingdom 2024e = 1,400 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: BG
+        share_pct: 0.31
+        quantity:
+          value: 1.3
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Bulgaria 2024e = 1,300 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: PL
+        share_pct: 0.31
+        quantity:
+          value: 1.3
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Poland 2024e = 1,300 thousand metric tons (hydrated and quicklime)."
+        source_id: usgs_mcs_2025_lime
+      - country: ZA
+        share_pct: 0.26
+        quantity:
+          value: 1.1
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: South Africa 2024e = 1,100 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: UA
+        share_pct: 0.24
+        quantity:
+          value: 1.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Ukraine 2024e = 1,000 thousand metric tons."
+        source_id: usgs_mcs_2025_lime
+      - country: BE
+        share_pct: 0.24
+        quantity:
+          value: 1.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: "USGS MCS 2025 table: Belgium 2024e = 1,000 thousand metric tons (includes hydraulic lime)."
+        source_id: usgs_mcs_2025_lime
+      - country: ZZ
+        share_pct: 4.05
+        quantity:
+          value: 17.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          source_id: usgs_mcs_2025_lime
+        notes: |
+          USGS MCS 2025 "Other countries" row: 17,000 thousand metric tons. Includes
+          all countries producing <1 million tons of lime annually.
+        source_id: usgs_mcs_2025_lime
+    completeness: complete
+  notes: |
+    USGS MCS 2025: world total 2024e = 420,000 thousand metric tons (rounded). Named
+    country entries plus "Other countries" sum to 423,100 kt; the ~3,100 kt discrepancy
+    reflects rounding of the stated world total. Share percentages are calculated using
+    each country's stated quantity divided by the rounded world total of 420,000 kt.
+
+reserves:
+  notes: |
+    USGS MCS 2025 p.109: "Domestic and world resources of limestone and dolomite suitable
+    for lime manufacture are very large." The reserves column in the USGS world production
+    table states only "Adequate for all countries with listed production" — no specific
+    quantitative reserves are provided by USGS for lime. Limestone deposits are extremely
+    widespread globally and are not considered resource-constrained.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: limestone
+    notes: |
+      Limestone (calcium carbonate, CaCO3) is the primary feedstock for quicklime and
+      hydrated lime production. Limestone is calcined in vertical or rotary kilns at
+      900–1,200°C to produce quicklime (CaO) via the reaction CaCO3 → CaO + CO2.
+      Quicklime may then be slaked with water to produce hydrated lime (Ca(OH)₂).
+      USGS MCS 2025: depletion allowance for limestone produced and used for lime
+      production is 14% (domestic and foreign).
+    source_id: usgs_mcs_2025_lime
+  - substrate: dolomite
+    notes: |
+      Dolomite (calcium magnesium carbonate, CaMg(CO3)₂) is calcined to produce
+      dolomitic lime (CaO·MgO) and refractory dead-burned dolomite (used in basic
+      steel furnace linings). The USGS lime chapter explicitly includes refractory
+      dead-burned dolomite in its production statistics. Calcined dolomite (HTS
+      2518.20.0000) carries a 3% ad valorem tariff per USGS MCS 2025.
+    source_id: usgs_mcs_2025_lime
+
+substitutes:
+  - application: fluxing_agriculture_sulfur_removal
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Limestone is a substitute for lime in many
+      applications, such as agriculture, fluxing, and sulfur removal. Limestone, which
+      contains less reactive material, is slower to react and may have other disadvantages
+      compared with lime, depending on the application; however, limestone is considerably
+      less expensive than lime."
+    source_id: usgs_mcs_2025_lime
+  - application: industrial_plasters_mortars
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Calcined gypsum is an alternative material in industrial plasters
+      and mortars."
+    source_id: usgs_mcs_2025_lime
+  - application: construction
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Cement, cement kiln dust, fly ash, and lime kiln dust are potential
+      substitutes for some construction uses of lime."
+    source_id: usgs_mcs_2025_lime
+  - application: ph_control
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Magnesium hydroxide is a substitute for lime in pH control."
+    source_id: usgs_mcs_2025_lime
+  - application: steelmaking_flux
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Magnesium oxide is a substitute for dolomitic lime as a flux in
+      steelmaking."
+    source_id: usgs_mcs_2025_lime
+
+end_uses:
+  uses:
+    - application: steelmaking
+      share_pct: 35
+      confidence: low
+      notes: |
+        USGS MCS 2025: steelmaking is the first-listed end use "in descending order of
+        consumption." Lime (both quicklime and dolomitic lime) is an essential flux in
+        basic oxygen furnace (BOF) and electric arc furnace (EAF) steelmaking, removing
+        phosphorus, sulfur, and silica impurities from molten steel. Share percentage is
+        an approximation consistent with industry data; USGS does not provide explicit
+        percentages in this chapter.
+      source_id: usgs_mcs_2025_lime
+    - application: chemical_and_industrial
+      share_pct: 27
+      confidence: low
+      notes: |
+        USGS MCS 2025: "chemical and industrial applications (such as the manufacture of
+        fertilizer, glass, paper and pulp, and precipitated calcium carbonate, and in sugar
+        refining)" is the second-largest use. Includes production of calcium carbide, calcium
+        hypochlorite, and other calcium compounds. Share percentage is approximate.
+      source_id: usgs_mcs_2025_lime
+    - application: flue_gas_treatment
+      share_pct: 15
+      confidence: low
+      notes: |
+        USGS MCS 2025: flue gas treatment is the third-listed use. Lime and hydrated lime
+        are injected into flue gas streams to neutralize SO₂ (acid rain precursor) and
+        capture mercury, primarily at coal-fired power plants and industrial facilities.
+        Share percentage is approximate.
+      source_id: usgs_mcs_2025_lime
+    - application: construction
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025: construction is the fourth-listed use. Applications include soil
+        stabilization for roads and foundations, modification of asphalt, lime-based plaster
+        and mortar, and stabilization of mine tailings. Hydrated lime is the primary form
+        used. Share percentage is approximate.
+      source_id: usgs_mcs_2025_lime
+    - application: water_treatment
+      share_pct: 8
+      confidence: low
+      notes: |
+        USGS MCS 2025: water treatment is the fifth-listed use. Lime is used for pH
+        adjustment, softening (removing calcium and magnesium hardness), fluoride removal,
+        and heavy-metal precipitation in both municipal drinking water and industrial
+        wastewater treatment. Recycling: USGS notes some municipal water-treatment plants
+        regenerate lime from softening sludge. Share percentage is approximate.
+      source_id: usgs_mcs_2025_lime
+    - application: nonferrous_metal_mining
+      share_pct: 5
+      confidence: low
+      notes: |
+        USGS MCS 2025: nonferrous-metal mining is the sixth and last-listed use. Lime
+        is used in gold cyanidation (pH control), copper flotation circuits, and tailings
+        neutralization. Share percentage is approximate.
+      source_id: usgs_mcs_2025_lime
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Calcium (lime) is not on the US 2022 Critical Minerals List, the EU Critical Raw
+    Materials list (Regulation 2024/1252), or the EU Strategic Raw Materials list.
+    Limestone deposits are globally abundant and widespread; lime production is a mature,
+    geographically distributed industry. The United States is less than 1% net import
+    reliant on lime (essentially self-sufficient), with Canada and Mexico supplying the
+    small import fraction.
+
+prices:
+  - year: 2024
+    value: 190.0
+    unit: usd_per_tonne
+    form: oxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value quicklime 2024e = $190 per metric ton at plant (estimated)."
+    source_id: usgs_mcs_2025_lime
+  - year: 2023
+    value: 183.1
+    unit: usd_per_tonne
+    form: oxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value quicklime 2023 = $183.10 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2022
+    value: 151.3
+    unit: usd_per_tonne
+    form: oxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value quicklime 2022 = $151.30 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2021
+    value: 133.4
+    unit: usd_per_tonne
+    form: oxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value quicklime 2021 = $133.40 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2020
+    value: 131.4
+    unit: usd_per_tonne
+    form: oxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value quicklime 2020 = $131.40 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2024
+    value: 240.0
+    unit: usd_per_tonne
+    form: hydroxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value hydrated lime 2024e = $240 per metric ton at plant (estimated)."
+    source_id: usgs_mcs_2025_lime
+  - year: 2023
+    value: 235.0
+    unit: usd_per_tonne
+    form: hydroxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value hydrated lime 2023 = $235.00 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2022
+    value: 183.1
+    unit: usd_per_tonne
+    form: hydroxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value hydrated lime 2022 = $183.10 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2021
+    value: 159.6
+    unit: usd_per_tonne
+    form: hydroxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value hydrated lime 2021 = $159.60 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+  - year: 2020
+    value: 156.0
+    unit: usd_per_tonne
+    form: hydroxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value hydrated lime 2020 = $156.00 per metric ton at plant."
+    source_id: usgs_mcs_2025_lime
+
+geopolitical_events:
+  - date: 2024-01
+    event: "US lime production estimated unchanged from 2023 at 16 million tons; some producers increased pricing owing to higher production costs"
+    impact: |
+      Steady domestic supply despite flat volume; value of US production ~$3.2 billion in
+      2024. Higher production costs (energy, labor, compliance) driving price increases
+      for both quicklime ($190/t estimated) and hydrated lime ($240/t estimated).
+    source_id: usgs_mcs_2025_lime
+  - date: 2024-01
+    event: "Several US lime companies announced plans to accelerate decarbonization efforts in lime production"
+    impact: |
+      Lime kilns are inherently CO₂-intensive: calcination of limestone (CaCO3 → CaO +
+      CO₂) releases ~440 kg CO₂ per tonne of quicklime as process emissions, in addition
+      to combustion CO₂. Carbon capture, alternative fuels (hydrogen, biomass), and
+      efficiency improvements are under development by industry. Decarbonization pressure
+      will likely add costs but may open new markets (e.g., carbon mineralization).
+    source_id: usgs_mcs_2025_lime
+  - date: 2024-01
+    event: "73 quicklime plants and 10 hydrating plants in operation in the United States in 2024; net import reliance <1%"
+    impact: |
+      US lime industry remained broadly self-sufficient. Import sources 2020-23: Canada
+      82%, Mexico 13%, other 5%. Quicklime and slaked lime imports duty-free; calcined
+      dolomite carries 3% ad valorem tariff. Hydrated lime described: dry calcium hydroxide
+      powder produced by reacting quicklime with controlled water in a hydrator.
+    source_id: usgs_mcs_2025_lime
+
+narrative: |
+  Lime — primarily quicklime (CaO) and hydrated lime (Ca(OH)₂) — is the dominant
+  commercial form of calcium in global trade, with world production of approximately
+  420 million tonnes per year in 2024. China is overwhelmingly the largest producer
+  at ~74% of world output (310 Mt), with India a distant second at ~4% (17 Mt) and
+  the United States third at ~4% (16 Mt). The US lime industry is essentially
+  self-sufficient (<1% net import reliance), with 26 companies operating 73 primary
+  lime plants in 28 States and Puerto Rico; the five largest companies account for
+  roughly 80% of US production. US lime production was valued at approximately
+  $3.2 billion in 2024. The major end uses — steelmaking, chemical and industrial
+  processing, flue gas desulfurization, construction, water treatment, and nonferrous
+  metal mining — reflect lime's role as an inexpensive, versatile alkali and flux
+  across the industrial economy.
+
+  US quicklime prices rose steadily from $131/t in 2020 to an estimated $190/t in
+  2024, and hydrated lime from $156/t to $240/t over the same period. Production
+  costs — energy (fuel for kilns), labor, and regulatory compliance — have been the
+  primary drivers of price increases; USGS notes that "some of the lime producers
+  have increased product pricing owing to increased costs of production." The lime
+  industry faces a fundamental decarbonization challenge: calcination of limestone
+  releases ~440 kg of CO₂ per tonne of quicklime as unavoidable process emissions,
+  separate from combustion. Several US companies announced plans in 2024 to accelerate
+  decarbonization efforts. The limestone and dolomite resource base is effectively
+  unlimited globally; USGS describes resources as "very large" and states reserves are
+  "adequate for all countries with listed production."
+
+  Lime is not classified as a critical material under any major national or multilateral
+  framework (US Critical Minerals List, EU Critical Raw Materials, EU Strategic Raw
+  Materials). The global supply base is geographically distributed — limestone is among
+  the most common sedimentary rocks — and production capacity is closely matched to
+  regional demand because transport costs limit trade radius. Key substitutes exist for
+  specific applications (limestone in agriculture and fluxing, magnesium hydroxide for
+  pH control, cement and fly ash in construction) but none replicate lime's combination
+  of reactivity, availability, and low cost across the full range of applications.
+
+sources:
+  - id: usgs_mcs_2025_lime
+    title: Mineral Commodity Summaries 2025 — Lime
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
