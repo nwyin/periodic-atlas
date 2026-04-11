@@ -1,0 +1,1132 @@
+symbol: Ti
+atomic_number: 22
+name: titanium
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Titanium is a three-stream commodity. USGS MCS 2025 reports:
+  (1) mineral concentrates — ilmenite and rutile — in thousand metric tons of
+  titanium dioxide (TiO2) content; (2) sponge metal in metric tons, produced by
+  the Kroll process (TiCl4 reduced with magnesium); and (3) TiO2 pigment in
+  metric tons of pigment product. All production quantities in this file are
+  converted to tonnes_per_year or tonnes as appropriate.
+  Ilmenite (FeTiO3) accounts for roughly 90% of world titanium mineral
+  consumption; rutile (TiO2, typically ≥95% TiO2 content) commands a
+  significant price premium over ilmenite. Titanium slag (an upgraded ilmenite
+  smelted to 80–95% TiO2) is an important intermediate feedstock traded
+  alongside natural concentrates. Sponge metal prices are reported as landed
+  duty-paid unit value of US imports. TiO2 pigment prices are US domestic
+  prices from US Salient Statistics.
+
+production:
+  - reporting_year: 2024
+    stream: ilmenite
+    mine:
+      value: 8900000
+      unit: tonnes_per_year
+      form: concentrate
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 Titanium Mineral Concentrates chapter p.188: world total
+        ilmenite mine production 2024e = 8,900 thousand metric tons TiO2 content
+        (rounded). US production (~100 kt) is included but rounded to nearest
+        100,000 tons per proprietary data policy.
+      source_id: usgs_mcs_2025_ti_mineral_concentrates
+    mining_by_country:
+      shares:
+        - country: CN
+          share_pct: 37.08
+          quantity:
+            value: 3300000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 3,300 kt TiO2 content. Largest single ilmenite producer; also dominant TiO2 pigment consumer."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: MZ
+          share_pct: 21.35
+          quantity:
+            value: 1900000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 1,900 kt. Mozambique is a major supplier; reserve status NA. Also a leading rutile producer."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: ZA
+          share_pct: 14.61
+          quantity:
+            value: 1300000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 1,300 kt. Titaniferous magnetite mining primarily produces titaniferous slag."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: AU
+          share_pct: 4.49
+          quantity:
+            value: 400000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 400 kt. JORC-compliant ilmenite reserves estimated 43 Mt and rutile 11 Mt TiO2 content."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: "NO"
+          share_pct: 4.04
+          quantity:
+            value: 360000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 360 kt. Norway; also a leading supplier of titanium slag to the US."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: CA
+          share_pct: 3.93
+          quantity:
+            value: 350000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 350 kt. Mine production of titaniferous magnetite primarily used for slag."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: SN
+          share_pct: 3.37
+          quantity:
+            value: 300000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 300 kt. Senegal; reserve status NA."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: MG
+          share_pct: 2.70
+          quantity:
+            value: 240000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 240 kt (down from 300 kt in 2023). Madagascar; leading US import source for ilmenite."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: IN
+          share_pct: 2.36
+          quantity:
+            value: 210000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 210 kt. India."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: UA
+          share_pct: 1.35
+          quantity:
+            value: 120000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 120 kt (down from 130 kt in 2023). Ukraine; war-related production disruption."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: US
+          share_pct: 1.12
+          quantity:
+            value: 100000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 100 kt (rounded to nearest 100,000 t to avoid disclosing proprietary data). One company mines near Nahunta, GA and Starke, FL."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: XX
+          share_pct: 3.71
+          quantity:
+            value: 330000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e 'Other countries': 330 kt TiO2 content. Includes minor producers not individually tabulated."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+      completeness: complete
+    notes: |
+      Data in thousand metric tons TiO2 content per USGS chapter header.
+      US production rounded to nearest 100,000 t. Mozambique and Senegal
+      reserve data not available (NA per USGS). Named countries plus Other
+      sum to 8,910 kt vs world total 8,900 kt (rounded) — ~100.1% within tolerance.
+
+  - reporting_year: 2024
+    stream: rutile
+    mine:
+      value: 450000
+      unit: tonnes_per_year
+      form: concentrate
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 Titanium Mineral Concentrates chapter p.189: world total
+        rutile mine production 2024e = 450 thousand metric tons TiO2 content
+        (rounded). US rutile production and reserves are included with ilmenite
+        in USGS tables (note 9). Significant year-on-year decline from 590 kt
+        in 2023, primarily due to Sierra Leone drop (110 kt → 60 kt) and
+        Ukraine collapse (95 kt → 10 kt).
+      source_id: usgs_mcs_2025_ti_mineral_concentrates
+    mining_by_country:
+      shares:
+        - country: AU
+          share_pct: 44.44
+          quantity:
+            value: 200000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 200 kt. Australia's JORC-compliant rutile reserves estimated at 11 Mt TiO2 content."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: ZA
+          share_pct: 22.22
+          quantity:
+            value: 100000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 100 kt. South Africa; leading US rutile import source (53% of US rutile imports Sep 2024)."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: SL
+          share_pct: 13.33
+          quantity:
+            value: 60000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 60 kt (down sharply from 110 kt in 2023). Sierra Leone."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: KE
+          share_pct: 8.89
+          quantity:
+            value: 40000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 40 kt (down from 47 kt in 2023). Kenya; 8% of US rutile imports Sep 2024."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: XX
+          share_pct: 4.44
+          quantity:
+            value: 20000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e 'Other countries': 20 kt."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: UA
+          share_pct: 2.22
+          quantity:
+            value: 10000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 10 kt (down from 95 kt in 2023). Ukraine; severe war-related production disruption in rutile."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: IN
+          share_pct: 2.67
+          quantity:
+            value: 12000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 12 kt."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        - country: MZ
+          share_pct: 1.78
+          quantity:
+            value: 8000
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_ti_mineral_concentrates
+          notes: "USGS 2024e: 8 kt."
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+      completeness: complete
+    notes: |
+      US rutile production and reserves are included with ilmenite per USGS
+      footnote 9. Named countries sum to exactly 450 kt = 100%.
+      2024e world total declined sharply from 590 kt in 2023 driven by
+      Sierra Leone and Ukraine output reductions.
+
+  - reporting_year: 2024
+    stream: sponge_metal
+    refined:
+      value: 320000
+      unit: tonnes_per_year
+      form: metal
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 Titanium and TiO2 chapter p.187: world sponge metal
+        production 2024e = 320,000 metric tons (rounded). This total excludes
+        US production (withheld to avoid disclosing proprietary data). The
+        single US sponge facility in Salt Lake City, UT had estimated capacity
+        of 500 t/yr; two other facilities (Henderson NV and Rowley UT) remain
+        idle since 2020 and 2016 respectively.
+      source_id: usgs_mcs_2025_titanium
+    refining_by_country:
+      shares:
+        - country: CN
+          share_pct: 68.75
+          quantity:
+            value: 220000
+            unit: tonnes_per_year
+            form: metal
+            source_id: usgs_mcs_2025_titanium
+          notes: "USGS 2024e: 220,000 t sponge. China capacity 260,000 t/yr. Dominant global sponge producer."
+          source_id: usgs_mcs_2025_titanium
+        - country: JP
+          share_pct: 17.19
+          quantity:
+            value: 55000
+            unit: tonnes_per_year
+            form: metal
+            source_id: usgs_mcs_2025_titanium
+          notes: "USGS 2024e: 55,000 t (down from 57,000 t in 2023). Japan capacity 65,200 t/yr. Japan supplied 67% of US sponge imports Jan-Sep 2024."
+          source_id: usgs_mcs_2025_titanium
+        - country: RU
+          share_pct: 6.25
+          quantity:
+            value: 20000
+            unit: tonnes_per_year
+            form: metal
+            source_id: usgs_mcs_2025_titanium
+          notes: "USGS 2024e: 20,000 t. Russia capacity 46,500 t/yr. VSMPO-AVISMA is the dominant Russian producer."
+          source_id: usgs_mcs_2025_titanium
+        - country: SA
+          share_pct: 4.69
+          quantity:
+            value: 15000
+            unit: tonnes_per_year
+            form: metal
+            source_id: usgs_mcs_2025_titanium
+          notes: "USGS 2024e: 15,000 t (up from 11,000 t in 2023). Saudi Arabia capacity 15,600 t/yr. 23% of US sponge imports Jan-Sep 2024."
+          source_id: usgs_mcs_2025_titanium
+        - country: KZ
+          share_pct: 4.38
+          quantity:
+            value: 14000
+            unit: tonnes_per_year
+            form: metal
+            source_id: usgs_mcs_2025_titanium
+          notes: "USGS 2024e: 14,000 t. Kazakhstan capacity 26,000 t/yr. 7% of US sponge imports Jan-Sep 2024."
+          source_id: usgs_mcs_2025_titanium
+        - country: IN
+          share_pct: 0.09
+          quantity:
+            value: 300
+            unit: tonnes_per_year
+            form: metal
+            source_id: usgs_mcs_2025_titanium
+          notes: "USGS 2024e: 300 t. India capacity 500 t/yr. Minor producer."
+          source_id: usgs_mcs_2025_titanium
+      completeness: complete
+    notes: |
+      World sponge production total (rounded) excludes US production (W).
+      Named countries sum to 324,300 t vs rounded total 320,000 t (~101.3%,
+      within rounding tolerance). US sponge imports are estimated at 40,000 t
+      in 2024 — near the historical high of 40,400 t in 2023. Net import
+      reliance >95% of apparent consumption.
+
+  - reporting_year: 2024
+    stream: titanium_dioxide
+    refined:
+      value: 850000
+      unit: tonnes_per_year
+      form: dioxide
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 Titanium and TiO2 chapter p.186: US TiO2 pigment
+        production 2024e = 850,000 metric tons, valued at approximately $3
+        billion. Four companies operated five facilities in four states.
+        Production declined from 920,000 t in 2023 and 1,150,000 t in 2022.
+        World TiO2 capacity (2024e) = 9,800,000 t/yr; world production total
+        by country is not separately reported by USGS.
+      source_id: usgs_mcs_2025_titanium
+    refining_by_country:
+      shares:
+        - country: CN
+          share_pct: 56.12
+          quantity:
+            value: 5500000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 5,500,000 t/yr. China dominates global TiO2 pigment capacity. Actual production not separately reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: US
+          share_pct: 13.88
+          quantity:
+            value: 850000
+            unit: tonnes_per_year
+            form: dioxide
+            notes: "USGS 2024e actual production: 850,000 t. US is net exporter of TiO2 pigments despite import reliance on mineral concentrates."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: MX
+          share_pct: 3.57
+          quantity:
+            value: 350000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 350,000 t/yr. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: DE
+          share_pct: 3.46
+          quantity:
+            value: 339000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 339,000 t/yr. Germany. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: GB
+          share_pct: 3.21
+          quantity:
+            value: 315000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 315,000 t/yr. UK. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: JP
+          share_pct: 3.29
+          quantity:
+            value: 322000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 322,000 t/yr. Japan. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: AU
+          share_pct: 2.65
+          quantity:
+            value: 260000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 260,000 t/yr. Australia. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: SA
+          share_pct: 2.04
+          quantity:
+            value: 200000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 200,000 t/yr. Saudi Arabia. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: UA
+          share_pct: 1.24
+          quantity:
+            value: 122000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 122,000 t/yr. Ukraine. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: CA
+          share_pct: 1.10
+          quantity:
+            value: 108000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 108,000 t/yr. Canada. Largest source of US TiO2 pigment imports (44%, 2020-23 avg). Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: IN
+          share_pct: 0.93
+          quantity:
+            value: 91000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 91,000 t/yr. India. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: RU
+          share_pct: 0.56
+          quantity:
+            value: 55000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e: 55,000 t/yr. Russia. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+        - country: XX
+          share_pct: 8.37
+          quantity:
+            value: 820000
+            unit: tonnes_per_year
+            form: dioxide
+            confidence: low
+            notes: "USGS capacity 2024e 'Other countries': 820,000 t/yr. Actual production not reported."
+            source_id: usgs_mcs_2025_titanium
+          source_id: usgs_mcs_2025_titanium
+      completeness: partial
+    notes: |
+      USGS reports world TiO2 pigment capacity only, not world production by
+      country. Country shares above are capacity shares (not production shares)
+      and are marked low confidence accordingly. US production figure (850,000 t)
+      is the one confirmed actual production value from USGS salient statistics.
+      TiO2 capacity shares sum to ~100.4% (9,842 kt vs 9,800 kt world total,
+      within rounding tolerance).
+
+reserves:
+  economic_reserves:
+    value: 560000000
+    unit: tonnes
+    form: concentrate
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 Titanium Mineral Concentrates p.189: world ilmenite
+      reserves >510,000 kt TiO2 content + world rutile reserves >46,000 kt
+      TiO2 content = combined >560,000 kt = >560,000,000 metric tons TiO2
+      content. Several countries (Mozambique, Senegal, Kenya, Ukraine-rutile)
+      have NA reserve data; the world total reflects the sum of known reserves
+      and is therefore a lower bound.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  resources:
+    value: 2000000000
+    unit: tonnes
+    form: concentrate
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 p.189: "World resources of anatase, ilmenite, and rutile
+      total more than 2 billion tons." This is an overall resource base figure
+      (not economic reserves). Includes sub-economic and inferred resources.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 36.91
+        quantity:
+          value: 215000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: |
+          Australia combined: ilmenite 180,000 kt + rutile 35,000 kt = 215,000 kt
+          TiO2 content. JORC-compliant reserves: 43 Mt ilmenite + 11 Mt rutile.
+          Largest reserve holder globally.
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: CN
+        share_pct: 18.88
+        quantity:
+          value: 110000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "China ilmenite reserves: 110,000 kt TiO2 content. Rutile reserve data not separately reported."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: CA
+        share_pct: 8.75
+        quantity:
+          value: 51000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "Canada ilmenite reserves: 51,000 kt TiO2 content. Rutile reserve data not separately reported."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: "NO"
+        share_pct: 6.35
+        quantity:
+          value: 37000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "Norway ilmenite reserves: 37,000 kt TiO2 content."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: MG
+        share_pct: 5.14
+        quantity:
+          value: 30000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "Madagascar ilmenite reserves: 30,000 kt TiO2 content. Rutile reserve data not separately reported."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: ZA
+        share_pct: 5.87
+        quantity:
+          value: 34100000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "South Africa combined: ilmenite 28,000 kt + rutile 6,100 kt = 34,100 kt TiO2 content."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: IN
+        share_pct: 2.69
+        quantity:
+          value: 15670000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "India combined: ilmenite 15,000 kt + rutile 670 kt = 15,670 kt TiO2 content."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: UA
+        share_pct: 1.01
+        quantity:
+          value: 5900000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "Ukraine ilmenite reserves: 5,900 kt TiO2 content. Rutile reserve data NA per USGS."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: SL
+        share_pct: 0.50
+        quantity:
+          value: 2900000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "Sierra Leone rutile reserves: 2,900 kt TiO2 content."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: MZ
+        share_pct: 0.12
+        quantity:
+          value: 720000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "Mozambique rutile reserves: 720 kt TiO2 content. Ilmenite reserve data NA per USGS."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+      - country: US
+        share_pct: 0.34
+        quantity:
+          value: 2000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_ti_mineral_concentrates
+        notes: "US ilmenite reserves: 2,000 kt TiO2 content. US rutile reserves included with ilmenite."
+        source_id: usgs_mcs_2025_ti_mineral_concentrates
+    completeness: partial
+  notes: |
+    Country reserves data revised by USGS based on company and government
+    reports (Canada, China, India, Kenya, Madagascar, Mozambique, and Other
+    countries). Mozambique, Senegal, and Kenya ilmenite/rutile reserve data
+    are NA. Other countries ilmenite reserves stated as >54,000 kt, rutile >540 kt.
+    Country shares above are computed against the stated world total of >560,000 kt
+    and are therefore approximate lower bounds. Completeness is partial due to NA entries.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ilmenite_concentrate
+    typical_concentration_pct: 45
+    notes: |
+      Primary feedstock for TiO2 pigment production (via sulfate or chloride
+      process) and for titanium metal sponge production (via TiCl4 intermediate).
+      Natural ilmenite is FeTiO3 with ~45–65% TiO2 content. Upgraded to
+      titanium slag (80–95% TiO2) by electric arc furnace smelting before
+      entering the chloride process. >95% of US mineral concentrates consumed
+      by TiO2 pigment producers; remainder for welding rods, metal, carbides.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - substrate: rutile_concentrate
+    typical_concentration_pct: 95
+    notes: |
+      High-grade feedstock (≥95% TiO2) for TiO2 pigment (chloride process)
+      and titanium metal sponge. Natural rutile commands a price premium over
+      ilmenite due to its higher TiO2 content and lower impurities. Synthetic
+      rutile (upgraded from ilmenite) also used as feedstock; US synthetic
+      rutile imports entirely from China per USGS Sep 2024 data.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - substrate: titanium_slag
+    typical_concentration_pct: 87
+    notes: |
+      Intermediate product (80–95% TiO2) produced by electric arc furnace
+      smelting of ilmenite. Slag is a major chloride-process feedstock globally.
+      US slag imports (Sep 2024): Canada 46%, Norway 31%, South Africa 23%.
+      USGS reports slag unit value of US imports at $990/t (2024e), down from
+      $1,050/t in 2023.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+
+substitutes:
+  - application: metal_high_strength_structural
+    availability: partial
+    notes: |
+      USGS MCS 2025 Titanium and TiO2 chapter: "In high-strength applications,
+      titanium competes with aluminum, composites, intermetallics, steel, and
+      superalloys." These substitutes can replace titanium in specific aerospace
+      and industrial structures, but typically at a weight or corrosion
+      performance penalty. Titanium's strength-to-weight ratio and corrosion
+      resistance are considered essentially unmatched at comparable weight in
+      many aero applications.
+    source_id: usgs_mcs_2025_titanium
+  - application: metal_corrosion_resistance
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Aluminum, nickel, specialty steels, and zirconium alloys
+      may be substituted for titanium for applications that require corrosion
+      resistance." These materials offer adequate corrosion resistance in some
+      chemical processing, marine, and medical environments but generally with
+      trade-offs in weight, cost, or performance at extreme conditions.
+    source_id: usgs_mcs_2025_titanium
+  - application: tio2_white_pigment
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Ground calcium carbonate, precipitated calcium carbonate,
+      kaolin, and talc compete with TiO2 as a white pigment." These extender
+      pigments offer lower cost but significantly inferior hiding power and
+      brightness. TiO2 has the highest refractive index of any commercial white
+      pigment (n=2.73 for rutile); no complete functional substitute exists at
+      the same loading level.
+    source_id: usgs_mcs_2025_titanium
+  - application: mineral_concentrate_feedstock
+    availability: full
+    notes: |
+      USGS MCS 2025 Titanium Mineral Concentrates chapter: "Ilmenite, leucoxene,
+      rutile, slag, and synthetic rutile compete as feedstock sources for
+      producing TiO2 pigment, titanium metal, and welding-rod coatings."
+      These materials are functional substitutes for each other in many
+      production routes, with price differentials driving feedstock mix choices.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+
+end_uses:
+  uses:
+    - application: tio2_pigment_paints_coatings
+      share_pct: 57
+      confidence: medium
+      notes: |
+        USGS MCS 2025 p.186: leading use of TiO2 pigment is "paints (including
+        lacquers and varnishes)." Paints and coatings typically account for
+        ~55-60% of global TiO2 pigment demand. More than 95% of US mineral
+        concentrates consumed by TiO2 pigment producers; paints/coatings is
+        the dominant downstream use. Percentage inferred from USGS qualitative
+        description and industry context; exact global split not stated.
+      source_id: usgs_mcs_2025_titanium
+    - application: tio2_pigment_plastics
+      share_pct: 20
+      confidence: medium
+      notes: |
+        USGS MCS 2025 p.186: second leading use of TiO2 pigment is plastics.
+        Plastics use TiO2 as an opacifier and UV stabilizer. Share inferred
+        from USGS ordering (paints, plastics, paper) and industry context.
+      source_id: usgs_mcs_2025_titanium
+    - application: tio2_pigment_paper
+      share_pct: 10
+      confidence: medium
+      notes: |
+        USGS MCS 2025 p.186: third leading use of TiO2 pigment is paper.
+        Paper uses TiO2 for whiteness and opacity. Share inferred.
+      source_id: usgs_mcs_2025_titanium
+    - application: metal_aerospace
+      share_pct: 7
+      confidence: medium
+      notes: |
+        USGS MCS 2025 p.186: "the majority of titanium metal was used in
+        aerospace applications." Aerospace (airframes, engines, fasteners) is
+        the dominant use of titanium sponge/mill products. Total titanium metal
+        apparent consumption was estimated at ~340,000 t in 2024. Share estimated
+        relative to total mineral concentrates market.
+      source_id: usgs_mcs_2025_titanium
+    - application: tio2_pigment_other
+      share_pct: 4
+      confidence: low
+      notes: |
+        USGS MCS 2025 p.186: other TiO2 uses include catalysts, ceramics,
+        coated fabrics and textiles, floor coverings, printing ink, and
+        roofing granules.
+      source_id: usgs_mcs_2025_titanium
+    - application: metal_other
+      share_pct: 2
+      confidence: low
+      notes: |
+        USGS MCS 2025 p.186: titanium metal remainder uses include armor,
+        chemical processing, marine hardware, medical implants, power
+        generation, and other applications. Also includes welding-rod coatings,
+        carbides, and chemicals from mineral concentrates (small fraction).
+      source_id: usgs_mcs_2025_titanium
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2022
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_annex_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_annex_2024
+  notes: |
+    Titanium is on the US 2022 Final List of Critical Minerals (Federal Register
+    Vol. 87, No. 37, February 22, 2022). Titanium metal is listed in Annex I
+    (Strategic Raw Materials) and Annex II (Critical Raw Materials) of the EU
+    Critical Raw Materials Act (Regulation EU 2024/1252, March 2024). Criticality
+    reflects supply concentration risk in sponge metal (China ~69% of world
+    production, Japan ~17%) and strategic importance for aerospace and defense.
+    The US Government Stockpile targets potential acquisition of 15,000 metric
+    tons of titanium in both FY2024 and FY2025.
+
+prices:
+  - year: 2024
+    value: 1310
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    notes: |
+      USGS MCS 2025 Salient Statistics: rutile, bulk, minimum 95% TiO2,
+      free on board (f.o.b.) Australia, 2024e annual average = $1,310/metric ton.
+      Source: Fastmarkets IM annual average.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2023
+    value: 1460
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    notes: "USGS MCS 2025: rutile f.o.b. Australia 2023 = $1,460/t (Fastmarkets IM)."
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2022
+    value: 1470
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    notes: "USGS MCS 2025: rutile f.o.b. Australia 2022 = $1,470/t (Fastmarkets IM)."
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2021
+    value: 1300
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2020
+    value: 1170
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2024
+    value: 500
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    notes: |
+      USGS MCS 2025 Salient Statistics: ilmenite and leucoxene, bulk, f.o.b.
+      Australia, 2024e = $500/metric ton. Source: Zen Innovations AG, Global
+      Trade Tracker. Significant recovery from 2023 low of $389/t.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2023
+    value: 389
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    notes: "USGS MCS 2025: ilmenite and leucoxene f.o.b. Australia 2023 = $389/t (Zen Innovations AG)."
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2022
+    value: 530
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    notes: "USGS MCS 2025: ilmenite and leucoxene f.o.b. Australia 2022 = $530/t."
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2021
+    value: 595
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2020
+    value: 459
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: AU
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2024
+    value: 340
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: ilmenite, average unit value of US
+      imports, landed duty-paid, 2024e = $340/metric ton. Source: US Census
+      Bureau. Down from $365/t in 2023.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2023
+    value: 365
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: ilmenite US import avg unit value 2023 = $365/t."
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2022
+    value: 285
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2021
+    value: 240
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2020
+    value: 215
+    unit: usd_per_tonne
+    form: concentrate
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2024
+    value: 990
+    unit: usd_per_tonne
+    form: unspecified
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: titanium slag, 80%-95% TiO2, average
+      unit value of US imports, landed duty-paid, 2024e = $990/metric ton.
+      Source: US Census Bureau. Down from $1,050/t in 2023.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2023
+    value: 1050
+    unit: usd_per_tonne
+    form: unspecified
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: titanium slag US import avg unit value 2023 = $1,050/t."
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2022
+    value: 867
+    unit: usd_per_tonne
+    form: unspecified
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2021
+    value: 774
+    unit: usd_per_tonne
+    form: unspecified
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2020
+    value: 757
+    unit: usd_per_tonne
+    form: unspecified
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - year: 2024
+    value: 13
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: titanium sponge metal price 2024e =
+      $13/kg, landed duty-paid value based on US imports for consumption.
+      Up from $12.40/kg in 2023.
+    source_id: usgs_mcs_2025_titanium
+  - year: 2023
+    value: 12.40
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: titanium sponge US import price 2023 = $12.40/kg."
+    source_id: usgs_mcs_2025_titanium
+  - year: 2022
+    value: 11.10
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_titanium
+  - year: 2021
+    value: 11.10
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_titanium
+  - year: 2020
+    value: 10.60
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_titanium
+  - year: 2024
+    value: 3200
+    unit: usd_per_tonne
+    form: dioxide
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: TiO2 pigment price 2024e = $3,200/metric
+      ton. US domestic market price. Down from $3,240/t in 2023 and the 2022
+      peak of $3,450/t.
+    source_id: usgs_mcs_2025_titanium
+  - year: 2023
+    value: 3240
+    unit: usd_per_tonne
+    form: dioxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025: TiO2 pigment price 2023 = $3,240/t."
+    source_id: usgs_mcs_2025_titanium
+  - year: 2022
+    value: 3450
+    unit: usd_per_tonne
+    form: dioxide
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025: TiO2 pigment price 2022 = $3,450/t (peak year)."
+    source_id: usgs_mcs_2025_titanium
+  - year: 2021
+    value: 2920
+    unit: usd_per_tonne
+    form: dioxide
+    basis: us_domestic
+    region: US
+    source_id: usgs_mcs_2025_titanium
+  - year: 2020
+    value: 2710
+    unit: usd_per_tonne
+    form: dioxide
+    basis: us_domestic
+    region: US
+    source_id: usgs_mcs_2025_titanium
+
+geopolitical_events:
+  - date: 2024-01
+    event: "US titanium sponge imports near historical high: ~40,000 t in 2024 (vs 40,400 t record in 2023); Japan 67%, Saudi Arabia 23%, Kazakhstan 7% of Jan-Sep 2024 imports"
+    impact: |
+      US net import reliance for sponge remained >95% of apparent consumption
+      in 2024. Import source diversification from historical Japan dominance
+      (82% in 2020-23) toward Saudi Arabia (rising) reflects deliberate US
+      procurement strategy. The customs value of imported sponge reached ~$450M
+      in 2024, up 7% from $420M in 2023.
+    source_id: usgs_mcs_2025_titanium
+  - date: 2024-01
+    event: "Virginia company scaling new scrap titanium recycling technology: planned capacity increase from 2 t/yr to 125 t/yr, long-term goal 10,000 t/yr by 2030"
+    impact: |
+      US Government-funded initiative to develop domestic titanium recycling
+      via powder metallurgy route. If successful, could reduce US dependence
+      on imported sponge for certain aerospace applications. Near-term impact
+      is negligible (2 t/yr current vs ~40,000 t/yr sponge imports).
+    source_id: usgs_mcs_2025_titanium
+  - date: 2024-01
+    event: "US titanium scrap imports: ~28,000 t in 2024; UK 17%, Germany 12%, France and Japan 11% each, Canada and Korea 9% each"
+    impact: |
+      Scrap represents an important supplementary feedstock for US titanium
+      producers. Import unit value fell from $9.20/kg (2023) to $8.70/kg (2024),
+      reflecting softer scrap market conditions.
+    source_id: usgs_mcs_2025_titanium
+  - date: 2024-01
+    event: "China continues as dominant ilmenite consumer: imports 4.0 Mt gross weight Jan-Oct 2024, up 14% vs same period 2023; top sources Mozambique 44%, Australia 12%, Norway 9%"
+    impact: |
+      China's growing TiO2 and titanium metal industries drive sustained demand
+      for mineral concentrate imports. China's domestic ilmenite production (~37%
+      of world) supplements but does not meet its refining appetite. Mozambique
+      has emerged as the single largest source for Chinese imports.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - date: 2024-01
+    event: "Sierra Leone rutile production falls from 110 kt to 60 kt (2024e); Ukraine rutile collapses from 95 kt to 10 kt due to war"
+    impact: |
+      World rutile mine production declined from 590 kt (2023) to 450 kt (2024e).
+      The combined 75 kt drop represents a ~13% decline in total titanium mineral
+      concentrate supply on a rutile-equivalent basis. Ukraine's 85-kt rutile
+      decline since the 2022 invasion has materially tightened high-grade
+      feedstock availability.
+    source_id: usgs_mcs_2025_ti_mineral_concentrates
+  - date: 2024-01
+    event: "US Government Stockpile targets: FY2024 and FY2025 potential acquisitions of 15,000 t titanium each; FY2024 disposal of 454 t titanium alloys, FY2025 disposal of 136 t"
+    impact: |
+      US strategic stockpile interest in titanium reflects defense and aerospace
+      supply chain concerns. Acquisition targets unchanged year-over-year at
+      15,000 t; modest alloy disposals indicate portfolio rebalancing.
+    source_id: usgs_mcs_2025_titanium
+
+narrative: |
+  Titanium sits at the intersection of two commercially distinct markets: the
+  relatively modest sponge metal market (~320,000 t/yr globally, excluding the
+  US) valued for its unmatched strength-to-weight ratio and corrosion resistance,
+  and the massive TiO2 pigment market (~9.8 Mt/yr capacity globally) which
+  accounts for well over 95% of world titanium mineral concentrate consumption.
+  The element's commercial chain runs from beach-sand deposits of ilmenite and
+  rutile through mineral concentrate processing, titanium slag upgrading, and
+  then diverges: the chloride/sulfate pigment route produces TiO2 for paints and
+  plastics, while the Kroll reduction route (TiCl4 + magnesium) produces sponge
+  metal for aerospace and defense applications. China dominates both
+  streams — roughly 37% of world ilmenite mining, 69% of sponge metal production,
+  and an estimated 56% of TiO2 pigment capacity.
+
+  The US sponge metal situation is structurally fragile. Apparent consumption of
+  ~340,000 t/yr depends on imports at >95% for met-grade needs, with Japan (67%
+  of 2024 Jan-Sep sponge imports), Saudi Arabia (23%), and Kazakhstan (7%)
+  as leading sources. Two of three US sponge facilities are idle — Henderson NV
+  (12,600 t/yr capacity, idle since 2020) and Rowley UT (10,900 t/yr, idle since
+  2016) — and only a 500-t/yr specialty facility in Salt Lake City is operating.
+  The US Government responds via stockpile acquisition targets (15,000 t/yr in
+  FY2024-25) and funding for novel recycling routes. In contrast, the US TiO2
+  pigment industry (850,000 t/yr in 2024) is a net exporter, selling more to
+  Canada (44%), China (12%), and other markets than it imports.
+
+  Supply concentration and strategic designation make titanium a critical material
+  for both the US (2022 Final Critical Minerals List) and the EU (CRMA 2024,
+  Annex I Strategic Raw Materials). World mineral concentrate reserves are large
+  (>560 Mt TiO2 content, resource base >2 billion tonnes) and geographically
+  distributed — Australia holds the largest known reserves (215 Mt combined) —
+  so geological scarcity is not the primary concern. The structural risks are
+  sponge metal supply concentration in China and Japan, the near-complete
+  collapse of US domestic sponge capacity, and the ongoing disruption to Ukraine's
+  rutile production since the 2022 invasion.
+
+sources:
+  - id: usgs_mcs_2025_ti_mineral_concentrates
+    title: Mineral Commodity Summaries 2025 — Titanium Mineral Concentrates
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-titanium-minerals.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_mcs_2025_titanium
+    title: Mineral Commodity Summaries 2025 — Titanium and Titanium Dioxide
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-titanium.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 22, 2022)"
+    publisher: US Department of the Interior / US Geological Survey
+    url: https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals
+    retrieved: 2026-04-11
+    publication_year: 2022
+    source_tier: primary
+  - id: eu_crma_annex_2024
+    title: "Regulation (EU) 2024/1252 — Critical Raw Materials Act, Annex I (Strategic) and Annex II (Critical Raw Materials)"
+    publisher: European Commission
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-11
+    publication_year: 2024
+    source_tier: primary
