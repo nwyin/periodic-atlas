@@ -329,8 +329,11 @@ def flatten_substitutes(elements: list[Element]) -> pd.DataFrame:
 def flatten_criticality(elements: list[Element]) -> pd.DataFrame:
     """Long-form criticality table for cross-element queries.
 
-    Each flag becomes one row so queries like 'show me every element on
-    the US 2025 list' are a single SELECT without column introspection.
+    Each boolean flag becomes one row so queries like 'show me every element
+    on the US 2025 list' are a single SELECT without column introspection.
+    An additional row per element carries the DOE short-term criticality rank
+    with `flag_name='doe_short_term_criticality_rank'` and the integer value
+    in `rank_value` (bool `value` column is None for the rank row).
     """
     rows = []
     for el in elements:
@@ -346,8 +349,17 @@ def flatten_criticality(elements: list[Element]) -> pd.DataFrame:
                 "snapshot_year": el.snapshot_year,
                 "flag_name": flag_name,
                 "value": bool(value),
+                "rank_value": None,
                 "source_id": c.source_id,
             })
+        rows.append({
+            "symbol": el.symbol,
+            "snapshot_year": el.snapshot_year,
+            "flag_name": "doe_short_term_criticality_rank",
+            "value": None,
+            "rank_value": c.doe_short_term_criticality_rank,
+            "source_id": c.source_id,
+        })
     return pd.DataFrame(rows)
 
 

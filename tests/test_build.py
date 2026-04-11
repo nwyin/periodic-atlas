@@ -12,6 +12,8 @@ from __future__ import annotations
 import sys
 from pathlib import Path
 
+import pytest
+
 # Make scripts/ importable for the builders without packaging them.
 _SCRIPTS_DIR = Path(__file__).resolve().parents[1] / "scripts"
 sys.path.insert(0, str(_SCRIPTS_DIR))
@@ -75,10 +77,36 @@ class TestFlatteners:
         assert len(df) == 1
         expected = {
             "symbol", "atomic_number", "name", "category", "industrial_tier",
-            "commercial_production", "snapshot_year", "num_end_uses",
-            "num_sources", "us_critical_list_as_of_2025",
+            "commercial_production", "snapshot_year", "reporting_year",
+            "num_end_uses", "num_sources", "us_critical_list_as_of_2025",
+            "num_production_blocks",
         }
         assert expected.issubset(set(df.columns))
+
+    def test_elements_table_reporting_year_is_max_across_blocks(self):
+        """reporting_year on the wide elements table is the max of
+        production-block reporting years (or None for elements without
+        production)."""
+        from atlas.models import ProductionBlock
+
+        multi = make_element(
+            production=[
+                ProductionBlock(
+                    reporting_year=2023,
+                    stream="ore",
+                    mine=make_quantity(),
+                    mining_by_country=make_share_list(),
+                ),
+                ProductionBlock(
+                    reporting_year=2024,
+                    stream="crude_steel",
+                    refined=make_quantity(),
+                ),
+            ],
+        )
+        df = build.flatten_elements([multi])
+        assert df.iloc[0]["reporting_year"] == 2024
+        assert df.iloc[0]["num_production_blocks"] == 2
 
     def test_production_table_emits_row_per_stage(self):
         el = make_element()
@@ -111,7 +139,52 @@ class TestFlatteners:
         df = build.flatten_shares([el])
         assert set(df["share_type"].unique()) == {"mining", "refining"}
         assert len(df) == 4
-        assert set(df.columns).issuperset({"symbol", "share_type", "country", "share_pct", "completeness", "source_id"})
+        assert set(df.columns).issuperset({
+            "symbol", "share_type", "country", "share_pct",
+            "completeness", "source_id", "quantity_source_id", "confidence", "stream",
+        })
+
+    def test_shares_table_quantity_source_id_can_differ_from_row_source_id(self):
+        """H2: when CountryShare.source_id differs from the nested
+        CountryShare.quantity.source_id, both should survive in the parquet
+        shares table as separate columns."""
+        el = make_element(
+            extra_sources=[make_source("other_source")],
+            production=ProductionBlock(
+                reporting_year=2024,
+                mine=make_quantity(),
+                mining_by_country=CountryShareList(
+                    shares=[
+                        CountryShare(
+                            country="CN",
+                            share_pct=80,
+                            quantity=Quantity(
+                                value=500,
+                                unit=FlowUnit.TONNES_PER_YEAR,
+                                form="metal",
+                                source_id="other_source",
+                            ),
+                            source_id="test_source",
+                        ),
+                        CountryShare(country="US", share_pct=20, source_id="test_source"),
+                    ],
+                    completeness="complete",
+                ),
+            ),
+        )
+        df = build.flatten_shares([el])
+        mining_rows = df[df["share_type"] == "mining"]
+        # First row has a nested quantity with its own source_id
+        cn_row = mining_rows[mining_rows["country"] == "CN"].iloc[0]
+        assert cn_row["source_id"] == "test_source"
+        assert cn_row["quantity_source_id"] == "other_source"
+        us_row = mining_rows[mining_rows["country"] == "US"].iloc[0]
+        assert us_row["source_id"] == "test_source"
+        # No nested quantity on US row -> quantity_source_id is null
+        assert us_row["quantity_source_id"] is None or (
+            isinstance(us_row["quantity_source_id"], float)
+            and str(us_row["quantity_source_id"]) == "nan"
+        )
 
     def test_shares_table_includes_isotope_producers(self):
         el = make_element(
@@ -209,13 +282,42 @@ class TestFlatteners:
     def test_criticality_is_long_form(self):
         el = _rich_element()
         df = build.flatten_criticality([el])
-        # 3 flag columns become 3 rows
-        assert len(df) == 3
+        # 3 boolean flags + 1 doe rank row per element
+        assert len(df) == 4
         assert set(df["flag_name"]) == {
             "us_critical_list_as_of_2025",
             "eu_crm_list_as_of_2024",
             "eu_strategic_list_as_of_2024",
+            "doe_short_term_criticality_rank",
         }
+        # rank_value column exists and is populated only on the rank row
+        assert "rank_value" in df.columns
+        rank_rows = df[df["flag_name"] == "doe_short_term_criticality_rank"]
+        assert len(rank_rows) == 1
+
+
+def _row_is_claim_bearing(table_name: str, row) -> bool:
+    """Return True when a flattened row represents an active factual claim.
+
+    A claim-bearing row must carry a source_id. The provenance test fails
+    on any row that is claim-bearing but has source_id=None. The criticality
+    table is a special case: rows where every flag is False and the rank is
+    None are *negative* membership ("not on the list"), not active claims,
+    so they are not required to cite a source.
+    """
+    if table_name == "criticality":
+        value = row.get("value")
+        rank_value = row.get("rank_value")
+        has_value = value is True
+        has_rank = rank_value is not None and not (
+            isinstance(rank_value, float) and str(rank_value) == "nan"
+        )
+        return bool(has_value or has_rank)
+    return True
+
+
+def _is_null(x) -> bool:
+    return x is None or (isinstance(x, float) and str(x) == "nan")
 
 
 class TestProvenanceJoin:
@@ -232,11 +334,55 @@ class TestProvenanceJoin:
                 continue
             for _, row in df.iterrows():
                 sid = row.get("source_id")
-                if sid is None or (isinstance(sid, float) and str(sid) == "nan"):
+                if _is_null(sid):
+                    assert not _row_is_claim_bearing(table_name, row), (
+                        f"claim-bearing row in atlas_{table_name} has null source_id: "
+                        f"{dict(row)}"
+                    )
                     continue
                 assert (row["symbol"], sid) in known_source_ids, (
                     f"orphaned source_id {sid!r} in atlas_{table_name}"
                 )
+
+    def test_null_source_id_on_active_criticality_flag_fails(self):
+        """Regression: in v0.2, build.flatten_criticality emitted a row with
+        source_id=None even when the flag was True because CriticalityFlags
+        allowed source_id=None. C1 forbids that combination at the model level;
+        this test locks in the shape of the resulting parquet rows.
+        """
+        from atlas.models import CriticalityFlags
+
+        # Explicit attempt to construct the forbidden combination should
+        # fail at the Pydantic layer before build.py ever sees it.
+        from pydantic import ValidationError
+
+        with pytest.raises(ValidationError, match="source_id is required"):
+            CriticalityFlags(us_critical_list_as_of_2025=True)
+
+    def test_provenance_test_catches_fabricated_null_source_id(self):
+        """If we manually fabricate a claim-bearing row with source_id=None
+        the provenance test must reject it. This ensures H3 has teeth."""
+        el = _rich_element()
+        tables = build.build_all([el])
+        # Force a null source_id on a prices row (claim-bearing, non-criticality).
+        tables["prices"].loc[0, "source_id"] = None
+
+        sources = tables["sources"]
+        known_source_ids = set(zip(sources["symbol"], sources["source_id"]))
+
+        caught = False
+        for table_name, df in tables.items():
+            if table_name == "sources" or "source_id" not in df.columns:
+                continue
+            for _, row in df.iterrows():
+                sid = row.get("source_id")
+                if _is_null(sid):
+                    if _row_is_claim_bearing(table_name, row):
+                        caught = True
+                        break
+            if caught:
+                break
+        assert caught, "provenance test must fail when a claim-bearing row has null source_id"
 
 
 class TestBuildOrchestration:
