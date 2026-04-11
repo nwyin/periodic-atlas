@@ -638,3 +638,207 @@ def test_b3_atlas_chart_data_present_in_all_element_pages(viewer_dir):
     for sym in EXPECTED_SYMBOLS:
         text = (viewer_dir / "elements" / f"{sym}.html").read_text()
         assert 'id="atlas-chart-data"' in text, f"{sym}.html missing atlas-chart-data block"
+
+
+# =============================================================================
+# B1 — Production + refining stacked bar charts
+# =============================================================================
+
+
+def _extract_production_json(html: str) -> dict:
+    """Extract and parse the inline production-data JSON from an element page."""
+    m = _re.search(r'id="production-data" type="application/json">(.*?)</script>', html, _re.DOTALL)
+    assert m, "production-data script tag not found in page"
+    return _json.loads(m.group(1))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1-INV-1: Every element with production data gets a filled #production-chart section
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b1_inv1_elements_with_production_have_production_data(viewer_dir):
+    """Symbols with atlas_shares mining/refining rows must have non-empty streams in JSON."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        rows = con.execute("SELECT DISTINCT symbol FROM atlas_shares WHERE share_type IN ('mining','refining')").fetchall()
+        symbols_with_production = {r[0] for r in rows}
+    finally:
+        con.close()
+
+    for sym in symbols_with_production:
+        page = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        # production-data script tag must exist on all element pages
+        assert 'id="production-chart"' in page, f"{sym}.html missing #production-chart div"
+        d = _extract_production_json(page)
+        assert "streams" in d, f"{sym}: production JSON missing 'streams' key"
+        assert len(d["streams"]) > 0, f"{sym}: has production shares but streams is empty"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1-INV-2: Og (no production) keeps the empty-state message
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b1_inv2_og_keeps_empty_state(viewer_dir):
+    """Og has no production shares — production-data streams must be empty."""
+    og = (viewer_dir / "elements" / "Og.html").read_text()
+    d = _extract_production_json(og)
+    assert d["streams"] == [], "Og should have empty streams list"
+    # The placeholder div must still be present
+    assert 'id="production-chart"' in og, "Og.html missing #production-chart div"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1-INV-3: Inlined JSON validates basic dict shape
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b1_inv3_json_shape(viewer_dir):
+    """Production JSON for Co must have required keys and correct types."""
+    co = (viewer_dir / "elements" / "Co.html").read_text()
+    d = _extract_production_json(co)
+
+    assert isinstance(d, dict), "production JSON must be a dict"
+    assert "streams" in d, "production JSON missing 'streams'"
+    assert isinstance(d["streams"], list), "'streams' must be a list"
+    assert len(d["streams"]) > 0, "Co streams must not be empty"
+
+    stream = d["streams"][0]
+    assert "stream_id" in stream
+    assert "mining" in stream
+    assert "refining" in stream
+    assert "completeness" in stream
+    assert "world_mine" in stream
+    assert "world_refined" in stream
+
+    # Each mining entry must have required fields
+    for entry in stream["mining"]:
+        assert "country" in entry, f"mining entry missing 'country': {entry}"
+        assert "share_pct" in entry, f"mining entry missing 'share_pct': {entry}"
+        assert "confidence" in entry, f"mining entry missing 'confidence': {entry}"
+
+    assert isinstance(stream["completeness"], dict)
+    assert "mining" in stream["completeness"]
+    assert "refining" in stream["completeness"]
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1-INV-4: Low-confidence shares are serialized with the confidence field
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b1_inv4_low_confidence_shares_serialized(viewer_dir):
+    """Co refining shares have low confidence — they must appear in JSON with confidence='low'."""
+    co = (viewer_dir / "elements" / "Co.html").read_text()
+    d = _extract_production_json(co)
+    assert len(d["streams"]) > 0, "Co should have streams"
+    refining = d["streams"][0]["refining"]
+    assert len(refining) > 0, "Co should have refining shares"
+    for entry in refining:
+        assert "confidence" in entry, f"Co refining entry missing confidence: {entry}"
+        assert entry["confidence"] == "low", f"Co refining expected low confidence, got: {entry['confidence']}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1-INV-5: Multi-stream elements get one stream entry per unique stream_id
+# (no multi-stream elements exist yet — test the code path with a synthetic DB)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _make_multistream_db(tmp_path: Path) -> Path:
+    """Create a minimal DuckDB with two synthetic stream IDs for Co."""
+    db_path = tmp_path / "multistream.duckdb"
+    real = duckdb.connect(str(REAL_DB), read_only=True)
+    con  = duckdb.connect(str(db_path))
+    try:
+        tables = [row[0] for row in real.execute("SHOW TABLES").fetchall()]
+        for t in tables:
+            df = real.execute(f"SELECT * FROM {t} WHERE symbol = 'Co'").df()
+            con.register("_tmp_df", df)
+            con.execute(f"CREATE TABLE {t} AS SELECT * FROM _tmp_df")
+            con.unregister("_tmp_df")
+
+        # Add a second stream (stream_id=1) with a different country
+        con.execute(
+            """
+            INSERT INTO atlas_shares
+              (symbol, snapshot_year, share_type, stream, country, share_pct, confidence, completeness)
+            VALUES
+              ('Co', 2025, 'mining', 1, 'AU', 55.0, 'high', 'partial')
+            """
+        )
+    finally:
+        real.close()
+        con.close()
+    return db_path
+
+
+def test_b1_inv5_multistream_produces_separate_stream_entries(tmp_path):
+    """Each unique stream_id in atlas_shares must produce its own stream entry."""
+    db_path = _make_multistream_db(tmp_path)
+    out_dir  = tmp_path / "viewer_multistream"
+    build_viewer.generate_viewer(db_path, out_dir, timestamp=FIXED_TS)
+
+    co_html = (out_dir / "elements" / "Co.html").read_text()
+    d = _extract_production_json(co_html)
+    stream_ids = [s["stream_id"] for s in d["streams"]]
+    # We expect stream_id=None (original) and stream_id=1 (synthetic)
+    assert None in stream_ids, f"stream_id=None not found in streams: {stream_ids}"
+    assert 1 in stream_ids, f"stream_id=1 not found in streams: {stream_ids}"
+    assert len(stream_ids) == 2, f"Expected 2 streams, got {stream_ids}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1 critical path: Co mining renders correctly
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b1_co_mining_critical_path(viewer_dir):
+    """Co critical path: CD=76%, complete mining, top_producers_only refining."""
+    co = (viewer_dir / "elements" / "Co.html").read_text()
+    d = _extract_production_json(co)
+    assert len(d["streams"]) == 1, "Co should have exactly 1 stream"
+    stream = d["streams"][0]
+
+    # Mining shares
+    mining = stream["mining"]
+    assert len(mining) == 13, f"Co should have 13 mining countries, got {len(mining)}"
+
+    cd = next((c for c in mining if c["country"] == "CD"), None)
+    assert cd is not None, "Co missing CD in mining shares"
+    assert cd["share_pct"] == 76.0, f"Co CD mining share should be 76%, got {cd['share_pct']}"
+    assert cd["confidence"] == "high"
+    assert cd["quantity"] == 220000.0
+
+    # Completeness
+    assert stream["completeness"]["mining"] == "complete"
+    assert stream["completeness"]["refining"] == "top_producers_only"
+
+    # World mine total present
+    assert stream["world_mine"]["value"] == 290000.0
+    assert stream["world_mine"]["unit"] == "tonnes_per_year"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B1: charts_production.js deployed and referenced in every element page
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b1_charts_production_js_deployed(viewer_dir):
+    """charts_production.js must be written into assets/ during generation."""
+    assert (viewer_dir / "assets" / "charts_production.js").exists()
+
+
+def test_b1_charts_production_js_referenced_in_element_pages(viewer_dir):
+    """Every element page must reference charts_production.js."""
+    for sym in EXPECTED_SYMBOLS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert "charts_production.js" in text, f"{sym}.html missing charts_production.js reference"
+
+
+def test_b1_production_data_script_in_all_element_pages(viewer_dir):
+    """Every element page must have a production-data script block (even if empty)."""
+    for sym in EXPECTED_SYMBOLS:
+        text = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert 'id="production-data"' in text, f"{sym}.html missing production-data script block"
