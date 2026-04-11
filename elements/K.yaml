@@ -1,0 +1,552 @@
+symbol: K
+atomic_number: 19
+name: potassium
+category: alkali_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+
+form_notes: |
+  USGS MCS 2025 reports potash production and prices in potassium oxide (K2O) equivalent
+  unless otherwise noted. Commercial trade forms are:
+    - MOP (Muriate of Potash) = potassium chloride (KCl, ≥95% pure) — the dominant
+      form, used for most agricultural and industrial applications.
+    - SOP (Sulfate of Potash) = potassium sulfate (K2SO4) — required for chloride-sensitive
+      crops; commands a premium over MOP.
+    - SOPM (Sulfate of Potash-Magnesia) = langbeinite (K2Mg2(SO4)3) — specialty fertilizer
+      for magnesium-deficient soils; produced mainly in New Mexico.
+  Prices are f.o.b. mine in USD per metric ton K2O equivalent. K2O conversion factors:
+  KCl × 0.632 = K2O; K2SO4 × 0.540 = K2O. One stream is reported (world potash mine
+  production in K2O equivalent) because the USGS chapter does not separately tabulate
+  the downstream KCl vs. K2SO4 product breakdown in national quantities.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 48.0
+    unit: million_tonnes_per_year
+    form: compound_other
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025: world total mine production 2024e = 48,000 thousand metric tons
+      K2O equivalent (rounded). Up from 43,300 in 2023. Canada and Belarus had the
+      largest production increases from 2023.
+    source_id: usgs_mcs_2025_potash
+  mining_by_country:
+    shares:
+      - country: CA
+        share_pct: 31.3
+        quantity:
+          value: 15.0
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Canada — USGS 2024 estimate: 15,000 thousand metric tons K2O equivalent.
+          World's leading potash exporter; increased production to meet growing world
+          demand. Saskatchewan Potash Basin (Allan, Esterhazy, Vanscoy mines).
+        source_id: usgs_mcs_2025_potash
+      - country: RU
+        share_pct: 18.8
+        quantity:
+          value: 9.0
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Russia — USGS 2024 estimate: 9,000 thousand metric tons K2O equivalent.
+          Second-largest producer; Verkhnekamsk Potash Basin (Perm region) is the primary
+          deposit. Uralchem and EuroChem are major producers.
+        source_id: usgs_mcs_2025_potash
+      - country: BY
+        share_pct: 14.6
+        quantity:
+          value: 7.0
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Belarus — USGS 2024 estimate: 7,000 thousand metric tons K2O equivalent.
+          Production almost returned to pre-2022 levels after EU and US sanctions on
+          state-run Belaruskali in 2022. Lithuania terminated the Klaipeda port transit
+          contract; Belarus now exports via Russian ports and by rail primarily to China.
+        source_id: usgs_mcs_2025_potash
+      - country: CN
+        share_pct: 13.1
+        quantity:
+          value: 6.3
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          China — USGS 2024 estimate: 6,300 thousand metric tons K2O equivalent. Primarily
+          from Qinghai province (Qaidam Basin salt lakes) and Xinjiang. China is also
+          the world's largest potash importer despite domestic production.
+        source_id: usgs_mcs_2025_potash
+      - country: DE
+        share_pct: 6.3
+        quantity:
+          value: 3.0
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Germany — USGS 2024 estimate: 3,000 thousand metric tons K2O equivalent.
+          K+S AG is the primary European potash producer, mining from the Permian salt
+          basin in Lower Saxony and Thuringia.
+        source_id: usgs_mcs_2025_potash
+      - country: IL
+        share_pct: 5.0
+        quantity:
+          value: 2.4
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Israel — USGS 2024 estimate: 2,400 thousand metric tons K2O equivalent.
+          ICL Group extracts potash from Dead Sea brines by solar evaporation at its
+          Sodom plant. The Dead Sea contains nearly 2 billion tons of potassium chloride.
+        source_id: usgs_mcs_2025_potash
+      - country: JO
+        share_pct: 3.8
+        quantity:
+          value: 1.8
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Jordan — USGS 2024 estimate: 1,800 thousand metric tons K2O equivalent.
+          Arab Potash Company extracts from the Dead Sea southern basin by solar
+          evaporation.
+        source_id: usgs_mcs_2025_potash
+      - country: LA
+        share_pct: 3.1
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Laos — USGS 2024 estimate: 1,500 thousand metric tons K2O equivalent. Emerging
+          producer with significant new capacity projected; USGS notes most near-term
+          global capacity expansion is in Laos and Russia.
+        source_id: usgs_mcs_2025_potash
+      - country: CL
+        share_pct: 1.6
+        quantity:
+          value: 0.75
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Chile — USGS 2024 estimate: 750 thousand metric tons K2O equivalent. Produced
+          as SOP from Atacama Desert brine operations (SQM).
+        source_id: usgs_mcs_2025_potash
+      - country: US
+        share_pct: 0.9
+        quantity:
+          value: 0.42
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          United States — USGS 2024 estimate: 420 thousand metric tons K2O equivalent
+          (rounded to two significant digits per USGS data restriction). New Mexico:
+          two companies operating two underground mines and one deep-well solution mine
+          (sylvinite and langbeinite ores). Utah: three facilities producing MOP and SOP
+          from underground solution mining and Great Salt Lake brine solar evaporation.
+        source_id: usgs_mcs_2025_potash
+      - country: ES
+        share_pct: 0.8
+        quantity:
+          value: 0.4
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Spain — USGS 2024 estimate: 400 thousand metric tons K2O equivalent."
+        source_id: usgs_mcs_2025_potash
+      - country: BR
+        share_pct: 0.8
+        quantity:
+          value: 0.36
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          Brazil — USGS 2024 estimate: 360 thousand metric tons K2O equivalent.
+          Despite large domestic reserves, Brazil is a major potash importer; domestic
+          production covers only a small fraction of agricultural demand.
+        source_id: usgs_mcs_2025_potash
+      - country: ZZ
+        share_pct: 0.9
+        quantity:
+          value: 0.44
+          unit: million_tonnes_per_year
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "USGS 'Other countries' row: 440 thousand metric tons K2O equivalent."
+        source_id: usgs_mcs_2025_potash
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 4800000000
+    unit: tonnes
+    form: compound_other
+    approximate: true
+    notes: |
+      USGS MCS 2025: world total K2O equivalent reserves >4,800,000 thousand metric tons
+      (>4.8 billion metric tons K2O equivalent). Recoverable ore world total
+      >10,000,000 thousand metric tons. Reserves for Laos, Russia, and Spain were revised
+      based on Government reports. Israel and Jordan reserves from Dead Sea brines are
+      listed as 'Large' (not quantified in K2O column); USGS footnote states the Dead Sea
+      contains nearly 2 billion tons of potassium chloride across both countries.
+    source_id: usgs_mcs_2025_potash
+  resources:
+    value: 250000000000
+    unit: tonnes
+    form: compound_other
+    approximate: true
+    notes: |
+      USGS MCS 2025: "Estimated world resources total about 250 billion tons" (unit
+      unspecified in source text; likely short tons given USGS US-convention resource
+      estimates). US domestic resources: ~7 billion tons, mostly at 1,800–3,100 m depth
+      in Montana and North Dakota (Williston Basin extension, Saskatchewan potash belt);
+      Paradox Basin, Utah (~2 billion tons); Holbrook Basin, Arizona (0.7–2.5 billion tons);
+      central Michigan (>75 million tons). Paradox Basin resources mostly at depths
+      >1,200 m.
+    source_id: usgs_mcs_2025_potash
+  reserves_by_country:
+    shares:
+      - country: CA
+        share_pct: 22.8
+        quantity:
+          value: 1100000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Canada — USGS: 1,100,000 thousand metric tons K2O equivalent. Saskatchewan Potash Basin is the world's largest known potash deposit."
+        source_id: usgs_mcs_2025_potash
+      - country: LA
+        share_pct: 20.7
+        quantity:
+          value: 1000000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Laos — USGS: 1,000,000 thousand metric tons K2O equivalent. Very large undeveloped reserves relative to current production (1 Mt K2O/yr)."
+        source_id: usgs_mcs_2025_potash
+      - country: RU
+        share_pct: 19.1
+        quantity:
+          value: 920000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Russia — USGS: 920,000 thousand metric tons K2O equivalent (revised). Verkhnekamsk Potash Basin."
+        source_id: usgs_mcs_2025_potash
+      - country: BY
+        share_pct: 15.6
+        quantity:
+          value: 750000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Belarus — USGS: 750,000 thousand metric tons K2O equivalent. Starobin deposit in Minsk region."
+        source_id: usgs_mcs_2025_potash
+      - country: US
+        share_pct: 4.6
+        quantity:
+          value: 220000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "United States — USGS: 220,000 thousand metric tons K2O equivalent. Recoverable ore: 970,000 thousand metric tons. Primarily New Mexico (Carlsbad Potash District)."
+        source_id: usgs_mcs_2025_potash
+      - country: CN
+        share_pct: 3.7
+        quantity:
+          value: 180000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "China — USGS: 180,000 thousand metric tons K2O equivalent."
+        source_id: usgs_mcs_2025_potash
+      - country: DE
+        share_pct: 3.1
+        quantity:
+          value: 150000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Germany — USGS: 150,000 thousand metric tons K2O equivalent."
+        source_id: usgs_mcs_2025_potash
+      - country: CL
+        share_pct: 2.1
+        quantity:
+          value: 100000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Chile — USGS: 100,000 thousand metric tons K2O equivalent."
+        source_id: usgs_mcs_2025_potash
+      - country: ES
+        share_pct: 2.1
+        quantity:
+          value: 100000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Spain — USGS: 100,000 thousand metric tons K2O equivalent (revised based on Government reports)."
+        source_id: usgs_mcs_2025_potash
+      - country: BR
+        share_pct: 0.05
+        quantity:
+          value: 2300000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: "Brazil — USGS: 2,300 thousand metric tons K2O equivalent. Recoverable ore: 10,000 thousand metric tons. Small reserves despite hosting large undeveloped resources."
+        source_id: usgs_mcs_2025_potash
+      - country: ZZ
+        share_pct: 6.2
+        quantity:
+          value: 300000000
+          unit: tonnes
+          form: compound_other
+          source_id: usgs_mcs_2025_potash
+        notes: |
+          USGS 'Other countries' row: 300,000 thousand metric tons K2O equivalent.
+          Israel and Jordan are listed separately in the USGS production table but have
+          'Large' (unquantified) K2O reserves per the Dead Sea brine resource; USGS
+          footnote: Dead Sea contains nearly 2 billion tons of KCl across both countries.
+          Those unquantified Dead Sea reserves are noted here but not included in the
+          K2O equivalent figure.
+        source_id: usgs_mcs_2025_potash
+    completeness: partial
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: sylvinite_ore
+    notes: |
+      Sylvinite is a natural mixture of potassium chloride (KCl, sylvite) and sodium
+      chloride (NaCl, halite), the primary ore for MOP production. Mined underground
+      in New Mexico and Saskatchewan (Canada) and via deep-well solution mining in
+      New Mexico and Utah. Beneficiated by flotation, heavy-media separation, or
+      dissolution-recrystallization.
+    source_id: usgs_mcs_2025_potash
+  - substrate: langbeinite_ore
+    notes: |
+      Langbeinite (K2Mg2(SO4)3) is a potassium-magnesium sulfate mineral mined
+      exclusively in New Mexico alongside sylvinite. Yields SOPM directly after
+      beneficiation, used for chloride-sensitive crops requiring magnesium.
+    source_id: usgs_mcs_2025_potash
+  - substrate: potash_brine_dead_sea
+    notes: |
+      Dead Sea brines (Israel and Jordan) contain high concentrations of potassium
+      chloride. ICL Group (Israel) and Arab Potash Company (Jordan) extract KCl by
+      solar evaporation of pumped brine. USGS footnote: Dead Sea contains nearly
+      2 billion tons of potassium chloride.
+    source_id: usgs_mcs_2025_potash
+  - substrate: potash_brine_salt_lake
+    notes: |
+      Great Salt Lake (Utah) brines processed by Compass Minerals via solar evaporation
+      to produce SOP and other byproducts. Qaidam Basin salt lakes (Qinghai, China) are
+      the primary Chinese feedstock. Atacama brine (Chile) produces SOP via SQM.
+    source_id: usgs_mcs_2025_potash
+
+substitutes:
+  - application: plant_nutrition
+    availability: none
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "No substitutes exist for potassium as
+      an essential plant nutrient and as an essential nutritional requirement for
+      animals and humans. Manure and glauconite (greensand) are low-potassium-content
+      materials that can be profitably transported only short distances to crop fields.
+      Glauconite is used as a potassium source for organic farming."
+    source_id: usgs_mcs_2025_potash
+
+end_uses:
+  uses:
+    - application: fertilizer_agriculture
+      share_pct: 85
+      notes: |
+        USGS MCS 2025: "The fertilizer industry used about 85% of U.S. potash sales."
+        Potash is the third macronutrient (N-P-K) in commercial fertilizers, essential
+        for crop yield and quality. Applied as MOP (KCl), SOP (K2SO4), or SOPM
+        (langbeinite). US end-use figures; global fertilizer share is similarly dominant.
+      source_id: usgs_mcs_2025_potash
+    - application: chemical_and_industrial
+      share_pct: 15
+      notes: |
+        USGS MCS 2025: "the remainder [of US potash sales] was used for chemical and
+        industrial applications." Includes potassium hydroxide (KOH) for liquid soaps and
+        detergents, potassium carbonate (K2CO3) for glass and ceramics, potassium nitrate
+        (KNO3) for fertilizer and food preservation, and other specialty chemicals.
+        About 70% of US potash production was SOPM and SOP (chloride-sensitive crop
+        fertilizer); 30% MOP.
+      source_id: usgs_mcs_2025_potash
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Potash is not on the US 2022 Critical Minerals List, EU Critical Raw Materials list
+    (Regulation 2024/1252), or EU Strategic Raw Materials list. Despite the US being
+    ~93% net import reliant on Canada (79% of US imports in 2020–23) and Canada + Russia
+    + Belarus controlling ~65% of world mine production, potash is classified as an
+    agricultural commodity rather than a technologically critical mineral. The US
+    Department of Agriculture — not the Department of the Interior — oversees food-security
+    aspects of potash supply.
+
+prices:
+  - year: 2024
+    value: 1220
+    unit: usd_per_tonne
+    form: compound_other
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price all products 2024e = $1,220/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2023
+    value: 1250
+    unit: usd_per_tonne
+    form: compound_other
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price all products 2023 = $1,250/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2022
+    value: 1790
+    unit: usd_per_tonne
+    form: compound_other
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price all products 2022 = $1,790/metric ton K2O equivalent. Price spike driven by Belarus sanctions and supply disruption."
+    source_id: usgs_mcs_2025_potash
+  - year: 2021
+    value: 1120
+    unit: usd_per_tonne
+    form: compound_other
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price all products 2021 = $1,120/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2020
+    value: 850
+    unit: usd_per_tonne
+    form: compound_other
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price all products 2020 = $850/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2024
+    value: 630
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price MOP (muriate of potash = KCl) 2024e = $630/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2023
+    value: 620
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price MOP 2023 = $620/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2022
+    value: 980
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price MOP 2022 = $980/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2021
+    value: 650
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price MOP 2021 = $650/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+  - year: 2020
+    value: 450
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average f.o.b. mine price MOP 2020 = $450/metric ton K2O equivalent."
+    source_id: usgs_mcs_2025_potash
+
+geopolitical_events:
+  - date: 2022-02
+    event: "EU and US impose sanctions on Belaruskali (state-run Belarusian potash exporter); Lithuania terminates Klaipeda port transit contract for Belarusian potash"
+    impact: |
+      Belarus potash exports collapsed in 2022 as the primary export route (Klaipeda port,
+      Lithuania) was closed. Belarus redirected exports via Russian Baltic ports (Ust-Luga,
+      St. Petersburg) and by rail to China. Potash prices spiked to $1,790/t K2O equivalent
+      in 2022 (US f.o.b. mine average, all products).
+    source_id: usgs_mcs_2025_potash
+  - date: 2024-01
+    event: "Belarus potash production recovers toward pre-sanction levels; world potash consumption increases to 38.8 million tonnes K2O in 2024 from 37.5 million tonnes in 2023"
+    impact: |
+      Canada (the leading exporter) increased sales to meet global demand growth. Asia
+      and South America drove consumption growth. World potash consumption projected to
+      reach 40.9 million tonnes K2O in 2025.
+    source_id: usgs_mcs_2025_potash
+  - date: 2024-01
+    event: "World potash production capacity reaches 65.2 million tonnes K2O per year; projected to grow to 76.0 million tonnes by 2028"
+    impact: |
+      Most capacity growth comes from MOP projects in Laos and Russia. New MOP mines in
+      Belarus, Brazil, Canada, Ethiopia, Morocco, and Spain are planned to begin
+      operation after 2028, extending the supply expansion pipeline well into the 2030s.
+    source_id: usgs_mcs_2025_potash
+
+narrative: |
+  Potassium is an irreplaceable macronutrient for plant growth and human nutrition; no
+  substitute exists. The global potash market is dominated by three countries — Canada
+  (31.3%), Russia (18.8%), and Belarus (14.6%) — which together controlled nearly 65%
+  of world mine output of 48 million tonnes K2O equivalent in 2024. Canada is the world's
+  leading exporter, with the Saskatchewan Potash Basin holding the largest known reserves
+  (1.1 billion tonnes K2O equivalent). World consumption reached 38.8 million tonnes K2O
+  in 2024, up from 37.5 million in 2023, driven by demand growth in Asia and South America;
+  consumption is projected to reach 40.9 million tonnes in 2025.
+
+  The most significant supply-chain disruption in recent years was the 2022 EU and US
+  sanctions on Belarus's state-run Belaruskali following Russia's invasion of Ukraine.
+  Lithuania simultaneously terminated Belaruskali's contract to export through the Klaipeda
+  port, severing the primary Baltic export route. Belarusian potash was rerouted through
+  Russian Baltic ports and by rail to China. The sanctions shock drove US all-products
+  potash prices to $1,790/t K2O equivalent in 2022. By 2024, Belarus production had
+  almost returned to pre-2022 levels (7.0 million tonnes K2O estimated), and US prices
+  stabilized near $1,220/t. Total world production capacity stood at 65.2 million tonnes
+  K2O per year in 2024 and is projected to grow to 76.0 million tonnes by 2028, primarily
+  from expansion in Laos and Russia, with additional new mines in Brazil, Canada, Ethiopia,
+  Morocco, and Spain planned after 2028.
+
+  The United States is approximately 93% net import reliant, sourcing 79% of imports from
+  Canada. Domestic production — 420,000 tonnes K2O equivalent, less than 1% of world
+  output — comes from underground and solution mines in New Mexico (sylvinite and langbeinite)
+  and brine operations in Utah (Great Salt Lake solar evaporation). Despite its high import
+  reliance, potash is not classified as a US Critical Mineral or EU Critical Raw Material,
+  reflecting its status as an agricultural bulk commodity rather than a technologically
+  strategic mineral. The ~250 billion tonne global resource base and multiple commercially
+  active deposits provide ample long-term supply, but geographic concentration of
+  production and export capacity in Canada, Russia, and Belarus creates food-security
+  exposure for large net-importing agricultural economies.
+
+sources:
+  - id: usgs_mcs_2025_potash
+    title: Mineral Commodity Summaries 2025 — Potash
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-potash.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
