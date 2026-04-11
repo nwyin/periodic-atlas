@@ -4,33 +4,56 @@ name: oganesson
 category: synthetic_superheavy
 industrial_tier: 1
 commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Individual atoms observed in heavy-ion bombardment
+  experiments at JINR Dubna; each atom decays within ~1 ms.
 
 research_only:
   longest_lived_isotope: Og-294
-  half_life_seconds: 0.00069
+  half_life_seconds: 0.0007
   discovered_year: 2002
-  discovered_at: JINR Dubna (Russia) / LLNL (US) collaboration
+  iupac_recognized_year: 2015
+  discovered_at: |
+    Joint Institute for Nuclear Research (JINR), Dubna, Russia, in
+    collaboration with Lawrence Livermore National Laboratory (LLNL),
+    California, USA. IUPAC joint working group recognized the discovery
+    claim on 2015-12-30; name "oganesson" announced by IUPAC on
+    2016-06-08. First synthesis claim at JINR in 2002 observed one or
+    two Og-294 atoms; a 2005 confirmation run produced two more.
+  production_mode: accelerator_generated
   total_ever_produced:
-    value: 5
+    value: 7
     unit: atoms_ever_synthesized
+    form: unspecified
     approximate: true
-    notes: "Fewer than 10 atoms ever unambiguously detected; exact count disputed."
-    source_id: nndc_og294
+    confidence: low
+    notes: |
+      Fewer than 10 atoms of Og-294 have ever been unambiguously detected
+      across the 2002, 2005, and later confirmation runs. Exact count
+      varies by source; 7 is a rounded midpoint. The production reaction
+      is Cf-249(Ca-48,3n)Og-294 — bombarding californium-249 targets
+      with calcium-48 ions.
+    source_id: wikipedia_isotopes_og
   active_production_labs:
     - JINR Dubna
-    - RIKEN Nishina Center
   notes: |
-    The heaviest and highest-atomic-number element ever synthesized.
-    Produced by bombarding californium-249 with calcium-48 ions in a
-    heavy-ion accelerator. Producing a single gram would require
-    bombardment lasting longer than a billion times the age of the
-    universe.
-
-substitutes_available: none
+    Heaviest and highest-atomic-number element ever synthesized.
+    Producing a single gram would require bombardment lasting longer
+    than a billion times the age of the universe. No industrial use;
+    exists purely to advance understanding of superheavy nuclear
+    stability and the predicted "island of stability".
 
 sources:
-  - id: nndc_og294
-    title: NNDC Chart of Nuclides — Og-294
-    publisher: Brookhaven National Laboratory National Nuclear Data Center
-    url: https://www.nndc.bnl.gov/nudat3/
+  - id: iupac_118_recognition
+    title: "Discovery and Assignment of Elements with Atomic Numbers 113, 115, 117 and 118"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/news/news-detail/article/discovery-and-assignment-of-elements-with-atomic-numbers-113-115-117-and-118.html
     retrieved: 2026-04-11
+    publication_year: 2015
+  - id: wikipedia_isotopes_og
+    title: "Isotopes of oganesson"
+    publisher: Wikipedia
+    url: https://en.wikipedia.org/wiki/Isotopes_of_oganesson
+    retrieved: 2026-04-11
+    publication_year: 2024
