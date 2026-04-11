@@ -188,10 +188,12 @@ end_uses:
 
 criticality:
   us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_gallium
   eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_gallium
   eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_gallium
   notes: "Net import reliance 100% per USGS (all US consumption from imports; no domestic primary production since 1987)."
-  source_id: usgs_mcs_2025_gallium
 
 prices:
   - year: 2024

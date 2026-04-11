@@ -104,10 +104,11 @@ feedstock_origins:
 
 criticality:
   us_critical_list_as_of_2025: true
+  us_critical_source_id: inquiry_periodic_elements_2025
   eu_crm_list_as_of_2024: true
+  eu_crm_source_id: inquiry_periodic_elements_2025
   eu_strategic_list_as_of_2024: false
   notes: "Fluorspar on both lists; elemental fluorine not separately tracked"
-  source_id: inquiry_periodic_elements_2025
 
 narrative: |
   Fluorine is the canonical example of an element traded entirely as a

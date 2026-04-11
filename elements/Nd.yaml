@@ -105,11 +105,14 @@ substitutes:
 
 criticality:
   us_critical_list_as_of_2025: true
+  us_critical_source_id: inquiry_periodic_elements_2025
   eu_crm_list_as_of_2024: true
+  eu_crm_source_id: inquiry_periodic_elements_2025
   eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: inquiry_periodic_elements_2025
   doe_short_term_criticality_rank: 2
+  doe_rank_source_id: inquiry_periodic_elements_2025
   notes: "Listed under 'rare earths' on US list; NdPr specifically flagged as high-criticality by DOE"
-  source_id: inquiry_periodic_elements_2025
 
 geopolitical_events:
   - date: 2025-04

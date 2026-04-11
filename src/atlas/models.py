@@ -312,32 +312,39 @@ class CriticalityFlags(BaseModel):
     """Membership in various government critical-materials lists.
 
     Field names encode "membership as-of YYYY", not a hypothetical "YYYY list revision".
-    `source_id` is required whenever any flag is True or a DOE rank is set —
-    an active criticality claim must always be traceable to a primary list.
+    Each flag has its own per-flag source_id field so elements on multiple lists
+    can cite each list to its proper primary source independently.
     """
 
     model_config = ConfigDict(extra="forbid")
 
     us_critical_list_as_of_2025: bool = False
+    us_critical_source_id: str | None = None
+
     eu_crm_list_as_of_2024: bool = False
+    eu_crm_source_id: str | None = None
+
     eu_strategic_list_as_of_2024: bool = False
+    eu_strategic_source_id: str | None = None
+
     doe_short_term_criticality_rank: int | None = Field(default=None, ge=1)
+    doe_rank_source_id: str | None = None
+
     notes: str | None = None
-    source_id: str | None = None
 
     @model_validator(mode="after")
     def active_flags_require_source(self) -> "CriticalityFlags":
-        active = (
-            self.us_critical_list_as_of_2025
-            or self.eu_crm_list_as_of_2024
-            or self.eu_strategic_list_as_of_2024
-            or self.doe_short_term_criticality_rank is not None
-        )
-        if active and not self.source_id:
-            raise ValueError(
-                "CriticalityFlags: source_id is required when any flag is True or "
-                "doe_short_term_criticality_rank is set. Active list membership must cite its source."
-            )
+        errors = []
+        if self.us_critical_list_as_of_2025 and not self.us_critical_source_id:
+            errors.append("us_critical_source_id is required when us_critical_list_as_of_2025 is True")
+        if self.eu_crm_list_as_of_2024 and not self.eu_crm_source_id:
+            errors.append("eu_crm_source_id is required when eu_crm_list_as_of_2024 is True")
+        if self.eu_strategic_list_as_of_2024 and not self.eu_strategic_source_id:
+            errors.append("eu_strategic_source_id is required when eu_strategic_list_as_of_2024 is True")
+        if self.doe_short_term_criticality_rank is not None and not self.doe_rank_source_id:
+            errors.append("doe_rank_source_id is required when doe_short_term_criticality_rank is set")
+        if errors:
+            raise ValueError("; ".join(errors))
         return self
 
 
@@ -792,7 +799,10 @@ class Element(BaseModel):
             if sid not in known:
                 raise ValueError(f"{self.symbol}: unknown source_id {sid!r} referenced from {where}")
 
-        check(self.criticality.source_id, "criticality.source_id")
+        check(self.criticality.us_critical_source_id, "criticality.us_critical_source_id")
+        check(self.criticality.eu_crm_source_id, "criticality.eu_crm_source_id")
+        check(self.criticality.eu_strategic_source_id, "criticality.eu_strategic_source_id")
+        check(self.criticality.doe_rank_source_id, "criticality.doe_rank_source_id")
 
         for pi, pb in enumerate(self.production):
             if pb.mine:

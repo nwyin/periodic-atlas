@@ -380,27 +380,70 @@ class TestNestedStockFlowDiscipline:
 
 
 class TestCriticalityFlagsSourceRequirement:
-    def test_any_active_flag_requires_source_id(self) -> None:
-        with pytest.raises(ValidationError, match="source_id is required"):
+    # INV-1: us_critical=True without us_critical_source_id must fail
+    def test_us_critical_flag_requires_us_critical_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="us_critical_source_id"):
             CriticalityFlags(us_critical_list_as_of_2025=True)
 
-    def test_eu_crm_flag_alone_requires_source_id(self) -> None:
-        with pytest.raises(ValidationError, match="source_id is required"):
+    # INV-2a: eu_crm=True without eu_crm_source_id must fail
+    def test_eu_crm_flag_requires_eu_crm_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="eu_crm_source_id"):
             CriticalityFlags(eu_crm_list_as_of_2024=True)
 
-    def test_doe_rank_alone_requires_source_id(self) -> None:
-        with pytest.raises(ValidationError, match="source_id is required"):
+    # INV-2b: eu_strategic=True without eu_strategic_source_id must fail
+    def test_eu_strategic_flag_requires_eu_strategic_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="eu_strategic_source_id"):
+            CriticalityFlags(eu_strategic_list_as_of_2024=True)
+
+    # INV-2c: doe_rank set without doe_rank_source_id must fail
+    def test_doe_rank_requires_doe_rank_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="doe_rank_source_id"):
             CriticalityFlags(doe_short_term_criticality_rank=3)
 
-    def test_all_inactive_accepts_no_source(self) -> None:
+    def test_all_inactive_accepts_no_sources(self) -> None:
         c = CriticalityFlags()
-        assert c.source_id is None
         assert c.us_critical_list_as_of_2025 is False
+        assert c.us_critical_source_id is None
+        assert c.eu_crm_source_id is None
+        assert c.eu_strategic_source_id is None
+        assert c.doe_rank_source_id is None
 
-    def test_active_flag_with_source_id_accepted(self) -> None:
-        c = CriticalityFlags(us_critical_list_as_of_2025=True, source_id="usgs")
+    # INV-3: mixed case — us_critical + eu_crm each with their own source validates OK
+    def test_mixed_per_flag_sources_validate(self) -> None:
+        c = CriticalityFlags(
+            us_critical_list_as_of_2025=True,
+            us_critical_source_id="usgs_source",
+            eu_crm_list_as_of_2024=True,
+            eu_crm_source_id="eu_source",
+        )
         assert c.us_critical_list_as_of_2025 is True
-        assert c.source_id == "usgs"
+        assert c.us_critical_source_id == "usgs_source"
+        assert c.eu_crm_list_as_of_2024 is True
+        assert c.eu_crm_source_id == "eu_source"
+
+    def test_old_single_source_id_field_rejected(self) -> None:
+        """Old shape with top-level source_id must fail — no backward-compat shim."""
+        with pytest.raises(ValidationError):
+            CriticalityFlags(us_critical_list_as_of_2025=True, source_id="x")  # type: ignore[call-arg]
+
+    # INV-4: per-flag source_ids must resolve to entries in the element sources list
+    def test_unknown_us_critical_source_id_rejected(self) -> None:
+        with pytest.raises(ValidationError, match="unknown source_id 'missing_source'"):
+            make_element(
+                criticality=CriticalityFlags(
+                    us_critical_list_as_of_2025=True,
+                    us_critical_source_id="missing_source",
+                ),
+            )
+
+    def test_known_eu_crm_source_id_resolves(self) -> None:
+        e = make_element(
+            criticality=CriticalityFlags(
+                eu_crm_list_as_of_2024=True,
+                eu_crm_source_id="test_source",
+            ),
+        )
+        assert e.criticality.eu_crm_source_id == "test_source"
 
 
 class TestSourceIdIntegrity:

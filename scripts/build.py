@@ -110,7 +110,6 @@ def flatten_elements(elements: list[Element]) -> pd.DataFrame:
                 "eu_crm_list_as_of_2024": el.criticality.eu_crm_list_as_of_2024,
                 "eu_strategic_list_as_of_2024": el.criticality.eu_strategic_list_as_of_2024,
                 "doe_short_term_criticality_rank": el.criticality.doe_short_term_criticality_rank,
-                "criticality_source_id": el.criticality.source_id,
             }
         )
     return pd.DataFrame(rows)
@@ -364,12 +363,12 @@ def flatten_criticality(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
         c = el.criticality
-        flag_pairs = [
-            ("us_critical_list_as_of_2025", c.us_critical_list_as_of_2025),
-            ("eu_crm_list_as_of_2024", c.eu_crm_list_as_of_2024),
-            ("eu_strategic_list_as_of_2024", c.eu_strategic_list_as_of_2024),
+        flag_triples = [
+            ("us_critical_list_as_of_2025", c.us_critical_list_as_of_2025, c.us_critical_source_id),
+            ("eu_crm_list_as_of_2024", c.eu_crm_list_as_of_2024, c.eu_crm_source_id),
+            ("eu_strategic_list_as_of_2024", c.eu_strategic_list_as_of_2024, c.eu_strategic_source_id),
         ]
-        for flag_name, value in flag_pairs:
+        for flag_name, value, source_id in flag_triples:
             rows.append(
                 {
                     "symbol": el.symbol,
@@ -377,7 +376,7 @@ def flatten_criticality(elements: list[Element]) -> pd.DataFrame:
                     "flag_name": flag_name,
                     "value": bool(value),
                     "rank_value": None,
-                    "source_id": c.source_id,
+                    "source_id": source_id,
                 }
             )
         rows.append(
@@ -387,7 +386,7 @@ def flatten_criticality(elements: list[Element]) -> pd.DataFrame:
                 "flag_name": "doe_short_term_criticality_rank",
                 "value": None,
                 "rank_value": c.doe_short_term_criticality_rank,
-                "source_id": c.source_id,
+                "source_id": c.doe_rank_source_id,
             }
         )
     return pd.DataFrame(rows)

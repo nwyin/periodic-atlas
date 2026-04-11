@@ -339,10 +339,12 @@ end_uses:
 
 criticality:
   us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_cobalt
   eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_cobalt
   eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_cobalt
   notes: "On US, EU CRM, and EU Strategic lists. Net import reliance 76% per USGS MCS 2025."
-  source_id: usgs_mcs_2025_cobalt
 
 prices:
   - year: 2024

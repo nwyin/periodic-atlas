@@ -295,6 +295,40 @@ class TestFlatteners:
         rank_rows = df[df["flag_name"] == "doe_short_term_criticality_rank"]
         assert len(rank_rows) == 1
 
+    # INV-5: each flag row carries its own per-flag source_id (not a shared single one)
+    def test_criticality_per_flag_source_ids(self):
+        """flatten_criticality must emit per-flag source_id on each row so elements
+        on multiple lists can cite each list to its proper primary source."""
+        from atlas.models import CriticalityFlags
+
+        el = make_element(
+            extra_sources=[make_source("eu_source"), make_source("doe_source")],
+            criticality=CriticalityFlags(
+                us_critical_list_as_of_2025=True,
+                us_critical_source_id="test_source",
+                eu_crm_list_as_of_2024=True,
+                eu_crm_source_id="eu_source",
+                doe_short_term_criticality_rank=1,
+                doe_rank_source_id="doe_source",
+            ),
+        )
+        df = build.flatten_criticality([el])
+
+        us_row = df[df["flag_name"] == "us_critical_list_as_of_2025"].iloc[0]
+        assert us_row["source_id"] == "test_source"
+
+        eu_row = df[df["flag_name"] == "eu_crm_list_as_of_2024"].iloc[0]
+        assert eu_row["source_id"] == "eu_source"
+
+        # eu_strategic is False, so its source_id is None
+        strategic_row = df[df["flag_name"] == "eu_strategic_list_as_of_2024"].iloc[0]
+        assert strategic_row["value"] is False or strategic_row["value"] == False  # noqa: E712
+        assert _is_null(strategic_row["source_id"])
+
+        doe_row = df[df["flag_name"] == "doe_short_term_criticality_rank"].iloc[0]
+        assert doe_row["source_id"] == "doe_source"
+        assert doe_row["rank_value"] == 1
+
 
 def _row_is_claim_bearing(table_name: str, row) -> bool:
     """Return True when a flattened row represents an active factual claim.
@@ -345,18 +379,14 @@ class TestProvenanceJoin:
                 )
 
     def test_null_source_id_on_active_criticality_flag_fails(self):
-        """Regression: in v0.2, build.flatten_criticality emitted a row with
-        source_id=None even when the flag was True because CriticalityFlags
-        allowed source_id=None. C1 forbids that combination at the model level;
-        this test locks in the shape of the resulting parquet rows.
+        """Regression: active criticality flags must have per-flag source_ids.
+        The per-flag validation fires at the Pydantic layer before build.py
+        ever sees the model.
         """
         from atlas.models import CriticalityFlags
-
-        # Explicit attempt to construct the forbidden combination should
-        # fail at the Pydantic layer before build.py ever sees it.
         from pydantic import ValidationError
 
-        with pytest.raises(ValidationError, match="source_id is required"):
+        with pytest.raises(ValidationError, match="us_critical_source_id"):
             CriticalityFlags(us_critical_list_as_of_2025=True)
 
     def test_provenance_test_catches_fabricated_null_source_id(self):
