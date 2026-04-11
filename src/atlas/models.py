@@ -312,6 +312,8 @@ class CriticalityFlags(BaseModel):
     """Membership in various government critical-materials lists.
 
     Field names encode "membership as-of YYYY", not a hypothetical "YYYY list revision".
+    `source_id` is required whenever any flag is True or a DOE rank is set —
+    an active criticality claim must always be traceable to a primary list.
     """
 
     model_config = ConfigDict(extra="forbid")
@@ -322,6 +324,21 @@ class CriticalityFlags(BaseModel):
     doe_short_term_criticality_rank: int | None = Field(default=None, ge=1)
     notes: str | None = None
     source_id: str | None = None
+
+    @model_validator(mode="after")
+    def active_flags_require_source(self) -> "CriticalityFlags":
+        active = (
+            self.us_critical_list_as_of_2025
+            or self.eu_crm_list_as_of_2024
+            or self.eu_strategic_list_as_of_2024
+            or self.doe_short_term_criticality_rank is not None
+        )
+        if active and not self.source_id:
+            raise ValueError(
+                "CriticalityFlags: source_id is required when any flag is True or "
+                "doe_short_term_criticality_rank is set. Active list membership must cite its source."
+            )
+        return self
 
 
 class Price(Cited):
@@ -645,6 +662,38 @@ class Element(BaseModel):
         return self
 
     @model_validator(mode="after")
+    def source_ids_unique(self) -> "Element":
+        """Duplicate Source.id within a single element silently shadowed earlier
+        sources; reject it so every source_id has exactly one referent."""
+        seen: set[str] = set()
+        for s in self.sources:
+            if s.id in seen:
+                raise ValueError(
+                    f"{self.symbol}: duplicate source id {s.id!r} in sources list. "
+                    f"Every Source.id must be unique within an element."
+                )
+            seen.add(s.id)
+        return self
+
+    @model_validator(mode="after")
+    def superseded_by_resolves(self) -> "Element":
+        """Source.superseded_by must resolve to another source in the same element."""
+        known = {s.id for s in self.sources}
+        for s in self.sources:
+            if s.superseded_by is None:
+                continue
+            if s.superseded_by not in known:
+                raise ValueError(
+                    f"{self.symbol}: source {s.id!r} superseded_by={s.superseded_by!r} "
+                    f"does not resolve to any source in the sources list."
+                )
+            if s.superseded_by == s.id:
+                raise ValueError(
+                    f"{self.symbol}: source {s.id!r} cannot supersede itself."
+                )
+        return self
+
+    @model_validator(mode="after")
     def source_ids_resolve(self) -> "Element":
         known = {s.id for s in self.sources}
         if not known and self._has_any_claim():
@@ -688,6 +737,8 @@ class Element(BaseModel):
                 check(im.production_quantity.source_id, f"isotope_markets[{i}].production_quantity")
             for j, s in enumerate(im.producers.shares):
                 check(s.source_id, f"isotope_markets[{i}].producers[{j}]")
+                if s.quantity:
+                    check(s.quantity.source_id, f"isotope_markets[{i}].producers[{j}].quantity")
 
         for i, u in enumerate(self.end_uses.uses):
             check(u.source_id, f"end_uses[{i}]")
