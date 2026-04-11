@@ -1,0 +1,396 @@
+symbol: Ni
+atomic_number: 28
+name: nickel
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS reports nickel on a contained-metal basis (metric tons of nickel content)
+  unless otherwise noted. Class I refined nickel (≥99.8% Ni) is the LME
+  deliverable grade; ferronickel (~20–40% Ni) and nickel pig iron (NPI, 1–15% Ni)
+  are distinct commercial forms used primarily in stainless steel production.
+  LME cash prices quoted per metric ton and per pound refer to Class I nickel cathode.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 3700000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025: "World total (rounded) 3,700,000" metric tons (estimated)
+      for 2024. Down slightly from 3,750,000 in 2023. USGS notes global
+      production decreased despite Indonesia increasing output by ~8%, offset
+      by declines in Australia (−26%), Philippines (−20%), and New Caledonia
+      (−52%).
+    source_id: usgs_mcs_2025_nickel
+  mining_by_country:
+    shares:
+      - country: ID
+        share_pct: 60
+        quantity:
+          value: 2200000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: |
+          Indonesia — USGS 2024 estimate. Increased ~8% from 2,030,000 in 2023.
+          Predominantly laterite ore processed into nickel pig iron (NPI) and
+          nickel matte. The largest single-country share by a wide margin.
+        source_id: usgs_mcs_2025_nickel
+      - country: PH
+        share_pct: 9
+        quantity:
+          value: 330000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "Philippines — USGS 2024 estimate. Down ~20% from 413,000 in 2023; multiple companies reduced or halted production on unfavorable market conditions."
+        source_id: usgs_mcs_2025_nickel
+      - country: RU
+        share_pct: 6
+        quantity:
+          value: 210000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "Russia — USGS 2024 estimate. Unchanged from 2023. Norilsk Nickel is the primary producer."
+        source_id: usgs_mcs_2025_nickel
+      - country: CA
+        share_pct: 5
+        quantity:
+          value: 190000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "Canada — USGS 2024 estimate. Up from 159,000 in 2023. A new nickel sulfide mine began commercial production in Zambia in June 2024 (not Canada-specific)."
+        source_id: usgs_mcs_2025_nickel
+      - country: CN
+        share_pct: 3
+        quantity:
+          value: 120000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: NC
+        share_pct: 3
+        quantity:
+          value: 110000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "New Caledonia (overseas territory of France). Down ~52% from 231,000 in 2023 owing to widespread unrest and reduced global nickel prices."
+        source_id: usgs_mcs_2025_nickel
+      - country: AU
+        share_pct: 3
+        quantity:
+          value: 110000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "Australia — USGS 2024 estimate. Down ~26% from 149,000 in 2023; multiple companies reduced or halted production owing to unfavorable market conditions."
+        source_id: usgs_mcs_2025_nickel
+      - country: BR
+        share_pct: 2
+        quantity:
+          value: 77000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: US
+        share_pct: 0
+        quantity:
+          value: 8000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: |
+          Eagle Mine (underground), Michigan — USGS 2024 estimate. Down from
+          16,400 in 2023. Nickel in concentrate exported to smelters in Canada
+          and overseas. A Missouri company also produced nickel-copper-cobalt
+          concentrate from historic mine tailings. Refinery byproduct production
+          (from PGM smelting in Montana) is withheld (W) to avoid disclosing
+          company proprietary data.
+        source_id: usgs_mcs_2025_nickel
+      - country: ZZ
+        share_pct: 8
+        quantity:
+          value: 300000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "USGS 'Other countries' row. Includes Zambia (new mine started June 2024), South Africa, and others."
+        source_id: usgs_mcs_2025_nickel
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 130000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: "USGS MCS 2025: 'World total (rounded) >130,000,000' metric tons of nickel content."
+    source_id: usgs_mcs_2025_nickel
+  resources:
+    value: 350000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS MCS 2025: "Globally, nickel resources have been estimated to contain
+      more than 350 million tons of nickel, with 54% in laterites and 35% in
+      magmatic sulfide deposits. Hydrothermal systems such as iron-nickel alloy,
+      sedimentary-hosted polymetallic, and volcanogenic massive sulfide deposits,
+      as well as seafloor manganese crusts and nodules contain 10%, and
+      miscellaneous resources such as tailings, 1%."
+    source_id: usgs_mcs_2025_nickel
+  reserves_by_country:
+    shares:
+      - country: ID
+        share_pct: 42
+        quantity:
+          value: 55000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: AU
+        share_pct: 18
+        quantity:
+          value: 24000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "Australia. USGS footnote: JORC-compliant or equivalent reserves were 8.6 million tons."
+        source_id: usgs_mcs_2025_nickel
+      - country: BR
+        share_pct: 12
+        quantity:
+          value: 16000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: RU
+        share_pct: 6
+        quantity:
+          value: 8300000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: NC
+        share_pct: 5
+        quantity:
+          value: 7100000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "New Caledonia (overseas territory of France)."
+        source_id: usgs_mcs_2025_nickel
+      - country: PH
+        share_pct: 4
+        quantity:
+          value: 4800000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: CN
+        share_pct: 3
+        quantity:
+          value: 4400000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "Revised by USGS based on company and Government reports."
+        source_id: usgs_mcs_2025_nickel
+      - country: CA
+        share_pct: 2
+        quantity:
+          value: 2200000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        source_id: usgs_mcs_2025_nickel
+      - country: US
+        share_pct: 0
+        quantity:
+          value: 310000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "USGS footnote: includes reserve data for three projects; an additional three domestic projects have defined resources but have not yet defined reserves. Revised based on company and Government reports."
+        source_id: usgs_mcs_2025_nickel
+      - country: ZZ
+        share_pct: 7
+        quantity:
+          value: 9100000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_nickel
+        notes: "USGS 'Other countries' row (listed as >9,100,000)."
+        source_id: usgs_mcs_2025_nickel
+    completeness: complete
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: nickel_laterite_ore
+    notes: |
+      USGS: 54% of global nickel resources are in laterites. Predominantly in
+      Indonesia, Philippines, New Caledonia, and Australia. Processed via
+      rotary kiln electric furnace (RKEF) to produce nickel pig iron (NPI)
+      or ferronickel, or via high-pressure acid leach (HPAL) to produce
+      mixed hydroxide precipitate (MHP) for battery-grade nickel.
+    source_id: usgs_mcs_2025_nickel
+  - substrate: nickel_sulfide_ore
+    notes: |
+      USGS: 35% of global nickel resources are in magmatic sulfide deposits.
+      Major sources: Sudbury basin (Canada), Norilsk (Russia), Kambalda (Australia).
+      Yields high-purity Class I nickel via conventional smelting and refining.
+    source_id: usgs_mcs_2025_nickel
+
+substitutes:
+  - application: stainless_and_alloy_steel
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Low-nickel, duplex, or
+      ultrahigh-chromium stainless steels have been substituted for
+      austenitic grades in construction. Nickel-free specialty steels
+      are sometimes used in place of stainless steel in the
+      power-generating and petrochemical industries. Titanium alloys
+      can substitute for nickel metal or nickel-base alloys in
+      corrosive chemical environments."
+    source_id: usgs_mcs_2025_nickel
+
+end_uses:
+  uses:
+    - application: stainless_and_alloy_steel
+      share_pct: 85
+      notes: |
+        USGS MCS 2025: "Stainless and alloy steel and nickel-containing alloys
+        typically account for more than 85% of domestic consumption." This is
+        US-specific; globally the stainless steel share is similarly dominant.
+        Figure represents the ">85%" USGS lower bound, rounded to 85%.
+      source_id: usgs_mcs_2025_nickel
+    - application: electroplating_catalysts_chemicals_other
+      share_pct: 15
+      notes: |
+        USGS lists "electroplating, and other uses including catalysts and
+        chemicals" as secondary end uses. The 15% is the implied remainder
+        after the >85% stainless/alloy steel category. Growing battery
+        demand (EV nickel sulfate) is not separately quantified in this chapter.
+      source_id: usgs_mcs_2025_nickel
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_nickel
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_nickel
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_nickel
+  notes: |
+    Nickel is on the US 2022 Final Critical Minerals List. EU CRMA 2023/2024
+    (Regulation 2024/1252) lists nickel on both Annex I (Strategic Raw Materials)
+    and Annex II (Critical Raw Materials). Net import reliance (US) was 48% in
+    2024 per USGS salient statistics table; excluding secondary/scrap, net
+    import reliance would be nearly 100%.
+
+prices:
+  - year: 2024
+    value: 17000
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: global
+    notes: "USGS MCS 2025 salient statistics: LME cash average 2024 (estimated) ~$17,000/metric ton ($7.70/lb). Down 21% from 2023."
+    source_id: usgs_mcs_2025_nickel
+  - year: 2023
+    value: 21495
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: global
+    notes: "USGS MCS 2025 salient statistics: LME cash average 2023 = $21,495/metric ton ($9.75/lb)."
+    source_id: usgs_mcs_2025_nickel
+  - year: 2022
+    value: 25815
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: global
+    notes: "USGS MCS 2025 salient statistics: LME cash average 2022 = $25,815/metric ton ($11.71/lb)."
+    source_id: usgs_mcs_2025_nickel
+  - year: 2021
+    value: 18476
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: global
+    notes: "USGS MCS 2025 salient statistics: LME cash average 2021 = $18,476/metric ton ($8.38/lb)."
+    source_id: usgs_mcs_2025_nickel
+  - year: 2020
+    value: 13772
+    unit: usd_per_tonne
+    form: metal
+    basis: lme
+    region: global
+    notes: "USGS MCS 2025 salient statistics: LME cash average 2020 = $13,772/metric ton ($6.25/lb)."
+    source_id: usgs_mcs_2025_nickel
+
+geopolitical_events:
+  - date: 2024-01
+    event: "Supply concerns (Indonesia mining quota delays, New Caledonia unrest, Russia ban) push LME nickel to ~$19,000/t in early 2024"
+    impact: "Price spike was short-lived; by June concerns subsided and LME average fell to ~$16,000/t by November; 2024 annual average ended at ~$17,000/t (−21% YoY)."
+    source_id: usgs_mcs_2025_nickel
+  - date: 2024-05
+    event: "US Department of Defense awards $7 million grant to Missouri company under Defense Production Act Title III"
+    impact: "Grant funds a hydrometallurgical demonstration plant capable of extracting cobalt and nickel from a variety of feedstocks, supporting domestic supply chain development."
+    source_id: usgs_mcs_2025_nickel
+  - date: 2024-06
+    event: "New nickel sulfide mine begins commercial production at Kalumbila, Zambia"
+    impact: "Adds greenfield capacity to the 'Other countries' bucket; first major new sulfide mine in the region in years."
+    source_id: usgs_mcs_2025_nickel
+  - date: 2024-01
+    event: "New Caledonia nickel production falls ~52% amid widespread social and civil unrest"
+    impact: "New Caledonia output dropped from 231,000 t (2023) to 110,000 t (2024), removing ~3% of global supply and contributing to brief early-2024 price spike."
+    source_id: usgs_mcs_2025_nickel
+
+narrative: |
+  Nickel is a high-volume workhorse metal dominated by one country: Indonesia
+  accounts for ~60% of world mine production (2.2 of 3.7 million tonnes in 2024)
+  via laterite ore processing into nickel pig iron (NPI) and matte. This geographic
+  concentration has structurally oversupplied the market: LME nickel cash prices
+  fell from $25,815/t in 2022 to $17,000/t in 2024, an estimated 21% drop in a
+  single year. The oversupply drove production curtailments in Australia (−26%),
+  Philippines (−20%), and New Caledonia (−52%), the last amplified by civil unrest.
+
+  The dominant end use is stainless and alloy steel (>85% of US consumption per
+  USGS), with electroplating, catalysts, and chemicals accounting for the balance.
+  Battery demand (nickel sulfate for EV cathodes) is the fastest-growing application
+  but not yet separately quantified in USGS data. Indonesia's strategy — processing
+  ore into NPI domestically rather than exporting raw laterite — has captured most
+  of the value chain and made Indonesian export bans on raw ore the central policy
+  lever in global nickel markets.
+
+  World reserves exceed 130 million tonnes, with 54% of resources in laterites and
+  35% in magmatic sulfide deposits. The US holds modest reserves (310,000 t) via
+  three projects, and net import reliance was 48% in 2024 (nearly 100% excluding
+  scrap). Nickel appears on the US 2022 Critical Minerals List and the EU's CRMA
+  2024 Strategic Raw Materials list (Annex I), reflecting its centrality to
+  stainless steel, superalloys, and battery supply chains.
+
+sources:
+  - id: usgs_mcs_2025_nickel
+    title: Mineral Commodity Summaries 2025 — Nickel
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-nickel.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
