@@ -1,0 +1,666 @@
+symbol: Au
+atomic_number: 79
+name: gold
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports gold production on a gold-content basis in metric tons.
+  The salient statistics note: "One metric ton (1,000 kilograms) = 32,150.7 troy ounces."
+  The primary commercial forms are gold bullion (refined metal ≥99.5% Au), dore (unrefined
+  gold-silver alloy bars smelted at mine sites, typically 60–90% Au), and gold concentrates
+  (ores shipped to refineries). Prices are quoted in US dollars per troy ounce (Engelhard
+  average gold price quotation). US production figures include lode (hard-rock) and placer
+  mine output; refinery figures split primary (from domestic and foreign ores/concentrates)
+  and secondary (new and old scrap) streams. World mine production data are on a gold-content
+  basis. Data are in metric tons unless otherwise specified.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 160
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      US mine production 2024e: 160 metric tons; value estimated at $12 billion, a 9%
+      increase in value from 2023 (reflecting higher gold prices). Gold produced at more
+      than 40 lode mines in 12 states and at several large and numerous smaller placer
+      mines (mostly Alaska and Western States). Nevada led with ~70% of domestic output;
+      Alaska contributed ~16%. About 7% was recovered as byproduct from copper ore
+      processing. Top 26 operations yielded ~97% of mined gold.
+    source_id: usgs_mcs_2025_gold
+  refined:
+    value: 260
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      US total refinery output 2024e: primary 170 t + secondary (new and old scrap) 90 t
+      = 260 metric tons. Commercial-grade gold produced at approximately 15 refineries.
+      Primary refinery production declined from 179 t (2023) to 170 t (2024e); secondary
+      declined from 96 t (2023) to 90 t (2024e). Recycled scrap was equivalent to about
+      45% of reported US consumption in 2024.
+    source_id: usgs_mcs_2025_gold
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 11.52
+        quantity:
+          value: 380
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "China 2024e: 380 metric tons. Reserves revised 2024. Consistently the world's largest gold producer."
+        source_id: usgs_mcs_2025_gold
+      - country: RU
+        share_pct: 9.39
+        quantity:
+          value: 310
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Russia 2024e: 310 metric tons. Reserves revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: AU
+        share_pct: 8.79
+        quantity:
+          value: 290
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: |
+          Australia 2024e: 290 metric tons. JORC-compliant or equivalent reserves were
+          4,600 tons; USGS-format reserves reported as 12,000 tons.
+        source_id: usgs_mcs_2025_gold
+      - country: CA
+        share_pct: 6.06
+        quantity:
+          value: 200
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Canada 2024e: 200 metric tons. Reserves revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: US
+        share_pct: 4.85
+        quantity:
+          value: 160
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: |
+          US 2024e: 160 metric tons. Nevada ~70%, Alaska ~16%. Reserves: 3,000 t.
+        source_id: usgs_mcs_2025_gold
+      - country: KZ
+        share_pct: 3.94
+        quantity:
+          value: 130
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Kazakhstan 2024e: 130 metric tons. Reserves revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: MX
+        share_pct: 3.94
+        quantity:
+          value: 130
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Mexico 2024e: 130 metric tons. Reserves: 1,400 t."
+        source_id: usgs_mcs_2025_gold
+      - country: GH
+        share_pct: 3.94
+        quantity:
+          value: 130
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Ghana 2024e: 130 metric tons. Reserves: 1,000 t."
+        source_id: usgs_mcs_2025_gold
+      - country: ID
+        share_pct: 3.03
+        quantity:
+          value: 100
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_gold
+        notes: "Indonesia 2024e: ~100 metric tons (estimated). Reserves: 3,600 t."
+        source_id: usgs_mcs_2025_gold
+      - country: PE
+        share_pct: 3.03
+        quantity:
+          value: 100
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Peru 2024e: 100 metric tons. Reserves revised 2024: 2,500 t."
+        source_id: usgs_mcs_2025_gold
+      - country: UZ
+        share_pct: 3.64
+        quantity:
+          value: 120
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Uzbekistan 2024e: 120 metric tons. Reserves: 1,800 t."
+        source_id: usgs_mcs_2025_gold
+      - country: ZA
+        share_pct: 3.03
+        quantity:
+          value: 100
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "South Africa 2024e: 100 metric tons. Reserves: 5,000 t."
+        source_id: usgs_mcs_2025_gold
+      - country: BF
+        share_pct: 1.82
+        quantity:
+          value: 60
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Burkina Faso 2024e: 60 metric tons. Reserves: NA (not available)."
+        source_id: usgs_mcs_2025_gold
+      - country: BR
+        share_pct: 2.12
+        quantity:
+          value: 70
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Brazil 2024e: 70 metric tons. Reserves: 2,400 t."
+        source_id: usgs_mcs_2025_gold
+      - country: CO
+        share_pct: 1.82
+        quantity:
+          value: 60
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Colombia 2024e: 60 metric tons. Reserves revised 2024: 700 t."
+        source_id: usgs_mcs_2025_gold
+      - country: ML
+        share_pct: 2.12
+        quantity:
+          value: 70
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_gold
+        notes: "Mali 2024e: ~70 metric tons (estimated). Reserves: 800 t."
+        source_id: usgs_mcs_2025_gold
+      - country: TZ
+        share_pct: 1.82
+        quantity:
+          value: 60
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Tanzania 2024e: 60 metric tons. Reserves revised 2024: 400 t."
+        source_id: usgs_mcs_2025_gold
+      - country: ZZ
+        share_pct: 23.64
+        quantity:
+          value: 780
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "USGS 'Other countries' row 2024e: 780 metric tons."
+        source_id: usgs_mcs_2025_gold
+    completeness: complete
+  notes: |
+    World mine production increased from 3,250 metric tons (2023) to 3,300 metric tons
+    (2024e). China, Russia, Australia, Canada, and the United States together accounted
+    for 41% of estimated global production in 2024. Burkina Faso has no reported reserves
+    (NA). Named country entries sum to 3,300 t, matching the rounded world total.
+
+reserves:
+  economic_reserves:
+    value: 64000
+    unit: tonnes
+    form: contained_element
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total gold reserves: 64,000 metric tons (gold content, rounded).
+      Reserves for Canada, China, Colombia, Indonesia, Kazakhstan, Peru, Russia, and Tanzania
+      were revised based on company and government reports.
+    source_id: usgs_mcs_2025_gold
+  resources:
+    value: 33000
+    unit: tonnes
+    form: contained_element
+    approximate: false
+    notes: |
+      USGS MCS 2025 US gold resources: 33,000 tons (15,000 tons identified + 18,000 tons
+      undiscovered). Nearly one-quarter of undiscovered resources estimated in porphyry
+      copper deposits. US resources are only a small portion of global gold resources.
+      Source: USGS National Mineral Resource Assessment Team, 2000, Circular 1178.
+    source_id: usgs_mcs_2025_gold
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 18.75
+        quantity:
+          value: 12000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: |
+          Australia: 12,000 t USGS-format reserves. JORC-compliant or equivalent
+          reserves were 4,600 t per USGS footnote 11.
+        source_id: usgs_mcs_2025_gold
+      - country: RU
+        share_pct: 18.75
+        quantity:
+          value: 12000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Russia: 12,000 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: ZA
+        share_pct: 7.81
+        quantity:
+          value: 5000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "South Africa: 5,000 t."
+        source_id: usgs_mcs_2025_gold
+      - country: ID
+        share_pct: 5.63
+        quantity:
+          value: 3600
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Indonesia: 3,600 t."
+        source_id: usgs_mcs_2025_gold
+      - country: CA
+        share_pct: 5.00
+        quantity:
+          value: 3200
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Canada: 3,200 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: CN
+        share_pct: 4.84
+        quantity:
+          value: 3100
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "China: 3,100 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: US
+        share_pct: 4.69
+        quantity:
+          value: 3000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "United States: 3,000 t."
+        source_id: usgs_mcs_2025_gold
+      - country: PE
+        share_pct: 3.91
+        quantity:
+          value: 2500
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Peru: 2,500 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: BR
+        share_pct: 3.75
+        quantity:
+          value: 2400
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Brazil: 2,400 t."
+        source_id: usgs_mcs_2025_gold
+      - country: KZ
+        share_pct: 3.59
+        quantity:
+          value: 2300
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Kazakhstan: 2,300 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: UZ
+        share_pct: 2.81
+        quantity:
+          value: 1800
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Uzbekistan: 1,800 t."
+        source_id: usgs_mcs_2025_gold
+      - country: MX
+        share_pct: 2.19
+        quantity:
+          value: 1400
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Mexico: 1,400 t."
+        source_id: usgs_mcs_2025_gold
+      - country: GH
+        share_pct: 1.56
+        quantity:
+          value: 1000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Ghana: 1,000 t."
+        source_id: usgs_mcs_2025_gold
+      - country: ML
+        share_pct: 1.25
+        quantity:
+          value: 800
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Mali: 800 t."
+        source_id: usgs_mcs_2025_gold
+      - country: CO
+        share_pct: 1.09
+        quantity:
+          value: 700
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Colombia: 700 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: TZ
+        share_pct: 0.63
+        quantity:
+          value: 400
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "Tanzania: 400 t. Revised 2024."
+        source_id: usgs_mcs_2025_gold
+      - country: ZZ
+        share_pct: 14.38
+        quantity:
+          value: 9200
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_gold
+        notes: "USGS 'Other countries' reserves row: 9,200 t."
+        source_id: usgs_mcs_2025_gold
+    completeness: partial
+  notes: |
+    Burkina Faso has NA (not available) reserves per USGS MCS 2025; thus the list is partial.
+    Named country reserves sum to 64,200 t vs. world total 64,000 t (within rounding tolerance).
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: gold_lode_ore
+    notes: |
+      The primary source of mined gold. Hard-rock lode deposits include orogenic gold
+      (quartz-vein hosted), intrusion-related, and epithermal types. Nevada hosts the Carlin
+      Trend and Cortez/Battle Mountain mining districts (US), which together account for ~70%
+      of US production. These ores are processed by heap leaching (oxide ores) or mill
+      flotation and cyanide leaching (sulfide ores) to produce dore or concentrates.
+    source_id: usgs_mcs_2025_gold
+  - substrate: gold_placer_deposit
+    notes: |
+      Alluvial/placer gold mined primarily in Alaska and the Western States. Several large
+      placer operations and numerous smaller artisanal mines contribute to US production.
+      Placer gold is recovered by gravity separation (sluicing, dredging) and typically
+      smelted directly to dore.
+    source_id: usgs_mcs_2025_gold
+  - substrate: copper_ore_byproduct
+    notes: |
+      About 7% of US domestic gold is recovered as byproduct from copper ore processing.
+      Gold is a common trace constituent in porphyry copper deposits (e.g., Bingham Canyon,
+      Utah); it is recovered in the copper smelting/refining circuit as anode slimes, then
+      processed through a precious-metals refinery.
+    source_id: usgs_mcs_2025_gold
+  - substrate: gold_silver_dore
+    notes: |
+      Dore — unrefined gold-silver alloy bars smelted at mine sites — is the dominant import
+      form for US refineries. Major dore import sources (2020–23): Mexico 38%, Colombia 20%,
+      Argentina 12%, Nicaragua 8%, other 22%.
+    source_id: usgs_mcs_2025_gold
+  - substrate: gold_scrap
+    notes: |
+      New and old scrap provides a significant secondary supply stream: ~90 metric tons in
+      2024, equivalent to ~45% of reported US consumption. Sources include industrial process
+      scrap (new scrap from fabrication) and post-consumer scrap (old scrap from jewelry,
+      electronics, and dental applications).
+    source_id: usgs_mcs_2025_gold
+
+substitutes:
+  - application: electrical_and_electronic_contacts
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Base metals clad with gold alloys are widely used to economize on
+      gold in electrical and electronic products." Products are "continually redesigned to
+      maintain high-utility standards with lower gold content." Palladium is the primary
+      functional substitute for gold in electrical contacts; silver is used in lower-
+      specification applications.
+    source_id: usgs_mcs_2025_gold
+  - application: jewelry
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Base metals clad with gold alloys are widely used to economize on
+      gold in jewelry." Gold-filled and gold-plated jewelry use a base-metal core with a
+      thin gold layer. Platinum, palladium, and silver are functional precious-metal
+      substitutes in luxury jewelry.
+    source_id: usgs_mcs_2025_gold
+  - application: general_industrial
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Generally, palladium, platinum, and silver may substitute for gold."
+      Platinum-group metals can replace gold in catalytic, chemical-resistance, and high-
+      temperature applications where gold's properties are exploited.
+    source_id: usgs_mcs_2025_gold
+
+end_uses:
+  uses:
+    - application: jewelry
+      share_pct: 45
+      notes: |
+        USGS MCS 2025 (World Gold Council data): estimated global gold consumption (excluding
+        ETFs and similar investments) in jewelry: 45%. Largest single end-use category
+        globally. Global jewelry consumption declined 7% in the first 9 months of 2024
+        compared with the same period in 2023.
+      source_id: usgs_mcs_2025_gold
+    - application: central_bank_and_institutional
+      share_pct: 21
+      notes: |
+        USGS MCS 2025 (World Gold Council data): central banks and other institutions: 21%.
+        Central banks have been net buyers in recent years to diversify reserves. In the
+        first 9 months of 2024, central bank holdings decreased by 17% compared with
+        the same period in 2023.
+      source_id: usgs_mcs_2025_gold
+    - application: physical_investment_bars
+      share_pct: 19
+      notes: |
+        USGS MCS 2025 (World Gold Council data): physical bars: 19%. Includes retail
+        investment bars held by private individuals and institutions. Global consumption
+        of physical bars increased 12% in the first 9 months of 2024 vs. the same period
+        in 2023.
+      source_id: usgs_mcs_2025_gold
+    - application: coins_and_medals
+      share_pct: 7
+      notes: |
+        USGS MCS 2025 (World Gold Council data): official coins and medals and imitation
+        coins: 7%. Global coin and medal demand decreased 25% in the first 9 months of 2024
+        vs. the same period in 2023.
+      source_id: usgs_mcs_2025_gold
+    - application: electrical_and_electronics
+      share_pct: 6
+      notes: |
+        USGS MCS 2025 (World Gold Council data): electrical and electronics: 6%. Includes
+        contacts, connectors, bonding wire in semiconductors, and circuit board plating.
+        Global electronics consumption of gold grew 12% in the first 9 months of 2024
+        vs. the same period in 2023.
+      source_id: usgs_mcs_2025_gold
+    - application: other_industrial
+      share_pct: 2
+      notes: |
+        USGS MCS 2025 (World Gold Council data): other: 1%. Includes dentistry (decreasing
+        5% in first 9 months of 2024 vs. 2023) and other minor industrial uses (unchanged).
+        US domestic: dentistry, decorative uses, and miscellaneous industrial applications.
+      source_id: usgs_mcs_2025_gold
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Gold is not on the US 2022 Critical Minerals List, the EU CRM 2023 list, or the EU
+    Strategic Raw Materials list (CRMA 2024). Despite being a tier-4 high-volume precious
+    metal, gold benefits from highly diversified global mine production (no single country
+    exceeds 12% of world output), large global reserves (64,000 t), and a uniquely robust
+    secondary supply chain: gold is the most heavily recycled of all metals, with existing
+    above-ground stocks (estimated >190,000 t total ever mined) providing a permanent
+    buffer. The US is a net exporter of gold in most years (E designation in the USGS
+    salient statistics).
+
+prices:
+  - year: 2024
+    value: 2400
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: estimated average 2024 price $2,400/troy oz
+      (Engelhard average gold price quotation, estimated by USGS based on January–November
+      2024 data). The 2024 price represents a 23% increase from the 2023 record-high annual
+      price of $1,945/troy oz and established a new record-high annual average. Price
+      followed an increasing trend in Q1, decreasing trend into Q2, and increasing trend
+      into early Q4 2024.
+    source_id: usgs_mcs_2025_gold
+  - year: 2023
+    value: 1945
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023 average $1,945/troy oz (then record high)."
+    source_id: usgs_mcs_2025_gold
+  - year: 2022
+    value: 1802
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 average $1,802/troy oz."
+    source_id: usgs_mcs_2025_gold
+  - year: 2021
+    value: 1801
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2021 average $1,801/troy oz."
+    source_id: usgs_mcs_2025_gold
+  - year: 2020
+    value: 1774
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 average $1,774/troy oz."
+    source_id: usgs_mcs_2025_gold
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "Gold price reaches record-high annual average of ~$2,400/troy oz in 2024"
+    impact: |
+      The estimated 2024 annual average gold price of $2,400/troy oz was 23% above the
+      2023 record-high annual average of $1,945/troy oz, establishing a new benchmark.
+      Price increased in Q1 2024, declined into Q2, and increased strongly again through
+      early Q4. The price rally was driven by central bank demand, geopolitical uncertainty,
+      investment flows, and US dollar dynamics.
+    source_id: usgs_mcs_2025_gold
+  - date: "2024-01"
+    event: "Global gold ETF outflows accelerate; central bank holdings decline 17%"
+    impact: |
+      In the first 9 months of 2024, global investments in gold-based exchange-traded funds
+      and similar investments decreased by 87% compared with the same period in 2023, and
+      central bank holdings decreased by 17%. Despite reduced institutional accumulation,
+      strong physical bar investment (+12%) and electronics demand (+12%) supported prices.
+    source_id: usgs_mcs_2025_gold
+  - date: "2024-01"
+    event: "World mine production increases to 3,300 t; China, Russia, Australia lead"
+    impact: |
+      World gold mine production increased from 3,250 metric tons (2023) to an estimated
+      3,300 metric tons (2024). China (380 t), Russia (310 t), Australia (290 t), Canada
+      (200 t), and the US (160 t) together accounted for 41% of global production. Supply
+      concentration among top producers remains moderate, with no single country controlling
+      more than 12% of global output.
+    source_id: usgs_mcs_2025_gold
+  - date: "2024-01"
+    event: "US domestic gold mine production declines to 160 t; value rises 9% to $12 billion"
+    impact: |
+      US mine production declined from 170 t (2023) to 160 t (2024e), continuing a
+      multi-year trend from 193 t in 2020. Despite lower volume, the estimated value
+      increased 9% to approximately $12 billion, entirely reflecting the higher gold price.
+      Employment in US gold mining and milling was ~12,000 in 2024e.
+    source_id: usgs_mcs_2025_gold
+
+narrative: |
+  Gold occupies a singular position in the global commodity complex as both a monetary
+  asset and an industrial input. In 2024, world mine production reached an estimated 3,300
+  metric tons of gold content, with China (380 t, 12%), Russia (310 t, 9%), and Australia
+  (290 t, 9%) leading a highly diversified global supply base — no single country controls
+  more than 12% of output. The US produced 160 metric tons, concentrated in Nevada (~70%)
+  and Alaska (~16%), with approximately 7% recovered as byproduct from copper ore processing.
+  The annual average gold price reached a record $2,400 per troy ounce in 2024, a 23%
+  increase over the prior record of $1,945 set in 2023, driven by geopolitical uncertainty,
+  central bank demand, and investment flows, even as ETF-based gold investments declined
+  sharply.
+
+  Global gold consumption (excluding exchange-traded funds) in 2024 was dominated by
+  jewelry (45%), central bank and institutional demand (21%), and physical investment bars
+  (19%), with electrical and electronics accounting for 6%. In the first nine months of 2024,
+  physical bar investment rose 12% and electronics grew 12%, while jewelry consumption
+  declined 7% and coin/medal demand fell 25%. US refinery output comprised 170 t of primary
+  production (from domestic and imported ores and concentrates) plus 90 t of secondary
+  recovery (new and old scrap), totaling 260 t, with recycled scrap equivalent to ~45% of
+  reported US consumption. US import sources were dominated by dore from Mexico (38%) and
+  Colombia (20%), and bullion from Switzerland (35%) and Canada (27%).
+
+  World reserves stand at 64,000 metric tons of gold content, with Australia and Russia
+  each holding 12,000 t (19% each), South Africa 5,000 t, and Indonesia 3,600 t. Identified
+  US gold resources total 15,000 t, with an additional 18,000 t undiscovered (nearly
+  one-quarter in porphyry copper systems). Gold is not on any current critical minerals list
+  due to its geographically diversified supply, large established reserve base, and uniquely
+  deep secondary-supply infrastructure: existing above-ground gold stocks (estimated at
+  over 190,000 t historically mined) represent a perpetual buffer against primary supply
+  disruption, and refined gold is effectively non-consumable in most applications.
+
+sources:
+  - id: usgs_mcs_2025_gold
+    title: Mineral Commodity Summaries 2025 — Gold
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-gold.pdf
+    retrieved: 2026-04-12
+    publication_year: 2025
+    source_tier: primary
+  - id: world_gold_council_demand_2024
+    title: Gold Demand Trends — World Gold Council (cited in USGS MCS 2025 gold chapter footnotes 3 and 9)
+    publisher: World Gold Council
+    url: https://www.gold.org/goldhub/research/gold-demand-trends
+    retrieved: 2026-04-12
+    publication_year: 2024
+    source_tier: secondary
