@@ -28,6 +28,7 @@ production:
     shares:
       - country: US
         share_pct: 45
+        confidence: low
         quantity:
           value: 81
           unit: million_m3_per_year
@@ -42,6 +43,7 @@ production:
         source_id: usgs_mcs_2025_helium
       - country: QA
         share_pct: 36
+        confidence: low
         quantity:
           value: 64
           unit: million_m3_per_year
@@ -51,6 +53,7 @@ production:
         source_id: usgs_mcs_2025_helium
       - country: RU
         share_pct: 9
+        confidence: low
         quantity:
           value: 17
           unit: million_m3_per_year
@@ -60,6 +63,7 @@ production:
         source_id: usgs_mcs_2025_helium
       - country: DZ
         share_pct: 6
+        confidence: low
         quantity:
           value: 11
           unit: million_m3_per_year
@@ -69,6 +73,7 @@ production:
         source_id: usgs_mcs_2025_helium
       - country: CA
         share_pct: 3
+        confidence: low
         quantity:
           value: 6
           unit: million_m3_per_year
@@ -78,6 +83,7 @@ production:
         source_id: usgs_mcs_2025_helium
       - country: CN
         share_pct: 2
+        confidence: low
         quantity:
           value: 3
           unit: million_m3_per_year
@@ -86,6 +92,7 @@ production:
         source_id: usgs_mcs_2025_helium
       - country: PL
         share_pct: 2
+        confidence: low
         quantity:
           value: 3
           unit: million_m3_per_year

@@ -142,6 +142,7 @@ production:
     shares:
       - country: CN
         share_pct: 60
+        confidence: low
         notes: |
           USGS MCS 2025 chapter text: "China was the world's leading producer
           of refined cobalt and increased metal refining capacity throughout
@@ -153,6 +154,7 @@ production:
         source_id: iea_cmo_2025_exec_summary
       - country: ZZ
         share_pct: 40
+        confidence: low
         notes: "Rest of world — exact distribution not cited here"
         source_id: iea_cmo_2025_exec_summary
     completeness: top_producers_only
