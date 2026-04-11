@@ -73,6 +73,7 @@ class IndustrialTier(int, Enum):
 class FlowUnit(str, Enum):
     """Units measuring a flow (quantity per year)."""
 
+    MILLION_TONNES_PER_YEAR = "million_tonnes_per_year"
     TONNES_PER_YEAR = "tonnes_per_year"
     KG_PER_YEAR = "kg_per_year"
     GRAMS_PER_YEAR = "grams_per_year"
@@ -339,6 +340,15 @@ class Source(BaseModel):
     retrieved: str | None = Field(default=None, pattern=r"^\d{4}-\d{2}-\d{2}$")
     publication_year: int | None = Field(default=None, ge=1800, le=2100)
     superseded_by: str | None = Field(default=None, description="source_id of a newer source that replaces this one.")
+    source_tier: Literal["primary", "secondary", "tertiary"] = Field(
+        default="secondary",
+        description=(
+            "Provenance tier. 'primary' = authoritative dataset read directly (USGS MCS, "
+            "DOE NIDC product info). 'secondary' = trade press / market report / IEA summary. "
+            "'tertiary' = Wikipedia / blog / derived. Round 1 defaults everything to secondary; "
+            "round 2 assigns real tiers."
+        ),
+    )
 
     @field_validator("retrieved", mode="before")
     @classmethod
