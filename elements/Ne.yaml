@@ -1,0 +1,179 @@
+symbol: Ne
+atomic_number: 10
+name: neon
+category: noble_gas
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Neon is extracted from ambient air by cryogenic air separation units
+  (ASUs). It is not tracked by USGS (no chapter in Mineral Commodity
+  Summaries — USGS covers helium but not the other noble gases). The
+  authoritative data sources are industrial-gas trade publications
+  (Gasworld, Specialty Gas Report), trade associations (EIGA, CGA),
+  and company investor materials from Linde/Air Liquide/Air Products.
+  This file is intentionally populated with low-confidence placeholder
+  figures to stress-test the schema's handling of weakly-sourced
+  elements.
+
+production:
+  reporting_year: 2022
+  mine:
+    value: 600
+    unit: million_L_per_year
+    form: gas_grade_a
+    approximate: true
+    confidence: low
+    notes: |
+      PLACEHOLDER. No primary source with a current global production
+      figure was located during step 2 of v0.2 rewrites. Historical
+      pre-2022 reporting commonly cited ~600-800 million liters per
+      year (Gasworld, industry analyst reports) but a direct 2024
+      figure from Gasworld's annual Specialty Gas Survey has not been
+      cited here. Treat as order-of-magnitude only.
+    source_id: asianometry_neon_2022
+  mining_by_country:
+    shares:
+      - country: UA
+        share_pct: 50
+        notes: |
+          Asianometry (March 2022): "Over 50% of the world's neon is
+          produced in Ukraine, which houses several large air separation
+          units." Historical pre-2022 figure. Post-2022 Russian invasion
+          disrupted Ukrainian supply; share has since fallen as Chinese
+          and US producers filled the gap. Current share is not cited.
+        source_id: asianometry_neon_2022
+      - country: CN
+        share_pct: 30
+        notes: |
+          PLACEHOLDER. Chinese share grew after the 2022 Ukraine
+          disruption; specific current percentage is not cited here.
+          Industry reporting commonly cites China as the fastest-growing
+          supplier post-2022.
+        source_id: inquiry_periodic_elements_2025
+      - country: ZZ
+        share_pct: 20
+        notes: "Rest of world — US, EU, other Asian producers. Shares not cited."
+        source_id: inquiry_periodic_elements_2025
+    completeness: top_producers_only
+  notes: |
+    Entire production geography is low-confidence. This file should be
+    revisited with direct Gasworld / EIGA citations during step 3 or
+    during the agent ingest pass, and shares re-estimated from post-2022
+    industry data rather than the pre-2022 Ukrainian-dominance figure.
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: atmospheric_air
+    typical_concentration_pct: 0.00182
+    notes: |
+      Atmospheric neon abundance is 18.18 parts per million by volume
+      (0.001818%). Cryogenic air separation units that distill oxygen
+      and nitrogen for industrial use co-produce neon as a rare-gas
+      byproduct of the distillation column overhead. Only the largest
+      ASUs have neon-recovery equipment, so supply geography tracks
+      large-scale O2/N2 production rather than neon demand.
+    source_id: asianometry_neon_2022
+
+substitutes:
+  - availability: none
+    notes: |
+      For the dominant semiconductor lithography application (ArF 193 nm
+      excimer laser buffer gas), there is no effective substitute — the
+      buffer gas composition is part of the laser cavity design and
+      cannot be swapped without requalification of entire photolithography
+      lines. For less demanding applications (gas discharge lamps,
+      cryogenic cooling), argon or helium can substitute in some cases.
+    source_id: asianometry_neon_2022
+
+end_uses:
+  uses:
+    - application: duv_excimer_laser_buffer_gas
+      share_pct: 85
+      notes: |
+        Asianometry: "Neon is a critical material for excimer lasers
+        used in steppers for DUV lithography like the 193 nanometer
+        Argon Fluoride excimer laser." The 85% figure is an industry-
+        reporting convention reflecting semiconductor's dominance of
+        the specialty neon market; it is not directly cited from a
+        primary source in this file.
+      source_id: inquiry_periodic_elements_2025
+    - application: gas_discharge_lighting_signage
+      share_pct: 10
+      notes: "Neon signs and specialty gas discharge tubes."
+      source_id: inquiry_periodic_elements_2025
+    - application: cryogenic_refrigerants_and_other
+      share_pct: 5
+      source_id: inquiry_periodic_elements_2025
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Neon is not on the US Critical Minerals List or the EU CRM list
+    despite the 2022 Ukraine war supply shock. This absence is itself
+    notable — semiconductor-grade noble gases (Ne, Kr, Xe) sit in a
+    regulatory gap between commodity minerals and industrial gases.
+
+prices:
+  - year: 2022
+    value: 2000
+    unit: usd_per_m3
+    form: gas_grade_a
+    basis: spot
+    region: global
+    notes: |
+      PLACEHOLDER spot price. The 2022 Ukraine invasion reportedly
+      caused neon spot prices to spike ~5000% according to widespread
+      industry reporting; pre-invasion prices were on the order of
+      $40-100 per cubic meter. Semiconductor-grade neon is significantly
+      more expensive than bulk grade. No direct Gasworld price quote
+      is cited here.
+    source_id: inquiry_periodic_elements_2025
+
+geopolitical_events:
+  - date: 2022-02
+    event: "Russia invades Ukraine, disrupting Ingas (Mariupol) and Cryoin (Odesa) neon production"
+    impact: |
+      Historical context: before the invasion, Ukraine supplied over 50%
+      of global semiconductor-grade neon per industry reporting. Supply
+      was severely disrupted; semiconductor fab customers drew down
+      inventories, switched to alternative suppliers (primarily China),
+      and accelerated neon recycling investment. The semiconductor
+      industry avoided a hard shortage by combining these mitigations
+      over 12-18 months.
+    source_id: asianometry_neon_2022
+
+narrative: |
+  Neon is a schema stress-test for "elements with no USGS chapter". The
+  industrial reality is that neon is a cryogenic-air-separation byproduct
+  co-produced with bulk oxygen and nitrogen; only the largest ASUs have
+  neon recovery equipment, and for much of the 2010s and early 2020s the
+  majority of semiconductor-grade neon came from two Ukrainian companies
+  (Ingas in Mariupol and Cryoin in Odesa) that took byproduct neon from
+  Russian steel-industry-linked ASUs and purified it. The 2022 Russian
+  invasion forced the semiconductor industry to diversify rapidly; by
+  2024 Chinese producers had taken substantial share, though precise
+  current geographic breakdown is not published in freely-available
+  sources.
+
+  This file is intentionally low-confidence: it demonstrates that the
+  v0.2 schema can represent an element where the weakest source layer
+  is the only option, and that such files should carry explicit
+  confidence=low flags on quantitative claims and top_producers_only
+  completeness on country share lists.
+
+sources:
+  - id: asianometry_neon_2022
+    title: "Neon Shortages in Semiconductor Manufacturing?"
+    publisher: Asianometry (Jon Y)
+    url: https://www.asianometry.com/p/neon-shortages-in-semiconductor-manufacturing
+    retrieved: 2026-04-11
+    publication_year: 2022
+  - id: inquiry_periodic_elements_2025
+    title: "Every element on the periodic table, ranked by industrial relevance (inquiries/periodic-elements-industrial-contribution.md)"
+    publisher: egotheism project
+    retrieved: 2026-04-11
+    publication_year: 2026
