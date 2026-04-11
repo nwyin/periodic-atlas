@@ -37,11 +37,13 @@ production:
         notes: "Dominant producer; also largest consumer via domestic fluorochemicals industry"
         source_id: inquiry_periodic_elements_2025
       - country: MX
-        share_pct: 16
-        source_id: inquiry_periodic_elements_2025
+        share_pct: 13
+        notes: "USGS MCS 2025: Mexico 1,200 kt / 9,500 kt world = 12.6%"
+        source_id: usgs_mcs_2025_fluorspar
       - country: MN
-        share_pct: 8
-        source_id: inquiry_periodic_elements_2025
+        share_pct: 13
+        notes: "USGS MCS 2025: Mongolia 1,200 kt / 9,500 kt world = 12.6%; ramped up past Mexico-peer level after 2021"
+        source_id: usgs_mcs_2025_fluorspar
       - country: ZA
         share_pct: 4
         source_id: inquiry_periodic_elements_2025
@@ -93,12 +95,12 @@ feedstock_origins:
     notes: "Elemental F content of CaF2 by mass. 'Acid-grade' fluorspar is ≥97% CaF2."
     source_id: inquiry_periodic_elements_2025
   - substrate: phosphate_rock
-    typical_concentration_pct: 3
+    typical_concentration_pct: 3.5
     notes: |
       Fluorosilicic acid is a byproduct of phosphoric acid production; a
       meaningful secondary source of fluorine in fertilizer-producing regions
       but not economically competitive with fluorspar for primary supply.
-    source_id: inquiry_periodic_elements_2025
+    source_id: usgs_mcs_2025_fluorspar
 
 criticality:
   us_critical_list_as_of_2025: true
@@ -125,3 +127,10 @@ sources:
     retrieved: 2026-04-11
     publication_year: 2026
     superseded_by: null
+  - id: usgs_mcs_2025_fluorspar
+    title: Mineral Commodity Summaries 2025 — Fluorspar
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-fluorspar.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary

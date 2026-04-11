@@ -41,16 +41,17 @@ production:
         notes: "MP Materials Mountain Pass"
         source_id: inquiry_periodic_elements_2025
       - country: MM
-        share_pct: 11
-        notes: "Myanmar heavy REE production, often routed through China"
-        source_id: inquiry_periodic_elements_2025
+        share_pct: 8
+        notes: "USGS MCS 2025: Burma/Myanmar 31,000 t / 390,000 t world = 7.9%. Heavy-REE focus; 2024 production fell 28% YoY."
+        source_id: usgs_mcs_2025_rare_earths
       - country: AU
-        share_pct: 5
-        source_id: inquiry_periodic_elements_2025
+        share_pct: 3
+        notes: "USGS MCS 2025: Australia 13,000 t / 390,000 t world = 3.3%. Lynas Mt Weld, WA."
+        source_id: usgs_mcs_2025_rare_earths
       - country: ZZ
-        share_pct: 2
-        notes: "Rest of world"
-        source_id: inquiry_periodic_elements_2025
+        share_pct: 9
+        notes: "USGS MCS 2025 residual: Nigeria, Thailand, India, Russia, Madagascar, Vietnam, Malaysia, Brazil, other = ~34,950 t / 390,000 t ≈ 9%."
+        source_id: usgs_mcs_2025_rare_earths
     completeness: top_producers_only
   refining_by_country:
     shares:
@@ -138,3 +139,10 @@ sources:
     retrieved: 2026-04-11
     publication_year: 2026
     superseded_by: null
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary

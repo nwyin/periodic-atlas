@@ -6,8 +6,10 @@ industrial_tier: 3
 commercial_production: true
 snapshot_year: 2025
 form_notes: |
-  USGS reports helium volumes at 101.325 kPa absolute and 21.1°C (70°F).
-  1,000 cubic feet = 27.737 cubic meters under those conditions.
+  USGS MCS 2025 footnote 1: volume data are measured at 101.325 kPa
+  absolute and 15°C (59°F). The conversion factor 1,000 cubic feet =
+  27.737 cubic meters is defined at 21.1°C (70°F) and is applied to
+  published imperial-unit totals when restating them in cubic meters.
   "Grade-A" helium is 99.997%+ pure; "crude helium" is typically 50-80% pure
   as extracted from natural gas. The US produces both forms.
 
@@ -37,7 +39,7 @@ production:
         notes: |
           USGS MCS 2025 p.89: "United States (extracted from natural gas)
           2024: 68" + "United States (from the Cliffside Field) 2024: 13"
-          = 81 Mm3 total. Four plants in Texas and Kansas extract crude
+          = 81 Mm3 total. Five plants (three in Texas, two in Kansas) extract crude
           helium from natural gas; 12 plants in NM, AZ, CO, KS, MT, OK, UT
           produce Grade-A helium.
         source_id: usgs_mcs_2025_helium
@@ -172,7 +174,6 @@ reserves:
 byproduct_of: []
 feedstock_origins:
   - substrate: natural_gas
-    typical_concentration_pct: 0.5
     notes: |
       US crude helium extraction "produced crude helium that generally
       ranged from 50% to 80% helium" per USGS. Raw natural gas helium
@@ -285,7 +286,6 @@ geopolitical_events:
       Lot 1: ~28 Mm3 (1.0 Bcf) Federally-owned crude helium. Lot 2: Federal
       Helium System infrastructure + ~22 Mm3 (800 MMcf) crude helium. Both
       lots sold to a single company, transfer completed June 27, 2024.
-      Ends 62 years of US government helium market participation.
     source_id: usgs_mcs_2025_helium
   - date: 2024-06-25
     event: "EU adopts sanctions package imposing import ban on helium from Russia, effective September 26, 2024"

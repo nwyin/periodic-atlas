@@ -16,12 +16,12 @@ form_notes: |
 
 isotope_markets:
   - isotope: Am-241
-    half_life_seconds: 13650595560  # 432.6 years * 365.25 * 86400
+    half_life_seconds: 13651817760  # 432.6 years * 365.25 * 86400 (NNDC NuDat 3.0)
     production_mode: stockpile_separated
     reporting_year: 2024
     precursor: |
       Pu-241 in legacy defense-program plutonium stockpiles. Pu-241 has a
-      14.4-year half-life and decays to Am-241; solvent extraction or ion
+      14.3-year half-life and decays to Am-241; solvent extraction or ion
       exchange chromatography separates the Am-241 from the aged Pu
       material. Per DOE NIDC product information (11/2024): "Production
       Route: Decay of plutonium-241".
