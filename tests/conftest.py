@@ -89,14 +89,20 @@ def make_element(
 
     if "production" in element_overrides:
         production = element_overrides.pop("production")
+        if isinstance(production, ProductionBlock):
+            production = [production]
+        elif production is None:
+            production = []
     elif with_production:
-        production = ProductionBlock(
-            reporting_year=reporting_year,
-            mine=make_quantity(value=580.0, unit=FlowUnit.TONNES_PER_YEAR, form="metal"),
-            mining_by_country=make_share_list(),
-        )
+        production = [
+            ProductionBlock(
+                reporting_year=reporting_year,
+                mine=make_quantity(value=580.0, unit=FlowUnit.TONNES_PER_YEAR, form="metal"),
+                mining_by_country=make_share_list(),
+            )
+        ]
     else:
-        production = None
+        production = []
 
     if "end_uses" in element_overrides:
         end_uses = element_overrides.pop("end_uses")

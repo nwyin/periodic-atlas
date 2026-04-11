@@ -87,13 +87,13 @@ class TestStockFlowDiscipline:
 
 class TestYearDisambiguation:
     def test_reporting_year_must_not_exceed_snapshot(self) -> None:
-        with pytest.raises(ValidationError, match="reporting_year=2026 exceeds snapshot_year=2025"):
+        with pytest.raises(ValidationError, match=r"production\[0\]\.reporting_year=2026 exceeds snapshot_year=2025"):
             make_element(snapshot_year=2025, reporting_year=2026)
 
     def test_reporting_year_can_lag_snapshot(self) -> None:
         e = make_element(snapshot_year=2025, reporting_year=2023)
-        assert e.production is not None
-        assert e.production.reporting_year == 2023
+        assert len(e.production) == 1
+        assert e.production[0].reporting_year == 2023
 
     def test_event_beyond_snapshot_rejected(self) -> None:
         with pytest.raises(ValidationError, match="is beyond snapshot horizon"):

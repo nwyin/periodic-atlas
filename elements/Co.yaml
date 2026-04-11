@@ -11,7 +11,7 @@ form_notes: |
   unless otherwise specified.
 
 production:
-  reporting_year: 2024
+- reporting_year: 2024
   mine:
     value: 290000
     unit: tonnes_per_year

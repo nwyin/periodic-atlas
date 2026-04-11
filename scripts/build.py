@@ -78,6 +78,7 @@ def _quantity_fields(q: Quantity | None, prefix: str = "") -> dict[str, Any]:
 def flatten_elements(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
+        reporting_year = max((pb.reporting_year for pb in el.production), default=None)
         rows.append({
             "symbol": el.symbol,
             "atomic_number": el.atomic_number,
@@ -86,9 +87,11 @@ def flatten_elements(elements: list[Element]) -> pd.DataFrame:
             "industrial_tier": el.industrial_tier.value,
             "commercial_production": el.commercial_production,
             "snapshot_year": el.snapshot_year,
+            "reporting_year": reporting_year,
             "form_notes": el.form_notes,
             "narrative": el.narrative,
-            "has_production": el.production is not None,
+            "has_production": bool(el.production),
+            "num_production_blocks": len(el.production),
             "has_reserves": el.reserves is not None,
             "has_research_only": el.research_only is not None,
             "has_ownership_concentration": el.ownership_concentration is not None,
@@ -113,22 +116,22 @@ def flatten_elements(elements: list[Element]) -> pd.DataFrame:
 def flatten_production(elements: list[Element]) -> pd.DataFrame:
     rows = []
     for el in elements:
-        if el.production is None:
-            continue
-        p = el.production
-        for stage, q in (("mine", p.mine), ("refined", p.refined)):
-            if q is None:
-                continue
-            row = {
-                "symbol": el.symbol,
-                "snapshot_year": el.snapshot_year,
-                "reporting_year": p.reporting_year,
-                "stage": stage,
-                "grouped_reporting": p.grouped_reporting,
-                "commodity_group": p.commodity_group,
-            }
-            row.update(_quantity_fields(q))
-            rows.append(row)
+        for pi, p in enumerate(el.production):
+            for stage, q in (("mine", p.mine), ("refined", p.refined)):
+                if q is None:
+                    continue
+                row = {
+                    "symbol": el.symbol,
+                    "snapshot_year": el.snapshot_year,
+                    "reporting_year": p.reporting_year,
+                    "stream": p.stream,
+                    "block_index": pi,
+                    "stage": stage,
+                    "grouped_reporting": p.grouped_reporting,
+                    "commodity_group": p.commodity_group,
+                }
+                row.update(_quantity_fields(q))
+                rows.append(row)
     return pd.DataFrame(rows)
 
 
@@ -154,27 +157,35 @@ def flatten_shares(elements: list[Element]) -> pd.DataFrame:
     """Unified long table for mining/refining/reserves/isotope_producers shares."""
     rows = []
     for el in elements:
-        def emit_share_list(share_type: str, sl: Any, isotope: str | None = None) -> None:
+        def emit_share_list(
+            share_type: str,
+            sl: Any,
+            isotope: str | None = None,
+            stream: str | None = None,
+        ) -> None:
             for s in sl.shares:
                 q = s.quantity
                 rows.append({
                     "symbol": el.symbol,
                     "snapshot_year": el.snapshot_year,
                     "share_type": share_type,
+                    "stream": stream,
                     "isotope": isotope,
                     "country": s.country,
                     "share_pct": s.share_pct,
+                    "confidence": s.confidence,
                     "quantity_value": q.value if q else None,
                     "quantity_unit": q.unit.value if q else None,
                     "quantity_form": q.form if q else None,
+                    "quantity_source_id": q.source_id if q else None,
                     "completeness": sl.completeness,
                     "source_id": s.source_id,
                     "notes": s.notes,
                 })
 
-        if el.production:
-            emit_share_list("mining", el.production.mining_by_country)
-            emit_share_list("refining", el.production.refining_by_country)
+        for pb in el.production:
+            emit_share_list("mining", pb.mining_by_country, stream=pb.stream)
+            emit_share_list("refining", pb.refining_by_country, stream=pb.stream)
         if el.reserves:
             emit_share_list("reserves", el.reserves.reserves_by_country)
         for im in el.isotope_markets:
@@ -355,11 +366,11 @@ def coverage_report(elements: list[Element]) -> dict[str, Any]:
         "total_elements": total,
         "commercial_production": count(lambda e: e.commercial_production),
         "research_only": count(lambda e: e.research_only is not None),
-        "has_production": count(lambda e: e.production is not None),
+        "has_production": count(lambda e: bool(e.production)),
         "has_reserves": count(lambda e: e.reserves is not None),
         "has_isotope_markets": count(lambda e: bool(e.isotope_markets)),
-        "has_mining_shares": count(lambda e: e.production and e.production.mining_by_country.shares),
-        "has_refining_shares": count(lambda e: e.production and e.production.refining_by_country.shares),
+        "has_mining_shares": count(lambda e: any(pb.mining_by_country.shares for pb in e.production)),
+        "has_refining_shares": count(lambda e: any(pb.refining_by_country.shares for pb in e.production)),
         "has_end_uses": count(lambda e: bool(e.end_uses.uses)),
         "has_prices": count(lambda e: bool(e.prices)),
         "has_events": count(lambda e: bool(e.geopolitical_events)),

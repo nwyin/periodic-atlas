@@ -14,7 +14,7 @@ form_notes: |
   Canada, China, Japan, Slovakia, US.
 
 production:
-  reporting_year: 2024
+- reporting_year: 2024
   mine:
     value: 760
     unit: tonnes_per_year

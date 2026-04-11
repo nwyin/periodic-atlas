@@ -12,7 +12,7 @@ form_notes: |
   as extracted from natural gas. The US produces both forms.
 
 production:
-  reporting_year: 2024
+- reporting_year: 2024
   mine:
     value: 180
     unit: million_m3_per_year

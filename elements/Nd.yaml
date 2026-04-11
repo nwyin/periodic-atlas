@@ -16,7 +16,7 @@ form_notes: |
   aggregate by Nd's typical share of the REE basket, which varies by deposit.
 
 production:
-  reporting_year: 2024
+- reporting_year: 2024
   mine:
     value: 75000
     unit: tonnes_per_year

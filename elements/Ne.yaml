@@ -17,7 +17,7 @@ form_notes: |
   elements.
 
 production:
-  reporting_year: 2022
+- reporting_year: 2022
   mine:
     value: 600
     unit: million_L_per_year

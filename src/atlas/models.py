@@ -477,16 +477,30 @@ class IsotopeMarket(BaseModel):
 
 
 class ProductionBlock(BaseModel):
-    """Production metrics for a single reporting year.
+    """Production metrics for a single reporting year and a single stream.
 
     `reporting_year` is the year the source reported data for — distinct from
     `Element.snapshot_year`. USGS MCS 2025 reports 2024 data, so a 2025 snapshot
     using the MCS 2025 document has `snapshot_year=2025, reporting_year=2024`.
+
+    `stream` discriminates multiple production blocks on the same element.
+    Examples: "mineral_concentrate", "sponge_metal", "pigment", "ore",
+    "crude_steel", "brine", "spodumene", "lce", "low_purity_primary",
+    "high_purity_refined", "fluorspar_concentrate", "helium_crude", "rare_earth_oxides".
+    Left None when an element has exactly one production stream.
     """
 
     model_config = ConfigDict(extra="forbid")
 
     reporting_year: int
+    stream: str | None = Field(
+        default=None,
+        description=(
+            "Discriminator when multiple production blocks coexist on the same element "
+            "(e.g. Ti has 'mineral_concentrate' + 'sponge_metal'; Fe has 'ore' + 'crude_steel'). "
+            "Snake_case slug. None when a single block fully describes the element."
+        ),
+    )
     mine: Quantity | None = Field(default=None, description="Raw mine/extraction output (a flow).")
     refined: Quantity | None = Field(default=None, description="Refined / purified output (a flow).")
     mining_by_country: CountryShareList = Field(default_factory=CountryShareList)
@@ -583,7 +597,14 @@ class Element(BaseModel):
     snapshot_year: int = Field(ge=1900, le=2100, description="The atlas version year. All reporting_year fields must be <= this.")
     form_notes: str | None = None
 
-    production: ProductionBlock | None = None
+    production: list[ProductionBlock] = Field(
+        default_factory=list,
+        description=(
+            "Zero or more production blocks. Single-stream commodities have exactly one block; "
+            "multi-stream commodities (Ti mineral_concentrate + sponge_metal, Fe ore + crude_steel, "
+            "Li brine + spodumene + lce) carry one block per stream with the `stream` discriminator."
+        ),
+    )
     reserves: Reserves | None = None
     ownership_concentration: OwnershipConcentration | None = None
     isotope_markets: list[IsotopeMarket] = Field(default_factory=list)
@@ -617,12 +638,13 @@ class Element(BaseModel):
 
     @model_validator(mode="after")
     def commercial_vs_research_consistent(self) -> "Element":
-        has_production = self.production is not None
+        has_production = bool(self.production)
         has_isotopes = bool(self.isotope_markets)
         has_research = self.research_only is not None
         if self.commercial_production and not (has_production or has_isotopes):
             raise ValueError(
-                f"{self.symbol}: commercial_production=true requires either a production block or at least one isotope_market"
+                f"{self.symbol}: commercial_production=true requires a non-empty production list "
+                f"or at least one isotope_market"
             )
         if not self.commercial_production and (has_production or has_isotopes):
             raise ValueError(
@@ -636,10 +658,12 @@ class Element(BaseModel):
 
     @model_validator(mode="after")
     def reporting_year_in_range(self) -> "Element":
-        if self.production and self.production.reporting_year > self.snapshot_year:
-            raise ValueError(
-                f"{self.symbol}: production.reporting_year={self.production.reporting_year} exceeds snapshot_year={self.snapshot_year}"
-            )
+        for i, pb in enumerate(self.production):
+            if pb.reporting_year > self.snapshot_year:
+                raise ValueError(
+                    f"{self.symbol}: production[{i}].reporting_year={pb.reporting_year} "
+                    f"exceeds snapshot_year={self.snapshot_year}"
+                )
         for i, im in enumerate(self.isotope_markets):
             if im.reporting_year > self.snapshot_year:
                 raise ValueError(
@@ -707,19 +731,19 @@ class Element(BaseModel):
 
         check(self.criticality.source_id, "criticality.source_id")
 
-        if self.production:
-            if self.production.mine:
-                check(self.production.mine.source_id, "production.mine")
-            if self.production.refined:
-                check(self.production.refined.source_id, "production.refined")
-            for i, s in enumerate(self.production.mining_by_country.shares):
-                check(s.source_id, f"production.mining_by_country[{i}]")
+        for pi, pb in enumerate(self.production):
+            if pb.mine:
+                check(pb.mine.source_id, f"production[{pi}].mine")
+            if pb.refined:
+                check(pb.refined.source_id, f"production[{pi}].refined")
+            for i, s in enumerate(pb.mining_by_country.shares):
+                check(s.source_id, f"production[{pi}].mining_by_country[{i}]")
                 if s.quantity:
-                    check(s.quantity.source_id, f"production.mining_by_country[{i}].quantity")
-            for i, s in enumerate(self.production.refining_by_country.shares):
-                check(s.source_id, f"production.refining_by_country[{i}]")
+                    check(s.quantity.source_id, f"production[{pi}].mining_by_country[{i}].quantity")
+            for i, s in enumerate(pb.refining_by_country.shares):
+                check(s.source_id, f"production[{pi}].refining_by_country[{i}]")
                 if s.quantity:
-                    check(s.quantity.source_id, f"production.refining_by_country[{i}].quantity")
+                    check(s.quantity.source_id, f"production[{pi}].refining_by_country[{i}].quantity")
 
         if self.reserves:
             if self.reserves.economic_reserves:
@@ -771,7 +795,7 @@ class Element(BaseModel):
             or self.geopolitical_events
             or self.feedstock_origins
             or self.substitutes
-            or (self.research_only and self.research_only.total_ever_produced)
+            or (self.research_only is not None and self.research_only.total_ever_produced is not None)
         )
 
 

@@ -18,7 +18,7 @@ form_notes: |
   aluminum electrolysis flux, steel fluxing, uranium hexafluoride.
 
 production:
-  reporting_year: 2024
+- reporting_year: 2024
   mine:
     value: 9500000
     unit: tonnes_per_year
