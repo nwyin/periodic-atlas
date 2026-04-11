@@ -10,6 +10,7 @@ dependencies = [
     "pyarrow>=17.0",
     "duckdb>=1.1",
     "rich>=13.9",
+    "pdfplumber>=0.11.9",
 ]
 
 [dependency-groups]
