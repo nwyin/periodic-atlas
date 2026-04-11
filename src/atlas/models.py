@@ -450,6 +450,7 @@ class Reserves(BaseModel):
     economic_reserves: Quantity | None = None
     resources: Quantity | None = None
     reserves_by_country: CountryShareList = Field(default_factory=CountryShareList)
+    notes: str | None = None
 
     @model_validator(mode="after")
     def reserves_are_stocks(self) -> "Reserves":

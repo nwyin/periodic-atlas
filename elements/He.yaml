@@ -4,92 +4,322 @@ name: helium
 category: noble_gas
 industrial_tier: 3
 commercial_production: true
-form_notes: Traded as compressed or liquid He-4. Tracked in gaseous volume at standard conditions, not mass.
+snapshot_year: 2025
+form_notes: |
+  USGS reports helium volumes at 101.325 kPa absolute and 21.1°C (70°F).
+  1,000 cubic feet = 27.737 cubic meters under those conditions.
+  "Grade-A" helium is 99.997%+ pure; "crude helium" is typically 50-80% pure
+  as extracted from natural gas. The US produces both forms.
 
 production:
-  year: 2025
+  reporting_year: 2024
   mine:
-    value: 190
+    value: 180
     unit: million_m3_per_year
+    form: gas_crude
     approximate: true
-    notes: Extracted from natural gas wells with helium concentrations above ~0.3%.
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.89: "World total (rounded) 180" million cubic meters
+      (estimated) for 2024. Up from 176 in 2023 — "Estimated total world
+      helium production increased by 4% compared with that in 2023."
     source_id: usgs_mcs_2025_helium
-  production_form: gas_crude_helium
   mining_by_country:
-    - {country: US, share_pct: 43, notes: "Federal Helium Reserve divestiture completed 2024; private producers now dominant"}
-    - {country: QA, share_pct: 33, notes: "Qatargas RasGas helium plants; co-produced with LNG"}
-    - {country: DZ, share_pct: 8}
-    - {country: RU, share_pct: 7, notes: "Amur GPP ramp-up ongoing"}
-    - {country: AU, share_pct: 3}
-    - {country: PL, share_pct: 2}
+    shares:
+      - country: US
+        share_pct: 45
+        quantity:
+          value: 81
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        notes: |
+          USGS MCS 2025 p.89: "United States (extracted from natural gas)
+          2024: 68" + "United States (from the Cliffside Field) 2024: 13"
+          = 81 Mm3 total. Four plants in Texas and Kansas extract crude
+          helium from natural gas; 12 plants in NM, AZ, CO, KS, MT, OK, UT
+          produce Grade-A helium.
+        source_id: usgs_mcs_2025_helium
+      - country: QA
+        share_pct: 36
+        quantity:
+          value: 64
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        notes: "Qatar — co-produced with LNG"
+        source_id: usgs_mcs_2025_helium
+      - country: RU
+        share_pct: 9
+        quantity:
+          value: 17
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        notes: "USGS 2024 estimate. EU adopted sanctions June 25, 2024, effective September 26, 2024, imposing an import ban on helium from Russia."
+        source_id: usgs_mcs_2025_helium
+      - country: DZ
+        share_pct: 6
+        quantity:
+          value: 11
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        notes: "Algeria — USGS 2024 estimate"
+        source_id: usgs_mcs_2025_helium
+      - country: CA
+        share_pct: 3
+        quantity:
+          value: 6
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        notes: "Three new Canadian helium facilities began operations in 2024 per USGS chapter text."
+        source_id: usgs_mcs_2025_helium
+      - country: CN
+        share_pct: 2
+        quantity:
+          value: 3
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        source_id: usgs_mcs_2025_helium
+      - country: PL
+        share_pct: 2
+        quantity:
+          value: 3
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        source_id: usgs_mcs_2025_helium
+    completeness: complete
 
 reserves:
   economic_reserves:
-    value: 520
-    unit: million_m3_per_year
-    notes: USGS reports reserves in volumetric flow-equivalent terms; this is a USGS convention quirk, not our schema.
+    value: 12000
+    unit: million_m3
+    form: gas_crude
+    approximate: true
+    notes: |
+      Sum of USGS-reported country reserves (US 8,550 + Algeria 1,800 +
+      Russia 1,700 + Poland 24 ≈ 12,074 Mm3). USGS does not publish a
+      world-total reserves figure ("NA" in the 2024 column). Qatar reserves
+      described as "Large" without a number. This sum therefore excludes
+      Qatar and should be treated as a lower bound on global reserves.
+    source_id: usgs_mcs_2025_helium
+  resources:
+    value: 39800
+    unit: million_m3
+    form: gas_crude
+    approximate: true
+    notes: |
+      USGS: "The mean volume of recoverable helium within the known geologic
+      natural gas reservoirs in the United States was estimated to be 8,490
+      million cubic meters" plus 51.5 million cubic meters (1.86 Bcf) in
+      the Federal helium inventory. "Helium resources of the world,
+      exclusive of the United States, were estimated to be about 31.3
+      billion cubic meters (1.13 trillion cubic feet)." Total: ~39.8 Bm3.
+      Major ex-US deposits: Qatar 10.1, Algeria 8.2, Russia 6.8, Canada 2.0,
+      China 1.1 billion cubic meters.
+    source_id: usgs_mcs_2025_helium
+  reserves_by_country:
+    shares:
+      - country: US
+        share_pct: 71
+        quantity:
+          value: 8550
+          unit: million_m3
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        notes: "USGS 2024 reserves 8,500 (natural gas) + 50 (Cliffside Field)."
+        source_id: usgs_mcs_2025_helium
+      - country: DZ
+        share_pct: 15
+        quantity:
+          value: 1800
+          unit: million_m3
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        source_id: usgs_mcs_2025_helium
+      - country: RU
+        share_pct: 14
+        quantity:
+          value: 1700
+          unit: million_m3
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        source_id: usgs_mcs_2025_helium
+      - country: PL
+        share_pct: 0
+        quantity:
+          value: 24
+          unit: million_m3
+          form: gas_crude
+          source_id: usgs_mcs_2025_helium
+        source_id: usgs_mcs_2025_helium
+    completeness: partial
+  notes: |
+    Excludes Qatar (listed as "Large" without a number in USGS),
+    Australia/Canada/China/South Africa (NA in USGS).
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: natural_gas
+    typical_concentration_pct: 0.5
+    notes: |
+      US crude helium extraction "produced crude helium that generally
+      ranged from 50% to 80% helium" per USGS. Raw natural gas helium
+      concentration varies dramatically by basin — economically extractable
+      starting around 0.3% in high-volume fields. Qatar helium is
+      co-produced with LNG from Ras Laffan.
+    source_id: usgs_mcs_2025_helium
+  - substrate: cliffside_field_storage
+    notes: |
+      "The Federal Helium System operated the Cliffside Field storage
+      reservoir" — not a feedstock per se but a critical inventory buffer.
+      All Federal Helium System assets were transferred to a single private
+      company on June 27, 2024; the storage and pipeline system is now in
+      private hands.
     source_id: usgs_mcs_2025_helium
 
-byproduct_of: [natural_gas]
-substitutes_available: none
-substitutes_notes: "No substitute below -429 F (4 K). Hydrogen can replace helium in some lifting and welding applications but not in cryogenics."
+substitutes:
+  - availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Nothing substitutes for helium
+      in cryogenic applications if temperatures below −429 degrees
+      Fahrenheit are required. Superconductors, including those in
+      magnetic resonance imaging scanners, are being developed to operate
+      at higher temperatures using nitrogen instead of helium as a
+      coolant. Hydrogen can be substituted for helium in some
+      lighter-than-air applications in which the flammable nature of
+      hydrogen is not objectionable. Argon can be substituted for helium
+      in welding. Hydrogen can be used as a substitute for helium in
+      deep-sea diving applications."
+    source_id: usgs_mcs_2025_helium
 
 end_uses:
-  - {application: semiconductors_fabrication, share_pct: 22, notes: "Wafer cooling, chamber purge, EUV lithography. Surpassed MRI as largest use in 2024."}
-  - {application: mri_cryogenics, share_pct: 21, notes: "Cooling superconducting magnets in MRI scanners"}
-  - {application: welding_shield_gas, share_pct: 14}
-  - {application: fiber_optics_manufacturing, share_pct: 9, notes: "Draw-tower atmosphere"}
-  - {application: leak_detection, share_pct: 8}
-  - {application: aerospace_and_rocketry, share_pct: 7, notes: "Tank pressurization; NASA is the world's single largest consumer"}
-  - {application: lifting_gas_and_balloons, share_pct: 7}
-  - {application: other, share_pct: 12}
+  uses:
+    - application: analytical_engineering_lab_specialty_gases
+      share_pct: 22
+      notes: |
+        USGS MCS 2025 p.88 lists this as the largest US 2024 end use
+        category: "analytical, engineering, lab, science, and specialty
+        gases". USGS does not break out 'semiconductor specialty gases'
+        separately — they are grouped into the controlled atmospheres
+        category below.
+      source_id: usgs_mcs_2025_helium
+    - application: lifting_gas
+      share_pct: 18
+      notes: "USGS 2024 US-consumption: 'lifting gas (18%)' — balloons, party gas, scientific balloons."
+      source_id: usgs_mcs_2025_helium
+    - application: mri_cryogenics
+      share_pct: 17
+      notes: "USGS 2024 US-consumption: 'magnetic resonance imaging (17%)' — cooling superconducting magnets."
+      source_id: usgs_mcs_2025_helium
+    - application: controlled_atmospheres_fiber_optics_semiconductors
+      share_pct: 15
+      notes: |
+        USGS 2024 US-consumption: 'controlled atmospheres, fiber optics,
+        and semiconductors (15%)'. This is the grouped category that
+        includes wafer-handling inert atmosphere and fiber draw-tower
+        applications. IMPORTANT: USGS does not report semiconductors as
+        a separate category, so any claim that "semiconductors overtook
+        MRI" cannot be sourced from this document.
+      source_id: usgs_mcs_2025_helium
+    - application: welding_shield_gas
+      share_pct: 8
+      source_id: usgs_mcs_2025_helium
+    - application: aerospace_pressuring_purging
+      share_pct: 7
+      notes: "Rocket tank pressurization and purge gas. NASA is the historical largest single consumer in this category."
+      source_id: usgs_mcs_2025_helium
+    - application: leak_detection
+      share_pct: 5
+      source_id: usgs_mcs_2025_helium
+    - application: diving_breathing_gas
+      share_pct: 5
+      notes: "Heliox for saturation diving."
+      source_id: usgs_mcs_2025_helium
+    - application: other
+      share_pct: 3
+      notes: "USGS: 'various other minor applications (3%)'."
+      source_id: usgs_mcs_2025_helium
+  completeness: complete
 
 criticality:
-  us_critical_2025: true
-  eu_crm_2024: true
-  eu_strategic_2024: false
+  us_critical_list_as_of_2025: true
+  eu_crm_list_as_of_2024: true
+  eu_strategic_list_as_of_2024: false
+  notes: "Helium is on the US Critical Minerals List and the EU CRM list but not the EU Strategic list."
+  source_id: usgs_mcs_2025_helium
 
 prices:
-  - {year: 2022, value: 280, unit: usd_per_kg, source_id: usgs_mcs_2025_helium, notes: "Helium Shortage 4.0 spot pricing"}
-  - {year: 2025, value: 340, unit: usd_per_kg, source_id: usgs_mcs_2025_helium, notes: "Post-Qatar-disruption spot pricing"}
+  - year: 2024
+    value: 14
+    unit: usd_per_m3
+    form: gas_grade_a
+    basis: price_list
+    region: US
+    notes: |
+      USGS MCS 2025 p.88: "The estimated base price for Grade-A helium was
+      about $14 per cubic meter ($390 per thousand cubic feet) in 2024,
+      with producers posting surcharges to this price."
+    source_id: usgs_mcs_2025_helium
 
 geopolitical_events:
-  - date: 2022-01-01
+  - date: 2022-01
     event: "Helium Shortage 4.0 begins — simultaneous outages at Cliffside, Amur, and Algeria"
-    impact: "Semiconductor fabs begin aggressive recovery programs"
-    source_id: gasworld_he_survey_2024
-  - date: 2024-06-01
-    event: "Helium Shortage 4.0 ends as Amur GPP fully ramps and Cliffside recovers"
-    source_id: gasworld_he_survey_2024
-  - date: 2026-03-15
-    event: "Attack on Qatari LNG facilities removes ~33% of global helium supply overnight"
-    impact: "Spot prices doubled within 48 hours; long-term contracts force majeured"
-    source_id: qatar_disruption_2026
+    impact: "Semiconductor fabs begin aggressive recovery programs; BLM auction delayed multiple times"
+    source_id: inquiry_periodic_elements_2025
+  - date: 2024-01-25
+    event: "Federal Helium System assets sold in two lots by the General Services Administration"
+    impact: |
+      Lot 1: ~28 Mm3 (1.0 Bcf) Federally-owned crude helium. Lot 2: Federal
+      Helium System infrastructure + ~22 Mm3 (800 MMcf) crude helium. Both
+      lots sold to a single company, transfer completed June 27, 2024.
+      Ends 62 years of US government helium market participation.
+    source_id: usgs_mcs_2025_helium
+  - date: 2024-06-25
+    event: "EU adopts sanctions package imposing import ban on helium from Russia, effective September 26, 2024"
+    impact: "Constrains ~9% of global supply for EU buyers; reroutes Russian volumes toward Asian markets."
+    source_id: usgs_mcs_2025_helium
+  - date: 2024-08-11
+    event: "Cliffside Helium Enrichment Unit (CHEU) lease to BLM expires without renewal"
+    impact: |
+      The CHEU, owned by a private entity, was leased to the BLM historically.
+      The lease expired August 11, 2024 and was not renewed by expiration.
+      The District Court of Amarillo, TX allowed the new Cliffside Field
+      owner to operate the equipment to maintain domestic supply while
+      negotiations continued. Unresolved at end of 2024 per USGS.
+    source_id: usgs_mcs_2025_helium
 
 narrative: |
-  Helium is non-renewable on any human timescale. Once released to the
-  atmosphere it escapes to space. The US Federal Helium Reserve — which
-  anchored global supply for seven decades — was fully divested in 2024,
-  handing pricing power to a handful of private producers in five
-  countries. Semiconductor manufacturing overtook MRI as the single
-  largest end use in 2024, driven by EUV lithography and AI chip
-  production. This shift matters because MRI demand is price-inelastic
-  (hospitals will pay whatever it takes to keep magnets cold) but
-  semiconductor demand is cyclical — future shortages will hit medical
-  imaging harder than chips.
+  Helium is non-renewable on any human timescale — once released to the
+  atmosphere it escapes to space. USGS MCS 2025 reports 2024 world
+  production of 180 Mm3, with the US (45%), Qatar (36%), Russia (9%),
+  and Algeria (6%) providing 96% of supply. The US Federal Helium System
+  ceased government operation in 2024: all storage and pipeline assets
+  were sold to a single private company on June 27, and the CHEU
+  purification unit lease expired in August with unresolved legal status
+  at year-end. Grade-A helium base price in 2024 was $14 per cubic meter
+  ($390 per thousand cubic feet) per USGS.
+
+  The US 2024 end-use breakdown shows analytical/specialty gases (22%)
+  as the largest category, followed by lifting gas (18%), MRI (17%), and
+  the grouped "controlled atmospheres, fiber optics, and semiconductors"
+  category (15%). USGS does not break out semiconductors as a standalone
+  line item, so claims about semiconductors "overtaking MRI" cannot be
+  sourced from this document.
 
 sources:
   - id: usgs_mcs_2025_helium
     title: Mineral Commodity Summaries 2025 — Helium
-    publisher: USGS
+    publisher: US Geological Survey
     url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-helium.pdf
     retrieved: 2026-04-11
-  - id: gasworld_he_survey_2024
-    title: Gasworld Helium Annual Survey 2024
-    publisher: Gasworld
-    url: https://www.gasworld.com/
+    publication_year: 2025
+  - id: inquiry_periodic_elements_2025
+    title: "Every element on the periodic table, ranked by industrial relevance (inquiries/periodic-elements-industrial-contribution.md)"
+    publisher: egotheism project
     retrieved: 2026-04-11
-  - id: qatar_disruption_2026
-    title: Qatar LNG Facility Disruption Coverage
-    publisher: Reuters
-    retrieved: 2026-04-11
+    publication_year: 2026
