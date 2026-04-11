@@ -19,12 +19,15 @@ from pydantic import ValidationError
 from atlas.models import (
     CountryShare,
     CountryShareList,
+    CriticalityFlags,
     EndUse,
     EndUseList,
     FeedstockOrigin,
     FlowUnit,
     GeopoliticalEvent,
     IsotopeMarket,
+    OwnershipConcentration,
+    OwnershipStake,
     Price,
     ProductionBlock,
     Quantity,
@@ -286,6 +289,349 @@ class TestCommercialResearchExclusivity:
         )
         assert e.commercial_production is False
         assert e.research_only is not None
+
+
+class TestNestedStockFlowDiscipline:
+    def test_mining_country_share_rejects_stock_unit(self) -> None:
+        with pytest.raises(ValidationError, match="mining_by_country.*must be a flow"):
+            ProductionBlock(
+                reporting_year=2024,
+                mine=make_quantity(),
+                mining_by_country=CountryShareList(
+                    shares=[
+                        CountryShare(
+                            country="CN",
+                            share_pct=80,
+                            quantity=make_quantity(unit=StockUnit.TONNES),
+                            source_id="s",
+                        ),
+                    ],
+                ),
+            )
+
+    def test_refining_country_share_rejects_stock_unit(self) -> None:
+        with pytest.raises(ValidationError, match="refining_by_country.*must be a flow"):
+            ProductionBlock(
+                reporting_year=2024,
+                refining_by_country=CountryShareList(
+                    shares=[
+                        CountryShare(
+                            country="CN",
+                            share_pct=80,
+                            quantity=make_quantity(unit=StockUnit.TONNES),
+                            source_id="s",
+                        ),
+                    ],
+                ),
+            )
+
+    def test_reserves_country_share_rejects_flow_unit(self) -> None:
+        with pytest.raises(ValidationError, match="reserves_by_country.*must be a stock"):
+            Reserves(
+                economic_reserves=make_quantity(unit=StockUnit.TONNES),
+                reserves_by_country=CountryShareList(
+                    shares=[
+                        CountryShare(
+                            country="CD",
+                            share_pct=55,
+                            quantity=make_quantity(unit=FlowUnit.TONNES_PER_YEAR),
+                            source_id="s",
+                        ),
+                    ],
+                ),
+            )
+
+    def test_isotope_market_production_quantity_rejects_stock_unit(self) -> None:
+        with pytest.raises(ValidationError, match="production_quantity must be a flow"):
+            IsotopeMarket(
+                isotope="Am-241",
+                half_life_seconds=1.36e10,
+                production_mode="stockpile_separated",
+                production_quantity=make_quantity(unit=StockUnit.KG),
+                reporting_year=2024,
+            )
+
+    def test_isotope_market_producer_share_rejects_stock_unit(self) -> None:
+        with pytest.raises(ValidationError, match=r"producers\[0\].quantity must be a flow"):
+            IsotopeMarket(
+                isotope="Am-241",
+                half_life_seconds=1.36e10,
+                production_mode="stockpile_separated",
+                reporting_year=2024,
+                producers=CountryShareList(
+                    shares=[
+                        CountryShare(
+                            country="US",
+                            share_pct=50,
+                            quantity=make_quantity(unit=StockUnit.KG),
+                            source_id="s",
+                        ),
+                    ],
+                    completeness="partial",
+                ),
+            )
+
+    def test_research_only_total_ever_produced_rejects_flow_unit(self) -> None:
+        with pytest.raises(ValidationError, match="total_ever_produced must be a stock"):
+            ResearchOnly(
+                longest_lived_isotope="Og-294",
+                total_ever_produced=make_quantity(unit=FlowUnit.GRAMS_PER_YEAR),
+            )
+
+
+class TestCriticalityFlagsSourceRequirement:
+    def test_any_active_flag_requires_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="source_id is required"):
+            CriticalityFlags(us_critical_list_as_of_2025=True)
+
+    def test_eu_crm_flag_alone_requires_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="source_id is required"):
+            CriticalityFlags(eu_crm_list_as_of_2024=True)
+
+    def test_doe_rank_alone_requires_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="source_id is required"):
+            CriticalityFlags(doe_short_term_criticality_rank=3)
+
+    def test_all_inactive_accepts_no_source(self) -> None:
+        c = CriticalityFlags()
+        assert c.source_id is None
+        assert c.us_critical_list_as_of_2025 is False
+
+    def test_active_flag_with_source_id_accepted(self) -> None:
+        c = CriticalityFlags(us_critical_list_as_of_2025=True, source_id="usgs")
+        assert c.us_critical_list_as_of_2025 is True
+        assert c.source_id == "usgs"
+
+
+class TestSourceIdIntegrity:
+    def test_duplicate_source_id_rejected(self) -> None:
+        with pytest.raises(ValidationError, match="duplicate source id"):
+            make_element(
+                sources=[make_source("usgs"), make_source("usgs")],
+            )
+
+    def test_dangling_superseded_by_rejected(self) -> None:
+        with pytest.raises(ValidationError, match="superseded_by.*does not resolve"):
+            make_element(
+                sources=[
+                    Source(id="old", title="Old source", superseded_by="never_declared"),
+                    make_source("test_source"),
+                ],
+            )
+
+    def test_source_cannot_supersede_itself(self) -> None:
+        with pytest.raises(ValidationError, match="cannot supersede itself"):
+            make_element(
+                sources=[
+                    Source(id="test_source", title="T", superseded_by="test_source"),
+                ],
+            )
+
+    def test_valid_superseded_by_chain_accepted(self) -> None:
+        e = make_element(
+            sources=[
+                Source(id="old", title="Old", superseded_by="test_source"),
+                make_source("test_source"),
+            ],
+        )
+        assert len(e.sources) == 2
+
+    def test_nested_isotope_producer_quantity_dangling_source_rejected(self) -> None:
+        with pytest.raises(ValidationError, match="unknown source_id 'phantom'"):
+            make_element(
+                symbol="Am",
+                atomic_number=95,
+                name="americium",
+                category="actinide",  # type: ignore[arg-type]
+                industrial_tier=2,  # type: ignore[arg-type]
+                with_production=False,
+                isotope_markets=[
+                    IsotopeMarket(
+                        isotope="Am-241",
+                        half_life_seconds=1.36e10,
+                        production_mode="stockpile_separated",
+                        reporting_year=2024,
+                        producers=CountryShareList(
+                            shares=[
+                                CountryShare(
+                                    country="US",
+                                    share_pct=50,
+                                    quantity=Quantity(
+                                        value=10,
+                                        unit=FlowUnit.GRAMS_PER_YEAR,
+                                        form="oxide",
+                                        source_id="phantom",
+                                    ),
+                                    source_id="test_source",
+                                ),
+                                CountryShare(country="ZZ", share_pct=50, source_id="test_source"),
+                            ],
+                            completeness="top_producers_only",
+                        ),
+                    ),
+                ],
+            )
+
+
+class TestCountryShareConfidence:
+    def test_defaults_to_high(self) -> None:
+        s = CountryShare(country="CN", share_pct=80, source_id="s")
+        assert s.confidence == "high"
+
+    def test_accepts_low(self) -> None:
+        s = CountryShare(country="CN", share_pct=80, source_id="s", confidence="low")
+        assert s.confidence == "low"
+
+    def test_rejects_bogus_level(self) -> None:
+        with pytest.raises(ValidationError):
+            CountryShare(country="CN", share_pct=80, source_id="s", confidence="maybe")  # type: ignore[arg-type]
+
+
+class TestEndUseConfidence:
+    def test_defaults_to_high(self) -> None:
+        u = EndUse(application="batteries", share_pct=60, source_id="s")
+        assert u.confidence == "high"
+
+    def test_accepts_low(self) -> None:
+        u = EndUse(application="batteries", share_pct=60, source_id="s", confidence="low")
+        assert u.confidence == "low"
+
+
+class TestSubstituteClaimApplication:
+    def test_application_is_required(self) -> None:
+        with pytest.raises(ValidationError):
+            SubstituteClaim(availability="partial", notes="x", source_id="s")  # type: ignore[call-arg]
+
+    def test_valid_claim_with_application(self) -> None:
+        c = SubstituteClaim(
+            application="rf_power_amplifiers",
+            availability="partial",
+            notes="SiGe CMOS in midtier 3G handsets",
+            source_id="s",
+        )
+        assert c.application == "rf_power_amplifiers"
+
+
+class TestOwnershipConcentration:
+    def test_empty_stakes_requires_container_source_id(self) -> None:
+        with pytest.raises(ValidationError, match="must set `source_id` on the container"):
+            OwnershipConcentration(notes="prose claim")
+
+    def test_empty_stakes_with_source_accepted(self) -> None:
+        oc = OwnershipConcentration(notes="prose claim", source_id="s")
+        assert oc.notes == "prose claim"
+        assert oc.source_id == "s"
+        assert oc.stakes == []
+
+    def test_multiple_stakes_accepted(self) -> None:
+        oc = OwnershipConcentration(
+            stakes=[
+                OwnershipStake(entity="Glencore", share_pct=30, source_id="s"),
+                OwnershipStake(entity="CMOC", share_pct=25, source_id="s"),
+                OwnershipStake(entity="ERG", share_pct=15, source_id="s"),
+            ],
+            completeness="top_producers_only",
+        )
+        assert len(oc.stakes) == 3
+
+    def test_stakes_sum_over_100_rejected(self) -> None:
+        with pytest.raises(ValidationError, match="stakes sum to"):
+            OwnershipConcentration(
+                stakes=[
+                    OwnershipStake(entity="A", share_pct=60, source_id="s"),
+                    OwnershipStake(entity="B", share_pct=60, source_id="s"),
+                ],
+            )
+
+    def test_stakes_sum_equal_to_100_accepted(self) -> None:
+        oc = OwnershipConcentration(
+            stakes=[
+                OwnershipStake(entity="A", share_pct=60, source_id="s"),
+                OwnershipStake(entity="B", share_pct=40, source_id="s"),
+            ],
+            completeness="complete",
+        )
+        assert len(oc.stakes) == 2
+
+
+class TestProductionAsList:
+    def test_production_accepts_list_of_blocks(self) -> None:
+        e = make_element(
+            production=[
+                ProductionBlock(
+                    reporting_year=2024,
+                    stream="mineral_concentrate",
+                    mine=make_quantity(value=7000, unit=FlowUnit.KG_PER_YEAR, form="concentrate"),
+                    mining_by_country=make_share_list(),
+                ),
+                ProductionBlock(
+                    reporting_year=2024,
+                    stream="sponge_metal",
+                    refined=make_quantity(value=200, unit=FlowUnit.TONNES_PER_YEAR, form="metal"),
+                ),
+            ],
+        )
+        assert len(e.production) == 2
+        streams = {pb.stream for pb in e.production}
+        assert streams == {"mineral_concentrate", "sponge_metal"}
+
+    def test_empty_production_list_accepted_when_isotope_markets_present(self) -> None:
+        e = make_element(
+            symbol="Am",
+            atomic_number=95,
+            name="americium",
+            category="actinide",  # type: ignore[arg-type]
+            industrial_tier=2,  # type: ignore[arg-type]
+            with_production=False,
+            isotope_markets=[
+                IsotopeMarket(
+                    isotope="Am-241",
+                    half_life_seconds=1.36e10,
+                    production_mode="stockpile_separated",
+                    reporting_year=2024,
+                    producers=CountryShareList(
+                        shares=[
+                            CountryShare(country="US", share_pct=50, source_id="test_source"),
+                            CountryShare(country="ZZ", share_pct=50, source_id="test_source"),
+                        ],
+                        completeness="top_producers_only",
+                    ),
+                ),
+            ],
+        )
+        assert e.production == []
+
+    def test_commercial_production_requires_production_or_isotopes(self) -> None:
+        with pytest.raises(ValidationError, match="requires a non-empty production list"):
+            make_element(commercial_production=True, with_production=False)
+
+    def test_stream_discriminator_optional_single_block(self) -> None:
+        e = make_element(
+            production=ProductionBlock(
+                reporting_year=2024,
+                mine=make_quantity(),
+                mining_by_country=make_share_list(),
+            ),
+        )
+        assert len(e.production) == 1
+        assert e.production[0].stream is None
+
+
+class TestSourceTier:
+    def test_default_is_secondary(self) -> None:
+        s = Source(id="s", title="T")
+        assert s.source_tier == "secondary"
+
+    def test_accepts_primary(self) -> None:
+        s = Source(id="s", title="T", source_tier="primary")
+        assert s.source_tier == "primary"
+
+
+class TestMillionTonnesUnit:
+    def test_million_tonnes_per_year_is_flow(self) -> None:
+        q = make_quantity(unit=FlowUnit.MILLION_TONNES_PER_YEAR, form="ore")
+        assert q.is_flow
+        assert q.unit.value == "million_tonnes_per_year"
 
 
 class TestByproductValidation:
