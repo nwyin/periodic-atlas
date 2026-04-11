@@ -367,19 +367,15 @@ class TestProvenanceJoin:
         # Force a null source_id on a prices row (claim-bearing, non-criticality).
         tables["prices"].loc[0, "source_id"] = None
 
-        sources = tables["sources"]
-        known_source_ids = set(zip(sources["symbol"], sources["source_id"]))
-
         caught = False
         for table_name, df in tables.items():
             if table_name == "sources" or "source_id" not in df.columns:
                 continue
             for _, row in df.iterrows():
                 sid = row.get("source_id")
-                if _is_null(sid):
-                    if _row_is_claim_bearing(table_name, row):
-                        caught = True
-                        break
+                if _is_null(sid) and _row_is_claim_bearing(table_name, row):
+                    caught = True
+                    break
             if caught:
                 break
         assert caught, "provenance test must fail when a claim-bearing row has null source_id"
