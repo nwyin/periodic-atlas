@@ -1,0 +1,409 @@
+symbol: Mn
+atomic_number: 25
+name: manganese
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports world mine production in thousand metric tons of
+  manganese content (not gross ore tonnage). Manganese ore typically contains
+  35–54% Mn; ferromanganese ranges 74–95% Mn. US prices are quoted as cost,
+  insurance, and freight (CIF) China in dollars per metric ton unit (mtu),
+  where 1 mtu = 1% Mn per dry metric ton of ore = 10 kg Mn. The reference
+  grade for price quotations is 44% Mn metallurgical ore; price per tonne of
+  ore = value_in_mtu × 44. All production quantities converted from USGS
+  thousand metric tons to tonnes (× 1,000).
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 20000000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.116–117: world total (rounded) 2024e = 20,000 thousand
+      metric tons Mn content. 2023 = 19,600 thousand metric tons. Global
+      production "increased slightly from that in 2023." The United States
+      has had no domestic mine production since 1970; net import reliance
+      = 100% for all years 2020–2024.
+    source_id: usgs_mcs_2025_manganese
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 37.0
+        quantity:
+          value: 7400000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: |
+          USGS MCS 2025: South Africa 7,400 thousand metric tons Mn content
+          2024e. World's largest manganese producer; Kalahari Manganese Field
+          (Northern Cape) hosts the bulk of reserves. USGS revised reserves
+          based on Government reports.
+        source_id: usgs_mcs_2025_manganese
+      - country: GA
+        share_pct: 23.0
+        quantity:
+          value: 4600000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Gabon 4,600 thousand metric tons 2024e (estimated). Second-largest global producer."
+        source_id: usgs_mcs_2025_manganese
+      - country: AU
+        share_pct: 14.0
+        quantity:
+          value: 2800000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: |
+          USGS MCS 2025: Australia 2,800 thousand metric tons 2024e. One mine
+          in northern Australia suspended operations due to a tropical cyclone,
+          contributing to higher Mn ore prices in 2024. JORC-compliant
+          reserves = 110 million tons (footnote 11).
+        source_id: usgs_mcs_2025_manganese
+      - country: GH
+        share_pct: 4.1
+        quantity:
+          value: 820000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Ghana 820 thousand metric tons 2024e."
+        source_id: usgs_mcs_2025_manganese
+      - country: IN
+        share_pct: 4.0
+        quantity:
+          value: 800000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: India 800 thousand metric tons 2024e."
+        source_id: usgs_mcs_2025_manganese
+      - country: CN
+        share_pct: 3.85
+        quantity:
+          value: 770000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: China 770 thousand metric tons 2024e."
+        source_id: usgs_mcs_2025_manganese
+      - country: BR
+        share_pct: 2.95
+        quantity:
+          value: 590000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Brazil 590 thousand metric tons 2024e (estimated)."
+        source_id: usgs_mcs_2025_manganese
+      - country: MY
+        share_pct: 2.05
+        quantity:
+          value: 410000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Malaysia 410 thousand metric tons 2024e."
+        source_id: usgs_mcs_2025_manganese
+      - country: CI
+        share_pct: 1.8
+        quantity:
+          value: 360000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Côte d'Ivoire 360 thousand metric tons 2024e. No quantified reserves reported (NA)."
+        source_id: usgs_mcs_2025_manganese
+      - country: ZZ
+        share_pct: 6.5
+        quantity:
+          value: 1300000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025 'Other countries' row: 1,300 thousand metric tons 2024e."
+        source_id: usgs_mcs_2025_manganese
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 1700000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS MCS 2025 p.117: world total reserves = 1,700,000 thousand metric
+      tons Mn content (= 1.7 billion metric tons). Reserves for South Africa
+      were revised based on Government reports. The sum of quantified
+      country-level reserves is 1,718,000 thousand metric tons; the world
+      total is a rounded figure. CI and MY listed as NA; others listed as
+      Small.
+    source_id: usgs_mcs_2025_manganese
+  resources: null
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 32.9
+        quantity:
+          value: 560000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: South Africa 560,000 thousand metric tons Mn content. Reserves revised based on Government reports."
+        source_id: usgs_mcs_2025_manganese
+      - country: AU
+        share_pct: 29.4
+        quantity:
+          value: 500000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Australia 500,000 thousand metric tons. JORC-compliant reserves = 110 million tons (footnote 11)."
+        source_id: usgs_mcs_2025_manganese
+      - country: CN
+        share_pct: 16.5
+        quantity:
+          value: 280000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: China 280,000 thousand metric tons."
+        source_id: usgs_mcs_2025_manganese
+      - country: BR
+        share_pct: 15.9
+        quantity:
+          value: 270000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Brazil 270,000 thousand metric tons."
+        source_id: usgs_mcs_2025_manganese
+      - country: GA
+        share_pct: 3.6
+        quantity:
+          value: 61000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Gabon 61,000 thousand metric tons."
+        source_id: usgs_mcs_2025_manganese
+      - country: IN
+        share_pct: 2.0
+        quantity:
+          value: 34000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: India 34,000 thousand metric tons."
+        source_id: usgs_mcs_2025_manganese
+      - country: GH
+        share_pct: 0.8
+        quantity:
+          value: 13000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_manganese
+        notes: "USGS MCS 2025: Ghana 13,000 thousand metric tons."
+        source_id: usgs_mcs_2025_manganese
+    completeness: partial
+  notes: |
+    Côte d'Ivoire and Malaysia are listed as NA (not available) in the USGS
+    reserves table; other countries are listed as "Small." The quantified
+    country total (1,718,000 kt) slightly exceeds the rounded world total
+    (1,700,000 kt), consistent with country-level rounding. South Africa
+    holds ~33% of economic reserves and an estimated ~70% of world resources.
+    USGS MCS 2025 world resources text: "Land-based manganese resources are
+    large but irregularly distributed; those in the United States are very
+    low grade and have potentially high extraction costs. South Africa
+    accounts for an estimated 70% of the world's manganese resources." No
+    explicit global resource quantity is provided; resources field is null.
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: manganese_oxide_ores
+    notes: |
+      Pyrolusite (MnO₂) and other oxide-class manganese minerals are the
+      primary ore types mined in South Africa, Australia, and Gabon —
+      the three largest producing countries. These high-grade oxide ores
+      are processed into metallurgical-grade concentrates for ferroalloy
+      production.
+    source_id: usgs_mcs_2025_manganese
+  - substrate: manganese_carbonate_ores
+    notes: |
+      Rhodochrosite (MnCO₃) and carbonate-class ores are significant in
+      China, where lower-grade ore is predominant. Carbonate ores require
+      roasting to convert to oxide before smelting.
+    source_id: usgs_mcs_2025_manganese
+
+substitutes:
+  - application: steel_alloying_deoxidizer_desulfurizer
+    availability: none
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Manganese has no satisfactory
+      substitute in its major applications." As a deoxidizer and desulfurizer
+      in steel, and as an alloying element in ferromanganese and
+      silicomanganese, no other element performs the combined role at
+      comparable cost and effectiveness. This is a key driver of manganese's
+      presence on the US critical minerals list despite its relatively
+      abundant global reserves.
+    source_id: usgs_mcs_2025_manganese
+
+end_uses:
+  uses:
+    - application: steel_ferromanganese_silicomanganese
+      share_pct: 90
+      confidence: low
+      notes: |
+        USGS MCS 2025: "Consumption of manganese closely follows the steel
+        industry." The dominant use globally is as a deoxidizer, desulfurizer,
+        and alloying addition to steel, supplied as ferromanganese (74–95% Mn)
+        and silicomanganese. USGS does not give an explicit global percentage
+        breakdown; 90% is an industry-standard estimate consistent with the
+        chapter text. US 2024e: ferromanganese 300 kt + silicomanganese 230 kt
+        + ore at steel plants (not separately quantified).
+      source_id: usgs_mcs_2025_manganese
+    - application: nonmetallurgical_other
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025: Other companies consumed ore for animal feed, brick
+        colorant, dry cell batteries, fertilizers, and manganese dioxide
+        production. Battery-grade high-purity manganese (EMD/CMD) is a growing
+        sub-segment; the EU Critical Raw Materials Act (May 2024) designates
+        battery-grade manganese as a strategic raw material, indicating
+        recognised strategic importance beyond steel. The 10% estimate covers
+        all non-steel metallurgical and non-metallurgical applications.
+      source_id: usgs_mcs_2025_manganese
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_manganese
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_manganese
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_manganese
+  notes: |
+    USGS MCS 2025 Events section: "Manganese is included in the U.S. list of
+    critical minerals." The EU Critical Raw Materials Act entered into force
+    in May 2024 and includes manganese as a critical raw material and
+    high-purity manganese (battery grade) as a strategic raw material. US
+    net import reliance = 100% for all years 2020–2024 (no domestic mine
+    production since 1970).
+
+prices:
+  - year: 2024
+    value: 255.20
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: CN
+    notes: |
+      USGS MCS 2025 salient statistics: 2024e average = $5.80 per metric ton
+      unit (mtu), CIF China, for metallurgical-grade ore containing 44% Mn
+      (CRU Group data). Converted to $/t ore: $5.80 × 44 = $255.20/t. The
+      mtu unit = 1% Mn per dry metric ton = 10 kg Mn.
+    source_id: usgs_mcs_2025_manganese
+  - year: 2023
+    value: 211.20
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: CN
+    notes: "USGS MCS 2025 salient statistics: 2023 = $4.80/mtu CIF China × 44 = $211.20/t ore."
+    source_id: usgs_mcs_2025_manganese
+  - year: 2022
+    value: 262.68
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: CN
+    notes: "USGS MCS 2025 salient statistics: 2022 = $5.97/mtu CIF China × 44 = $262.68/t ore."
+    source_id: usgs_mcs_2025_manganese
+  - year: 2021
+    value: 231.88
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: CN
+    notes: "USGS MCS 2025 salient statistics: 2021 = $5.27/mtu CIF China × 44 = $231.88/t ore."
+    source_id: usgs_mcs_2025_manganese
+  - year: 2020
+    value: 201.52
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: CN
+    notes: "USGS MCS 2025 salient statistics: 2020 = $4.58/mtu CIF China × 44 = $201.52/t ore."
+    source_id: usgs_mcs_2025_manganese
+
+geopolitical_events:
+  - date: 2024-05
+    event: "EU Critical Raw Materials Act enters into force; manganese designated as critical raw material, battery-grade high-purity manganese as strategic raw material"
+    impact: |
+      Formally recognizes manganese's dual role in steel (critical) and
+      battery supply chains (strategic). Creates regulatory framework for
+      European supply-chain resilience targets for manganese.
+    source_id: usgs_mcs_2025_manganese
+  - date: 2024-01
+    event: "Australia-based company receives US DoD and DoE grants to accelerate development of manganese mine and battery-grade manganese production facility in Arizona"
+    impact: |
+      US Government investment to establish domestic battery-grade manganese
+      supply, reducing 100% import reliance for this high-value manganese form.
+    source_id: usgs_mcs_2025_manganese
+  - date: 2023-11
+    event: "Two manganese mining and processing plants in Ukraine idle since November 2023 due to war; two others resume minimum production in Q2 2024"
+    impact: |
+      Ukraine was previously a significant manganese producer. Idling of
+      major plants reduced global supply and may have contributed to price
+      movements. Partial resumption in 2024 indicates some resilience.
+    source_id: usgs_mcs_2025_manganese
+  - date: 2024-01
+    event: "Tropical cyclone causes suspension of a manganese mine in northern Australia"
+    impact: "Supply disruption contributed to increase in manganese ore prices in 2024."
+    source_id: usgs_mcs_2025_manganese
+
+narrative: |
+  Manganese is a high-volume workhorse metal with no satisfactory substitute
+  in its primary application: steel production. Over 90% of manganese output
+  is consumed as ferromanganese or silicomanganese to deoxidize, desulfurize,
+  and strengthen steel. South Africa (37% of global mine production, ~33% of
+  reserves) and Gabon (23%) together dominate the seaborne manganese ore
+  trade, while Australia (14%) supplies a growing share. The United States
+  has had zero domestic mine production since 1970 and runs 100% import
+  reliance — yet holds manganese on its critical minerals list precisely
+  because no substitute exists and supply is geographically concentrated.
+
+  Global manganese ore output reached an estimated 20 million tonnes (Mn
+  content) in 2024, up slightly from 19.6 Mt in 2023, tracking closely with
+  the steel cycle. The World Steel Association estimated global finished steel
+  demand fell 0.9% in 2024, dampening demand growth. Price moved to $5.80/mtu
+  CIF China in 2024 ($255/t ore) from $4.80/mtu in 2023, partly due to a
+  tropical cyclone–induced supply disruption at an Australian mine. Ukraine's
+  manganese sector, which had idled two major plants since November 2023,
+  saw partial resumption in Q2 2024 but remains significantly curtailed.
+
+  Battery-grade high-purity manganese is an emerging second market that could
+  reshape the commercial landscape. The EU's Critical Raw Materials Act
+  (May 2024) designated battery-grade manganese as a strategic raw material —
+  distinct from standard metallurgical manganese — and the US Department of
+  Defense and Department of Energy funded an Australia-based company to build
+  a battery-grade manganese facility in Arizona. As lithium manganese iron
+  phosphate (LMFP) and other manganese-intensive battery chemistries scale,
+  manganese demand could diversify beyond its traditional steel monoculture.
+
+sources:
+  - id: usgs_mcs_2025_manganese
+    title: Mineral Commodity Summaries 2025 — Manganese
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-manganese.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
