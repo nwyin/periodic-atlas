@@ -1,0 +1,927 @@
+symbol: Al
+atomic_number: 13
+name: aluminum
+category: post_transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Aluminum is a three-stream commodity. USGS MCS 2025 reports:
+  (1) bauxite in thousand metric dry tons (raw ore); (2) alumina in
+  thousand metric dry tons calcined equivalent (Al2O3); and (3)
+  primary aluminum smelter output in thousand metric tons of metal.
+  The standard conversion rule of thumb is 4 t dried bauxite → 2 t
+  alumina → 1 t primary aluminum metal. US market spot prices for
+  primary aluminum ingot are reported in cents per pound (source:
+  S&P Global Platts Metals Week). Secondary aluminum from scrap is
+  reported separately in US salient statistics but is not broken out
+  in world production tables.
+
+production:
+- reporting_year: 2024
+  stream: bauxite
+  mine:
+    value: 450
+    unit: million_tonnes_per_year
+    form: ore
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 Bauxite and Alumina chapter p.43: world total
+      (rounded) 450,000 thousand metric dry tons (2024 estimated),
+      excluding U.S. production which is withheld to avoid disclosing
+      company proprietary data. U.S. bauxite production is a small
+      nonmetallurgical fraction from Arkansas and Georgia.
+    source_id: usgs_mcs_2025_bauxite_alumina
+  mining_by_country:
+    shares:
+      - country: GN
+        share_pct: 28.9
+        quantity:
+          value: 130
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Guinea. USGS 2024e: 130,000 thousand metric dry tons."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: AU
+        share_pct: 22.2
+        quantity:
+          value: 100
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Australia. USGS 2024e: 100,000 thousand metric dry tons."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: CN
+        share_pct: 20.7
+        quantity:
+          value: 93
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "China. USGS 2024e: 93,000 thousand metric dry tons."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: BR
+        share_pct: 7.3
+        quantity:
+          value: 33
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ID
+        share_pct: 7.1
+        quantity:
+          value: 32
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: IN
+        share_pct: 5.6
+        quantity:
+          value: 25
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: RU
+        share_pct: 1.4
+        quantity:
+          value: 6.3
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: JM
+        share_pct: 1.4
+        quantity:
+          value: 6.1
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: SA
+        share_pct: 1.3
+        quantity:
+          value: 5.8
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: KZ
+        share_pct: 1.1
+        quantity:
+          value: 4.9
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: VN
+        share_pct: 0.9
+        quantity:
+          value: 4.2
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: TR
+        share_pct: 0.7
+        quantity:
+          value: 3.2
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: GR
+        share_pct: 0.3
+        quantity:
+          value: 1.2
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ZZ
+        share_pct: 1.3
+        quantity:
+          value: 5.7
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Other countries per USGS table."
+        source_id: usgs_mcs_2025_bauxite_alumina
+    completeness: complete
+
+- reporting_year: 2024
+  stream: alumina
+  refined:
+    value: 142
+    unit: million_tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 Bauxite and Alumina chapter p.43: world total
+      (rounded) 142,000 thousand metric dry tons (calcined equivalent),
+      2024 estimated. Alumina (Al2O3) is the intermediate product refined
+      from bauxite via the Bayer process before electrolytic reduction to
+      aluminum metal.
+    source_id: usgs_mcs_2025_bauxite_alumina
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 59.2
+        quantity:
+          value: 84
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "China. USGS 2024e: 84,000 thousand metric dry tons."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: AU
+        share_pct: 12.7
+        quantity:
+          value: 18
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: |
+          Australia. USGS 2024e: 18,000 kt. A 2.2 Mt/yr alumina refinery in
+          Western Australia was idled in 2024 due to market conditions and
+          operating costs; an Australian refinery also declared force majeure
+          after a natural gas pipeline fire in Queensland.
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: BR
+        share_pct: 7.7
+        quantity:
+          value: 11
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: IN
+        share_pct: 5.4
+        quantity:
+          value: 7.6
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "India. USGS 2024e: 7,600 kt. India-based producer expanded Odisha refinery to 3.5 Mt/yr in 2024."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: RU
+        share_pct: 2.0
+        quantity:
+          value: 2.9
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: |
+          Russia. USGS 2024e: 2,900 kt. Note: a 1.7 Mt/yr alumina refinery in
+          Ukraine has remained closed since 2022 due to the Russia-Ukraine conflict.
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: AE
+        share_pct: 1.7
+        quantity:
+          value: 2.4
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: SA
+        share_pct: 1.3
+        quantity:
+          value: 1.8
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: IE
+        share_pct: 1.1
+        quantity:
+          value: 1.6
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: JM
+        share_pct: 1.1
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: VN
+        share_pct: 1.1
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: CA
+        share_pct: 1.1
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: KZ
+        share_pct: 1.0
+        quantity:
+          value: 1.4
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ID
+        share_pct: 0.9
+        quantity:
+          value: 1.3
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Indonesia. USGS 2024e: 1,300 kt. New 2.2 Mt/yr refinery in West Kalimantan began production in 2024."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: DE
+        share_pct: 0.7
+        quantity:
+          value: 0.96
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: GR
+        share_pct: 0.6
+        quantity:
+          value: 0.86
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ES
+        share_pct: 0.6
+        quantity:
+          value: 0.82
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: US
+        share_pct: 0.5
+        quantity:
+          value: 0.72
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: |
+          US. USGS 2024e: 720 kt, 5% less than 2023. One active refinery
+          (Gramercy, LA, 1.2 Mt/yr capacity); Burnside, LA (500 kt/yr)
+          remained idle after August 2020 shutdown.
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: TR
+        share_pct: 0.2
+        quantity:
+          value: 0.32
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ZZ
+        share_pct: 1.1
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: oxide
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Other countries per USGS table."
+        source_id: usgs_mcs_2025_bauxite_alumina
+    completeness: complete
+
+- reporting_year: 2024
+  stream: aluminum_metal
+  refined:
+    value: 72
+    unit: million_tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 Aluminum chapter p.33: world total (rounded) 72,000
+      thousand metric tons of primary aluminum smelter output, 2024
+      estimated. Does not include secondary (recycled) aluminum.
+      US primary production was 670 thousand metric tons; US secondary
+      production from old and new scrap was about 3,600 thousand metric tons.
+    source_id: usgs_mcs_2025_aluminum
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 59.7
+        quantity:
+          value: 43
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "China. USGS 2024e: 43,000 kt smelter output; yearend capacity 44,700 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: IN
+        share_pct: 5.8
+        quantity:
+          value: 4.2
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "India. USGS 2024e: 4,200 kt; yearend capacity 4,200 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: RU
+        share_pct: 5.3
+        quantity:
+          value: 3.8
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Russia. USGS 2024e: 3,800 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: CA
+        share_pct: 4.6
+        quantity:
+          value: 3.3
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Canada. USGS 2024e: 3,300 kt; yearend capacity 3,270 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: AE
+        share_pct: 3.8
+        quantity:
+          value: 2.7
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "UAE. USGS 2024e: 2,700 kt; yearend capacity 2,790 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: BH
+        share_pct: 2.2
+        quantity:
+          value: 1.6
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Bahrain. USGS 2024e: 1,600 kt; yearend capacity 1,600 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: AU
+        share_pct: 2.1
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Australia. USGS 2024e: 1,500 kt; yearend capacity 1,730 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: "NO"
+        share_pct: 1.8
+        quantity:
+          value: 1.3
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Norway. USGS 2024e: 1,300 kt; yearend capacity 1,460 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: BR
+        share_pct: 1.5
+        quantity:
+          value: 1.1
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Brazil. USGS 2024e: 1,100 kt; yearend capacity 1,280 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: MY
+        share_pct: 1.2
+        quantity:
+          value: 0.87
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Malaysia. USGS 2024e: 870 kt; yearend capacity 1,080 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: IS
+        share_pct: 1.1
+        quantity:
+          value: 0.78
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Iceland. USGS 2024e: 780 kt; yearend capacity 880 kt."
+        source_id: usgs_mcs_2025_aluminum
+      - country: US
+        share_pct: 0.9
+        quantity:
+          value: 0.67
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: |
+          US primary. USGS 2024e: 670 kt, down 11% from 2023 (750 kt).
+          Two of four operating smelters ran at full capacity; one (New Madrid,
+          MO, 263 kt/yr) shut down in January 2024 with no restart date;
+          one (Hawesville, KY) has been temporarily shut since 2022. Smelter
+          capacity 1,360 kt/yr unchanged from 2023.
+        source_id: usgs_mcs_2025_aluminum
+      - country: ZZ
+        share_pct: 9.4
+        quantity:
+          value: 6.8
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_aluminum
+        notes: "Other countries per USGS table."
+        source_id: usgs_mcs_2025_aluminum
+    completeness: complete
+  notes: |
+    2024 US secondary (recycled) production: ~3.6 million tons total
+    (1,600 kt from old scrap, 2,000 kt from new scrap). Net import reliance
+    for primary aluminum 47% in 2024. US domestic smelter capacity 1,360 kt/yr.
+
+reserves:
+  economic_reserves:
+    value: 29000000000
+    unit: tonnes
+    form: ore
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 Bauxite and Alumina chapter p.43: world total (rounded)
+      29,000,000 thousand metric dry tons of bauxite reserves. Reserves for
+      China, Indonesia, Kazakhstan, Turkey, and Vietnam were revised based on
+      company and Government reports. Australia's JORC-compliant or equivalent
+      reserves were separately reported as 1.6 billion tons (vs. USGS estimate
+      of 3.5 billion tons).
+    source_id: usgs_mcs_2025_bauxite_alumina
+  resources:
+    value: 65000000000
+    unit: tonnes
+    form: ore
+    low: 55000000000
+    high: 75000000000
+    approximate: true
+    notes: |
+      USGS MCS 2025: "Bauxite resources are estimated to be between 55 billion
+      and 75 billion tons, distributed in Africa (32%), Oceania (23%), South
+      America and the Caribbean (21%), Asia (18%), and elsewhere (6%)."
+      Domestic US bauxite resources are inadequate for long-term US demand,
+      but the US and most major aluminum-producing countries have "essentially
+      inexhaustible subeconomic resources of aluminum in materials other than
+      bauxite."
+    source_id: usgs_mcs_2025_bauxite_alumina
+  reserves_by_country:
+    shares:
+      - country: GN
+        share_pct: 25.5
+        quantity:
+          value: 7400000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Guinea. USGS: 7,400,000 thousand metric tons."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: AU
+        share_pct: 12.1
+        quantity:
+          value: 3500000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Australia. USGS: 3,500,000 thousand metric tons. JORC-compliant reserves: 1.6 billion tons."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: VN
+        share_pct: 10.7
+        quantity:
+          value: 3100000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ID
+        share_pct: 9.7
+        quantity:
+          value: 2800000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: BR
+        share_pct: 9.3
+        quantity:
+          value: 2700000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: JM
+        share_pct: 6.9
+        quantity:
+          value: 2000000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: CN
+        share_pct: 2.3
+        quantity:
+          value: 680000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: IN
+        share_pct: 2.2
+        quantity:
+          value: 650000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: RU
+        share_pct: 1.7
+        quantity:
+          value: 480000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: KZ
+        share_pct: 1.0
+        quantity:
+          value: 280000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: SA
+        share_pct: 0.6
+        quantity:
+          value: 180000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: TR
+        share_pct: 0.2
+        quantity:
+          value: 69000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: US
+        share_pct: 0.1
+        quantity:
+          value: 20000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "US bauxite reserves are primarily for nonmetallurgical use."
+        source_id: usgs_mcs_2025_bauxite_alumina
+      - country: ZZ
+        share_pct: 18.3
+        quantity:
+          value: 5300000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_bauxite_alumina
+        notes: "Other countries per USGS table."
+        source_id: usgs_mcs_2025_bauxite_alumina
+    completeness: complete
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: bauxite_ore
+    typical_concentration_pct: 25
+    notes: |
+      Bauxite is the sole commercial feedstock for alumina and primary aluminum
+      production worldwide. Typical aluminum content in bauxite ore is 15-30%
+      Al2O3 equivalent (expressed as Al: ~8-16%). The Bayer process refines
+      bauxite to alumina; the Hall-Heroult process electrolyzes alumina to
+      primary aluminum metal.
+    source_id: usgs_mcs_2025_bauxite_alumina
+
+substitutes:
+  - application: aircraft_fuselages_wings
+    availability: partial
+    notes: |
+      USGS MCS 2025 Aluminum chapter: "Composites can substitute for aluminum
+      in aircraft fuselages and wings."
+    source_id: usgs_mcs_2025_aluminum
+  - application: packaging
+    availability: partial
+    notes: |
+      USGS MCS 2025 Aluminum chapter: "Glass, paper, plastics, and steel can
+      substitute for aluminum in packaging."
+    source_id: usgs_mcs_2025_aluminum
+  - application: ground_transportation
+    availability: partial
+    notes: |
+      USGS MCS 2025 Aluminum chapter: "Composites, magnesium, steel, and
+      titanium can substitute for aluminum in ground transportation uses."
+    source_id: usgs_mcs_2025_aluminum
+  - application: construction
+    availability: partial
+    notes: |
+      USGS MCS 2025 Aluminum chapter: "Composites, steel, vinyl, and wood can
+      substitute for aluminum in construction."
+    source_id: usgs_mcs_2025_aluminum
+  - application: electrical_heat_exchange
+    availability: partial
+    notes: |
+      USGS MCS 2025 Aluminum chapter: "Copper can replace aluminum in electrical
+      and heat-exchange applications."
+    source_id: usgs_mcs_2025_aluminum
+  - application: alumina_abrasives_refractories
+    availability: partial
+    notes: |
+      USGS MCS 2025 Bauxite and Alumina chapter: "Synthetic mullite, produced
+      from kaolin, bauxitic kaolin, kyanite, and sillimanite, substitutes for
+      bauxite-based refractories. Silicon carbide and alumina zirconia can
+      substitute for alumina and bauxite in abrasives but cost more."
+    source_id: usgs_mcs_2025_bauxite_alumina
+
+end_uses:
+  uses:
+    - application: transportation
+      share_pct: 36
+      notes: |
+        USGS MCS 2025 Aluminum chapter: "Transportation applications accounted
+        for 36% of domestic consumption" (US 2024). Includes automotive, aerospace,
+        rail, and marine applications.
+      source_id: usgs_mcs_2025_aluminum
+    - application: packaging
+      share_pct: 23
+      notes: "USGS MCS 2025: packaging 23% of US 2024 domestic consumption."
+      source_id: usgs_mcs_2025_aluminum
+    - application: building_construction
+      share_pct: 14
+      notes: "USGS MCS 2025: building 14% of US 2024 domestic consumption."
+      source_id: usgs_mcs_2025_aluminum
+    - application: electrical
+      share_pct: 9
+      notes: "USGS MCS 2025: electrical 9% of US 2024 domestic consumption."
+      source_id: usgs_mcs_2025_aluminum
+    - application: consumer_durables
+      share_pct: 8
+      notes: "USGS MCS 2025: consumer durables 8% of US 2024 domestic consumption."
+      source_id: usgs_mcs_2025_aluminum
+    - application: machinery
+      share_pct: 8
+      notes: "USGS MCS 2025: machinery 8% of US 2024 domestic consumption."
+      source_id: usgs_mcs_2025_aluminum
+    - application: other
+      share_pct: 2
+      notes: "USGS MCS 2025: other 2% of US 2024 domestic consumption."
+      source_id: usgs_mcs_2025_aluminum
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Aluminum is not on the US Critical Minerals List or the EU Critical Raw
+    Materials list. Despite high US import reliance for bauxite (>75%) and
+    alumina (~59%), aluminum metal itself is widely available from multiple
+    suppliers and from secondary (recycled) sources. The US does maintain a
+    small government stockpile of high-purity aluminum alloys.
+
+prices:
+  - year: 2024
+    value: 130
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: "Price, ingot, average U.S. market
+      (spot), cents per pound" 2024 estimated = 130 cents/lb. Source:
+      S&P Global Platts Metals Week.
+    source_id: usgs_mcs_2025_aluminum
+  - year: 2023
+    value: 125.9
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023 actual = 125.9 cents/lb."
+    source_id: usgs_mcs_2025_aluminum
+  - year: 2022
+    value: 152.6
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 = 152.6 cents/lb (peak)."
+    source_id: usgs_mcs_2025_aluminum
+  - year: 2021
+    value: 138.5
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    source_id: usgs_mcs_2025_aluminum
+  - year: 2020
+    value: 89.7
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    source_id: usgs_mcs_2025_aluminum
+  - year: 2024
+    value: 30
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 Bauxite and Alumina chapter: average unit value of US
+      imports f.a.s. for crude dry bauxite, 2024 estimated at $30/metric ton
+      (first 8 months actual: $30/ton, 5% less than same period 2023).
+    source_id: usgs_mcs_2025_bauxite_alumina
+  - year: 2023
+    value: 31
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: US bauxite import price f.a.s. 2023 = $31/metric ton."
+    source_id: usgs_mcs_2025_bauxite_alumina
+  - year: 2024
+    value: 570
+    unit: usd_per_tonne
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 Bauxite and Alumina chapter: average unit value of US
+      imports f.a.s. for metallurgical-grade alumina, 2024 estimated at
+      $570/metric ton (first 8 months: $560/ton, 12% more than same period
+      2023). Alumina prices rose significantly in 2024 versus $481/ton in 2023.
+    source_id: usgs_mcs_2025_bauxite_alumina
+  - year: 2023
+    value: 481
+    unit: usd_per_tonne
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025: US alumina import price f.a.s. 2023 = $481/metric ton."
+    source_id: usgs_mcs_2025_bauxite_alumina
+  - year: 2022
+    value: 518
+    unit: usd_per_tonne
+    form: oxide
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_bauxite_alumina
+  - year: 2021
+    value: 462
+    unit: usd_per_tonne
+    form: oxide
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_bauxite_alumina
+  - year: 2020
+    value: 394
+    unit: usd_per_tonne
+    form: oxide
+    basis: other
+    region: US
+    source_id: usgs_mcs_2025_bauxite_alumina
+
+geopolitical_events:
+  - date: 2024-01
+    event: "New Madrid, MO primary aluminum smelter (263,000 t/yr) shuts down full production with no scheduled restart"
+    impact: |
+      US primary aluminum production declined 11% from 2023 to an estimated
+      670,000 tons in 2024. Combined with the Hawesville, KY smelter idled
+      since 2022, US smelting capacity utilization fell well below nameplate.
+    source_id: usgs_mcs_2025_aluminum
+  - date: 2024-03
+    event: "U.S. Department of Energy announces $664 million in grants for aluminum operations"
+    impact: |
+      Grants include: $500M for a new smelter in the Ohio/Mississippi River
+      Basins; $75M for a low-carbon aluminum casting plant in Ravenswood, WV;
+      $67.3M for low-waste recycling in Wabash, IN; $22.3M for casting/rolling
+      upgrades in Fort Lupton, CO. Signals federal commitment to rebuilding
+      domestic smelting capacity.
+    source_id: usgs_mcs_2025_aluminum
+  - date: 2024-04
+    event: "US and UK coordinate to ban Russian aluminum imports and restrict sale on global metal exchanges"
+    impact: |
+      Russia produces ~5.3% of world primary aluminum (3,800 kt in 2024).
+      The ban restricts Russian aluminum from LME and OTC derivative trading
+      in both countries, redirecting Russian volumes to non-Western markets.
+    source_id: usgs_mcs_2025_aluminum
+  - date: 2024-07
+    event: "US imposes 10% duties on aluminum products from Mexico containing primary aluminum of Russian, Chinese, Belarussian, or Iranian origin"
+    impact: |
+      Canada is the largest source of US aluminum imports (56% of 2020-23
+      average). The Mexico duty targets transshipment of non-ally primary
+      aluminum. US also awarded $23M DOD grant to expand aluminum casting
+      capacity by up to 136,000 t/yr at Muscle Shoals, AL.
+    source_id: usgs_mcs_2025_aluminum
+  - date: 2024-09
+    event: "US increases tariffs on aluminum products imported from China from 0-7.5% to 25%"
+    impact: |
+      Part of broader US tariff escalation on Chinese goods. China represents
+      ~60% of world aluminum smelting but exports primarily to Asian markets;
+      direct US aluminum imports from China are modest (3% of 2020-23 average).
+    source_id: usgs_mcs_2025_aluminum
+  - date: 2024-09
+    event: "UAE-based aluminum producer acquires 110,000 t/yr US secondary aluminum producer in Rosemont, MN"
+    impact: "Signals Gulf-state aluminum producers expanding downstream into recycling."
+    source_id: usgs_mcs_2025_aluminum
+
+narrative: |
+  Aluminum is the world's most-consumed non-ferrous metal, with a three-stage
+  supply chain: bauxite mining (450 Mt/yr globally in 2024), alumina refining
+  (142 Mt/yr), and primary aluminum smelting (72 Mt/yr). The 4:2:1 conversion
+  ratio means the bauxite-to-metal chain is inherently energy and capital
+  intensive. China dominates all three stages — 21% of bauxite, 59% of alumina
+  refining, and 60% of aluminum smelting — making it the single largest
+  influence on global aluminum pricing and supply.
+
+  The US industry is in a structural transition. Primary smelting capacity
+  has declined to 1,360 kt/yr, with only two of four operating smelters
+  running at full capacity in 2024; primary output dropped 11% to 670 kt.
+  The US relies on imports for >75% of its bauxite and ~59% of its alumina,
+  principally from Jamaica (bauxite) and Brazil (alumina). However, secondary
+  production from scrap (about 3.6 Mt in 2024) substantially offsets primary
+  import dependence, and apparent consumption net import reliance for all
+  aluminum forms was 47%. The DOE's $500 million grant for a new smelter
+  signals intent to rebuild domestic primary capacity.
+
+  Global bauxite reserves are enormous relative to demand — 29 billion tonnes
+  at current 450 Mt/yr extraction equates to roughly 65 years of supply, and
+  resources are estimated at 55-75 billion tonnes concentrated in Africa (32%),
+  Oceania (23%), and South America (21%). Guinea holds the largest reserves
+  (25.5%) and has become the world's largest bauxite producer. Aluminum is not
+  classified as a critical mineral by the US or EU, reflecting its abundance
+  and the recycling-driven resilience of supply, though the high energy
+  intensity of primary smelting (roughly 14 MWh per tonne) means smelter
+  location is determined primarily by electricity costs.
+
+sources:
+  - id: usgs_mcs_2025_aluminum
+    title: Mineral Commodity Summaries 2025 — Aluminum
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-aluminum.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_mcs_2025_bauxite_alumina
+    title: Mineral Commodity Summaries 2025 — Bauxite and Alumina
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-bauxite-alumina.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
