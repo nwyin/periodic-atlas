@@ -4,57 +4,139 @@ name: americium
 category: actinide
 industrial_tier: 2
 commercial_production: true
-form_notes: "Traded almost exclusively as Am-241 dioxide sealed sources for ionization smoke detectors and well logging."
+snapshot_year: 2025
+form_notes: |
+  Americium trade is entirely an isotope market centered on Am-241, the
+  daughter of Pu-241 decay. There is no "element-level" production;
+  what gets produced is Am-241 sealed sources separated from legacy
+  defense-program plutonium stockpiles.
 
-production:
-  year: 2024
-  refined:
-    value: 1500
-    unit: grams_per_year
-    approximate: true
-    notes: "Order-of-magnitude estimate. Sum of LANL restart output and legacy inventory drawdown."
-    source_id: doe_isotope_program_2024
-  production_form: Am-241 dioxide sealed sources
-  refining_by_country:
-    - {country: US, share_pct: 60, notes: "LANL restarted Am-241 production line in 2021 after a supply gap"}
-    - {country: RU, share_pct: 30, notes: "Mayak PA — reprocesses legacy plutonium stockpiles"}
-    - {country: GB, share_pct: 10, notes: "Sellafield — recovers Am from aged Pu stocks"}
+# No `production` block: americium is described via isotope_markets below.
+# The IsotopeMarket sub-model handles the Am-241 economic reality cleanly.
 
-byproduct_of: [Pu]
-substitutes_available: partial
-substitutes_notes: "Photoelectric smoke detectors can replace ionization detectors but are less sensitive to flaming fires. Ni-63 is an alternative for some ionization applications."
+isotope_markets:
+  - isotope: Am-241
+    half_life_seconds: 13650595560  # 432.6 years * 365.25 * 86400
+    production_mode: stockpile_separated
+    reporting_year: 2024
+    precursor: |
+      Pu-241 in legacy defense-program plutonium stockpiles. Pu-241 has a
+      14.4-year half-life and decays to Am-241; solvent extraction or ion
+      exchange chromatography separates the Am-241 from the aged Pu
+      material. Per DOE NIDC product information (11/2024): "Production
+      Route: Decay of plutonium-241".
+    delivery_form: |
+      Oxide powder (>95% 241AmO2 by weight), >99% Am-241 of all americium,
+      <1% Pu content. Shipped in stainless steel screw-top containers,
+      classified as nuclear material requiring DOE/NRC Form 741.
+      Unit of sale: grams. Downstream: Am-241 dioxide sealed sources for
+      smoke detectors and Am-Be neutron sources for oil well logging.
+    producers:
+      shares:
+        - country: US
+          share_pct: 50
+          notes: |
+            Los Alamos National Laboratory (LANL). DOE NIDC re-established
+            domestic production capability in 2012; product is "routinely
+            available" for purchase through NIDC (isotopes.gov). Exact
+            share vs other producers is not published; 50% is a placeholder
+            reflecting that LANL is one of a small number of global
+            suppliers but we cannot quote a precise figure.
+          source_id: doe_nidc_am241_product
+        - country: ZZ
+          share_pct: 50
+          notes: "Non-US supply includes Russia (Mayak PA) and historically the UK (Sellafield). Shares not published."
+          source_id: doe_nidc_am241_product
+      completeness: top_producers_only
+    notes: |
+      LOW CONFIDENCE on producer shares. DOE NIDC publishes product
+      specifications and "routinely available" status but does not
+      publish annual production volumes or market shares. The 50/50 split
+      above is a placeholder; treat it as "US is a major supplier alongside
+      unquantified non-US supply" until a primary quantitative source is
+      added.
+
+feedstock_origins:
+  - substrate: legacy_plutonium_stockpile
+    notes: |
+      LANL "is home to substantial quantities of materials from decades of
+      defense program work. The Am-241 in these materials is now being
+      recovered as an example of recycling rare and important isotopes"
+      per DOE NIDC americium241 landing page.
+    source_id: doe_nidc_am241_landing
+
+substitutes:
+  - availability: partial
+    notes: |
+      Photoelectric smoke detectors can replace ionization smoke detectors
+      but are slower to respond to flaming fires. Ni-63 is an alternative
+      for some ionization applications. Cf-252 and Am-Be-free neutron
+      sources exist for some logging applications. None of these
+      substitutes is cited in the DOE NIDC source; this note reflects
+      general industry context and should be upgraded to a cited claim
+      during step 3.
+    source_id: doe_nidc_am241_product
 
 end_uses:
-  - {application: smoke_detectors_ionization, share_pct: 90, notes: "Every ionization smoke detector contains ~0.29 micrograms; a single gram equips ~3 million units"}
-  - {application: oil_well_logging, share_pct: 8, notes: "Am-Be neutron sources for porosity measurement"}
-  - {application: research_and_calibration, share_pct: 2}
+  uses:
+    - application: smoke_detectors_ionization
+      share_pct: 90
+      notes: |
+        Dominant end use by installation count (approximately 3 billion
+        ionization smoke detectors installed globally, each containing
+        ~0.29 micrograms of Am-241). Share percentage is a conventional
+        figure not directly cited by DOE NIDC. Source is the inquiry
+        narrative document, not a primary quantitative source.
+      source_id: inquiry_periodic_elements_2025
+    - application: oil_well_logging_neutron_sources
+      share_pct: 8
+      notes: "Am-Be sources for porosity measurement in oil and gas formations."
+      source_id: inquiry_periodic_elements_2025
+    - application: research_and_calibration
+      share_pct: 2
+      notes: "Reference sources for alpha-spectrometer calibration and radiation metrology."
+      source_id: inquiry_periodic_elements_2025
+  completeness: complete
 
 criticality:
-  us_critical_2025: false
-  eu_crm_2024: false
-  notes: "Not on any critical materials list despite LANL-supply-gap history — considered too small a market."
-
-prices:
-  - {year: 2024, value: 1500, unit: usd_per_gram, source_id: doe_isotope_program_2024, notes: "LANL bulk Am-241 dioxide pricing; individual sealed sources priced 10x higher"}
-
-geopolitical_events:
-  - date: 2021-01-01
-    event: "LANL restarts Am-241 production after multi-year gap"
-    impact: "Resolved US sole-supplier risk; smoke detector industry had been drawing down legacy stock"
-    source_id: doe_isotope_program_2024
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Not on any mainstream critical-materials list despite the near-total
+    dependence of ionization smoke detectors and the 2015-2020 US supply
+    gap that preceded the LANL restart. The market is too small in
+    tonnage terms to trigger list inclusion criteria.
 
 narrative: |
   Americium is the most industrially-deployed transuranic element by
-  installation count, if not by mass. Every ionization smoke detector in
-  the world — roughly 3 billion installed globally — contains about a
-  third of a microgram of Am-241. The entire annual supply is measured
-  in kilograms, not tonnes, and the US dependency on a single facility
-  at Los Alamos nearly became a crisis during the 2015-2020 production
-  gap before the line was restarted in 2021.
+  installation count. Nearly every ionization smoke detector — roughly
+  3 billion installed globally — contains about 0.29 micrograms of
+  Am-241. Am-241 is separated from legacy plutonium stockpiles where
+  Pu-241 has decayed over decades, making the effective "production"
+  a function of legacy defense inventory drawdown plus solvent
+  extraction capacity, not reactor output. The DOE Isotope Program
+  re-established US domestic production capability in 2012 after a
+  decade-long supply gap; product is now routinely available through
+  NIDC. Annual production volumes, prices, and market shares are not
+  published by DOE — all quantitative claims here should be treated
+  as placeholder until primary sources are identified.
 
 sources:
-  - id: doe_isotope_program_2024
-    title: DOE Isotope Program — Heavy Element Production Catalog
-    publisher: US Department of Energy
-    url: https://isotopes.gov/
+  - id: doe_nidc_am241_landing
+    title: "Americium-241 — DOE Isotope Program landing page"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/americium241
     retrieved: 2026-04-11
+    publication_year: 2024
+  - id: doe_nidc_am241_product
+    title: "Am-241 Product Information (revised 11/24)"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/sites/default/files/2024-11/Americium-241%20Product%20Information%20.pdf
+    retrieved: 2026-04-11
+    publication_year: 2024
+  - id: inquiry_periodic_elements_2025
+    title: "Every element on the periodic table, ranked by industrial relevance (inquiries/periodic-elements-industrial-contribution.md)"
+    publisher: egotheism project
+    retrieved: 2026-04-11
+    publication_year: 2026

@@ -401,7 +401,10 @@ class IsotopeMarket(BaseModel):
     isotope: str = Field(description="e.g. 'Am-241', 'Tc-99m'. Format: {symbol}-{mass_number}[m] with optional metastable suffix.")
     half_life_seconds: float
     production_mode: IsotopeProductionMode
-    production_quantity: Quantity
+    production_quantity: Quantity | None = Field(
+        default=None,
+        description="Annual production rate. Optional because many isotope markets (Am-241, Pu-238) have classified or unpublished volumes.",
+    )
     producers: CountryShareList = Field(default_factory=CountryShareList)
     precursor: str | None = Field(default=None, description="e.g. 'Mo-99 for Tc-99m', 'plutonium_stockpile for Am-241'.")
     delivery_form: str | None = Field(default=None, description="e.g. 'sealed sources', 'generator column'.")
@@ -606,7 +609,8 @@ class Element(BaseModel):
             check(self.ownership_concentration.source_id, "ownership_concentration")
 
         for i, im in enumerate(self.isotope_markets):
-            check(im.production_quantity.source_id, f"isotope_markets[{i}].production_quantity")
+            if im.production_quantity:
+                check(im.production_quantity.source_id, f"isotope_markets[{i}].production_quantity")
             for j, s in enumerate(im.producers.shares):
                 check(s.source_id, f"isotope_markets[{i}].producers[{j}]")
 
