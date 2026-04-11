@@ -1,0 +1,683 @@
+symbol: Mo
+atomic_number: 42
+name: molybdenum
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports all molybdenum production data in metric tons, molybdenum
+  content, unless otherwise specified. Mine production figures refer to molybdenite
+  (MoS₂) concentrate expressed as Mo metal content. Reserves data are in thousand
+  metric tons of Mo content per the World Mine Production and Reserves table (footnote 5).
+  The reference price for molybdenum is the U.S. molybdic oxide (MoO₃, 57% Mo content)
+  price in dollars per kilogram, as reported by Argus Media Group, Argus Non-Ferrous
+  Markets. Commercial trade forms include molybdenum concentrate (MoS₂), technical-grade
+  molybdic oxide (MoO₃), ferromolybdenum (FeMo, ~60–70% Mo), molybdenum metal powder,
+  and various Mo chemicals. No standard temperature conventions apply to this chapter.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 260000
+    unit: tonnes_per_year
+    form: concentrate
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.122–123: world total mine production (Mo content) 2024e = 260,000
+      metric tons, up from 248,000 metric tons in 2023 (~5% increase). U.S. mine production
+      2024e = 33,000 metric tons, down 3% from 34,000 in 2023. Primary production continued
+      at two operations in Colorado; byproduct production from mines where molybdenum was a
+      byproduct continued at seven operations (four in Arizona and one each in Montana,
+      Nevada, and Utah). Three U.S. roasting plants converted molybdenum concentrate to
+      molybdic oxide. The United States is a net exporter (net import reliance = E).
+      Molybdenum recycled as a component of catalysts, ferrous scrap, and superalloy scrap
+      may amount to as much as 30% of apparent Mo supply.
+    source_id: usgs_mcs_2025_molybdenum
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 42.31
+        quantity:
+          value: 110000
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: China 110,000 metric tons 2024e (estimated), up from 96,000e
+          in 2023. China is the world's largest molybdenum producer, with output from both
+          primary molybdenum mines and byproduct copper mines — the only country other than
+          the U.S. with significant production from both source types. China also holds the
+          world's largest reserves (5,900 kt). Reserve data revised based on company and
+          Government reports.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: PE
+        share_pct: 15.77
+        quantity:
+          value: 41000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Peru 41,000 metric tons 2024e, up from 33,500 in 2023 (+22%).
+          Peru produces molybdenum exclusively as a byproduct from porphyry copper mines.
+          Peru supplied 64% of U.S. molybdenum ore and concentrate imports and 35% of total
+          U.S. Mo imports (2020–23). Reserves revised based on company and Government reports.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: CL
+        share_pct: 14.62
+        quantity:
+          value: 38000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Chile 38,000 metric tons 2024e, down from 44,100 in 2023
+          (−14%). Chile produces molybdenum exclusively as a byproduct from porphyry copper
+          mines. Chile supplied 34% of total U.S. Mo imports and 77% of U.S. ferromolybdenum
+          imports (2020–23).
+        source_id: usgs_mcs_2025_molybdenum
+      - country: US
+        share_pct: 12.69
+        quantity:
+          value: 33000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: United States 33,000 metric tons 2024e, down from 34,000 in
+          2023. Primary production at two Colorado operations; byproduct production at seven
+          operations across Arizona, Montana, Nevada, and Utah. The U.S. is a net exporter
+          (apparent consumption ~12,000 mt vs. mine output ~33,000 mt; exports of ore and
+          concentrate 2024e ≈ 45,000 mt).
+        source_id: usgs_mcs_2025_molybdenum
+      - country: MX
+        share_pct: 6.54
+        quantity:
+          value: 17000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Mexico 17,000 metric tons 2024e, down from 17,500 in 2023.
+          Mexico produces molybdenum as a byproduct from porphyry copper mines. Mexico
+          supplied 18% of U.S. Mo ore and concentrate imports and 10% of total U.S. Mo
+          imports (2020–23).
+        source_id: usgs_mcs_2025_molybdenum
+      - country: AM
+        share_pct: 3.08
+        quantity:
+          value: 8000
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Armenia 8,000 metric tons 2024e (estimated), up from 7,600e
+          in 2023. Armenia produces molybdenum primarily from copper-molybdenum mines in the
+          Zangezur range (Kajaran deposit). Reserves = 150 kt.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: KZ
+        share_pct: 1.50
+        quantity:
+          value: 3900
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Kazakhstan 3,900 metric tons 2024e, up from 3,730 in 2023.
+          Reserves = 7 kt (very limited relative to production rate).
+        source_id: usgs_mcs_2025_molybdenum
+      - country: MN
+        share_pct: 1.19
+        quantity:
+          value: 3100
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Mongolia 3,100 metric tons 2024e, down from 3,160 in 2023.
+          Reserves revised based on company and Government reports; reported at 10 kt.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: IR
+        share_pct: 1.15
+        quantity:
+          value: 3000
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Iran 3,000 metric tons 2024e (estimated), up from 2,500e
+          in 2023. Reserves = 43 kt.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: RU
+        share_pct: 0.65
+        quantity:
+          value: 1700
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Russia 1,700 metric tons 2024e (estimated), unchanged from
+          2023e. Reserves = 1,100 kt — notably high relative to current production, indicating
+          significant undeveloped or under-produced resource potential.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: UZ
+        share_pct: 0.65
+        quantity:
+          value: 1700
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Uzbekistan 1,700 metric tons 2024e (estimated), unchanged
+          from 2023e. Reserves = 21 kt.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: CA
+        share_pct: 0.46
+        quantity:
+          value: 1200
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Canada 1,200 metric tons 2024e, up from 1,150 in 2023.
+          A Canadian company announced plans in 2024 to restart its idled Idaho molybdenum
+          mine in the second half of 2027 and ramp up its Pennsylvania Mo-processing facility.
+          Reserves revised based on company and Government reports; 64 kt.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: AU
+        share_pct: 0.38
+        quantity:
+          value: 1000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Australia 1,000 metric tons 2024e, up from 660 in 2023.
+          Total reported reserves = 690 kt (footnote 6); JORC-compliant or equivalent subset
+          = 250,000 tons (the higher-confidence portion).
+        source_id: usgs_mcs_2025_molybdenum
+      - country: KP
+        share_pct: 0.27
+        quantity:
+          value: 700
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Korea, North 700 metric tons 2024e (estimated), up from 400e
+          in 2023. Reserves: NA (not available).
+        source_id: usgs_mcs_2025_molybdenum
+      - country: KR
+        share_pct: 0.12
+        quantity:
+          value: 300
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Korea, Republic of 300 metric tons 2024e, down from 339 in
+          2023. Republic of Korea also imports and processes Mo, supplying 19% of U.S.
+          ferromolybdenum imports (2020–23). Reserves = 8 kt.
+        source_id: usgs_mcs_2025_molybdenum
+      - country: AR
+        share_pct: 0.0
+        quantity:
+          value: 0
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_molybdenum
+        notes: |
+          USGS MCS 2025 table: Argentina — (zero) mine production in both 2023 and 2024e.
+          Argentina holds 100 kt in reserves, indicating potential future capacity that
+          has not yet been developed.
+        source_id: usgs_mcs_2025_molybdenum
+    completeness: complete
+  notes: |
+    Share percentages computed with denominator = stated world total 260,000 metric tons.
+    Sum of listed country production values = 264,600 mt vs. stated 260,000 mt — a ~1.8%
+    discrepancy attributable to rounding of individual estimated country figures. This is a
+    USGS rounding artifact. Shares sum to ~101.4%, within the schema's 105% tolerance.
+    Korea, North reserves = NA (not available). The U.S. is a net exporter (net import
+    reliance = E). Primary U.S. import sources for total Mo (2020–23): Peru 35%, Chile 34%,
+    Mexico 10%, Republic of Korea 6%, other 15%.
+
+reserves:
+  economic_reserves:
+    value: 15000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS MCS 2025 p.123: world total reserves = 15,000 thousand metric tons Mo content
+      (stated as rounded). Sum of all quantified country reserves in the table = 15,023 kt
+      (15,023,000 t), within 0.2% of the stated 15,000 kt — a rounding artifact. Korea,
+      North reserves = NA (excluded from sum). Reserves data for Canada, China, Mongolia,
+      and Peru were revised based on company and Government reports.
+    source_id: usgs_mcs_2025_molybdenum
+  resources:
+    value: 25400000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 p.123: "Identified resources of molybdenum in the United States are
+      about 5.4 million tons and, in the rest of the world, about 20 million tons."
+      Total identified resources ≈ 25,400,000 metric tons Mo content. "Resources of
+      molybdenum are adequate to supply world needs for the foreseeable future." Molybdenum
+      occurs as the principal metal sulfide in large low-grade porphyry molybdenum deposits
+      and as an associated metal sulfide in low-grade porphyry copper deposits.
+    source_id: usgs_mcs_2025_molybdenum
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 39.33
+        quantity:
+          value: 5900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: China 5,900 thousand metric tons. Largest national reserve. Revised based on company and Government reports."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: US
+        share_pct: 23.33
+        quantity:
+          value: 3500000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: United States 3,500 thousand metric tons. Second-largest reserve globally."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: PE
+        share_pct: 12.67
+        quantity:
+          value: 1900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Peru 1,900 thousand metric tons. Revised based on company and Government reports."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: CL
+        share_pct: 9.33
+        quantity:
+          value: 1400000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Chile 1,400 thousand metric tons."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: RU
+        share_pct: 7.33
+        quantity:
+          value: 1100000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Russia 1,100 thousand metric tons. Significantly underproduced relative to reserve size."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: AU
+        share_pct: 4.60
+        quantity:
+          value: 690000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Australia 690 thousand metric tons total; JORC-compliant subset = 250,000 tons (footnote 6)."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: AM
+        share_pct: 1.00
+        quantity:
+          value: 150000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Armenia 150 thousand metric tons."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: MX
+        share_pct: 0.87
+        quantity:
+          value: 130000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Mexico 130 thousand metric tons."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: AR
+        share_pct: 0.67
+        quantity:
+          value: 100000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Argentina 100 thousand metric tons. Production currently zero; potential future development."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: CA
+        share_pct: 0.43
+        quantity:
+          value: 64000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Canada 64 thousand metric tons. Revised based on company and Government reports."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: IR
+        share_pct: 0.29
+        quantity:
+          value: 43000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Iran 43 thousand metric tons."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: UZ
+        share_pct: 0.14
+        quantity:
+          value: 21000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Uzbekistan 21 thousand metric tons."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: MN
+        share_pct: 0.07
+        quantity:
+          value: 10000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Mongolia 10 thousand metric tons. Revised based on company and Government reports."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: KR
+        share_pct: 0.05
+        quantity:
+          value: 8000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Korea, Republic of 8 thousand metric tons."
+        source_id: usgs_mcs_2025_molybdenum
+      - country: KZ
+        share_pct: 0.05
+        quantity:
+          value: 7000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_molybdenum
+        notes: "USGS MCS 2025 table: Kazakhstan 7 thousand metric tons — minimal relative to production rate."
+        source_id: usgs_mcs_2025_molybdenum
+    completeness: partial
+  notes: |
+    Korea, North reserves = NA (not available); excluded from the by-country list.
+    Sum of quantified country reserves = 15,023 kt vs. stated world total 15,000 kt —
+    within 0.2% rounding tolerance. Share percentages computed with denominator = 15,000 kt.
+    China (39.3%) + US (23.3%) + Peru (12.7%) + Chile (9.3%) = 84.6% of world reserves.
+    Russia's 1,100 kt reserves are notably large relative to current output of 1,700 t/year.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: molybdenite_concentrate
+    typical_concentration_pct: null
+    notes: |
+      Molybdenite (MoS₂) is the primary ore mineral of molybdenum, recovered from large
+      low-grade porphyry molybdenum deposits (e.g., Henderson and Climax in Colorado) or as
+      a byproduct concentrate from porphyry copper processing. Molybdenite concentrate
+      typically contains 50–55% Mo and is the standard commercial feedstock for roasting
+      plants that produce molybdic oxide (MoO₃, 57% Mo). The U.S. operates three such
+      roasting plants.
+    source_id: usgs_mcs_2025_molybdenum
+  - substrate: porphyry_copper_ore
+    typical_concentration_pct: null
+    notes: |
+      A significant portion of global molybdenum supply is recovered as a byproduct during
+      porphyry copper ore processing. USGS MCS 2025 notes that Peru, Chile, and Mexico
+      produce molybdenum exclusively from byproduct copper operations; China and the U.S.
+      produce from both primary Mo mines and byproduct copper mines. Declining ore grades
+      at major porphyry copper deposits are expected to suppress future Mo byproduct output,
+      and several large porphyry copper mines are expected to reach end-of-life in the
+      mid-2030s, creating a medium-term supply constraint.
+    source_id: usgs_mcs_2025_molybdenum
+
+substitutes:
+  - application: alloy_steels_and_cast_irons
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "There is little substitution for molybdenum
+      in its major application in steels and cast irons." Potential substitutes include
+      boron, chromium, niobium (columbium), and vanadium in alloy steels, but each provides
+      only a partial replacement for Mo's combination of hardenability improvement, high-
+      temperature strength, and corrosion resistance. The note that "industry has sought to
+      develop new materials that benefit from its alloying properties" reflects Mo's position
+      as a preferred rather than essential element in many steels.
+    source_id: usgs_mcs_2025_molybdenum
+  - application: tool_steels
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: tungsten substitutes for molybdenum in tool
+      steels. High-speed steel grades historically used tungsten (T-series, e.g., T1) but
+      transitioned largely to molybdenum-containing M-series grades (e.g., M2) during the
+      20th century for cost and density advantages. Substitution can occur in reverse under
+      supply or price pressure, with trade-offs in density, hot-hardness, and cost.
+    source_id: usgs_mcs_2025_molybdenum
+  - application: refractory_materials
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: graphite, tantalum, and tungsten substitute for
+      molybdenum as refractory materials in high-temperature electric furnaces. Molybdenum's
+      high melting point (2,623°C), good thermal conductivity, and competitive cost relative
+      to tungsten make it the preferred refractory metal in many furnace components, but
+      alternatives are technically viable at higher cost or with performance trade-offs.
+    source_id: usgs_mcs_2025_molybdenum
+  - application: pigments
+    availability: full
+    notes: |
+      USGS MCS 2025 substitutes paragraph: cadmium-red, chrome-orange, and organic-orange
+      pigments substitute for molybdenum orange (lead chromate molybdate). Regulatory
+      restrictions on lead-containing pigments in many jurisdictions have accelerated
+      substitution toward organic pigments in coatings and plastics. This is a minor end
+      use within the Mo consumption mix and is largely already substituted in regulated markets.
+    source_id: usgs_mcs_2025_molybdenum
+
+end_uses:
+  uses:
+    - application: alloy_steels_and_cast_irons
+      share_pct: 50
+      confidence: low
+      notes: |
+        USGS MCS 2025 domestic production section: "Molybdenum is a refractory metallic
+        element used principally as an alloying agent in cast iron, steel, and superalloys."
+        The chapter does not provide explicit end-use percentage breakdowns for 2025. The ~50%
+        share for alloy steels and cast irons is consistent with historical USGS molybdenum
+        end-use data. Molybdenum improves hardenability, strength at elevated temperatures,
+        and corrosion resistance in structural and engineering steels.
+      source_id: usgs_mcs_2025_molybdenum
+    - application: stainless_and_high_alloy_steels
+      share_pct: 20
+      confidence: low
+      notes: |
+        Stainless steels (particularly 316-grade with 2–3% Mo) rely on molybdenum for
+        enhanced pitting-corrosion resistance in chloride environments. High-alloy and
+        duplex stainless grades use higher Mo concentrations. Share based on historical USGS
+        Mo end-use data; not explicitly stated in MCS 2025 chapter.
+      source_id: usgs_mcs_2025_molybdenum
+    - application: superalloys
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 mentions superalloys as a major application. Nickel-base and cobalt-base
+        superalloys used in jet engines, gas turbines, and aerospace components incorporate Mo
+        for solid-solution strengthening and elevated-temperature performance. Share based on
+        historical USGS Mo end-use data; not explicitly stated in MCS 2025.
+      source_id: usgs_mcs_2025_molybdenum
+    - application: catalysts
+      share_pct: 10
+      confidence: low
+      notes: |
+        Mo-based catalysts — primarily cobalt-molybdenum (Co-Mo) and nickel-molybdenum (Ni-Mo)
+        on alumina supports — are used in petroleum refinery hydrodesulfurization (HDS) and
+        hydrodenitrogenation (HDN) processes to produce low-sulfur fuels. These catalysts are
+        essential to global fuel standards compliance. Share based on historical USGS Mo end-use
+        data; not explicitly stated in MCS 2025.
+      source_id: usgs_mcs_2025_molybdenum
+    - application: lubricants_pigments_and_other_chemicals
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025: "numerous chemical applications, including catalysts, lubricants, and
+        pigments." Molybdenum disulfide (MoS₂) is a major solid lubricant used in aerospace,
+        automotive, and industrial machinery. Molybdenum orange pigment (lead chromate
+        molybdate) is used in coatings and plastics (declining due to lead regulations). Other
+        Mo chemicals include corrosion inhibitors and specialized compounds. Share based on
+        historical USGS Mo data; not explicitly stated in MCS 2025.
+      source_id: usgs_mcs_2025_molybdenum
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Molybdenum does not appear on the U.S. 2022 Final Critical Minerals List (Federal
+    Register Vol. 87, No. 37, February 22, 2022) or the EU Critical Raw Materials list
+    (Regulation (EU) 2024/1252). The United States has significant domestic mine production
+    (33,000 t in 2024) and is a net exporter (net import reliance = E), substantially
+    reducing supply security risk compared with many industrial metals. However, the
+    structural medium-term risk from declining ore grades at porphyry copper mines and
+    anticipated end-of-life closures in the mid-2030s represents a non-trivial supply
+    consideration not reflected in current criticality designations.
+
+prices:
+  - year: 2024
+    value: 41.72
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: U.S. molybdic oxide (MoO₃, 57% Mo content) average
+      price 2024e = $41.72/kg. Source: Argus Media Group, Argus Non-Ferrous Markets (footnote 3).
+      Decreased ~13% from the 2023 average of $47/kg.
+    source_id: usgs_mcs_2025_molybdenum
+  - year: 2023
+    value: 47.0
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: U.S. molybdic oxide average 2023 = $47.00/kg. Source: Argus Media Group, Argus Non-Ferrous Markets."
+    source_id: usgs_mcs_2025_molybdenum
+  - year: 2022
+    value: 54.32
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: U.S. molybdic oxide average 2022 = $54.32/kg —
+      the highest price in the 2020–2024 range, reflecting post-COVID industrial demand
+      recovery and supply disruptions. Source: Argus Media Group, Argus Non-Ferrous Markets.
+    source_id: usgs_mcs_2025_molybdenum
+  - year: 2021
+    value: 35.62
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: U.S. molybdic oxide average 2021 = $35.62/kg. Source: Argus Media Group, Argus Non-Ferrous Markets."
+    source_id: usgs_mcs_2025_molybdenum
+  - year: 2020
+    value: 19.19
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: U.S. molybdic oxide average 2020 = $19.19/kg —
+      the lowest price in the 2020–2024 range, reflecting COVID-related demand weakness.
+      Source: Argus Media Group, Argus Non-Ferrous Markets.
+    source_id: usgs_mcs_2025_molybdenum
+
+geopolitical_events:
+  - date: 2024-01
+    event: "Canadian company announces restart of idled Idaho molybdenum mine for second half of 2027 and progressive ramp-up of Pennsylvania Mo-processing facility"
+    impact: |
+      The Idaho mine restart would represent a meaningful addition to U.S. primary molybdenum
+      capacity, which is currently limited to two primary operations in Colorado. The mine
+      was previously idled during a period of low prices; the restart announcement signals
+      improved long-term price or strategic supply expectations. The Pennsylvania processing
+      facility expansion would strengthen U.S. downstream Mo product capacity, potentially
+      reducing U.S. dependence on ferromolybdenum imports (current supply: Chile 77%,
+      Korea 19%, UK 3%).
+    source_id: usgs_mcs_2025_molybdenum
+  - date: 2024-01
+    event: "Global molybdenum mine production rises 6% to 260,000 t in 2024; molybdic oxide price falls 13% to $41.72/kg"
+    impact: |
+      World output increased from 248,000 to 260,000 metric tons Mo content. China posted
+      the largest absolute gain (+14,000 t to 110,000 t), and Peru rose +7,500 t to
+      41,000 t (+22%), while Chile fell from 44,100 to 38,000 t (−14%). The 13% price
+      decline alongside production growth suggests supply expanded faster than demand.
+      Strong demand in global power generation and clean energy infrastructure projects
+      was cited by USGS as supporting the market.
+    source_id: usgs_mcs_2025_molybdenum
+  - date: 2024-01
+    event: "Declining ore grades at porphyry copper mines and anticipated end-of-life closures in mid-2030s threaten molybdenum byproduct supply"
+    impact: |
+      A substantial share of global Mo supply (all of Peru, Chile, and Mexico; partial
+      contributions from China and the U.S.) comes from byproduct recovery at porphyry
+      copper mines. Declining ore grades reduce Mo recovery per tonne of ore processed,
+      and several large porphyry copper operations are expected to reach end-of-life in
+      the mid-2030s. Unless new primary Mo deposits or expansions at existing primary mines
+      offset this byproduct decline, a structural supply tightening is likely in the 2030s.
+    source_id: usgs_mcs_2025_molybdenum
+
+narrative: |
+  Molybdenum is a refractory transition metal used primarily as an alloying agent in
+  steels, cast irons, and superalloys, and secondarily in catalysts, lubricants, and
+  specialty chemicals. World mine production reached an estimated 260,000 metric tons
+  (Mo content) in 2024, a 6% increase from 248,000 metric tons in 2023. China dominates
+  global supply at approximately 42% of world output (110,000 t in 2024e), followed by
+  Peru (16%), Chile (15%), and the United States (13%). Of the five major producers —
+  China, Peru, Chile, the United States, and Mexico, which together provide 90% of
+  global supply — only China and the U.S. operate both primary molybdenum mines and
+  byproduct copper operations. The remaining major producers extract molybdenum entirely
+  as a byproduct of porphyry copper mining.
+
+  The U.S. molybdic oxide reference price averaged $41.72/kg in 2024 (13% below 2023's
+  $47/kg and well off the 2022 peak of $54.32/kg), while production increased — a
+  combination suggesting supply growth outpaced demand. U.S. mine production of 33,000
+  metric tons exceeds domestic apparent consumption of approximately 12,000 metric tons,
+  making the United States a net exporter with E-category import reliance. Recycling
+  of molybdenum from ferrous and superalloy scrap contributes as much as 30% of apparent
+  Mo supply, a significant secondary flow for which no separate refining process exists —
+  the Mo content of recycled alloys is reused in-situ. World reserves total approximately
+  15 million metric tons, concentrated in China (39%), the United States (23%), Peru (13%),
+  and Chile (9%).
+
+  A significant structural risk is emerging from the byproduct supply side. As porphyry
+  copper mines — which collectively provide the majority of global Mo output — experience
+  declining ore grades and approach end-of-life, byproduct Mo recovery per unit of copper
+  production will decline. USGS notes that several large porphyry copper mines are expected
+  to reach end-of-life in the mid-2030s, potentially tightening Mo supply unless primary
+  Mo mine expansions or new deposits fill the gap. Molybdenum is not designated as a
+  critical mineral by either the United States (2022 list) or the European Union (EU CRMA),
+  reflecting U.S. net-exporter status and globally diversified supply, but the medium-term
+  byproduct dynamics warrant monitoring. Clean energy infrastructure and global power
+  generation projects are expected to sustain demand for molybdenum-bearing high-strength
+  steels and corrosion-resistant alloys.
+
+sources:
+  - id: usgs_mcs_2025_molybdenum
+    title: Mineral Commodity Summaries 2025 — Molybdenum
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-molybdenum.pdf
+    retrieved: 2026-04-12
+    publication_year: 2025
+    source_tier: primary
