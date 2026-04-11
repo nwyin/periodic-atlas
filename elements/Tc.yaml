@@ -36,6 +36,7 @@ isotope_markets:
       shares:
         - country: NL
           share_pct: 25
+          confidence: low
           notes: |
             High Flux Reactor (HFR) at Petten. One of the three reactors
             supplying Curium's global Mo-99 distribution. Per industry
@@ -46,22 +47,27 @@ isotope_markets:
           source_id: wikipedia_tc99m
         - country: BE
           share_pct: 25
+          confidence: low
           notes: "BR2 reactor in Mol. Second primary Mo-99 source."
           source_id: wikipedia_tc99m
         - country: ZA
           share_pct: 20
+          confidence: low
           notes: "SAFARI-1 reactor."
           source_id: wikipedia_tc99m
         - country: AU
           share_pct: 15
+          confidence: low
           notes: "OPAL reactor operated by ANSTO."
           source_id: wikipedia_tc99m
         - country: PL
           share_pct: 5
+          confidence: low
           notes: "Maria reactor in Warsaw. Third reactor in Curium's supply chain."
           source_id: wikipedia_tc99m
         - country: ZZ
           share_pct: 10
+          confidence: low
           notes: |
             Other reactors listed by Wikipedia as active Mo-99 producers:
             MPR RSG-GAS (Indonesia), RA-3 (Argentina), LVR-15 (Czech

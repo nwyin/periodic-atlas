@@ -35,6 +35,7 @@ isotope_markets:
       shares:
         - country: US
           share_pct: 50
+          confidence: low
           notes: |
             Los Alamos National Laboratory (LANL). DOE NIDC re-established
             domestic production capability in 2012; product is "routinely
@@ -45,6 +46,7 @@ isotope_markets:
           source_id: doe_nidc_am241_product
         - country: ZZ
           share_pct: 50
+          confidence: low
           notes: "Non-US supply includes Russia (Mayak PA) and historically the UK (Sellafield). Shares not published."
           source_id: doe_nidc_am241_product
       completeness: top_producers_only
@@ -81,6 +83,7 @@ end_uses:
   uses:
     - application: smoke_detectors_ionization
       share_pct: 90
+      confidence: low
       notes: |
         Dominant end use by installation count (approximately 3 billion
         ionization smoke detectors installed globally, each containing
@@ -90,10 +93,12 @@ end_uses:
       source_id: inquiry_periodic_elements_2025
     - application: oil_well_logging_neutron_sources
       share_pct: 8
+      confidence: low
       notes: "Am-Be sources for porosity measurement in oil and gas formations."
       source_id: inquiry_periodic_elements_2025
     - application: research_and_calibration
       share_pct: 2
+      confidence: low
       notes: "Reference sources for alpha-spectrometer calibration and radiation metrology."
       source_id: inquiry_periodic_elements_2025
   completeness: complete

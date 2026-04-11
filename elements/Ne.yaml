@@ -36,6 +36,7 @@ production:
     shares:
       - country: UA
         share_pct: 50
+        confidence: low
         notes: |
           Asianometry (March 2022): "Over 50% of the world's neon is
           produced in Ukraine, which houses several large air separation
@@ -45,6 +46,7 @@ production:
         source_id: asianometry_neon_2022
       - country: CN
         share_pct: 30
+        confidence: low
         notes: |
           PLACEHOLDER. Chinese share grew after the 2022 Ukraine
           disruption; specific current percentage is not cited here.
@@ -53,6 +55,7 @@ production:
         source_id: inquiry_periodic_elements_2025
       - country: ZZ
         share_pct: 20
+        confidence: low
         notes: "Rest of world — US, EU, other Asian producers. Shares not cited."
         source_id: inquiry_periodic_elements_2025
     completeness: top_producers_only

@@ -82,6 +82,7 @@ production:
     shares:
       - country: CA
         share_pct: 20
+        confidence: low
         notes: |
           USGS p.75: "Canada, China, Japan, Slovakia, and the United States
           were the known principal producers of high-purity refined
@@ -93,15 +94,19 @@ production:
         source_id: usgs_mcs_2025_gallium
       - country: CN
         share_pct: 20
+        confidence: low
         source_id: usgs_mcs_2025_gallium
       - country: JP
         share_pct: 20
+        confidence: low
         source_id: usgs_mcs_2025_gallium
       - country: SK
         share_pct: 20
+        confidence: low
         source_id: usgs_mcs_2025_gallium
       - country: US
         share_pct: 20
+        confidence: low
         notes: "One facility in New York per USGS: 'One company in New York recovered and refined high-purity gallium from imported primary low-purity gallium metal and new scrap.'"
         source_id: usgs_mcs_2025_gallium
     completeness: top_producers_only

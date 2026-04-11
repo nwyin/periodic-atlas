@@ -226,6 +226,10 @@ class CountryShare(Cited):
     country: str = Field(pattern=r"^[A-Z]{2}$", description="ISO 3166-1 alpha-2 code.")
     share_pct: float = Field(ge=0, le=100)
     quantity: Quantity | None = Field(default=None, description="Absolute output matching the parent share type's dimension.")
+    confidence: Literal["high", "medium", "low"] = Field(
+        default="high",
+        description="Confidence in the share_pct and country attribution. Use 'low' for placeholder or derived-from-prose shares.",
+    )
     notes: str | None = None
 
 
@@ -264,6 +268,10 @@ class EndUse(Cited):
 
     application: str = Field(description="Snake_case slug; canonicalize across elements for cross-element queries.")
     share_pct: float = Field(ge=0, le=100)
+    confidence: Literal["high", "medium", "low"] = Field(
+        default="high",
+        description="Confidence in the share_pct attribution. Use 'low' for placeholder or inquiry-doc-derived shares.",
+    )
     notes: str | None = None
 
 
