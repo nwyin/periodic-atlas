@@ -1,0 +1,745 @@
+symbol: P
+atomic_number: 15
+name: phosphorus
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS reports phosphate rock on a "marketable phosphate rock" basis in thousand
+  metric tons (kt) unless otherwise noted. Marketable product is beneficiated
+  phosphate rock with P2O5 content suitable for phosphoric acid or elemental
+  phosphorus production. The primary grade indicator is % P2O5. US f.o.b. mine
+  price is a weighted average across all grades (mostly Florida soft rock and
+  Western phosphate pebble). Elemental phosphorus (white/yellow P4) is a
+  downstream processed form; USGS does not publish separate world production
+  statistics for elemental phosphorus in this chapter.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 240
+    unit: million_tonnes_per_year
+    form: concentrate
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 "World total (rounded)" 2024 estimate: 240,000 thousand
+      metric tons of marketable phosphate rock. Up slightly from 233,000 kt in
+      2023. Leading producers in descending order: China, Morocco, United States,
+      Russia.
+    source_id: usgs_mcs_2025_phosphate
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 45.8
+        quantity:
+          value: 110
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: |
+          China 2024 estimate: 110,000 kt (up from 105,000 kt in 2023). USGS
+          footnote: production data for large mines only, as reported by the
+          National Bureau of Statistics of China.
+        source_id: usgs_mcs_2025_phosphate
+      - country: MA
+        share_pct: 12.5
+        quantity:
+          value: 30
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Morocco 2024 estimate: 30,000 kt (down from 33,000 kt in 2023). OCP Group is the dominant state-owned producer."
+        source_id: usgs_mcs_2025_phosphate
+      - country: US
+        share_pct: 8.3
+        quantity:
+          value: 20
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: |
+          United States 2024 estimate: 20,000 kt. Five companies at 10 mines in
+          Florida, Idaho, North Carolina, and Utah. Up slightly from 19,600 kt
+          in 2023. Valued at ~$2 billion f.o.b. mine.
+        source_id: usgs_mcs_2025_phosphate
+      - country: RU
+        share_pct: 5.8
+        quantity:
+          value: 14
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Russia 2024 estimate: 14,000 kt (up from 13,000 kt in 2023). Capacity expansions ongoing."
+        source_id: usgs_mcs_2025_phosphate
+      - country: JO
+        share_pct: 5.0
+        quantity:
+          value: 12
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Jordan 2024 estimate: 12,000 kt (up from 11,500 kt in 2023). Jordan Phosphate Mines Company (JPMC) is the primary producer."
+        source_id: usgs_mcs_2025_phosphate
+      - country: SA
+        share_pct: 4.0
+        quantity:
+          value: 9.5
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Saudi Arabia 2024 estimate: 9,500 kt (down slightly from 9,900 kt in 2023). Maaden (Saudi Arabian Mining Company) is the primary operator."
+        source_id: usgs_mcs_2025_phosphate
+      - country: BR
+        share_pct: 2.2
+        quantity:
+          value: 5.3
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Brazil 2024 estimate: 5,300 kt (up from 5,280 kt in 2023). Capacity expansions expected by 2027."
+        source_id: usgs_mcs_2025_phosphate
+      - country: EG
+        share_pct: 2.1
+        quantity:
+          value: 5
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Egypt 2024 estimate: 5,000 kt (unchanged from 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: PE
+        share_pct: 2.1
+        quantity:
+          value: 5
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Peru 2024 estimate: 5,000 kt (up from 4,700 kt in 2023). Peru supplies 98% of US phosphate rock imports."
+        source_id: usgs_mcs_2025_phosphate
+      - country: TN
+        share_pct: 1.4
+        quantity:
+          value: 3.3
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Tunisia 2024 estimate: 3,300 kt (down from 3,600 kt in 2023). Compagnie des Phosphates de Gafsa (CPG) is the primary producer."
+        source_id: usgs_mcs_2025_phosphate
+      - country: VN
+        share_pct: 1.1
+        quantity:
+          value: 2.6
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Vietnam 2024 estimate: 2,600 kt (up from 2,500 kt in 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: SY
+        share_pct: 0.8
+        quantity:
+          value: 2
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Syria 2024 estimate: 2,000 kt (up sharply from 800 kt in 2023), reflecting partial recovery of production disrupted by civil conflict."
+        source_id: usgs_mcs_2025_phosphate
+      - country: AU
+        share_pct: 1.0
+        quantity:
+          value: 2.5
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Australia 2024 estimate: 2,500 kt (unchanged from 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: SN
+        share_pct: 1.0
+        quantity:
+          value: 2.5
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Senegal 2024 estimate: 2,500 kt (up from 2,400 kt in 2023). New mine development planned post-2027."
+        source_id: usgs_mcs_2025_phosphate
+      - country: IL
+        share_pct: 1.0
+        quantity:
+          value: 2.3
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Israel 2024 estimate: 2,300 kt (down slightly from 2,310 kt in 2023). ICL Group (Israel Chemicals) is the primary producer."
+        source_id: usgs_mcs_2025_phosphate
+      - country: ZA
+        share_pct: 0.9
+        quantity:
+          value: 2.2
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "South Africa 2024 estimate: 2,200 kt (up from 1,720 kt in 2023). Foskor is the primary producer."
+        source_id: usgs_mcs_2025_phosphate
+      - country: DZ
+        share_pct: 0.8
+        quantity:
+          value: 2
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Algeria 2024 estimate: 2,000 kt (unchanged from 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: KZ
+        share_pct: 0.7
+        quantity:
+          value: 1.7
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Kazakhstan 2024 estimate: 1,700 kt (up from 1,500 kt in 2023). Capacity expansions expected by 2027."
+        source_id: usgs_mcs_2025_phosphate
+      - country: IN
+        share_pct: 0.7
+        quantity:
+          value: 1.6
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "India 2024 estimate: 1,600 kt (down from 1,800 kt in 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: TG
+        share_pct: 0.6
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Togo 2024 estimate: 1,500 kt (down from 1,610 kt in 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: FI
+        share_pct: 0.4
+        quantity:
+          value: 0.9
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Finland 2024 estimate: 900 kt (down slightly from 906 kt in 2023). Siilinjärvi apatite mine (Yara/EuroChem) produces from igneous deposits."
+        source_id: usgs_mcs_2025_phosphate
+      - country: UZ
+        share_pct: 0.4
+        quantity:
+          value: 0.9
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Uzbekistan 2024 estimate: 900 kt (up from 800 kt in 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: TR
+        share_pct: 0.3
+        quantity:
+          value: 0.8
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Turkey 2024 estimate: 800 kt (down from 960 kt in 2023)."
+        source_id: usgs_mcs_2025_phosphate
+      - country: MX
+        share_pct: 0.2
+        quantity:
+          value: 0.36
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Mexico 2024 estimate: 360 kt (down from 439 kt in 2023). Capacity expansions expected by 2027."
+        source_id: usgs_mcs_2025_phosphate
+      - country: ZZ
+        share_pct: 0.3
+        quantity:
+          value: 0.77
+          unit: million_tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_phosphate
+        notes: "USGS 'Other countries' row: 770 kt in 2024 (down from 730 kt in 2023)."
+        source_id: usgs_mcs_2025_phosphate
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 74000000000
+    unit: tonnes
+    form: concentrate
+    approximate: true
+    notes: |
+      USGS MCS 2025 world total reserves: 74,000,000 thousand metric tons =
+      74 billion metric tons. Reserves for China and Saudi Arabia were revised
+      based on company and Government reports.
+    source_id: usgs_mcs_2025_phosphate
+  resources:
+    value: 300000000000000
+    unit: tonnes
+    form: ore
+    approximate: true
+    notes: |
+      USGS MCS 2025: "World resources of phosphate rock are more than 300 billion
+      tons." Phosphate rock resources occur principally as sedimentary marine
+      phosphorites. The largest sedimentary deposits are in northern Africa,
+      Middle East, China, and the United States. Significant igneous occurrences
+      are in Brazil, Canada, Finland, Russia, and South Africa. Large phosphate
+      resources also identified on continental shelves and seamounts in the Atlantic
+      and Pacific Oceans. "There are no imminent shortages of phosphate rock."
+    source_id: usgs_mcs_2025_phosphate
+  reserves_by_country:
+    shares:
+      - country: MA
+        share_pct: 67.6
+        quantity:
+          value: 50000000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: |
+          Morocco: 50,000,000 thousand metric tons = 50 billion metric tons.
+          By far the world's largest reserve holder (~68% of global reserves),
+          concentrated primarily in the Khouribga, Gantour, and Meskala basins
+          plus Western Saharan deposits managed by OCP Group.
+        source_id: usgs_mcs_2025_phosphate
+      - country: CN
+        share_pct: 5.0
+        quantity:
+          value: 3700000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "China: 3,700,000 thousand metric tons = 3.7 billion metric tons. Revised per USGS based on company and Government reports."
+        source_id: usgs_mcs_2025_phosphate
+      - country: EG
+        share_pct: 3.8
+        quantity:
+          value: 2800000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Egypt: 2,800,000 thousand metric tons = 2.8 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: TN
+        share_pct: 3.4
+        quantity:
+          value: 2500000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Tunisia: 2,500,000 thousand metric tons = 2.5 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: DZ
+        share_pct: 3.0
+        quantity:
+          value: 2200000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Algeria: 2,200,000 thousand metric tons = 2.2 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: RU
+        share_pct: 3.2
+        quantity:
+          value: 2400000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Russia: 2,400,000 thousand metric tons = 2.4 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: BR
+        share_pct: 2.2
+        quantity:
+          value: 1600000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Brazil: 1,600,000 thousand metric tons = 1.6 billion metric tons. Igneous apatite deposits."
+        source_id: usgs_mcs_2025_phosphate
+      - country: ZA
+        share_pct: 2.0
+        quantity:
+          value: 1500000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "South Africa: 1,500,000 thousand metric tons = 1.5 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: AU
+        share_pct: 1.5
+        quantity:
+          value: 1100000000
+          unit: tonnes
+          form: concentrate
+          notes: |
+            Australia: 1,100,000 thousand metric tons = 1.1 billion metric tons (USGS
+            estimate). USGS footnote: JORC-compliant or equivalent reserves were
+            120 million tons (120,000 thousand metric tons).
+          source_id: usgs_mcs_2025_phosphate
+        source_id: usgs_mcs_2025_phosphate
+      - country: US
+        share_pct: 1.4
+        quantity:
+          value: 1000000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "United States: 1,000,000 thousand metric tons = 1 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: JO
+        share_pct: 1.4
+        quantity:
+          value: 1000000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Jordan: 1,000,000 thousand metric tons = 1 billion metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: FI
+        share_pct: 1.4
+        quantity:
+          value: 1000000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Finland: 1,000,000 thousand metric tons = 1 billion metric tons. Igneous apatite deposits at Siilinjärvi."
+        source_id: usgs_mcs_2025_phosphate
+      - country: SA
+        share_pct: 1.4
+        quantity:
+          value: 1000000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Saudi Arabia: 1,000,000 thousand metric tons = 1 billion metric tons. Revised per USGS based on company and Government reports."
+        source_id: usgs_mcs_2025_phosphate
+      - country: IN
+        share_pct: 0.0
+        quantity:
+          value: 31000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "India: 31,000 thousand metric tons = 31 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: IL
+        share_pct: 0.1
+        quantity:
+          value: 60000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Israel: 60,000 thousand metric tons = 60 million metric tons. Negev Desert deposits."
+        source_id: usgs_mcs_2025_phosphate
+      - country: KZ
+        share_pct: 0.4
+        quantity:
+          value: 260000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Kazakhstan: 260,000 thousand metric tons = 260 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: MX
+        share_pct: 0.0
+        quantity:
+          value: 30000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Mexico: 30,000 thousand metric tons = 30 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: PE
+        share_pct: 0.3
+        quantity:
+          value: 210000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Peru: 210,000 thousand metric tons = 210 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: SN
+        share_pct: 0.1
+        quantity:
+          value: 50000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Senegal: 50,000 thousand metric tons = 50 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: SY
+        share_pct: 0.3
+        quantity:
+          value: 250000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Syria: 250,000 thousand metric tons = 250 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: TG
+        share_pct: 0.0
+        quantity:
+          value: 30000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Togo: 30,000 thousand metric tons = 30 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: TR
+        share_pct: 0.1
+        quantity:
+          value: 71000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Turkey: 71,000 thousand metric tons = 71 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: UZ
+        share_pct: 0.1
+        quantity:
+          value: 100000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Uzbekistan: 100,000 thousand metric tons = 100 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: VN
+        share_pct: 0.0
+        quantity:
+          value: 30000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "Vietnam: 30,000 thousand metric tons = 30 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+      - country: ZZ
+        share_pct: 1.1
+        quantity:
+          value: 800000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_phosphate
+        notes: "USGS 'Other countries' row: 800,000 thousand metric tons = 800 million metric tons."
+        source_id: usgs_mcs_2025_phosphate
+    completeness: complete
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: sedimentary_marine_phosphorite
+    typical_concentration_pct: 28.0
+    notes: |
+      The dominant ore type globally. Sedimentary marine phosphorites form the
+      principal deposits in Morocco, Western Sahara, Middle East (Jordan, Syria,
+      Saudi Arabia, Israel), North Africa (Tunisia, Algeria, Egypt), and the
+      United States (Florida, Idaho). P2O5 content of ore typically 10–35%;
+      marketable product is beneficiated to >28% P2O5.
+    source_id: usgs_mcs_2025_phosphate
+  - substrate: igneous_apatite_rock
+    notes: |
+      Significant igneous apatite deposits are found in Brazil (Araxa), Canada
+      (Quebec), Finland (Siilinjärvi), Russia (Khibiny/Kovdor), and South Africa
+      (Phalaborwa). These carbonatite-hosted or intrusive deposits often have
+      lower P2O5 grades than sedimentary phosphorites but favorable mineralogy.
+    source_id: usgs_mcs_2025_phosphate
+
+substitutes:
+  - application: agriculture_fertilizers
+    availability: none
+    notes: |
+      USGS MCS 2025 Substitutes paragraph: "There are no substitutes for
+      phosphorus in agriculture." Phosphorus is an essential macronutrient
+      (one of NPK) and cannot be replaced by any other element in biological
+      metabolism. This makes phosphate rock uniquely inelastic among bulk
+      industrial minerals.
+    source_id: usgs_mcs_2025_phosphate
+
+end_uses:
+  uses:
+    - application: fertilizer_phosphoric_acid
+      share_pct: 95
+      notes: |
+        USGS MCS 2025: more than 95% of US phosphate rock mined was used to
+        manufacture wet-process phosphoric acid and superphosphoric acid,
+        which served as intermediate feedstocks for granular and liquid
+        ammonium phosphate fertilizers (DAP, MAP) and animal feed supplements.
+        About 25% of wet-process phosphoric acid was exported as DAP, MAP,
+        merchant-grade phosphoric acid, and other fertilizer products.
+      source_id: usgs_mcs_2025_phosphate
+    - application: industrial_elemental_phosphorus
+      share_pct: 5
+      notes: |
+        USGS MCS 2025: the balance of phosphate rock mined was for manufacture
+        of elemental phosphorus for industrial applications, primarily glyphosate
+        herbicide production and other organophosphorus compounds. This is a
+        residual estimate (100% minus the >95% fertilizer share).
+      source_id: usgs_mcs_2025_phosphate
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Phosphate rock (Annex II Critical Raw Material) and phosphorus (Annex I
+    Strategic Raw Material) are both listed in EU Regulation 2024/1252 (the
+    Critical Raw Materials Act). Phosphate rock has appeared on EU CRM lists
+    since 2014 owing to high supply concentration (Morocco alone holds ~68% of
+    global reserves) and the lack of any agricultural substitute. The United
+    States is NOT on the US 2022 Final Critical Minerals List; the US has
+    domestic production meeting most of its own needs and runs only a 13% net
+    import reliance (2024 estimate).
+
+prices:
+  - year: 2024
+    value: 100
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: US average value f.o.b. mine 2024e = $100 per metric ton (estimated). Marketable phosphate rock, weighted value, all grades."
+    source_id: usgs_mcs_2025_phosphate
+  - year: 2023
+    value: 101
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: US average value f.o.b. mine 2023e = $101 per metric ton (estimated)."
+    source_id: usgs_mcs_2025_phosphate
+  - year: 2022
+    value: 99
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: US average value f.o.b. mine 2022e = $99 per metric ton (estimated)."
+    source_id: usgs_mcs_2025_phosphate
+  - year: 2021
+    value: 83
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: US average value f.o.b. mine 2021 = $83 per metric ton."
+    source_id: usgs_mcs_2025_phosphate
+  - year: 2020
+    value: 76
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: US average value f.o.b. mine 2020 = $76 per metric ton."
+    source_id: usgs_mcs_2025_phosphate
+
+geopolitical_events:
+  - date: 2024-09
+    event: "Hurricanes Helene and Milton cause flooding at phosphate plants and mines in central Florida"
+    impact: |
+      Several facilities closed for as much as 2 weeks in September–October 2024;
+      fertilizer production and shipments halted during that period. US production
+      for 2024 still estimated at 20,000 kt (slightly up from 19,600 kt in 2023),
+      suggesting disruption was temporary rather than year-altering.
+    source_id: usgs_mcs_2025_phosphate
+  - date: 2024-01
+    event: "Two new mines and purified phosphoric acid plants under development in Quebec, Canada for LFP battery cathode material"
+    impact: |
+      One project targets lithium-iron-phosphate (LFP) battery cathode active
+      material (CAM); the other targets high-purity phosphoric acid for both LFP
+      CAM and food/industrial applications. In 2024, >90% of all LFP batteries
+      were manufactured in China, creating pressure to diversify supply chains.
+    source_id: usgs_mcs_2025_phosphate
+  - date: 2024-01
+    event: "Global P2O5 fertilizer consumption estimated at 47.5 million tons in 2024; projected to reach 51.8 million tons by 2028"
+    impact: |
+      Growth driven by Asia and South America. Global phosphate production
+      capacity (P2O5) projected to reach 70.6 million tons by 2028 vs 65.0 million
+      tons in 2024. Capacity expansions in Brazil, Kazakhstan, Mexico, Morocco,
+      and Russia expected by 2027; new projects in Canada, Congo (Brazzaville),
+      Guinea-Bissau, and Senegal planned post-2027.
+    source_id: usgs_mcs_2025_phosphate
+  - date: 2024-01
+    event: "US imports of phosphate rock rise 35% to 3.5 million tons in 2024; Peru remains dominant source at 98%"
+    impact: |
+      Net import reliance was 13% in 2024 (vs 16% in 2023). Peru accounts for
+      98% of US imports; Morocco supplies the remaining 2%. US producers stopped
+      exporting phosphate rock in 2003.
+    source_id: usgs_mcs_2025_phosphate
+
+narrative: |
+  Phosphate rock is the foundational raw material for modern agriculture: more than
+  95% of mined output is converted to phosphoric acid for fertilizers (DAP, MAP,
+  TSP) and animal feed supplements, with a small fraction directed to elemental
+  phosphorus synthesis for industrial uses such as glyphosate herbicide. Global
+  mine production reached an estimated 240 million metric tons in 2024, up slightly
+  from 233 million metric tons in 2023. China (46%), Morocco (12.5%), the United
+  States (8.3%), Russia (5.8%), and Jordan (5.0%) are the five largest producers.
+  The US f.o.b. mine price was approximately $100 per metric ton in 2024, barely
+  changed from 2023, after rising sharply to $99–101 in 2022–2023 from $76 in 2020.
+
+  Morocco's geopolitical position is uniquely consequential: it holds approximately
+  68% of proven global reserves (50 billion of 74 billion metric tons), primarily in
+  its Western Sahara deposits managed by state-owned OCP Group. This single-country
+  concentration — unmatched in any other major commodity — creates a structural
+  dependency for net-importing regions. The EU depends substantially on imports for
+  its fertilizer sector, and has listed phosphate rock on its Critical Raw Materials
+  list continuously since 2014. In the 2024 EU Critical Raw Materials Act
+  (Regulation 2024/1252), both phosphate rock (Annex II Critical) and phosphorus
+  (Annex I Strategic) are designated, reflecting food security concerns. There is
+  no agricultural substitute: phosphorus is biologically irreplaceable as a plant
+  macronutrient.
+
+  The emerging demand driver is the LFP (lithium-iron-phosphate) battery sector.
+  In 2024, more than 90% of all LFP batteries were manufactured in China, but new
+  high-purity phosphoric acid plants are under development in Quebec, Canada targeting
+  LFP cathode active material. Phosphate production disruptions in central Florida
+  from Hurricanes Helene and Milton (September–October 2024) temporarily shut
+  multiple facilities but had limited annual-scale impact. World phosphate resources
+  exceed 300 billion metric tons with no imminent shortage horizon; the structural
+  challenge is geographic concentration of reserves and political stability of supply
+  routes rather than absolute scarcity.
+
+sources:
+  - id: usgs_mcs_2025_phosphate
+    title: Mineral Commodity Summaries 2025 — Phosphate Rock
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-phosphate.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act (Annexes I and II)"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401252
+    retrieved: 2026-04-11
+    publication_year: 2024
+    source_tier: primary
