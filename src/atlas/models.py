@@ -386,10 +386,24 @@ class Source(BaseModel):
 
 
 class SubstituteClaim(Cited):
-    """A claim that a substitute exists for this element in some application."""
+    """A claim that a substitute exists for this element in some application.
+
+    `application` is a required snake_case slug that should match the
+    `EndUse.application` vocabulary used elsewhere on the element, so that
+    substitute availability can be joined to end-use share. Use "general"
+    when the claim spans every application (e.g. USGS "substitutes
+    paragraph" style claims that list many alternatives at once).
+    """
 
     model_config = ConfigDict(extra="forbid")
 
+    application: str = Field(
+        description=(
+            "Snake_case application slug. Should match an EndUse.application value "
+            "where possible so substitutes can be joined to end-use shares. Use "
+            "'general' for claims that cover the whole element."
+        )
+    )
     availability: Literal["none", "partial", "full"]
     notes: str
 
@@ -569,14 +583,63 @@ class Reserves(BaseModel):
         return self
 
 
-class OwnershipConcentration(Cited):
-    """Single-company or single-facility concentration."""
+class OwnershipStake(Cited):
+    """A single entity's ownership / control stake in a stage of the supply chain."""
 
     model_config = ConfigDict(extra="forbid")
 
-    top_entity: str | None = None
-    top_entity_share_pct: float | None = Field(default=None, ge=0, le=100)
+    entity: str = Field(description="Company, state actor, consortium, or facility holding the stake.")
+    share_pct: float = Field(ge=0, le=100)
     notes: str | None = None
+
+
+class OwnershipConcentration(BaseModel):
+    """Entity-level concentration at some stage of the supply chain.
+
+    Populated two ways:
+      1. Itemized: `stakes` holds one or more `OwnershipStake` entries, each
+         citing its own `source_id`. Sum of stake shares must not exceed 100.
+      2. Unitemized: `stakes` is empty and the outer `notes` prose carries the
+         claim. The outer `source_id` field is then REQUIRED so the prose claim
+         is still traceable.
+
+    The `source_id` field on the container is optional when stakes are listed
+    (each stake carries its own), required when stakes are empty.
+    """
+
+    model_config = ConfigDict(extra="forbid")
+
+    stakes: list[OwnershipStake] = Field(default_factory=list)
+    completeness: ShareListCompleteness = "partial"
+    notes: str | None = None
+    source_id: str | None = Field(
+        default=None,
+        description=(
+            "Container-level source citation. Required when `stakes` is empty "
+            "so the prose claim in `notes` is traceable. Optional when each stake "
+            "carries its own source_id."
+        ),
+    )
+
+    @model_validator(mode="after")
+    def check_stakes_sum(self) -> "OwnershipConcentration":
+        if not self.stakes:
+            return self
+        total = sum(s.share_pct for s in self.stakes)
+        if total > 100.5:
+            raise ValueError(
+                f"OwnershipConcentration.stakes sum to {total:.1f}%, exceeds 100% ceiling"
+            )
+        return self
+
+    @model_validator(mode="after")
+    def require_source_when_no_stakes(self) -> "OwnershipConcentration":
+        if not self.stakes and not self.source_id:
+            raise ValueError(
+                "OwnershipConcentration with no stakes must set `source_id` on the container "
+                "so the prose `notes` claim is traceable."
+            )
+        return self
 
 
 # =============================================================================
@@ -755,6 +818,8 @@ class Element(BaseModel):
 
         if self.ownership_concentration:
             check(self.ownership_concentration.source_id, "ownership_concentration")
+            for i, st in enumerate(self.ownership_concentration.stakes):
+                check(st.source_id, f"ownership_concentration.stakes[{i}]")
 
         for i, im in enumerate(self.isotope_markets):
             if im.production_quantity:

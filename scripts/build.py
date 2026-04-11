@@ -318,6 +318,7 @@ def flatten_substitutes(elements: list[Element]) -> pd.DataFrame:
             rows.append({
                 "symbol": el.symbol,
                 "snapshot_year": el.snapshot_year,
+                "application": sub.application,
                 "availability": sub.availability,
                 "notes": sub.notes,
                 "source_id": sub.source_id,

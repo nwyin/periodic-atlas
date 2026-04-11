@@ -68,7 +68,8 @@ feedstock_origins:
     source_id: doe_nidc_am241_landing
 
 substitutes:
-  - availability: partial
+  - application: general
+    availability: partial
     notes: |
       Photoelectric smoke detectors can replace ionization smoke detectors
       but are slower to respond to flaming fires. Ni-63 is an alternative

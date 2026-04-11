@@ -86,7 +86,8 @@ isotope_markets:
       OECD/NEA data during step 3.
 
 substitutes:
-  - availability: partial
+  - application: medical_imaging_spect
+    availability: partial
     notes: |
       For specific scans, alternatives include F-18 FDG (for PET), In-111,
       I-123/I-131, and Ga-67/Ga-68 — but for the majority of the ~20

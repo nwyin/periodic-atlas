@@ -52,7 +52,7 @@ def _rich_element():
             FeedstockOrigin(substrate="copper_anode_slimes", typical_concentration_pct=0.1, source_id="test_source"),
         ],
         substitutes=[
-            SubstituteClaim(availability="partial", notes="CIGS competes with CdTe in thin-film solar", source_id="test_source"),
+            SubstituteClaim(application="solar_cdte", availability="partial", notes="CIGS competes with CdTe in thin-film solar", source_id="test_source"),
         ],
         reserves=Reserves(
             economic_reserves=Quantity(

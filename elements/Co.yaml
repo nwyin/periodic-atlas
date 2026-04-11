@@ -295,7 +295,8 @@ feedstock_origins:
     source_id: usgs_mcs_2025_cobalt
 
 substitutes:
-  - availability: partial
+  - application: batteries_nmc_cathodes
+    availability: partial
     notes: |
       USGS MCS 2025 substitutes paragraph: "The cobalt contents of
       lithium-ion batteries, the leading global use for cobalt, are being

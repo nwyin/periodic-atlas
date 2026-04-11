@@ -79,7 +79,8 @@ feedstock_origins:
     source_id: asianometry_neon_2022
 
 substitutes:
-  - availability: none
+  - application: duv_excimer_laser_buffer_gas
+    availability: none
     notes: |
       For the dominant semiconductor lithography application (ArF 193 nm
       excimer laser buffer gas), there is no effective substitute — the

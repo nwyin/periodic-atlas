@@ -93,7 +93,8 @@ feedstock_origins:
     source_id: inquiry_periodic_elements_2025
 
 substitutes:
-  - availability: partial
+  - application: general
+    availability: partial
     notes: |
       Ferrite magnets substitute for NdFeB in low-performance applications but
       with dramatically lower energy density. No substitute exists for the

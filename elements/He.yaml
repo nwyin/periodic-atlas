@@ -183,7 +183,8 @@ feedstock_origins:
     source_id: usgs_mcs_2025_helium
 
 substitutes:
-  - availability: partial
+  - application: general
+    availability: partial
     notes: |
       USGS MCS 2025 substitutes paragraph: "Nothing substitutes for helium
       in cryogenic applications if temperatures below −429 degrees

@@ -145,7 +145,8 @@ feedstock_origins:
     source_id: usgs_mcs_2025_gallium
 
 substitutes:
-  - availability: partial
+  - application: rf_power_amplifiers
+    availability: partial
     notes: |
       USGS substitutes paragraph: "Liquid crystals made from organic
       compounds are used in visual displays as substitutes for LEDs.
