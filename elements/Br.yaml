@@ -1,0 +1,419 @@
+symbol: Br
+atomic_number: 35
+name: bromine
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Bromine (Br₂) is a volatile, reddish-brown liquid at room temperature (density
+  3.10 g/mL, boiling point 58.8 °C). Commercial bromine is produced by oxidising
+  bromide-rich brines with chlorine gas; elemental bromine is then stripped by steam
+  or air and condensed. Trade forms are: liquid elemental bromine in corrosion-resistant
+  lead-lined or polyethylene-lined steel drums and tank cars; and a wide range of
+  compounds including hydrobromic acid, sodium bromide, ammonium bromide, zinc bromide,
+  calcium bromide, and organic derivatives.
+
+  USGS MCS 2025 reports all production and trade data in metric tons of bromine content,
+  not gross weight of compounds, unless otherwise specified. U.S. domestic production
+  is withheld (W) to avoid disclosing company proprietary data; the published world
+  total therefore excludes U.S. output. Prices cited are the average unit value of
+  U.S. imports on a cost, insurance, and freight (CIF) basis, in U.S. dollars per
+  kilogram of bromine content.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 400000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 p.50–51: world total mine production (bromine content) 2024e =
+      400,000 metric tons (rounded), up from 395,000 metric tons in 2023.
+      IMPORTANT: this world total EXCLUDES U.S. production, which is withheld (W) to
+      avoid disclosing company proprietary data. The actual world total including U.S.
+      production is higher; the United States operates two bromine-producing companies
+      in Arkansas that "account for a large percentage of world production capacity."
+      The true global total is therefore not published in USGS MCS 2025.
+    source_id: usgs_mcs_2025_bromine
+  mining_by_country:
+    shares:
+      - country: IL
+        share_pct: 35.0
+        quantity:
+          value: 140000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: |
+          Israel 2024e: 140,000 metric tons (reported). Produced from Dead Sea brine
+          operations. Down slightly from 143,000 in 2023.
+        source_id: usgs_mcs_2025_bromine
+      - country: JO
+        share_pct: 30.0
+        quantity:
+          value: 120000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: |
+          Jordan 2024e: 120,000 metric tons (estimated). Produced from Dead Sea brine.
+          Up from 116,000 in 2023.
+        source_id: usgs_mcs_2025_bromine
+      - country: CN
+        share_pct: 25.0
+        quantity:
+          value: 100000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: |
+          China 2024e: 100,000 metric tons (estimated). Down slightly from 101,000 in
+          2023. China produces from coastal brine and salt lake deposits.
+        source_id: usgs_mcs_2025_bromine
+      - country: JP
+        share_pct: 5.0
+        quantity:
+          value: 20000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: "Japan 2024e: 20,000 metric tons (estimated). Unchanged from 2023."
+        source_id: usgs_mcs_2025_bromine
+      - country: UA
+        share_pct: 2.0
+        quantity:
+          value: 8000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: "Ukraine 2024e: 8,000 metric tons (estimated). Unchanged from 2023."
+        source_id: usgs_mcs_2025_bromine
+      - country: IN
+        share_pct: 1.75
+        quantity:
+          value: 7000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: "India 2024e: 7,000 metric tons (estimated). Up slightly from 6,900 in 2023."
+        source_id: usgs_mcs_2025_bromine
+    completeness: partial
+  notes: |
+    World total (2024e, rounded) = 400,000 metric tons bromine content, up from
+    395,000 in 2023. The USGS MCS 2025 world total EXCLUDES U.S. production (withheld).
+    Named-country share percentages are computed as fractions of the published ex-U.S.
+    world total (400,000 t) and do not represent true global market shares. The United
+    States is one of the world's leading producers (two companies in Arkansas extract
+    bromine from the Smackover Formation underground brines) but its production is not
+    publicly reported. Completeness is "partial" accordingly. Israel (35%) and Jordan
+    (30%) dominate the published total; China is third at 25%.
+
+reserves:
+  reserves_by_country:
+    shares:
+      - country: US
+        share_pct: 95.74
+        quantity:
+          value: 11000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: |
+          U.S. reserves: 11,000,000 metric tons bromine content. Reflects the extensive
+          underground brine deposits of the Smackover Formation in Arkansas and other
+          sedimentary basins. Dominates quantifiable world reserves.
+        source_id: usgs_mcs_2025_bromine
+      - country: JO
+        share_pct: 3.13
+        quantity:
+          value: 360000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: "Jordan 360,000 metric tons. Reserves revised based on company reports per USGS MCS 2025."
+        source_id: usgs_mcs_2025_bromine
+      - country: CN
+        share_pct: 1.13
+        quantity:
+          value: 130000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_bromine
+        notes: "China 130,000 metric tons bromine content reserves."
+        source_id: usgs_mcs_2025_bromine
+    completeness: partial
+  notes: |
+    USGS MCS 2025 world total reserves are reported as "Large" (not a quantified figure).
+    Quantified country reserves: U.S. = 11,000,000 t; Jordan = 360,000 t; China = 130,000 t.
+    Israel reserves are also listed as "Large" (not quantified); India, Japan, and Ukraine
+    are NA (not available). Share percentages are computed against the quantifiable subset
+    (U.S. + Jordan + China = 11,490,000 t); completeness is "partial" because Israel's
+    "Large" reserves and the unquantified U.S. portion of the world total are excluded.
+    World resources are effectively unlimited relative to current production — seawater
+    contains an estimated 100 trillion tons of bromine at ~65 ppm concentration, and the
+    Dead Sea alone is estimated to hold 1 billion tons (USGS MCS 2025 World Resources).
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: underground_bromide_brine
+    notes: |
+      The primary commercial feedstock is bromide-rich underground brine (formation water)
+      extracted from sedimentary basins. In the United States, two companies operate brine
+      wells in the Smackover Formation of Arkansas; extracted brine is treated with chlorine
+      gas to oxidize bromide to elemental bromine, which is then stripped and condensed.
+      Israel and Jordan extract bromine from Dead Sea brine, which is among the world's
+      most concentrated natural bromine sources; the Dead Sea contains an estimated
+      1 billion tons of bromine per USGS MCS 2025.
+    source_id: usgs_mcs_2025_bromine
+  - substrate: seawater
+    notes: |
+      Bromine is recovered from seawater as a co-product during salt evaporation in some
+      facilities. Seawater contains approximately 65 parts per million bromine (an estimated
+      100 trillion tons globally per USGS MCS 2025), an effectively inexhaustible feedstock.
+      However, seawater-based bromine recovery is a minor commercial route compared with
+      concentrated underground brine extraction, owing to the high energy and processing
+      costs of treating dilute seawater.
+    source_id: usgs_mcs_2025_bromine
+
+substitutes:
+  - application: chemical_reactions_and_sanitation
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes: "Chlorine and iodine may be substituted for bromine
+      in a few chemical reactions and for sanitation purposes." Chlorine is the most
+      common disinfection/oxidation substitute; it is cheaper and more widely available.
+      Iodine serves specific sanitation niches such as water purification tablets.
+      Substitution is application-specific and not universal.
+    source_id: usgs_mcs_2025_bromine
+  - application: oil_gas_well_completion
+    availability: none
+    notes: |
+      USGS MCS 2025 substitutes: "There are no comparable substitutes for bromine in
+      various oil- and gas-well-completion and packer applications." Clear brine fluids
+      based on zinc bromide (ZnBr₂), calcium bromide (CaBr₂), and calcium
+      chloride/bromide blends are used as high-density completion and workover fluids
+      in deep oil/gas wells. No equivalent non-bromine chemistry meets the density,
+      solids-free, and non-damaging reservoir requirements.
+    source_id: usgs_mcs_2025_bromine
+  - application: flame_retardants
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes: "aluminum hydroxide, magnesium hydroxide, organic
+      chlorine compounds, and phosphorus compounds can be substituted for bromine as
+      fire retardants in some uses." Mineral hydroxide flame retardants (aluminium
+      trihydrate, magnesium dihydroxide) are effective in wire/cable and polyolefin
+      applications but require higher loading levels and sacrifice mechanical properties.
+      Organophosphate flame retardants serve as partial substitutes in some thermoplastic
+      and thermoset applications. Substitution is application-specific and often involves
+      performance trade-offs.
+    source_id: usgs_mcs_2025_bromine
+
+end_uses:
+  uses:
+    - application: brominated_flame_retardants
+      share_pct: 35
+      confidence: low
+      notes: |
+        USGS MCS 2025 identifies brominated flame retardants (BFRs) as one of the two
+        leading global applications of bromine. No explicit percentage is given. BFRs are
+        incorporated into plastics, electronics, textiles, and construction materials.
+        Major BFR classes include tetrabromobisphenol A (TBBPA, listed by HTS
+        2908.19.2500), decabromodiphenyl oxide (HTS 2909.30.0700), and dibromoneopentyl
+        glycol (HTS 2905.59.3000). Share estimate (~35%) is approximate; no explicit
+        percentage stated in the chapter.
+      source_id: usgs_mcs_2025_bromine
+    - application: clear_brine_drilling_fluids
+      share_pct: 35
+      confidence: low
+      notes: |
+        USGS MCS 2025 identifies clear brine drilling fluids as one of the two leading
+        global applications. High-density clear brines (zinc bromide, calcium bromide,
+        calcium chloride/bromide blends) are used as completion and workover fluids in
+        oil and gas wells where solids-free, high-density fluids are required to control
+        reservoir pressure without damaging formations. U.S. export destinations (Guyana
+        29%, Saudi Arabia 25%, UK 14% through July 2024) reflect oil/gas industry demand.
+        Share estimate (~35%) is approximate.
+      source_id: usgs_mcs_2025_bromine
+    - application: industrial_uses_and_intermediates
+      share_pct: 15
+      confidence: low
+      notes: |
+        USGS MCS 2025 notes "industrial uses, as intermediates" among bromine applications.
+        Includes organobromide pharmaceutical intermediates, agricultural chemistry,
+        specialty chemicals such as hydrobromic acid (HTS 2811.19.3000), and mercury
+        emission control from coal-fired power plants (bromine oxidises elemental mercury
+        for scrubber capture).
+      source_id: usgs_mcs_2025_bromine
+    - application: water_treatment
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 notes water treatment among bromine applications. Bromine-based
+        biocides (e.g., BCDMH: bromo-chloro-dimethylhydantoin) are used in cooling
+        towers, swimming pools, and industrial water systems as algaecides and
+        bactericides. Bromine offers advantages over chlorine at high pH and elevated
+        temperature.
+      source_id: usgs_mcs_2025_bromine
+    - application: other_uses
+      share_pct: 5
+      confidence: low
+      notes: |
+        Other uses include zinc-bromine flow batteries for grid energy storage (bromine
+        can be completely recovered and reused at end of battery life per USGS chapter),
+        photographic chemicals (silver bromide), and remaining food/beverage additive
+        uses. Brominated vegetable oil (BVO) was revoked as an authorised U.S. food
+        additive in July 2024.
+      source_id: usgs_mcs_2025_bromine
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Bromine is not included on the US 2022 Critical Minerals List, the EU Critical Raw
+    Materials list (CRM 2023), or the EU Strategic Raw Materials list (CRMA 2024).
+    Although U.S. imports are heavily concentrated from Israel (83% of gross import
+    weight, 2020–23 average) and Jordan (9%), the United States itself is a major
+    domestic producer with substantial capacity and large reserves (11 million tonnes).
+    Net import reliance was "E" (net exporter) in 2020–21 and <25% in 2022–24, indicating
+    domestic production substantially offsets import exposure. World resources are
+    effectively unlimited given bromine's abundance in seawater (~100 trillion tonnes).
+    Industrial tier 4 reflects bromine's high-volume commercial status without the
+    supply-chain concentration risk that would warrant critical designation.
+
+prices:
+  - year: 2024
+    value: 2.70
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average unit value of U.S. imports (CIF),
+      2024e = $2.70 per kilogram bromine content. Approximately 8% less than the 2023
+      value of $2.92/kg. Export unit value was approximately $3.30/kg in 2024 per
+      chapter events text (vs $3.28/kg in 2023).
+    source_id: usgs_mcs_2025_bromine
+  - year: 2023
+    value: 2.92
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. imports (CIF), 2023 = $2.92/kg bromine content. Export unit value approximately $3.28/kg."
+    source_id: usgs_mcs_2025_bromine
+  - year: 2022
+    value: 3.29
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. imports (CIF), 2022 = $3.29/kg bromine content."
+    source_id: usgs_mcs_2025_bromine
+  - year: 2021
+    value: 2.85
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. imports (CIF), 2021 = $2.85/kg bromine content."
+    source_id: usgs_mcs_2025_bromine
+  - year: 2020
+    value: 2.67
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. imports (CIF), 2020 = $2.67/kg bromine content."
+    source_id: usgs_mcs_2025_bromine
+
+geopolitical_events:
+  - date: "2024-07"
+    event: "US FDA revokes authorization for brominated vegetable oil (BVO) as a food additive in beverages"
+    impact: |
+      FDA revocation published in Federal Register v.89, no.128, July 3, 2024 (p.55040–55045).
+      BVO had been used since the 1920s to stabilize fruit flavoring oils in beverages; it
+      lost GRAS classification in 1970 and was capped at 15 ppm but continued in use until
+      a collaborative study found no safe dietary level could be established. The revocation
+      eliminates a long-standing bromine end use in food and beverage manufacturing. The
+      volume impact is minor relative to total bromine demand but reflects ongoing regulatory
+      pressure on brominated food additives.
+    source_id: usgs_mcs_2025_bromine
+  - date: "2024-01"
+    event: "US imports of bromine and bromine compounds increase 20% from 2023; Israel accounts for 87% of gross imports through July 2024"
+    impact: |
+      Total U.S. imports (bromine content) rose to 61,000 metric tons in 2024e from
+      50,800 in 2023, driven by U.S. apparent consumption exceeding 2023 levels. Israel
+      remained the dominant import supplier (87% of gross weight through July 2024),
+      followed by Jordan (10%). The average import unit value fell 8% to $2.70/kg from
+      $2.92/kg in 2023. Together, bromides and bromide oxides of ammonium, calcium, or
+      zinc and bromides of sodium or potassium accounted for more than 90% of total
+      imported bromine in both gross weight and bromine content.
+    source_id: usgs_mcs_2025_bromine
+  - date: "2024-01"
+    event: "US exports of bromine and compounds decrease 13% from 2023; leading destinations are Guyana (29%), Saudi Arabia (25%), and United Kingdom (14%)"
+    impact: |
+      U.S. export volume fell to 34,000 metric tons (bromine content) in 2024e from
+      38,900 in 2023. Export destinations through July 2024 were dominated by Guyana
+      (29%), reflecting clear brine fluid demand for Guyana's expanding deepwater oil
+      sector; Saudi Arabia (25%) and the United Kingdom (14%) reflect Arabian Gulf and
+      North Sea drilling fluid demand. Export unit value held at ~$3.30/kg vs $3.28/kg
+      in 2023.
+    source_id: usgs_mcs_2025_bromine
+  - date: "2024-01"
+    event: "USGS revises Jordan bromine reserves downward based on company reports in MCS 2025"
+    impact: |
+      Jordan reserves revised in USGS MCS 2025 based on company data. Jordan and Israel
+      together operate the Dead Sea region brine complex, which represents the largest
+      natural bromine concentration outside U.S. Smackover Formation reserves. The revision
+      does not materially alter the supply outlook but updates the published reserve base.
+    source_id: usgs_mcs_2025_bromine
+
+narrative: |
+  Bromine is a high-volume halogen commodity produced from bromide-rich underground brines
+  and natural salt lakes. The global supply chain is structured around three geographic
+  clusters: the Smackover Formation brine deposits of Arkansas (United States), the Dead
+  Sea evaporite system shared by Israel and Jordan, and Chinese coastal brine deposits.
+  U.S. production — operated by two companies in Arkansas — is withheld by USGS to protect
+  proprietary data, but the chapter notes that the U.S. "account[s] for a large percentage
+  of world production capacity." The published world total (excluding U.S.) was 400,000
+  metric tons in 2024, led by Israel (140,000 t, 35% of ex-U.S. total), Jordan (120,000 t,
+  30%), and China (100,000 t, 25%).
+
+  The two dominant global end uses are brominated flame retardants (BFRs) and clear brine
+  drilling fluids for oil and gas well completion. BFRs provide fire safety performance in
+  electronics, plastics, textiles, and construction materials and face ongoing regulatory
+  scrutiny in many jurisdictions. Clear brine fluids — particularly zinc bromide and calcium
+  bromide blends — are irreplaceable in high-density, solids-free well completion and workover
+  operations; USGS explicitly notes no comparable substitutes exist for this application.
+  U.S. export patterns (Guyana 29%, Saudi Arabia 25%, UK 14% through mid-2024) reflect
+  drilling fluid demand in active oil-field jurisdictions, particularly Guyana's rapidly
+  expanding deepwater sector. Other significant uses include industrial chemical intermediates,
+  water treatment biocides, and emerging applications in zinc-bromine flow batteries for
+  energy storage.
+
+  The regulatory environment is an active factor in bromine demand. The FDA's July 2024
+  revocation of brominated vegetable oil (BVO) authorization eliminated a long-standing
+  food-additive application. U.S. import sources are heavily concentrated — Israel supplied
+  83% of gross import weight (2020–23 average), with Jordan at 9% and China at 3% — but
+  this geopolitical dependence is partially offset by substantial domestic U.S. production
+  capacity and large Arkansas reserves (11 million tonnes, roughly 96% of the quantifiable
+  world reserve total). Net import reliance was "E" (net exporter) in 2020–21, shifting
+  to under 25% in 2022–24 as domestic consumption grew. Seawater, containing an estimated
+  100 trillion tonnes of bromine at 65 ppm, represents an effectively unlimited long-run
+  resource; the Dead Sea alone holds an estimated 1 billion tonnes. Supply constraints are
+  economic (extraction and processing costs), not geological.
+
+sources:
+  - id: usgs_mcs_2025_bromine
+    title: Mineral Commodity Summaries 2025 — Bromine
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-bromine.pdf
+    retrieved: 2026-04-12
+    publication_year: 2025
+    source_tier: primary
