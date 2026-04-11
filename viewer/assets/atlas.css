@@ -1,0 +1,151 @@
+/* Atlas — minimal system-font stylesheet */
+:root {
+  --bg:       #ffffff;
+  --surface:  #f6f7f8;
+  --border:   #d4d8de;
+  --text:     #1a1c1e;
+  --muted:    #6b7280;
+  --accent:   #2563eb;
+
+  --badge-commercial:    #16a34a;
+  --badge-no-commercial: #6b7280;
+  --badge-us-critical:   #dc2626;
+  --badge-eu-crm:        #7c3aed;
+  --badge-eu-strategic:  #9333ea;
+  --badge-doe:           #d97706;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg:      #0f1117;
+    --surface: #1a1d26;
+    --border:  #2d3140;
+    --text:    #e8eaf0;
+    --muted:   #9ca3af;
+    --accent:  #60a5fa;
+  }
+}
+
+*, *::before, *::after { box-sizing: border-box; }
+
+body {
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  font-size: 15px;
+  line-height: 1.6;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  padding: 0 1rem;
+}
+
+a { color: var(--accent); text-decoration: none; }
+a:hover { text-decoration: underline; }
+
+.container { max-width: 1100px; margin: 0 auto; padding: 1.5rem 0; }
+
+/* ── header ── */
+header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bottom: 1.5rem; }
+header h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
+header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
+
+/* ── stats row ── */
+.stats-row {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1.75rem;
+}
+.stat-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.75rem 1rem;
+}
+.stat-card .stat-value { font-size: 2rem; font-weight: 700; line-height: 1; }
+.stat-card .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
+
+/* ── element grid / table ── */
+.element-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
+.element-table th {
+  text-align: left;
+  padding: 0.5rem 0.6rem;
+  border-bottom: 2px solid var(--border);
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.element-table td {
+  padding: 0.45rem 0.6rem;
+  border-bottom: 1px solid var(--border);
+  vertical-align: middle;
+}
+.element-table tr:hover td { background: var(--surface); }
+.symbol-cell { font-weight: 700; font-size: 1rem; }
+.atomic-num  { color: var(--muted); font-size: 0.8rem; }
+
+/* ── badges ── */
+.badge {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  padding: 0.15em 0.5em;
+  border-radius: 4px;
+  color: #fff;
+  margin-right: 0.2em;
+  white-space: nowrap;
+}
+.badge-commercial    { background: var(--badge-commercial); }
+.badge-no-commercial { background: var(--badge-no-commercial); }
+.badge-us-critical   { background: var(--badge-us-critical); }
+.badge-eu-crm        { background: var(--badge-eu-crm); }
+.badge-eu-strategic  { background: var(--badge-eu-strategic); }
+.badge-doe           { background: var(--badge-doe); color: #fff; }
+
+/* ── element page ── */
+.el-header {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+.el-symbol { font-size: 3rem; font-weight: 800; line-height: 1; }
+.el-name   { font-size: 1.6rem; font-weight: 300; }
+.el-meta   { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+
+.narrative-block {
+  background: var(--surface);
+  border-left: 4px solid var(--accent);
+  border-radius: 0 6px 6px 0;
+  padding: 0.75rem 1rem;
+  margin: 1.25rem 0;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  line-height: 1.65;
+}
+
+/* ── chart placeholders ── */
+.chart-placeholder {
+  border: 2px dashed var(--border);
+  border-radius: 6px;
+  padding: 2rem;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.88rem;
+  margin: 1.25rem 0;
+}
+
+/* ── sources ── */
+.sources-section h2 { font-size: 1rem; margin-bottom: 0.5rem; }
+.sources-section ul { padding-left: 1.25rem; font-size: 0.85rem; line-height: 1.8; }
+.sources-section li .source-id { color: var(--muted); font-family: monospace; margin-right: 0.4em; }
+
+/* ── footer ── */
+footer {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  padding-top: 0.75rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+footer a { color: var(--muted); }
