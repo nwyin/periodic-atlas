@@ -1,0 +1,665 @@
+symbol: Zr
+atomic_number: 40
+name: zirconium
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports world mine production of zirconium mineral concentrates in
+  "thousand metric tons, gross weight." ZrO2 content is calculated as 65% of gross
+  weight (footnote 1 in the chapter). US salient statistics data for imports and
+  exports of zirconium metal (unwrought, powder, wrought) and hafnium are in metric
+  tons. Zircon prices are in US dollars per metric ton gross weight. Zirconium sponge
+  (Kroll-process metal) prices are in US dollars per kilogram, ex-works China (source:
+  Argus Media Group, Argus Non-Ferrous Markets, annual average). The primary commercial
+  forms are zircon sand (ZrSiO4, 65% ZrO2 by weight), zirconia (ZrO2) ceramic powders
+  and stabilised zirconia, nuclear-grade zirconium sponge and tube (Zircaloy/Zr-4 alloy),
+  and chemical-grade zirconium compounds (zirconyl chloride, zirconium oxychloride, etc.).
+  The USGS publishes a combined "Zirconium and Hafnium" chapter; this file covers
+  zirconium; a companion Hf.yaml covers hafnium.
+
+production:
+- reporting_year: 2024
+  stream: mineral_concentrate
+  mine:
+    value: 1500000
+    unit: tonnes_per_year
+    form: concentrate
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total mine production (marketable, gross weight) 2024e:
+      1,500,000 tonnes (1,500 kt), up 4% from 1,440,000 tonnes in 2023. ZrO2 content
+      at 65% of gross weight = 975,000 tonnes ZrO2 per year. The world total is stated
+      as "an estimated 1.5 million tons gross weight." US production is suppressed as
+      <100,000 tonnes ZrO2 content to avoid disclosing company proprietary data.
+    source_id: usgs_mcs_2025_zr_hf
+  mining_by_country:
+    shares:
+      - country: AU
+        share_pct: 33.33
+        quantity:
+          value: 500000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          Australia 2024e: 500,000 tonnes gross weight (500 kt). Same as 2023. Australia
+          is the world's largest producer of zircon and a leading global exporter of
+          zirconium mineral concentrates. Reserves revised 2024. JORC-compliant or
+          equivalent reserves were 20 million tons ZrO2 content (footnote 11).
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZA
+        share_pct: 20.00
+        quantity:
+          value: 300000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          South Africa 2024e: 300,000 tonnes gross weight (300 kt), up from 289,000 kt in
+          2023. South Africa is the second-largest producer and a leading global exporter
+          of zirconium mineral concentrates. Reserves revised 2024.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: MZ
+        share_pct: 10.67
+        quantity:
+          value: 160000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          Mozambique 2024e: 160,000 tonnes gross weight, up from 144,000 kt in 2023.
+          Exploration and development projects ongoing. Also a leading rutile producer.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: US
+        share_pct: 6.67
+        quantity:
+          value: 100000
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          US 2024e: <100,000 tonnes ZrO2 content, published as 100 kt (rounded to nearest
+          100,000 t to avoid disclosing company proprietary data). One company mines
+          heavy-mineral sands in Florida and Georgia; a second processes mineral sands
+          tailings in California.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: CN
+        share_pct: 6.67
+        quantity:
+          value: 100000
+          unit: tonnes_per_year
+          form: concentrate
+          approximate: true
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          China 2024e: 100,000 tonnes gross weight (100 kt), same as 2023.
+          China is the world's leading importer of zirconium mineral concentrates
+          (including zircon in mixed and separated heavy-mineral concentrates).
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ID
+        share_pct: 6.33
+        quantity:
+          value: 95000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Indonesia 2024e: 95,000 tonnes gross weight, same as 2023. Reserves: NA."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: SN
+        share_pct: 4.00
+        quantity:
+          value: 60000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          Senegal 2024e: 60,000 tonnes gross weight, up from 48,000 kt in 2023.
+          Senegal was one of the top three import sources for US zirconium mineral
+          concentrates (2020-23 average).
+        source_id: usgs_mcs_2025_zr_hf
+      - country: MG
+        share_pct: 2.00
+        quantity:
+          value: 30000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Madagascar 2024e: 30,000 tonnes gross weight, down from 34,000 kt in 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: SL
+        share_pct: 1.33
+        quantity:
+          value: 20000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Sierra Leone 2024e: 20,000 tonnes gross weight, down from 28,000 kt in 2023."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: KE
+        share_pct: 1.33
+        quantity:
+          value: 20000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Kenya 2024e: 20,000 tonnes gross weight, same as 2023. Reserves revised 2024."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZZ
+        share_pct: 7.33
+        quantity:
+          value: 110000
+          unit: tonnes_per_year
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "USGS 'Other countries' row 2024e: 110,000 tonnes gross weight, up from 86,000 kt in 2023."
+        source_id: usgs_mcs_2025_zr_hf
+    completeness: complete
+  notes: |
+    World mine production of zirconium mineral concentrates increased ~4% from
+    1,440,000 tonnes (2023) to 1,500,000 tonnes (2024e) gross weight. Australia and
+    South Africa together account for ~53% of world production and are the leading
+    global exporters. Named-country entries sum to 1,495,000 tonnes; difference
+    from 1,500,000 world total is rounding. US production is separately disclosed only
+    as <100,000 tonnes ZrO2 content per USGS proprietary-data rounding policy.
+
+reserves:
+  economic_reserves:
+    value: 70000000
+    unit: tonnes
+    form: concentrate
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 world total reserves: ">70,000" thousand metric tons ZrO2 content
+      = >70,000,000 tonnes ZrO2 content. The stated world total is a minimum; the sum
+      of named-country reserves plus "Other countries" (excluding Indonesia: NA) is
+      73,067,000 tonnes ZrO2 content. Reserves for Australia, Kenya, Madagascar, and
+      South Africa were revised based on company and Government reports.
+    source_id: usgs_mcs_2025_zr_hf
+  resources:
+    value: 14000000
+    unit: tonnes
+    form: concentrate
+    approximate: true
+    notes: |
+      USGS MCS 2025: US resources of zircon include about 14 million tons associated
+      with titanium resources in heavy-mineral-sand deposits. Phosphate rock and sand
+      and gravel deposits could potentially yield substantial zircon as a byproduct.
+      No quantitative world resource estimate is published in the chapter.
+    source_id: usgs_mcs_2025_zr_hf
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 75.28
+        quantity:
+          value: 55000000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: |
+          Australia: 55,000,000 tonnes ZrO2 content. Revised 2024. JORC-compliant or
+          equivalent reserves were 20 million tons ZrO2 content per footnote 11 —
+          the larger USGS figure includes resources equivalent to Measured and Indicated
+          categories beyond strict economic reserves.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZA
+        share_pct: 7.25
+        quantity:
+          value: 5300000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "South Africa: 5,300,000 tonnes ZrO2 content. Revised 2024."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZZ
+        share_pct: 7.80
+        quantity:
+          value: 5700000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "USGS 'Other countries' reserves row: 5,700,000 tonnes ZrO2 content."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: SN
+        share_pct: 3.56
+        quantity:
+          value: 2600000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Senegal: 2,600,000 tonnes ZrO2 content."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: MG
+        share_pct: 2.87
+        quantity:
+          value: 2100000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Madagascar: 2,100,000 tonnes ZrO2 content. Revised 2024."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: MZ
+        share_pct: 2.05
+        quantity:
+          value: 1500000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Mozambique: 1,500,000 tonnes ZrO2 content."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: US
+        share_pct: 0.68
+        quantity:
+          value: 500000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "United States: 500,000 tonnes ZrO2 content."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: SL
+        share_pct: 0.40
+        quantity:
+          value: 290000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Sierra Leone: 290,000 tonnes ZrO2 content."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: CN
+        share_pct: 0.10
+        quantity:
+          value: 72000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "China: 72,000 tonnes ZrO2 content."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: KE
+        share_pct: 0.01
+        quantity:
+          value: 5000
+          unit: tonnes
+          form: concentrate
+          source_id: usgs_mcs_2025_zr_hf
+        notes: "Kenya: 5,000 tonnes ZrO2 content. Revised 2024."
+        source_id: usgs_mcs_2025_zr_hf
+    completeness: partial
+  notes: |
+    Indonesia has NA (not available) reserves per USGS MCS 2025, so the list is partial.
+    Share percentages are calculated against the sum of all disclosed values
+    (73,067,000 tonnes ZrO2 content) rather than the stated world total (">70,000,000 t")
+    since the latter is a stated lower bound. Australia dominates with ~75% of identified
+    world reserves, reflecting the scale of Murray Basin and Western Australia heavy-mineral-sand
+    deposits. JORC-compliant reserves for Australia are stated separately as 20 million tonnes
+    ZrO2 content (footnote 11), substantially lower than the USGS figure which includes
+    resources equivalent to M&I mineral resources.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: zircon_sand
+    typical_concentration_pct: 65.0
+    notes: |
+      Zircon (ZrSiO4, zirconium silicate) is the dominant commercial source of zirconium.
+      Typical ZrO2 content by weight is 65% (USGS MCS 2025 footnote 1). Zircon is recovered
+      from heavy-mineral-sand (HMS) deposits by surface mining or dredging, then separated by
+      gravity, magnetic, and electrostatic methods. Major producing districts include Eastern
+      Strands (South Africa), Murray Basin and Eucla Basin (Australia), Mozambique coast,
+      Senegal coast, and Florida/Georgia Trail Ridge (US).
+    source_id: usgs_mcs_2025_zr_hf
+  - substrate: heavy_mineral_sand_concentrate
+    notes: |
+      Heavy-mineral-sand (HMS) operations mine coastal or aeolian beach-sand deposits
+      containing suites of heavy minerals: zircon, ilmenite, rutile, leucoxene, monazite,
+      and garnet. Zircon is co-recovered alongside titanium mineral concentrates (ilmenite
+      and rutile). US domestic operations in Florida and Georgia recover zircon as a coproduct
+      of HMS mining; abrasive sands, monazite, and titanium mineral concentrates are also
+      coproducts.
+    source_id: usgs_mcs_2025_zr_hf
+  - substrate: baddeleyite
+    notes: |
+      Baddeleyite (ZrO2) is a minor zirconium mineral found in carbonatite complexes,
+      most notably at Palabora (South Africa) where it is recovered as a byproduct of copper
+      mining. Significantly smaller production volumes than zircon. USGS MCS 2025 notes that
+      world resources of hafnium are associated with those of zircon and baddeleyite.
+    source_id: usgs_mcs_2025_zr_hf
+
+substitutes:
+  - application: foundry_sand
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Chromite and olivine can be used instead of zircon for some foundry
+      applications." Zircon sand is valued for its high melting point (~2,200 °C), low thermal
+      expansion, and chemical stability; chromite and olivine sand have lower thermal conductivity
+      and are generally lower cost but inferior in dimensional precision for high-quality castings.
+    source_id: usgs_mcs_2025_zr_hf
+  - application: refractories
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Dolomite and spinel refractories can also substitute for zircon in certain
+      high-temperature applications." Zirconia and zircon refractories are preferred for glass-contact
+      and steel-contact applications; dolomite and magnesia-spinel bricks are alternatives in
+      rotary cement kilns and some steelmaking vessels but cannot match zirconia's performance in
+      glass tanks.
+    source_id: usgs_mcs_2025_zr_hf
+  - application: nuclear_cladding
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Niobium (columbium), stainless steel, and tantalum provide limited
+      substitution in nuclear applications." Zirconium alloys (Zircaloy-2, Zircaloy-4, ZIRLO,
+      M5) are the dominant cladding material for light-water reactor fuel rods due to extremely
+      low thermal-neutron absorption cross-section; stainless steel has much higher neutron
+      absorption and is used only in older reactors or research reactors where thermal efficiency
+      is less critical.
+    source_id: usgs_mcs_2025_zr_hf
+  - application: chemical_process_equipment
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Titanium and synthetic materials may substitute in some chemical processing
+      plant applications." Zirconium metal offers exceptional corrosion resistance in hydrochloric
+      and sulfuric acid environments; titanium Grade 2/7 and high-alloy stainless steels (duplex,
+      904L) or fluoropolymer liners can substitute in less-aggressive chemical environments.
+    source_id: usgs_mcs_2025_zr_hf
+
+end_uses:
+  uses:
+    - application: ceramics_and_opacifiers
+      share_pct: 45
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists ceramics and opacifiers among the "leading end uses for zircon."
+        Zircon and stabilized zirconia are used as opacifiers in ceramic glazes (tiles,
+        sanitaryware, tableware), as zirconia toughened alumina (ZTA) and partially stabilized
+        zirconia (PSZ) for structural ceramics, and as zirconia for solid oxide fuel cells
+        (SOFCs) and thermal barrier coatings. Estimated ~45% of zircon/zirconia consumption.
+        No explicit percentage given in the USGS chapter.
+      source_id: usgs_mcs_2025_zr_hf
+    - application: refractories
+      share_pct: 20
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists refractories among the "leading end uses for zircon." Zircon and
+        zirconia-based refractories are used in glass-melting tanks (AZS blocks — alumina-
+        zirconia-silica), steel-casting nozzles and ladles, and kiln furniture. Estimated ~20%
+        of consumption. No explicit percentage given.
+      source_id: usgs_mcs_2025_zr_hf
+    - application: foundry_sand
+      share_pct: 15
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists foundry sand among the "leading end uses for zircon." Zircon sand
+        is used as a moulding and core material for investment casting and sand casting of steel,
+        iron, and non-ferrous alloys, valued for its high fusion point and low thermal expansion.
+        Estimated ~15% of consumption.
+      source_id: usgs_mcs_2025_zr_hf
+    - application: chemicals
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists chemicals among the end uses for zircon/zirconium. Zirconium chemicals
+        (zirconyl chloride, ammonium zirconium carbonate, zirconium acetate, etc.) are used in
+        antiperspirants, paper wet-strength additives, textile water-repellent treatments, and
+        catalysts. Estimated ~10% of consumption.
+      source_id: usgs_mcs_2025_zr_hf
+    - application: nuclear_and_chemical_process_metal
+      share_pct: 5
+      confidence: low
+      notes: |
+        USGS MCS 2025: "The leading consumers of zirconium metal are the chemical process and
+        nuclear energy industries." Nuclear applications use hafnium-free zirconium alloys (Zircaloy,
+        ZIRLO, M5) for fuel rod cladding and structural components in light-water reactors.
+        Chemical process uses include corrosion-resistant vessels, heat exchangers, and piping.
+        Estimated ~5% of total Zr consumption (zirconium metal is a small fraction of total Zr use).
+      source_id: usgs_mcs_2025_zr_hf
+    - application: other_uses
+      share_pct: 5
+      confidence: low
+      notes: |
+        USGS MCS 2025 other end uses include abrasives, metal alloys, and welding rod coatings.
+        Zircon abrasives are used for surface finishing; zirconium metal alloys appear in specialty
+        applications; zircon-bearing flux coatings improve weld quality. Estimated ~5% residual.
+      source_id: usgs_mcs_2025_zr_hf
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2022
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Zirconium is on the US 2022 Final List of Critical Minerals (Federal Register Vol. 87,
+    No. 37, February 22, 2022). The US Department of Defense Government Stockpile includes
+    zirconium, with FY2025 potential acquisitions of 2,300 tons per USGS MCS 2025 Appendix B.
+    Zirconium is not currently on the EU Critical Raw Materials Act (Regulation EU 2024/1252)
+    Annex I (Strategic Raw Materials) or Annex II (Critical Raw Materials) lists; hafnium
+    (associated with zirconium production) is listed separately in those annexes.
+    US criticality reflects strategic use in nuclear fuel rod cladding and concentration of
+    global zircon production in Australia (~33%) and South Africa (~20%), with China as the
+    dominant importer and downstream processor.
+
+prices:
+  - year: 2024
+    value: 2000
+    unit: usd_per_tonne
+    form: concentrate
+    basis: china_domestic
+    region: CN
+    notes: |
+      USGS MCS 2025 salient statistics: Zircon premium grade, cost, insurance, and freight
+      (CIF), China 2024e: $2,000 per metric ton (gross weight). Source: Fastmarkets IM.
+      Down from $2,160/t in 2023.
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2023
+    value: 2160
+    unit: usd_per_tonne
+    form: concentrate
+    basis: china_domestic
+    region: CN
+    notes: "Zircon premium grade CIF China 2023: $2,160/t. Source: Fastmarkets IM."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2022
+    value: 2170
+    unit: usd_per_tonne
+    form: concentrate
+    basis: china_domestic
+    region: CN
+    notes: "Zircon premium grade CIF China 2022: $2,170/t. Source: Fastmarkets IM."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2021
+    value: 1580
+    unit: usd_per_tonne
+    form: concentrate
+    basis: china_domestic
+    region: CN
+    notes: "Zircon premium grade CIF China 2021: $1,580/t. Source: Fastmarkets IM."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2020
+    value: 1490
+    unit: usd_per_tonne
+    form: concentrate
+    basis: china_domestic
+    region: CN
+    notes: "Zircon premium grade CIF China 2020: $1,490/t. Source: Fastmarkets IM."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2024
+    value: 2100
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: Zircon imported unit value 2024e: $2,100/t.
+      Unit value based on landed-duty-paid US imports for consumption from Australia,
+      Senegal, and South Africa. Up from $1,980/t in 2023.
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2023
+    value: 1980
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "Zircon imported unit value (US) 2023: $1,980/t (landed-duty-paid, from AU/SN/ZA)."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2022
+    value: 2130
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "Zircon imported unit value (US) 2022: $2,130/t."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2021
+    value: 1450
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "Zircon imported unit value (US) 2021: $1,450/t."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2020
+    value: 1400
+    unit: usd_per_tonne
+    form: concentrate
+    basis: us_domestic
+    region: US
+    notes: "Zircon imported unit value (US) 2020: $1,400/t."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2024
+    value: 25
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    region: CN
+    notes: |
+      USGS MCS 2025 salient statistics: Zirconium sponge, ex-works China, 2024e: $25/kg.
+      Source: Argus Media Group, Argus Non-Ferrous Markets, annual average. Same as 2020
+      and 2021 levels; down from $30/kg in 2022.
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2023
+    value: 28
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    region: CN
+    notes: "Zr sponge ex-works China 2023: $28/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2022
+    value: 30
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    region: CN
+    notes: "Zr sponge ex-works China 2022: $30/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2021
+    value: 25
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    region: CN
+    notes: "Zr sponge ex-works China 2021: $25/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2020
+    value: 25
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    region: CN
+    notes: "Zr sponge ex-works China 2020: $25/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_zr_hf
+
+geopolitical_events:
+  - date: "2024"
+    event: "Global zircon mine production increases 4% to estimated 1.5 million tonnes gross weight"
+    impact: |
+      World mine production of zirconium mineral concentrates rose approximately 4% year-on-year
+      in 2024, with South Africa and Mozambique posting notable gains (South Africa: 289 kt → 300 kt;
+      Mozambique: 144 kt → 160 kt). Senegal also grew (48 kt → 60 kt). Sierra Leone declined
+      (28 kt → 20 kt). Australia held steady at 500 kt. Growth reflects resumed investment in
+      HMS mining and processing capacity.
+    source_id: usgs_mcs_2025_zr_hf
+  - date: "2024"
+    event: "US zirconium mineral concentrate imports decrease; exports increase in 2024"
+    impact: |
+      US imports of zirconium mineral concentrates (ZrO2 content) fell from 20,400 tonnes (2023)
+      to 19,000 tonnes (2024e), continuing a multi-year decline from the 31,900-tonne peak in 2022.
+      US exports of Zr mineral concentrates rose from 13,200 to 16,000 tonnes, with the US
+      remaining a net importer on a ZrO2-content basis. Imports were dominated by South Africa
+      (46%), Australia (35%), and Senegal (16%) over 2020-23.
+    source_id: usgs_mcs_2025_zr_hf
+  - date: "2024"
+    event: "US exports of unwrought hafnium fall ~80% after near-fourfold increase in 2023"
+    impact: |
+      US unwrought hafnium exports declined from 58 tonnes (2023) to 10 tonnes (2024e), reversing
+      the large increase seen in 2023. US imports of unwrought hafnium also declined ~30% from
+      70 to 50 tonnes. Leading global exporters of unwrought hafnium were China, Germany, and
+      the Netherlands in 2024. The price of unwrought hafnium fell from $6,150/kg (2023) to
+      $4,600/kg (2024e) after a sharp 2022-23 spike.
+    source_id: usgs_mcs_2025_zr_hf
+  - date: "2024"
+    event: "Exploration and development projects advance in Australia, Mozambique, South Africa, Sri Lanka, and Tanzania"
+    impact: |
+      Several companies continued exploration and development of new zirconium mineral concentrate
+      projects across multiple jurisdictions. These projects, when commissioned, could add meaningful
+      supply to a market dominated by Australia and South Africa. Sri Lanka and Tanzania are among
+      the potential new entrants.
+    source_id: usgs_mcs_2025_zr_hf
+  - date: "2025"
+    event: "US Government Stockpile targets acquisition of 2,300 tons of zirconium in FY2025"
+    impact: |
+      USGS MCS 2025 Appendix B lists FY2025 potential stockpile acquisitions of 2,300 short tons
+      of zirconium, confirming zirconium's ongoing strategic designation in the US defense industrial
+      base. This reflects the critical role of nuclear-grade zirconium alloys in reactor fuel
+      rod cladding and the US policy priority to reduce import reliance for strategic materials.
+    source_id: usgs_mcs_2025_zr_hf
+
+narrative: |
+  Zirconium's commercial identity is almost entirely shaped by zircon (ZrSiO4), the primary ore
+  mineral. Global zircon mine production reached approximately 1.5 million tonnes gross weight
+  in 2024 (975,000 tonnes ZrO2 content), concentrated in Australia (~33%) and South Africa (~20%),
+  with Mozambique, the United States, China, and Indonesia as secondary producers. China is the
+  world's dominant importer of zirconium mineral concentrates, importing zircon in both mixed and
+  separated heavy-mineral-sand concentrates to feed its large ceramics and chemical industries.
+  The key end uses for zircon are ceramics and opacifiers (tile glazes, zirconia structural
+  ceramics), refractories (glass tank AZS blocks, steel-casting nozzles), foundry sand (precision
+  casting moulds), and zirconium chemicals (paper, textiles, antiperspirants). Zirconium metal —
+  produced via chlorination of zircon and Kroll reduction — is a minor but strategic stream,
+  consumed primarily by the nuclear industry for hafnium-free fuel rod cladding alloys (Zircaloy,
+  ZIRLO, M5) and by the chemical process industry for corrosion-resistant vessels.
+
+  Zircon prices rose sharply in 2021-2022 (from ~$1,490 to $2,170/t CIF China) before plateauing
+  near $2,000-2,100/t in 2023-2024. Zirconium sponge prices (ex-works China) have been remarkably
+  stable at $25-30/kg over the 2020-2024 period, reflecting both the relatively thin traded market
+  for nuclear-grade sponge and steady demand from the nuclear fuel cycle. In contrast, associated
+  hafnium prices spiked dramatically from $781/kg (2021) to $6,150/kg (2023) before partially
+  correcting to $4,600/kg (2024e), driven by tight supply and strategic demand for Hf in
+  superalloys and nuclear control rods.
+
+  The United States designates zirconium as a critical mineral (2022 Federal Register) and
+  maintains an active government stockpile program targeting 2,300 tons of acquisitions in FY2025.
+  Net import reliance for US zirconium mineral concentrates was below 25% in 2024, as domestic
+  HMS mining in Florida and Georgia covers a significant share of domestic refinery feed. Australia
+  and South Africa control the majority of world reserves (>75% of the identified 73 million tonnes
+  ZrO2), providing geographic concentration risk for downstream processors in Asia and Europe who
+  rely on imported zircon. Exploration and development activity in Mozambique, Tanzania, Sri Lanka,
+  and elsewhere indicates continued supply expansion through the late 2020s.
+
+sources:
+  - id: usgs_mcs_2025_zr_hf
+    title: Mineral Commodity Summaries 2025 — Zirconium and Hafnium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-zirconium-hafnium.pdf
+    retrieved: 2026-04-12
+    publication_year: 2025
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 22, 2022)"
+    publisher: US Department of the Interior / US Geological Survey
+    url: https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals
+    retrieved: 2026-04-12
+    publication_year: 2022
+    source_tier: primary
