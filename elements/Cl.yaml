@@ -1,0 +1,476 @@
+symbol: Cl
+atomic_number: 17
+name: chlorine
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Chlorine (Cl₂) is produced commercially by electrolysis of sodium chloride
+  brine (chlor-alkali process: 2 NaCl + 2 H₂O → Cl₂ + H₂ + 2 NaOH), with
+  ~95% of global production using membrane-cell or diaphragm-cell electrolysis
+  and the remainder from hydrochloric acid oxidation and specialty routes.
+  Commercial forms are: liquefied Cl₂ gas in pressurised railcars, ISO tanks,
+  or cylinders; and on-site or off-site generated sodium hypochlorite (bleach)
+  solutions. The chlor-alkali process co-produces caustic soda (NaOH) and
+  hydrogen gas (H₂) in fixed stoichiometric ratios (1 tonne Cl₂ : 1.128 tonne
+  NaOH : 0.028 tonne H₂), meaning chlorine and caustic soda supply are
+  structurally linked.
+
+  USGS MCS 2025 does not publish a dedicated chlorine commodity chapter;
+  the closest USGS primary source is the salt chapter at
+  https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf, since sodium
+  chloride brine is the dominant feedstock (chlor-alkali accounts for ~40%
+  of global salt consumption). World chlorine production statistics are
+  published by trade associations: Euro Chlor for Europe and the Chlorine
+  Institute for North America. All production quantities are in million metric
+  tonnes of Cl₂ equivalent per year. Salt prices in USGS MCS are in USD per
+  metric tonne of salt (not chlorine); dedicated chlorine merchant-market
+  prices are not reported in USGS MCS 2025.
+
+production:
+- reporting_year: 2024
+  refined:
+    value: 75.0
+    unit: million_tonnes_per_year
+    form: unspecified
+    approximate: true
+    confidence: medium
+    notes: |
+      World chlorine production estimated at approximately 75 million metric
+      tonnes Cl₂ per year for 2024. This aggregate is constructed from
+      authoritative regional data (Euro Chlor: Europe 8.04 Mt in 2024;
+      Chlorine Institute / EPA: US ~11 Mt circa 2022) plus capacity-based
+      estimates for China (~35 Mt derived from apparent caustic soda
+      consumption ~40.6 Mt using stoichiometry 40.6 × 70.9/80 ≈ 35.4 Mt Cl₂)
+      and rest of world. An independent cross-check via USGS MCS 2025 salt
+      feedstock gives 280 Mt world salt × 40% chlor-alkali share × 0.607
+      NaCl→Cl₂ mass factor ≈ 68 Mt, consistent with the 75 Mt estimate
+      within ±10% uncertainty.
+    source_id: eurochlor_dec2024
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 46.7
+        quantity:
+          value: 35.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: |
+            China chlorine capacity approximately 46,000 kt/year in 2024.
+            Apparent caustic soda consumption ~40.6 Mt implies Cl₂ production
+            ~35 Mt (stoichiometric ratio 70.9/80). China is the dominant global
+            chlor-alkali producer; EPA (2022) cites China as expected to drive
+            future growth in global chlor-alkali production.
+          source_id: epa_chlorine_supply_2022
+        notes: |
+          Production estimate inferred from caustic soda consumption statistics
+          and capacity data; no authoritative per-country chlorine production
+          table is publicly available.
+        source_id: epa_chlorine_supply_2022
+      - country: US
+        share_pct: 14.7
+        quantity:
+          value: 11.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: medium
+          notes: |
+            US chlorine production was ~10,000 million kg (10 Mt) in 2019
+            per Chlorine Institute data cited by EPA (2022). EPA 2022 estimated
+            ~11.4 billion kg (~11.4 Mt) total US production for 2022. Permanent
+            capacity reductions occurred in 2021 (Olin Corporation Alabama plant,
+            Occidental Niagara Falls NY). 49 US manufacturing locations as of
+            2019; production concentrated at Gulf Coast facilities operated by
+            Olin Corporation, Westlake Corporation, and Oxy Chemical
+            Corporation. 2024 estimate: ~11 Mt.
+          source_id: epa_chlorine_supply_2022
+        notes: |
+          US figure is from Chlorine Institute Pamphlet 10 (2019 edition) as
+          cited by US EPA Chlorine Supply Chain Profile (December 2022).
+        source_id: epa_chlorine_supply_2022
+      - country: DE
+        share_pct: 2.7
+        quantity:
+          value: 2.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: "Germany: historically the largest European chlorine producer, ~2 Mt/year estimated."
+          source_id: eurochlor_dec2024
+        notes: |
+          Germany's share estimated from Euro Chlor European total of 8.04 Mt
+          (2024). Individual European country breakdown not published in monthly
+          bulletins; shares are internal estimates.
+        source_id: eurochlor_dec2024
+      - country: NL
+        share_pct: 2.0
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: "Netherlands: major European chlorine producer, estimated ~1.5 Mt/year."
+          source_id: eurochlor_dec2024
+        notes: "Netherlands share estimated from Euro Chlor European total; individual country data not published."
+        source_id: eurochlor_dec2024
+      - country: BE
+        share_pct: 2.0
+        quantity:
+          value: 1.5
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: "Belgium: major European chlorine producer, estimated ~1.5 Mt/year."
+          source_id: eurochlor_dec2024
+        notes: "Belgium share estimated from Euro Chlor European total; individual country data not published."
+        source_id: eurochlor_dec2024
+      - country: FR
+        share_pct: 1.3
+        quantity:
+          value: 1.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: "France: significant European chlorine producer, estimated ~1 Mt/year."
+          source_id: eurochlor_dec2024
+        notes: "France share estimated from Euro Chlor European total; individual country data not published."
+        source_id: eurochlor_dec2024
+      - country: JP
+        share_pct: 4.7
+        quantity:
+          value: 3.5
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: |
+            Japan: domestic chlor-alkali market stagnated post-2010 with
+            declining domestic PVC and caustic soda demand. Estimated ~3.5 Mt/year.
+          source_id: saltmarketinfo_chloralkali
+        notes: |
+          Japan production estimated from industry context; saltmarketinfo.com
+          notes Japan's declining production trend post-2010.
+        source_id: saltmarketinfo_chloralkali
+      - country: IN
+        share_pct: 4.0
+        quantity:
+          value: 3.0
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: |
+            India: rapidly growing chlor-alkali market driven by PVC construction
+            demand, water treatment infrastructure, and caustic soda for aluminum
+            refining and textile bleaching. USGS MCS 2025 salt chapter notes
+            Indian salt exports have increased to meet growing chlor-alkali demand.
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          India growth confirmed by USGS MCS 2025 salt chapter: "Salt exports from
+          Australia and India have increased in recent years to meet the increasing
+          demand [for chlor-alkali, especially in Asia]."
+        source_id: usgs_mcs_2025_salt
+      - country: ZZ
+        share_pct: 21.9
+        quantity:
+          value: 16.4
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: |
+            Rest of world: South Korea, Russia, Brazil, Saudi Arabia, Taiwan,
+            and other producers. Derived as residual from world total minus
+            listed countries.
+          source_id: saltmarketinfo_chloralkali
+        notes: "Rest-of-world residual; covers South Korea, Russia, Brazil, Middle East, and other producers."
+        source_id: saltmarketinfo_chloralkali
+    completeness: partial
+  notes: |
+    Chlorine is electrochemically manufactured from brine (not mined), so the
+    production block uses `refined:` for Cl₂ output. Country production data
+    are not published in a single authoritative world table; all non-European,
+    non-US figures are approximate estimates derived from capacity data and
+    stoichiometric cross-checks. Euro Chlor's confirmed European total for
+    2024 is 8,036,860 tonnes = ~8.04 Mt (up 10.2% vs 7.29 Mt in 2023),
+    representing the sum of DE + NL + BE + FR + UK + other Euro Chlor member
+    countries. China accounts for the majority of world production with a
+    chlorine capacity of ~46 Mt and estimated production ~35 Mt/year.
+
+reserves:
+  notes: |
+    Chlorine has no extractable reserves in the conventional sense — it is
+    manufactured from sodium chloride brine rather than mined as a mineral ore.
+    The primary feedstock has effectively unlimited resources: USGS MCS 2025
+    (salt chapter) states that reserves are "Large. Economic and subeconomic
+    deposits of salt are substantial in principal salt-producing countries.
+    The oceans contain a virtually inexhaustible supply of salt." Seawater
+    chloride concentration is ~19.4 g/L Cl⁻, providing a near-limitless
+    chemical reservoir. Chlorine supply is constrained by energy input
+    (3,000–3,400 kWh per tonne Cl₂ for modern membrane-cell electrolysis),
+    not by raw-material scarcity.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: sodium_chloride_brine
+    typical_concentration_pct: 25.0
+    notes: |
+      Sodium chloride (NaCl) brine is the dominant feedstock for chlorine,
+      consumed at ~1.65 tonnes NaCl per tonne Cl₂ produced. Brine is sourced
+      from solution-mined underground salt deposits or dissolved surface salt.
+      USGS MCS 2025 (salt chapter): "Salt in brine [accounted for] 42% of
+      US salt sold or used in 2024," primarily for chlor-alkali chemistry.
+      Chlor-alkali accounts for ~40% of global salt consumption globally.
+      Typical NaCl saturation in process brine: ~25–26 wt%.
+    source_id: usgs_mcs_2025_salt
+  - substrate: potassium_chloride
+    notes: |
+      Potassium chloride (KCl) brine is an alternative feedstock used in
+      plants that co-produce potassium hydroxide (KOH) rather than NaOH.
+      A minor route; US EPA (2022) identifies KCl membrane-cell technology
+      as accounting for ~9% of US chlorine production, primarily at
+      specialty sites targeting KOH markets.
+    source_id: epa_chlorine_supply_2022
+
+substitutes:
+  - application: water_treatment
+    availability: partial
+    notes: |
+      For primary and residual disinfection: ozone (O₃), UV irradiation,
+      chloramines (NH₂Cl), peracetic acid, and chlorine dioxide can
+      substitute for elemental chlorine in water treatment. Each alternative
+      involves trade-offs in efficacy, cost, or by-product profiles. USGS
+      MCS 2025 salt chapter: "No economic substitutes or alternatives for
+      salt exist in most applications" (referring to chlorine's feedstock);
+      for chlorine itself in water treatment, alternatives exist but at
+      higher capital or operating cost.
+    source_id: usgs_mcs_2025_salt
+  - application: pvc_manufacture
+    availability: partial
+    notes: |
+      PVC substitution with other thermoplastics (polyethylene, polypropylene,
+      PET) is technically feasible in some pipe, packaging, and construction
+      applications, but requires product redesign and does not substitute
+      directly. VCM/EDC production (PVC precursors) has no viable route that
+      avoids chlorine chemistry. End-product substitution is therefore partial
+      and application-specific.
+    source_id: epa_chlorine_supply_2022
+  - application: pulp_paper_bleaching
+    availability: full
+    notes: |
+      Elemental chlorine (Cl₂) for pulp bleaching has been largely replaced
+      by elemental-chlorine-free (ECF) technology using chlorine dioxide
+      (ClO₂) and totally-chlorine-free (TCF) technology using hydrogen
+      peroxide and ozone in Europe and North America. Substitution is
+      commercially mature for this application.
+    source_id: epa_chlorine_supply_2022
+
+end_uses:
+  uses:
+    - application: pvc_manufacture
+      share_pct: 35
+      confidence: medium
+      notes: |
+        Polyvinyl chloride (PVC) via vinyl chloride monomer (VCM) and
+        ethylene dichloride (EDC) is the single largest chlorine end use
+        worldwide, particularly in China which dominates global PVC
+        capacity. US EPA (2022): "construction applications such as
+        polyvinyl chloride and epoxies accounted for the largest single
+        demand of chlorine" in 2021. Global PVC apparent consumption in
+        China alone totaled ~20 million tonnes in 2024 (primarily via
+        calcium carbide-based VCM route in China, salt-based in the West).
+      source_id: epa_chlorine_supply_2022
+    - application: other_organic_chemicals
+      share_pct: 27
+      confidence: low
+      notes: |
+        Chlorine as feedstock for organic intermediates excluding PVC:
+        propylene oxide (~7%), methylene diphenyl diisocyanate / toluene
+        diisocyanate (MDI/TDI, ~8%), epichlorohydrin (~3%), chlorinated
+        solvents (CCl₄, CHCl₃, methylene chloride), and other intermediates.
+        ~68% of US chlorine production is consumed captively within
+        chlor-alkali facilities for derivative chemical production (EPA 2022).
+      source_id: epa_chlorine_supply_2022
+    - application: inorganic_chemicals
+      share_pct: 18
+      confidence: low
+      notes: |
+        Production of inorganic chlorine compounds: hydrochloric acid (HCl)
+        sold on merchant market (~7%), sodium hypochlorite bleach (~5%),
+        calcium hypochlorite (~2%), ferric chloride (water treatment coagulant),
+        chlorates and perchlorates, and other inorganic derivatives.
+      source_id: epa_chlorine_supply_2022
+    - application: water_treatment
+      share_pct: 8
+      confidence: medium
+      notes: |
+        Direct use of Cl₂ gas for municipal drinking water and wastewater
+        disinfection, algae control, and on-site generation of chlorine
+        dioxide. US EPA (2022): water treatment (including industrial
+        applications) accounts for approximately 9% of all domestic US
+        chlorine production; of that, municipal water/wastewater represents
+        ~5% of total US production. 32% of US chlorine reaches the merchant
+        market, of which water treatment is the second-largest use.
+      source_id: epa_chlorine_supply_2022
+    - application: pulp_paper_bleaching
+      share_pct: 4
+      confidence: medium
+      notes: |
+        Chlorine use in pulp bleaching has declined sharply in Europe and
+        North America following the shift to ECF (elemental-chlorine-free)
+        and TCF (totally-chlorine-free) processes. Remaining use is in
+        chlorine dioxide generation at kraft pulp mills and specialty
+        paper grades.
+      source_id: epa_chlorine_supply_2022
+    - application: other
+      share_pct: 8
+      confidence: low
+      notes: |
+        Other uses: agrochemicals and pharmaceuticals (chlorine in active
+        ingredients), textile bleaching, metal cleaning, rubber production,
+        and miscellaneous industrial applications.
+      source_id: epa_chlorine_supply_2022
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Chlorine is not included on the US Critical Minerals List, the EU Critical
+    Raw Materials list, or the EU Strategic Raw Materials list. It is an
+    industrial chemical produced at large scale in major consuming nations
+    (US, China, Europe) with distributed domestic manufacturing capacity.
+    However, US EPA's 2022 Chlorine Supply Chain Profile classified chlorine
+    as "Moderate-High" supply disruption risk for the water sector specifically,
+    citing: high criticality (essential for water disinfection), high likelihood
+    of disruption (COVID-19 + Winter Storm Uri precedent), and low vulnerability
+    (distributed US manufacturing). Supply is not import-constrained for the US
+    — imports from Canada represent only ~2% of US consumption.
+
+geopolitical_events:
+  - date: 2021-02
+    event: "Winter Storm Uri (February 2021) directly impacted Gulf Coast region, causing ~28% temporary loss of US domestic chlor-alkali production capacity"
+    impact: |
+      Temporary supply shock compounded by concurrent COVID-19-driven demand
+      surge (increased disinfection requirements) and subsequent equipment
+      failures at facilities in West Virginia, Utah, and Washington.
+      Resulted in chlorine allocation reductions to water utilities across
+      at least 12 US states. Gulf Coast concentration of chlor-alkali
+      facilities amplified single-event vulnerability.
+    source_id: epa_chlorine_supply_2022
+  - date: 2021-06
+    event: "Permanent US chlor-alkali capacity reductions announced 2021: Olin Corporation (Alabama), Occidental Chemical (Niagara Falls NY), and others — multiple plants closed or downsized"
+    impact: |
+      Structural reduction in US merchant chlorine supply. Combined with
+      temporary outages, created a multi-year supply tightness in the US
+      merchant market. EPA assessed supply disruption risk as elevated for
+      water utilities dependent on merchant-market chlorine.
+    source_id: epa_chlorine_supply_2022
+  - date: 2022-02
+    event: "Russia–Ukraine war and resulting European energy price surge reduced European chlor-alkali capacity utilisation to ~60% through 2022–2023"
+    impact: |
+      Electrolysis is the single largest operating cost for chlor-alkali
+      (3,000–3,400 kWh/tonne Cl₂). Elevated European natural gas and
+      electricity prices made marginal European chlor-alkali plants
+      uneconomic, leading to temporary shutdowns. Euro Chlor reports
+      European chlorine production of 7.29 Mt in 2023, recovering to
+      8.04 Mt in 2024 (+10.2%), as energy prices normalised.
+    source_id: eurochlor_dec2024
+  - date: 2024-01
+    event: "Global salt brine demand for chlor-alkali expected to increase, led by Asia; salt exports from Australia and India increased to meet growing demand"
+    impact: |
+      USGS MCS 2025 salt chapter: "Demand for salt brine used in the
+      chloralkali industry was expected to increase in 2024 as demand for
+      caustic soda and polyvinyl chloride increases globally, especially
+      in Asia." Reflects continued capacity buildout in China and India.
+    source_id: usgs_mcs_2025_salt
+  - date: 2022-09
+    event: "Threatened US rail carrier work stoppage in September 2022 highlighted chlorine supply chain dependence on national rail network"
+    impact: |
+      ~85% of long-distance chlorine shipments in the US move by rail
+      (Branscomb et al. 2010; confirmed Chlorine Institute 2022). Gulf
+      Coast concentration of chlor-alkali plants combined with geographically
+      dispersed water utilities creates long-haul dependence. A rail
+      disruption would directly curtail water treatment chemical supply
+      within days to weeks.
+    source_id: epa_chlorine_supply_2022
+
+narrative: |
+  Chlorine is one of the largest-volume industrial chemicals in the world,
+  produced at approximately 75 million metric tonnes per year via the chlor-alkali
+  electrolysis process. Unlike mined commodities, chlorine supply is a function
+  of electrochemical manufacturing capacity — not geological reserves — with
+  sodium chloride brine providing a near-inexhaustible feedstock. The chlor-alkali
+  process co-produces chlorine, caustic soda (NaOH), and hydrogen in fixed
+  stoichiometric ratios, meaning the markets for these three products are
+  permanently linked: excess chlorine cannot be produced without creating
+  surplus NaOH, and vice versa. This structural coupling gives rise to the
+  "electrochemical unit" (ECU) pricing concept and periodically creates
+  economic dislocations when the PVC market (chlorine-driven) and the
+  alumina/chemical markets (caustic soda-driven) diverge.
+
+  China dominates global chlorine production at approximately 35 million tonnes
+  per year (~47% of world output), driven by one of the largest PVC industries
+  on earth: Chinese apparent PVC consumption reached approximately 20 million
+  tonnes in 2024. The United States produces ~11 Mt/year, predominantly for
+  captive use within its own chemical complex (68% of production in 2022 was
+  captive). Europe, via Euro Chlor member companies, produced 8.04 Mt in 2024
+  (up 10.2% from 7.29 Mt in 2023 as energy prices normalised post-Ukraine war).
+  The three largest end uses globally are PVC manufacture (~35%), other organic
+  chemical intermediates (~27%), and inorganic chemicals (HCl, hypochlorites,
+  ~18%); water treatment accounts for approximately 8% of global consumption.
+  Chlorine is not on any government critical-minerals list, though EPA assessed
+  US supply as Moderate-High risk specifically for the water sector.
+
+  The commodity's risk profile is driven by energy cost and geographic
+  concentration of production. The 2021 trifecta of Winter Storm Uri, COVID-19
+  demand surge, and planned US facility closures demonstrated how quickly
+  distributed but weather-exposed manufacturing can become a systemic supply
+  bottleneck. European experience from 2022–2023 confirmed that electricity
+  price spikes — a direct consequence of gas supply disruptions — can force
+  rapid capacity curtailment in an energy-intensive industry. Looking forward,
+  growth in Asian chlor-alkali capacity (China, India) is expected to continue,
+  underpinned by expanding PVC and caustic soda demand. In Western markets,
+  chlorine use in pulp bleaching has largely migrated to chlorine dioxide
+  (ECF), while water treatment demand is expected to grow with infrastructure
+  investment.
+
+sources:
+  - id: usgs_mcs_2025_salt
+    title: Mineral Commodity Summaries 2025 — Salt
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: eurochlor_dec2024
+    title: December 2024 Chlorine Production — Euro Chlor Monthly Bulletin
+    publisher: Euro Chlor (European Council of Vinyl Manufacturers / Chlorine Industry)
+    url: https://www.eurochlor.org/news/december-2024-chlorine-production/
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: epa_chlorine_supply_2022
+    title: "Chlorine Supply Chain — Full Profile (EPA 817-F-22-020)"
+    publisher: US Environmental Protection Agency
+    url: https://www.epa.gov/system/files/documents/2023-03/Chlorine%20Supply%20Chain%20Profile_0.pdf
+    retrieved: 2026-04-11
+    publication_year: 2022
+    source_tier: primary
+  - id: saltmarketinfo_chloralkali
+    title: Around the World with Chlor-Alkali
+    publisher: Salt Market Information
+    url: https://saltmarketinfo.com/around-the-world-with-chlor-alkali/
+    retrieved: 2026-04-11
+    publication_year: 2024
+    source_tier: secondary
