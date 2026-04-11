@@ -96,6 +96,7 @@ class StockUnit(str, Enum):
 class PriceUnit(str, Enum):
     PER_TONNE = "usd_per_tonne"
     PER_KG = "usd_per_kg"
+    PER_POUND = "usd_per_lb"
     PER_GRAM = "usd_per_gram"
     PER_TROY_OUNCE = "usd_per_troy_oz"
     PER_CUBIC_METER = "usd_per_m3"

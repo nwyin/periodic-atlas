@@ -4,104 +4,423 @@ name: cobalt
 category: transition_metal
 industrial_tier: 3
 commercial_production: true
-form_notes: Traded as concentrate, hydroxide, sulfate, and refined metal. Production figures report metal equivalent.
+snapshot_year: 2025
+form_notes: |
+  Tracked on a contained-cobalt basis (metal content), not gross concentrate
+  tonnage. USGS MCS 2025 reports figures in metric tons of cobalt content
+  unless otherwise specified.
 
 production:
-  year: 2024
+  reporting_year: 2024
   mine:
-    value: 240000
+    value: 290000
     unit: tonnes_per_year
+    form: contained_element
     approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.63: "World total (rounded) 290,000" tonnes for 2024
+      mine production. 2023 figure was 238,000 tonnes; 2024 was "another
+      record high".
     source_id: usgs_mcs_2025_cobalt
-  refined:
-    value: 240000
-    unit: tonnes_per_year
-    approximate: true
-    notes: Refined output roughly matches mine output at the global level; inventories are the wedge.
-    source_id: usgs_mcs_2025_cobalt
-  production_form: metal_equivalent
   mining_by_country:
-    - {country: CD, share_pct: 76, notes: "DRC; includes both industrial and artisanal"}
-    - {country: ID, share_pct: 10, notes: "Rapid growth as HPAL nickel byproduct"}
-    - {country: RU, share_pct: 4}
-    - {country: AU, share_pct: 3}
-    - {country: PH, share_pct: 2}
-    - {country: CA, share_pct: 2}
+    shares:
+      - country: CD
+        share_pct: 76
+        quantity:
+          value: 220000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: |
+          DRC (Congo Kinshasa). USGS MCS 2025: "220,000" tonnes 2024 mine
+          production. USGS states DRC "accounted for an estimated 76% of
+          world cobalt mine production".
+        source_id: usgs_mcs_2025_cobalt
+      - country: ID
+        share_pct: 10
+        quantity:
+          value: 28000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: "Indonesia. USGS: 28,000 tonnes 2024, accounted for 10% per chapter text."
+        source_id: usgs_mcs_2025_cobalt
+      - country: RU
+        share_pct: 3
+        quantity:
+          value: 8700
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: CA
+        share_pct: 2
+        quantity:
+          value: 4500
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: PH
+        share_pct: 1
+        quantity:
+          value: 3800
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: AU
+        share_pct: 1
+        quantity:
+          value: 3600
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: CU
+        share_pct: 1
+        quantity:
+          value: 3500
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: PG
+        share_pct: 1
+        quantity:
+          value: 2800
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: TR
+        share_pct: 1
+        quantity:
+          value: 2700
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: MG
+        share_pct: 1
+        quantity:
+          value: 2600
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: NC
+        share_pct: 1
+        quantity:
+          value: 1500
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: "New Caledonia (French overseas territory per USGS footnote 11)"
+        source_id: usgs_mcs_2025_cobalt
+      - country: US
+        share_pct: 0
+        quantity:
+          value: 300
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: "Eagle Mine (Michigan) — nickel-copper mine producing cobalt-bearing nickel concentrate exported for processing. Idaho operation suspended 2024 due to low prices."
+        source_id: usgs_mcs_2025_cobalt
+      - country: ZZ
+        share_pct: 2
+        quantity:
+          value: 6200
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: "Rest of world per USGS 'Other countries' row"
+        source_id: usgs_mcs_2025_cobalt
+    completeness: complete
   refining_by_country:
-    - {country: CN, share_pct: 80, notes: "Processes DRC-sourced hydroxide; dominates cathode-precursor chemistry"}
-    - {country: FI, share_pct: 6}
-    - {country: CA, share_pct: 3}
-    - {country: JP, share_pct: 3}
+    shares:
+      - country: CN
+        share_pct: 60
+        notes: |
+          USGS MCS 2025 chapter text: "China was the world's leading producer
+          of refined cobalt and increased metal refining capacity throughout
+          the year. The majority of China's refinery production was from
+          partially refined cobalt imported from Congo (Kinshasa) and
+          Indonesia." USGS does not quantify the share. IEA-derived secondary
+          reporting places China at "around 60%" of refined cobalt; treat as
+          approximate until a primary quantitative source is added.
+        source_id: iea_cmo_2025_exec_summary
+      - country: ZZ
+        share_pct: 40
+        notes: "Rest of world — exact distribution not cited here"
+        source_id: iea_cmo_2025_exec_summary
+    completeness: top_producers_only
+  notes: |
+    2024 was another record-high year for both mine and refinery production
+    per USGS. China's refinery capacity increased throughout 2024. Excess
+    supply drove prices down; the Idaho cobalt-copper-gold mine suspended
+    operations in 2024 as a result.
 
 reserves:
   economic_reserves:
     value: 11000000
     unit: tonnes
+    form: contained_element
+    confidence: high
+    notes: "USGS MCS 2025 p.63: 'World total (rounded) 11,000,000' tonnes."
+    source_id: usgs_mcs_2025_cobalt
+  resources:
+    value: 25000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS: "Identified world terrestrial cobalt resources are about 25
+      million tons." US identified resources estimated at ~1 million tons,
+      "most of these resources are in Minnesota."
     source_id: usgs_mcs_2025_cobalt
   reserves_by_country:
-    - {country: CD, share_pct: 55}
-    - {country: AU, share_pct: 16}
-    - {country: ID, share_pct: 5}
-    - {country: CU, share_pct: 5}
-
-ownership_concentration:
-  notes: "Chinese companies own or finance 15 of 19 cobalt-producing mines in the DRC. No single company dominates refining, but the sector is highly concentrated within China."
+    shares:
+      - country: CD
+        share_pct: 55
+        quantity:
+          value: 6000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: AU
+        share_pct: 16
+        quantity:
+          value: 1700000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: "USGS footnote 10: Joint Ore Reserves Committee-compliant or equivalent reserves were 610,000 tons."
+        source_id: usgs_mcs_2025_cobalt
+      - country: ID
+        share_pct: 6
+        quantity:
+          value: 640000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: CU
+        share_pct: 5
+        quantity:
+          value: 500000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: PH
+        share_pct: 2
+        quantity:
+          value: 260000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: RU
+        share_pct: 2
+        quantity:
+          value: 250000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: CA
+        share_pct: 2
+        quantity:
+          value: 220000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: MG
+        share_pct: 1
+        quantity:
+          value: 100000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: TR
+        share_pct: 1
+        quantity:
+          value: 91000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: US
+        share_pct: 1
+        quantity:
+          value: 70000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: PG
+        share_pct: 1
+        quantity:
+          value: 62000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        source_id: usgs_mcs_2025_cobalt
+      - country: ZZ
+        share_pct: 7
+        quantity:
+          value: 800000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_cobalt
+        notes: "Rest of world per USGS 'Other countries' row"
+        source_id: usgs_mcs_2025_cobalt
+    completeness: complete
 
 byproduct_of: [Cu, Ni]
-substitutes_available: partial
-substitutes_notes: LFP battery chemistry eliminates cobalt at the cost of energy density. Nickel-rich NMC cathodes (NMC-811, NMC-955) reduce but do not eliminate cobalt content.
+feedstock_origins:
+  - substrate: copper_cobalt_stratiform_deposits
+    notes: |
+      USGS MCS 2025: "The vast majority of global resources are in
+      sediment-hosted stratiform copper deposits in Congo (Kinshasa) and
+      Zambia."
+    source_id: usgs_mcs_2025_cobalt
+  - substrate: nickel_laterite_ores
+    notes: "Australia, Cuba, Indonesia, and nearby island countries — per USGS chapter."
+    source_id: usgs_mcs_2025_cobalt
+
+substitutes:
+  - availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "The cobalt contents of
+      lithium-ion batteries, the leading global use for cobalt, are being
+      reduced; cobalt-free substitutes that use iron and phosphorus held
+      significant market share in China in 2023, but Government and
+      industry stock changes no longer included." LFP battery adoption is
+      the most important demand-side dynamic. Other USGS-listed substitutes:
+      barium/strontium ferrites for magnets, copper-iron-manganese for
+      unsaturated polyester resins, nickel/ceramic/cermet tools for
+      cemented carbides, nickel in petroleum catalysts, rhodium in
+      hydroformylation catalysts.
+    source_id: usgs_mcs_2025_cobalt
 
 end_uses:
-  - {application: batteries_nmc_cathodes, share_pct: 40, notes: "EV batteries dominate; consumer electronics the rest"}
-  - {application: superalloys, share_pct: 17, notes: "Jet engine turbine blades, gas turbines"}
-  - {application: hard_metals_and_tools, share_pct: 9}
-  - {application: catalysts, share_pct: 8, notes: "Desulfurization, Fischer-Tropsch"}
-  - {application: magnets, share_pct: 7, notes: "SmCo and Alnico magnets"}
-  - {application: ceramics_and_pigments, share_pct: 6}
-  - {application: other, share_pct: 13}
+  uses:
+    - application: superalloys_aircraft_turbines
+      share_pct: 51
+      notes: |
+        USGS MCS 2025 US-consumption breakdown: "An estimated 51% of cobalt
+        consumed in the United States was used in superalloys, mainly
+        aircraft gas turbine engines." This is US-specific, not global.
+        Global cobalt end-use is battery-dominated per IEA CMO 2025 but
+        that breakdown is not quoted here with a specific 2024 percentage.
+      source_id: usgs_mcs_2025_cobalt
+    - application: chemical_applications_various
+      share_pct: 25
+      notes: "USGS: '25% in a variety of chemical applications' (US 2024 consumption)."
+      source_id: usgs_mcs_2025_cobalt
+    - application: other_metallic_applications
+      share_pct: 15
+      notes: "USGS: '15% in various other metallic applications' (US 2024 consumption)."
+      source_id: usgs_mcs_2025_cobalt
+    - application: cemented_carbides_cutting_tools
+      share_pct: 9
+      notes: "USGS: '9% in cemented carbides for cutting and wear-resistant applications' (US 2024 consumption)."
+      source_id: usgs_mcs_2025_cobalt
+  completeness: complete
 
 criticality:
-  us_critical_2025: true
-  eu_crm_2024: true
-  eu_strategic_2024: true
-  notes: Listed on every major government critical materials list since 2018.
+  us_critical_list_as_of_2025: true
+  eu_crm_list_as_of_2024: true
+  eu_strategic_list_as_of_2024: true
+  notes: "On US, EU CRM, and EU Strategic lists. Net import reliance 76% per USGS MCS 2025."
+  source_id: usgs_mcs_2025_cobalt
 
 prices:
-  - {year: 2018, value: 95, unit: usd_per_kg, source_id: usgs_mcs_2025_cobalt, notes: "Peak of the 2017-18 EV demand speculation cycle"}
-  - {year: 2022, value: 82, unit: usd_per_kg, source_id: usgs_mcs_2025_cobalt}
-  - {year: 2024, value: 24, unit: usd_per_kg, source_id: usgs_mcs_2025_cobalt, notes: "Collapse driven by LFP adoption and Indonesian HPAL supply"}
+  - year: 2024
+    value: 17
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: 'USGS MCS 2025 salient statistics table: "U.S. spot, cathode" 2024 average, rounded.'
+    source_id: usgs_mcs_2025_cobalt
+  - year: 2024
+    value: 12
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: 'USGS MCS 2025 salient statistics: "London Metal Exchange (LME), cash" 2024 average, rounded.'
+    source_id: usgs_mcs_2025_cobalt
+  - year: 2023
+    value: 17.20
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: USGS 2023 US spot cathode average (pre-collapse).
+    source_id: usgs_mcs_2025_cobalt
+  - year: 2022
+    value: 30.78
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: USGS 2022 US spot cathode peak.
+    source_id: usgs_mcs_2025_cobalt
+  - year: 2021
+    value: 24.21
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    source_id: usgs_mcs_2025_cobalt
+  - year: 2020
+    value: 15.70
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    source_id: usgs_mcs_2025_cobalt
 
 geopolitical_events:
-  - date: 2025-02-22
-    event: "DRC imposes four-month cobalt export ban to stabilize prices"
-    impact: "Cobalt prices bounced ~20% on announcement; underlying oversupply unresolved"
-    source_id: drc_export_ban_2025
-  - date: 2024-01-01
-    event: "Indonesia's HPAL nickel plants begin producing cobalt as byproduct at scale"
-    impact: "Structural shift in supply geography away from DRC single-source risk"
-    source_id: iea_cmo_2025
+  - date: 2024-01
+    event: "US enacts tariff rate increases on cobalt ores/concentrates originating from China and cobalt-containing products including EVs and Li-ion batteries"
+    impact: "Per USGS MCS 2025 chapter text — part of broader trade response to Chinese refining concentration"
+    source_id: usgs_mcs_2025_cobalt
+  - date: 2025-02
+    event: "DRC announces four-month suspension of cobalt exports"
+    impact: "Attempt to stabilize prices after 2024 collapse driven by oversupply; underlying excess still unresolved"
+    source_id: iea_cmo_2025_exec_summary
 
 narrative: |
-  Cobalt is the canonical example of a material where the mining geography
-  (DRC dominance) is decoupled from the refining geography (Chinese
-  dominance). Chinese firms control both the DRC mine ownership and the
-  processing stage, so even the February 2025 DRC export ban did not shift
-  the chokepoint materially. LFP battery chemistry is the most important
-  demand-side dynamic: every percentage point of LFP market share erodes
-  cobalt's structural demand floor.
+  Cobalt is the canonical example of a material where mining geography
+  (DRC 76%) is decoupled from refining geography (China leading, with
+  processing concentration that USGS acknowledges qualitatively but does
+  not quantify in MCS 2025). Chinese firms own the majority of DRC mine
+  stakes and the refining stage, so the February 2025 DRC export ban
+  addresses the wrong chokepoint. LFP battery adoption is the most
+  important demand-side dynamic — USGS explicitly notes that cobalt-free
+  iron-phosphate chemistries already hold significant market share in
+  China. 2024 was a record-high production year for both mine and
+  refinery output, driving prices down and idling the US Idaho operation.
 
 sources:
   - id: usgs_mcs_2025_cobalt
     title: Mineral Commodity Summaries 2025 — Cobalt
-    publisher: USGS
+    publisher: US Geological Survey
     url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cobalt.pdf
     retrieved: 2026-04-11
-  - id: iea_cmo_2025
-    title: Global Critical Minerals Outlook 2025
-    publisher: IEA
-    url: https://www.iea.org/reports/global-critical-minerals-outlook-2025
+    publication_year: 2025
+  - id: iea_cmo_2025_exec_summary
+    title: Global Critical Minerals Outlook 2025 — Executive Summary
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-critical-minerals-outlook-2025/executive-summary
     retrieved: 2026-04-11
-  - id: drc_export_ban_2025
-    title: DRC Cobalt Export Ban Announcement
-    publisher: Reuters
-    retrieved: 2026-04-11
+    publication_year: 2025
