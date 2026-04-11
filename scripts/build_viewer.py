@@ -26,6 +26,7 @@ ROOT = Path(__file__).resolve().parents[1]
 BUILD_DIR = ROOT / "build"
 VIEWER_DIR = ROOT / "viewer"
 CHARTS_PRICES_JS = ROOT / "viewer" / "assets" / "charts_prices.js"
+CHARTS_PRODUCTION_JS = ROOT / "viewer" / "assets" / "charts_production.js"
 
 # 1 lb = 0.4536 kg; usd_per_lb → usd_per_kg by dividing by this factor.
 # Preferred normalisation unit for price charts: usd_per_kg.
@@ -436,6 +437,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 {footer}
 </footer>
 </div>
+<script src="../assets/charts_production.js"></script>
 <script src="../assets/charts_reserves.js"></script>
 </body>
 </html>"""
@@ -664,7 +666,159 @@ def _reserves_json(reserves_rows: list[dict], shares_rows: list[dict], end_uses_
     return json.dumps(payload, separators=(",", ":"))
 
 
-def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}", chart_data: dict | None = None) -> str:
+def _production_json(production_rows: list[dict], shares_rows: list[dict]) -> str:
+    """Build the inline JSON blob for production + mining/refining share charts.
+
+    Returns a JSON string embedded as:
+      <script id="production-data" type="application/json">...</script>
+
+    Structure:
+      {
+        "streams": [
+          {
+            "stream_id": int|null,
+            "mining": [{"country": str, "share_pct": float, "quantity": float|null,
+                         "unit": str|null, "form": str|null, "confidence": str}, ...],
+            "refining": [...same shape...],
+            "completeness": {"mining": str, "refining": str},
+            "world_mine": {"value": float|null, "unit": str|null, "form": str|null},
+            "world_refined": {"value": float|null, "unit": str|null, "form": str|null}
+          }, ...
+        ]
+      }
+
+    Each unique stream_id gets its own entry.  stream_id=None means the element
+    has no multi-stream split (the common case).
+    """
+
+    def _safe_float(v) -> float | None:
+        if v is None:
+            return None
+        try:
+            f = float(v)
+            return None if (f != f) else f  # NaN check
+        except (TypeError, ValueError):
+            return None
+
+    def _safe_str(v) -> str | None:
+        if v is None:
+            return None
+        s = str(v)
+        return None if s in ("nan", "None", "") else s
+
+    # Collect all stream ids present in shares (may be None/null)
+    stream_ids: list = []
+    seen: set = set()
+    for row in shares_rows:
+        sid = row.get("stream")
+        # pandas NA / None → None
+        if sid is not None:
+            try:
+                sid = int(sid)
+            except (TypeError, ValueError):
+                sid = None
+        key = sid
+        if key not in seen:
+            seen.add(key)
+            stream_ids.append(key)
+
+    # Also include streams present only in production (no shares)
+    for row in production_rows:
+        sid = row.get("stream")
+        if sid is not None:
+            try:
+                sid = int(sid)
+            except (TypeError, ValueError):
+                sid = None
+        key = sid
+        if key not in seen:
+            seen.add(key)
+            stream_ids.append(key)
+
+    if not stream_ids:
+        return json.dumps({"streams": []}, separators=(",", ":"))
+
+    result_streams = []
+    for stream_id in stream_ids:
+        # Filter shares for this stream
+        def _match_stream(row, sid=stream_id):
+            rv = row.get("stream")
+            if rv is not None:
+                try:
+                    rv = int(rv)
+                except (TypeError, ValueError):
+                    rv = None
+            return rv == sid
+
+        stream_shares = [r for r in shares_rows if _match_stream(r)]
+
+        mining_shares: list[dict] = []
+        refining_shares: list[dict] = []
+        mining_completeness = "partial"
+        refining_completeness = "partial"
+
+        for s in stream_shares:
+            share_type = str(s.get("share_type", ""))
+            entry = {
+                "country": _safe_str(s.get("country")) or "",
+                "share_pct": _safe_float(s.get("share_pct")),
+                "quantity": _safe_float(s.get("quantity_value")),
+                "unit": _safe_str(s.get("quantity_unit")),
+                "form": _safe_str(s.get("quantity_form")),
+                "confidence": _safe_str(s.get("confidence")) or "high",
+            }
+            if share_type == "mining":
+                mining_shares.append(entry)
+                mining_completeness = _safe_str(s.get("completeness")) or "partial"
+            elif share_type == "refining":
+                refining_shares.append(entry)
+                refining_completeness = _safe_str(s.get("completeness")) or "partial"
+
+        # World totals from production rows for this stream
+        world_mine: dict = {"value": None, "unit": None, "form": None}
+        world_refined: dict = {"value": None, "unit": None, "form": None}
+        for p in production_rows:
+            p_stream = p.get("stream")
+            if p_stream is not None:
+                try:
+                    p_stream = int(p_stream)
+                except (TypeError, ValueError):
+                    p_stream = None
+            if p_stream != stream_id:
+                continue
+            stage = _safe_str(p.get("stage")) or ""
+            val = _safe_float(p.get("value"))
+            unit = _safe_str(p.get("unit"))
+            form = _safe_str(p.get("form"))
+            if stage == "mine" and world_mine["value"] is None:
+                world_mine = {"value": val, "unit": unit, "form": form}
+            elif stage == "refined" and world_refined["value"] is None:
+                world_refined = {"value": val, "unit": unit, "form": form}
+
+        result_streams.append(
+            {
+                "stream_id": stream_id,
+                "mining": mining_shares,
+                "refining": refining_shares,
+                "completeness": {
+                    "mining": mining_completeness,
+                    "refining": refining_completeness,
+                },
+                "world_mine": world_mine,
+                "world_refined": world_refined,
+            }
+        )
+
+    return json.dumps({"streams": result_streams}, separators=(",", ":"))
+
+
+def _element_body(
+    el: dict,
+    sources: list[dict],
+    reserves_data: str = "{}",
+    chart_data: dict | None = None,
+    production_data: str = '{"streams":[]}',
+) -> str:
     symbol = el["symbol"]
     atomic = el["atomic_number"]
     name = el["name"]
@@ -679,11 +833,14 @@ def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}", char
     if el.get("narrative") and str(el["narrative"]) not in ("nan", "None", ""):
         narrative_html = f'<div class="narrative-block">{_html_escape(str(el["narrative"]))}</div>'
 
-    # Build placeholders — skip sources-panel since we render it separately below
+    # Build placeholders — skip sources-panel (rendered separately) and production-chart
+    # (rendered with its own data script tag below).
     placeholders_html = ""
     for div_id, label in CHART_PLACEHOLDERS:
         if div_id == "sources-panel":
             continue  # replaced by the real sources panel below
+        if div_id == "production-chart":
+            continue  # inserted explicitly with its data script tag below
         placeholders_html += f'<div id="{div_id}" class="chart-placeholder">{_html_escape(label)}</div>\n'
 
     sources_panel_html = _render_sources_panel(sources)
@@ -711,6 +868,8 @@ def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}", char
 </div>
 {no_commercial_note}
 {narrative_html}
+<script id="production-data" type="application/json">{production_data}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{reserves_data}</script>
 {placeholders_html}
 {sources_panel_html}"""
@@ -848,6 +1007,32 @@ def generate_viewer(
                     }
                 )
 
+        # Production world totals per symbol (B1)
+        production_by_symbol: dict[str, list[dict]] = {}
+        if "atlas_production" in tables:
+            prod_df = con.execute(
+                "SELECT symbol, stream, block_index, stage, value, unit, form FROM atlas_production ORDER BY symbol, stream, block_index, stage"
+            ).df()
+            for row in prod_df.to_dict(orient="records"):
+                sym = row["symbol"]
+                production_by_symbol.setdefault(sym, []).append(row)
+
+        # Mining + refining country shares per symbol (B1)
+        mining_refining_shares_by_symbol: dict[str, list[dict]] = {}
+        if "atlas_shares" in tables:
+            mr_df = con.execute(
+                """
+                SELECT symbol, share_type, stream, country, share_pct,
+                       quantity_value, quantity_unit, quantity_form, confidence, completeness
+                FROM atlas_shares
+                WHERE share_type IN ('mining', 'refining')
+                ORDER BY symbol, share_type, share_pct DESC
+                """
+            ).df()
+            for row in mr_df.to_dict(orient="records"):
+                sym = row["symbol"]
+                mining_refining_shares_by_symbol.setdefault(sym, []).append(row)
+
     finally:
         con.close()
 
@@ -864,6 +1049,10 @@ def generate_viewer(
     # charts_prices.js — copy from project source so tests in tmpdirs get the file too
     if CHARTS_PRICES_JS.exists():
         (assets_dir / "charts_prices.js").write_text(CHARTS_PRICES_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
+    # charts_production.js — copy from project source
+    if CHARTS_PRODUCTION_JS.exists():
+        (assets_dir / "charts_production.js").write_text(CHARTS_PRODUCTION_JS.read_text(encoding="utf-8"), encoding="utf-8")
 
     # Footer shared across pages
     repo_url = "https://github.com/anomalyco/opencode"
@@ -884,11 +1073,15 @@ def generate_viewer(
             shares_by_symbol.get(sym, []),
             end_uses_by_symbol.get(sym, []),
         )
+        prod_json = _production_json(
+            production_by_symbol.get(sym, []),
+            mining_refining_shares_by_symbol.get(sym, []),
+        )
         chart_data = {
             "prices": prices_by_symbol.get(sym, []),
             "events": events_by_symbol.get(sym, []),
         }
-        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data)
+        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data, production_data=prod_json)
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
         html = _element_page_shell(title, body, footer_element)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
@@ -899,6 +1092,8 @@ def generate_viewer(
     print("viewer/assets/atlas.css written")
     if CHARTS_PRICES_JS.exists():
         print("viewer/assets/charts_prices.js written")
+    if CHARTS_PRODUCTION_JS.exists():
+        print("viewer/assets/charts_production.js written")
 
 
 def main() -> None:
