@@ -1,0 +1,716 @@
+symbol: Cu
+atomic_number: 29
+name: copper
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports copper production on a copper-content basis (metal equivalent),
+  not gross ore or concentrate tonnage. The salient statistics table header reads:
+  "Data in thousand metric tons, copper content, unless otherwise specified."
+  Refined copper is traded as LME Grade A cathode (99.99% Cu minimum) or COMEX
+  high-grade cathode. Prices in the USGS salient statistics table are in U.S. cents
+  per pound; Price entries below convert to USD per pound.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 23
+    unit: million_tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total mine production 2024e: 23,000 thousand metric tons
+      (copper content). 2023 total was 22,600 thousand metric tons.
+    source_id: usgs_mcs_2025_copper
+  refined:
+    value: 27
+    unit: million_tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total refinery production 2024e: 27,000 thousand metric tons.
+      2023 total was also 27,000 thousand metric tons (rounded). Includes primary
+      (from ore) and secondary (from scrap) refinery production.
+    source_id: usgs_mcs_2025_copper
+  mining_by_country:
+    shares:
+      - country: CL
+        share_pct: 23.0
+        quantity:
+          value: 5.3
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "Chile 2024e: 5,300 thousand metric tons."
+        source_id: usgs_mcs_2025_copper
+      - country: CD
+        share_pct: 14.3
+        quantity:
+          value: 3.3
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "Congo (Kinshasa) / DRC 2024e: 3,300 thousand metric tons."
+        source_id: usgs_mcs_2025_copper
+      - country: PE
+        share_pct: 11.3
+        quantity:
+          value: 2.6
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "Peru reserves revised 2024 per company/government reports."
+        source_id: usgs_mcs_2025_copper
+      - country: CN
+        share_pct: 7.8
+        quantity:
+          value: 1.8
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: US
+        share_pct: 4.8
+        quantity:
+          value: 1.1
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: |
+          US 2024e: 1,100 thousand metric tons, down ~3% from 2023. Arizona accounted
+          for approximately 70% of domestic output; also mined in Michigan, Missouri,
+          Montana, Nevada, New Mexico, and Utah.
+        source_id: usgs_mcs_2025_copper
+      - country: ID
+        share_pct: 4.8
+        quantity:
+          value: 1.1
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "Indonesia reserves revised 2024."
+        source_id: usgs_mcs_2025_copper
+      - country: RU
+        share_pct: 4.0
+        quantity:
+          value: 0.93
+          unit: million_tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_copper
+        notes: "Russia 2024e."
+        source_id: usgs_mcs_2025_copper
+      - country: AU
+        share_pct: 3.5
+        quantity:
+          value: 0.8
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: KZ
+        share_pct: 3.2
+        quantity:
+          value: 0.74
+          unit: million_tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_copper
+        notes: "Kazakhstan 2024e."
+        source_id: usgs_mcs_2025_copper
+      - country: MX
+        share_pct: 3.0
+        quantity:
+          value: 0.7
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ZM
+        share_pct: 3.0
+        quantity:
+          value: 0.68
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: CA
+        share_pct: 2.0
+        quantity:
+          value: 0.45
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "Canada reserves revised 2024 per company/government reports."
+        source_id: usgs_mcs_2025_copper
+      - country: PL
+        share_pct: 1.8
+        quantity:
+          value: 0.41
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: IN
+        share_pct: 0.1
+        quantity:
+          value: 0.03
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ZZ
+        share_pct: 11.7
+        quantity:
+          value: 2.7
+          unit: million_tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "USGS 'Other countries' row."
+        source_id: usgs_mcs_2025_copper
+    completeness: complete
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 44.4
+        quantity:
+          value: 12.0
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: CD
+        share_pct: 9.3
+        quantity:
+          value: 2.5
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: CL
+        share_pct: 7.0
+        quantity:
+          value: 1.9
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: JP
+        share_pct: 5.9
+        quantity:
+          value: 1.6
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: RU
+        share_pct: 3.6
+        quantity:
+          value: 0.96
+          unit: million_tonnes_per_year
+          form: metal
+          approximate: true
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: US
+        share_pct: 3.3
+        quantity:
+          value: 0.89
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        notes: |
+          US 2024e: primary (from ore) 850 + secondary (from scrap) 40 thousand metric tons.
+          Kennecott smelter and electrolytic refinery returned to normal Q1 2024 after
+          2023 major rebuilds.
+        source_id: usgs_mcs_2025_copper
+      - country: DE
+        share_pct: 2.3
+        quantity:
+          value: 0.63
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: KR
+        share_pct: 2.3
+        quantity:
+          value: 0.62
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: PL
+        share_pct: 2.2
+        quantity:
+          value: 0.59
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: IN
+        share_pct: 1.9
+        quantity:
+          value: 0.51
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: KZ
+        share_pct: 1.7
+        quantity:
+          value: 0.47
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: AU
+        share_pct: 1.7
+        quantity:
+          value: 0.46
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: PE
+        share_pct: 1.4
+        quantity:
+          value: 0.39
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ID
+        share_pct: 1.3
+        quantity:
+          value: 0.35
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: MX
+        share_pct: 1.3
+        quantity:
+          value: 0.35
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: CA
+        share_pct: 1.2
+        quantity:
+          value: 0.32
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ZM
+        share_pct: 0.6
+        quantity:
+          value: 0.17
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ZZ
+        share_pct: 9.3
+        quantity:
+          value: 2.5
+          unit: million_tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_copper
+        notes: "USGS 'Other countries' refinery production row."
+        source_id: usgs_mcs_2025_copper
+    completeness: complete
+  notes: |
+    World mine production increased ~1.8% from 22,600 (2023) to 23,000 kt (2024e).
+    World refinery production was 27,000 kt in both 2023 and 2024 (rounded). US mine
+    output declined ~3%, primarily from lower ore grades at Arizona mines and Bingham
+    Canyon Mine (Utah) geotechnical constraints. Production increased at Robinson Mine
+    (Nevada) due to planned mine sequencing with higher ore grades.
+
+reserves:
+  economic_reserves:
+    value: 980000000
+    unit: tonnes
+    form: contained_element
+    confidence: high
+    notes: |
+      USGS MCS 2025 world total copper reserves: 980,000 thousand metric tons (copper
+      content). Reserves for Canada, Indonesia, Peru, and the United States were revised
+      based on company, Government, and/or industry association reports.
+    source_id: usgs_mcs_2025_copper
+  resources:
+    value: 1500000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS 2015 global copper resource assessment: identified resources contained 1.5
+      billion tons of unextracted copper (2.1 billion tons when past production of 0.6
+      billion tons is included). Undiscovered resources estimated at 3.5 billion tons.
+      Source: Hammarstrom et al., 2019, USGS SIR 2018-5160 (accessed November 18, 2024).
+    source_id: usgs_copper_resource_assessment_2015
+  reserves_by_country:
+    shares:
+      - country: CL
+        share_pct: 19.4
+        quantity:
+          value: 190000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: AU
+        share_pct: 10.2
+        quantity:
+          value: 100000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "JORC-compliant or equivalent reserves were 27 million tons per USGS footnote 7."
+        source_id: usgs_mcs_2025_copper
+      - country: PE
+        share_pct: 10.2
+        quantity:
+          value: 100000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: RU
+        share_pct: 8.2
+        quantity:
+          value: 80000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: CD
+        share_pct: 8.2
+        quantity:
+          value: 80000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: MX
+        share_pct: 5.4
+        quantity:
+          value: 53000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: US
+        share_pct: 4.8
+        quantity:
+          value: 47000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "US reserves revised 2024."
+        source_id: usgs_mcs_2025_copper
+      - country: CN
+        share_pct: 4.2
+        quantity:
+          value: 41000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: PL
+        share_pct: 3.5
+        quantity:
+          value: 34000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ID
+        share_pct: 2.1
+        quantity:
+          value: 21000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ZM
+        share_pct: 2.1
+        quantity:
+          value: 21000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: KZ
+        share_pct: 2.0
+        quantity:
+          value: 20000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: CA
+        share_pct: 0.8
+        quantity:
+          value: 8300000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: IN
+        share_pct: 0.2
+        quantity:
+          value: 2200000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        source_id: usgs_mcs_2025_copper
+      - country: ZZ
+        share_pct: 18.4
+        quantity:
+          value: 180000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_copper
+        notes: "USGS 'Other countries' reserves row."
+        source_id: usgs_mcs_2025_copper
+    completeness: complete
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: porphyry_copper_ore
+    notes: |
+      The dominant primary ore type, accounting for roughly 60% of world copper resources.
+      Major deposits: Escondida and Chuquicamata (Chile), Quellaveco and Cerro Verde (Peru),
+      Bingham Canyon and Morenci (US), Grasberg (Indonesia), Oyu Tolgoi (Mongolia).
+    source_id: usgs_copper_resource_assessment_2015
+  - substrate: sediment_hosted_stratiform_copper_ore
+    notes: |
+      Central African Copperbelt (DRC and Zambia) — high-grade sediment-hosted deposits
+      that underpin DRC's 14% mine share and Zambia's 3% mine share.
+    source_id: usgs_mcs_2025_copper
+  - substrate: secondary_copper_scrap
+    notes: |
+      US 2024: old (post-consumer) scrap provided ~150,000 tons; new (manufacturing)
+      scrap contributed ~720,000 tons. Scrap accounted for ~35% of US copper supply.
+      Brass and wire-rod mills accounted for approximately 85% of scrap recovery.
+    source_id: usgs_mcs_2025_copper
+
+substitutes:
+  - application: electrical_equipment_power_cable
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Aluminum substitutes for copper in automobile
+      radiators, cooling and refrigeration tube, electrical equipment, and power cable."
+      Aluminum substitution is partial — smaller wire gauges and high-conductivity
+      applications typically retain copper.
+    source_id: usgs_mcs_2025_copper
+  - application: telecommunications
+    availability: full
+    notes: |
+      USGS MCS 2025: "Optical fiber substitutes for copper in telecommunications
+      applications." Fiber-to-the-premises has largely displaced copper in backbone
+      and long-haul telecom; legacy copper loops persist in last-mile infrastructure.
+    source_id: usgs_mcs_2025_copper
+  - application: plumbing_drain_pipe
+    availability: full
+    notes: |
+      USGS MCS 2025: "plastics substitute for copper in drain pipe, plumbing fixtures,
+      and water pipe." PVC and PEX piping have taken large share from copper plumbing
+      in residential construction.
+    source_id: usgs_mcs_2025_copper
+  - application: heat_exchangers
+    availability: partial
+    notes: "USGS MCS 2025: 'Titanium and steel are used in heat exchangers.'"
+    source_id: usgs_mcs_2025_copper
+
+end_uses:
+  uses:
+    - application: building_construction
+      share_pct: 42
+      notes: |
+        Copper Development Association 2024 US consumption data cited in USGS MCS 2025:
+        "building construction, 42%". Includes electrical wiring, plumbing, HVAC, and
+        architectural applications.
+      source_id: usgs_mcs_2025_copper
+    - application: electrical_electronic_products
+      share_pct: 23
+      notes: "CDA/USGS 2024 US consumption: 'electrical and electronic products, 23%'."
+      source_id: usgs_mcs_2025_copper
+    - application: transportation_equipment
+      share_pct: 18
+      notes: |
+        CDA/USGS 2024 US consumption: 'transportation equipment, 18%'. Includes EV
+        traction motors, wiring harnesses, and charging infrastructure.
+      source_id: usgs_mcs_2025_copper
+    - application: consumer_general_products
+      share_pct: 10
+      notes: "CDA/USGS 2024 US consumption: 'consumer and general products, 10%'."
+      source_id: usgs_mcs_2025_copper
+    - application: industrial_machinery_equipment
+      share_pct: 7
+      notes: "CDA/USGS 2024 US consumption: 'industrial machinery and equipment, 7%'."
+      source_id: usgs_mcs_2025_copper
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Copper is not on the 2025 US Critical Minerals List, the EU CRM 2023 list, or the EU
+    Strategic Raw Materials list. It is a tier-4 high-volume workhorse commodity with a
+    geographically diversified supply chain. US net import reliance on refined copper
+    reached 45% in 2024, but critical-material designation has not been applied.
+
+prices:
+  - year: 2024
+    value: 4.30
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: "U.S. producer, cathode (COMEX + premium)"
+      2024e average: 430 cents per pound = $4.30/lb. COMEX first position averaged
+      420 c/lb = $4.20/lb. Record COMEX high reached in May 2024.
+    source_id: usgs_mcs_2025_copper
+  - year: 2024
+    value: 4.20
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME Grade A cash 2024e: 420 cents/lb = $4.20/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2023
+    value: 3.95
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "US producer 2023: 395.3 c/lb = $3.95/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2023
+    value: 3.85
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME Grade A cash 2023: 384.8 c/lb = $3.85/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2022
+    value: 4.11
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "US producer 2022: 410.8 c/lb = $4.11/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2022
+    value: 4.00
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME Grade A cash 2022: 399.8 c/lb = $4.00/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2021
+    value: 4.32
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "US producer 2021: 432.3 c/lb = $4.32/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2021
+    value: 4.23
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME Grade A cash 2021: 422.5 c/lb = $4.23/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2020
+    value: 2.87
+    unit: usd_per_lb
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "US producer 2020: 286.7 c/lb = $2.87/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+  - year: 2020
+    value: 2.80
+    unit: usd_per_lb
+    form: metal
+    basis: lme
+    region: global
+    notes: "LME Grade A cash 2020: 279.8 c/lb = $2.80/lb per USGS MCS 2025."
+    source_id: usgs_mcs_2025_copper
+
+geopolitical_events:
+  - date: 2024-01
+    event: "Bingham Canyon Mine (Utah) lower ore grades from geotechnical risk management changes to mine plan"
+    impact: "Contributed to 3% decline in US mine production in 2024."
+    source_id: usgs_mcs_2025_copper
+  - date: 2024-01
+    event: "Kennecott smelter and electrolytic refinery (Salt Lake City, UT) returns to normal operations Q1 2024"
+    impact: "Following major rebuilds in 2023; boosted US refinery output slightly in 2024."
+    source_id: usgs_mcs_2025_copper
+  - date: 2024-05
+    event: "COMEX copper price reaches record high in May 2024"
+    impact: |
+      Analysts attributed the record to expectations for reduced global supply, strong
+      manufacturing production in China, optimistic demand sentiment, and decreasing
+      US inflation. Full-year 2024 COMEX average projected at $4.20/lb (+9% vs. 2023).
+    source_id: usgs_mcs_2025_copper
+  - date: 2024-12
+    event: "New secondary copper refinery (Kentucky) and secondary smelter (Georgia) expected to begin operations by yearend 2024"
+    impact: "Expand US secondary copper capacity, partially offsetting ore-grade headwinds at primary mines."
+    source_id: usgs_mcs_2025_copper
+
+narrative: |
+  Copper is the archetypal industrial workhorse — the world's third most widely used metal
+  after iron and aluminum. With 23 million tonnes of mine production and 27 million tonnes
+  of refined output in 2024 (USGS), it underpins electrical infrastructure, building
+  construction, and transportation. Chile (23% of mine output) and the DRC (14%) dominate
+  primary mining; China dominates refining at 44% of world capacity, processing concentrates
+  sourced primarily from the Central African Copperbelt and South American porphyry belts.
+
+  US mine production declined ~3% in 2024 to 1.1 million tonnes, driven by lower ore grades
+  at Bingham Canyon (Utah) and multiple Arizona operations. Net import reliance on refined
+  copper reached 45%, with Chile (65%), Canada (17%), and Mexico (9%) as the main refined
+  import sources. Scrap recovery remains significant: ~35% of the US copper supply in 2024
+  came from old and new scrap, with brass and wire-rod mills recovering ~85% of scrap
+  volumes. The COMEX price hit a record in May 2024 before settling to a $4.20/lb annual
+  average, 9% above 2023, driven by supply-tightness expectations and China demand sentiment.
+
+  Copper's supply chain is well-diversified: six countries each produce more than 3% of world
+  mine output, and global reserves stand at 980 million tonnes — equivalent to ~43 years at
+  2024 consumption rates. Identified resources (as of the USGS 2015 assessment) total 1.5
+  billion tonnes unextracted, with another 3.5 billion estimated undiscovered, indicating no
+  fundamental geological scarcity on any near-term horizon. Copper is not on the US Critical
+  Minerals List or the EU CRM list, reflecting this supply security.
+
+sources:
+  - id: usgs_mcs_2025_copper
+    title: Mineral Commodity Summaries 2025 — Copper
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-copper.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_copper_resource_assessment_2015
+    title: "Assessment of undiscovered copper resources of the world, 2015 (ver. 1.2, December 2021)"
+    publisher: US Geological Survey
+    url: https://doi.org/10.3133/sir20185160
+    retrieved: 2026-04-11
+    publication_year: 2019
+    source_tier: primary
