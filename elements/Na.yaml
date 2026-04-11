@@ -1,0 +1,644 @@
+symbol: Na
+atomic_number: 11
+name: sodium
+category: alkali_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports salt in "thousand metric tons" of sodium chloride (NaCl),
+  the primary commercial commodity for sodium. Salt is produced in four main trade
+  forms: salt in brine (solution mining, ~42% of US supply), rock salt (underground
+  mining, ~40%), solar salt (solar evaporation of brine or seawater, ~9%), and
+  vacuum and open pan (evaporated pan) salt (~9%). All production quantities are in
+  tonnes of NaCl and are converted to million_tonnes_per_year (1,000 thousand metric
+  tons = 1 Mt). Prices are quoted free on board (f.o.b.) mine and plant, in US
+  dollars per metric ton of each salt type. Elemental sodium metal (produced by
+  electrolysis of molten NaCl) is a separate, much smaller market not covered by the
+  USGS salt chapter.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 280.0
+    unit: million_tonnes_per_year
+    form: chloride
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.150–151: world mine production 2024e = 280,000 thousand metric
+      tons NaCl (rounded), compared with 270,000 in 2023. US production 2024e =
+      40,000 thousand metric tons (text: "40 million tons"). China is the dominant
+      producer at 55,000 thousand metric tons. All quantities are NaCl mass.
+    source_id: usgs_mcs_2025_salt
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 19.64
+        quantity:
+          value: 55.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: China 2024e = 55,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: US
+        share_pct: 14.29
+        quantity:
+          value: 40.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: United States 2024e = 40,000 thousand metric tons.
+          26 companies, 64 plants, 16 States. Top States: Kansas, Louisiana,
+          Michigan, New York, Ohio, Texas, Utah (95% of US production). Salt in
+          brine 42%, rock salt 40%, solar salt 9%, vacuum pan salt 9%.
+        source_id: usgs_mcs_2025_salt
+      - country: IN
+        share_pct: 10.00
+        quantity:
+          value: 28.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: India 2024e = 28,000 thousand metric tons. Salt
+          exports from India have increased in recent years to meet growing demand
+          in Asia.
+        source_id: usgs_mcs_2025_salt
+      - country: DE
+        share_pct: 5.71
+        quantity:
+          value: 16.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Germany 2024e = 16,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: AU
+        share_pct: 4.64
+        quantity:
+          value: 13.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: Australia 2024e = 13,000 thousand metric tons. Salt
+          exports from Australia have increased in recent years to meet growing
+          demand in Asia.
+        source_id: usgs_mcs_2025_salt
+      - country: CA
+        share_pct: 4.29
+        quantity:
+          value: 12.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: Canada 2024e = 12,000 thousand metric tons. Canada
+          is the largest US import source for salt (29% of US imports, 2020–23 avg).
+        source_id: usgs_mcs_2025_salt
+      - country: CL
+        share_pct: 3.93
+        quantity:
+          value: 11.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: Chile 2024e = 11,000 thousand metric tons. Chile is
+          the second-largest US import source (27% of US imports, 2020–23 avg).
+        source_id: usgs_mcs_2025_salt
+      - country: TR
+        share_pct: 3.21
+        quantity:
+          value: 9.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Turkey 2024e = 9,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: MX
+        share_pct: 3.21
+        quantity:
+          value: 9.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: Mexico 2024e = 9,000 thousand metric tons. Mexico is
+          the third-largest US import source (14% of US imports, 2020–23 avg).
+        source_id: usgs_mcs_2025_salt
+      - country: RU
+        share_pct: 2.86
+        quantity:
+          value: 8.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Russia 2024e = 8,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: BR
+        share_pct: 2.36
+        quantity:
+          value: 6.6
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Brazil 2024e = 6,600 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: NL
+        share_pct: 2.14
+        quantity:
+          value: 6.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Netherlands 2024e = 6,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: FR
+        share_pct: 1.79
+        quantity:
+          value: 5.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: France 2024e = 5,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: PL
+        share_pct: 1.64
+        quantity:
+          value: 4.6
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Poland 2024e = 4,600 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: ES
+        share_pct: 1.43
+        quantity:
+          value: 4.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Spain 2024e = 4,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: BG
+        share_pct: 1.07
+        quantity:
+          value: 3.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Bulgaria 2024e = 3,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: PK
+        share_pct: 1.07
+        quantity:
+          value: 3.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Pakistan 2024e = 3,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: GB
+        share_pct: 1.00
+        quantity:
+          value: 2.8
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: United Kingdom 2024e = 2,800 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: IR
+        share_pct: 0.96
+        quantity:
+          value: 2.7
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Iran 2024e = 2,700 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: SA
+        share_pct: 0.86
+        quantity:
+          value: 2.4
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Saudi Arabia 2024e = 2,400 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: EG
+        share_pct: 0.82
+        quantity:
+          value: 2.3
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: |
+          USGS MCS 2025 table: Egypt 2024e = 2,300 thousand metric tons. Egypt is
+          the fourth-largest US import source (8% of US imports, 2020–23 avg).
+        source_id: usgs_mcs_2025_salt
+      - country: BY
+        share_pct: 0.75
+        quantity:
+          value: 2.1
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Belarus 2024e = 2,100 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: IT
+        share_pct: 0.68
+        quantity:
+          value: 1.9
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 table: Italy 2024e = 1,900 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+      - country: ZZ
+        share_pct: 10.00
+        quantity:
+          value: 28.0
+          unit: million_tonnes_per_year
+          form: chloride
+          source_id: usgs_mcs_2025_salt
+        notes: "USGS MCS 2025 'Other countries' row: 2024e = 28,000 thousand metric tons."
+        source_id: usgs_mcs_2025_salt
+    completeness: complete
+  notes: |
+    USGS MCS 2025: world total 2024e = 280,000 thousand metric tons NaCl (rounded),
+    up from 270,000 in 2023. Country share percentages are derived by dividing each
+    country's 2024e quantity by the stated rounded world total of 280,000 kt. The
+    23 named country rows sum to 247,400 kt and the 'Other countries' row is 28,000 kt,
+    totaling 275,400 kt before rounding to the stated 280,000 kt world figure.
+    Reported shares therefore sum to ~98.4%.
+
+reserves:
+  notes: |
+    USGS MCS 2025 p.151: "Reserves: Large. Economic and subeconomic deposits of salt
+    are substantial in principal salt-producing countries. The oceans contain a
+    virtually inexhaustible supply of salt." No quantitative economic reserves are
+    provided by country. World continental resources are described as vast; ocean
+    salt content is nearly unlimited. Domestic US rock salt and brine resources are
+    primarily in Kansas, Louisiana, Michigan, New York, Ohio, and Texas. Saline lakes
+    and solar evaporation facilities are in Arizona, California, Nevada, New Mexico,
+    Oklahoma, and Utah. Almost every country in the world has salt deposits or solar
+    evaporation operations. Government stockpile: none.
+
+byproduct_of: []
+
+feedstock_origins: []
+
+substitutes:
+  - application: highway_deicing
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: Calcium chloride, calcium magnesium
+      acetate, and potassium chloride can be substituted for salt in deicing
+      applications, but at a higher cost.
+    source_id: usgs_mcs_2025_salt
+  - application: chemical_processing
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: Hydrochloric acid and potassium chloride
+      can be substituted for salt in certain chemical processes, but at a higher cost.
+    source_id: usgs_mcs_2025_salt
+  - application: food_flavoring
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: Potassium chloride can be substituted for
+      salt in food flavoring applications, but at a higher cost.
+    source_id: usgs_mcs_2025_salt
+  - application: general
+    availability: none
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "No economic substitutes or alternatives
+      for salt exist in most applications."
+    source_id: usgs_mcs_2025_salt
+
+end_uses:
+  uses:
+    - application: highway_deicing
+      share_pct: 41
+      notes: |
+        USGS MCS 2025 domestic production section: highway deicing accounted for
+        about 41% of total salt consumed. Rock salt is the primary form used.
+        Demand is heavily weather-dependent; mild winter 2023–24 reduced consumption.
+      source_id: usgs_mcs_2025_salt
+    - application: chemical_industry
+      share_pct: 39
+      notes: |
+        USGS MCS 2025: chemical industry accounted for about 39% of total salt
+        sales. Salt in brine accounted for 91% of the salt used for chemical
+        feedstock. Chlorine and caustic soda manufacturers were the main consumers.
+        Salt is the primary feedstock for the chloralkali process producing Cl₂
+        and NaOH, as well as soda ash (Na₂CO₃) and sodium sulfate (Na₂SO₄).
+      source_id: usgs_mcs_2025_salt
+    - application: distributors
+      share_pct: 9
+      notes: |
+        USGS MCS 2025: distributors accounted for about 9% of total salt sales.
+      source_id: usgs_mcs_2025_salt
+    - application: food_processing
+      share_pct: 4
+      notes: |
+        USGS MCS 2025: food processing accounted for about 4% of total salt sales.
+        Includes food preservation, curing, flavoring, and fermentation applications.
+      source_id: usgs_mcs_2025_salt
+    - application: agricultural
+      share_pct: 3
+      notes: |
+        USGS MCS 2025: agricultural uses accounted for about 3% of total salt sales.
+        Includes livestock feed supplements and soil conditioning.
+      source_id: usgs_mcs_2025_salt
+    - application: general_industrial
+      share_pct: 2
+      notes: "USGS MCS 2025: general industrial uses accounted for about 2% of total salt sales."
+      source_id: usgs_mcs_2025_salt
+    - application: primary_water_treatment
+      share_pct: 1
+      notes: "USGS MCS 2025: primary water treatment accounted for about 1% of total salt sales."
+      source_id: usgs_mcs_2025_salt
+    - application: miscellaneous
+      share_pct: 1
+      notes: "USGS MCS 2025: miscellaneous uses accounted for about 1% of total salt sales."
+      source_id: usgs_mcs_2025_salt
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Salt/sodium is not on the US Critical Minerals List, EU CRM List, or EU Strategic
+    Raw Materials List. It is one of the most abundant and widely distributed minerals
+    on Earth; ocean salt content alone is described as "virtually inexhaustible."
+    Net import reliance for the US was 24% in 2024e (imports minus exports as percent
+    of apparent consumption), but domestic reserves are large and production comes
+    from 26 companies in 16 states, providing resilient domestic supply.
+
+prices:
+  - year: 2024
+    value: 230.0
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: 2024e vacuum and open pan salt average unit
+      value, f.o.b. mine and plant = $230 per metric ton. Highest-purity, highest-value
+      salt grade; used in food, pharmaceuticals, and water softening.
+    source_id: usgs_mcs_2025_salt
+  - year: 2023
+    value: 220.0
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: 2023e vacuum and open pan salt average unit
+      value = $220 per metric ton.
+    source_id: usgs_mcs_2025_salt
+  - year: 2022
+    value: 217.58
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 vacuum and open pan salt average unit value = $217.58 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2021
+    value: 203.72
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2021 vacuum and open pan salt average unit value = $203.72 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2020
+    value: 212.21
+    unit: usd_per_tonne
+    form: chloride
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 vacuum and open pan salt average unit value = $212.21 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2024
+    value: 140.0
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: 2024e solar salt average unit value, f.o.b.
+      mine and plant = $140 per metric ton. Solar salt is produced by solar evaporation
+      of seawater or brine in open ponds (primarily California, Utah, Hawaii, and from
+      imports from Chile and Australia).
+    source_id: usgs_mcs_2025_salt
+  - year: 2023
+    value: 140.0
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023e solar salt average unit value = $140 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2022
+    value: 128.87
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 solar salt average unit value = $128.87 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2021
+    value: 153.52
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2021 solar salt average unit value = $153.52 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2020
+    value: 122.77
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 solar salt average unit value = $122.77 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2024
+    value: 56.0
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: 2024e rock salt average unit value, f.o.b.
+      mine and plant = $56 per metric ton. Rock salt is the dominant grade for highway
+      deicing (mined by underground methods in states such as Kansas, Michigan, New
+      York, Ohio, Louisiana, and Texas).
+    source_id: usgs_mcs_2025_salt
+  - year: 2023
+    value: 56.0
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023e rock salt average unit value = $56 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2022
+    value: 56.86
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 rock salt average unit value = $56.86 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2021
+    value: 59.88
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2021 rock salt average unit value = $59.88 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2020
+    value: 61.71
+    unit: usd_per_tonne
+    form: ore
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 rock salt average unit value = $61.71 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2024
+    value: 10.0
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: 2024e salt in brine average unit value,
+      f.o.b. mine and plant = $10 per metric ton. Salt in brine (solution-mined
+      NaCl dissolved in water) is the lowest-cost form and is the primary feedstock
+      for the chloralkali industry (Cl₂ and NaOH production).
+    source_id: usgs_mcs_2025_salt
+  - year: 2023
+    value: 9.0
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023e salt in brine average unit value = $9 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2022
+    value: 9.11
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 salt in brine average unit value = $9.11 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2021
+    value: 8.14
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2021 salt in brine average unit value = $8.14 per metric ton."
+    source_id: usgs_mcs_2025_salt
+  - year: 2020
+    value: 8.36
+    unit: usd_per_tonne
+    form: unspecified
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 salt in brine average unit value = $8.36 per metric ton."
+    source_id: usgs_mcs_2025_salt
+
+geopolitical_events:
+  - date: 2024-01
+    event: "US salt consumption decreased in 2024 compared with recent years as road salt use declined due to near- or above-average winter temperatures and lower precipitation in the traditional US snowbelt"
+    impact: |
+      Rock salt imports also decreased in 2024 versus 2023 because consumption by
+      local and State transportation departments was slightly less or unchanged, and
+      stockpiles of domestically sourced salt were sufficient to meet demand in many
+      areas. Total US apparent consumption fell to an estimated 51 million metric
+      tons in 2024 from 54 million in 2023.
+    source_id: usgs_mcs_2025_salt
+  - date: 2024-01
+    event: "Increased energy costs resulted in higher processing and transportation costs for salt, negatively affecting the ability to import and export at competitive prices for some international transactions"
+    impact: |
+      Energy is a significant cost component in salt production (especially for
+      vacuum pan and evaporated salt) and a dominant factor in long-haul maritime
+      shipping of bulk rock salt. Higher energy costs disproportionately affect
+      trade in lower-value salt grades where freight is a large share of landed cost.
+    source_id: usgs_mcs_2025_salt
+  - date: 2024-09
+    event: "NOAA predicted a developing La Niña weather pattern for winter 2024–25, historically favoring storm tracks along the northern United States and above-average temperatures in the southern tier"
+    impact: |
+      NOAA forecast wetter-than-average conditions across the Great Lakes and
+      Northwest, and drier-than-average conditions for the Gulf Coast, Southeast,
+      and Southwest. These forecasts indicated that demand for rock salt could
+      increase slightly compared with the previous season in some northern locales.
+    source_id: usgs_mcs_2025_salt
+  - date: 2024-01
+    event: "Demand for salt brine used in the chloralkali industry expected to increase in 2024 as global demand for caustic soda and polyvinyl chloride increases, especially in Asia"
+    impact: |
+      Chloralkali (Cl₂ and NaOH) production is the second-largest end use for salt
+      (part of the 39% chemical industry share). Growth in PVC construction materials
+      and caustic soda for alumina refining drives incremental brine demand. Salt
+      exports from Australia and India have increased in recent years to supply
+      growing Asian chloralkali capacity.
+    source_id: usgs_mcs_2025_salt
+
+narrative: |
+  Salt (sodium chloride, NaCl) is among the oldest and most widely produced mineral
+  commodities, with world production reaching 280 million metric tons in 2024 — a
+  scale that exceeds nearly every other mined non-fuel mineral. Unlike most critical
+  materials, salt is geographically abundant: virtually every country has either
+  underground halite deposits, brine aquifers accessible by solution mining, or
+  coastline suitable for solar evaporation. China leads at 20% of world output, but
+  the US (14%), India (10%), Germany (6%), Australia, Canada, and Chile each contribute
+  meaningfully, and reserves are described by USGS as "large" with ocean salt content
+  "virtually inexhaustible." The US produced 40 million metric tons from 26 companies
+  across 16 states in 2024, with Kansas, Louisiana, Michigan, New York, Ohio, Texas,
+  and Utah accounting for 95% of domestic output.
+
+  The commercial reality of salt divides cleanly into two markets by value and
+  application. At the high end, vacuum and open pan salt (food, pharmaceutical, and
+  water-softening grade) sells for roughly $230 per metric ton. In the middle, solar
+  salt (industrial and chloralkali grade) trades near $140 per metric ton. At the
+  low end, rock salt for highway deicing is priced around $56 per metric ton, while
+  salt in brine — pumped directly from underground formations for chloralkali plants —
+  costs as little as $10 per metric ton. These wide price spreads reflect transport
+  economics more than production economics: rock salt and brine are bulk commodities
+  with enormous deposits, and freight costs dominate landed price. Highway deicing
+  (41% of US consumption) dominates volume and is highly weather-sensitive; the mild
+  2023–24 winter caused a visible dip in total US consumption from 54 to 51 million
+  metric tons. Chemical industry use (39%, mainly chloralkali) provides the more
+  stable base load.
+
+  The broader sodium supply chain extends well beyond salt itself. The chloralkali
+  process converts NaCl brine into chlorine (Cl₂) and caustic soda (NaOH) — the
+  foundational platform for PVC plastics, water treatment, alumina refining, and
+  hundreds of chemical intermediates. Soda ash (Na₂CO₃) and sodium sulfate (Na₂SO₄)
+  are separate downstream sodium commodity markets with their own USGS chapters.
+  Elemental sodium metal — produced by electrolysis of molten NaCl — is a small,
+  specialized market (used in titanium reduction, pharmaceuticals, and as a heat
+  transfer fluid in fast neutron reactors). USGS provides no evidence of supply
+  stress or geopolitical concentration risk for salt; no criticality designation
+  applies, and substitutes in most applications either do not exist economically
+  or cost more without providing meaningful strategic benefit.
+
+sources:
+  - id: usgs_mcs_2025_salt
+    title: Mineral Commodity Summaries 2025 — Salt
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-salt.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
