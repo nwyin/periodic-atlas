@@ -1,0 +1,575 @@
+symbol: Cr
+atomic_number: 24
+name: chromium
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports chromium salient statistics "in thousand metric tons, chromium
+  content, unless otherwise specified." The world mine production table is explicitly
+  labeled "(gross weight)" — values in thousand metric tons of shipping-grade chromite ore,
+  with mine and reserve figures normalized to 45% Cr₂O₃ for most countries (US normalized
+  to 7% Cr₂O₃; Finland normalized to 26% Cr₂O₃). In this file, mine production quantities
+  are converted to million_tonnes_per_year (1 kt = 0.001 Mt); reserve quantities are in
+  tonnes (1 kt = 1,000 t). Chromite ore prices are in US dollars per metric ton gross
+  weight; ferrochromium prices are in US dollars per pound of chromium content; chromium
+  metal prices are in US dollars per pound gross weight. All prices from Argus Media Group,
+  Argus Non-Ferrous Markets (USGS MCS 2025 footnote 5).
+
+production:
+- reporting_year: 2024
+  stream: chromite_ore
+  mine:
+    value: 47.0
+    unit: million_tonnes_per_year
+    form: ore
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.59: world total mine production (marketable, gross weight)
+      2024e = 47,000 thousand metric tons, up from 45,200 kt in 2023 (~4% increase).
+      South Africa, the world's leading chromite producer, increased output an estimated
+      7% from 2023 owing to higher average chromite ore prices. US mine production: zero
+      (—) in both 2023 and 2024 — no active chromite mining operations in the United States.
+    source_id: usgs_mcs_2025_chromium
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 44.7
+        quantity:
+          value: 21.0
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: South Africa 2024e = 21,000 thousand metric tons (up from
+          19,700 kt in 2023). Production increase attributed to higher average chromite ore
+          prices. Ongoing challenges include deep-level mining complexity, increased labor
+          costs, rail transportation issues (Transnet logistics), and unreliable electricity
+          supply (load-shedding). Bushveld Igneous Complex hosts the UG2 and LG/MG chromitite
+          layers — the world's largest chromite resource.
+        source_id: usgs_mcs_2025_chromium
+      - country: TR
+        share_pct: 17.0
+        quantity:
+          value: 8.0
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Turkey 2024e = 8,000 thousand metric tons (slightly below
+          8,160 kt in 2023). Turkey is the second-largest producer and a significant
+          exporter of chromite ore; it supplied 3% of US chromite ore imports 2020–23.
+        source_id: usgs_mcs_2025_chromium
+      - country: KZ
+        share_pct: 13.8
+        quantity:
+          value: 6.5
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Kazakhstan 2024e = 6,500 thousand metric tons (estimated;
+          up from 6,000 kt in 2023). Kazakhstan also hosts a major ferrochromium smelting
+          industry and supplied 14% of US primary chromium metal imports 2020–23.
+          Reserves revised in 2025 based on a Government report.
+        source_id: usgs_mcs_2025_chromium
+      - country: IN
+        share_pct: 8.7
+        quantity:
+          value: 4.1
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: India 2024e = 4,100 thousand metric tons (estimated).
+          Sukinda Valley in Odisha hosts one of the world's largest chromite deposits
+          and accounts for the large majority of Indian production.
+        source_id: usgs_mcs_2025_chromium
+      - country: FI
+        share_pct: 4.0
+        quantity:
+          value: 1.9
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Finland 2024e = 1,900 thousand metric tons. Finland's
+          reserve figures are normalized to 26% Cr₂O₃ (not the standard 45%). Finland
+          supplied 7% of US primary chromium metal imports 2020–23.
+        source_id: usgs_mcs_2025_chromium
+      - country: BR
+        share_pct: 3.0
+        quantity:
+          value: 1.4
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: "USGS MCS 2025 table: Brazil 2024e = 1,400 thousand metric tons."
+        source_id: usgs_mcs_2025_chromium
+      - country: ZW
+        share_pct: 2.3
+        quantity:
+          value: 1.1
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Zimbabwe 2024e = 1,100 thousand metric tons.
+          Zimbabwe holds the world's largest quantified chromite reserves (540,000 kt
+          shipping grade) via the Great Dyke intrusion, though production is modest.
+        source_id: usgs_mcs_2025_chromium
+      - country: ZZ
+        share_pct: 6.2
+        quantity:
+          value: 2.9
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: "USGS MCS 2025 'Other countries' row: 2,900 thousand metric tons."
+        source_id: usgs_mcs_2025_chromium
+    completeness: complete
+  notes: |
+    US mine production: zero in 2024 (and 2023). No active US chromite ore mines.
+    Net import reliance for chromium: 77% in 2024 (USGS salient statistics).
+    US secondary production (recycled chromium from stainless-steel scrap receipts):
+    100 kt chromium content in 2024e. Share_pcts computed with denominator = stated
+    world total 47,000 kt; shares sum to 99.7%.
+
+reserves:
+  economic_reserves:
+    value: 1200000000
+    unit: tonnes
+    form: ore
+    approximate: true
+    notes: |
+      USGS MCS 2025 p.59: world total reserves = >1,200,000 thousand metric tons
+      gross weight of shipping-grade chromite ore (normalized to 45% Cr₂O₃ for most
+      countries). Stated as a minimum (">"). Sum of quantified country reserves in
+      the table = 1,181,530 kt = 1,181,530,000 tonnes; the stated world total ">1,200,000"
+      implies additional unquantified reserves in other countries. Kazakhstan reserves
+      revised in 2025 based on a Government report.
+    source_id: usgs_mcs_2025_chromium
+  resources:
+    value: 12000000000
+    unit: tonnes
+    form: ore
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025: "World resources are greater than 12 billion tons of shipping-grade
+      chromite, sufficient to meet conceivable demand for centuries." Resources are
+      geographically concentrated: ~95% in Kazakhstan and southern Africa. US resources
+      are mostly in the Stillwater Complex in Montana. Interpreted as metric tons
+      consistent with USGS metric-unit reporting convention.
+    source_id: usgs_mcs_2025_chromium
+  reserves_by_country:
+    shares:
+      - country: ZW
+        share_pct: 45.0
+        quantity:
+          value: 540000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Zimbabwe reserves = 540,000 thousand metric tons gross
+          weight (shipping grade, 45% Cr₂O₃). Largest reserves of any country;
+          the Great Dyke intrusion hosts world-class chromitite seams.
+        source_id: usgs_mcs_2025_chromium
+      - country: KZ
+        share_pct: 26.7
+        quantity:
+          value: 320000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Kazakhstan reserves = 320,000 thousand metric tons gross
+          weight (shipping grade). Revised in 2025 based on a Government report.
+          Kazakhstan also produces ferrochromium from these reserves domestically.
+        source_id: usgs_mcs_2025_chromium
+      - country: ZA
+        share_pct: 16.7
+        quantity:
+          value: 200000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: South Africa reserves = 200,000 thousand metric tons
+          gross weight (shipping grade). Bushveld Igneous Complex; chromite is a
+          co-product of platinum-group-metal mining at many operations.
+        source_id: usgs_mcs_2025_chromium
+      - country: IN
+        share_pct: 6.6
+        quantity:
+          value: 79000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: "USGS MCS 2025 table: India reserves = 79,000 thousand metric tons gross weight."
+        source_id: usgs_mcs_2025_chromium
+      - country: TR
+        share_pct: 2.25
+        quantity:
+          value: 27000000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: "USGS MCS 2025 table: Turkey reserves = 27,000 thousand metric tons gross weight."
+        source_id: usgs_mcs_2025_chromium
+      - country: FI
+        share_pct: 0.69
+        quantity:
+          value: 8300000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: Finland reserves = 8,300 thousand metric tons gross weight.
+          Note: normalized to 26% Cr₂O₃ (not the standard 45%), so Finland's effective
+          grade-adjusted reserves would be considerably smaller at standard Cr₂O₃ cutoff.
+        source_id: usgs_mcs_2025_chromium
+      - country: BR
+        share_pct: 0.55
+        quantity:
+          value: 6600000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: "USGS MCS 2025 table: Brazil reserves = 6,600 thousand metric tons gross weight."
+        source_id: usgs_mcs_2025_chromium
+      - country: US
+        share_pct: 0.05
+        quantity:
+          value: 630000
+          unit: tonnes
+          form: ore
+          source_id: usgs_mcs_2025_chromium
+        notes: |
+          USGS MCS 2025 table: US reserves = 630 thousand metric tons gross weight.
+          Normalized to 7% Cr₂O₃ (not the standard 45%) — low-grade Stillwater Complex
+          material in Montana. Not economically workable at current prices; no US mine
+          production since the 1960s.
+        source_id: usgs_mcs_2025_chromium
+    completeness: partial
+  notes: |
+    Share_pcts computed with denominator = stated world total >1,200,000 kt; sum of
+    listed shares = ~97.8%. "Other countries" reserves = NA (not quantified by USGS).
+    USGS footnote: reserve units are "thousand metric tons gross weight of shipping-grade
+    chromite ore" normalized to 45% Cr₂O₃ for most countries, except US (7% Cr₂O₃)
+    and Finland (26% Cr₂O₃). Zimbabwe + Kazakhstan + South Africa = 88.4% of world
+    reserves; adding India brings the total to 95%.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: chromite_ore
+    notes: |
+      Chromite ore (FeCr₂O₄, iron chromium oxide spinel) is the sole commercial ore
+      mineral of chromium. It is mined by open-cast and underground methods in South Africa,
+      Turkey, Kazakhstan, India, Finland, Brazil, and Zimbabwe. Processing involves crushing,
+      beneficiation (gravity or magnetic separation), and then either pyrometallurgical
+      smelting to ferrochromium or chemical processing to chromic acid / chromium chemicals.
+      High-grade direct-shipping ore (DSO, ≥45% Cr₂O₃) is used directly; lower-grade ores
+      require pelletizing or sintering. The United States imported chromite ore from South
+      Africa (96%) and Turkey (3%) during 2020–23, consumed by one domestic chemical company.
+    source_id: usgs_mcs_2025_chromium
+
+substitutes:
+  - application: stainless_steel
+    availability: none
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Chromium has no substitute in stainless steel,
+      the leading end use, or in superalloys, the major strategic end use." Chromium content
+      of ≥10.5% by mass is what makes stainless steel stainless — it forms a self-healing
+      passive oxide layer (Cr₂O₃). No other alloying element replicates this at commercially
+      viable cost. Chromium content in stainless steels typically ranges from 10.5% to 30%.
+    source_id: usgs_mcs_2025_chromium
+  - application: superalloys
+    availability: none
+    notes: |
+      USGS MCS 2025: No substitute for chromium in superalloys (described as "the major
+      strategic end use"). Chromium provides oxidation resistance and hot-corrosion resistance
+      in nickel- and cobalt-base superalloys used in jet engine turbine sections and industrial
+      gas turbines. Aerospace and defense applications depend on chromium-bearing superalloys.
+    source_id: usgs_mcs_2025_chromium
+  - application: ferrochromium_metallurgical_uses
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Chromium-containing scrap can substitute for ferrochromium in some
+      metallurgical uses." In 2024, recycled chromium from stainless-steel scrap receipts
+      accounted for 23% of US apparent consumption, providing a partial domestic offset to
+      imported ferrochromium. Scrap availability is constrained by the existing stainless
+      steel stock in circulation.
+    source_id: usgs_mcs_2025_chromium
+
+end_uses:
+  uses:
+    - application: stainless_and_heat_resisting_steel
+      share_pct: 70
+      confidence: low
+      notes: |
+        USGS MCS 2025: "Stainless-steel and heat-resisting-steel producers were the leading
+        consumers of ferrochromium." The 2025 chapter does not provide an explicit end-use
+        percentage breakdown. The ~70% share for stainless and heat-resisting steel is
+        consistent with historical USGS chromium end-use data and ICDA industry figures.
+        Ferrochromium grades for stainless steel range from high-carbon (4–9% C) to
+        low-carbon (<0.5% C) depending on the steel grade.
+      source_id: usgs_mcs_2025_chromium
+    - application: alloy_steels
+      share_pct: 19
+      confidence: low
+      notes: |
+        Alloy steels (tool steels, structural steels, ball-bearing steels, and other
+        engineering steels) require chromium for hardenability, wear resistance, and
+        corrosion resistance. Share based on historical USGS chromium end-use data;
+        not explicitly stated in the MCS 2025 chapter.
+      source_id: usgs_mcs_2025_chromium
+    - application: superalloys_and_nonferrous_alloys
+      share_pct: 5
+      confidence: low
+      notes: |
+        USGS MCS 2025 substitutes section identifies superalloys as "the major strategic
+        end use" of chromium. Nickel- and cobalt-base superalloys for jet engines, gas
+        turbines, and aerospace components require chromium for high-temperature oxidation
+        and corrosion resistance. Share based on historical USGS chromium data; not
+        explicitly stated in MCS 2025.
+      source_id: usgs_mcs_2025_chromium
+    - application: chromium_chemicals
+      share_pct: 3
+      confidence: low
+      notes: |
+        USGS MCS 2025: "Imported chromite ore was consumed by one chemical company to
+        produce chromium chemicals." Chemical uses include chromium oxide green (Cr₂O₃)
+        pigments, chromic acid for metal finishing and surface treatment, leather tanning
+        agents, and catalysts. Share based on historical USGS data; not explicitly stated.
+      source_id: usgs_mcs_2025_chromium
+    - application: refractories
+      share_pct: 3
+      confidence: low
+      notes: |
+        Chrome-magnesite refractories (MgO-Cr₂O₃) are used in electric arc furnace linings,
+        cement kilns, and nonferrous smelting furnaces. Share based on historical USGS data;
+        not explicitly stated in the MCS 2025 chapter. Regulatory pressure on hexavalent
+        chromium (Cr⁶⁺) formation in used refractories has constrained some applications
+        in developed markets.
+      source_id: usgs_mcs_2025_chromium
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_chromium
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_chromium
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Chromium is on the US 2022 Final Critical Minerals List (Federal Register, February 2022).
+    Net import reliance was 77% in 2024 per USGS salient statistics; the United States has
+    had no active chromite mine production since the 1960s. Chromium is on the EU Critical
+    Raw Materials list (Annex II of Regulation (EU) 2024/1252, EU Critical Raw Materials Act),
+    reflecting supply concentration risk and economic importance for stainless steel and
+    superalloy production. Chromium is NOT on the EU Strategic Raw Materials list (Annex I
+    of EU CRMA), which focuses on materials for green/digital transitions.
+
+prices:
+  - year: 2024
+    value: 340
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: chromite ore (gross weight) 2024 average price =
+      $340 per metric ton. Source: Argus Media Group, Argus Non-Ferrous Markets. Price
+      rose from $321 in 2023 despite downstream ferrochromium price weakness, reflecting
+      South African supply constraints (rail, electricity) vs. ore demand.
+    source_id: usgs_mcs_2025_chromium
+  - year: 2023
+    value: 321
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromite ore 2023 average = $321 per metric ton."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2022
+    value: 277
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromite ore 2022 average = $277 per metric ton."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2021
+    value: 199
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromite ore 2021 average = $199 per metric ton."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2020
+    value: 158
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromite ore 2020 average = $158 per metric ton."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2024
+    value: 1.80
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: ferrochromium (chromium content) 2024 average =
+      $1.80 per pound. Source: Argus Media Group, Argus Non-Ferrous Markets. Excludes
+      ferrosilicon chromium (footnote 6). Decline from $2.55 in 2023 (−29%) reflects
+      Chinese ferrochromium overcapacity and reduced stainless-steel demand.
+    source_id: usgs_mcs_2025_chromium
+  - year: 2023
+    value: 2.55
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: ferrochromium (Cr content) 2023 average = $2.55/lb."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2022
+    value: 3.19
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: ferrochromium (Cr content) 2022 average = $3.19/lb."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2021
+    value: 1.50
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: ferrochromium (Cr content) 2021 average = $1.50/lb."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2020
+    value: 0.89
+    unit: usd_per_lb
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: ferrochromium (Cr content) 2020 average = $0.89/lb."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2024
+    value: 5.60
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: chromium metal (gross weight) 2024 average =
+      $5.60 per pound. Source: Argus Media Group, Argus Non-Ferrous Markets.
+    source_id: usgs_mcs_2025_chromium
+  - year: 2023
+    value: 5.05
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromium metal (gross weight) 2023 average = $5.05/lb (estimated)."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2022
+    value: 7.20
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromium metal (gross weight) 2022 average = $7.20/lb."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2021
+    value: 4.23
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromium metal (gross weight) 2021 average = $4.23/lb."
+    source_id: usgs_mcs_2025_chromium
+  - year: 2020
+    value: 3.10
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: chromium metal (gross weight) 2020 average = $3.10/lb."
+    source_id: usgs_mcs_2025_chromium
+
+geopolitical_events:
+  - date: 2024-01
+    event: "South Africa chromite production increased an estimated 7% in 2024 vs 2023, driven by higher average chromite ore prices"
+    impact: |
+      South Africa strengthened its position as the world's leading chromite producer
+      (~44.7% of world output in 2024), contributing to a ~4% global production increase.
+      Structural risks remain: deep-level mining complexity, higher labor costs, Transnet
+      rail transportation reliability, and electricity grid instability (load-shedding)
+      continue to affect supply predictability from the world's most critical chromite source.
+    source_id: usgs_mcs_2025_chromium
+  - date: 2024-01
+    event: "China ferrochromium and stainless steel production affected by oversupply, weakened consumer demand, and escalating trade tensions"
+    impact: |
+      As the leading ferrochromium-producing, stainless-steel-producing, and chromium-consuming
+      country, China's market conditions set the global floor for chromium demand. Ferrochromium
+      prices fell from $2.55/lb in 2023 to $1.80/lb in 2024 (−29%), reflecting Chinese
+      overcapacity and weak end-market demand, even as upstream chromite ore prices rose.
+    source_id: usgs_mcs_2025_chromium
+  - date: 2025-01
+    event: "Kazakhstan chromite reserves revised upward based on a Government report, reflected in USGS MCS 2025"
+    impact: |
+      Kazakhstan's published reserves increased to 320,000 kt shipping-grade chromite ore.
+      Kazakhstan is both a major chromite producer (6,500 kt in 2024e) and a major
+      ferrochromium smelter; it supplied 11% of total US chromium imports and 14% of
+      US primary metal imports over 2020–23.
+    source_id: usgs_mcs_2025_chromium
+
+narrative: |
+  Chromium is an indispensable transition metal with no viable substitute in its two
+  dominant strategic applications — stainless steel and superalloys. The global chromite
+  ore market is highly geographically concentrated: South Africa alone produced 44.7% of
+  the estimated 47 million metric ton world output in 2024, followed by Turkey (17%) and
+  Kazakhstan (14%). The United States has had no domestic chromite mine production since
+  the 1960s and depends almost entirely on imports (net import reliance: 77% in 2024),
+  sourcing 96% of its chromite ore from South Africa and 11% of total chromium imports
+  from Kazakhstan. World reserves exceed 1.2 billion metric tons of shipping-grade
+  chromite ore, overwhelmingly concentrated in Zimbabwe (540 Mt), Kazakhstan (320 Mt),
+  and South Africa (200 Mt) — together 88% of world reserves — providing centuries of
+  supply at current production rates.
+
+  China dominates the demand side: as the world's leading ferrochromium producer, stainless
+  steel producer, and chromium consumer, China's industrial cycle sets the global price tone
+  for downstream chromium products. In 2024, Chinese stainless steel was pressured by
+  domestic overcapacity, weakening consumer demand, and escalating trade tensions, driving
+  ferrochromium prices down 29% to $1.80/lb — even as upstream chromite ore prices rose
+  6% to $340/metric ton. This inverted price move reflects margin compression at the
+  ferrochromium smelting step. The value of US chromium material consumption reached $900
+  million in 2024 (up 6% from 2023), suggesting stable or growing volumes despite falling
+  metal prices. Recycled chromium from stainless-steel scrap provided 23% of US apparent
+  consumption, partially offsetting import dependence.
+
+  The supply concentration and import reliance that define the chromium supply chain have
+  earned it formal critical-mineral designation in both the US (2022 Critical Minerals List)
+  and the EU (EU Critical Raw Materials Act, Regulation (EU) 2024/1252). South Africa's
+  Bushveld Igneous Complex is the single most important chromite source globally; operational
+  risks there — deep-level mining, rail logistics, and electricity reliability — represent
+  the primary near-term supply-side vulnerability. Kazakhstan's reserve upgrade in 2025
+  modestly improved the long-term supply picture for the second-largest producing country.
+
+sources:
+  - id: usgs_mcs_2025_chromium
+    title: Mineral Commodity Summaries 2025 — Chromium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-chromium.pdf
+    retrieved: 2026-04-11
+    publication_year: 2025
+    source_tier: primary
