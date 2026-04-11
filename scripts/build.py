@@ -210,6 +210,7 @@ def flatten_end_uses(elements: list[Element]) -> pd.DataFrame:
                     "snapshot_year": el.snapshot_year,
                     "application": u.application,
                     "share_pct": u.share_pct,
+                    "confidence": u.confidence,
                     "completeness": el.end_uses.completeness,
                     "source_id": u.source_id,
                     "notes": u.notes,

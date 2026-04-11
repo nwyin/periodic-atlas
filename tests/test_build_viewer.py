@@ -13,9 +13,18 @@ Invariants verified (B4 — sources panel):
   B4-INV-3: referenced_by counts reconcile with actual row counts in each fact table.
   B4-INV-4: A source with superseded_by set renders a visible 'superseded by' warning.
 
+B2 invariants:
+  B2-INV-1: every element with reserves gets a non-empty reserves_by_country list in its JSON
+  B2-INV-2: every element with end_uses gets a non-empty uses list in its JSON
+  B2-INV-3: elements without reserves/end_uses get null economic_reserves and empty uses (no crash)
+  B2-INV-4: low-confidence entries are serialized with their confidence field
+
 Critical paths:
   - fresh run into tmpdir produces index.html + 9 per-element pages
   - every chart-placeholder div id is present in each per-element stub
+  - Co renders reserves (11M econ, 25M resources) + 12 country bars + 4-slice donut
+  - Am (no reserves, has end_uses) has null reserves + 3 low-confidence uses
+  - charts_reserves.js is referenced in every element page
 
 Failure modes:
   - missing duckdb → clear error message, sys.exit non-zero
@@ -24,6 +33,8 @@ Failure modes:
 
 from __future__ import annotations
 
+import json
+import re
 import subprocess
 import sys
 from pathlib import Path
@@ -339,3 +350,150 @@ def test_b4_inv4_superseded_by_warning_renders(tmp_path):
     assert "usgs_mcs_2025_cobalt" in co_html, "superseded_by target id missing from warning"
     # The explicit warning text must be rendered (from source-card-superseded class)
     assert "superseded by" in co_html, "No 'superseded by' warning text rendered"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Helpers for B2 tests
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _extract_reserves_json(html: str) -> dict:
+    """Extract and parse the inline reserves-data JSON from an element page."""
+    m = re.search(r'<script id="reserves-data" type="application/json">(.*?)</script>', html)
+    assert m, "reserves-data script tag not found in page"
+    return json.loads(m.group(1))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2-INV-1: elements with reserves get a non-empty reserves_by_country list
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_inv1_elements_with_reserves_have_country_bars(viewer_dir):
+    """Symbols with atlas_reserves rows must have non-empty reserves_by_country in their JSON."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        rows = con.execute("SELECT DISTINCT symbol FROM atlas_shares WHERE share_type='reserves'").fetchall()
+        symbols_with_reserve_shares = {r[0] for r in rows}
+    finally:
+        con.close()
+
+    for sym in symbols_with_reserve_shares:
+        page = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        d = _extract_reserves_json(page)
+        assert len(d["reserves_by_country"]) > 0, f"{sym}: has reserve shares but reserves_by_country is empty"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2-INV-2: elements with end_uses get a non-empty uses list
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_inv2_elements_with_end_uses_have_donut_data(viewer_dir):
+    """Symbols with atlas_end_uses rows must have non-empty uses list in their JSON."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        rows = con.execute("SELECT DISTINCT symbol FROM atlas_end_uses").fetchall()
+        symbols_with_uses = {r[0] for r in rows}
+    finally:
+        con.close()
+
+    for sym in symbols_with_uses:
+        page = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        d = _extract_reserves_json(page)
+        assert len(d["end_uses"]["uses"]) > 0, f"{sym}: has end_uses rows but uses list is empty"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2-INV-3: elements without data get null/empty, not a crash
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_inv3_missing_data_renders_empty_state(viewer_dir):
+    """Og and Tc have no reserves and Og has no end_uses — pages must not crash."""
+    # Og: no reserves, no end_uses
+    og = (viewer_dir / "elements" / "Og.html").read_text()
+    d_og = _extract_reserves_json(og)
+    assert d_og["reserves"]["economic_reserves"] is None, "Og should have null economic_reserves"
+    assert d_og["reserves_by_country"] == [], "Og should have empty reserves_by_country"
+    assert d_og["end_uses"]["uses"] == [], "Og should have empty end_uses"
+    # Page must still have the reserves-chart div
+    assert 'id="reserves-chart"' in og, "Og.html missing #reserves-chart div"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2-INV-4: low-confidence entries carry the confidence field
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_inv4_low_confidence_entries_serialized(viewer_dir):
+    """Am has low-confidence end_uses — confidence must be in the JSON payload."""
+    am = (viewer_dir / "elements" / "Am.html").read_text()
+    d = _extract_reserves_json(am)
+    assert len(d["end_uses"]["uses"]) > 0, "Am should have end_uses"
+    for use in d["end_uses"]["uses"]:
+        assert "confidence" in use, f"Am end_use missing confidence field: {use}"
+        assert use["confidence"] == "low", f"Am end_use expected low confidence, got: {use['confidence']}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2 critical path: Co renders correct reserves + end-uses data
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_co_reserves_and_end_uses(viewer_dir):
+    """Co critical path: 11M economic, 25M resources, country bars, 4-slice donut."""
+    co = (viewer_dir / "elements" / "Co.html").read_text()
+    d = _extract_reserves_json(co)
+
+    # Reserves summary
+    assert d["reserves"]["economic_reserves"] == 11_000_000.0, "Co economic_reserves should be 11M"
+    assert d["reserves"]["resources"] == 25_000_000.0, "Co resources should be 25M"
+    assert d["reserves"]["unit"] == "tonnes", f"Co unit: {d['reserves']['unit']}"
+
+    # Country bars: CD is the dominant producer
+    assert len(d["reserves_by_country"]) >= 4, "Co should have at least 4 country entries"
+    cd = next((c for c in d["reserves_by_country"] if c["country"] == "CD"), None)
+    assert cd is not None, "Co missing CD (DRC) in reserves_by_country"
+    assert cd["share_pct"] == 55.0, f"Co CD share should be 55%, got {cd['share_pct']}"
+
+    # End uses: 4 slices
+    assert len(d["end_uses"]["uses"]) == 4, f"Co should have 4 end_uses, got {len(d['end_uses']['uses'])}"
+    assert d["end_uses"]["completeness"] == "complete", "Co end_uses should be complete"
+    # All Co uses are high confidence
+    for use in d["end_uses"]["uses"]:
+        assert use["confidence"] == "high", f"Co use {use['application']} should be high confidence"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2 critical path: Am has no reserves but populated donut
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_am_no_reserves_with_end_uses(viewer_dir):
+    """Am critical path: null reserves, empty country bars, 3-entry low-confidence donut."""
+    am = (viewer_dir / "elements" / "Am.html").read_text()
+    d = _extract_reserves_json(am)
+
+    # No reserves
+    assert d["reserves"]["economic_reserves"] is None, "Am should have no economic_reserves"
+    assert d["reserves"]["resources"] is None, "Am should have no resources"
+    assert d["reserves_by_country"] == [], "Am should have no country reserve shares"
+
+    # End uses populated
+    assert len(d["end_uses"]["uses"]) == 3, f"Am should have 3 end_uses, got {len(d['end_uses']['uses'])}"
+    # All are low confidence
+    for use in d["end_uses"]["uses"]:
+        assert use["confidence"] == "low", f"Am use {use['application']} should be low confidence"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# B2: charts_reserves.js referenced in every element page
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_b2_charts_reserves_js_in_pages(viewer_dir):
+    """Every element page must reference charts_reserves.js for the chart code."""
+    for sym in EXPECTED_SYMBOLS:
+        page = (viewer_dir / "elements" / f"{sym}.html").read_text()
+        assert "charts_reserves.js" in page, f"{sym}.html missing charts_reserves.js reference"

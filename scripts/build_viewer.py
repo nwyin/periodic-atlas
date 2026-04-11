@@ -15,6 +15,7 @@ use the `generate_viewer()` function directly with `timestamp=` keyword arg.
 from __future__ import annotations
 
 import argparse
+import json
 import sys
 from datetime import datetime, timezone
 from pathlib import Path
@@ -406,6 +407,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 {footer}
 </footer>
 </div>
+<script src="../assets/charts_reserves.js"></script>
 </body>
 </html>"""
 
@@ -557,7 +559,83 @@ def _render_sources_panel(sources: list[dict]) -> str:
 </div>"""
 
 
-def _element_body(el: dict, sources: list[dict]) -> str:
+def _reserves_json(reserves_rows: list[dict], shares_rows: list[dict], end_uses_rows: list[dict]) -> str:
+    """Build the inline JSON blob for reserves + end-uses charts.
+
+    Returns a JSON string that is embedded as:
+      <script id="reserves-data" type="application/json">...</script>
+
+    Structure:
+      {
+        "reserves": {"economic_reserves": float|null, "resources": float|null, "unit": str|null},
+        "reserves_by_country": [{"country": str, "share_pct": float, "quantity": float|null,
+                                  "quantity_unit": str|null, "confidence": str}, ...],
+        "end_uses": {"completeness": str, "uses": [{"application": str, "share_pct": float,
+                                                     "confidence": str}, ...]}
+      }
+    """
+
+    def _safe_float(v) -> float | None:
+        if v is None:
+            return None
+        try:
+            f = float(v)
+            return None if (f != f) else f  # NaN check
+        except (TypeError, ValueError):
+            return None
+
+    # Build reserves summary (economic_reserves + resources)
+    econ_res: float | None = None
+    resources: float | None = None
+    unit: str | None = None
+    for r in reserves_rows:
+        kind = str(r.get("kind", ""))
+        val = _safe_float(r.get("value"))
+        u = str(r.get("unit", "")) if r.get("unit") else None
+        if kind == "economic_reserves":
+            econ_res = val
+            unit = u or unit
+        elif kind == "resources":
+            resources = val
+            unit = unit or u
+
+    reserves_summary = {"economic_reserves": econ_res, "resources": resources, "unit": unit}
+
+    # Build reserves_by_country list
+    rbc = []
+    for s in shares_rows:
+        rbc.append(
+            {
+                "country": str(s.get("country", "")),
+                "share_pct": _safe_float(s.get("share_pct")),
+                "quantity": _safe_float(s.get("quantity_value")),
+                "quantity_unit": str(s.get("quantity_unit", "")) if s.get("quantity_unit") else None,
+                "confidence": str(s.get("confidence", "high")),
+            }
+        )
+
+    # Build end_uses list
+    completeness = "partial"
+    uses = []
+    for u in end_uses_rows:
+        completeness = str(u.get("completeness", "partial"))
+        uses.append(
+            {
+                "application": str(u.get("application", "")),
+                "share_pct": _safe_float(u.get("share_pct")),
+                "confidence": str(u.get("confidence", "high")),
+            }
+        )
+
+    payload = {
+        "reserves": reserves_summary,
+        "reserves_by_country": rbc,
+        "end_uses": {"completeness": completeness, "uses": uses},
+    }
+    return json.dumps(payload, separators=(",", ":"))
+
+
+def _element_body(el: dict, sources: list[dict], reserves_data: str = "{}") -> str:
     symbol = el["symbol"]
     atomic = el["atomic_number"]
     name = el["name"]
@@ -599,6 +677,7 @@ def _element_body(el: dict, sources: list[dict]) -> str:
 </div>
 {no_commercial_note}
 {narrative_html}
+<script id="reserves-data" type="application/json">{reserves_data}</script>
 {placeholders_html}
 {sources_panel_html}"""
 
@@ -672,6 +751,36 @@ def generate_viewer(
         for sym in [el["symbol"] for el in elements_list]:
             sources_by_symbol[sym] = _build_sources_data(con, sym)
 
+        # Prepare reserves dict: symbol -> list of reserve rows
+        reserves_df = con.execute("SELECT symbol, kind, value, unit FROM atlas_reserves ORDER BY symbol, kind").df()
+        reserves_by_symbol: dict[str, list[dict]] = {}
+        for row in reserves_df.to_dict(orient="records"):
+            sym = row["symbol"]
+            reserves_by_symbol.setdefault(sym, []).append(row)
+
+        # Prepare reserves country shares: symbol -> list of share rows
+        shares_df = con.execute(
+            """
+            SELECT symbol, country, share_pct, quantity_value, quantity_unit, confidence, completeness
+            FROM atlas_shares
+            WHERE share_type = 'reserves'
+            ORDER BY symbol, share_pct DESC
+            """
+        ).df()
+        shares_by_symbol: dict[str, list[dict]] = {}
+        for row in shares_df.to_dict(orient="records"):
+            sym = row["symbol"]
+            shares_by_symbol.setdefault(sym, []).append(row)
+
+        # Prepare end_uses: symbol -> list of use rows
+        end_uses_df = con.execute(
+            "SELECT symbol, application, share_pct, confidence, completeness FROM atlas_end_uses ORDER BY symbol, share_pct DESC"
+        ).df()
+        end_uses_by_symbol: dict[str, list[dict]] = {}
+        for row in end_uses_df.to_dict(orient="records"):
+            sym = row["symbol"]
+            end_uses_by_symbol.setdefault(sym, []).append(row)
+
     finally:
         con.close()
 
@@ -699,7 +808,12 @@ def generate_viewer(
     for el in elements_list:
         sym = el["symbol"]
         el_sources = sources_by_symbol.get(sym, [])
-        body = _element_body(el, el_sources)
+        res_json = _reserves_json(
+            reserves_by_symbol.get(sym, []),
+            shares_by_symbol.get(sym, []),
+            end_uses_by_symbol.get(sym, []),
+        )
+        body = _element_body(el, el_sources, reserves_data=res_json)
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
         html = _element_page_shell(title, body, footer_element)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
