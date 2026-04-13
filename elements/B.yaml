@@ -1,0 +1,519 @@
+symbol: B
+atomic_number: 5
+name: boron
+category: metalloid
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Boron does not occur in nature in elemental form; all commercial production is in the
+  form of borates — compounds of boron with oxygen and sodium or calcium. The four principal
+  borate minerals are colemanite (Ca₂B₆O₁₁·5H₂O), kernite (Na₂B₄O₇·4H₂O), tincal
+  (borax, Na₂B₄O₇·10H₂O), and ulexite (NaCaB₅O₉·8H₂O), which account for 90% of borate
+  minerals used by industry worldwide. Commercial products include refined borax (sodium
+  tetraborate decahydrate), boric acid (H₃BO₃), sodium perborate, colemanite concentrates,
+  and high-purity elemental boron for specialty applications.
+
+  USGS MCS 2025 reports production in thousand metric tons, but with forms varying by
+  country: Turkey in refined borates, China in boric oxide (B₂O₃) equivalent, Chile and
+  Bolivia in ulexite, Argentina and Peru in crude ore, and Russia in datolite ore. Because
+  forms differ across countries, USGS cannot calculate a meaningful world total (reported
+  as XX). Reserves are reported by country in thousand metric tons of B₂O₃. Prices are
+  the average unit value of US imports on a cost, insurance, and freight (CIF) basis in
+  USD per metric ton across all import forms.
+
+production:
+- reporting_year: 2024
+  mining_by_country:
+    shares:
+      - country: TR
+        share_pct: 65.65
+        quantity:
+          value: 3000000
+          unit: tonnes_per_year
+          form: compound_other
+          approximate: true
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Turkey 2024e: 3,000 thousand metric tons refined borates (3,000,000 tonnes),
+          up 20% from 2,500 thousand metric tons in 2023. Turkey is by far the world's
+          dominant borate producer; approximately 70% of its deposits are colemanite,
+          primarily used in heat-resistant glass. By end of August 2024, Turkish borate
+          production had increased 36% vs. the same period in 2023. The Bigadiç Granular
+          Boron Production Facility opened in September 2024 with 35,000 t/yr capacity.
+          Reserves: 950,000 thousand metric tons B₂O₃.
+        source_id: usgs_mcs_2025_boron
+      - country: CL
+        share_pct: 9.19
+        quantity:
+          value: 420000
+          unit: tonnes_per_year
+          form: ore
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Chile 2024e: 420 thousand metric tons ulexite (420,000 tonnes), unchanged from
+          2023. Deposits are in the Atacama region. Reserves: 35,000 thousand metric
+          tons B₂O₃.
+        source_id: usgs_mcs_2025_boron
+      - country: CN
+        share_pct: 7.44
+        quantity:
+          value: 340000
+          unit: tonnes_per_year
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          China 2024e: 340 thousand metric tons boric oxide equivalent (340,000 tonnes),
+          up from 300 thousand metric tons in 2023. Reserve data revised based on Government
+          reports in USGS MCS 2025. Reserves: 9,100 thousand metric tons B₂O₃ (low-grade
+          deposits; China is a net importer of high-quality borates from the US). Imports
+          from the US are expected to remain steady over several years as Chinese demand grows.
+        source_id: usgs_mcs_2025_boron
+      - country: PE
+        share_pct: 6.56
+        quantity:
+          value: 300000
+          unit: tonnes_per_year
+          form: ore
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Peru 2024e: 300 thousand metric tons crude borates (300,000 tonnes), unchanged from
+          2023. Reserves: 4,000 thousand metric tons B₂O₃.
+        source_id: usgs_mcs_2025_boron
+      - country: BO
+        share_pct: 5.03
+        quantity:
+          value: 230000
+          unit: tonnes_per_year
+          form: ore
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Bolivia 2024e: 230 thousand metric tons ulexite (230,000 tonnes), up significantly
+          from 140 thousand metric tons in 2023. Reserves: NA (USGS MCS 2025).
+        source_id: usgs_mcs_2025_boron
+      - country: AR
+        share_pct: 3.50
+        quantity:
+          value: 160000
+          unit: tonnes_per_year
+          form: ore
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Argentina 2024e: 160 thousand metric tons crude ore (160,000 tonnes), unchanged
+          from 2023. Reserves: NA (USGS MCS 2025).
+        source_id: usgs_mcs_2025_boron
+      - country: RU
+        share_pct: 1.75
+        quantity:
+          value: 80000
+          unit: tonnes_per_year
+          form: ore
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Russia 2024e: 80 thousand metric tons datolite ore (80,000 tonnes), unchanged from
+          2023. Datolite (CaBSiO₄OH) is a calcium borosilicate mineral and Russia's primary
+          boron source. Reserves: 40,000 thousand metric tons B₂O₃.
+        source_id: usgs_mcs_2025_boron
+      - country: DE
+        share_pct: 0.88
+        quantity:
+          value: 40000
+          unit: tonnes_per_year
+          form: compound_other
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Germany 2024e: 40 thousand metric tons boron compounds (40,000 tonnes), up from
+          38 thousand metric tons in 2023. Reserves: NA (USGS MCS 2025).
+        source_id: usgs_mcs_2025_boron
+    completeness: partial
+  notes: |
+    USGS MCS 2025 world production table (2024e). No world total is published because
+    production forms are inconsistent across countries (USGS footnote: "World totals cannot
+    be calculated because production and reserves are not reported in a consistent manner by
+    all countries"). Share percentages are computed against the partial named-country ex-US
+    sum for 2024e: Turkey 3,000 + Chile 420 + China 340 + Peru 300 + Bolivia 230 +
+    Argentina 160 + Russia 80 + Germany 40 = 4,570 thousand metric tons. US production is
+    withheld (W); three companies in southern California produce borates and the US is a net
+    exporter (net import reliance = E for all years 2020–2024). The named-country shares do
+    not represent true global market shares — Turkey's actual world market share is lower than
+    65.65% because US production is excluded from the denominator. Import sources (US imports,
+    2020–23 average): Turkey 90%, Bolivia 6%, other 4%.
+
+reserves:
+  reserves_by_country:
+    shares:
+      - country: TR
+        share_pct: 87.47
+        quantity:
+          value: 950000000
+          unit: tonnes
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Turkey reserves: 950,000 thousand metric tons B₂O₃ (USGS MCS 2025), by far the
+          largest in the world. Approximately 70% of Turkey's deposits are colemanite.
+        source_id: usgs_mcs_2025_boron
+      - country: US
+        share_pct: 4.42
+        quantity:
+          value: 48000000
+          unit: tonnes
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          US reserves: 48,000 thousand metric tons B₂O₃ (USGS MCS 2025). Deposits
+          primarily in the Mojave Desert (California): tincal, kernite, and brine-hosted
+          borates, with some ulexite and colemanite.
+        source_id: usgs_mcs_2025_boron
+      - country: RU
+        share_pct: 3.68
+        quantity:
+          value: 40000000
+          unit: tonnes
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Russia reserves: 40,000 thousand metric tons B₂O₃ (USGS MCS 2025). Primarily
+          datolite ore deposits.
+        source_id: usgs_mcs_2025_boron
+      - country: CL
+        share_pct: 3.22
+        quantity:
+          value: 35000000
+          unit: tonnes
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Chile reserves: 35,000 thousand metric tons B₂O₃ (USGS MCS 2025). Ulexite
+          deposits in the Atacama region.
+        source_id: usgs_mcs_2025_boron
+      - country: CN
+        share_pct: 0.84
+        quantity:
+          value: 9100000
+          unit: tonnes
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          China reserves: 9,100 thousand metric tons B₂O₃ (USGS MCS 2025). Data revised
+          based on Government reports. Low-grade reserves relative to demand growth.
+        source_id: usgs_mcs_2025_boron
+      - country: PE
+        share_pct: 0.37
+        quantity:
+          value: 4000000
+          unit: tonnes
+          form: oxide
+          confidence: high
+          source_id: usgs_mcs_2025_boron
+        notes: |
+          Peru reserves: 4,000 thousand metric tons B₂O₃ (USGS MCS 2025).
+        source_id: usgs_mcs_2025_boron
+    completeness: partial
+  notes: |
+    USGS MCS 2025 reserves are reported in thousand metric tons of B₂O₃ by country.
+    The world total is listed as XX (not applicable, footnote 4) because data are not
+    reported consistently across countries. Named-country quantified reserves: Turkey
+    950,000 + US 48,000 + Russia 40,000 + Chile 35,000 + China 9,100 + Peru 4,000 =
+    1,086,100 thousand metric tons B₂O₃. Argentina, Bolivia, and Germany list reserves
+    as NA. Share percentages are computed against the quantifiable subset (1,086,100 kt
+    B₂O₃). Turkey holds over 87% of quantified world reserves, reflecting its position
+    as the overwhelmingly dominant holder of borate resources globally.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: borate_ore
+    notes: |
+      The primary commercial feedstocks are borate ore deposits containing kernite, tincal
+      (borax), ulexite, and colemanite. In the US (Mojave Desert, California), open-pit
+      mining of kernite and tincal ore is the dominant extraction method; kernite is used
+      to produce boric acid, tincal produces sodium borate (refined borax), and ulexite
+      is used as a primary ingredient in specialty glasses and ceramics. Four borate
+      minerals — colemanite, kernite, tincal, and ulexite — account for 90% of borate
+      minerals used by industry worldwide (USGS MCS 2025).
+    source_id: usgs_mcs_2025_boron
+  - substrate: brine_solution
+    notes: |
+      Solution-mining of boron-bearing brines is used by at least two US companies in
+      California (including the third company that began mining in January 2024). This
+      technique avoids open-pit mining by extracting boron from subsurface brine. Natural
+      brine deposits in the Andean belt (Chile, Bolivia, Argentina) also yield ulexite from
+      evaporitic processes. Brine-sourced boron generally requires less beneficiation than
+      hard-rock ore but may have higher processing costs per unit.
+    source_id: usgs_mcs_2025_boron
+  - substrate: datolite_ore
+    notes: |
+      Russia's primary boron feedstock is datolite (CaBSiO₄OH), a calcium borosilicate
+      mineral distinct from the calcium and sodium borate deposits dominant elsewhere.
+      Datolite is a lower-grade boron source, but Russia holds substantial reserves at
+      40,000 thousand metric tons B₂O₃.
+    source_id: usgs_mcs_2025_boron
+
+substitutes:
+  - application: detergents_and_cleaning
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Sodium percarbonate can replace borates in detergents and requires
+      lower temperatures to undergo hydrolysis, which is an environmental consideration."
+      Sodium percarbonate (Na₂CO₃·1.5H₂O₂) functions as an oxygen-based bleach in cold-
+      water laundry formulations but lacks the water-softening and pH-buffering properties
+      of borates, limiting full substitution in all detergent applications.
+    source_id: usgs_mcs_2025_boron
+  - application: ceramics_and_glazes
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Some enamels can use other glass-producing substances, such as
+      phosphates." Phosphate glasses can partially substitute for borosilicate glass in
+      some optical and enamel applications. However, boron's unique combination of fluxing
+      properties, low thermal expansion, and chemical durability makes borosilicate glass
+      largely irreplaceable for laboratory glassware, pharmaceutical containers, and
+      heat-resistant glass.
+    source_id: usgs_mcs_2025_boron
+  - application: insulation
+    availability: full
+    notes: |
+      USGS MCS 2025: "Insulation substitutes include cellulose, foams, and mineral wools."
+      Cellulose insulation, polyurethane foams, and mineral wool (rock wool, slag wool) are
+      established commercial alternatives to fiberglass insulation that do not require boric
+      acid or borax as flame retardants or binders.
+    source_id: usgs_mcs_2025_boron
+  - application: soaps
+    availability: full
+    notes: |
+      USGS MCS 2025: "In soaps, sodium and potassium salts of fatty acids can act as
+      cleaning and emulsifying agents." Conventional soap formulations based on sodium
+      stearate and potassium palmitate do not require boron; boron's use is confined to
+      specialty antiseptic and pH-buffering soap formulations where full substitution is
+      available for general-purpose applications.
+    source_id: usgs_mcs_2025_boron
+
+end_uses:
+  uses:
+    - application: glass_manufacturing
+      share_pct: 50
+      confidence: low
+      notes: |
+        USGS MCS 2025 identifies glass and ceramics as the "leading domestic users" of boron
+        products, and states that "more than three-quarters of world consumption was used in
+        ceramics, detergents, fertilizers, and glass." Glass is the single largest application:
+        fiberglass insulation and textile, borosilicate glass (laboratory and pharmaceutical),
+        specialty optical glass, and heat-resistant glass (from Turkish colemanite). Share (~50%)
+        is an estimate; no explicit percentage is provided in the chapter.
+      source_id: usgs_mcs_2025_boron
+    - application: ceramics_and_glazes
+      share_pct: 15
+      confidence: low
+      notes: |
+        USGS MCS 2025 identifies ceramics alongside glass as the leading domestic sector.
+        Borates are used as fluxes in ceramic glazes, porcelain enamels, and frits, reducing
+        firing temperatures and improving chemical resistance. Share (~15%) is an estimate.
+      source_id: usgs_mcs_2025_boron
+    - application: detergents_and_cleaning
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 includes detergents among the four leading global applications. Sodium
+        perborate (a bleaching agent derived from borax) was historically a major European
+        laundry-detergent ingredient; it has been partially displaced by sodium percarbonate
+        but remains significant globally. Share (~10%) is an estimate.
+      source_id: usgs_mcs_2025_boron
+    - application: agriculture_and_fertilizers
+      share_pct: 5
+      confidence: low
+      notes: |
+        USGS MCS 2025 includes fertilizers among the four leading applications. Boron is an
+        essential micronutrient for plant growth, and boron fertilizers (borax, boric acid,
+        ulexite granules) are applied to high-demand crops including alfalfa, canola, cotton,
+        and fruit trees. The Bigadiç Granular Boron Production Facility (Turkey, opened Sept.
+        2024, 35,000 t/yr) primarily targets the fertilizer industry. Share (~5%) is an estimate.
+      source_id: usgs_mcs_2025_boron
+    - application: other_industrial
+      share_pct: 20
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists additional boron applications: abrasives (boron carbide, B₄C, one
+        of the hardest materials known); insecticides (boric acid as cockroach and ant bait);
+        cleaning products; insulation (boric acid as flame retardant); and semiconductors (boron
+        as a p-type dopant in silicon). Specialty uses include boron carbide in nuclear reactor
+        control rods and body armor, and boron nitride as a high-performance lubricant and
+        abrasive. The US DoD awarded $49.6 million in December 2023 for domestic boron carbide
+        capacity under the Defense Production Act, Title III. Share (~20%) is an estimate.
+      source_id: usgs_mcs_2025_boron
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crm_regulation_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crm_regulation_2024
+  notes: |
+    Boron (borate) is listed as both a Critical Raw Material and a Strategic Raw Material
+    in Annex I of EU Regulation 2024/1252 (the EU Critical Raw Materials Act), reflecting
+    the EU's heavy dependence on Turkey for over 70% of its borate supply and the strategic
+    importance of borates for glass, ceramics, and advanced materials manufacturing. The
+    United States has not designated boron on its 2022 Critical Minerals List (US Department
+    of the Interior, 50 minerals), but the US Department of Defense awarded $49.6 million under
+    the Defense Production Act, Title III, in December 2023 to increase domestic boron carbide
+    (B₄C) production capacity — indicating defense-sector concern about availability of boron
+    for armor and nuclear applications. US net import reliance = E (net exporter) for all years
+    2020–2024; three California companies produce sufficient borates to supply domestic demand
+    and generate significant export surpluses. The EU CRM designation is driven primarily by
+    the EU's concentrated import reliance on Turkey.
+
+prices:
+  - year: 2024
+    value: 560.0
+    unit: usd_per_tonne
+    form: compound_other
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average unit value of US imports, CIF, 2024e = $560
+      per metric ton (across all forms: refined borax, boric acid, colemanite, ulexite). Down
+      from the 2023 peak of $606/ton. The blended average reflects the actual import mix.
+    source_id: usgs_mcs_2025_boron
+  - year: 2023
+    value: 606.0
+    unit: usd_per_tonne
+    form: compound_other
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of US imports, CIF, 2023 = $606/MT. Peak of the 2020–2024 period, reflecting supply tightness and elevated energy and logistics costs."
+    source_id: usgs_mcs_2025_boron
+  - year: 2022
+    value: 485.0
+    unit: usd_per_tonne
+    form: compound_other
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of US imports, CIF, 2022 = $485/MT."
+    source_id: usgs_mcs_2025_boron
+  - year: 2021
+    value: 394.0
+    unit: usd_per_tonne
+    form: compound_other
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of US imports, CIF, 2021 = $394/MT."
+    source_id: usgs_mcs_2025_boron
+  - year: 2020
+    value: 380.0
+    unit: usd_per_tonne
+    form: compound_other
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of US imports, CIF, 2020 = $380/MT."
+    source_id: usgs_mcs_2025_boron
+
+geopolitical_events:
+  - date: "2023-12"
+    event: "US DoD awards $49.6 million under Defense Production Act Title III for domestic boron carbide capacity"
+    impact: |
+      December 2023: the US Department of Defense awarded $49.6 million to a company
+      headquartered in Golden, CO, to increase domestic boron carbide (B₄C) production
+      capacity. Boron carbide is one of the hardest materials known and is used in nuclear
+      reactor control rods, personal armor (body armor tiles), and ballistic protection for
+      vehicles. The award reflects supply-chain concerns about global borate production
+      concentration in Turkey and limited domestic boron carbide manufacturing capacity.
+      This is the first known Defense Production Act award specifically targeting boron
+      supply-chain security.
+    source_id: usgs_mcs_2025_boron
+  - date: "2024-01"
+    event: "Third US borate producer begins solution mining in Newberry Springs, California"
+    impact: |
+      January 2024: a domestic company began mining borates using solution-mining techniques
+      in Newberry Springs, CA (San Bernardino County), becoming the third US borate producer.
+      In April 2024, the company began boric acid production with initial capacity of ~1,800
+      tonnes per year and plans to expand to ~8,200 tonnes per year. The facility targets
+      specialty boron products for defense, electric transportation, food security, and
+      decarbonization industries — adding new US production capacity for the first time in
+      many years.
+    source_id: usgs_mcs_2025_boron
+  - date: "2024-09"
+    event: "Turkey opens Bigadiç Granular Boron Production Facility; Turkish production up 36% through August 2024"
+    impact: |
+      September 2024: Turkey opened the Bigadiç Granular Boron Production Facility with a
+      production capacity of 35,000 tonnes per year of granulated boron products for the
+      fertilizer industry. By end of August 2024, Turkish borate production had increased 36%
+      compared with the same period in 2023. Turkey's 2024e production reached 3,000,000
+      tonnes of refined borates (3,000 thousand metric tons), up 20% from 2,500,000 tonnes
+      in 2023. Turkey's continued capacity expansion reinforces its dominant position as the
+      world's largest borate producer and exporter.
+    source_id: usgs_mcs_2025_boron
+  - date: "2024-09"
+    event: "BLM approves Nevada boric acid project; 175,000 t/yr facility targeted for 2028 production start"
+    impact: |
+      September 2024: the US Bureau of Land Management completed its final environmental
+      impact statement for an Australia-based company's boric acid project in Nevada,
+      determining that development may proceed. The project is designed to produce ~175,000
+      tonnes per year of boric acid over a 26-year mine life, with initial production expected
+      in 2028. If completed, this would significantly diversify US borate supply and reduce
+      dependence on Turkish imports, representing a major addition to North American production
+      capacity.
+    source_id: usgs_mcs_2025_boron
+
+narrative: |
+  Boron's commercial supply chain is built on borate minerals rather than the element itself —
+  boron does not occur in elemental form in nature. The four principal borate minerals (colemanite,
+  kernite, tincal, and ulexite) account for 90% of all borate minerals used industrially. Turkey
+  dominates global production with an estimated 3,000,000 tonnes of refined borates in 2024, roughly
+  66% of the named-country ex-US total. With 950,000 thousand metric tons of B₂O₃ reserves —
+  over 87% of quantified world reserves — Turkey's resource dominance is structural and self-
+  reinforcing. Chile (420,000 t, 9%), China (340,000 t, 7%), and Peru (300,000 t, 7%) are the
+  next-largest producers. US production from three companies in southern California is withheld
+  by USGS, but the US is a net exporter: domestic production exceeds consumption for all years
+  2020–2024, with China, India, Canada, Indonesia, and Mexico among the leading US borate export
+  destinations.
+
+  Glass and ceramics are the overwhelmingly dominant applications for boron worldwide, together
+  consuming an estimated 65% of global borate output. The USGS chapter states that "more than
+  three-quarters of world consumption" is in ceramics, detergents, fertilizers, and glass —
+  reflecting boron's critical role as a flux (lowering melting points), a thermal expansion
+  modifier in borosilicate glass, and a flame retardant and structural component in fiberglass
+  insulation and textile. Other significant applications include sodium perborate bleach in
+  laundry detergents, micronutrient boron fertilizers (where the Bigadiç facility's launch
+  targets this growing segment), and specialty uses such as boron carbide for armor and nuclear
+  reactor control rods, boron nitride lubricants, and boron as a semiconductor dopant. Borate
+  import prices in the US rose steadily from $380/tonne in 2020 to a peak of $606/tonne in 2023
+  before easing to $560/tonne in 2024, reflecting global supply-chain costs and strong downstream
+  demand.
+
+  The geopolitical dimension of boron is primarily a European concern: the EU designated boron
+  as both a Critical and Strategic Raw Material under Regulation 2024/1252, driven by its 70%+
+  import dependence on Turkey. The United States, with its own substantial production and large
+  reserves, is less exposed — though the DoD's December 2023 Defense Production Act investment
+  in domestic boron carbide capacity signals awareness of the defense-sector supply chain for
+  boron's specialty applications. A Nevada boric acid project approved by the BLM in September
+  2024 — targeting 175,000 tonnes/yr from 2028 — could meaningfully diversify North American
+  supply and reduce reliance on Turkish borates over the coming decade.
+
+sources:
+  - id: usgs_mcs_2025_boron
+    title: Mineral Commodity Summaries 2025 — Boron
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-boron.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crm_regulation_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council establishing a framework to ensure a secure and sustainable supply of critical raw materials"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
