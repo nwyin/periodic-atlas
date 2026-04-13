@@ -1,0 +1,80 @@
+symbol: Db
+atomic_number: 105
+name: dubnium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Dubnium is produced only as individual atoms in
+  accelerator bombardment experiments and identified through correlated decay
+  chains or rapid atom-at-a-time chemistry. NNDC NuDat 3.0 lists the longest-
+  lived adopted isotope, Db-268, with a 28-hour half-life.
+
+research_only:
+  longest_lived_isotope: Db-268
+  half_life_seconds: 100800
+  discovered_year: 1970
+  iupac_recognized_year: 1997
+  discovered_at: |
+    Discovery credit is shared between the Joint Institute for Nuclear Research
+    (Dubna, USSR/Russia) and Lawrence Berkeley Laboratory (Berkeley,
+    California, USA). IUPAC's Transfermium Working Group concluded that the
+    independent 1970 Dubna and Berkeley work on element 105 was essentially
+    contemporaneous and equally convincing, and the 1997 IUPAC
+    recommendations assigned the permanent name dubnium with symbol Db.
+  production_mode: accelerator_generated
+  notes: |
+    Dubnium has no industrial production and exists only in atom-count-scale
+    heavy-ion experiments. The first convincing syntheses were reported from
+    Dubna via Am-243(Ne-22,4n/5n) and from Berkeley via Cf-249(N-15,4n). NuDat
+    3.0 states that Db-268, a later descendant observed in superheavy-element
+    decay chains at Dubna, GSI, and Berkeley, is the longest-lived adopted
+    dubnium isotope and decays mainly by spontaneous fission with a 28-hour
+    half-life.
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Dubnium is a research-only synthetic element with no commercial mineral,
+    metal, or isotope market in the cited primary sources.
+
+narrative: |
+  Dubnium has no commercial supply chain. No mine, refinery, reserves base,
+  price series, or end-use market exists because the element is produced only
+  as single atoms in accelerator laboratories. In atlas terms it is purely a
+  research-only element rather than a traded material.
+
+  The main commercial-reality fact is therefore negative: there is nothing to
+  buy except access to accelerator time and target fabrication. IUPAC's 1993
+  Transfermium Working Group concluded that discovery credit should be shared
+  between the Dubna and Berkeley teams based on essentially contemporaneous
+  1970 work, and IUPAC formalized the permanent name dubnium (Db) in 1997.
+  NNDC's adopted nuclear-data record lists Db-268 as the longest-lived adopted
+  isotope at 28 hours, which is long for a superheavy nuclide but still only
+  supports atom-at-a-time chemistry and decay studies.
+
+sources:
+  - id: iupac_twg_1993_transfermium
+    title: "Discovery of the transfermium elements, Part III: Discovery profiles of the transfermium elements"
+    publisher: International Union of Pure and Applied Chemistry / Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac-2007/1993/pdf/6508x1757.pdf
+    retrieved: 2026-04-13
+    publication_year: 1993
+    source_tier: primary
+  - id: iupac_transfermium_names_1997
+    title: "Names and symbols of transfermium elements (IUPAC Recommendations 1997)"
+    publisher: International Union of Pure and Applied Chemistry / Pure and Applied Chemistry
+    url: https://old.iupac.org/publications/pac/1997/pdf/6912x2471.pdf
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: nndc_nudat_db268
+    title: "268Db Adopted Levels, Gammas"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/getadopted.jsp?nuc=268Db
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
