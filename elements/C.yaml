@@ -1,0 +1,522 @@
+symbol: C
+atomic_number: 6
+name: carbon
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Bulk carbon is not traded as elemental carbon metal; the dominant commercial
+  forms are fossil carbon streams: coal, crude oil and condensate, and natural
+  gas. The Energy Institute Statistical Review 2025 reports coal production in
+  million tonnes of commercial solid fuels, oil production in both thousand
+  barrels per day and million tonnes, and natural-gas production in billion
+  cubic metres standardized to 15°C and 1013 mbar with a gross calorific value
+  of 40 MJ/m3. This file preserves those stream distinctions and converts gas to
+  million_m3_per_year for schema compatibility. Graphite is treated separately
+  in the atlas and is not represented here.
+
+production:
+- reporting_year: 2024
+  stream: coal
+  mine:
+    value: 9241.5
+    unit: million_tonnes_per_year
+    form: ore
+    approximate: true
+    confidence: high
+    notes: |
+      Energy Institute Statistical Review of World Energy 2025, Coal Production
+      table (page 48): world coal production reached 9,241.5 million tonnes in
+      2024, up 0.9% year over year. The table covers commercial solid fuels
+      only: bituminous coal, anthracite, lignite, brown coal, and other
+      commercial solid fuels, including coal produced for coal-to-liquids and
+      coal-to-gas transformations.
+    source_id: energy_institute_statistical_review_2025
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 51.7
+        quantity:
+          value: 4780.0
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        notes: "Largest producer by far in 2024."
+        source_id: energy_institute_statistical_review_2025
+      - country: IN
+        share_pct: 11.7
+        quantity:
+          value: 1085.1
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        notes: "Output rose 7.0% in 2024."
+        source_id: energy_institute_statistical_review_2025
+      - country: ID
+        share_pct: 9.0
+        quantity:
+          value: 836.1
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        notes: "Production surpassed 800 Mt for the first time."
+        source_id: energy_institute_statistical_review_2025
+      - country: AU
+        share_pct: 5.0
+        quantity:
+          value: 462.9
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: US
+        share_pct: 5.0
+        quantity:
+          value: 464.6
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        notes: "US output fell to its lowest level in more than four decades."
+        source_id: energy_institute_statistical_review_2025
+      - country: RU
+        share_pct: 4.6
+        quantity:
+          value: 427.2
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: ZA
+        share_pct: 2.5
+        quantity:
+          value: 235.0
+          unit: million_tonnes_per_year
+          form: ore
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: ZZ
+        share_pct: 10.5
+        notes: "Rest of world."
+        source_id: energy_institute_statistical_review_2025
+    completeness: top_producers_only
+  notes: |
+    Coal is the most explicitly carbon-rich bulk stream in commerce, but even
+    here the market is fragmented between thermal coal, metallurgical coal, and
+    lignite. China alone produced more than half of world output in 2024.
+
+- reporting_year: 2024
+  stream: oil
+  mine:
+    value: 4543
+    unit: million_tonnes_per_year
+    form: liquid_cryogenic
+    approximate: true
+    confidence: high
+    notes: |
+      Energy Institute Statistical Review of World Energy 2025, Oil Production
+      table (page 23): world oil production was 4,543 million tonnes in 2024.
+      The series includes crude oil, shale oil, oil sands, condensates, and
+      natural gas liquids, and excludes biofuels, synthetic liquids derived
+      from coal or natural gas, refinery processing gain, and solid oil shales.
+    source_id: energy_institute_statistical_review_2025
+  mining_by_country:
+    shares:
+      - country: US
+        share_pct: 18.9
+        quantity:
+          value: 858
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        notes: "World's largest oil producer in 2024."
+        source_id: energy_institute_statistical_review_2025
+      - country: RU
+        share_pct: 11.6
+        quantity:
+          value: 526
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: SA
+        share_pct: 11.2
+        quantity:
+          value: 510
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: CA
+        share_pct: 6.4
+        quantity:
+          value: 290
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: IR
+        share_pct: 5.2
+        quantity:
+          value: 234
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: IQ
+        share_pct: 4.7
+        quantity:
+          value: 216
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: CN
+        share_pct: 4.7
+        quantity:
+          value: 213
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: BR
+        share_pct: 4.0
+        quantity:
+          value: 182
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: AE
+        share_pct: 4.0
+        quantity:
+          value: 180
+          unit: million_tonnes_per_year
+          form: liquid_cryogenic
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: ZZ
+        share_pct: 29.3
+        notes: "Rest of world."
+        source_id: energy_institute_statistical_review_2025
+    completeness: top_producers_only
+  notes: |
+    This stream captures carbon sold in liquid hydrocarbon form. The oil market
+    remains the largest single source of commercial energy, but its demand
+    growth has slowed materially as electric vehicles, efficiency, and weak
+    Chinese transport demand eat into road-fuel growth.
+
+- reporting_year: 2024
+  stream: natural_gas
+  mine:
+    value: 4124500
+    unit: million_m3_per_year
+    form: gas_crude
+    approximate: true
+    confidence: high
+    notes: |
+      Energy Institute Statistical Review of World Energy 2025, Natural gas
+      Production table (page 38): world gas production reached 4,124.5 billion
+      cubic metres in 2024. Converted here to 4,124,500 million cubic metres
+      per year. The series excludes gas flared or recycled, includes gas
+      produced for gas-to-liquids transformation, and is standardized to 15°C
+      and 1013 mbar using a gross calorific value of 40 MJ/m3.
+    source_id: energy_institute_statistical_review_2025
+  mining_by_country:
+    shares:
+      - country: US
+        share_pct: 25.0
+        quantity:
+          value: 1033000
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: energy_institute_statistical_review_2025
+        notes: "US alone accounted for one-quarter of world output."
+        source_id: energy_institute_statistical_review_2025
+      - country: RU
+        share_pct: 15.3
+        quantity:
+          value: 629900
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: IR
+        share_pct: 6.4
+        quantity:
+          value: 262900
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: CN
+        share_pct: 6.0
+        quantity:
+          value: 248400
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: energy_institute_statistical_review_2025
+        notes: "China is now the world's fourth-largest gas producer."
+        source_id: energy_institute_statistical_review_2025
+      - country: CA
+        share_pct: 4.7
+        quantity:
+          value: 194200
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: QA
+        share_pct: 4.4
+        quantity:
+          value: 179500
+          unit: million_m3_per_year
+          form: gas_crude
+          source_id: energy_institute_statistical_review_2025
+        source_id: energy_institute_statistical_review_2025
+      - country: ZZ
+        share_pct: 38.2
+        notes: "Rest of world."
+        source_id: energy_institute_statistical_review_2025
+    completeness: top_producers_only
+  notes: |
+    Commercial gas is the fastest-growing fossil stream in 2024 demand terms.
+    Supply is dominated by a small set of very large producers, but traded gas
+    markets are increasingly split between pipeline systems and LNG.
+
+end_uses:
+  uses:
+    - application: electricity_generation_and_heat
+      share_pct: 38
+      confidence: low
+      notes: |
+        Author synthesis from primary sources. Coal remains heavily anchored in
+        power generation: IEA Coal 2024 states the power sector was the main
+        driver of coal demand growth and coal-fired generation reached an
+        all-time high in 2024; IEA Global Energy Review 2025 adds that the
+        increase in global energy demand was led by the power sector and that
+        gas- and coal-fired generation still rose in 2024. This makes power and
+        heat the single largest commercial use of bulk carbon, but no single
+        primary source publishes a unified coal+oil+gas end-use split.
+      source_id: iea_coal_2024
+    - application: transport_fuels
+      share_pct: 31
+      confidence: low
+      notes: |
+        Author synthesis. IEA Global Energy Review 2025 states that non-
+        feedstock oil use remains dominated by road transport, aviation and
+        shipping, even though road-fuel demand is now flattening. Transport is
+        therefore still the largest end market for liquid hydrocarbon carbon.
+      source_id: iea_global_energy_review_2025_oil
+    - application: industrial_process_heat_and_reducing_agent
+      share_pct: 15
+      confidence: low
+      notes: |
+        Author synthesis. Industrial demand is the main non-power sink for coal
+        and gas, including coke in iron and steel, kiln fuels, and direct heat.
+        IEA Coal 2024 notes industrial coal consumption also increased, while
+        IEA Global Energy Review 2025 notes gas demand in the European Union
+        grew notably for industrial use.
+      source_id: iea_global_energy_review_2025_key_findings
+    - application: petrochemicals_and_non_combusted_feedstocks
+      share_pct: 10
+      confidence: low
+      notes: |
+        Author synthesis. IEA Global Energy Review 2025 identifies chemical
+        feedstocks as accounting for around half of oil demand growth in energy
+        terms in 2024 and says the post-2019 increase in global oil consumption
+        was almost entirely due to higher petrochemical feedstock demand.
+      source_id: iea_global_energy_review_2025_oil
+    - application: buildings_heating_and_cooking
+      share_pct: 6
+      confidence: low
+      notes: |
+        Author synthesis. Buildings remain an important direct-use market for
+        gas and oil, though relative share is shrinking as electrification and
+        heat pumps spread. IEA Global Energy Review 2025 highlights heat pumps
+        and electrification as key substitutes reducing fossil demand growth.
+      source_id: iea_global_energy_review_2025_key_findings
+  completeness: partial
+
+prices:
+  - year: 2022
+    value: 291.28
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: Northwest Europe thermal coal CIF ARA
+    notes: "Energy Institute coal price table: Northwest Europe marker."
+    source_id: energy_institute_statistical_review_2025
+  - year: 2023
+    value: 129.54
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: Northwest Europe thermal coal CIF ARA
+    notes: "Energy Institute coal price table: Northwest Europe marker."
+    source_id: energy_institute_statistical_review_2025
+  - year: 2024
+    value: 112.00
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: Northwest Europe thermal coal CIF ARA
+    notes: "Energy Institute coal price table: Northwest Europe marker."
+    source_id: energy_institute_statistical_review_2025
+  - year: 2022
+    value: 174.49
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: Australia Newcastle thermal coal FOB
+    notes: "Energy Institute coal price table: Australia benchmark."
+    source_id: energy_institute_statistical_review_2025
+  - year: 2023
+    value: 103.59
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: Australia Newcastle thermal coal FOB
+    notes: "Energy Institute coal price table: Australia benchmark."
+    source_id: energy_institute_statistical_review_2025
+  - year: 2024
+    value: 89.41
+    unit: usd_per_tonne
+    form: ore
+    basis: other
+    region: Australia Newcastle thermal coal FOB
+    notes: "Energy Institute coal price table: Australia benchmark."
+    source_id: energy_institute_statistical_review_2025
+
+geopolitical_events:
+  - date: 2024-06-02
+    event: "OPEC+ agreed to extend core crude-output cuts into 2025 while outlining a gradual unwind of some voluntary cuts"
+    impact: |
+      The oil market's largest coordinated supply-management bloc kept a floor
+      under global liquid-carbon prices and delayed the return of some barrels
+      to market. Carbon as a commercial stream remains highly exposed to cartel
+      policy, unlike most mined elements.
+    source_id: opec_press_release_2024_06_02
+  - date: 2024-09
+    event: "United Kingdom closed its last coal-fired power plant"
+    impact: |
+      The Ratcliffe-on-Soar closure was symbolically important because it marked
+      the first G7 economy to end coal-fired generation, reinforcing the demand
+      collapse for thermal coal in advanced economies even while global coal use
+      still rose elsewhere.
+    source_id: iea_coal_2024
+  - date: 2024
+    event: "Russian coal exporters remained constrained by sanctions, rail bottlenecks, tariffs, and shifting Asian trade routes"
+    impact: |
+      IEA Coal 2024 describes a continuing reshuffle of trade flows after the EU
+      coal import ban, plus added US sanctions and logistics constraints. The
+      result was lower profitability and a structurally less flexible export
+      position for Russian coal despite still-large production volumes.
+    source_id: iea_coal_2024
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: coal_seams
+    notes: |
+      Coal production covers commercial solid fuels only: bituminous coal,
+      anthracite, lignite, brown coal, and other commercial solid fuels,
+      including coal produced for coal-to-liquids and coal-to-gas
+      transformations.
+    source_id: energy_institute_statistical_review_2025
+  - substrate: petroleum_reservoirs
+    notes: |
+      Oil production includes crude oil, shale oil, oil sands, condensates, and
+      natural gas liquids, and excludes biofuels and synthetic liquids from
+      coal or gas.
+    source_id: energy_institute_statistical_review_2025
+  - substrate: natural_gas_reservoirs
+    notes: |
+      Natural-gas production is marketed production, excluding flared or
+      recycled gas, standardized to 15°C and 1013 mbar with a gross calorific
+      value of 40 MJ/m3.
+    source_id: energy_institute_statistical_review_2025
+
+substitutes:
+  - application: energy_services
+    availability: partial
+    notes: |
+      IEA Global Energy Review 2025 identifies renewable power, nuclear, EVs,
+      heat pumps, and efficiency gains as the main technologies slowing fossil
+      carbon demand growth. They substitute for carbon in electricity, mobility,
+      and building heat, but they are not one-for-one substitutes for
+      petrochemical feedstocks or metallurgical carbon.
+    source_id: iea_global_energy_review_2025_key_findings
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Bulk carbon is systemically indispensable but is not listed as a U.S.
+    critical mineral or an EU critical/strategic raw material. Regulatory
+    treatment focuses on carbon emissions and fuel markets rather than mineral
+    criticality.
+
+narrative: |
+  Carbon is the largest commercial element in the world economy by throughput,
+  but not in elemental form. Its trade reality is a set of enormous fossil
+  carbon streams: coal, crude oil and condensate, and natural gas. In 2024 all
+  three remained at or near record levels in global markets. Coal exceeded
+  9.2 billion tonnes of output, oil production reached 4.5 billion tonnes, and
+  marketed natural gas rose above 4.1 trillion cubic metres. These are not
+  interchangeable streams: coal remains most exposed to power generation and
+  steel, oil to transport and petrochemicals, and gas to power, heating,
+  fertilizer, and industry.
+
+  The commercial reality is also unusually political. Oil is shaped by OPEC+
+  quota management, gas by pipeline geography and LNG infrastructure, and coal
+  by sanctions, rail capacity, and regional power-system stress. IEA's 2024
+  market commentary shows a world in which decarbonization technologies are
+  visibly slowing oil demand growth and collapsing coal demand in some advanced
+  economies, yet total fossil carbon demand still grew because electricity
+  demand, industrial production, cooling loads, and Asian energy consumption
+  kept expanding.
+
+  For atlas purposes, carbon is best treated as a bundle of traded energy
+  molecules rather than a mined elemental commodity. That is why the file is
+  stream-based, why end uses are only partial author synthesis from primary
+  energy sources, and why graphite is excluded to its own dedicated element
+  entry.
+
+sources:
+  - id: energy_institute_statistical_review_2025
+    title: Statistical Review of World Energy 2025
+    publisher: Energy Institute
+    url: https://www.energyinst.org/__data/assets/pdf_file/0007/1658077/Statistical-Review-of-World-Energy.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_global_energy_review_2025_key_findings
+    title: Global Energy Review 2025 - Key findings
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-energy-review-2025/key-findings
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_global_energy_review_2025_oil
+    title: Global Energy Review 2025 - Oil
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-energy-review-2025/oil
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_coal_2024
+    title: Coal 2024 - Executive summary
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/coal-2024/executive-summary
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: opec_press_release_2024_06_02
+    title: OPEC+ meeting press release, 2 June 2024
+    publisher: OPEC
+    url: https://www.opec.org/opec_web/en/press_room/7289.htm
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
