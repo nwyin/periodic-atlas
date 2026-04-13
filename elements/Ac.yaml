@@ -1,0 +1,229 @@
+symbol: Ac
+atomic_number: 89
+name: actinium
+category: actinide
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Actinium's commercial reality is an isotope market centered on Ac-225 rather than
+  a bulk elemental metal trade. DOE/NIDC sells thorium-229-derived Ac-225 as solid
+  actinium nitrate in millicuries with weekly routine availability, while the
+  accelerator-produced route supplies Ac-225 nitrate for radiopharmaceutical work
+  and Ac-225/Bi-213 generators housed in lead shielding and ordered in millicuries.
+
+production: []
+
+isotope_markets:
+  - isotope: Ac-225
+    half_life_seconds: 857088
+    production_mode: decay_product
+    reporting_year: 2025
+    precursor: |
+      Thorium-229 decay at Oak Ridge National Laboratory. DOE/NIDC's product sheet
+      describes the production route as thorium-229 decay followed by ion exchange
+      chromatography.
+    delivery_form: |
+      Solid actinium nitrate in a glass screw-top V-vial, >99% Ac-225 by activity,
+      sold in millicuries. DOE/NIDC lists the material as routinely available
+      weekly, but recommends ordering far in advance because supply is limited.
+    producers:
+      shares:
+        - country: US
+          share_pct: 100
+          confidence: medium
+          notes: |
+            The primary-source set used here documents the DOE isotope-program route
+            only: thorium-229 "cows" at Oak Ridge National Laboratory with routine
+            NIDC distribution. Public sources reviewed here do not provide a global
+            market-share table for all Ac-225 suppliers.
+          source_id: nidc_ac225_decay_product
+      completeness: partial
+    notes: |
+      DOE's 2018 availability notice states that the thorium-229 decay route is
+      limited by the capacity of the Oak Ridge thorium-229 inventory and is suitable
+      for basic science and pre-clinical research rather than the larger clinical
+      volumes sought by later-stage radiopharmaceutical programs.
+  - isotope: Ac-225
+    half_life_seconds: 857088
+    production_mode: accelerator_generated
+    reporting_year: 2025
+    precursor: |
+      Proton bombardment of thorium-232 or natural thorium targets at Brookhaven
+      and Los Alamos National Laboratories, with subsequent separation and
+      purification at Oak Ridge National Laboratory.
+    delivery_form: |
+      DOE/NIDC distributes accelerator-produced actinium-225 nitrate for
+      radiopharmaceutical development and also assembles Ac-225/Bi-213 generators
+      at Oak Ridge and Brookhaven. The generator is ordered in millicuries and
+      housed in a 1.25 inch lead pig with inlet/outlet holes.
+    producers:
+      shares:
+        - country: US
+          share_pct: 100
+          confidence: medium
+          notes: |
+            The accelerator supply chain described in DOE/NIDC primary sources is
+            entirely US-based: irradiation at Brookhaven and Los Alamos, with
+            purification and generator assembly at Oak Ridge and Brookhaven. The
+            reviewed sources do not quantify non-US accelerator production shares.
+          source_id: doe_ac225_dmf_2020
+      completeness: partial
+    notes: |
+      DOE's 2018 and 2019 availability notices describe the accelerator route as
+      capable of producing hundreds of millicuries per month, with campaigns roughly
+      every six weeks to every other month, and scale-up toward multi-curie monthly
+      output to support clinical trials.
+
+feedstock_origins:
+  - substrate: thorium_229_inventory
+    notes: |
+      DOE states that the primary source of Ac-225 is thorium-229 decay from stored
+      thorium-229 inventory at Oak Ridge National Laboratory, with monthly
+      separation of millicurie-scale batches.
+    source_id: nidc_ac225_info
+  - substrate: thorium_targets
+    notes: |
+      The accelerator route uses proton bombardment of thorium targets at Brookhaven
+      and Los Alamos, followed by purification at Oak Ridge; DOE describes this
+      route as the path intended to expand clinical-trial supply.
+    source_id: doe_ac225_dmf_2020
+
+substitutes:
+  - application: targeted_alpha_radiopharmaceuticals
+    availability: partial
+    notes: |
+      IAEA's 2024 actinium-225 radiopharmaceutical report shows Ac-225 programs
+      being developed both after progression on Lu-177 somatostatin-analogue therapy
+      and in combination with Lu-177-labelled radioligands, which supports partial
+      substitution by incumbent beta-emitter therapies in some indications but not a
+      full drop-in replacement across the emerging Ac-225 pipeline.
+    source_id: iaea_ac225_tecdoc_2024
+
+end_uses:
+  uses:
+    - application: targeted_alpha_radiopharmaceuticals
+      share_pct: 100
+      confidence: medium
+      notes: |
+        DOE and IAEA sources consistently frame commercial Ac-225 around cancer
+        therapy and radiopharmaceutical development: targeted alpha therapy,
+        alpha-radioimmunotherapy, and Ac-225/Bi-213 generator-fed therapeutic use.
+        The market described by the source base is therefore the medical
+        radiopharmaceutical market rather than any metallurgical or chemical trade.
+      source_id: iaea_ac225_tecdoc_2024
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  us_critical_source_id: us_federal_register_critical_minerals_2025
+  eu_crm_list_as_of_2024: false
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Actinium does not appear in the US 2025 critical-minerals list or the EU's
+    2024 critical and strategic raw-material annexes. Its supply-chain importance is
+    being handled through isotope-program and radiopharmaceutical channels rather
+    than mainstream mineral-policy frameworks.
+
+prices: []
+
+geopolitical_events:
+  - date: 2020-02
+    event: "FDA accepted DOE's Type II Drug Master File for accelerator-produced actinium-225 nitrate"
+    impact: |
+      DOE said the accepted filing lets clinical investigators and pharmaceutical
+      companies reference a regulatory manufacturing dossier for accelerator-produced
+      Ac-225, lowering a key commercialization barrier for therapeutic programs that
+      depend on this supply route.
+    source_id: doe_ac225_dmf_2020
+  - date: 2023-03-21
+    event: "DOE and NRC held a roundtable on accelerator-produced actinium-225 regulation"
+    impact: |
+      DOE said it was increasing routine supply and used the roundtable to clarify
+      the licensing and impurity-management framework for accelerator-produced Ac-225
+      that can contain up to 2% Ac-227 activity at release.
+    source_id: doe_ac225_nrc_roundtable_2023
+
+narrative: |
+  Actinium is commercially real in 2025, but the business is Ac-225 for targeted
+  radiopharmaceuticals rather than elemental actinium metal. The mature legacy route
+  is decay-product Ac-225 milked from thorium-229 inventory at Oak Ridge, sold by
+  DOE/NIDC as solid actinium nitrate in millicuries and constrained by the size of
+  the thorium-229 stock. That route is the main clinically used source identified by
+  the IAEA, but DOE describes it as limited enough that it primarily supports basic
+  science, pre-clinical work, and small-volume supply.
+
+  The scaling route is accelerator-produced Ac-225: thorium targets are irradiated
+  at Brookhaven and Los Alamos, purified at Oak Ridge, and then sold either as
+  Ac-225 nitrate or incorporated into Ac-225/Bi-213 generators. DOE's public record
+  shows why the isotope sits in tier 2 rather than the atlas' bulk-material tiers:
+  production is measured in millicuries per batch or per month, supply expansion is
+  driven by regulatory and hot-cell capability, and demand is tied to a fast-growing
+  pipeline of targeted alpha therapy clinical trials rather than tonnage.
+
+sources:
+  - id: nidc_ac225_info
+    title: "Multiple Production Methods Underway to Provide Actinium-225"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/information/actinium-225
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_ac225_decay_product
+    title: "Actinium-225 (Thorium-229 Decay Product) Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://isotopes.gov/sites/default/files/2025-07/Actinium-225%20%28Thorium-229%20Decay%20Product%29%20Product%20Information.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: doe_ac225_routine_2018
+    title: "Isotope Routinely Available: Actinium-225"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/71
+    retrieved: 2026-04-13
+    publication_year: 2018
+    source_tier: primary
+  - id: doe_ac225_dmf_2020
+    title: "Actinium-225 DMF Accepted by the FDA"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/531
+    retrieved: 2026-04-13
+    publication_year: 2020
+    source_tier: primary
+  - id: doe_ac225_nrc_roundtable_2023
+    title: "DOE Isotope Program virtual roundtable with NRC on accelerator-produced actinium-225"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://isotopes.gov/NRC-roundtable
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: doe_ac225_generator_spotlight_2025
+    title: "February Isotope Spotlights"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/1461
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iaea_ac225_tecdoc_2024
+    title: "Production and Quality Control of Actinium-225 Radiopharmaceuticals"
+    publisher: International Atomic Energy Agency
+    url: https://www-pub.iaea.org/MTCD/publications/PDF/TE-2057web.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2025
+    title: "Final 2025 List of Critical Minerals"
+    publisher: US Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://faolex.fao.org/docs/pdf/eur231131.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
