@@ -1,0 +1,175 @@
+symbol: Cm
+atomic_number: 96
+name: curium
+category: actinide
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Curium is sold commercially only as isotope-specific material through DOE's NIDC catalog,
+  not as a bulk metal commodity. The 2024 NIDC product sheets list Cm-244 as nitrate solid
+  in a glass screw-cap bottle sold in milligrams, and Cm-248 as nitrate or chloride solid in
+  a nonreturnable glass bottle sold in micrograms; both are stock items and nuclear material
+  transfers requiring DOE/NRC Form 741 documentation.
+
+isotope_markets:
+  - isotope: Cm-244
+    half_life_seconds: 571212936
+    production_mode: reactor_generated
+    reporting_year: 2025
+    precursor: |
+      NIDC lists the production route as successive neutron captures and beta decays of
+      plutonium-242, consistent with HFIR's original mission as a reactor built to support
+      transuranic-isotope production including curium.
+    delivery_form: |
+      NIDC sells Cm-244 as nitrate solid in a glass screw-cap bottle within a nonreturnable
+      container, with stock availability and milligrams as the unit of sale.
+    notes: |
+      Public primary sources reviewed here do not disclose annual Cm-244 output, prices, or
+      market shares. The visible commercial market is a DOE catalog item supplied in very
+      small lots for radiochemical work rather than a bulk elemental trade.
+  - isotope: Cm-248
+    half_life_seconds: 10983168000000
+    production_mode: decay_product
+    reporting_year: 2025
+    precursor: |
+      NIDC lists the production route as decay of californium-252. ORNL's actinide program
+      then uses curium-248 both as a high-purity research isotope and as a feed material for
+      heavier transplutonium isotopes such as Bk-249.
+    delivery_form: |
+      NIDC sells Cm-248 as nitrate or chloride solid in a nonreturnable glass bottle, with
+      stock availability and micrograms as the unit of sale.
+    notes: |
+      Cm-248 is the scarcer and commercially more distinctive curium stream because it sits
+      inside ORNL's transplutonium inventory loop: it is recovered from californium decay,
+      dispensed for research, and can be irradiated onward to berkelium. Public sources do
+      not publish annual output or pricing.
+
+feedstock_origins:
+  - substrate: irradiated_plutonium_242_targets
+    notes: |
+      DOE's Cm-244 product sheet identifies the production route as successive neutron
+      captures and beta decays of plutonium-242, implying an irradiated plutonium target
+      stream rather than a mined feedstock.
+    source_id: nidc_cm244_product_2024
+  - substrate: californium_252_decay_inventory
+    notes: |
+      DOE's Cm-248 product sheet identifies the production route as decay of californium-252,
+      making aged californium inventory the direct feedstock for the Cm-248 stream.
+    source_id: nidc_cm248_product_2024
+
+end_uses:
+  uses:
+    - application: actinide_research_and_target_materials
+      share_pct: 100
+      confidence: medium
+      notes: |
+        ORNL's Medical, Industrial, and Research Isotopes group describes recovery and use of
+        curium-248 in research applications such as super-heavy element discovery, while the
+        DOE catalog shows curium sold only in milligram or microgram lots. In practice the
+        curium market is therefore a research-and-transplutonium-target business rather than a
+        mainstream industrial materials market.
+      source_id: ornl_mirig_2025
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Curium is absent from the 2025 U.S. critical-minerals process and from the EU's 2024
+    critical and strategic raw-material annexes. Its supply chain is strategic in a nuclear
+    sense, but it is governed through isotope-program and national-laboratory channels rather
+    than civilian raw-material policy lists.
+
+geopolitical_events:
+  - date: 2025-09-30
+    event: ORNL highlighted new isotope-processing facilities and future radioisotope capacity expansions.
+    impact: |
+      ORNL said the completed Stable Isotope Production Facility and the proposed
+      Radioisotope Processing Facility were part of a broader push to secure domestic isotope
+      supply chains. For curium this matters because commercial availability depends on the
+      same Oak Ridge isotope-processing complex that recovers, purifies, and packages rare
+      actinides.
+    source_id: ornl_isotope_supply_chain_2025
+
+narrative: |
+  Curium is commercially real in 2025, but only as a state-run isotope catalog market. DOE's
+  National Isotope Development Center lists two curium products: Cm-244 sold in milligrams as
+  nitrate solid and Cm-248 sold in micrograms as nitrate or chloride solid. That is the key
+  commercial fact: curium is not traded as bulk metal, oxide, or concentrate, but as tiny
+  radiochemical lots dispensed from the U.S. isotope-production complex.
+
+  The supply chain is entirely nuclear-facility based. Cm-244 is generated by successive
+  neutron captures and beta decays from plutonium-242, while Cm-248 is recovered from the
+  decay of californium-252. ORNL's isotope program describes curium-248 as part of its
+  actinide research inventory for super-heavy-element discovery and related target work, and
+  DOE product sheets show both curium isotopes as stock items requiring nuclear-material
+  transfer controls. Public primary sources do not disclose annual output, prices, or global
+  producer shares, so the atlas record focuses on trade form, feedstock route, and end-use
+  function rather than fabricated tonnage.
+
+sources:
+  - id: nidc_curium_catalog_2025
+    title: "Curium"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/products/curium
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_cm244_product_2024
+    title: "Curium-244 Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/sites/default/files/2024-11/Curium-244%20Product%20Information.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: nidc_cm248_product_2024
+    title: "Curium-248 Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/sites/default/files/2024-11/Curium-248%20Product%20Information.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: nidc_reactor_facilities_2025
+    title: "Reactor Facilities"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/reactor-facilities
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: ornl_mirig_2025
+    title: "Medical, Industrial, and Research Isotopes"
+    publisher: Oak Ridge National Laboratory / US Department of Energy
+    url: https://www.ornl.gov/project/medical-industrial-and-research-isotopes
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_bk249_product_2019
+    title: "Berkelium-249 Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/sites/default/files/2019-09/Bk-249.pdf
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: usgs_critical_minerals_2025
+    title: "2025 Draft List of Critical Minerals"
+    publisher: U.S. Geological Survey
+    url: https://www.usgs.gov/media/images/2025-draft-list-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/eli/reg/2024/1252/oj
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: ornl_isotope_supply_chain_2025
+    title: "Investment in new facilities expands critical isotope supply chains"
+    publisher: Oak Ridge National Laboratory / US Department of Energy
+    url: https://www.ornl.gov/organization-news/investment-new-facilities-expands-critical-isotope-supply-chains
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
