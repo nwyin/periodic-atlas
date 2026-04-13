@@ -1,0 +1,378 @@
+symbol: Ru
+atomic_number: 44
+name: ruthenium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports platinum-group metals (Ir, Os, Pd, Pt, Rh, Ru) as a single commodity
+  chapter with production figures in kilograms of PGM content. World mine production is tabulated
+  only for palladium and platinum by country; per-element ruthenium tonnage must be derived from
+  Ru's typical ~7% share of the PGM basket by weight. Prices are quoted in US dollars per troy
+  ounce (Engelhard unfabricated metal average annual prices; source: S&P Global Platts Metals
+  Week). US import data for ruthenium is reported separately in the salient statistics table.
+  Commercially traded as refined ruthenium metal sponge or powder (purity ≥99.9% Ru).
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 30000
+    unit: kg_per_year
+    form: contained_element
+    low: 27000
+    high: 33000
+    approximate: true
+    confidence: medium
+    notes: |
+      World Ru mine production estimated ~30,000 kg (30 t) for 2024e. USGS MCS 2025 does not
+      separately report per-element world Ru production; only palladium (190,000 kg, world 2024e)
+      and platinum (170,000 kg, world 2024e) are tabulated by country. Estimate derived by applying
+      Ru's ~7% basket share to total world PGM production (~430,000 kg full basket including Rh,
+      Ru, Ir, Os). SA and Russian output both declined in 2024 vs 2023: world Pd down 8.7%
+      (208,000→190,000 kg), world Pt down 5% (179,000→170,000 kg); Ru estimated similarly at
+      ~30,000 kg vs ~32,000 kg in 2023. US mine Ru output is negligible; one Montana company
+      mined and processed PGMs with estimated value ~$310M in 2024 (primarily Pd/Pt content).
+    source_id: usgs_mcs_2025_pgm
+  grouped_reporting: true
+  commodity_group: platinum_group_metals
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 75
+        confidence: medium
+        notes: |
+          South Africa is the world's leading PGM mined-material producer (Bushveld Igneous
+          Complex: Merensky Reef, UG2 chromitite layer, Platreef). SA Pt 2024e: 120,000 kg /
+          world 170,000 kg = 70.6% of world Pt. Ru share estimated ~75% given SA's elevated
+          Ru/Pt ratio in UG2 ore. Output declined vs 2023 owing to lower PGM prices, higher
+          deep-level mining costs, labor disputes, and electricity supply disruptions.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 12
+        confidence: medium
+        notes: |
+          Russia (Norilsk Nickel Talnakh/Norilsk complex). RU Pd 2024e: 75,000 kg (39% of
+          world Pd), Pt 2024e: 18,000 kg (11% of world Pt). Ru co-produced from Ni-Cu-PGM
+          sulfide ores. Output declined in 2024 owing to natural disasters, lower ore grades
+          and recovery, Russia-Ukraine conflict disruptions, and planned outages at a major
+          metallurgical plant.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 7
+        confidence: medium
+        notes: |
+          Zimbabwe (Zimplats, Mimosa, Unki mines on the Great Dyke). ZW Pt 2024e: 19,000 kg /
+          world 170,000 kg = 11.2% of world Pt. Ru share estimated ~7%, reflecting the Great
+          Dyke's lower Ru/Pt ratio compared with SA Bushveld UG2.
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 4
+        confidence: medium
+        notes: |
+          Canada (Sudbury Basin: Vale, Glencore operations; Thunder Bay). CA Pd 2024e: 15,000 kg,
+          Pt 5,200 kg. Ru co-produced from Ni-Cu-PGM sulfide ores at Sudbury smelter/refinery.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZZ
+        share_pct: 2
+        confidence: low
+        notes: |
+          Other countries including United States (one Montana mine, negligible Ru; US Pd 2024e:
+          8,000 kg, Pt 2,000 kg) and minor output from other producers. US domestic Ru production
+          is not separately reported and sold to foreign companies for refining.
+        source_id: usgs_mcs_2025_pgm
+    completeness: top_producers_only
+
+reserves:
+  economic_reserves:
+    value: 5700
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate. USGS MCS 2025 reports world PGM reserves at >81,000,000 kg (>81,000 t)
+      total PGM content; not disaggregated by element. Applying Ru's ~7% basket share:
+      81,000 t × 0.07 ≈ 5,670 t Ru, rounded to 5,700 t. Country breakdown from USGS PGM
+      reserve totals: South Africa 63,000,000 kg (77.5%); Russia 16,000,000 kg (19.7%);
+      Zimbabwe 1,200,000 kg (1.5%); US 820,000 kg (1.0%); Canada 310,000 kg (0.4%).
+      Other countries: NA (not available). World PGM resources estimated >100,000,000 kg
+      (>100,000 t), largest in the Bushveld Complex. Per-element Ru reserves are derived.
+    source_id: usgs_mcs_2025_pgm
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 77.5
+        notes: |
+          SA PGM reserves: 63,000,000 kg = 63,000 t (77.5% of world total). Bushveld Igneous
+          Complex. Derived Ru reserves ~4,410 t.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 19.7
+        notes: |
+          Russia PGM reserves: 16,000,000 kg = 16,000 t (19.7%). Based on Russian Classification
+          system A+B+C1+C2 (deposits in development or preparation) per USGS footnote.
+          Derived Ru reserves ~1,120 t.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 1.5
+        notes: "Zimbabwe PGM reserves: 1,200,000 kg = 1,200 t (1.5%). Great Dyke complex."
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.0
+        notes: "US PGM reserves: 820,000 kg = 820 t (1.0%). Stillwater Complex, Montana."
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 0.4
+        notes: "Canada PGM reserves: 310,000 kg = 310 t (0.4%). Primarily Sudbury Basin."
+        source_id: usgs_mcs_2025_pgm
+    completeness: partial
+  notes: |
+    USGS MCS 2025 reports "Other countries: NA (not available)" for PGM reserves; completeness
+    is partial. All reserve figures are derived from PGM basket totals × Ru basket share (~7%);
+    USGS does not separately enumerate per-element Ru reserves.
+
+end_uses:
+  uses:
+    - application: electrochemical_anodes
+      share_pct: 30
+      confidence: medium
+      notes: |
+        Ruthenium oxide (RuO₂) is a key component of dimensionally stable anodes (DSA) used in
+        the chlor-alkali industry for electrolytic production of chlorine and caustic soda —
+        the largest end use for ruthenium. RuO₂-TiO₂ mixed-oxide coatings on titanium substrates
+        are the industry standard for chlorine-evolving anodes. Also used in electrodes for metal
+        electrowinning and in proton-exchange membrane (PEM) electrolyzers for green hydrogen.
+        USGS chapter notes ruthenium in "electronic applications" and "catalysts for bulk-chemical
+        production." Share is an industry estimate; USGS does not report per-element end-use splits.
+      source_id: usgs_mcs_2025_pgm
+    - application: electronics_thick_film_resistors
+      share_pct: 25
+      confidence: medium
+      notes: |
+        Ruthenium-based compounds (RuO₂, Bi₂Ru₂O₇ and related pyrochlores) are used in thick-film
+        resistor pastes for surface-mount resistors and in multilayer ceramic capacitors (MLCCs).
+        USGS chapter explicitly mentions PGMs in "hybridized integrated circuits" and "multilayer
+        ceramic capacitors." Thick-film resistors are a foundational component of virtually all
+        electronic assemblies. Share is an industry estimate.
+      source_id: usgs_mcs_2025_pgm
+    - application: chemical_catalysts
+      share_pct: 20
+      confidence: medium
+      notes: |
+        Ruthenium catalysts are used in ammonia synthesis (Haber-Bosch; Ru offers higher activity
+        at lower pressure than iron), Fischer-Tropsch synthesis, and specialty organic reactions.
+        USGS chapter notes PGMs used in "catalysts for bulk-chemical production and petroleum
+        refining." PEM electrolyzer anodes (Ru as oxygen evolution reaction catalyst for green
+        hydrogen) represent a growing segment. Share is an industry estimate.
+      source_id: usgs_mcs_2025_pgm
+    - application: hard_disk_interlayer
+      share_pct: 15
+      confidence: medium
+      notes: |
+        Ruthenium is deposited as a thin interlayer (~0.2–0.6 nm, 1–3 atomic layers) in
+        perpendicular magnetic recording (PMR) hard disk drives, providing the antiferromagnetic
+        coupling that enables the exchange-coupled composite (ECC) architecture for high areal
+        density recording. USGS chapter explicitly notes PGMs in "computer hard disks."
+        Demand in this sector is declining with broader HDD contraction as SSDs displace spinning
+        disks in enterprise and consumer storage. Share is an industry estimate.
+      source_id: usgs_mcs_2025_pgm
+    - application: other_industrial
+      share_pct: 10
+      confidence: low
+      notes: |
+        Includes glass manufacturing (Ru as minor colorant/refining agent in specialty glass),
+        electrical contacts, laboratory equipment, platinum-ruthenium alloys (pen nibs, precision
+        instruments, wear-resistant contacts), and ruthenium-containing dye-sensitized solar cell
+        (DSSC) photosensitizers. USGS lists "glass manufacturing," "investment," and "laboratory
+        equipment" as PGM end uses. Share is a low-confidence residual estimate.
+      source_id: usgs_mcs_2025_pgm
+  completeness: complete
+
+byproduct_of:
+  - Ni
+  - Pt
+
+feedstock_origins:
+  - substrate: pgm_sulfide_ore_bushveld
+    notes: |
+      Primary global source: layered mafic intrusion ore from the Bushveld Igneous Complex
+      (South Africa), specifically the Merensky Reef and UG2 chromitite layer. Ru content is
+      higher in UG2 ore (~0.3–0.5 g/t Ru) than in Merensky (~0.1–0.2 g/t). Ore is processed
+      through flotation to PGM concentrate, then smelted and refined via base-metal refinery
+      followed by precious-metals refinery separation (solvent extraction, ion exchange) to yield
+      individual PGM products including ruthenium sponge or powder.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: nickel_copper_pgm_sulfide_ore
+    notes: |
+      Norilsk-Talnakh sulfide ore (Russia) and Sudbury Basin ore (Canada): primary target is
+      nickel-copper, with Ru recovered as a minor co-product. USGS chapter notes that "small
+      quantities of PGMs also were recovered as byproducts of copper-nickel mining in Michigan;
+      however, this material was sold to foreign companies for refining." Russian Ru co-produced
+      through Norilsk Nickel's precious-metals refinery circuit alongside Pd, Pt, Rh, Ir.
+    source_id: usgs_mcs_2025_pgm
+
+substitutes:
+  - application: electrochemical_anodes
+    availability: partial
+    notes: |
+      USGS MCS 2025: "For some industrial end uses, one PGM can substitute for another, but with
+      losses in efficiency." Iridium oxide (IrO₂) can substitute for RuO₂ in dimensionally
+      stable anodes, particularly in oxygen-evolving environments where IrO₂ offers greater
+      corrosion stability. Mixed RuO₂/IrO₂ coatings are the dominant commercial solution,
+      trading Ru's lower cost and chlorine selectivity against Ir's superior durability.
+    source_id: usgs_mcs_2025_pgm
+  - application: chemical_catalysts
+    availability: partial
+    notes: |
+      USGS MCS 2025: "For some industrial end uses, one PGM can substitute for another, but with
+      losses in efficiency." Iron-based promoted catalysts are the dominant commercial substitute
+      for ruthenium in ammonia synthesis; Ru catalysts offer higher activity at lower pressure
+      but are more expensive. Osmium can substitute in some catalytic applications but is even
+      scarcer and more expensive.
+    source_id: usgs_mcs_2025_pgm
+  - application: hard_disk_interlayer
+    availability: none
+    notes: |
+      USGS MCS 2025 notes that PGMs can substitute for each other in some applications "but with
+      losses in efficiency." No commercially viable substitute has been identified for ruthenium's
+      antiferromagnetic coupling interlayer role in PMR hard disk drives; the exchange-coupling
+      geometry is specific to the Ru layer and has not been replicated at commercial scale with
+      other materials.
+    source_id: usgs_mcs_2025_pgm
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_critical_minerals_2022
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Ruthenium is included under "platinum-group metals (Ir, Os, Pd, Pt, Rh, Ru)" on the US 2022
+    Final List of Critical Minerals. PGMs are designated as Critical Raw Materials and Strategic
+    Raw Materials under EU Regulation 2024/1252 (Critical Raw Materials Act 2024). High supply
+    concentration in South Africa (~75% of world Ru) and Russia (~12%), limited primary deposits
+    outside the Bushveld Complex and Norilsk, and lack of viable substitutes in DSA electrodes
+    and hard disk interlayer applications drive criticality designations.
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "South Africa PGM output declines owing to lower prices, deep-level mining costs, labor disputes, and electricity disruptions"
+    impact: |
+      World Pt output fell from 179,000 kg (2023) to 170,000 kg (2024e, −5%); world Pd from
+      208,000 to 190,000 kg (−9%). As SA produces ~75% of world Ru, this supply contraction
+      tightened Ru availability. Ruthenium price declined only ~6% to $440/troy oz, suggesting
+      the market remained broadly balanced despite lower South African output.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-01"
+    event: "Russia PGM production decreases due to natural disasters, ore grade decline, Ukraine conflict, and metallurgical plant outages"
+    impact: |
+      Russian Pd fell from 87,000 to 75,000 kg (−14%), Pt from 21,000 to 18,000 kg (−14%).
+      Russia produces ~12% of world Ru (primarily from Norilsk Nickel's Talnakh complex).
+      Disruptions attributed to natural disasters, declining ore grades, Russia-Ukraine conflict
+      logistics impacts, and planned outages at a major metallurgical plant.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-01"
+    event: "Ruthenium price declines 6% in 2024; modest versus palladium (−27%) and rhodium (−31%)"
+    impact: |
+      Annual average Ru price declined from $466.49/troy oz (2023) to $440/troy oz (2024e, −6%).
+      USGS attributes PGM price decreases to decreased demand, investor uncertainty, and oversupply.
+      Ru's modest decline relative to autocatalyst-dominated Pd and Rh reflects its more stable
+      industrial demand base in electrochemical anodes and thick-film electronics.
+    source_id: usgs_mcs_2025_pgm
+
+prices:
+  - year: 2024
+    value: 440
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: |
+      USGS MCS 2025 salient statistics: estimated 2024 annual average price $440/troy oz
+      (Engelhard unfabricated metal average annual price; source: S&P Global Platts Metals Week).
+      Declined ~6% from 2023 ($466.49/troy oz). Attributed to decreased demand, investor
+      uncertainty, and oversupply.
+    source_id: usgs_mcs_2025_pgm
+  - year: 2023
+    value: 466.49
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2023 annual average $466.49/troy oz."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2022
+    value: 577.02
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2022 annual average $577.02/troy oz."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2021
+    value: 576.12
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2021 annual average $576.12/troy oz."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2020
+    value: 271.83
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2020 annual average $271.83/troy oz."
+    source_id: usgs_mcs_2025_pgm
+
+narrative: |
+  Ruthenium is the lightest platinum-group metal (Z=44) and is produced almost entirely as
+  a byproduct of platinum mining from the Bushveld Igneous Complex in South Africa (~75% of
+  world supply) and nickel-PGM mining at Russia's Norilsk complex (~12%). World primary Ru
+  production is estimated at approximately 28–33 tonnes per year; USGS MCS 2025 does not
+  separately report per-element world Ru tonnage, tabulating only palladium (190,000 kg, 2024e)
+  and platinum (170,000 kg, 2024e) by country. In 2024, both South Africa and Russia experienced
+  PGM production declines driven by falling prices, deep-level mining costs, electricity and
+  labor disruptions, and geopolitical factors.
+
+  Unlike platinum (autocatalysts, jewelry) or palladium (gasoline autocatalysts), ruthenium's
+  demand is dominated by industrial electrochemistry and electronics. The largest end use is
+  ruthenium oxide (RuO₂) coating on dimensionally stable anodes (DSA) for the global chlor-alkali
+  industry's electrolytic production of chlorine and caustic soda. Thick-film resistor pastes
+  containing RuO₂ are foundational to surface-mount electronics manufacturing; ruthenium-based
+  multilayer ceramic capacitors and chip resistors appear in virtually every electronic assembly.
+  A sub-nanometer Ru interlayer in perpendicular magnetic recording hard disk drives enables the
+  antiferromagnetic exchange coupling required for high-density storage — no commercially viable
+  substitute for this application has been identified. Ammonia synthesis catalysts and PEM
+  electrolyzer anodes for green hydrogen represent growing segments.
+
+  The annual average ruthenium price was $440 per troy ounce in 2024 (estimated), down 6% from
+  $466.49 in 2023 and well below the 2021–2022 peak of ~$577/troy oz. The price approximately
+  doubled between 2020 ($272/troy oz) and 2021–2022, driven by electrochemical and electronics
+  demand, before declining modestly. This price trajectory is markedly more stable than palladium
+  (−27% in 2024) and rhodium (−31%), reflecting Ru's insulation from autocatalyst demand cycles.
+  Ruthenium is designated as critical under the US 2022 Critical Minerals List ("platinum-group
+  metals") and the EU Critical Raw Materials Act 2024, with South African supply concentration,
+  non-substitutability in DSA and hard disk applications, and Russian supply exposure as primary
+  risk drivers.
+
+sources:
+  - id: usgs_mcs_2025_pgm
+    title: Mineral Commodity Summaries 2025 — Platinum-Group Metals
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-platinum-group.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87, No. 97 (May 20, 2022)"
+    publisher: US Geological Survey / US Department of the Interior
+    url: https://www.govinfo.gov/content/pkg/FR-2022-05-20/pdf/2022-10965.pdf
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 — Critical Raw Materials Act"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
