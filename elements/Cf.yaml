@@ -6,13 +6,12 @@ industrial_tier: 2
 commercial_production: true
 snapshot_year: 2025
 form_notes: |
-  Californium's commercial reality is the isotope market for Cf-252 rather than an
-  element-level metal market. DOE NIDC sells Cf-252 in microgram quantities, with
-  the product sheet listing "solution or custom form" chemistry, dried-solution
-  quartz-ampoule primary containment, >60-80% atom-percent radionuclidic purity,
-  and stock availability. ORNL's production route converts irradiated curium targets
-  into purified californium that can then be fabricated into palladium-californium
-  wire for sealed neutron-source assemblies.
+  Californium's commercial reality is the isotope market for Cf-252 rather than a
+  bulk element market. DOE NIDC lists Cf-252 with stock availability, micrograms
+  as the unit of sale, and "solution or custom form" chemistry; the standard
+  primary container is dried solution in a quartz ampoule. ORNL's downstream
+  source-fabrication flow converts purified californium oxide into a
+  palladium-californium wire for sealed neutron-source assemblies.
 
 isotope_markets:
   - isotope: Cf-252
@@ -20,83 +19,79 @@ isotope_markets:
     production_mode: reactor_generated
     reporting_year: 2025
     precursor: |
-      Successive neutron captures and beta decays of curium isotopes in specially
-      fabricated curium composite targets irradiated in ORNL's High Flux Isotope
-      Reactor. After irradiation, the targets are chemically processed at the
-      Radiochemical Engineering Development Center, where californium is separated
-      from other heavy elements and fission products and the curium is recycled into
-      new targets.
+      Successive neutron captures and beta decays of curium isotopes in curium
+      composite targets irradiated in ORNL's High Flux Isotope Reactor. After
+      irradiation the targets are dissolved and processed in the Radiochemical
+      Engineering Development Center, where californium is separated from other
+      heavy elements and fission products and the curium is recycled into new
+      targets.
     delivery_form: |
-      DOE NIDC sells Cf-252 as solution or custom form, with dried solution in a
-      quartz ampoule as the standard primary container and micrograms as the unit of
-      sale. ORNL's downstream source-fabrication route adds Cf oxide to palladium
-      metal and rolls the resulting palladium-californium cermet into wire to meet
-      requested neutron-source specifications.
+      DOE NIDC sells Cf-252 as solution or custom form with micrograms as the
+      unit of sale; the standard primary container is dried solution in a quartz
+      ampoule. ORNL's source-fabrication route then adds californium oxide to
+      palladium metal and rolls the resulting palladium-californium material into
+      wire to customer specifications.
     producers:
       shares:
         - country: US
           share_pct: 70
           confidence: medium
           notes: |
-            ORNL stated in its February 2013 contract announcement that Cf-252
-            produced at Oak Ridge supplied approximately 70% of global demand. Later
-            ORNL isotope pages still describe ORNL as the only producer in the
-            Western Hemisphere and as producing more than 70% of world supply,
-            indicating continued US dominance even though a current exact market
-            split is not publicly published.
+            ORNL said in its 2013 contract announcement that Oak Ridge supplied
+            approximately 70% of global demand for Cf-252. ORNL's later isotope
+            sheet still describes the lab as the only producer in the Western
+            Hemisphere, supporting continued U.S. dominance even though a more
+            recent public market-share split is not published.
           source_id: ornl_cf252_contract_2013
         - country: RU
           share_pct: 30
           confidence: low
           notes: |
-            ORNL identified Dimitrovgrad, Russia, as the only other facility capable
-            of producing Cf-252. The 30% share is the residual implied by ORNL's
-            approximate 70% Oak Ridge share and should be treated as an inferred
-            counterparty share rather than a directly reported current figure.
+            ORNL identified Dimitrovgrad, Russia, as the only other facility
+            capable of producing Cf-252. The 30% figure is the residual implied
+            by ORNL's approximate 70% Oak Ridge share rather than a separately
+            published current market statistic.
           source_id: ornl_cf252_contract_2013
       completeness: complete
     notes: |
-      Cf-252 is a specialty neutron-source isotope made in milligram quantities, not
-      a bulk commodity. ORNL's 2020 production review reports 78 production
-      campaigns from 1966 through May 2019 yielding cumulative output of 10.2 g of
-      Cf-252, which is useful for scale but not an annual production figure. Public
-      primary sources reviewed here do not disclose current annual output or price.
-
-byproduct_of:
-  - Cm
+      Public primary sources reviewed here do not disclose current annual output
+      or list pricing. ORNL's 2020 production review does, however, establish the
+      scale of the business: 78 production campaigns from 1966 through May 2019
+      yielded a cumulative 10.2 grams of Cf-252.
 
 feedstock_origins:
   - substrate: curium_composite_targets
     notes: |
-      The direct feedstock is fabricated curium composite targets loaded into HFIR
-      for irradiation. ORNL's californium isotope sheet shows the targets are later
-      dissolved, californium is separated, and the remaining curium is recycled to
-      fabricate more targets.
-    source_id: ornl_cf252_sheet
+      ORNL fabricates curium composite pellets into specially designed targets,
+      irradiates them in HFIR, then dissolves the irradiated targets in REDC hot
+      cells so californium can be separated and the curium recycled into future
+      targets.
+    source_id: ornl_cf252_sheet_2021
 
 substitutes:
-  - application: portable_neutron_source_applications
-    availability: none
+  - application: reactor_startup_sources
+    availability: partial
     notes: |
-      ORNL describes Cf-252 as a "unique, portable neutron source" used across
-      analysis, detection, and nuclear-energy tasks. This supports the commercial
-      reality that there is no full drop-in substitute spanning the entire compact
-      neutron-source application set served by Cf-252.
-    source_id: ornl_cf252_contract_2013
+      Cf-252 is used to start up naval and commercial reactors, but NRC's reactor
+      glossary defines startup neutron sources generically and notes that they can
+      use antimony-beryllium, plutonium-beryllium, americium-beryllium, or other
+      neutron-emitting materials. That supports only a partial substitute claim:
+      some startup roles can use alternate neutron sources, while Cf-252 remains a
+      distinctive compact option across the wider neutron-source market.
+    source_id: nrc_glossary_startup_source
 
 end_uses:
   uses:
-    - application: portable_neutron_source_applications
+    - application: neutron_source_applications
       share_pct: 100
       confidence: medium
       notes: |
-        Official ORNL materials consistently describe the isotope as an intense
-        neutron source for reactor startup and industrial analysis. Specific cited
-        applications include neutron radiography and materials analysis, reactor
-        startup, coal and cement impurity analysis, oil-well logging, and radiation
-        detector calibration for port-security operations. This 100% share reflects
-        that the commercial Cf-252 market is the neutron-source market.
-      source_id: ornl_cf252_sheet
+        The commercial Cf-252 market is the neutron-source market. ORNL's isotope
+        materials and production review cite reactor startup, oil-well logging,
+        coal and cement analysis, nondestructive materials analysis, detector
+        calibration, homeland-security instruments, and related industrial and
+        defense uses.
+      source_id: ornl_cf252_production_2020
   completeness: complete
 
 criticality:
@@ -107,49 +102,54 @@ criticality:
   eu_strategic_list_as_of_2024: false
   eu_strategic_source_id: eu_crma_2024
   notes: |
-    Californium does not appear on the 2025 US critical minerals list or the EU's
-    2024 critical or strategic raw-materials annexes. The isotope is strategically
-    important for niche reactor-startup and neutron-source applications, but its
-    market is handled through isotope-program and nuclear-supply channels rather than
-    mainstream mineral-policy frameworks.
+    Californium does not appear on the 2025 U.S. critical-minerals list or the
+    EU's 2024 critical and strategic raw-materials annexes. Its commercial supply
+    chain is managed through isotope-program and nuclear-infrastructure channels
+    rather than mainstream mineral-policy frameworks.
 
 geopolitical_events:
-  - date: 2025-09
-    event: "ORNL advanced nearly $1 billion of isotope-facility projects to reinforce domestic radioisotope supply chains"
+  - date: 2013-02-28
+    event: ORNL began implementing a new six-year DOE Isotope Program contract with industry for Cf-252 production.
     impact: |
-      ORNL said the Stable Isotope Production Facility, Stable Isotope Production and
-      Research Center, and proposed Radioisotope Processing Facility were intended to
-      strengthen US isotope independence and competitiveness. For Cf-252 this matters
-      because ORNL is the Western Hemisphere's only producer and domestic supply is
-      still tied to aging Oak Ridge hot-cell infrastructure.
+      The contract formalized continued industrial supply from one of only two
+      world production centers and followed a prior four-year program serving
+      energy, detection, and nuclear applications.
+    source_id: ornl_cf252_contract_2013
+  - date: 2025-09-30
+    event: ORNL advanced isotope-facility projects totaling nearly $1 billion in proposed DOE funding.
+    impact: |
+      ORNL said the planned Radioisotope Processing Facility would expand output of
+      larger quantities and more radioisotopes while relieving capacity pressure in
+      aging Oak Ridge facilities. That matters for Cf-252 because ORNL remains the
+      Western Hemisphere's only producer and current isotope facilities are at
+      capacity.
     source_id: ornl_isotope_investment_2025
 
 narrative: |
-  Californium is commercially real, but only as an isotope business centered on
-  Cf-252. The product is made by irradiating curium targets in HFIR, chemically
-  separating the resulting transplutonium mixture at REDC, and selling finished
-  material through the DOE isotope program in microgram quantities. What customers
-  buy is not californium metal for alloying or chemistry, but a very intense neutron
-  emitter delivered as solution, custom form, or source-fabrication feed.
+  Californium is commercially meaningful only as a tiny-mass isotope business
+  centered on Cf-252. DOE's isotope catalog sells the material in microgram
+  quantities, and the production chain is not a mine-refinery commodity flow but
+  a nuclear-manufacturing sequence: curium target fabrication, irradiation in
+  HFIR, radiochemical separation in REDC hot cells, and source fabrication into
+  forms suitable for neutron-emitter applications.
 
-  The market is tiny in mass and outsized in functional value. Official ORNL
-  materials describe uses in reactor startup, neutron radiography and materials
-  analysis, oil-well logging, coal and cement analysis, and calibration of radiation
-  detectors used in port security. Oak Ridge has long been one of only two cited
-  world production centers, with ORNL stating it supplies roughly 70% of global
-  demand and remains the only producer in the Western Hemisphere. Public sources do
-  not disclose current annual output or list pricing, so the atlas record focuses on
-  supply-chain structure and trade form rather than fabricated tonnage.
+  The isotope's value comes from function rather than tonnage. ORNL's primary
+  materials describe uses in reactor startup, oil-well logging, coal and cement
+  analysis, nondestructive testing, detector calibration, and security systems.
+  Public sources do not disclose current annual output or public price lists, but
+  ORNL's 2020 production review shows how small the market is in absolute mass:
+  all Oak Ridge campaigns from 1966 through May 2019 yielded only 10.2 grams of
+  Cf-252, even while the lab stated it supplied about 70% of world demand.
 
 sources:
-  - id: nidc_cf252_product
+  - id: nidc_cf252_product_2024
     title: "Californium-252 Product Information"
     publisher: US Department of Energy / National Isotope Development Center
     url: https://isotopes.gov/sites/default/files/2024-09/Cf-252_0.pdf
     retrieved: 2026-04-13
     publication_year: 2024
     source_tier: primary
-  - id: ornl_cf252_sheet
+  - id: ornl_cf252_sheet_2021
     title: "Californium-252: The Versatile Isotope"
     publisher: Oak Ridge National Laboratory / US Department of Energy
     url: https://www.ornl.gov/file/x20016602020-g01568isotopesheets020821-californium-252/display
@@ -158,7 +158,7 @@ sources:
     source_tier: primary
   - id: ornl_cf252_production_2020
     title: "Production of Cf-252 and other transplutonium isotopes at Oak Ridge National Laboratory"
-    publisher: Radiochimica Acta / Oak Ridge National Laboratory
+    publisher: Oak Ridge National Laboratory / Radiochimica Acta
     url: https://www.ornl.gov/publication/production-cf-252-and-other-transplutonium-isotopes-oak-ridge-national-laboratory
     retrieved: 2026-04-13
     publication_year: 2020
@@ -169,13 +169,6 @@ sources:
     url: https://www.ornl.gov/news/ornl-begins-implementation-new-californium-252-production-contract
     retrieved: 2026-04-13
     publication_year: 2013
-    source_tier: secondary
-  - id: ornl_nuclear_isotopes_2025
-    title: "Nuclear + Isotopes at ORNL"
-    publisher: Oak Ridge National Laboratory / US Department of Energy
-    url: https://www.ornl.gov/content/nuclear-isotopes-ornl
-    retrieved: 2026-04-13
-    publication_year: 2025
     source_tier: primary
   - id: ornl_isotope_investment_2025
     title: "Investment in new facilities expands critical isotope supply chains"
@@ -183,18 +176,25 @@ sources:
     url: https://www.ornl.gov/organization-news/investment-new-facilities-expands-critical-isotope-supply-chains
     retrieved: 2026-04-13
     publication_year: 2025
-    source_tier: secondary
+    source_tier: primary
+  - id: nrc_glossary_startup_source
+    title: "Startup Source"
+    publisher: U.S. Nuclear Regulatory Commission
+    url: https://www.nrc.gov/reading-rm/basic-ref/glossary/startup-source.html
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
   - id: us_federal_register_critical_minerals_2025
     title: "Final 2025 List of Critical Minerals"
-    publisher: US Geological Survey / Federal Register
-    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    publisher: U.S. Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/2025-28026.pdf
     retrieved: 2026-04-13
     publication_year: 2025
     source_tier: primary
   - id: eu_crma_2024
     title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
     publisher: European Union
-    url: https://faolex.fao.org/docs/pdf/eur231131.pdf
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX:32024R1252
     retrieved: 2026-04-13
     publication_year: 2024
     source_tier: primary
