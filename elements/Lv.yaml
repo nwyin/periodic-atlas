@@ -1,0 +1,124 @@
+symbol: Lv
+atomic_number: 116
+name: livermorium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Livermorium is produced only atom-by-atom in
+  heavy-ion fusion experiments, so the practical "form" is an identified decay
+  chain rather than any saleable metal, compound, or isotope product. Primary
+  nuclear-data sources report its properties by isotope label (for example,
+  Lv-293) and half-life in milliseconds.
+
+research_only:
+  longest_lived_isotope: Lv-293
+  half_life_seconds: 0.095
+  discovered_year: 2000
+  iupac_recognized_year: 2012
+  discovered_at: |
+    Joint Institute for Nuclear Research (Dubna, Russia) in collaboration with
+    Lawrence Livermore National Laboratory (California, USA). IUPAC assigned the
+    discovery of element 116 to the Dubna-Livermore collaboration and later
+    adopted the name livermorium (Lv) on 2012-05-23.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - JINR Dubna
+  notes: |
+    The currently longest-lived adopted isotope is Lv-293. NNDC's ENSDF
+    evaluation reports a 95 ms half-life from six accepted events and notes
+    seven positively identified production events overall for that isotope.
+    Livermorium atoms have been synthesized in calcium-48 fusion-evaporation
+    reactions using curium targets, with the credited discovery pathway running
+    through 48Ca + 245Cm decay chains anchored by the known daughter 283Cn.
+
+feedstock_origins:
+  - substrate: curium_targets
+    notes: |
+      Livermorium has been synthesized by bombarding curium target isotopes with
+      calcium-48 beams. IUPAC's discovery and naming reports specifically cite
+      the 48Ca + 245Cm discovery route and the broader calcium-on-curium hot
+      fusion program used to make element 116 isotopes.
+    source_id: iupac_discovery_2011
+
+end_uses:
+  uses:
+    - application: superheavy_element_research
+      share_pct: 100
+      confidence: high
+      notes: |
+        All produced livermorium atoms are used for fundamental nuclear-physics
+        and superheavy-element research. JINR describes the Superheavy Element
+        Factory as dedicated to the synthesis and study of superheavy elements,
+        while LLNL describes livermorium production as part of the search for the
+        island of stability and the investigation of heavy-element properties.
+      source_id: jinr_she_factory_2023
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+geopolitical_events:
+  - date: 2023-02
+    event: "JINR reported sustained operation of the Superheavy Element Factory after its 2020-2022 campaigns"
+    impact: |
+      JINR said the Superheavy Element Factory had become a world-leading complex
+      for synthesizing and studying superheavy elements, with higher beam
+      intensity and dedicated separators. For livermorium this matters because
+      Dubna remains the active production locus for new superheavy-isotope work
+      and follow-on experiments on known superheavy nuclei.
+    source_id: jinr_she_factory_2023
+
+narrative: |
+  Livermorium has no commercial supply chain. It exists only as individual atoms
+  synthesized in accelerator experiments, and its "market reality" is purely the
+  research program that creates and studies superheavy nuclei. IUPAC credited the
+  Dubna-Livermore collaboration with the discovery of element 116 and adopted
+  the name livermorium in 2012 to honor Lawrence Livermore National Laboratory.
+
+  In practice, livermorium production means calcium-48 fusion on curium targets,
+  followed by identification of alpha-decay chains in recoil separators and
+  silicon detectors. The best-established long-lived nuclide is Lv-293, which
+  NNDC's ENSDF evaluation lists with a 95 ms half-life and seven positively
+  identified events. JINR's Superheavy Element Factory now carries the active
+  infrastructure for continuing superheavy synthesis and characterization, but
+  the output remains atom-scale and purely scientific.
+
+sources:
+  - id: iupac_discovery_2011
+    title: "Discovery of the elements with atomic numbers greater than or equal to 113 (IUPAC Technical Report)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/pdf/2011/pdf/8307x1485.pdf
+    retrieved: 2026-04-13
+    publication_year: 2011
+    source_tier: primary
+  - id: iupac_naming_2012
+    title: "Names and symbols of the elements with atomic numbers 114 and 116 (IUPAC Recommendations 2012)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/pdf/2012/pdf/8407x1669.pdf
+    retrieved: 2026-04-13
+    publication_year: 2012
+    source_tier: primary
+  - id: nndc_ensdf_lv293_2022
+    title: "293 116Lv177 Adopted Levels"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensnds/293/Lv/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: llnl_superheavy_discovery
+    title: "Superheavy Element Discovery"
+    publisher: Lawrence Livermore National Laboratory
+    url: https://seaborg.llnl.gov/research/superheavy-element-discovery
+    retrieved: 2026-04-13
+    source_tier: primary
+  - id: jinr_she_factory_2023
+    title: "Five new isotopes synthesised at Superheavy Element Factory"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/five-new-isotopes-synthesised-at-superheavy-element-factory/
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
