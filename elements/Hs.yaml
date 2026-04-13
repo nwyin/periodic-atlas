@@ -1,0 +1,88 @@
+symbol: Hs
+atomic_number: 108
+name: hassium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Hassium is produced atom-by-atom in heavy-ion
+  fusion experiments at accelerator laboratories and identified through
+  correlated decay chains; lifetimes are reported in seconds and cumulative
+  output, when discussed at all, is on an atoms-ever-synthesized basis rather
+  than any market flow unit.
+
+research_only:
+  longest_lived_isotope: Hs-270
+  half_life_seconds: 7.6
+  discovered_year: 1984
+  iupac_recognized_year: 1997
+  discovered_at: |
+    GSI Helmholtzzentrum fur Schwerionenforschung (then Gesellschaft fur
+    Schwerionenforschung), Darmstadt, Germany. GSI records hassium as first
+    experimentally proven on 1984-03-14 from a lead-iron fusion route, with the
+    discovery recognized by IUPAC and the name officially accepted in December
+    1997.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - GSI Darmstadt
+    - JINR Dubna
+  notes: |
+    Hassium is a research-only transactinide with no commercial supply chain,
+    no mine or refinery stage, and no industrial end-use market. The longest-
+    lived established isotope in ENSDF/NuDat is 270Hs with an adopted half-life
+    of 7.6 s from six correlated decay chains. Modern work on hassium belongs
+    to superheavy-element programs aimed at nuclear-structure studies and the
+    search for the island of stability rather than materials production.
+
+narrative: |
+  Hassium exists only as a laboratory product. GSI identifies element 108 as
+  first experimentally proven on 1984-03-14 at Darmstadt, and IUPAC's final
+  1997 transfermium naming decision accepted the discoverers' proposed name
+  "hassium" with symbol Hs. There is therefore no commercial market form,
+  reserve base, production tonnage, or price series to report.
+
+  The economically relevant reality is simply that there is none: hassium is
+  synthesized one atom at a time in accelerator experiments, then inferred from
+  decay chains. ENSDF/NuDat lists 270Hs as the longest-lived adopted isotope at
+  7.6 s, which is long enough for nuclear-physics and occasional atom-at-a-time
+  chemistry experiments but still far too short-lived for trade. Current
+  institutional superheavy programs at GSI and JINR continue to operate
+  facilities capable of producing and studying nuclei in this region.
+
+sources:
+  - id: gsi_new_elements
+    title: "New Elements"
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/en/researchaccelerators/research_an_overview/new_elements?C=0
+    retrieved: 2026-04-13
+    publication_year: 2013
+    source_tier: primary
+  - id: iupac_transfermium_1997
+    title: "IUPAC Adopts Final Recommendations for Names of Transfermium Elements"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://old.iupac.org/news/archives/1997/august97.html
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: nndc_hs270_ensdf
+    title: "270Hs Adopted Levels"
+    publisher: National Nuclear Data Center / ENSDF / NuDat
+    url: https://www.nndc.bnl.gov/ensnds/270/Hs/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: gsi_superheavy_research
+    title: "Super Heavy Elements"
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/en/work/forschung/nustarenna/nustarenna_divisions/she_physik/research/super_heavy_elements
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: jinr_roadmap_2030
+    title: "JINR Development Strategic Plan up to 2030 and Beyond"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/science-en/planning-and-reporting/roadmap/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
