@@ -1,0 +1,317 @@
+symbol: Os
+atomic_number: 76
+name: osmium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports platinum-group metals (PGMs) as a grouped commodity and
+  does not publish standalone osmium mine tonnage or prices. Commercial osmium is
+  a niche specialty product: most primary material is recovered from PGM and
+  nickel-refining residues, then sold in very small quantities either as refined
+  metal/compound for specialty chemical uses or as highly purified "HighTechReady"
+  osmium granules (4N-7N) and crystalline pieces for jewelry and investment.
+  USGS PGM quantities are reported in kilograms of contained PGM content; this file
+  keeps the same unit convention for derived osmium quantities.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 100
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate for world osmium mine output in 2024. USGS MCS 2025 reports
+      PGMs as a grouped commodity and tabulates country mine output only for
+      palladium and platinum. The Royal Society of Chemistry states that current
+      annual osmium production is about 100 kg globally; that implies an osmium
+      basket share of roughly 0.026% when compared with the 2024 USGS PGM mine
+      basket implied by 190,000 kg palladium + 170,000 kg platinum + very small
+      iridium, rhodium, ruthenium, and osmium streams. The quantity here should be
+      read as a derived basket-share estimate rather than a directly reported USGS
+      figure.
+    source_id: usgs_mcs_2025_pgm
+  grouped_reporting: true
+  commodity_group: platinum_group_metals
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 70.6
+        quantity:
+          value: 71
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Proxy derived from South Africa's 2024 platinum share in the USGS PGM
+          table (120,000 kg Pt out of 170,000 kg world Pt). RSC supply-risk data
+          also identifies South Africa as the leading osmium producer. Osmium is
+          recovered from the same Bushveld PGM mining and refining system that
+          dominates world platinum output.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 11.2
+        quantity:
+          value: 11
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Proxy derived from Zimbabwe's 2024 platinum share in the USGS PGM table
+          (19,000 kg Pt out of 170,000 kg world Pt). RSC identifies Zimbabwe among
+          the top osmium-producing countries. Osmium is recovered from Great Dyke
+          PGM ores rather than reported separately by USGS.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 10.6
+        quantity:
+          value: 11
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Proxy derived from Russia's 2024 platinum share in the USGS PGM table
+          (18,000 kg Pt out of 170,000 kg world Pt). RSC identifies Russia as a top
+          osmium producer. Material is recovered mainly through Norilsk's nickel-
+          copper-PGM refinery chain rather than a discrete osmium mine stream.
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 3.1
+        quantity:
+          value: 3
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Proxy derived from Canada's 2024 platinum share in the USGS PGM table
+          (5,200 kg Pt out of 170,000 kg world Pt). Canadian osmium is recovered as
+          a tiny byproduct of nickel-copper-PGM operations rather than tracked as a
+          separate commodity.
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.2
+        quantity:
+          value: 1
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Proxy derived from the United States' 2024 platinum share in the USGS PGM
+          table (2,000 kg Pt out of 170,000 kg world Pt). USGS notes that one
+          Montana producer continued mining PGMs and that small quantities also came
+          from copper-nickel mining in Michigan, but osmium is not reported
+          separately.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZZ
+        share_pct: 3.3
+        quantity:
+          value: 3
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Residual proxy based on the remaining platinum-share geography in the USGS
+          PGM table. Includes other minor PGM producers and rounding differences.
+        source_id: usgs_mcs_2025_pgm
+    completeness: complete
+  notes: |
+    Country shares are a proxy, not a directly reported osmium-by-country table.
+    USGS publishes grouped PGM mine data and separate Pt/Pd tables, while RSC
+    identifies South Africa, Russia, and Zimbabwe as the leading osmium producers.
+    Platinum geography is used here as the closest transparent mine-distribution
+    proxy for osmium recovered from the same PGM ore systems.
+
+reserves:
+  economic_reserves:
+    value: 21000
+    unit: kg
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate. USGS MCS 2025 reports world PGM reserves of more than
+      81,000,000 kg but does not disaggregate reserves by element. Applying the
+      same approximately 0.026% osmium basket share used for production yields an
+      indicative osmium reserve of about 21,000 kg. This aligns directionally with
+      RSC's statement that only about one cubic meter of recoverable osmium remains
+      globally, underscoring osmium's extreme rarity.
+    source_id: usgs_mcs_2025_pgm
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 77.5
+        notes: |
+          Proxy from USGS combined PGM reserve geography: South Africa holds
+          63,000,000 kg of the reported >81,000,000 kg world PGM reserve base.
+          Applying the derived osmium share implies roughly 16,000 kg osmium in
+          Bushveld-associated reserves.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 19.7
+        notes: |
+          Proxy from USGS combined PGM reserve geography: Russia reports
+          16,000,000 kg PGM reserves under the Russian A+B+C1+C2 classification.
+          Applying the derived osmium share implies roughly 4,100 kg osmium.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 1.5
+        notes: |
+          Proxy from USGS combined PGM reserve geography: Zimbabwe reports
+          1,200,000 kg combined PGM reserves in the Great Dyke.
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.0
+        notes: |
+          Proxy from USGS combined PGM reserve geography: the United States reports
+          820,000 kg combined PGM reserves, principally in the Stillwater Complex.
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 0.4
+        notes: |
+          Proxy from USGS combined PGM reserve geography: Canada reports 310,000 kg
+          combined PGM reserves, mainly linked to nickel-copper-PGM mining districts.
+        source_id: usgs_mcs_2025_pgm
+    completeness: partial
+  notes: |
+    USGS reports only combined PGM reserves and notes "Other countries: NA"; the
+    reserve geography here is therefore partial and fully proxy-based for osmium.
+
+end_uses:
+  uses:
+    - application: specialty_chemicals_alloys_and_jewelry
+      share_pct: 100
+      confidence: low
+      notes: |
+        Osmium is a very small-volume specialty metal with only a few established
+        commercial uses. RSC lists very hard alloys for fountain-pen tips,
+        instrument pivots, needles, and electrical contacts, plus catalytic use in
+        the chemical industry. Osmium tetroxide remains the best-known laboratory
+        derivative for electron-microscopy staining, while the Osmium Institute
+        documents an additional niche market in crystalline osmium for jewelry and
+        tangible-asset investment. USGS groups osmium within broader PGM end-use
+        buckets and does not publish an osmium-specific split.
+      source_id: rsc_osmium
+  completeness: partial
+
+byproduct_of:
+  - Pt
+  - Ni
+
+feedstock_origins:
+  - substrate: pgm_ore_bushveld_and_great_dyke
+    notes: |
+      Osmium is recovered from the same platinum-group ore systems that dominate
+      platinum production, especially the Bushveld Complex in South Africa and the
+      Great Dyke in Zimbabwe. USGS identifies these districts as the center of world
+      PGM mining; osmium is recovered from refinery residues rather than marketed as
+      a primary mine stream.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: nickel_refining_residues
+    notes: |
+      RSC states that most osmium is obtained commercially from the wastes of nickel
+      refining, consistent with recovery from nickel-copper-PGM sulfide systems such
+      as Norilsk and Sudbury.
+    source_id: rsc_osmium
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      USGS states that for some industrial end uses one PGM can substitute for
+      another, but with losses in efficiency. For osmium's niche catalyst and
+      specialty-alloy roles, other PGMs can sometimes replace it, but the market is
+      too small and application-specific for a full substitute to dominate across
+      all uses.
+    source_id: usgs_mcs_2025_pgm
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    EU Regulation 2024/1252 treats platinum-group metals as both critical and
+    strategic raw materials. Osmium's extreme rarity, negligible standalone market,
+    and dependence on South African and Russian PGM systems make it commercially
+    important despite its tiny absolute tonnage.
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "South African PGM output declined amid weak prices, deep-level mining costs, labor disputes, and electricity disruptions"
+    impact: |
+      Osmium supply tightened with the broader South African PGM complex because
+      South Africa remains the dominant producer of PGM-bearing mined material and
+      the leading osmium source by proxy. The effect was concentrated on byproduct
+      availability rather than a separately quoted osmium market.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-01"
+    event: "Russian PGM production fell because of natural disasters, lower grades, Russia-Ukraine conflict disruptions, and metallurgical outages"
+    impact: |
+      Russian refinery residues are one of the few meaningful non-South African
+      osmium supply sources. The same disruptions that reduced Russian palladium and
+      platinum output also constrained osmium recovered from nickel-copper-PGM
+      processing streams.
+    source_id: usgs_mcs_2025_pgm
+
+narrative: |
+  Osmium is commercially real but economically tiny: it is one of the rarest
+  marketable metals, recovered almost entirely as a byproduct from the same PGM and
+  nickel-refining systems that produce platinum and palladium. USGS does not publish
+  standalone osmium mine statistics, so any 2024 tonnage estimate has to be derived
+  from grouped PGM reporting. A defensible working scale is about 100 kilograms per
+  year globally, which is consistent with the Royal Society of Chemistry's estimate
+  that annual osmium production weighs roughly as much as a large tiger.
+
+  That tiny scale shapes the whole market. Osmium is not an autocatalyst or bulk
+  electronics metal; it is a niche specialty input sold into a handful of hard-alloy,
+  catalyst, microscopy, and laboratory applications. More recently, a parallel
+  jewelry and investment trade has emerged around highly purified crystalline osmium
+  pieces and high-purity granules. Supply risk is therefore less about absolute
+  tonnage and more about dependence on a very small number of PGM mining and
+  refining systems, especially in South Africa and Russia.
+
+sources:
+  - id: usgs_mcs_2025_pgm
+    title: "Mineral Commodity Summaries 2025 — Platinum-Group Metals"
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: rsc_osmium
+    title: "Osmium - Element information, properties and uses"
+    publisher: Royal Society of Chemistry
+    url: https://periodic-table.rsc.org/element/76/osmium
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: secondary
+  - id: osmium_institute_htro
+    title: "High Tech Ready Osmium (HTRO)"
+    publisher: Osmium-Institute Germany
+    url: https://www.osmium.com/en/htro/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: secondary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
