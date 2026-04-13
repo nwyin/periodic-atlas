@@ -1,0 +1,109 @@
+symbol: Bh
+atomic_number: 107
+name: bohrium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Bohrium is produced atom-by-atom in heavy-ion fusion
+  experiments rather than sold in metal, oxide, or concentrate form. The
+  half-life convention below follows the longest-lived confirmed nuclide shown
+  by IUPAC's current periodic table mass-number bracket and NNDC ENSDF decay
+  dataset naming. [Sources: iupac_periodic_table_2022, nndc_270bh_decay_2019]
+
+production: []
+isotope_markets: []
+byproduct_of: []
+feedstock_origins: []
+substitutes: []
+prices: []
+geopolitical_events: []
+
+research_only:
+  longest_lived_isotope: Bh-270
+  half_life_seconds: 60.0
+  discovered_year: 1981
+  iupac_recognized_year: 1997
+  discovered_at: |
+    Gesellschaft fur Schwerionenforschung (GSI; now GSI Helmholtzzentrum fur
+    Schwerionenforschung) in Darmstadt, Germany. GSI reports that element 107
+    was first produced on 1981-02-24 from chromium on bismuth, and IUPAC later
+    adopted the name and symbol bohrium (Bh) in its 1997 transfermium
+    recommendations. [Sources: gsi_new_elements, iupac_transfermium_1997]
+  production_mode: accelerator_generated
+  active_production_labs:
+    - GSI Darmstadt
+    - JINR Dubna
+  notes: |
+    Bohrium has no commercial supply chain and exists only in atom-at-a-time
+    superheavy-element experiments. IUPAC's current periodic table denotes the
+    longest confirmed mass number for bohrium as [270], while the NNDC ENSDF
+    decay dataset labels the relevant parent decay as "270BH A DECAY (1.0 M),"
+    so the half-life is represented here as approximately one minute.
+    JINR is included as an active production lab by inference from its current
+    heavy-ion facilities for superheavy-element synthesis; no economic market
+    is associated with that capability. [Sources: iupac_periodic_table_2022,
+    nndc_270bh_decay_2019, jinr_facilities]
+
+end_uses:
+  uses: []
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+narrative: |
+  Bohrium is a research-only transactinide with no mine supply, refining base,
+  reserves, or price series. Its commercial reality is the absence of commerce:
+  laboratories make individual atoms in accelerator campaigns to probe nuclear
+  stability, decay chains, and the chemistry of the superheavy region.
+  [Sources: gsi_new_elements, iupac_transfermium_1997]
+
+  The accepted discovery route is GSI Darmstadt's 1981 production of element
+  107 via chromium-on-bismuth bombardment. IUPAC formalized the name bohrium
+  and symbol Bh in 1997, and IUPAC's present periodic table identifies mass
+  number 270 as the longest-lived confirmed bohrium nuclide. NNDC ENSDF shows a
+  corresponding "270BH A DECAY (1.0 M)" dataset, supporting the one-minute
+  order-of-magnitude lifetime used in this record. [Sources:
+  gsi_new_elements, iupac_transfermium_1997, iupac_periodic_table_2022,
+  nndc_270bh_decay_2019]
+
+sources:
+  - id: iupac_periodic_table_2022
+    title: Periodic Table of Elements
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/what-we-do/periodic-table-of-elements/
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: iupac_transfermium_1997
+    title: Names and symbols of transfermium elements (IUPAC Recommendations 1997)
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/69/12/2471/index.html
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: nndc_270bh_decay_2019
+    title: "References from selected dataset: 266Db 270Bh A Decay (1.0 M)"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: "https://www.nndc.bnl.gov/ensdf/getrefs.jsp?dsid=270BH+A+DECAY+%281.0+M%29&recid=266105006"
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: gsi_new_elements
+    title: New Elements
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/en/researchaccelerators/research_an_overview/new_elements?C=0
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: jinr_facilities
+    title: Research Facilities
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/jinr_facilities-en/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
