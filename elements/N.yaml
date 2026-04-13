@@ -1,0 +1,164 @@
+symbol: N
+atomic_number: 7
+name: nitrogen
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Commercial nitrogen is sold as compressed gaseous N2 and as liquid nitrogen
+  (LN2). The dominant production route is cryogenic air separation; lower-volume
+  onsite supply can also come from pressure-swing adsorption or membrane units.
+  Linde describes nitrogen as "produced in high volumes at air separation
+  plants," while merchant liquid nitrogen is the main globally visible traded
+  stream. Liquid nitrogen is conventionally handled at its atmospheric-pressure
+  boiling point of about -196 degrees Celsius.
+
+production:
+  - reporting_year: 2025
+    stream: liquid_nitrogen
+    refined:
+      value: 298.71
+      unit: million_tonnes_per_year
+      form: liquid_cryogenic
+      approximate: true
+      confidence: medium
+      notes: |
+        Mordor Intelligence estimated the global liquid nitrogen market at
+        298.71 million tons in 2025 and 309.79 million tons in 2026. This is
+        the best openly published physical-flow figure located for nitrogen's
+        merchant trade stream. It understates total nitrogen throughput because
+        a large share of industrial N2 is generated and consumed onsite as gas
+        under long-term ASU contracts, without a comparable public global
+        tonnage table.
+      source_id: mordor_liquid_nitrogen_2026
+    refining_by_country:
+      shares:
+        - country: ZZ
+          share_pct: 100
+          confidence: low
+          notes: |
+            Open public sources located for nitrogen report regional leadership
+            (Asia-Pacific in Mordor's liquid-nitrogen scope; North America in
+            Grand View's broader nitrogen-gas scope) but do not publish a
+            reconciled country-by-country world production table. The single ZZ
+            bucket is used intentionally rather than inventing unsupported
+            national shares.
+          source_id: mordor_liquid_nitrogen_2026
+      completeness: partial
+    notes: |
+      Nitrogen is separated from atmospheric air rather than mined, so this file
+      uses `refined:` for purified commercial output. The chosen stream is
+      merchant liquid nitrogen because it is the only broadly published global
+      physical market size found in open sources. Linde and Air Liquide both
+      describe atmospheric gases as a core industrial-gases business supplied
+      through onsite, pipeline, bulk-liquid, and packaged modes across food,
+      electronics, chemicals, metals, and healthcare end markets.
+
+feedstock_origins:
+  - substrate: atmospheric_air
+    typical_concentration_pct: 78.09
+    notes: |
+      Commercial nitrogen is recovered from ambient air, which Grand View and
+      Linde both describe as about 78.09% nitrogen by volume. Cryogenic
+      distillation is the standard route for large-scale supply; membrane and
+      PSA systems serve lower-volume onsite gas generation.
+    source_id: grand_view_nitrogen_gas_2024
+
+substitutes:
+  - application: cryogenic_cooling_and_freezing
+    availability: partial
+    notes: |
+      High-efficiency mechanical freezers can substitute for liquid nitrogen in
+      some food-processing and biostorage niches, but Mordor notes they cannot
+      reach liquid nitrogen's -196 degrees Celsius temperature and therefore do
+      not replace LN2 in the coldest cryogenic applications.
+    source_id: mordor_liquid_nitrogen_2026
+  - application: delivered_bulk_and_cylinder_supply
+    availability: partial
+    notes: |
+      Delivered merchant nitrogen can sometimes be displaced by onsite PSA or
+      membrane generation, but that is a change in production route rather than
+      a chemical substitute. Linde markets all three supply modes because the
+      end user still requires elemental nitrogen.
+    source_id: linde_nitrogen_page
+
+end_uses:
+  uses:
+    - application: food_and_beverage_packaging_and_freezing
+      share_pct: 49.8
+      confidence: medium
+      notes: |
+        Grand View reported food and beverage as the largest application segment
+        in the global nitrogen gas market with a 49.8% revenue share in 2023,
+        led by modified-atmosphere packaging, inerting, and cryogenic freezing.
+      source_id: grand_view_nitrogen_gas_2024
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+narrative: |
+  Nitrogen is a high-volume industrial utility gas rather than a mined mineral
+  commodity. The commercial business is built on air-separation infrastructure:
+  large cryogenic ASUs feed captive onsite and pipeline customers in refining,
+  chemicals, metals, electronics, and healthcare, while the merchant market
+  sells bulk liquid, dewars, and cylinders into food processing, labs,
+  fabrication, and distributed industrial users. That is why public reporting on
+  nitrogen is much better on market structure and applications than on a single
+  world "mine production" number.
+
+  The most visible tradable nitrogen stream is liquid nitrogen. Open market
+  reporting points to a roughly 299-million-ton 2025 liquid-nitrogen market,
+  with Asia-Pacific leading in liquid-nitrogen demand and North America leading
+  in the broader nitrogen-gas market depending on scope. Food packaging and
+  freezing are the clearest large end use in open data, while electronics,
+  pharmaceuticals, chemicals, and metal processing drive premium demand for
+  high-purity supply.
+
+  Commercial reality is shaped less by geology than by electricity, plant
+  density, and customer clustering. Linde and Air Liquide both emphasize
+  thousands of plants, long-term contracts, and strong positions in the United
+  States, China, India, Germany, South Korea, and other dense industrial
+  corridors. For nitrogen, supply-chain risk is therefore mostly about energy
+  cost, regional industrial demand, and the buildout of semiconductor, pharma,
+  and food-processing capacity rather than ore depletion.
+
+sources:
+  - id: linde_nitrogen_page
+    title: "Atmospheric Gases: Nitrogen"
+    publisher: Linde
+    url: https://www.linde-gas.com/what-we-offer/gases/atmospheric-gases/nitrogen
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: linde_annual_report_2024
+    title: "Annual Report 2024"
+    publisher: Linde plc
+    url: https://assets.linde.com/-/media/global/corporate/corporate/documents/investors/full-year-financial-reports/2024-annual-report-to-shareholders.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: air_liquide_integrated_annual_report_2024
+    title: "Integrated Annual Report 2024"
+    publisher: Air Liquide
+    url: https://www.airliquide.com/sites/airliquide.com/files/2025-03/2024-integrated-annual-report.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: grand_view_nitrogen_gas_2024
+    title: "Nitrogen Gas Market Size, Share & Trends Report, 2030"
+    publisher: Grand View Research
+    url: https://www.grandviewresearch.com/industry-analysis/nitrogen-gas-market-report
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: secondary
+  - id: mordor_liquid_nitrogen_2026
+    title: "Liquid Nitrogen Market - Trends, Size & Share"
+    publisher: Mordor Intelligence
+    url: https://www.mordorintelligence.com/industry-reports/liquid-nitrogen-market
+    retrieved: 2026-04-13
+    publication_year: 2026
+    source_tier: secondary
