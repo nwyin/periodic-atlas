@@ -1,0 +1,172 @@
+symbol: Pm
+atomic_number: 61
+name: promethium
+category: lanthanide
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Commercial promethium is an isotope market centered on Pm-147 rather than a bulk
+  metal market. DOE/NIDC lists the sale form as chloride or nitrate salt in a screw-cap
+  glass V-vial, with activity quoted in curies and specific activity quoted for 147PmCl3
+  or elemental 147Pm. The product sheet marks the isotope as routinely available.
+
+isotope_markets:
+  - isotope: Pm-147
+    half_life_seconds: 82680912
+    production_mode: reactor_generated
+    reporting_year: 2025
+    precursor: |
+      DOE said in 2022 that its initial commercial Pm-147 supply was being extracted from
+      a plutonium waste stream associated with the Pu-238 program, and that it would also
+      be produced through direct irradiation of enriched Nd-146 in ORNL's High Flux
+      Isotope Reactor. The ORNL reactor-production paper describes the Nd-146(n,gamma)Nd-147
+      to Pm-147 route and the post-irradiation extraction-chromatography purification step.
+    delivery_form: |
+      DOE/NIDC sells Pm-147 as chloride or nitrate salt, with radionuclide purity of
+      99.99%, routinely available status, and curies as the unit of sale. The sheet lists
+      >=483 Ci/g for 147PmCl3 and >=834.3 Ci/g for elemental 147Pm.
+    producers:
+      shares:
+        - country: US
+          share_pct: 100
+          confidence: medium
+          notes: |
+            DOE's 2025 promethium production highlight states that the DOE Isotope Program
+            is currently the only global producer of promethium-147.
+          source_id: doe_science_pm147_highlight_2025
+      completeness: complete
+    notes: |
+      Public primary sources reviewed here describe trade form, production routes, and sole
+      producer status, but do not publish annual curie output or a price list for Pm-147.
+
+byproduct_of:
+  - Pu
+
+feedstock_origins:
+  - substrate: plutonium_238_production_waste_stream
+    notes: |
+      DOE said its initial market-entry batches were extracted from a plutonium waste
+      stream, making current commercial Pm-147 a byproduct recovery stream rather than a
+      stand-alone mine-to-metal supply chain.
+    source_id: nidc_pm147_entering_market_2022
+  - substrate: enriched_neodymium_146_oxide_targets
+    notes: |
+      ORNL demonstrated production by irradiating highly enriched Nd-146 oxide targets in
+      HFIR, producing Nd-147 that decays to Pm-147 before chemical purification.
+    source_id: broderick_pm147_2019
+
+substitutes:
+  - application: beta_emitter_power_and_gauge_sources
+    availability: partial
+    notes: |
+      ORNL's production paper identifies a short list of alternative low-energy beta
+      emitters for similar power-source and gauge roles, including H-3, Ni-63, Eu-155, and
+      Tm-171. The same paper notes that higher specific activity for micro-device use is
+      available from the shorter-lived isotopes such as Pm-147, so the alternatives are not
+      full drop-in replacements across all applications.
+    source_id: broderick_pm147_2019
+
+end_uses:
+  uses:
+    - application: beta_emitter_power_and_gauge_sources
+      share_pct: 100
+      confidence: medium
+      notes: |
+        DOE and ORNL describe the commercial demand for Pm-147 as beta-emitter applications:
+        beta thickness gauges for thin films, nuclear batteries and other low-power sources,
+        luminous paint and lighting, and related imaging uses. This record treats those as a
+        single functional market because the reviewed primary sources do not publish a
+        quantitative split among them.
+      source_id: doe_science_pm147_highlight_2025
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  us_critical_source_id: us_federal_register_critical_minerals_2025
+  eu_crm_list_as_of_2024: false
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Promethium-147 is commercially strategic in a nuclear-isotope sense, but it does not
+    appear on the 2025 US critical minerals list or the EU's 2024 critical or strategic raw
+    materials annexes. Its supply chain is handled through isotope-program infrastructure
+    rather than bulk-minerals policy.
+
+geopolitical_events:
+  - date: 2022-06-23
+    event: DOE entered the promethium-147 market after international supply disruptions.
+    impact: |
+      DOE said it was entering the market to fill critical needs after disruptions in the
+      international supply chain and noted that Pm-147 had previously been produced solely
+      from fuel reprocessing in Russia. The event shifted commercially available supply
+      toward a US government-backed source.
+    source_id: nidc_pm147_entering_market_2022
+
+narrative: |
+  Promethium is commercially real in 2025, but only as a tiny isotope business centered on
+  Pm-147. Customers do not buy promethium metal by the tonne; they buy curie quantities of a
+  radioactive chloride or nitrate salt from the DOE isotope catalog. The isotope's demand is
+  tied to its behavior as a low-energy beta emitter, which is why official DOE and ORNL
+  sources consistently frame the market around thickness gauges, compact nuclear batteries
+  and other long-lived low-power devices, luminous products, and a handful of specialized
+  imaging uses.
+
+  The supply chain is reactor and hot-cell infrastructure, not mining. DOE's initial
+  commercial batches came from recovery of Pm-147 from a plutonium-program waste stream after
+  international disruptions hit the prior Russia-centered supply route. In parallel, ORNL has
+  developed a direct HFIR route using enriched Nd-146 targets that decay through Nd-147 to
+  Pm-147 before chemical purification. By 2025 DOE described itself as the only global
+  producer of Pm-147, underscoring how concentrated and policy-shaped this market is.
+
+sources:
+  - id: nidc_promethium_catalog_2025
+    title: "Promethium"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/products/promethium
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_pm147_product_2025
+    title: "Promethium-147 Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://isotopes.gov/sites/default/files/2025-10/Promethium-147%20Product%20Information.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_pm147_entering_market_2022
+    title: "Entering Market: Promethium-147"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/Entering_Market_Promethium-147
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: doe_science_pm147_highlight_2025
+    title: "In an Advance for Promethium Production, Researchers Get a New View of the Element's Properties"
+    publisher: US Department of Energy, Office of Science
+    url: https://science.osti.gov/Isotope-Research-Development-and-Production/Science-Highlights/2025/3a
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: broderick_pm147_2019
+    title: "Reactor production of promethium-147"
+    publisher: Applied Radiation and Isotopes / Oak Ridge National Laboratory
+    url: https://doi.org/10.1016/j.apradiso.2018.10.025
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2025
+    title: "Final 2025 List of Critical Minerals"
+    publisher: US Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://faolex.fao.org/docs/pdf/eur231131.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
