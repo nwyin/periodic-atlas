@@ -1,0 +1,128 @@
+symbol: Fr
+atomic_number: 87
+name: francium
+category: alkali_metal
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Francium is handled only at atom-scale in research
+  settings, typically as short-lived radioactive ion beams, neutralized atomic
+  beams, or laser-trapped atoms. The longest-lived isotope, Fr-223, has a
+  22.00-minute half-life in NNDC ENSDF/NuDat; practical handling is therefore in
+  counts of atoms or beam yields rather than any commercial mass unit.
+
+production: []
+isotope_markets: []
+prices: []
+geopolitical_events: []
+byproduct_of: []
+substitutes: []
+
+research_only:
+  longest_lived_isotope: Fr-223
+  half_life_seconds: 1320
+  discovered_year: 1939
+  iupac_recognized_year: 1949
+  discovered_at: |
+    Curie Institute, Paris, France. Marguerite Perey identified element 87 in
+    actinium decay products in 1939.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - CERN ISOLDE
+    - Oak Ridge National Laboratory
+  notes: |
+    Francium was the last element first discovered in nature rather than
+    synthesized. IUPAC's element-by-element isotopes review states that Fr-223
+    occurs naturally in uranium minerals via actinium decay, but no more than
+    about 30 g are present in Earth's crust at any given time. The same review
+    notes that francium can be produced artificially for research by bombarding
+    thorium with protons. Modern beam-production work at CERN ISOLDE reports
+    active extraction of francium isotopes from thick uranium-carbide targets,
+    while ORNL publications document ongoing atom-scale francium chemistry
+    experiments.
+
+feedstock_origins:
+  - substrate: thorium_targets
+    notes: |
+      IUPAC's IPTEI francium review states that francium can be produced
+      artificially for research by bombarding thorium with protons.
+    source_id: iupac_iptei_fr_2018
+  - substrate: uranium_carbide_targets
+    notes: |
+      CERN's 2024 ISOLDE production study reports francium radioactive ion beams
+      extracted from thick uranium-carbide targets irradiated by the Proton
+      Synchrotron Booster.
+    source_id: cern_isolde_fr_beams_2024
+
+end_uses:
+  uses:
+    - application: scientific_research
+      share_pct: 100
+      notes: |
+        IUPAC's francium review states that francium has no known isotopic
+        applications outside scientific research.
+      source_id: iupac_iptei_fr_2018
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Francium is a research-only radioactive element with no commercial supply
+    chain, so it does not appear in mainstream critical-minerals policy lists.
+
+narrative: |
+  Francium has no commercial market. Its physical presence is fleeting even in
+  nature: IUPAC's isotopes review describes Fr-223 as the longest-lived isotope,
+  formed in uranium minerals through actinium decay, with only about 30 g
+  estimated to exist in Earth's crust at any one time. Because the ground-state
+  half-life is only 22.00 minutes, nothing resembling a mine-to-refinery supply
+  chain exists; the real-world handling unit is atoms in a beam, trap, or decay
+  chain rather than kilograms or tonnes.
+
+  The element survives economically only as a laboratory subject. IUPAC notes
+  that artificial production for research can be done by proton bombardment of
+  thorium, and CERN's 2024 ISOLDE study shows active beam production of francium
+  isotopes from uranium-carbide targets. ORNL publications likewise show
+  atom-scale francium chemistry remains experimentally active. The atlas record
+  therefore treats francium as a research-only element whose "end use" is
+  entirely fundamental nuclear, atomic, and radiochemical research.
+
+sources:
+  - id: iupac_iptei_fr_2018
+    title: "IUPAC Periodic Table of the Elements and Isotopes (IPTEI): Francium"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/wp-content/uploads/2015/02/IPTEI_postprint_20190301.pdf
+    retrieved: 2026-04-13
+    publication_year: 2018
+    source_tier: primary
+  - id: iupac_element_names_2004
+    title: "The Naming of the Chemical Elements"
+    publisher: Chemistry International / International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/ci/2004/2601/1_holden.html
+    retrieved: 2026-04-13
+    publication_year: 2004
+    source_tier: primary
+  - id: nndc_223fr_adopted
+    title: "223Fr Adopted Levels, Gammas"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensnds/223/Fr/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2001
+    source_tier: primary
+  - id: cern_isolde_fr_beams_2024
+    title: "Production study of Fr, Ra and Ac radioactive ion beams at ISOLDE, CERN"
+    publisher: CERN Document Server / Scientific Reports
+    url: https://cds.cern.ch/record/2900414
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: ornl_fr_thermodynamics_2013
+    title: "First Experimentally Determined Thermodynamic Values of Francium: Hydration Energy, Energy of Partitioning, and Thermodynamic Radius"
+    publisher: Oak Ridge National Laboratory / Journal of Physical Chemistry B
+    url: https://www.ornl.gov/publication/first-experimentally-determined-thermodynamic-values-francium-hydration-energy-energy
+    retrieved: 2026-04-13
+    publication_year: 2013
+    source_tier: primary
