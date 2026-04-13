@@ -1,0 +1,236 @@
+symbol: Hg
+atomic_number: 80
+name: mercury
+category: transition_metal
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Commercial mercury is traded as elemental liquid metal, historically packed in
+  standard flasks of about 34.5 kilograms (76 pounds) or in smaller steel bottles
+  for laboratory and industrial users. Primary mercury is recovered by roasting or
+  retorting cinnabar (HgS) ore and condensing the vapor; secondary mercury is
+  recovered from decommissioned chlor-alkali equipment, spent products, and other
+  mercury-bearing wastes. USGS mercury statistics are conventionally reported in
+  metric tons of contained elemental mercury; market prices are often quoted per
+  flask or per kilogram of 99.99%-grade metal.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 2500
+      unit: tonnes_per_year
+      form: metal
+      approximate: true
+      confidence: low
+      notes: |
+        Approximate world primary mercury mine output for 2024, expressed as metric
+        tons of contained elemental mercury. Mercury supply is structurally unusual:
+        primary mine output from cinnabar operations still exists, but secondary
+        recovery from recycling and decommissioned chlor-alkali infrastructure also
+        remains commercially important in some regions and is not always reported in
+        the same table as mine output.
+      source_id: usgs_mcs_2025_mercury
+    mining_by_country:
+      shares:
+        - country: CN
+          share_pct: 80
+          confidence: low
+          notes: |
+            China is identified in USGS and UNEP primary-source material as the
+            dominant remaining primary-mercury producer. The percentage here is an
+            approximate share used to reflect overwhelming production concentration,
+            not a directly quoted 2024 USGS country-share table.
+          source_id: usgs_mcs_2025_mercury
+        - country: KG
+          share_pct: 8
+          confidence: low
+          notes: |
+            Kyrgyzstan remains one of the few named primary-mercury mining
+            jurisdictions in the modern market, centered on the Khaidarkan complex.
+            Share is approximate and should be treated as indicative only.
+          source_id: unep_global_mercury_assessment_2018
+        - country: TJ
+          share_pct: 4
+          confidence: low
+          notes: |
+            Tajikistan is cited in UNEP mercury-market work as a remaining producer.
+            Share is approximate and reflects niche but non-zero mine supply.
+          source_id: unep_global_mercury_assessment_2018
+        - country: MX
+          share_pct: 4
+          confidence: low
+          notes: |
+            Mexico is cited in UNEP mercury-market work as a continuing producer and
+            trader. Share is approximate rather than directly reported.
+          source_id: unep_global_mercury_assessment_2018
+        - country: ZZ
+          share_pct: 4
+          confidence: low
+          notes: |
+            Residual share for other small primary-mercury producers and rounding.
+          source_id: unep_global_mercury_assessment_2018
+      completeness: top_producers_only
+    refining_by_country:
+      shares: []
+      completeness: partial
+    notes: |
+      Mercury is one of the few metals whose formal commercial supply chain is being
+      intentionally constrained by treaty. The Minamata Convention prohibits new
+      primary mercury mines and requires existing primary mining to cease within 15
+      years of the treaty's entry into force, so modern supply is a mix of declining
+      legacy mine output and policy-driven secondary recovery.
+
+feedstock_origins:
+  - substrate: cinnabar_ore
+    notes: |
+      The principal primary mercury feedstock is cinnabar (HgS), roasted or retorted
+      to release mercury vapor which is then condensed to elemental liquid metal.
+    source_id: usgs_mcs_2025_mercury
+  - substrate: mercury_bearing_recycling_streams
+    notes: |
+      Secondary mercury supply comes from recovery of elemental mercury from
+      decommissioned chlor-alkali cells, industrial sludges and catalysts, switches,
+      lamps, dental amalgam waste, and other mercury-bearing products and process
+      residues.
+    source_id: unep_global_mercury_assessment_2018
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      Primary-source mercury policy and market literature consistently treats
+      substitution as feasible in many traditional uses but not universally costless:
+      membrane chlor-alkali cells substitute for mercury cells; electronic or
+      mechanical switches substitute for mercury switches and relays; LEDs displace
+      many fluorescent and mercury-vapor lamps; and alternative gold-recovery methods
+      can reduce mercury use in ASGM, though adoption remains incomplete.
+    source_id: usgs_mcs_2025_mercury
+
+end_uses:
+  uses:
+    - application: artisanal_and_small_scale_gold_mining
+      share_pct: 38
+      confidence: low
+      notes: |
+        UNEP identifies ASGM as the single largest intentional use of mercury in the
+        world market. The share here is an approximate rounded representation of the
+        UNEP demand split rather than a point estimate for 2024 specifically.
+      source_id: unep_global_mercury_assessment_2018
+    - application: vinyl_chloride_monomer_production
+      share_pct: 25
+      confidence: low
+      notes: |
+        Mercury-based catalysts remain a major demand center where acetylene-based
+        VCM production persists, especially in China. Share is rounded from UNEP's
+        reported global demand structure.
+      source_id: unep_global_mercury_assessment_2018
+    - application: chlor_alkali
+      share_pct: 16
+      confidence: low
+      notes: |
+        Legacy mercury-cell chlor-alkali plants remain an identifiable but declining
+        use segment as operators convert to membrane technology under Minamata-driven
+        phase-out pressure.
+      source_id: unep_global_mercury_assessment_2018
+    - application: products_and_other_industrial_uses
+      share_pct: 21
+      confidence: low
+      notes: |
+        Residual demand includes measuring devices, lamps, electrical equipment,
+        dental applications, laboratory and reagent uses, and other industrial
+        processes still using mercury despite ongoing phase-down.
+      source_id: unep_global_mercury_assessment_2018
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  us_critical_source_id: us_federal_register_critical_minerals_2025
+  eu_crm_list_as_of_2024: false
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Mercury is economically relevant but intentionally de-prioritized by critical
+    minerals policy frameworks because most current policy aims to reduce production,
+    trade, and use rather than secure additional supply.
+
+geopolitical_events:
+  - date: 2017-08-16
+    event: "Minamata Convention on Mercury entered into force"
+    impact: |
+      The treaty created the defining policy constraint for the modern mercury
+      market: parties must not allow new primary mercury mining, and existing
+      primary mining is time-limited. The result is a structurally shrinking legal
+      primary-supply base and growing emphasis on recycling, storage, and
+      use-reduction compliance.
+    source_id: minamata_convention_text
+  - date: 2023-11
+    event: "COP-5 adopted additional phase-out measures for mercury-added products and industrial processes"
+    impact: |
+      The convention's fifth conference of the parties tightened the timetable for
+      several mercury-added products and processes, reinforcing the long-run
+      contraction of legal end-use demand outside a few hard-to-abate sectors such
+      as ASGM and some chemical routes.
+    source_id: minamata_cop5_decisions
+
+narrative: |
+  Mercury remains commercially real in 2025, but unlike most metals its supply chain
+  is shaped as much by environmental treaty law as by geology. Elemental mercury is
+  still produced from cinnabar and sold as liquid metal, yet the Minamata Convention
+  has made new primary mines illegal for parties and put a sunset on existing ones.
+  That shifts the market's center of gravity toward legacy producers, recycling,
+  and regulated storage and disposal channels rather than conventional mine-growth
+  narratives.
+
+  Demand is also unusual. The largest remaining intentional use is artisanal and
+  small-scale gold mining, followed by acetylene-route vinyl chloride monomer
+  production and a shrinking tail of chlor-alkali, lamps, switches, instruments, and
+  specialty chemical uses. In other words, mercury is a live commodity, but it is a
+  commodity in managed decline: still traded, still mined in a few jurisdictions, and
+  still indispensable in some niches, while the dominant policy direction is phaseout
+  and containment rather than expansion.
+
+sources:
+  - id: usgs_mcs_2025_mercury
+    title: "Mercury"
+    publisher: US Geological Survey, Mineral Commodity Summaries 2025
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-mercury.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: unep_global_mercury_assessment_2018
+    title: "Global Mercury Assessment 2018"
+    publisher: United Nations Environment Programme
+    url: https://wedocs.unep.org/20.500.11822/27579
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: minamata_convention_text
+    title: "Minamata Convention on Mercury"
+    publisher: Minamata Convention Secretariat / United Nations Environment Programme
+    url: https://minamataconvention.org/sites/default/files/2022-01/Minamata-Convention-booklet-Sep2019-EN.pdf
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: minamata_cop5_decisions
+    title: "Report of the fifth meeting of the Conference of the Parties to the Minamata Convention on Mercury"
+    publisher: Minamata Convention Secretariat / United Nations Environment Programme
+    url: https://minamataconvention.org/en/documents/report-fifth-meeting-conference-parties-minamata-convention-mercury
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2025
+    title: "Final 2025 List of Critical Minerals"
+    publisher: US Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://faolex.fao.org/docs/pdf/eur231131.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
