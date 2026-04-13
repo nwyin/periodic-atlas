@@ -1,0 +1,97 @@
+symbol: Ts
+atomic_number: 117
+name: tennessine
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Tennessine is produced atom-by-atom in heavy-ion fusion
+  experiments; half-lives in the nuclear-data sources are reported in
+  milliseconds and converted here to SI seconds.
+
+research_only:
+  longest_lived_isotope: Ts-294
+  half_life_seconds: 0.051
+  discovered_year: 2010
+  iupac_recognized_year: 2015
+  discovered_at: |
+    First synthesized at the Flerov Laboratory of Nuclear Reactions, Joint
+    Institute for Nuclear Research (Dubna, Russia), in collaboration with Oak
+    Ridge National Laboratory, Lawrence Livermore National Laboratory,
+    Vanderbilt University, and the Research Institute of Atomic Reactors. The
+    synthesis used calcium-48 beams on a berkelium-249 target prepared from
+    Oak Ridge material.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - JINR Dubna
+  notes: |
+    Tennessine has no commercial supply chain and exists only as a few
+    short-lived atoms created in fusion experiments. The 2010 discovery run
+    produced six atoms of element 117, and later confirmation work at JINR and
+    GSI supported the IUPAC recognition announced on 2015-12-30. As of the
+    2025 snapshot, superheavy-element synthesis infrastructure remains centered
+    on JINR's Dubna program rather than any industrial market.
+
+narrative: |
+  Tennessine is a research-only superheavy halogen with no extractive,
+  refining, or end-use market. It is made by fusing calcium-48 ions with a
+  berkelium-249 target at extremely low event rates, then identifying the new
+  nuclide through correlated alpha-decay chains.
+
+  The isotope with the longest confirmed half-life in the primary nuclear-data
+  sources is Ts-294 at about 51 milliseconds, which is still far too short for
+  any bulk handling or chemistry-based commercialization. Commercial reality is
+  therefore limited to state-funded accelerator campaigns, target-material
+  production, and detector development supporting superheavy-element physics.
+
+sources:
+  - id: iupac_discovery_117
+    title: "Discovery and Assignment of Elements with Atomic Numbers 113, 115, 117 and 118"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/news/news-detail/article/discovery-and-assignment-of-elements-with-atomic-numbers-113-115-117-and-118.html
+    retrieved: 2026-04-13
+    publication_year: 2015
+    source_tier: primary
+  - id: iupac_naming_ts
+    title: "IUPAC Announces the Names of the Elements 113, 115, 117, and 118"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/
+    retrieved: 2026-04-13
+    publication_year: 2016
+    source_tier: primary
+  - id: nndc_294ts_adopted
+    title: "294Ts Adopted Levels"
+    publisher: National Nuclear Data Center
+    url: https://www.nndc.bnl.gov/ensnds/294/Ts/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: nndc_2010og01_refs
+    title: "References from selected dataset: 294TS 249BK(48CA,3N):NUC ID:XUNDL-1"
+    publisher: National Nuclear Data Center
+    url: https://www.nndc.bnl.gov/ensdf/getrefs.jsp?recid=294117007
+    retrieved: 2026-04-13
+    publication_year: 2010
+    source_tier: primary
+  - id: ornl_element_117_timeline
+    title: "Element 117 timeline"
+    publisher: Oak Ridge National Laboratory
+    url: https://www.ornl.gov/content/element-117-timeline
+    retrieved: 2026-04-13
+    publication_year: 2017
+    source_tier: primary
+  - id: jinr_synthesized_117
+    title: "Element 117 is synthesized"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/post_4010/
+    retrieved: 2026-04-13
+    publication_year: 2010
+    source_tier: primary
+  - id: jinr_she_roadmap
+    title: "JINR Development Strategic Roadmap"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/science-en/planning-and-reporting/roadmap/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
