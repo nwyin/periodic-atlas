@@ -1,0 +1,469 @@
+symbol: W
+atomic_number: 74
+name: tungsten
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports tungsten data in metric tons, tungsten content, unless otherwise
+  specified. The chapter's trade-facing feed forms are tungsten concentrates,
+  ammonium paratungstate (APT), tungsten oxide, and scrap; downstream U.S. processors
+  convert these into tungsten metal powder, tungsten carbide powder, and tungsten
+  chemicals. The reported reference price is concentrate quoted in dollars per dry
+  metric ton unit (dmtu) of tungsten trioxide (WO3) in-warehouse Rotterdam; one dmtu
+  WO3 contains 7.93 kilograms of tungsten per USGS footnote 6, so the price series
+  below is converted to `usd_per_kg` of contained tungsten. No temperature convention
+  is specified in the chapter.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 81000
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 tungsten chapter: world mine production in 2024e was 81,000 metric
+        tons W content, up from 79,500 metric tons in 2023. The United States had no mine
+        production in either year and has not mined tungsten commercially since 2015.
+        Non-Chinese concentrate production increased in 2024 owing in part to two new
+        operations in Australia, but China still dominated mine supply and exports.
+      source_id: usgs_mcs_2025_tungsten
+    mining_by_country:
+      shares:
+        - country: CN
+          share_pct: 82.72
+          quantity:
+            value: 67000
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tungsten
+          notes: |
+            USGS 2024e mine production table: China 67,000 t W content. China remained the
+            dominant global producer, consumer, and exporter, and USGS explicitly describes
+            world tungsten supply as dominated by Chinese production and exports.
+          source_id: usgs_mcs_2025_tungsten
+        - country: VN
+          share_pct: 4.2
+          quantity:
+            value: 3400
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Vietnam 3,400 t W content; reserves revised in 2025 based on Government reports."
+          source_id: usgs_mcs_2025_tungsten
+        - country: RU
+          share_pct: 2.47
+          quantity:
+            value: 2000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Russia 2,000 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: KP
+          share_pct: 2.1
+          quantity:
+            value: 1700
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Korea, North 1,700 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: BO
+          share_pct: 1.98
+          quantity:
+            value: 1600
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Bolivia 1,600 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: ZZ
+          share_pct: 1.85
+          quantity:
+            value: 1500
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table 'Other countries': 1,500 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: RW
+          share_pct: 1.48
+          quantity:
+            value: 1200
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Rwanda 1,200 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: AU
+          share_pct: 1.23
+          quantity:
+            value: 1000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: |
+            USGS 2024e mine production table: Australia 1,000 t W content, up from 430 t in
+            2023. USGS attributes part of the non-Chinese production increase to two new
+            Australian operations.
+          source_id: usgs_mcs_2025_tungsten
+        - country: AT
+          share_pct: 0.99
+          quantity:
+            value: 800
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Austria 800 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: ES
+          share_pct: 0.86
+          quantity:
+            value: 700
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Spain 700 t W content."
+          source_id: usgs_mcs_2025_tungsten
+        - country: PT
+          share_pct: 0.62
+          quantity:
+            value: 500
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tungsten
+          notes: "USGS 2024e mine production table: Portugal 500 t W content; reserves revised in 2025 based on Government reports."
+          source_id: usgs_mcs_2025_tungsten
+      completeness: complete
+    notes: |
+      Share percentages use the stated world total of 81,000 metric tons W content. Listed
+      country quantities sum to 80,400 t, or 99.3% of the rounded world total, which is a
+      normal USGS rounding artifact. The chapter does not publish a comparable world refined
+      tungsten table by country, so no `refined` or `refining_by_country` block is asserted
+      here. U.S. net import reliance remained above 50% of apparent consumption in 2024.
+
+reserves:
+  economic_reserves:
+    value: 4600000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS MCS 2025 reports world tungsten reserves of >4,600,000 metric tons W content.
+      The world total is a minimum, not an exact point estimate. Australia's line in the
+      PDF appears as "11570,000" because the footnote marker is concatenated with the value;
+      interpreted with footnote 11, this is 570,000 t total reserves, of which 220,000 t are
+      JORC-compliant or equivalent.
+    source_id: usgs_mcs_2025_tungsten
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 52.17
+        quantity:
+          value: 2400000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: China 2,400,000 t W content; largest global reserve base."
+        source_id: usgs_mcs_2025_tungsten
+      - country: ZZ
+        share_pct: 20.65
+        quantity:
+          value: 950000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table 'Other countries': 950,000 t W content."
+        source_id: usgs_mcs_2025_tungsten
+      - country: AU
+        share_pct: 12.39
+        quantity:
+          value: 570000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: |
+          Interpreted from the USGS reserve table plus footnote 11 as 570,000 t W content;
+          JORC-compliant or equivalent reserves were 220,000 tons.
+        source_id: usgs_mcs_2025_tungsten
+      - country: RU
+        share_pct: 8.7
+        quantity:
+          value: 400000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: Russia 400,000 t W content."
+        source_id: usgs_mcs_2025_tungsten
+      - country: VN
+        share_pct: 3.04
+        quantity:
+          value: 140000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: Vietnam 140,000 t W content; revised based on Government reports."
+        source_id: usgs_mcs_2025_tungsten
+      - country: ES
+        share_pct: 1.43
+        quantity:
+          value: 66000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: Spain 66,000 t W content."
+        source_id: usgs_mcs_2025_tungsten
+      - country: KP
+        share_pct: 0.63
+        quantity:
+          value: 29000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: Korea, North 29,000 t W content."
+        source_id: usgs_mcs_2025_tungsten
+      - country: AT
+        share_pct: 0.22
+        quantity:
+          value: 10000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: Austria 10,000 t W content."
+        source_id: usgs_mcs_2025_tungsten
+      - country: PT
+        share_pct: 0.07
+        quantity:
+          value: 3400
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tungsten
+        notes: "USGS reserve table: Portugal 3,400 t W content; revised based on Government reports."
+        source_id: usgs_mcs_2025_tungsten
+    completeness: partial
+  notes: |
+    USGS also states that world tungsten resources are geographically widespread, with
+    significant resources identified on every continent except Antarctica, but does not
+    provide a numeric world resource figure in this chapter. Shares above use the minimum
+    reported world reserve denominator of 4,600,000 t; because the world total is stated as
+    greater than that amount, these percentages are approximate upper bounds.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: tungsten_concentrate
+    notes: |
+      USGS states that seven U.S. companies can convert tungsten concentrates into tungsten
+      metal powder, tungsten carbide powder, and tungsten chemicals.
+    source_id: usgs_mcs_2025_tungsten
+  - substrate: ammonium_paratungstate
+    notes: |
+      Ammonium paratungstate (APT) is identified by USGS as a commercial intermediate that
+      U.S. processors can convert into metal powder, carbide powder, and chemicals.
+    source_id: usgs_mcs_2025_tungsten
+  - substrate: tungsten_oxide
+    notes: |
+      Tungsten oxide is another trade intermediate named in the USGS domestic production
+      section as a feed to U.S. downstream processors.
+    source_id: usgs_mcs_2025_tungsten
+  - substrate: tungsten_scrap
+    notes: |
+      USGS identifies scrap as an important raw-material source for the tungsten industry,
+      both in the domestic production section and in the events/trends discussion.
+    source_id: usgs_mcs_2025_tungsten
+
+substitutes:
+  - application: cemented_carbides
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: possible alternatives to cemented tungsten carbides include
+      cemented carbides based on molybdenum carbide, niobium carbide, or titanium carbide,
+      ceramics, cermets, and tool steels. USGS adds that most reduce rather than replace the
+      amount of tungsten used.
+    source_id: usgs_mcs_2025_tungsten
+  - application: mill_products
+    availability: partial
+    notes: "USGS substitutes paragraph: molybdenum can substitute for certain tungsten mill products."
+    source_id: usgs_mcs_2025_tungsten
+  - application: tungsten_steels
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: molybdenum steels can substitute for tungsten steels,
+      although most molybdenum steels still contain some tungsten.
+    source_id: usgs_mcs_2025_tungsten
+  - application: lighting
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: carbon-nanotube filaments, induction technology, and
+      LEDs can substitute for lighting based on tungsten electrodes or filaments.
+    source_id: usgs_mcs_2025_tungsten
+  - application: radiation_shielding_and_high_density_components
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: depleted uranium or lead can substitute for tungsten or
+      tungsten alloys where high density or radiation shielding is required.
+    source_id: usgs_mcs_2025_tungsten
+  - application: armor_piercing_projectiles
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: depleted uranium alloys or hardened steel can substitute
+      for cemented tungsten carbides or tungsten alloys in armor-piercing projectiles.
+      USGS cautions that substitution can increase cost or reduce performance.
+    source_id: usgs_mcs_2025_tungsten
+
+end_uses:
+  uses:
+    - application: cemented_carbides
+      share_pct: 60
+      notes: |
+        USGS domestic production and use section: an estimated 60% of tungsten consumed in
+        the United States was used in cemented carbide parts for cutting and wear-resistant
+        applications, primarily in construction, metalworking, mining, and oil- and gas-
+        drilling.
+      source_id: usgs_mcs_2025_tungsten
+    - application: other_alloys_electrical_and_chemical_applications
+      share_pct: 40
+      notes: |
+        USGS domestic production and use section: the remainder was used to make various
+        alloys and specialty steels; electrodes, filaments, wires, and other components for
+        electrical, electronic, heating, lighting, and welding applications; and chemicals
+        for various applications.
+      source_id: usgs_mcs_2025_tungsten
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2022
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_annex_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_annex_2024
+  notes: |
+    Tungsten appears on the U.S. 2022 Final List of Critical Minerals and in both Annex I
+    (Strategic Raw Materials) and Annex II (Critical Raw Materials) of Regulation (EU)
+    2024/1252. The designation matches the market structure in the USGS chapter: no U.S.
+    mine production since 2015, net import reliance above 50%, and Chinese dominance at
+    roughly 83% of 2024 world mine output.
+
+prices:
+  - year: 2024
+    value: 31.53
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: Rotterdam
+    notes: |
+      USGS price series: concentrate, average in-warehouse Rotterdam, $250 per dry metric
+      ton unit of WO3 in 2024. Converted to $31.53/kg contained W using USGS footnote 6
+      (1 dmtu WO3 = 7.93 kg tungsten). Source: Argus Media Group, Argus Tungsten Analytics.
+    source_id: usgs_mcs_2025_tungsten
+  - year: 2023
+    value: 32.53
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: Rotterdam
+    notes: "USGS price series: $258/dmtu WO3 in 2023, converted to $32.53/kg contained W."
+    source_id: usgs_mcs_2025_tungsten
+  - year: 2022
+    value: 34.68
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: Rotterdam
+    notes: "USGS price series: $275/dmtu WO3 in 2022, converted to $34.68/kg contained W."
+    source_id: usgs_mcs_2025_tungsten
+  - year: 2021
+    value: 28.37
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: Rotterdam
+    notes: "USGS price series: $225/dmtu WO3 in 2021, converted to $28.37/kg contained W."
+    source_id: usgs_mcs_2025_tungsten
+  - year: 2020
+    value: 21.69
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: Rotterdam
+    notes: "USGS price series: $172/dmtu WO3 in 2020, converted to $21.69/kg contained W."
+    source_id: usgs_mcs_2025_tungsten
+
+geopolitical_events:
+  - date: 2024
+    event: "Non-Chinese tungsten concentrate production increased in 2024 as two new Australian operations came online and the Sangdong project in the Republic of Korea approached production"
+    impact: |
+      This was one of the few concrete signs of diversification away from China in the
+      current cycle. Even so, USGS still characterized supply as dominated by Chinese
+      production and exports, implying that the diversification impact remained modest in
+      2024 relative to China's scale.
+    source_id: usgs_mcs_2025_tungsten
+  - date: 2024-12-11
+    event: "USTR finalized a 25% Section 301 tariff increase on certain tungsten products from China, effective January 1, 2025"
+    impact: |
+      The tariff action covered certain tungsten products after a 2024 review cycle and was
+      aimed at strategic supply-chain resilience. It raised the U.S. landed cost of Chinese
+      tungsten carbides, concentrates, oxides, powders, and tungstates and reinforced policy
+      pressure to diversify supply away from China.
+    source_id: ustr_section_301_tungsten_2024
+
+narrative: |
+  Tungsten is a strategically important but comparatively small-volume refractory-metal
+  market whose commercial center of gravity is cemented carbides. USGS reports that about
+  60% of U.S. tungsten consumption goes into cemented carbide parts for cutting and
+  wear-resistant uses in construction, metalworking, mining, and oil and gas drilling.
+  Downstream trade forms are specialized: processors work from concentrate, APT, oxide, and
+  scrap to make tungsten metal powder, tungsten carbide powder, and tungsten chemicals rather
+  than shipping large tonnages of commodity-grade refined metal.
+
+  The supply picture is dominated by China. USGS estimates 2024 world mine production at
+  81,000 metric tons W content, of which China supplied about 67,000 metric tons, or almost
+  83%. The United States had no mine production and has not mined tungsten commercially since
+  2015, leaving U.S. net import reliance above 50% of apparent consumption. Non-Chinese
+  output improved in 2024 thanks partly to new Australian operations, and a Korean project
+  was nearing production, but these moves only marginally changed a market still anchored by
+  Chinese production, consumption, and exports. Scrap remains an important secondary feed.
+
+  Reserves are not geologically scarce in an absolute sense: USGS reports world reserves of
+  more than 4.6 million metric tons W content and notes that resources are widespread across
+  every continent except Antarctica. The issue is commercial concentration and processing
+  leverage, not elemental rarity. That is consistent with tungsten's policy status: it is on
+  both the U.S. critical-minerals list and the EU's strategic and critical raw-materials
+  lists, and late-2024 U.S. tariff action on Chinese tungsten products shows that trade
+  policy is now part of the supply-chain landscape.
+
+sources:
+  - id: usgs_mcs_2025_tungsten
+    title: Mineral Commodity Summaries 2025 — Tungsten
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-tungsten.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 24, 2022)"
+    publisher: US Department of the Interior / US Geological Survey
+    url: https://www.federalregister.gov/documents/2022/02/24/2022-04027/2022-final-list-of-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: eu_crma_annex_2024
+    title: "Regulation (EU) 2024/1252 — Critical Raw Materials Act, Annex I and Annex II"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: ustr_section_301_tungsten_2024
+    title: "USTR Increases Tariffs Under Section 301 on Tungsten Products, Wafers, and Polysilicon, Concluding the Statutory Four-Year Review"
+    publisher: Office of the United States Trade Representative
+    url: https://ustr.gov/about-us/policy-offices/press-office/press-releases/2024/december/ustr-increases-tariffs-under-section-301-tungsten-products-wafers-and-polysilicon-concluding
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
