@@ -1,0 +1,314 @@
+symbol: Bi
+atomic_number: 83
+name: bismuth
+category: post_transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports bismuth chapter quantities in metric tons unless otherwise specified.
+  Commercial trade forms named in the source include refined bismuth metal, alloys, waste and
+  scrap, and a range of downstream chemical compounds such as bismuth nitrate, bismuth
+  oxychloride, and bismuth vanadate. The published price series is for 99.99%-purity bismuth
+  metal, in warehouse Rotterdam, in minimum lots of 1 metric ton, quoted in U.S. dollars per
+  pound by Fastmarkets.
+
+production:
+  - reporting_year: 2024
+    refined:
+      value: 16000
+      unit: tonnes_per_year
+      form: metal
+      approximate: true
+      notes: |
+        USGS MCS 2025 reports estimated world refinery production of bismuth at 16,000 metric
+        tons in 2024, down slightly from 16,200 metric tons in 2023. The same chapter states
+        that world mine production of bismuth was not reported because bismuth is usually
+        recovered as a byproduct and world production data are available only once the metal is
+        refined.
+      source_id: usgs_mcs_2025_bismuth
+    mining_by_country:
+      shares: []
+      completeness: partial
+    refining_by_country:
+      shares:
+        - country: BO
+          share_pct: 0.44
+          quantity:
+            value: 70
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for Bolivia: 70 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+        - country: BG
+          share_pct: 0.31
+          quantity:
+            value: 50
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for Bulgaria: 50 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+        - country: CN
+          share_pct: 81.25
+          quantity:
+            value: 13000
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for China: 13,000 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+        - country: JP
+          share_pct: 3.12
+          quantity:
+            value: 500
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for Japan: 500 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+        - country: KZ
+          share_pct: 1.12
+          quantity:
+            value: 180
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for Kazakhstan: 180 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+        - country: KR
+          share_pct: 6.25
+          quantity:
+            value: 1000
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for the Republic of Korea: 1,000 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+        - country: LA
+          share_pct: 6.88
+          quantity:
+            value: 1100
+            unit: tonnes_per_year
+            form: metal
+            approximate: true
+            source_id: usgs_mcs_2025_bismuth
+          notes: "USGS 2024e refinery production for Laos: 1,100 metric tons."
+          source_id: usgs_mcs_2025_bismuth
+      completeness: complete
+    notes: |
+      Bismuth is a byproduct-dominated commodity, so USGS does not publish a world mine output
+      table. The commercial flow reported in MCS 2025 is refinery production. Country shares are
+      computed against the published rounded 2024 world refinery total of 16,000 metric tons; the
+      named-country subtotal is 15,900 metric tons, leaving a small rounding gap to the world total.
+
+reserves:
+  notes: |
+    USGS MCS 2025 states that bismuth reserves and resources data were generally not reported at
+    a mine or country level and were therefore difficult to quantify. The chapter further notes
+    that bismuth minerals rarely occur in sufficient quantities to be mined as principal products,
+    and that only the inactive Tasna Mine in Bolivia and one mine in China are known cases where
+    bismuth has been the primary product.
+
+end_uses:
+  uses:
+    - application: alloys
+      share_pct: 30
+      confidence: high
+      notes: |
+        USGS Minerals Yearbook 2022 states that bismuth alloys accounted for 30% of reported U.S.
+        bismuth consumption in 2022. The same report describes fusible alloys and metallurgical
+        additive uses such as solders, optical-lens holders, fire-sprinkler triggers, and
+        machinability additives in aluminum, copper, iron, and steel.
+      source_id: usgs_myb_2022_bismuth
+  completeness: partial
+
+byproduct_of: [Pb, Zn]
+
+feedstock_origins:
+  - substrate: lead_ores
+    notes: |
+      USGS MCS 2025 states that bismuth is produced most often as a byproduct during the
+      processing of lead ores. The chapter also notes that bismuth is contained in some lead ores
+      mined domestically, but all U.S. lead concentrates have been exported for smelting since the
+      last domestic primary lead smelter closed at yearend 2013.
+    source_id: usgs_mcs_2025_bismuth
+  - substrate: tungsten_ores
+    notes: |
+      USGS MCS 2025 states that in China and Vietnam, bismuth is also produced as a byproduct or
+      coproduct of tungsten and other metal ore processing.
+    source_id: usgs_mcs_2025_bismuth
+  - substrate: zinc_ores
+    notes: |
+      USGS MCS 2025 states that in Japan and the Republic of Korea, bismuth is produced as a
+      byproduct or coproduct of zinc ore processing.
+    source_id: usgs_mcs_2025_bismuth
+  - substrate: other_metal_ores
+    notes: |
+      Beyond lead, tungsten, and zinc-linked recovery, USGS MCS 2025 notes more generally that
+      bismuth in China and Vietnam is recovered from other metal ore processing streams as well.
+    source_id: usgs_mcs_2025_bismuth
+
+substitutes:
+  - application: pharmaceuticals
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: bismuth compounds can be replaced in pharmaceutical
+      applications by alumina, antibiotics, calcium carbonate, and magnesia.
+    source_id: usgs_mcs_2025_bismuth
+  - application: pigments
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that titanium-dioxide-coated mica flakes and fish-scale extracts are
+      substitutes for bismuth compounds in certain pigment uses.
+    source_id: usgs_mcs_2025_bismuth
+  - application: low_temperature_solders
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that cadmium, indium, lead, and tin can partially replace bismuth in
+      low-temperature solders.
+    source_id: usgs_mcs_2025_bismuth
+  - application: machining_holding_devices
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that resins can replace bismuth alloys used for holding metal shapes
+      during machining.
+    source_id: usgs_mcs_2025_bismuth
+  - application: fire_sprinkler_triggers
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that glycerin-filled glass bulbs can replace bismuth alloys in
+      triggering devices for fire sprinklers.
+    source_id: usgs_mcs_2025_bismuth
+  - application: free_machining_alloys
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that free-machining alloys can use lead, selenium, or tellurium as a
+      replacement for bismuth.
+    source_id: usgs_mcs_2025_bismuth
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_critical_minerals_2025
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Bismuth appears on the USGS 2025 List of Critical Minerals and on both Annex I (strategic raw
+    materials) and Annex II (critical raw materials) of EU Regulation 2024/1252. USGS MCS 2025
+    also reports U.S. net import reliance at 89% of apparent consumption in 2024 after running
+    between 92% and 97% in 2020-23.
+
+prices:
+  - year: 2020
+    value: 2.73
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 average annual price for 99.99%-purity bismuth metal in warehouse Rotterdam."
+    source_id: usgs_mcs_2025_bismuth
+  - year: 2021
+    value: 3.74
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 average annual price for 99.99%-purity bismuth metal in warehouse Rotterdam."
+    source_id: usgs_mcs_2025_bismuth
+  - year: 2022
+    value: 3.9
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 average annual price for 99.99%-purity bismuth metal in warehouse Rotterdam."
+    source_id: usgs_mcs_2025_bismuth
+  - year: 2023
+    value: 4.08
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 average annual price for 99.99%-purity bismuth metal in warehouse Rotterdam."
+    source_id: usgs_mcs_2025_bismuth
+  - year: 2024
+    value: 5.3
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 average annual price for 99.99%-purity bismuth metal in warehouse Rotterdam."
+    source_id: usgs_mcs_2025_bismuth
+
+geopolitical_events:
+  - date: "2024"
+    event: "Chinese feedstock competition tightened the bismuth market and pushed prices sharply higher"
+    impact: |
+      USGS MCS 2025 reports that average monthly in-warehouse Rotterdam bismuth prices rose from
+      $3.89 per pound in January 2024 to $6.29 per pound in October, taking the annual average to
+      $5.30 per pound, 30% above 2023 and the highest since 2018. The chapter attributes the move
+      in part to rising feedstock prices in China as domestic smelters competed for bismuth ore.
+      USGS also reports that U.S. imports of bismuth metal from China fell 40% year over year to
+      580 metric tons in 2024 from 964 metric tons in 2023.
+    source_id: usgs_mcs_2025_bismuth
+
+narrative: |
+  Bismuth is a small, import-reliant, and structurally byproduct-driven market. The United States
+  has had no primary refined bismuth production since 1997, and USGS MCS 2025 reports 89% net
+  import reliance in 2024 even after secondary scrap supplied a modest 80 metric tons per year.
+  Commercial material moves mainly as refined metal, alloys, scrap, and specialty chemical
+  compounds used in pharmaceuticals, pigments, ceramics, crystalware, and low-melting alloys.
+
+  The supply chain is constrained upstream by other metals rather than by standalone bismuth mines.
+  USGS states that bismuth is produced most often as a byproduct of lead-ore processing, with
+  additional recovery from tungsten- and zinc-linked process streams in Asia. Because mined bismuth
+  ore is not reported as a standalone commodity, the most meaningful global production number is
+  refinery output: 16,000 metric tons in 2024, of which China alone accounted for just over 81%.
+  That concentration makes the market sensitive to feedstock conditions inside China and to shifts
+  in byproduct economics elsewhere.
+
+  That thinness showed up clearly in 2024. USGS reports a 30% increase in the annual average
+  bismuth price as Chinese smelters competed for ore feed, while U.S. imports of bismuth metal
+  from China fell 40% year over year. At the same time, bismuth has policy relevance well beyond
+  its tonnage because it often replaces lead in plumbing alloys, solders, hunting shot, and other
+  applications where nontoxicity matters. The United States and the European Union both now treat
+  bismuth as a critical raw material, and the EU classifies it as strategic as well.
+
+sources:
+  - id: usgs_mcs_2025_bismuth
+    title: Mineral Commodity Summaries 2025 — Bismuth
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-bismuth.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_myb_2022_bismuth
+    title: Bismuth [Advance Release]
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/myb/vol1/2022/myb1-2022-bismuth.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_critical_minerals_2025
+    title: About the 2025 List of Critical Minerals
+    publisher: US Geological Survey
+    url: https://www.usgs.gov/programs/mineral-resources-program/science/about-2025-list-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
