@@ -1,0 +1,568 @@
+symbol: Sc
+atomic_number: 21
+name: scandium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 includes scandium in the grouped "Rare Earths" commodity chapter.
+  However, scandium is chemically distinct from the lanthanides: it is a Group 3
+  d-block transition metal (Period 4), not a 4f-element. Its production is NOT
+  derived by multiplying the lanthanide REO basket total by a basket share. USGS
+  tracks Sc₂O₃ (scandium oxide) separately from the 390,000 t REO basket that
+  covers the lanthanides and yttrium. Commercial scandium trades primarily as
+  scandium oxide (Sc₂O₃) at ≥99.9% minimum purity for specialty applications,
+  or as aluminum-scandium master alloy for Al-Sc materials production. Unlike most
+  lanthanide REEs, scandium is produced almost entirely as a byproduct of processing
+  other ore streams: titanium ore (ilmenite and vanadium-titanium magnetite),
+  uranium mine leach residues, and nickel laterite processing circuits. Primary
+  dedicated scandium mining is rare and small-scale. USGS MCS 2025 does not include
+  scandium in its salient statistics price table (which covers Ce, Dy, Eu, La,
+  mischmetal, Nd, and Tb only); therefore this file does not include price data.
+  The grouped_reporting flag is set true because USGS reports Sc within the Rare
+  Earths chapter, but the production figures for Sc are tracked separately from the
+  lanthanide REO basket total and should not be derived by basket-share multiplication.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 18
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Estimated from USGS MCS 2025 Rare Earths chapter. World Sc₂O₃ mine production
+      2024e is approximately 15–20 metric tons, derived from dedicated Sc extraction
+      and byproduct recovery across multiple ore streams. Unlike the lanthanide REEs,
+      Sc production is NOT derived by multiplying the REO basket total (390,000 t) by
+      a basket share; Sc is geochemically unrelated to the lanthanide basket and is
+      tracked separately by USGS. The 18 t central estimate reflects reported and
+      inferred Sc₂O₃ production from China (primary — byproduct streams from titanium
+      and REE processing), the Philippines (nickel laterite tailings at Nonoc/Surigao
+      operations), Russia (uranium/titanium byproduct), and Kazakhstan (uranium
+      byproduct). Some country-level data is withheld by USGS due to limited producers
+      per country. Confidence is low given partial reporting and the predominantly
+      byproduct nature of Sc output.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 66.7
+        quantity:
+          value: 12
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China is the world's dominant Sc₂O₃ producer, estimated at ~12 t Sc₂O₃ in
+          2024e (~67% of world total). Chinese Sc production derives from multiple
+          byproduct streams: titanium ore processing at the Panzhihua vanadium-titanium
+          magnetite complex in Sichuan province (the world's largest Sc-bearing titanium
+          ore resource), REE separation circuits in Jiangxi and Inner Mongolia (where Sc
+          co-occurs at trace levels in ion adsorption clay and bastnaesite operations),
+          and smaller chemical recovery operations. China's comprehensive mining and
+          processing infrastructure for titanium and REE ores positions it as the
+          dominant Sc₂O₃ supplier. USGS MCS 2025 identifies China as the dominant
+          producer; specific tonnage may be withheld in original reporting.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: PH
+        share_pct: 16.7
+        quantity:
+          value: 3
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Philippines produces Sc₂O₃ as a byproduct of nickel laterite ore processing,
+          primarily from operations in Surigao del Norte (Nonoc Island) where nickel
+          laterite high-pressure acid leach (HPAL) solutions contain recoverable Sc
+          concentrations. Estimated ~3 t Sc₂O₃ in 2024e (~17% of world). Philippine
+          Sc production has potential to expand given the country's large nickel laterite
+          resource base; however, Sc recovery circuits are capital-intensive and adoption
+          by laterite processors has been limited. USGS MCS 2025 cites Philippines as a
+          notable Sc producer in the Rare Earths chapter.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 5.6
+        quantity:
+          value: 1
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia has historically produced Sc₂O₃ via byproduct recovery from uranium
+          and titanium ore processing, including at the Solikamsk Magnesium Works (Perm
+          region) and associated facilities. Estimated ~1 t Sc₂O₃ in 2024e (~6% of
+          world). Some Russian Sc production data is withheld in USGS reporting due to
+          single-producer considerations. Russian production has been subject to
+          geopolitical disruption following the 2022 Ukraine conflict and associated
+          sanctions.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: KZ
+        share_pct: 5.6
+        quantity:
+          value: 1
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Kazakhstan produces Sc as a byproduct of uranium ore processing. Kazakhstan
+          is the world's leading uranium producer, and some uranium leach circuits
+          generate Sc-bearing byproduct streams from which Sc₂O₃ is recovered.
+          Estimated ~1 t Sc₂O₃ in 2024e (~6% of world). Actual production may be
+          partially withheld in USGS reporting.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 5.6
+        quantity:
+          value: 1
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Rest-of-world Sc₂O₃ production estimated at ~1 t in 2024e. Other potential
+          or minor producers include Ukraine (disrupted by conflict since 2022),
+          Norway (Sc-bearing mineral occurrences), and emerging projects in Australia
+          (Sunrise/Clean TeQ laterite project in New South Wales, not yet at commercial
+          scale in 2024). Australia's Sunrise project targets Sc₂O₃ as a co-product of
+          nickel-cobalt production but remained in development/restart status as of 2024.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 85
+        notes: |
+          China dominates Sc₂O₃ refining and high-purity purification. High-purity
+          Sc₂O₃ (≥99.9%) for Al-Sc master alloy production, SOFC electrolyte
+          manufacturing, and specialty applications is produced predominantly in
+          Chinese facilities. China's position as both the largest Sc producer and
+          primary refiner means that essentially all non-Chinese Sc₂O₃ feedstock
+          is exported to China for further processing or sold through Chinese trading
+          intermediaries. USGS MCS 2025 identifies China as accounting for the
+          dominant share (approximately 70%) of US REE compound and metal imports
+          (2020–23 average), a pattern that applies to Sc₂O₃. No US domestic Sc
+          refining capacity exists as of 2024.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 15
+        notes: |
+          Non-Chinese Sc refining is limited. Small-scale Sc₂O₃ production and
+          purification occurs in Russia (Solikamsk Magnesium Works) and Kazakhstan,
+          serving primarily domestic or regional markets. Japan processes small
+          quantities of high-purity Sc₂O₃ for specialty applications via import of
+          intermediate products. The Philippines exports Sc-bearing intermediates
+          primarily to China for final processing. No significant Sc refining
+          capacity exists outside China and Russia.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World Sc₂O₃ mine production 2024e estimated at ~18 t; this figure is NOT
+    derived from the REE basket total of 390,000 t REO (which covers lanthanides
+    and yttrium, not Sc). USGS MCS 2025 reports Sc within the Rare Earths chapter
+    with production tracked separately. Figures carry low confidence because (1) most
+    Sc is produced as a byproduct with production volumes often withheld by USGS per
+    country-level confidentiality rules, (2) significant unregistered production may
+    occur in China from small-scale titanium and REE processing operations, and (3)
+    Sc recovery from byproduct streams is intermittently economic depending on oxide
+    prices, causing year-to-year production volatility.
+
+reserves:
+  economic_reserves:
+    value: 100000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025 reports world scandium reserves of approximately 100,000 metric
+      tons Sc₂O₃ equivalent. Sc reserves are typically associated with uranium,
+      titanium, and nickel laterite deposits rather than being standalone Sc reserves.
+      Unlike lanthanide REO reserves (>90,000,000 t total), Sc reserves are measured
+      in thousands of tonnes, reflecting Sc's lower crustal abundance in economically
+      recoverable form and the smaller scale of its supply chain. The world reserve
+      estimate reflects recoverable Sc from associated ores and is subject to
+      significant uncertainty; the total Sc geologic resource base (not just economic
+      reserves) is considerably larger, with some estimates exceeding 1,000,000 t
+      Sc₂O₃ in identified deposits if all potential byproduct streams were assessed.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 50
+        quantity:
+          value: 50000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China holds the world's largest Sc₂O₃ reserves, estimated at ~50,000 t.
+          These are primarily associated with the Panzhihua vanadium-titanium magnetite
+          complex in Sichuan (containing Sc-bearing ilmenite), Bayan Obo and other REE
+          deposit complexes in Inner Mongolia, and ion adsorption clay deposits in
+          southern China (Jiangxi, Guangdong, Fujian). Chinese reserves are most
+          commercially accessible given existing processing infrastructure and proximity
+          to refining operations.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 10
+        quantity:
+          value: 10000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia holds Sc reserves associated primarily with the Sunrise (formerly
+          Clean TeQ) laterite nickel-cobalt project in New South Wales, which targets
+          Sc₂O₃ as a co-product. Additional Sc mineralization exists in other
+          Australian laterite and hard-rock REE projects. The Sunrise project has
+          a documented Sc₂O₃ resource; economic reserve classification depends on
+          project development financing and market conditions. Estimated ~10,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: PH
+        share_pct: 5
+        quantity:
+          value: 5000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Philippines Sc reserves associated with nickel laterite deposits, primarily
+          in Surigao del Norte (Nonoc area) and other laterite mining regions. The
+          Philippines has a large nickel laterite resource base that collectively
+          contains significant Sc; however, only a fraction has been classified as
+          economic reserves for Sc specifically. Estimated ~5,000 t Sc₂O₃.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 35
+        quantity:
+          value: 35000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Rest-of-world Sc reserves estimated at ~35,000 t Sc₂O₃: includes Russia
+          (uranium/titanium processing regions, Kola Peninsula), Kazakhstan (uranium
+          ore deposits), Greenland (large ionic and carbonatite deposits with Sc
+          occurrence), Ukraine (pre-conflict byproduct recovery operations), Madagascar,
+          Norway, and Sweden (Sc-bearing mineral occurrences). Many global Sc
+          occurrences are not yet classified as economic reserves.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World Sc₂O₃ reserves ~100,000 t are tracked separately from the lanthanide REO
+    reserve base (>90,000,000 t). USGS reserve figures for Sc may be conservative;
+    the total Sc geologic resource in identified deposits is potentially >1,000,000 t
+    Sc₂O₃ if all byproduct streams were assessed for recovery potential. Country-level
+    reserve breakdowns are approximations; USGS does not always report individual
+    country Sc reserve data. The Philippines, Burma, Madagascar, and Nigeria reserves
+    may be reported as NA in original USGS data.
+
+byproduct_of: [Ti, Ni]
+
+feedstock_origins:
+  - substrate: ilmenite_ore
+    typical_concentration_pct: 0.01
+    notes: |
+      Ilmenite (FeTiO₃) and vanadium-titanium magnetite (particularly the Panzhihua
+      type in Sichuan, China) contain Sc as a trace constituent at ~50–200 ppm Sc₂O₃
+      (~0.005–0.02%). When ilmenite or titaniferous magnetite is processed for TiO₂
+      pigment or titanium sponge production, Sc co-leaches into the acid process
+      solutions and can be recovered by ion exchange or solvent extraction. China's
+      Panzhihua deposits constitute the world's largest Sc-bearing titanium ore
+      resource and are the primary feedstock underlying China's leading Sc₂O₃
+      production position. USGS MCS 2025 identifies titanium ore processing as
+      the primary Chinese Sc source.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: nickel_laterite_ore
+    typical_concentration_pct: 0.004
+    notes: |
+      Nickel laterite deposits (Philippines, Australia, and other tropical regions)
+      contain Sc at ~30–100 ppm Sc₂O₃ in the laterite profile. During high-pressure
+      acid leach (HPAL) or atmospheric leach processing of nickel laterite, Sc reports
+      to the leach solution and can be recovered by ion exchange or solvent extraction
+      as a co-product with Ni-Co. The Nonoc/Surigao operation in the Philippines is
+      the principal current commercial example. The Sunrise project (NSW, Australia)
+      is designed to produce Sc₂O₃ as a co-product of Ni-Co from laterite. Total
+      world Sc recoverable from laterite streams (if universally implemented) would
+      far exceed current production; adoption is constrained by capital cost of
+      Sc recovery circuits.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: uranium_ore
+    typical_concentration_pct: 0.003
+    notes: |
+      Uranium deposits (sandstone-type, granite-associated, and other types) often
+      contain Sc at ~20–60 ppm Sc₂O₃. In uranium processing (acid leach circuits),
+      Sc co-leaches and can be recovered from raffinate or other process streams.
+      Historical Russian and Kazakhstani Sc₂O₃ production has relied substantially
+      on uranium byproduct recovery. As uranium mining volumes change, associated Sc
+      byproduct volumes change accordingly. Uranium is the world's largest-volume
+      source of Sc byproduct potential after titanium ore.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: rare_earth_ore
+    typical_concentration_pct: 0.002
+    notes: |
+      Some REE deposits — particularly ion adsorption clay deposits in southern China
+      — contain trace amounts of Sc that can be co-recovered during REE separation.
+      Bayan Obo (Inner Mongolia) and other Chinese REE deposits also contain trace Sc.
+      Sc is geochemically associated with iron, titanium, and aluminum minerals via
+      ionic radius similarity with Fe³⁺ and Al³⁺, rather than with the 4f-lanthanides,
+      so REE ore is a secondary Sc source. USGS MCS 2025 notes REE processing as a
+      minor contributor to Chinese Sc output.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: aluminum_scandium_alloys
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally
+      are less effective." For aluminum-scandium alloys, high-strength aluminum alloys
+      such as 7075 (Al-Zn-Mg-Cu) and 2024 (Al-Cu-Mg) can substitute in many
+      structural applications at lower strength-to-weight performance. Titanium
+      alloys provide superior specific strength for the most demanding aerospace
+      applications. Zirconium (Zr) can partially substitute for Sc in grain
+      refinement of aluminum at lower cost; Al-Zr alloys are used where the
+      performance of Al-Sc is not required. No substitute replicates the
+      specific combination of weldability improvement, grain refinement, and
+      strength enhancement that Sc addition provides to aluminum, making Sc
+      uniquely valuable for weldable high-strength structures and metal additive
+      manufacturing applications.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: solid_oxide_fuel_cells
+    availability: partial
+    notes: |
+      In solid oxide fuel cell (SOFC) electrolyte applications, scandium-stabilized
+      zirconia (ScSZ, ~10 mol% Sc₂O₃) offers the highest ionic conductivity of any
+      zirconia-based electrolyte at intermediate operating temperatures (600–800°C).
+      Yttria-stabilized zirconia (YSZ, 8 mol% Y₂O₃) is the dominant commercial
+      alternative — widely available and lower cost, but with lower ionic conductivity
+      requiring higher operating temperatures. Gadolinium-doped ceria (GDC) and
+      samarium-doped ceria (SDC) can substitute in intermediate-temperature SOFC
+      designs. YSZ is commercially preferred for cost-constrained applications
+      despite lower efficiency relative to ScSZ.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: aluminum_scandium_alloys
+      share_pct: 65
+      confidence: low
+      notes: |
+        Aluminum-scandium (Al-Sc) master alloys and directly alloyed products are
+        the primary commercial end use for scandium. Small Sc additions (0.1–0.5 wt%)
+        to aluminum produce significant grain refinement, weld strength improvement,
+        corrosion resistance, and creep performance gains that no other affordable
+        additive replicates. Key applications: aerospace structural components
+        (fuselage stringers, wing spars), military aircraft (F-16 and other programs
+        historically), high-performance bicycle frames, mountaineering equipment, and
+        — the fastest-growing segment — metal additive manufacturing (3D printing)
+        where Scalmalloy (an Al-Mg-Sc alloy developed by Apworks, an Airbus subsidiary)
+        enables printing of high-strength, weld-line-free lightweight structures.
+        USGS MCS 2025 identifies aluminum alloys as the primary Sc end use. Share is
+        an industry consensus estimate; USGS does not report per-element end-use shares.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: solid_oxide_fuel_cells
+      share_pct: 20
+      confidence: low
+      notes: |
+        Scandium-stabilized zirconia (ScSZ) is used as the electrolyte in
+        intermediate-temperature solid oxide fuel cells (SOFCs), offering higher ionic
+        conductivity than yttria-stabilized zirconia (YSZ) at 600–800°C operating
+        temperatures. The lower operating temperature enabled by ScSZ reduces thermal
+        stress and material degradation, improving SOFC longevity and reducing balance-
+        of-plant requirements. SOFC deployment for distributed power generation (data
+        centers, hospitals, commercial buildings) and hydrogen applications represents
+        a significant potential Sc demand growth vector. USGS MCS 2025 identifies SOFC
+        electrolytes as an end use. Share is an industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: metal_halide_lamps
+      share_pct: 10
+      confidence: low
+      notes: |
+        Scandium iodide (ScI₃) has been used as a fill material in metal halide
+        discharge lamps (stadium lighting, film and television production, horticulture
+        grow lights) to produce high-quality daylight-spectrum white light with high
+        luminous efficacy and good color rendering index (CRI >80). This application
+        is in structural decline due to the rapid displacement of metal halide
+        technology by high-efficiency LED systems across most high-intensity discharge
+        lighting segments. Remaining demand is concentrated in niche professional
+        lighting and horticulture applications where the specific spectral output of
+        Sc metal halide is preferred. USGS MCS 2025 lists metal halide lamps as a Sc
+        end use. Share is an industry estimate reflecting declining demand.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other
+      share_pct: 5
+      confidence: low
+      notes: |
+        Residual Sc applications include specialty ceramics and optical materials
+        (Sc-doped laser host media), nuclear reactor structural applications (Sc has
+        a low thermal neutron absorption cross-section), and research/laboratory uses.
+        Sc is also evaluated in spacecraft structural materials where weight is
+        critical. USGS MCS 2025 lists ceramics and metallurgical applications as REE
+        end-use categories. Share is a residual estimate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices: []
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Scandium is classified as critical under the US 2022 Critical Minerals List as
+    part of "rare earth elements" (the USGS definition includes Sc, Y, and the 15
+    lanthanides). Scandium is separately designated as both a Critical Raw Material
+    (Annex I) and Strategic Raw Material (Annex II) under EU Regulation 2024/1252
+    (Critical Raw Materials Act). The EU CRMA specifically identifies scandium
+    alongside light and heavy REE groupings in its 2024 CRM assessment, reflecting
+    Sc's distinct supply chain from the lanthanide basket. US net import reliance
+    for Sc is effectively 100% — no domestic US Sc₂O₃ production or refining
+    capacity exists as of 2024. In April 2025, China directly named scandium as one
+    of seven rare earth elements subject to new export licensing controls (alongside
+    Sm, Gd, Tb, Dy, Lu, and Y), marking the most significant supply-chain risk event
+    in Sc's recent commercial history. Import sources 2020–23: China dominant (~70%
+    of REE compound and metal imports overall, with Sc likely higher given Chinese
+    refining dominance).
+
+geopolitical_events:
+  - date: "2025-04"
+    event: "China imposes export licensing controls on scandium and six other rare earth elements (Sm, Gd, Tb, Dy, Lu, Y)"
+    impact: |
+      China's Ministry of Commerce (MOFCOM) announced export control measures in
+      April 2025 requiring licenses for exports of seven rare earth elements including
+      scandium (Sc), samarium (Sm), gadolinium (Gd), terbium (Tb), dysprosium (Dy),
+      lutetium (Lu), and yttrium (Y). For scandium specifically, the controls target
+      Sc₂O₃ oxide and Sc metal exports. Since China dominates approximately 85% of
+      global Sc refining and ~67% of primary Sc₂O₃ production, these controls create
+      acute supply chain risk for: (1) aerospace and defense aluminum-scandium alloy
+      programs and supply chains outside China, (2) SOFC developers sourcing
+      scandium-stabilized zirconia electrolyte from Chinese suppliers, and (3) metal
+      additive manufacturing firms using Sc-containing aluminum powders (Scalmalloy
+      and similar alloys). China's direct naming of Sc alongside the four most
+      strategically significant heavy lanthanides signals that Sc's role in Al-Sc
+      alloys and SOFC technology was viewed as strategically significant by Chinese
+      policymakers in the context of US tariff escalation.
+    source_id: china_mofcom_2025_ree_controls
+  - date: "2024-01"
+    event: "Global REE mine production rose to 390,000 t REO in 2024e but Sc production remains separate from and unaffected by the lanthanide basket increase"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE (lanthanide + Y) production of 390,000 t
+      REO, up from 376,000 t in 2023. Scandium production is tracked separately and
+      is not derived from this basket total. Sc production is driven by titanium ore
+      processing volumes in China (principally Panzhihua operations), nickel laterite
+      processing in the Philippines, and uranium byproduct recovery in Kazakhstan and
+      Russia. The lanthanide REO production increase does not directly expand Sc supply
+      unless the specific Sc-bearing byproduct streams also increase. World Sc₂O₃
+      production is estimated at approximately 15–20 t in 2024e, roughly flat YoY.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US and allied critical materials designations for scandium drive evaluation of non-Chinese supply projects"
+    impact: |
+      USGS MCS 2025 confirms scandium is part of the US 2022 Critical Minerals List.
+      EU Regulation 2024/1252 (CRMA) separately designates Sc as both critical and
+      strategic, reflecting its unique role in Al-Sc alloys for aerospace and SOFC
+      electrolytes for clean energy. These designations have driven increased interest
+      in non-Chinese Sc projects: Australia (Sunrise/Clean TeQ laterite co-product,
+      NSW), the Philippines (Nonoc HPAL laterite), and European suppliers, though none
+      had reached commercial-scale production that materially altered supply
+      concentration as of 2024. The combination of US and EU criticality designations
+      and China's dominant processing position creates long-term pressure to develop
+      alternative Sc supply chains.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Scandium occupies a paradoxical position in the critical minerals landscape: it is
+  classified as a rare earth element by the USGS and in policy convention, but it is
+  chemically, geologically, and commercially distinct from the lanthanides. Unlike the
+  lanthanides — which are mined primarily from bastnaesite, monazite, and ion
+  adsorption clay ores as part of a co-produced REO basket — scandium is produced
+  almost entirely as a byproduct of titanium ore processing (particularly from
+  vanadium-titanium magnetite at China's Panzhihua complex), nickel laterite HPAL
+  circuits (Philippines, emerging Australia), and uranium mine leach residues (Russia,
+  Kazakhstan). World production is estimated at only ~15–20 tonnes of Sc₂O₃ per year,
+  making scandium one of the smallest-volume commercially traded elements on the
+  periodic table by mass. This tiny supply base — combined with China's dominant
+  position in both production (~67%) and refining (~85%) — creates acute supply
+  concentration risk for the advanced manufacturing and clean energy sectors that
+  depend on it.
+
+  The dominant commercial application for scandium is aluminum-scandium (Al-Sc)
+  alloys, which consume approximately 65% of world Sc₂O₃. Trace Sc additions
+  (0.1–0.5 wt%) to aluminum produce exceptional improvements in grain refinement,
+  weld strength, and creep resistance that no other cost-effective additive replicates
+  — a unique value proposition exploited in aerospace structures, high-performance
+  sporting goods, and, increasingly, metal additive manufacturing. The Scalmalloy
+  alloy system (developed by Apworks, an Airbus subsidiary) represents the frontier
+  of Sc-enabled 3D-printed aluminum, enabling complex aerospace geometries with
+  near-wrought-strength properties without post-weld heat treatment. Solid oxide
+  fuel cells using scandium-stabilized zirconia (ScSZ) electrolyte (~20% of Sc
+  demand) represent the other significant growth demand vector, driven by deployment
+  in distributed power generation applications where ScSZ's superior intermediate-
+  temperature ionic conductivity offers efficiency and longevity advantages over the
+  incumbent yttria-stabilized zirconia technology.
+
+  China's April 2025 direct export licensing of scandium — alongside samarium,
+  gadolinium, terbium, dysprosium, lutetium, and yttrium — marked the most
+  significant supply-chain shock in Sc's recent history. Unlike the heavier
+  lanthanides (Dy, Tb) where non-Chinese alternatives are gradually emerging
+  via Myanmar and Australian supply chains, scandium's supply chain has virtually
+  no established non-Chinese refining capacity. Non-Chinese Sc projects in Australia
+  (Sunrise laterite co-product) and the Philippines (Nonoc HPAL) remain at early
+  commercial or development stages and cannot quickly fill a supply gap. Both the EU
+  and US have designated scandium as critical and strategic, recognizing its role in
+  aerospace alloys and clean energy technology, but translating those designations
+  into diversified supply chains requires capital investment in Sc recovery
+  infrastructure at laterite nickel and titanium ore processing facilities — a
+  multi-year undertaking. The combination of an unusually small world supply base,
+  near-total Chinese processing dominance, and direct naming in China's April 2025
+  export controls makes scandium one of the most acutely supply-constrained elements
+  on both the US and EU critical materials lists.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: china_mofcom_2025_ree_controls
+    title: "Export Control Measures on Rare Earth Elements Including Gadolinium, Samarium, Terbium, Dysprosium, Lutetium, Scandium, and Yttrium"
+    publisher: China Ministry of Commerce (MOFCOM)
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: secondary
