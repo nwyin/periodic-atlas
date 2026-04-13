@@ -1,0 +1,547 @@
+symbol: La
+atomic_number: 57
+name: lanthanum
+category: lanthanide
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a single grouped commodity chapter
+  ("rare earths") in metric tons rare-earth-oxide (REO) equivalent. Per-element
+  production requires multiplying the group total by La's typical basket share.
+  Lanthanum oxide (La2O3) is the primary commercial form for catalysts, optical
+  glass, and most end uses. La-containing mischmetal (typically 25-35% La by
+  weight) is traded for battery alloy and metallurgical applications.
+  Price data in the USGS salient statistics table are for La oxide (99.5% minimum
+  purity), sourced from the Argus Media Group Argus Non-Ferrous Markets (footnote 6
+  of the USGS MCS 2025 Rare Earths chapter). All production and reserve figures are
+  in metric tons REO (≈ La2O3 equivalent for lanthanum) unless otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 113100
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 world total REO mine production 2024e =
+      390,000 metric tons. Lanthanum typically accounts for approximately 27-32%
+      of the global REE oxide basket; ~29% used as a central estimate
+      (390,000 × 0.29 ≈ 113,100 t La2O3). Per-element tonnage is not directly
+      reported by USGS; grouped_reporting flag is set accordingly. Basket share
+      varies by deposit: bastnaesite at Mountain Pass (CA, USA) ~33-34% La2O3,
+      Bayan Obo (China) ~25-27%, Mount Weld (Australia) ~26-30%, ion-adsorption
+      clays in southern China ~5-15%. Global weighted average is ~27-30%.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        notes: |
+          China 2024e: 270,000 t REO (footnote 14 in USGS: production quota;
+          excludes undocumented production), 69.2% of 390,000 t world total.
+          Derived La2O3 share ~78,300 t at 29% basket fraction. Production
+          increased from 255,000 t in 2023. Primarily from Bayan Obo (Inner
+          Mongolia), Sichuan bastnaesite deposits, and southern China
+          ion-adsorption clay deposits.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        notes: |
+          United States 2024e: 45,000 t REO, 11.5% of world total. Derived
+          La2O3 share ~13,050 t. Bastnaesite mined at Mountain Pass, CA
+          (MP Materials). La2O3 is ~33-34% of the Mountain Pass REE basket,
+          slightly above the global weighted average. Production up from
+          41,600 t REO in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        notes: |
+          Burma (Myanmar) 2024e: 31,000 t REO (footnote 12: estimated from
+          Chinese import data, Zen Innovations / Global Trade Tracker), 7.9%
+          of world total. Derived La2O3 share ~8,990 t. Production declined
+          from 43,000 t in 2023. Myanmar production is predominantly from
+          weathered granite HREE-enriched deposits; La fraction may be below
+          global average in some deposits.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        notes: |
+          Australia 2024e: 13,000 t REO (footnote 12: estimated from Chinese
+          import data), 3.3% of world total. Derived La2O3 share ~3,770 t.
+          Lynas Rare Earths mines Mount Weld carbonatite deposit (WA), a
+          LREE-dominant ore; La2O3 is ~26-30% of the Mt Weld basket. JORC-
+          compliant reserves are 3.3 Mt REO per footnote 13 of USGS chapter.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        notes: |
+          Nigeria 2024e: 13,000 t REO (footnote 12), 3.3% of world total.
+          Derived La2O3 share ~3,770 t. Production nearly doubled from 7,200 t
+          in 2023. Primarily monazite and xenotime from placer and alluvial
+          mining. USGS MCS 2025 cites Nigeria as one of the key drivers of
+          global production growth in 2024.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        notes: |
+          Thailand 2024e: 13,000 t REO (footnote 12), 3.3% of world total.
+          Derived La2O3 share ~3,770 t. Production more than tripled from
+          3,600 t in 2023. REE recovered from monazite and xenotime in alluvial
+          tin-mining residues. USGS MCS 2025 cites Thailand as a key driver of
+          2024 production growth.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.5
+        notes: |
+          Rest-of-world 2024e: India 2,900 + Russia 2,500 + Madagascar 2,000 +
+          Other 1,100 + Vietnam 300 + Malaysia 130 + Brazil 20 ≈ 8,950 t REO,
+          ~2.3% of world total. Canada, Greenland, South Africa, and Tanzania
+          reported zero mine production. ZZ rounded to 2.5% for share arithmetic.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 91
+        notes: |
+          China controls approximately 91% of global REE separation and
+          processing capacity. Nearly all rare earths mined outside China are
+          either exported to Chinese processors or processed at Chinese-invested
+          overseas facilities. Consistent with USGS MCS 2025 import sources
+          showing China as 70% of US REE compound/metal imports, with Malaysia
+          and Japan (the remaining major sources) processing Chinese-origin
+          intermediates per USGS footnote text.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 9
+        notes: |
+          Non-China refining ~9%: primarily Lynas Advanced Materials Plant
+          (LAMP) in Kuantan, Malaysia (separates Mount Weld concentrate),
+          Japanese processors (Shin-Etsu, TDK-related facilities), and nascent
+          MP Materials domestic separation in California. USGS MCS 2025 import
+          sources: Malaysia 13%, Japan 6%, Estonia 5% of US imports (2020-23),
+          and USGS states these sources "were derived from mineral concentrates
+          and chemical intermediates produced in Australia, China, and elsewhere."
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 26100000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world REE reserves >90,000,000 t
+      REO (stated as ">90,000,000 t"; 90 Mt used as the floor value). La2O3
+      share derived at ~29% basket fraction: 90,000,000 × 0.29 ≈ 26,100,000 t
+      La2O3. Confidence is low because (1) the world REO total is a floor, not
+      an exact figure, and (2) the 29% La basket share varies by deposit type.
+      Actual La reserves could be meaningfully higher than this floor. USGS
+      revised reserves for Russia, South Africa, United States, and Vietnam in
+      the 2025 edition. Countries with NA reserves include Burma, Madagascar,
+      Malaysia, and Nigeria.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        notes: |
+          China: 44,000,000 t REO per USGS MCS 2025, 48.9% of the >90 Mt floor.
+          Derived La2O3: ~12,760,000 t. Dominant reserves at Bayan Obo (Inner
+          Mongolia, world's largest REE deposit), Sichuan, and other provinces.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        notes: |
+          Brazil: 21,000,000 t REO per USGS MCS 2025, 23.3% of the >90 Mt floor.
+          Derived La2O3: ~6,090,000 t. Large LREE-bearing laterite and carbonatite
+          deposits (ARAXÁ and others), most not yet in production at scale.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        notes: |
+          India: 6,900,000 t REO per USGS MCS 2025, 7.7% of the >90 Mt floor.
+          Derived La2O3: ~2,001,000 t. Primarily monazite-bearing beach sand
+          deposits along the eastern and western coasts (Kerala, Odisha).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        notes: |
+          Australia: 5,700,000 t REO per USGS MCS 2025 (JORC-compliant: 3.3 Mt,
+          footnote 13), 6.3% of the >90 Mt floor. Derived La2O3: ~1,653,000 t.
+          Mount Weld (Lynas) is the principal reserve base.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        notes: |
+          Russia: 3,800,000 t REO per USGS MCS 2025 (revised), 4.2% of floor.
+          Derived La2O3: ~1,102,000 t. Kola Peninsula apatite-nepheline deposits
+          and Lovozero massif.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        notes: |
+          Vietnam: 3,500,000 t REO per USGS MCS 2025 (revised), 3.9% of floor.
+          Derived La2O3: ~1,015,000 t. Dong Pao and other carbonatite-hosted
+          deposits in the northwest.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 5.7
+        notes: |
+          Rest-of-world quantified reserves: US 1,900,000 + Greenland 1,500,000 +
+          Tanzania 890,000 + South Africa 860,000 + Canada 830,000 + Thailand 4,500
+          = ~5,985,000 t REO, ~5.7% of the 90 Mt floor used as denominator. Burma,
+          Madagascar, Malaysia, and Nigeria are reported as NA. Share percentages
+          are relative to the >90 Mt floor; the unstated remainder resides in the
+          ">90 Mt" qualifier.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    USGS MCS 2025 reports world REE reserves as >90,000,000 t REO. Reserves were
+    revised for Russia, South Africa, United States, and Vietnam based on company
+    and government reports. Per-element (La2O3) reserves are derived by applying
+    the ~29% La basket share to each country's REO reserve figure; these derivations
+    carry low confidence. Countries with NA reserves (Burma, Madagascar, Malaysia,
+    Nigeria) are not included in the quantified reserve base.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 32
+    notes: |
+      Bastnaesite (or bastnäsite), a rare-earth fluorocarbonate mineral, is the
+      dominant La source ore globally. La2O3 constitutes ~32-34% of REO in
+      Mountain Pass bastnaesite (USGS MCS 2025: bastnaesite mined as primary
+      product at Mountain Pass, CA). Bayan Obo bastnaesite-monazite ore contains
+      ~25-27% La2O3. Mountain Weld carbonatite contains ~26-30% La2O3. USGS MCS
+      2025 describes bastnäsite as the primary REE ore in domestic (US) production.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 23
+    notes: |
+      Monazite, a rare-earth phosphate mineral, is a significant secondary La
+      source recovered as a co-product from heavy-mineral-sand operations (rutile,
+      ilmenite, and zircon mining). La2O3 is typically ~20-25% of monazite TREO.
+      USGS MCS 2025 describes monazite stockpiling in the southeastern United
+      States and notes monazite as an accessory mineral in heavy-mineral-sand
+      concentrates. Thorium contamination (~5-10% ThO2 in monazite) requires
+      licensed handling and complicates processing economics.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 10
+    notes: |
+      Weathered granite clay deposits in southern China (Jiangxi, Guangdong,
+      Fujian provinces) yield REE by in-situ or heap-leach ammonium sulfate
+      irrigation. La2O3 content is lower (~5-15%) in HREE-dominant zones but
+      higher in LREE-enriched zones. These deposits supply a significant share
+      of China's separated REE output. Not specifically named by mineral type in
+      the USGS MCS 2025 Rare Earths chapter, which focuses on ore minerals at
+      named operations.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: fcc_catalysts
+    availability: partial
+    notes: |
+      USGS MCS 2025 states "Substitutes are available for many applications but
+      generally are less effective." For FCC catalysts, ultra-stable Y zeolites
+      (USY) without La and alternative catalyst stabilizers can partially substitute
+      for La2O3, but at reduced thermal stability and conversion efficiency under
+      high-severity conditions. La-free FCC catalyst formulations exist and are
+      used where economics favor them, but La-stabilized zeolites remain the
+      industry standard for maximum distillate yield.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: battery_alloys_nimh
+    availability: full
+    notes: |
+      Lithium-ion batteries fully substitute for NiMH batteries in consumer
+      electronics (smartphones, laptops) and pure battery-electric vehicles.
+      NiMH retains competitive advantages in hybrid applications (e.g., Toyota
+      Prius-type HEV) due to cost, thermal tolerance, and charge acceptance at
+      partial state of charge. Li-ion adoption has materially reduced La demand
+      growth in batteries over the past decade. USGS MCS 2025 general substitutes
+      statement applies.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: optical_glass
+    availability: partial
+    notes: |
+      In optical glass, La2O3 can be partially substituted by barium oxide (BaO)
+      or other glass modifiers, but achieving high refractive index (n > 1.8) with
+      low dispersion (high Abbe number) typically requires La or similarly high-Z
+      oxides. No drop-in substitute matches the full optical performance envelope
+      of La-crown glass. USGS MCS 2025 general substitutes statement applies.
+    source_id: usgs_mcs_2025_rare_earths
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Lanthanum is listed as a critical mineral under the US 2022 Critical Minerals
+    List as part of "rare earth elements" (a group designation that includes La).
+    US government strategic stockpile targeting: 1,300 t La potential acquisitions
+    in FY 2024 and 1,100 t in FY 2025 (USGS MCS 2025 Government Stockpile table;
+    gross weight basis), signaling active supply-security concern. US net import
+    reliance for REE compounds and metals: 80% in 2024e (USGS MCS 2025). Light
+    rare earth elements (including La) and heavy rare earth elements are both
+    designated as Critical Raw Materials (Annex I) and Strategic Raw Materials
+    (Annex II) under EU Regulation 2024/1252 (Critical Raw Materials Act, CRMA).
+
+prices:
+  - year: 2024
+    value: 1
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: La oxide (99.5% min) average price 2024e =
+      $1/kg. Source: Argus Media Group, Argus Non-Ferrous Markets (footnote 6).
+      Price unchanged from 2022-2023; near historic lows for La oxide. Price
+      expressed per kilogram of La2O3 at ≥99.5% purity.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2023
+    value: 1
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: La oxide (99.5% min) 2023 = $1/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2022
+    value: 1
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: La oxide (99.5% min) 2022 = $1/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2021
+    value: 2
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: La oxide (99.5% min) 2021 = $2/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2020
+    value: 2
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: La oxide (99.5% min) 2020 = $2/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2024
+    value: 5
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: mischmetal (65% cerium, 35% lanthanum)
+      average price 2024e = $5/kg. Source: Argus Media Group. The mischmetal
+      composition (35% La by weight) is a key La-containing traded form used in
+      NiMH battery alloys and metallurgical applications.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2023
+    value: 5
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: mischmetal (65% Ce, 35% La) 2023 = $5/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2022
+    value: 7
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: mischmetal (65% Ce, 35% La) 2022 = $7/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2021
+    value: 6
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: mischmetal (65% Ce, 35% La) 2021 = $6/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2020
+    value: 5
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: mischmetal (65% Ce, 35% La) 2020 = $5/kg. Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: fcc_catalysts
+      share_pct: 45
+      confidence: low
+      notes: |
+        Fluid catalytic cracking (FCC) catalysts for petroleum refining are the
+        dominant La end use globally. La2O3 is used as a zeolite stabilizer in
+        FCC catalyst formulations, improving thermal stability and cracking
+        activity. USGS MCS 2025 confirms "catalysts" as the leading domestic
+        end use of rare earths. Share estimate ~45% is approximate; the USGS
+        chapter does not provide explicit per-application percentages for La.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: battery_alloys_nimh
+      share_pct: 25
+      confidence: low
+      notes: |
+        La-rich mischmetal (LaNi5-type AB5 intermetallic alloys, typically
+        25-35% La) serves as the negative electrode (anode) material in
+        nickel-metal hydride (NiMH) batteries. Primary applications: hybrid
+        electric vehicles (e.g., Toyota Prius-type HEV), portable power tools,
+        and stationary backup. NiMH has lost share in consumer electronics to
+        Li-ion but remains dominant in HEV. USGS MCS 2025 includes metallurgical
+        applications and alloys as a REE end-use category. Mischmetal (65% Ce,
+        35% La) is explicitly priced in the salient statistics table. Share
+        estimate ~25% is approximate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: ceramics_glass_optical
+      share_pct: 12
+      confidence: low
+      notes: |
+        La2O3 is incorporated into high-refractive-index optical glass (camera
+        lenses, telescopes, microscopes), La-containing dielectric ceramics
+        (capacitors, microwave components), and specialty glass compositions.
+        USGS MCS 2025 lists "ceramics and glass" as a REE end-use category.
+        Share estimate ~12% is approximate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: polishing_powders
+      share_pct: 10
+      confidence: low
+      notes: |
+        La2O3-based and La/Ce mixed polishing powders are used for precision
+        glass polishing in optics, flat panel displays, and semiconductor
+        chemical-mechanical planarization (CMP). USGS MCS 2025 lists "polishing"
+        as a REE end-use category. Share estimate ~10% is approximate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: metallurgical_alloys
+      share_pct: 5
+      confidence: low
+      notes: |
+        La is added as a microalloying element to specialty steels (grain
+        refinement), nodular cast iron (graphite morphology control), and
+        aluminum/magnesium alloys (improved corrosion resistance and castability).
+        La-containing mischmetal (35% La, 65% Ce) is used in lighter flints and
+        pyrophoric applications. USGS MCS 2025 lists "metallurgical applications
+        and alloys." Share estimate ~5% is approximate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_uses
+      share_pct: 3
+      confidence: low
+      notes: |
+        Other applications include La-based phosphors (lighting, CRT displays),
+        hydrogen storage alloys (AB5 variants), La2O3 in specialty electronic
+        ceramics, and miscellaneous chemical applications. Permanent magnets
+        (NdFeB) are NOT an end use for La; La has no role in NdFeB magnet
+        chemistry. Share estimate ~3% is approximate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: partial
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "Global REE production rises to 390,000 t REO in 2024e, driven by China, Nigeria, and Thailand expansions"
+    impact: |
+      USGS MCS 2025 Events, Trends, and Issues: global mine production increased
+      to 390,000 t REO, up 3.7% from 376,000 t in 2023. Growth driven by China
+      (255,000→270,000 t, +6%), Nigeria (7,200→13,000 t, +81%), and Thailand
+      (3,600→13,000 t, +261%). For lanthanum at ~29% basket share, implied
+      La2O3 production was ~113,100 t in 2024e vs. ~109,000 t in 2023. The
+      Myanmar (Burma) supply declined from 43,000 to 31,000 t. Continued
+      production growth from multiple low-cost sources reinforces the La price
+      depression near $1/kg.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US government targets strategic lanthanum stockpile: 1,300 t FY2024 and 1,100 t FY2025 potential acquisitions"
+    impact: |
+      USGS MCS 2025 Government Stockpile table shows potential acquisitions of
+      1,300 metric tons lanthanum in FY 2024 and 1,100 metric tons in FY 2025
+      (gross weight). No disposals planned for either year. These acquisitions
+      are substantially larger than for cerium (550 t FY2024 only), indicating
+      La receives higher strategic priority. The acquisitions reflect US supply
+      chain vulnerability: 80% net import reliance for REE compounds/metals in
+      2024e and China's ~91% control of global REE refining capacity.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2022-01"
+    event: "Lanthanum oxide price falls to $1/kg and remains depressed through 2024, reflecting REE balance problem"
+    impact: |
+      USGS MCS 2025 salient statistics show La oxide (99.5%) at $2/kg in 2020-2021,
+      declining to $1/kg in 2022 and remaining at $1/kg through 2024e. The
+      sustained low price reflects lanthanum's structural oversupply: La is produced
+      in fixed proportion with higher-value NdPr and Dy whenever any LREE-dominant
+      ore is mined, creating chronic excess supply relative to demand. Low La prices
+      constrain economics of dedicated La recovery projects and limit incentives for
+      La-specific supply chain investment.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Lanthanum is the most abundant rare earth element by mass, typically constituting
+  approximately 27-32% (~29% central estimate) of global REE oxide production —
+  roughly 113,000 tonnes La2O3 in 2024 from a 390,000-tonne REO world total (USGS
+  MCS 2025). Despite its abundance, La suffers from chronic price depression: La2O3
+  traded at approximately $1/kg in 2022-2024 (near historic lows, down from $2/kg
+  in 2020-21), a consequence of the REE "balance problem" where La is extracted in
+  fixed ratio with higher-value NdPr and Ce whenever any LREE-dominant ore is mined.
+  China dominates both production (~69% of world REO) and refining (~91% of global
+  REE separation capacity). US net import reliance for REE compounds and metals
+  reached 80% in 2024e, prompting US government strategic stockpile targeting of
+  1,300 t La in FY 2024 and 1,100 t in FY 2025.
+
+  The leading end use for lanthanum is fluid catalytic cracking (FCC) catalysts in
+  petroleum refining (~45% of La demand), where La2O3 stabilizes zeolite catalyst
+  structures under high-temperature, high-conversion conditions. La-rich mischmetal
+  for nickel-metal hydride (NiMH) battery negative electrodes is the second major
+  demand driver (~25%), though lithium-ion adoption has substantially reduced NiMH's
+  share in consumer electronics and is beginning to displace it in full-electric
+  vehicles. NiMH retains competitiveness in hybrid electric vehicles (notably Toyota
+  Prius-type HEV) due to lower cost and favorable partial-state-of-charge
+  performance. Optical glass, polishing powders, and metallurgical alloys account
+  for most of the remainder. Lanthanum has no role in neodymium-iron-boron (NdFeB)
+  permanent magnets, limiting its participation in the strongest REE demand growth
+  vectors (EV traction motors, wind turbines).
+
+  Despite its low market price, lanthanum attracts strategic attention because of
+  China's near-monopoly on REE processing and La's essential role in FCC catalysts
+  that refine the global petroleum supply. Light and heavy rare earths — including La
+  — are designated as both Critical and Strategic Raw Materials under EU Regulation
+  2024/1252 (CRMA). Global mine production expanded 3.7% to 390,000 t REO in 2024e,
+  driven by China, Nigeria, and Thailand, further reinforcing lanthanum's structural
+  oversupply. The key long-term demand risk is accelerated adoption of lithium-ion
+  batteries reducing NiMH consumption, while the key supply risk is any disruption
+  to China's processing infrastructure affecting La2O3 availability for FCC catalyst
+  manufacturers globally.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
