@@ -1,0 +1,376 @@
+symbol: Rh
+atomic_number: 45
+name: rhodium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS Mineral Commodity Summaries 2025 reports platinum-group metals as a grouped commodity in
+  kilograms of PGM content, with rhodium prices quoted in US dollars per troy ounce. Commercial
+  rhodium trades mainly as high-purity metal sponge, powder, or fabricated salts and coatings for
+  autocatalyst and glass applications.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 22300
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      Approximate 2024 world rhodium mine supply derived as a grouped-reporting PGM stream using
+      a rhodium basket share of roughly 5% of the full mined PGM basket, cross-checked against
+      Implats' 2024 rhodium primary-supply estimate of 717,000 troy ounces (about 22.3 tonnes).
+      USGS MCS 2025 does not tabulate rhodium separately by country or world total; it reports
+      PGMs collectively and provides palladium and platinum tables plus rhodium import and price
+      data. The 22.3-tonne estimate is consistent with sharply lower rhodium prices since 2022
+      and with a market still dominated by South African byproduct supply.
+    source_id: implats_annual_report_2024
+  grouped_reporting: true
+  commodity_group: platinum_group_metals
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 82.6
+        quantity:
+          value: 18400
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: implats_annual_report_2024
+        confidence: medium
+        notes: |
+          Implats 2024 rhodium primary supply: South Africa 592 koz out of 717 koz global primary
+          supply, converted to about 18.4 tonnes. South African rhodium is recovered chiefly as a
+          byproduct of Bushveld Complex platinum mining and remains highly concentrated in UG2 and
+          Merensky reef processing circuits.
+        source_id: implats_annual_report_2024
+      - country: RU
+        share_pct: 8.4
+        quantity:
+          value: 1900
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: implats_annual_report_2024
+        confidence: medium
+        notes: |
+          Implats reports 60 koz of 2024 rhodium supply as Russian sales, equivalent to about
+          1.9 tonnes. Russian rhodium is co-produced from nickel-copper-PGM sulfide ores at the
+          Norilsk-Talnakh complex and sold into the refined market rather than reported by USGS as
+          a separate rhodium mine line.
+        source_id: implats_annual_report_2024
+      - country: ZW
+        share_pct: 6.3
+        quantity:
+          value: 1400
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: implats_annual_report_2024
+        confidence: medium
+        notes: |
+          Implats 2024 rhodium primary supply: Zimbabwe 45 koz, equivalent to about 1.4 tonnes.
+          Supply comes from Great Dyke PGM operations such as Zimplats, Mimosa, and Unki.
+        source_id: implats_annual_report_2024
+      - country: ZZ
+        share_pct: 2.7
+        quantity:
+          value: 600
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: implats_annual_report_2024
+        confidence: low
+        notes: |
+          Residual bucket combining North America (14 koz) and other producers (5 koz) in the
+          Implats rhodium market table, equivalent to about 0.6 tonnes total. USGS notes one
+          Montana PGM producer and small copper-nickel byproduct recovery in Michigan, but does
+          not disaggregate rhodium from those streams.
+        source_id: implats_annual_report_2024
+    completeness: complete
+  refining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 65
+        confidence: low
+        notes: |
+          Estimated dominant rhodium refining location because South Africa supplies more than
+          four-fifths of primary rhodium and retains the leading integrated PGM refining base.
+          USGS does not publish rhodium refining shares.
+        source_id: implats_annual_report_2024
+      - country: RU
+        share_pct: 10
+        confidence: low
+        notes: |
+          Estimated Russian refining share associated with the country's nickel-copper-PGM output.
+          Implats reports this material as Russian sales rather than a separate mine-production line.
+        source_id: implats_annual_report_2024
+      - country: BE
+        share_pct: 10
+        confidence: low
+        notes: |
+          Belgium is included as a low-confidence estimate for secondary rhodium refining in Europe.
+          USGS does not publish rhodium-specific refinery output by country.
+        source_id: implats_annual_report_2024
+      - country: DE
+        share_pct: 8
+        confidence: low
+        notes: |
+          Germany is included as a low-confidence estimate for secondary rhodium refining and salt
+          fabrication serving European autocatalyst and chemical markets.
+        source_id: implats_annual_report_2024
+      - country: ZZ
+        share_pct: 7
+        confidence: low
+        notes: |
+          Other refining centers include North America and smaller European and Asian PGM
+          recyclers. This distribution is inferred because neither USGS nor Implats tabulates a
+          rhodium refinery-country table.
+        source_id: implats_annual_report_2024
+    completeness: top_producers_only
+
+reserves:
+  economic_reserves:
+    value: 4200
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate. USGS MCS 2025 reports combined world PGM reserves of more than
+      81,000 tonnes (81,000,000 kg) rather than per-element reserves. Applying the same roughly
+      5% rhodium basket share used for 2024 supply implies indicative rhodium economic reserves of
+      about 4,200 tonnes. This is a coarse approximation because rhodium grade varies strongly by
+      orebody and USGS publishes only basket reserves.
+    source_id: usgs_mcs_2025_pgm
+  resources:
+    value: 5200
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Derived from the USGS statement that world PGM resources exceed 100,000 tonnes, with the
+      largest concentration in South Africa's Bushveld Complex. Applying an approximate 5% rhodium
+      share gives an indicative world rhodium resource base above 5,000 tonnes.
+    source_id: usgs_mcs_2025_pgm
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 77.5
+        notes: |
+          South Africa holds 63,000 tonnes of the more than 81,000 tonnes of reported world PGM
+          reserves. Rhodium-specific tonnage is not published, but South Africa overwhelmingly
+          dominates the Bushveld-hosted PGM reserve base from which most rhodium is recovered.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 19.7
+        notes: |
+          Russia holds 16,000 tonnes of reported PGM reserves using the Russian classification
+          system cited by USGS. Rhodium is present in Norilsk sulfide ores as a byproduct metal.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 1.5
+        notes: "Zimbabwe reported 1,200 tonnes of combined PGM reserves in the Great Dyke."
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.0
+        notes: "The United States reported 820 tonnes of combined PGM reserves in the Stillwater Complex."
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 0.4
+        notes: "Canada reported 310 tonnes of combined PGM reserves, mainly associated with nickel-copper-PGM deposits."
+        source_id: usgs_mcs_2025_pgm
+    completeness: partial
+  notes: |
+    USGS publishes only combined PGM reserve and resource figures. Rhodium reserve tonnages are
+    therefore indicative basket-share derivations rather than reported standalone reserve estimates.
+
+end_uses:
+  uses:
+    - application: autocatalysts
+      share_pct: 85.2
+      confidence: medium
+      notes: |
+        Implats reports 2024 rhodium demand of 918 koz in automotive applications out of total
+        demand of 1,077 koz. Rhodium is the key NOx-reduction metal in three-way catalytic
+        converters for gasoline and hybrid vehicles and remains the overwhelmingly dominant end use.
+      source_id: implats_annual_report_2024
+    - application: other_industrial
+      share_pct: 14.8
+      confidence: medium
+      notes: |
+        Implats reports 159 koz of 2024 rhodium demand in non-automotive industrial uses. This
+        bucket includes glass-fiber and specialty-glass bushings, nitric-acid gauzes, thermocouples,
+        electrical contacts, and niche chemical-catalyst applications.
+      source_id: implats_annual_report_2024
+  completeness: complete
+
+prices:
+  - year: 2020
+    value: 11205.06
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: rhodium annual average price $11,205.06 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2021
+    value: 20254.10
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: rhodium annual average price $20,254.10 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2022
+    value: 15585.00
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: rhodium annual average price $15,585.00 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2023
+    value: 6660.58
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: rhodium annual average price $6,660.58 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2024
+    value: 4600
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: |
+      USGS MCS 2025 estimated 2024 rhodium annual average price $4,600 per troy ounce, down 31%
+      from 2023. USGS attributes lower PGM prices to decreased demand, investor uncertainty, and
+      oversupply.
+    source_id: usgs_mcs_2025_pgm
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "South African PGM output fell amid low prices, deep-level mining costs, labor disputes, and electricity disruptions"
+    impact: |
+      USGS reports lower 2024 South African PGM mined-material production than in 2023. Because
+      South Africa is the dominant rhodium source, the same mine, power, and labor constraints
+      tightened availability for rhodium as well as for the larger platinum and palladium markets.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-01"
+    event: "Russian PGM output declined because of natural disasters, lower ore grades and recovery, war-related disruption, and metallurgical outages"
+    impact: |
+      USGS cites Russia as a major source of PGM disruption in 2024. For rhodium this mattered
+      disproportionately because non-South-African supply is small, so disruption in Russian PGM
+      output reduces one of the few alternative sources available to refiners and catalyst users.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024"
+    event: "Chinese fiberglass destocking and softer spot demand reset rhodium pricing to a lower range"
+    impact: |
+      Implats says rhodium pricing rebased after soft Chinese fabricator demand and fibreglass
+      manufacturer destocking, with New York Dealer Trades moving from a $4,000 per ounce trough
+      to a brief $5,500 squeeze before closing around $4,650 per ounce.
+    source_id: implats_annual_report_2024
+
+byproduct_of:
+  - Pt
+  - Ni
+
+feedstock_origins:
+  - substrate: pgm_reef_ore_bushveld
+    notes: |
+      The main rhodium feedstock is South African Bushveld reef ore, especially UG2 and Merensky
+      PGM concentrates where rhodium is recovered during precious-metals refining as a minor
+      byproduct alongside platinum and palladium.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: nickel_copper_pgm_sulfide_ore
+    notes: |
+      Russian and North American rhodium originates largely from nickel-copper-PGM sulfide ores.
+      USGS notes minor U.S. byproduct recovery from copper-nickel mining in Michigan and major
+      Russian PGM output from integrated nickel operations.
+    source_id: usgs_mcs_2025_pgm
+
+substitutes:
+  - application: autocatalysts
+    availability: partial
+    notes: |
+      USGS states that for some industrial end uses one PGM can substitute for another with losses
+      in efficiency. In autocatalysts, palladium and platinum can reduce rhodium loading through
+      reformulation and thrifting, but rhodium remains the most effective PGM for NOx reduction in
+      gasoline three-way catalyst systems.
+    source_id: usgs_mcs_2025_pgm
+  - application: other_industrial
+    availability: partial
+    notes: |
+      USGS states that one PGM can substitute for another in some industrial end uses with losses
+      in efficiency. Platinum or iridium can replace rhodium in selected glass and chemical-service
+      hardware, but usually with tradeoffs in corrosion resistance, catalytic selectivity, or cost.
+    source_id: usgs_mcs_2025_pgm
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_critical_minerals_2022
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Rhodium is covered by the U.S. critical-minerals designation for platinum-group metals and by
+    the EU's critical raw materials designation for PGMs. Supply is structurally concentrated in
+    South African Bushveld production, with Russian sulfide operations providing one of the only
+    meaningful alternative sources.
+
+narrative: |
+  Rhodium is a tiny-volume, very high-value platinum-group metal whose commercial reality is set by
+  two facts: it is almost always a byproduct, and most of it comes from South African platinum
+  mining. In 2024, world primary rhodium supply was about 717 koz, or roughly 22 tonnes, with more
+  than four-fifths attributed to South Africa and only small contributions from Russia, Zimbabwe,
+  and North America. That makes rhodium structurally supply-inelastic: operators do not mine for Rh
+  directly, so output responds mainly to platinum-group mine plans, smelter performance, and scrap
+  recovery rather than rhodium's own price.
+
+  Demand is even more concentrated than supply. Implats' 2024 market table puts about 85% of
+  rhodium demand in autocatalysts, where the metal's NOx-reduction performance is difficult to
+  replicate at comparable loading. The remaining demand is mostly industrial hardware for glass,
+  nitric acid, and specialty chemical service. That concentration explains rhodium's price history:
+  when the auto market is tight and fabricators scramble for metal, prices can become extreme; when
+  automobile demand softens or Chinese industrial buyers destock, the price can collapse quickly.
+
+  The 2020-2024 price series from USGS shows that reset clearly, from more than $20,000 per troy
+  ounce in 2021 to about $4,600 in 2024. Even after that decline, rhodium remains strategically
+  important because there are few producing regions, little direct mine flexibility, and limited
+  substitutes in its core emissions-control role. For policy purposes it remains on the U.S.
+  critical minerals list and within the EU's critical raw materials basket for PGMs.
+
+sources:
+  - id: usgs_mcs_2025_pgm
+    title: "Mineral Commodity Summaries 2025 — Platinum-Group Metals"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-platinum-group.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: implats_annual_report_2024
+    title: "Implats Annual Integrated Report 2024 — Appendix C: Market Analysis (Rhodium)"
+    publisher: Impala Platinum Holdings Ltd.
+    url: https://www.implats.co.za/pdf/annual-reports/annual-integrated-report/2024/appendix-c-2024.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: usgs_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87, No. 37 (February 24, 2022)"
+    publisher: US Geological Survey / US Department of the Interior
+    url: https://www.govinfo.gov/content/pkg/FR-2022-02-24/pdf/2022-04027.pdf
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 — Critical Raw Materials Act"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
