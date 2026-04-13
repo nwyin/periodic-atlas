@@ -1,0 +1,379 @@
+symbol: Hf
+atomic_number: 72
+name: hafnium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 publishes hafnium inside the combined "Zirconium and Hafnium" chapter.
+  The chapter does not publish quantitative world primary hafnium metal production or
+  reserves, but it does state that zirconium and hafnium occur in zircon at a ratio of
+  about 50:1 and reports unwrought hafnium trade and price data in metric tons and
+  US dollars per kilogram. Commercial hafnium is traded mainly as unwrought metal and
+  powder; separation occurs from zirconium chemical intermediates produced from zircon feed.
+
+production:
+- reporting_year: 2024
+  stream: contained_in_zircon_feed
+  mine:
+    value: 14436
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Proxy for hafnium-bearing mine feed, not separated hafnium metal output. USGS MCS 2025
+      states that world primary hafnium production data are not available, but also states that
+      zirconium and hafnium are typically contained in zircon at a ratio of about 50:1. This
+      atlas proxy applies that ratio to 2024e world zircon mine production after converting
+      zircon gross weight to ZrO2 content (65% per footnote 1) and then to contained zirconium:
+      1,500,000 t gross zircon x 0.65 x 0.740 x 1/50 = about 14,400 t Hf contained in mined
+      zircon feed. This should be read as associated hafnium in upstream zircon production,
+      not as recoverable or refined hafnium metal supply.
+    source_id: usgs_mcs_2025_zr_hf
+  mining_by_country:
+    shares:
+      - country: AU
+        share_pct: 33.33
+        quantity:
+          value: 4812
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: |
+          Derived from Australia's 2024e zirconium mineral concentrate output of 500,000 t gross
+          weight. Hafnium is not reported separately by USGS; the quantity here reflects the same
+          zircon-hosted 50:1 Zr:Hf ratio applied to the zirconium mine table.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZA
+        share_pct: 20.00
+        quantity:
+          value: 2887
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from South Africa's 2024e zircon output of 300,000 t gross weight; hafnium rides with zircon feed."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: MZ
+        share_pct: 10.67
+        quantity:
+          value: 1540
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from Mozambique's 2024e zircon output of 160,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: US
+        share_pct: 6.67
+        quantity:
+          value: 962
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: |
+          Derived from the USGS-disclosed US zircon mine row of 100,000 t, which USGS notes is a
+          rounded confidentiality value for actual domestic production of less than 100,000 t ZrO2 content.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: CN
+        share_pct: 6.67
+        quantity:
+          value: 962
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from China's 2024e zircon output of 100,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ID
+        share_pct: 6.33
+        quantity:
+          value: 914
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from Indonesia's 2024e zircon output of 95,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: SN
+        share_pct: 4.00
+        quantity:
+          value: 577
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from Senegal's 2024e zircon output of 60,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: MG
+        share_pct: 2.00
+        quantity:
+          value: 289
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from Madagascar's 2024e zircon output of 30,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: SL
+        share_pct: 1.33
+        quantity:
+          value: 193
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from Sierra Leone's 2024e zircon output of 20,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: KE
+        share_pct: 1.33
+        quantity:
+          value: 193
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from Kenya's 2024e zircon output of 20,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZZ
+        share_pct: 7.33
+        quantity:
+          value: 1059
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_zr_hf
+        confidence: low
+        notes: "Derived from the USGS 'Other countries' zircon row of 110,000 t gross weight."
+        source_id: usgs_mcs_2025_zr_hf
+    completeness: complete
+  notes: |
+    Hafnium has no published standalone mine-production table in USGS MCS 2025. This block
+    therefore tracks hafnium content associated with mined zircon feedstock, which is the
+    upstream constraint on eventual hafnium recovery. The geographic distribution mirrors
+    zircon mining rather than separated hafnium metal production. USGS separately notes that
+    zirconium metal and hafnium metal were produced in the United States from zirconium chemical
+    intermediates by one producer in Oregon and one in Utah, but it does not disclose tonnage.
+
+reserves:
+  notes: |
+    USGS MCS 2025 states: "World primary hafnium production data and quantitative estimates of
+    hafnium reserves were not available." It also states that world resources of hafnium are
+    associated with those of zircon and baddeleyite, but quantitative resource estimates were
+    not available. Accordingly, this file does not report economic_reserves or resources values
+    for hafnium.
+
+byproduct_of: [Zr]
+
+feedstock_origins:
+  - substrate: zircon_sand
+    notes: |
+      Zircon is the primary source of all hafnium. USGS states that zirconium and hafnium are
+      contained in zircon at a ratio of about 50:1. Hafnium therefore enters the supply chain
+      through zircon recovered as a coproduct or byproduct of heavy-mineral-sand mining.
+    source_id: usgs_zr_hf_stats_page
+  - substrate: zirconium_chemical_intermediates
+    notes: |
+      In the commercial chain, hafnium metal is produced from zirconium chemical intermediates.
+      USGS MCS 2025 states that zirconium metal and hafnium metal were produced from zirconium
+      chemical intermediates by one producer in Oregon and one in Utah.
+    source_id: usgs_mcs_2025_zr_hf
+  - substrate: baddeleyite
+    notes: |
+      USGS MCS 2025 notes that world hafnium resources are associated with zircon and baddeleyite.
+      Baddeleyite is a minor but geologically relevant zirconium oxide source compared with zircon.
+    source_id: usgs_mcs_2025_zr_hf
+
+substitutes:
+  - application: nuclear_control_rods
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph states that boron or cadmium-silver-indium alloys are
+      sometimes used in lieu of hafnium metal in control rods at nuclear powerplants.
+    source_id: usgs_mcs_2025_zr_hf
+  - application: nickel_based_superalloys
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that zirconium can be used interchangeably with hafnium in certain
+      superalloys. Substitution is application-specific because Hf additions are used to tune
+      oxidation resistance and creep behavior in hot-section alloys.
+    source_id: usgs_mcs_2025_zr_hf
+
+end_uses:
+  uses:
+    - application: nickel_based_superalloys
+      share_pct: 45
+      confidence: low
+      notes: |
+        USGS MCS 2025 says "The leading use of hafnium metal is in superalloys." The USGS
+        zirconium-and-hafnium statistics page identifies nickel-based superalloys as a major
+        hafnium end use. Because USGS does not publish end-use percentages, this atlas assigns
+        a low-confidence plurality share to superalloy additions for turbine blades and other
+        high-temperature aerospace components.
+      source_id: usgs_zr_hf_stats_page
+    - application: nuclear_control_rods
+      share_pct: 30
+      confidence: low
+      notes: |
+        The USGS zirconium-and-hafnium statistics page lists nuclear control rods among hafnium's
+        major end uses. Hafnium's very high neutron-absorption cross section makes it valuable in
+        reactor control assemblies. Share is an atlas estimate because USGS does not publish a
+        percentage split.
+      source_id: usgs_zr_hf_stats_page
+    - application: plasma_arc_cutting_nozzles
+      share_pct: 15
+      confidence: low
+      notes: |
+        USGS identifies nozzles for plasma arc metal cutting as a major hafnium end use. Hafnium
+        is used in plasma torch electrodes and nozzle assemblies because it tolerates very high
+        temperatures and repeated arc exposure. Share is an atlas estimate.
+      source_id: usgs_zr_hf_stats_page
+    - application: high_temperature_ceramics
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS identifies high-temperature ceramics as a major hafnium end use. This includes
+        hafnium-containing refractory or ultra-high-temperature ceramic applications where oxide,
+        carbide, or nitride chemistry is valued for thermal stability. Share is an atlas estimate.
+      source_id: usgs_zr_hf_stats_page
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_critical_minerals_2025
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Hafnium appears on the USGS 2025 List of Critical Minerals. Under the EU Critical Raw
+    Materials Act, hafnium is listed in Annex II (Critical Raw Materials) but not in Annex I
+    (Strategic Raw Materials). The designation reflects a very small, byproduct-constrained
+    market tied to zircon and zirconium processing, with applications in nuclear systems and
+    high-temperature aerospace alloys.
+
+prices:
+  - year: 2020
+    value: 778
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: unwrought hafnium annual average price, source Argus Media Group, Argus Non-Ferrous Markets."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2021
+    value: 781
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: unwrought hafnium annual average price."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2022
+    value: 1590
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: unwrought hafnium annual average price."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2023
+    value: 6150
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: unwrought hafnium annual average price."
+    source_id: usgs_mcs_2025_zr_hf
+  - year: 2024
+    value: 4600
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: unwrought hafnium annual average price, down from the 2023 spike."
+    source_id: usgs_mcs_2025_zr_hf
+
+geopolitical_events:
+  - date: "2024"
+    event: "US unwrought hafnium trade contracted sharply in 2024 after the 2023 spike"
+    impact: |
+      USGS MCS 2025 reports that US exports of unwrought hafnium fell from 58 t in 2023 to
+      10 t in 2024e, while imports fell from 70 t to 50 t. The chapter also names China,
+      Germany, and the Netherlands as the leading global exporters of unwrought hafnium in 2024.
+      Hafnium's annual average unwrought price fell from $6,150/kg in 2023 to $4,600/kg in 2024e,
+      illustrating how thin and volatile the commercial market is.
+    source_id: usgs_mcs_2025_zr_hf
+
+narrative: |
+  Hafnium is an extreme byproduct market. There are no meaningful primary hafnium mines; the
+  element is carried into commerce through zircon and zirconium processing, with zirconium and
+  hafnium occurring in zircon at about a 50:1 ratio. USGS MCS 2025 explicitly says that world
+  primary hafnium production data are not available, which is why this file models upstream
+  hafnium-bearing zircon feed rather than pretending the published zircon table is a direct hafnium
+  metal output table. Commercial separation happens downstream when zirconium chemical intermediates
+  are processed to make hafnium-free zirconium metal and hafnium byproduct metal.
+
+  The resulting market is small, specialized, and volatile. USGS reports only tens of tonnes of
+  US unwrought hafnium trade in 2024e: 50 t of imports and 10 t of exports, after the unusual 2023
+  surge to 70 t and 58 t respectively. Price behavior reflects that thinness. Unwrought hafnium
+  averaged $778/kg in 2020, $781/kg in 2021, $1,590/kg in 2022, then spiked to $6,150/kg in 2023
+  before easing to $4,600/kg in 2024e. The main commercial uses are high-temperature nickel-base
+  superalloys, nuclear control rods, plasma arc cutting consumables, and high-temperature ceramics.
+
+  Criticality follows directly from that structure. Hafnium is tied to the same heavy-mineral-sand
+  and zircon supply chains that feed zirconium, but only a small fraction of that upstream flow is
+  separated into commercial hafnium products. Supply therefore depends less on hafnium price than on
+  zircon mining, zirconium intermediate production, and demand for nuclear-grade zirconium and other
+  downstream products. The United States lists hafnium on the 2025 critical minerals list, and the
+  EU lists it as a critical raw material, reflecting its strategic role in nuclear and aerospace
+  applications despite the absence of a large standalone market.
+
+sources:
+  - id: usgs_mcs_2025_zr_hf
+    title: Mineral Commodity Summaries 2025 — Zirconium and Hafnium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-zirconium-hafnium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_zr_hf_stats_page
+    title: Zirconium and Hafnium Statistics and Information
+    publisher: US Geological Survey
+    url: https://www.usgs.gov/centers/nmic/zirconium-and-hafnium-statistics-and-information
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_critical_minerals_2025
+    title: About the 2025 List of Critical Minerals
+    publisher: US Geological Survey
+    url: https://www.usgs.gov/programs/mineral-resources-program/science/about-2025-list-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
