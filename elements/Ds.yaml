@@ -1,0 +1,78 @@
+symbol: Ds
+atomic_number: 110
+name: darmstadtium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Darmstadtium is produced atom-by-atom in heavy-ion
+  accelerator experiments and identified through correlated decay chains rather than
+  sold in any bulk metal, compound, or isotope product form.
+
+research_only:
+  longest_lived_isotope: Ds-281
+  half_life_seconds: 12
+  discovered_year: 1994
+  iupac_recognized_year: 2003
+  discovered_at: |
+    GSI Helmholtzzentrum fuer Schwerionenforschung (then Gesellschaft fuer
+    Schwerionenforschung), Darmstadt, Germany. GSI reports first production of
+    element 110 on 1994-11-09 at SHIP using a nickel beam on a lead target; IUPAC
+    approved the name darmstadtium and symbol Ds in August 2003.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - GSI Darmstadt
+    - JINR Dubna
+  notes: |
+    Darmstadtium has no commercial supply chain. It exists only in fusion-evaporation
+    experiments that create a few atoms at a time, typically by bombarding lead or
+    actinide targets with accelerated heavy ions and inferring the new nuclide from
+    its alpha-decay chain or spontaneous-fission terminus. NNDC ENSDF identifies
+    Ds-281 as an adopted isotope with an approximately 12-second alpha-decay branch,
+    making it the longest-lived darmstadtium nuclide in the evaluated dataset
+    consulted here. JINR's 2023 Superheavy Element Factory update shows the field is
+    still active, but only as fundamental nuclear research.
+
+narrative: |
+  Darmstadtium is a laboratory-made superheavy element, not a commodity. The element
+  was first synthesized at GSI in Darmstadt in November 1994, and IUPAC formally
+  recognized the discovery and approved the name darmstadtium in 2003. Production is
+  limited to accelerator campaigns that generate individual atoms and then detect
+  them through millisecond-to-second decay signatures.
+
+  The practical reality is therefore research infrastructure, not mining, refining,
+  reserves, trade, or end-use demand. The most commercially relevant facts are
+  negative ones: no bulk material exists, no price series exists, and no industrial
+  application is served by darmstadtium. Its significance is scientific, as a probe
+  of nuclear structure and the stability limits of superheavy nuclei.
+
+sources:
+  - id: gsi_element_110
+    title: "Element 110"
+    publisher: GSI Helmholtzzentrum fuer Schwerionenforschung
+    url: https://www.gsi.de/en/work/forschung/nustarenna/nustarenna_divisions/she_physik/research/super_heavy_elements/element_110
+    retrieved: 2026-04-13
+    publication_year: 2012
+    source_tier: primary
+  - id: iupac_ds_naming_2003
+    title: "Element 110 is named darmstadtium"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://old.iupac.org/news/archives/2003/naming110.html
+    retrieved: 2026-04-13
+    publication_year: 2003
+    source_tier: primary
+  - id: nndc_ensdf_ds_281
+    title: "Index to ENSDF for A = 281"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/DatasetFetchServlet?datasource=ensdf&mass=281&nucmass=isMass&searchType=ensdfIndex
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: jinr_she_factory_2023
+    title: "Five new isotopes synthesised at Superheavy Element Factory"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/five-new-isotopes-synthesised-at-superheavy-element-factory/
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
