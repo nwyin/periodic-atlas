@@ -1,0 +1,515 @@
+symbol: Gd
+atomic_number: 64
+name: gadolinium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a single grouped commodity chapter
+  ("rare earths") in metric tons of rare-earth-oxide (REO) equivalent. Per-element
+  tonnage for gadolinium requires multiplying the USGS group total by Gd's typical
+  basket share (~1.0%), which is not reported directly by USGS. Gadolinium is
+  commercially traded primarily as Gd2O3 (gadolinium oxide) at 99.9%+ purity for
+  medical, electronic, and nuclear applications. For MRI contrast agent (GBCA)
+  manufacturing, gadolinium oxide is chelated into water-soluble organic compounds
+  (Gd-DTPA, Gd-DOTA, and related macrocyclic and linear chelates) rather than used
+  in oxide form directly. USGS MCS 2025 does not report gadolinium oxide prices in
+  its salient statistics table (which covers Ce, Dy, Eu, La, mischmetal, Nd, and Tb
+  only). All production and reserve figures are in metric tons REO equivalent unless
+  otherwise noted. The 1.0% basket share estimate carries low confidence; actual
+  Gd content is highly deposit-dependent and ranges from <0.2% in bastnaesite to
+  2–5% in ion adsorption clay deposits.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 3900
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 world total REO mine production 2024e =
+      390,000 metric tons. Gadolinium typically accounts for approximately 1.0%
+      of the global REE oxide basket; 1.0% used as central estimate
+      (390,000 × 0.01 ≈ 3,900 t Gd2O3). Per-element tonnage is not directly
+      reported by USGS; grouped_reporting flag is set accordingly. Basket share
+      varies strongly by deposit type: Mountain Pass bastnaesite (CA, USA)
+      <0.2% Gd2O3; Bayan Obo bastnaesite-monazite (China) ~0.2–0.4% Gd2O3;
+      ion adsorption clay deposits (southern China, Myanmar, Thailand) ~2–5%
+      Gd2O3. Global weighted average is estimated at ~1.0–1.5%, with southern
+      China and Southeast Asian HREE-enriched deposits contributing
+      disproportionately to global Gd supply relative to their share of total
+      REO output.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        notes: |
+          China 2024e: 270,000 t REO (USGS footnote 14: production quota; excludes
+          undocumented production), 69.2% of 390,000 t world total. Derived Gd2O3
+          share ~2,700 t at 1.0% basket fraction; actual share is likely higher
+          because China's ion adsorption clay sector (southern Jiangxi, Guangdong,
+          Fujian provinces) is substantially enriched in Gd relative to Bayan Obo
+          bastnaesite. Production increased from 255,000 t REO in 2023 (+5.9%).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        notes: |
+          United States 2024e: 45,000 t REO, 11.5% of world total. Derived Gd2O3
+          share ~450 t at 1.0% basket average; actual US Gd contribution is likely
+          below this because Mountain Pass bastnaesite (MP Materials, CA) is
+          strongly LREE-dominant with Gd2O3 well below 0.2%. Production up from
+          41,600 t REO in 2023. Domestic compound production (Pr+Nd compounds in
+          California, RE compounds in Utah per USGS footnote 3) totaled 7,600 t
+          in 2024, of which Gd comprises a negligible fraction.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        notes: |
+          Burma (Myanmar) 2024e: 31,000 t REO (USGS footnote 12: estimated from
+          Chinese import data, Zen Innovations / Global Trade Tracker), 7.9% of
+          world total. Derived Gd2O3 share ~310 t at 1.0% basket average; actual
+          Gd% in Burmese production is likely above the basket average because
+          Myanmar's deposits are predominantly HREE-enriched ion adsorption clays
+          (heavy mineral focus: Tb, Dy, and Gd). Production declined from 43,000 t
+          in 2023 (-28% YoY).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        notes: |
+          Australia 2024e: 13,000 t REO (USGS footnote 12), 3.3% of world total.
+          Derived Gd2O3 share ~130 t. Lynas Rare Earths mines Mount Weld carbonatite
+          deposit (WA); Mt. Weld bastnaesite-carbonatite is LREE-dominant with Gd2O3
+          below 0.5%, making Australia a below-average Gd contributor per unit of
+          REO. Down from 16,000 t in 2023. JORC-compliant reserves 3,300,000 t REO
+          per USGS footnote 13.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        notes: |
+          Nigeria 2024e: 13,000 t REO (USGS footnote 12), 3.3% of world total.
+          Derived Gd2O3 share ~130 t. Production nearly doubled from 7,200 t in
+          2023. Nigeria produces primarily from monazite and xenotime in alluvial
+          deposits; monazite contains ~0.5–1.0% Gd2O3, below the global basket
+          average. USGS cites Nigeria as one of the key drivers of global REO
+          production growth in 2024. Reserves reported as NA by USGS.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        notes: |
+          Thailand 2024e: 13,000 t REO (USGS footnote 12), 3.3% of world total.
+          Derived Gd2O3 share ~130 t. Production more than tripled from 3,600 t
+          in 2023. Thailand produces from ion adsorption clay deposits and alluvial
+          tin-mining residues; some Thai deposits are HREE-enriched and may yield
+          above-average Gd fractions. USGS cites Thailand as a key driver of 2024
+          REO production growth. Reserves: 4,500 t REO per USGS.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        notes: |
+          Rest-of-world 2024e: India 2,900 + Russia 2,500 + Madagascar 2,000 +
+          Other 1,100 + Vietnam 300 + Malaysia 130 + Brazil 20 ≈ 8,950 t REO,
+          ~2.3% of world total. Derived Gd2O3 share ~210 t applying the 1.0%
+          global basket average. Vietnam's ion adsorption deposits and Madagascar's
+          carbonatite sources may have above-average Gd content.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 90
+        notes: |
+          China controls approximately 90% of global REE separation and refining
+          capacity, including Gd2O3 production and Gd metal manufacturing.
+          High-purity Gd2O3 (99.9%+) for MRI contrast synthesis and electronic
+          phosphors requires multi-stage solvent extraction that is almost entirely
+          conducted in Chinese REE separation facilities (Jiangxi, Fujian, Sichuan,
+          Inner Mongolia). Per USGS MCS 2025: China supplied 70% of US REE compound
+          and metal imports (2020–23 average). Essentially all GBCA-grade Gd feedstock
+          for pharmaceutical manufacturers originates from Chinese refineries.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 7
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia
+          processes Mt. Weld (Australia) concentrate through solvent extraction,
+          producing a range of separated REO products including a HREE-fraction
+          oxide that contains Gd. USGS cites Malaysia as 13% of US REE compound
+          and metal import sources (2020–23). LAMP is the largest non-Chinese
+          REE separation facility globally; Gd separation from the HREE
+          fraction is a minor component of LAMP output.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Early-stage non-Chinese REE separation: Neo Performance Materials
+          Sillamäe (Estonia, 5% of US REE imports 2020–23) and Japan-based
+          processors (6% of US REE imports 2020–23). Both source feed from
+          Australian and Chinese intermediates per USGS chapter text. Some
+          Gd separation occurs in Japan for high-purity phosphor and MRI
+          contrast feedstock supply chains.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO, up from 376,000 t in 2023.
+    Applying 1.0% Gd basket share gives ~3,900 t Gd2O3 equivalent in 2024e
+    vs. ~3,760 t in 2023. Country-level Gd2O3 tonnage is further derived and
+    carries low confidence. Countries with no reported mine production (Canada,
+    Greenland, South Africa, Tanzania) had zero or NA production per USGS.
+    Basket share of 1.0% is a lower-bound estimate; the actual global weighted
+    average may be 1.0–1.5% depending on the mix of ion adsorption clay vs.
+    bastnaesite production.
+
+reserves:
+  economic_reserves:
+    value: 900000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world REE reserves >90,000,000 t
+      REO equivalent (stated as a floor value). Applying Gd's estimated ~1.0%
+      basket share gives ~900,000 t Gd2O3 as a floor. USGS does not report
+      per-element reserve breakdowns; all Gd-specific reserve figures are derived
+      from aggregate REO totals. Confidence is low because (1) the world REO
+      total is a floor, not an exact figure, and (2) the 1.0% Gd basket share
+      is an estimate with substantial deposit-level variability. Actual Gd
+      reserves could be meaningfully higher. Reserves revised for Russia,
+      South Africa, United States, and Vietnam in the 2025 edition.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of the >90 Mt floor).
+          Derived Gd2O3: ~440,000 t. Bayan Obo (Inner Mongolia) holds the
+          bulk of Chinese reserves; southern ion adsorption clay deposits
+          contribute Gd-enriched resources not fully quantified in USGS data.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        notes: |
+          Brazil REO reserves: 21,000,000 t (23.3% of world floor). Derived
+          Gd2O3: ~210,000 t. Large carbonatite and laterite deposits (ARAXÁ,
+          others), mostly unexploited. Current production was only 20 t REO
+          in 2024e.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        notes: |
+          India REO reserves: 6,900,000 t. Derived Gd2O3: ~69,000 t. Primarily
+          monazite-bearing beach sand deposits along the eastern and western
+          coasts (Kerala, Odisha, Tamil Nadu).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        notes: |
+          Australia REO reserves: 5,700,000 t total (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Derived Gd2O3: ~57,000 t. Mount
+          Weld (Lynas) is the principal Australian reserve base.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government
+          reports in MCS 2025 edition). Derived Gd2O3: ~38,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        notes: |
+          Vietnam REO reserves: 3,500,000 t (revised). Derived Gd2O3: ~35,000 t.
+          Dong Pao and other northwest Vietnam deposits; ion adsorption-type
+          occurrences may be HREE-enriched with above-average Gd content.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 5.7
+        notes: |
+          Rest-of-world quantified reserves: US 1,900,000 + Greenland 1,500,000 +
+          Tanzania 890,000 + South Africa 860,000 + Canada 830,000 + Thailand 4,500
+          = ~5,985,000 t REO, ~5.7% of the 90 Mt floor used as denominator.
+          Derived Gd2O3: ~57,000 t. Burma, Madagascar, Malaysia, and Nigeria
+          reserves reported as NA by USGS.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves reported as >90,000,000 t REO (floor value) per USGS
+    MCS 2025. Reserves were revised for Russia, South Africa, United States, and
+    Vietnam. All Gd2O3 reserve figures derived from REO totals using ~1.0% basket
+    share; actual per-element data is not publicly disaggregated by USGS. Countries
+    with NA reserves (Burma, Madagascar, Malaysia, Nigeria) are not included in
+    the quantified reserve base.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 2.5
+    notes: |
+      Ion adsorption clay deposits (weathered granite clays in southern China —
+      Jiangxi, Guangdong, Fujian — and similar deposits in Myanmar and Thailand)
+      are the primary commercial source of gadolinium. These HREE-enriched deposits
+      yield Gd2O3 content of approximately 2–5% of total REO, well above the global
+      basket average of ~1.0%. Leaching uses ammonium sulfate or ammonium bicarbonate
+      solution, either by heap-leach or in-situ methods. USGS MCS 2025 identifies
+      Myanmar and Thailand REO production as derived from such deposits, consistent
+      with their HREE-dominant output profiles.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.2
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate mineral) is the dominant global REE
+      ore by volume but contains very low Gd2O3 (<0.2%). Mountain Pass, CA
+      (MP Materials bastnaesite mine, confirmed as primary US production source in
+      USGS MCS 2025) and Bayan Obo (China) are the largest bastnaesite producers.
+      While bastnaesite contributes the largest share of total REO by mass, it is a
+      minor source of Gd relative to ion adsorption clays.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.7
+    notes: |
+      Monazite (rare-earth phosphate mineral) contains approximately 0.5–1.0%
+      Gd2O3. Recovered as a co-product from heavy-mineral-sand operations
+      (rutile, ilmenite, zircon) or stockpiled as a separated concentrate. USGS
+      MCS 2025 confirms monazite was stockpiled in the southeastern United States
+      in 2024 and is produced in Nigeria, India, and other countries. Thorium
+      contamination (~5–10% ThO2 in monazite) requires licensed handling and
+      constrains processing options.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally
+      are less effective." For MRI contrast agents, iron- and manganese-based
+      macrocyclic agents have been developed and approved in some jurisdictions to
+      reduce gadolinium tissue retention, but none achieve equivalent contrast
+      quality across all soft-tissue imaging protocols. For X-ray scintillator
+      phosphors, cesium iodide (CsI) and lanthanum-based scintillators substitute
+      in flat-panel detector configurations, and this substitution has materially
+      reduced GOS demand from CRT X-ray screens. For nuclear neutron absorbers,
+      other high-cross-section materials (hafnium, boron-10, cadmium, indium)
+      substitute functionally in most reactor designs. For NdFeB magnets, dysprosium
+      (Dy) performs a similar role to Gd in improving temperature coefficient; the
+      two elements compete on cost and availability for this application. No
+      cost-effective substitute exists for gadolinium's unique combination of strong
+      paramagnetism (enabling MRI contrast) and extreme thermal neutron capture
+      cross-section.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: phosphors_and_scintillators
+      share_pct: 30
+      confidence: low
+      notes: |
+        Gd2O2S:Tb (terbium-activated gadolinium oxysulfide, "GOS") is the dominant
+        commercial green phosphor for X-ray intensifying screens (film-screen
+        radiology), computed radiography (CR) phosphor plates, and flat-panel CT
+        detector arrays. GOS scintillators are used extensively in medical CT
+        scanners and security X-ray systems because of Gd's high X-ray stopping
+        power (atomic number 64) and the efficient green emission from Tb³⁺
+        activator ions under X-ray excitation. Gadolinium gallium garnet (GGG)
+        phosphors are used in specialized scintillator applications. CRT television
+        and monitor phosphors historically consumed significant Gd but this use
+        has effectively ended with the phase-out of CRT displays; medical and
+        security imaging scintillators remain active. USGS MCS 2025 lists "ceramics
+        and glass" as a REE end-use category. Share is a Gd-specific industry
+        estimate; USGS does not report per-element end-use data.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: mri_contrast_agents
+      share_pct: 25
+      confidence: low
+      notes: |
+        Gadolinium-based contrast agents (GBCAs) for magnetic resonance imaging
+        constitute the largest medical end use and a uniquely Gd-specific demand
+        segment. GBCAs — including gadopentetate dimeglumine (Gd-DTPA, Magnevist),
+        gadoterate meglumine (Gd-DOTA, Dotarem), gadobutrol (Gadovist), and other
+        macrocyclic and linear chelates — are administered intravenously to enhance
+        soft-tissue contrast in approximately 30–40% of MRI procedures globally.
+        Each patient dose typically contains 5–15 grams of gadolinium in chelated
+        form. Regulatory scrutiny of Gd retention in tissues (particularly for
+        linear agents) has shifted the market toward macrocyclic chelates, which
+        have higher thermodynamic stability and lower Gd deposition. GBCA
+        manufacturing uses pharmaceutical-grade Gd2O3 (99.99%+) as feedstock.
+        USGS MCS 2025 does not list medical imaging as an end use in the REE
+        chapter (which focuses on domestic industrial uses); share is a
+        Gd-specific industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: magnets_ndfeb_additive
+      share_pct: 25
+      confidence: low
+      notes: |
+        Gadolinium is used as a minor additive (~0–3 wt%) in NdFeB permanent
+        magnet alloys to reduce the temperature coefficient of coercivity,
+        enabling stable magnet performance at elevated operating temperatures
+        in motors and generators. Gd partially substitutes for dysprosium (Dy)
+        in this role; the choice between Gd and Dy additive depends on relative
+        cost and availability, with Gd typically cheaper than Dy per unit of
+        magnetic performance improvement. Growing demand from EV traction motors
+        and offshore wind turbine generators drives this application. USGS MCS 2025
+        confirms permanent magnets are a leading imported REE end use. Share is
+        a Gd-specific industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: nuclear_materials
+      share_pct: 10
+      confidence: low
+      notes: |
+        Gadolinium has the highest thermal neutron capture cross-section of any
+        naturally occurring element: Gd-157 at ~258,000 barns and Gd-155 at
+        ~61,000 barns. This makes Gd2O3 extremely effective as a burnable neutron
+        absorber when mixed with uranium dioxide (UO2) fuel pellets in light-water
+        and heavy-water nuclear reactors — it suppresses initial excess reactivity
+        and burns out predictably over the fuel cycle. Gd is also used in neutron
+        shielding materials and in emergency shutdown (SCRAM) systems of some
+        reactor designs. USGS MCS 2025 does not list nuclear materials as a domestic
+        REE end use; share is a Gd-specific industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: ceramics_glass_other
+      share_pct: 10
+      confidence: low
+      notes: |
+        Gd2O3 is incorporated into specialty optical glass (laser gain medium
+        hosts, high-index optical elements), yttria-stabilized zirconia thermal
+        barrier coatings (turbine blades, where Gd2Zr2O7 provides improved phase
+        stability vs. pure YSZ), and microwave dielectric ceramics. Gadolinium
+        also exhibits a strong magnetocaloric effect near room temperature,
+        making it a research candidate for solid-state magnetic refrigeration
+        cycles. Metallurgical additions of Gd to magnesium alloys improve
+        oxidation resistance and creep performance in aerospace applications.
+        USGS MCS 2025 lists "ceramics and glass" and "metallurgical applications"
+        as REE end-use categories. Share is a Gd-specific industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Gadolinium is classified as critical under the US 2022 Critical Minerals List
+    as part of "rare earth elements" (a group designation covering both light and
+    heavy REEs, including Gd). Heavy rare earth elements — including Gd — are
+    designated as Critical Raw Materials (Annex I) and Strategic Raw Materials
+    (Annex II) under EU Regulation 2024/1252 (Critical Raw Materials Act, CRMA).
+    US net import reliance for REE compounds and metals was 80% in 2024e (USGS
+    MCS 2025); Gd separation from the REE basket occurs almost entirely in China,
+    making effective Gd import reliance essentially 100%. In April 2025, China
+    imposed export licensing controls on gadolinium and six other heavy rare earth
+    elements, sharply elevating the strategic significance of non-Chinese Gd
+    separation capacity.
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "Global REE mine production rose to 390,000 t REO in 2024e, expanding available gadolinium feedstock"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t REO, up from
+      376,000 t in 2023 (+3.7%). Applying a 1.0% Gd basket share, estimated global
+      Gd2O3 production was approximately 3,900 t in 2024e vs. ~3,760 t in 2023.
+      Growth was driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to
+      13,000 t), and Thailand (+9,400 t to 13,000 t), partially offset by Burma's
+      decline (-12,000 t to 31,000 t). For Gd specifically, Nigeria and Thailand's
+      growth is less directly relevant as their ore types contain near-average or
+      below-average Gd fractions; the China production increase is the primary
+      driver of additional Gd feedstock availability.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US net import reliance for REE compounds and metals declined to 80% in 2024e, but Gd separation remains 100% import-dependent"
+    impact: |
+      US domestic REE compound and metal production reached 7,600 t total in 2024
+      (USGS footnote 3), up from 1,920 t in 2023, reflecting initial Mountain Pass
+      NdPr compound processing and Utah operations. Despite the improvement in
+      aggregate REE import reliance, no US domestic Gd separation or high-purity
+      Gd2O3 production capacity exists. Gadolinium for MRI contrast agent
+      manufacturing and electronic applications remains entirely sourced from
+      Chinese-origin or China-processed material. Import sources 2020–23: China
+      70%, Malaysia 13%, Japan 6%, Estonia 5%.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2025-04"
+    event: "China imposes export licensing controls on gadolinium and six other heavy rare earth elements"
+    impact: |
+      China's Ministry of Commerce (MOFCOM) announced export control measures
+      requiring licenses for exports of seven heavy rare earth elements including
+      gadolinium (Gd), samarium (Sm), terbium (Tb), dysprosium (Dy), lutetium
+      (Lu), scandium (Sc), and yttrium (Y). The controls, announced in early April
+      2025 against the backdrop of US tariff escalation, require Chinese exporters
+      to obtain government-issued licenses for each shipment. For gadolinium, the
+      practical effect is potential disruption to pharmaceutical manufacturers
+      producing gadolinium-based MRI contrast agents and to phosphor and magnet
+      producers outside China. Medical imaging supply chains for GBCAs — which
+      depend on a continuous supply of pharmaceutical-grade Gd2O3 — have limited
+      strategic inventory and cannot quickly substitute away from Gd feedstock.
+      Heavy REE prices rose sharply following the announcement.
+    source_id: china_mofcom_2025_ree_controls
+
+narrative: |
+  Gadolinium is the rare earth element with the most distinctive demand profile in
+  the REE basket: its largest single end use — gadolinium-based MRI contrast agents
+  (GBCAs) consumed in roughly 25–35% of all MRI procedures globally — has no direct
+  analog among the light rare earths that dominate REE basket economics. USGS MCS 2025
+  reports 2024 world REE production at 390,000 t REO, implying approximately 3,900
+  tonnes of Gd2O3 at a ~1.0% basket share (highly uncertain; actual Gd% ranges from
+  <0.2% in bastnaesite to 2–5% in ion adsorption clay deposits). X-ray and CT
+  scintillator phosphors (Gd2O2S:Tb, "GOS"), NdFeB magnet additives for high-
+  temperature coercivity stability, and nuclear reactor burnable absorbers account
+  for most of the remaining demand. Gd's exceptional thermal neutron capture
+  cross-section (~258,000 barns for Gd-157) underpins both nuclear fuel management
+  and neutron-shielding applications.
+
+  Supply is structurally dependent on China's ion adsorption clay sector. While
+  China accounts for ~69% of world REO mining, its actual contribution to gadolinium
+  supply is likely higher because southern Chinese deposits are enriched in heavy
+  rare earths including Gd, in contrast to the LREE-dominant bastnaesite mines in
+  the US and Australia. China controls approximately 90% of global REE separation
+  and refining capacity, meaning essentially all pharmaceutical-grade Gd2O3 for
+  GBCA manufacturing flows through Chinese refineries before reaching
+  pharmaceutical companies in Europe, Japan, and North America. Myanmar and
+  Thailand — which together contributed ~11% of world REO output in 2024 — also
+  produce from HREE-enriched ion adsorption clays processed into Chinese supply
+  chains via concentrate exports.
+
+  The strategic calculus around gadolinium shifted abruptly in April 2025 when
+  China announced export licensing controls covering Gd and six other heavy rare
+  earth elements, targeting elements critical for defense systems, advanced
+  medical imaging, and clean energy technology. Both the EU and US have designated
+  REEs (including heavy REEs such as Gd) as critical and strategic materials under
+  the EU Critical Raw Materials Act (Regulation 2024/1252) and the US 2022 Critical
+  Minerals List respectively. Unlike lanthanum and cerium — which suffer from chronic
+  oversupply and near-floor prices (~$1/kg oxide) — gadolinium commands a meaningful
+  price premium reflecting its HREE scarcity and end-use specificity in medical and
+  defense applications. The combination of single-country supply concentration,
+  specialized pharmaceutical-grade purity requirements, and inelastic MRI contrast
+  demand makes Gd one of the more acute supply security risks within the REE basket.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: china_mofcom_2025_ree_controls
+    title: "Export Control Measures on Rare Earth Elements Including Gadolinium, Samarium, Terbium, Dysprosium, Lutetium, Scandium, and Yttrium"
+    publisher: China Ministry of Commerce (MOFCOM)
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: secondary
