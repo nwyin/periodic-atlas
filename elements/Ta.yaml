@@ -1,0 +1,389 @@
+symbol: Ta
+atomic_number: 73
+name: tantalum
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports tantalum quantities in metric tons of contained tantalum unless
+  otherwise specified. Imports and exports include contained tantalum estimated from
+  synthetic tantalum-niobium concentrates, niobium and tantalum ores and concentrates,
+  tantalum waste and scrap, unwrought tantalum alloys and powder, and other tantalum
+  articles; footnote assumptions convert Ta2O5-bearing feedstocks to contained Ta.
+  Commercial trade forms explicitly listed by USGS include tantalum ores and concentrates,
+  tantalum oxide, potassium fluorotantalate, metal and powders, wrought products, and
+  waste and scrap. The price series is quoted as dollars per kilogram of Ta2O5 content
+  for tantalite rather than dollars per kilogram of contained tantalum metal.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 2100
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 tantalum chapter reports world mine production of 2,100 metric tons
+        tantalum content in 2024e, up from 2,040 metric tons in 2023. The United States
+        had no mine production in 2024 and has not mined tantalum since 1959. US apparent
+        consumption was estimated at 770 metric tons in 2024 and net import reliance
+        remained 100%.
+      source_id: usgs_mcs_2025_tantalum
+    mining_by_country:
+      shares:
+        - country: AU
+          share_pct: 2.48
+          quantity:
+            value: 52
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Australia mine production 52 t Ta in 2024e; JORC-compliant or equivalent reserves were 28,000 t within total reported reserves of 110,000 t."
+          source_id: usgs_mcs_2025_tantalum
+        - country: BO
+          share_pct: 0.10
+          quantity:
+            value: 2
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Bolivia mine production 2 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+        - country: BR
+          share_pct: 10.0
+          quantity:
+            value: 210
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Brazil mine production 210 t Ta in 2024e; reported reserves 40,000 t."
+          source_id: usgs_mcs_2025_tantalum
+        - country: BI
+          share_pct: 0.10
+          quantity:
+            value: 2
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Burundi mine production estimated at 2 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+        - country: CN
+          share_pct: 3.62
+          quantity:
+            value: 76
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: China mine production estimated at 76 t Ta in 2024e; reported reserves 240,000 t."
+          source_id: usgs_mcs_2025_tantalum
+        - country: CD
+          share_pct: 41.90
+          quantity:
+            value: 880
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Congo (Kinshasa) mine production estimated at 880 t Ta in 2024e, the largest national source."
+          source_id: usgs_mcs_2025_tantalum
+        - country: ET
+          share_pct: 1.90
+          quantity:
+            value: 40
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Ethiopia mine production estimated at 40 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+        - country: MZ
+          share_pct: 2.62
+          quantity:
+            value: 55
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Mozambique mine production 55 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+        - country: NG
+          share_pct: 18.57
+          quantity:
+            value: 390
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Nigeria mine production estimated at 390 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+        - country: RU
+          share_pct: 1.38
+          quantity:
+            value: 29
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Russia mine production estimated at 29 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+        - country: RW
+          share_pct: 16.67
+          quantity:
+            value: 350
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tantalum
+          notes: "USGS MCS 2025 table: Rwanda mine production estimated at 350 t Ta in 2024e."
+          source_id: usgs_mcs_2025_tantalum
+      completeness: complete
+    notes: |
+      Share percentages use the USGS rounded 2024 world total of 2,100 t Ta as the
+      denominator. Named country quantities sum to 2,086 t, or 99.33% of the world total;
+      the difference is consistent with USGS rounding and the use of estimated country rows.
+      USGS MCS 2025 provides no separate tantalum refining-by-country table, so this file
+      encodes only the mine-production stream.
+
+reserves:
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 61.54
+        quantity:
+          value: 240000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tantalum
+        notes: "USGS MCS 2025 table: China reported tantalum reserves of 240,000 t."
+        source_id: usgs_mcs_2025_tantalum
+      - country: AU
+        share_pct: 28.21
+        quantity:
+          value: 110000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tantalum
+        notes: |
+          USGS MCS 2025 table: Australia reported tantalum reserves of 110,000 t; footnote
+          10 states JORC-compliant or equivalent reserves of 28,000 t. In the PDF rendering
+          the reserve row appears as a footnote-concatenated "10110,000"; the underlying
+          value is 110,000 t.
+        source_id: usgs_mcs_2025_tantalum
+      - country: BR
+        share_pct: 10.26
+        quantity:
+          value: 40000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tantalum
+        notes: "USGS MCS 2025 table: Brazil reported tantalum reserves of 40,000 t."
+        source_id: usgs_mcs_2025_tantalum
+    completeness: partial
+  notes: |
+    USGS MCS 2025 reports world total economic reserves as NA, but provides country reserve
+    quantities for Australia, Brazil, and China. Share percentages above are calculated
+    against the subtotal of reported country reserves (390,000 t), not against a world
+    reserve total. USGS also states that identified world resources of tantalum are
+    considered adequate to supply projected needs and that the United States has about
+    55,000 t of tantalum resources in identified deposits, most of them subeconomic at
+    2024 prices.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: lct_pegmatite_tantalite
+    notes: |
+      USGS Professional Paper 1802-M states that tantalum is derived mostly from the mineral
+      tantalite, found as an accessory mineral in rare-metal granites and lithium-cesium-
+      tantalum (LCT) pegmatites enriched in lithium and cesium.
+    source_id: usgs_pp_1802m_niobium_tantalum
+  - substrate: columbite_tantalite_coltan_concentrate
+    notes: |
+      USGS Professional Paper 1802-M notes that artisanal mining of columbite-tantalite
+      ("coltan") is practiced in Burundi, Congo (Kinshasa), Nigeria, Rwanda, and Uganda.
+      This central African concentrate stream remains commercially important to world
+      tantalum supply.
+    source_id: usgs_pp_1802m_niobium_tantalum
+  - substrate: tantalum_containing_scrap
+    notes: |
+      USGS MCS 2025 says tantalum metal and alloys were recovered from foreign and domestic
+      scrap, and recycling came mostly from new scrap generated during manufacture of
+      tantalum-containing electronic components and from tantalum-bearing cemented carbide
+      and superalloy scrap.
+    source_id: usgs_mcs_2025_tantalum
+
+substitutes:
+  - application: carbides
+    availability: partial
+    notes: "USGS MCS 2025 substitutes paragraph: niobium and tungsten can substitute for tantalum in carbides, but with performance loss or higher costs."
+    source_id: usgs_mcs_2025_tantalum
+  - application: electronic_capacitors
+    availability: partial
+    notes: "USGS MCS 2025 substitutes paragraph: aluminum, ceramics, and niobium can substitute for tantalum in electronic capacitors, but with performance loss or higher costs."
+    source_id: usgs_mcs_2025_tantalum
+  - application: corrosion_resistant_applications
+    availability: partial
+    notes: "USGS MCS 2025 substitutes paragraph: glass, molybdenum, nickel, niobium, platinum, stainless steel, titanium, and zirconium can substitute for tantalum in corrosion-resistant applications."
+    source_id: usgs_mcs_2025_tantalum
+  - application: high_temperature_applications
+    availability: partial
+    notes: "USGS MCS 2025 substitutes paragraph: hafnium, iridium, molybdenum, niobium, rhenium, and tungsten can substitute for tantalum in high-temperature applications."
+    source_id: usgs_mcs_2025_tantalum
+
+end_uses:
+  uses:
+    - application: electronic_capacitors
+      share_pct: 60
+      confidence: medium
+      notes: |
+        USGS Professional Paper 1802-M states that approximately 60% of global tantalum
+        consumption is in the electronics industry and identifies electronic capacitors as
+        the leading tantalum use for high-end applications such as cell phones, computer
+        hard drives, and implantable medical devices. USGS MCS 2025 is consistent with this
+        use pattern, listing domestic production of capacitors and highlighting capacitors
+        and sputtering targets in semiconductor fabrication demand growth.
+      source_id: usgs_pp_1802m_niobium_tantalum
+    - application: other_industrial_uses
+      share_pct: 40
+      confidence: low
+      notes: |
+        Residual bucket derived from the same USGS Professional Paper 1802-M statement that
+        about 60% of global tantalum consumption is in electronics. USGS MCS 2025 identifies
+        domestic tantalum output in alloys, carbides, compounds, and metal, while the
+        Professional Paper highlights chemical-processing and superalloy demand. This 40%
+        bucket is therefore a broad non-electronics remainder rather than a directly tabulated
+        USGS end-use breakdown.
+      source_id: usgs_pp_1802m_niobium_tantalum
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2022
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Tantalum is on the US 2022 Final List of Critical Minerals and on the EU 2024 Critical
+    Raw Materials list. It is not on the EU 2024 Strategic Raw Materials list. The supply
+    risk logic in both jurisdictions aligns with the structure visible in USGS MCS 2025:
+    the United States has had no mine production since 1959, net import reliance was 100%
+    in 2024, and world mine supply is concentrated in a relatively small set of producers
+    dominated by central African coltan streams plus Brazil, Nigeria, and Rwanda.
+
+prices:
+  - year: 2024
+    value: 170
+    unit: usd_per_kg
+    form: concentrate
+    basis: other
+    notes: |
+      USGS MCS 2025 salient statistics: annual average tantalite price in 2024 was
+      $170 per kilogram of Ta2O5 content. Source attribution in the chapter footnote:
+      Institute for Rare Earths and Metals for 2022-24.
+    source_id: usgs_mcs_2025_tantalum
+  - year: 2023
+    value: 170
+    unit: usd_per_kg
+    form: concentrate
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: annual average tantalite price in 2023 was $170 per kilogram of Ta2O5 content."
+    source_id: usgs_mcs_2025_tantalum
+  - year: 2022
+    value: 196
+    unit: usd_per_kg
+    form: concentrate
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: annual average tantalite price in 2022 was $196 per kilogram of Ta2O5 content."
+    source_id: usgs_mcs_2025_tantalum
+  - year: 2021
+    value: 158
+    unit: usd_per_kg
+    form: concentrate
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: annual average tantalite price in 2021 was $158 per kilogram of Ta2O5 content."
+    source_id: usgs_mcs_2025_tantalum
+  - year: 2020
+    value: 158
+    unit: usd_per_kg
+    form: concentrate
+    basis: other
+    notes: "USGS MCS 2025 salient statistics: annual average tantalite price in 2020 was $158 per kilogram of Ta2O5 content."
+    source_id: usgs_mcs_2025_tantalum
+
+geopolitical_events:
+  - date: 2024-10
+    event: "CHIPS and Science Act funding commitments expanded projected US semiconductor capacity and tantalum demand"
+    impact: |
+      USGS MCS 2025 reports that by October 2024 the U.S. Department of Commerce had
+      announced preliminary agreements with 20 companies for 32 semiconductor manufacturing
+      projects in 20 States, allocating almost $34 billion of direct funding and almost
+      $29 billion in loans. USGS explicitly identifies tantalum capacitors and sputtering
+      targets as materials that will see higher demand from expanded advanced-chip fabrication.
+    source_id: usgs_mcs_2025_tantalum
+  - date: 2024-09
+    event: "United States finalized additional section 301 tariffs on Chinese critical-mineral goods including tantalum"
+    impact: |
+      USGS MCS 2025 states that in September 2024 the Office of the United States Trade
+      Representative announced final tariff modifications that imposed an additional 25%
+      ad valorem tariff on critical minerals from China, including tantalum. The measure
+      raised policy risk for US buyers of Chinese tantalum metal, powder, and downstream
+      products at the same time that US import reliance remained total.
+    source_id: usgs_mcs_2025_tantalum
+
+narrative: |
+  Tantalum is a small-volume but strategically important capacitor metal whose commercial
+  chain is shaped by the contrast between highly specialized end uses and geographically
+  concentrated mine supply. USGS MCS 2025 shows no US mine production, no domestic mining
+  since 1959, and 100% net import reliance in 2024, yet US companies still produced alloys,
+  capacitors, carbides, compounds, and metal from imported ores, concentrates, and other
+  tantalum-bearing feedstocks. World mine production was only about 2,100 t Ta in 2024e,
+  with Congo (Kinshasa), Nigeria, Rwanda, and Brazil supplying most of the total.
+
+  The dominant geological reality is pegmatite and coltan supply rather than a large
+  merchant refined-metal market. USGS Professional Paper 1802-M describes tantalum as
+  derived mostly from tantalite in lithium-cesium-tantalum pegmatites, while also noting
+  the importance of artisanal columbite-tantalite mining across central Africa. That mix
+  produces a supply chain with persistent traceability and geopolitical sensitivity: small
+  tonnages matter, scrap recycling is meaningful, and policy changes such as the September
+  2024 US tariff action can materially affect procurement economics even without changing
+  headline mine output.
+
+  Demand is anchored in electronics. USGS identifies electronic capacitors as the leading
+  use and links 2024 demand recovery to consumer electronics, data centers, and the expected
+  build-out of US semiconductor fabrication capacity under the CHIPS and Science Act. The
+  result is a market where absolute tonnage is modest, but substitution can impose real
+  performance penalties and domestic consumers remain exposed to concentrated foreign mine
+  supply and imported intermediate products.
+
+sources:
+  - id: usgs_mcs_2025_tantalum
+    title: "Mineral Commodity Summaries 2025 — Tantalum"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-tantalum.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_pp_1802m_niobium_tantalum
+    title: "Niobium and Tantalum, Chapter M of Critical Mineral Resources of the United States"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/publication/pp1802M
+    retrieved: 2026-04-13
+    publication_year: 2017
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 22, 2022)"
+    publisher: US Department of the Interior / US Geological Survey
+    url: https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
