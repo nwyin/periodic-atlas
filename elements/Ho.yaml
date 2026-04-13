@@ -1,0 +1,564 @@
+symbol: Ho
+atomic_number: 67
+name: holmium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a grouped commodity chapter ("rare
+  earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element tonnage
+  is not published for individual REEs. Per-element attribution for holmium requires
+  multiplying the aggregate by Ho's typical basket share. Holmium is commercially
+  traded primarily as Ho₂O₃ (holmium(III) oxide) at ≥99.9% minimum purity for most
+  applications. For laser applications, holmium is used as a dopant in Ho:YAG
+  (holmium-doped yttrium aluminum garnet) crystals and Ho-doped fiber laser media.
+  All production figures in this file are derived by multiplying the USGS-reported
+  aggregate REO totals by Ho's typical basket share of ~0.15%, which is not reported
+  directly by USGS. The basket share varies strongly by deposit type: bastnaesite-
+  dominant mines (Mountain Pass CA ~0.04–0.08%, Bayan Obo CN ~0.1–0.2%) are
+  light-REE-dominant and yield very low Ho fractions; ion adsorption clay deposits
+  in southern China (Jiangxi, Fujian, Guangdong) and Southeast Asia (Myanmar,
+  Thailand) yield ~0.2–0.5% Ho₂O₃ because these deposits are heavy-REE enriched.
+  A global weighted average of ~0.15% is used as the central estimate. Holmium has
+  the highest magnetic moment of any natural element (10.6 μB) but this property is
+  practically exploited only at cryogenic temperatures. Ho is not in the USGS MCS
+  2025 salient statistics price table, which covers only Ce, Dy, Eu, La, Mischmetal,
+  Nd, and Tb; prices for Ho are therefore omitted. All data are in metric tons REO
+  equivalent unless otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 585
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Ho's typical basket share of ~0.15%
+      gives ~585 t Ho₂O₃ equivalent. Ho's basket share is not reported separately by
+      USGS; the 0.15% factor is an industry consensus figure reflecting the global
+      weighted average, dominated by heavy-REE-enriched ion adsorption clay deposits
+      in southern China and Southeast Asia (~0.2–0.5% Ho) and diluted by LREE-dominant
+      bastnaesite mines at Mountain Pass (~0.04–0.08% Ho) and Bayan Obo (~0.1–0.2%
+      Ho). Actual Ho output is not officially disaggregated from the REE basket in
+      public USGS data. The 2023 comparable estimate is ~564 t at the same 0.15% share
+      applied to 376,000 t world total. Holmium production is dominated by sources that
+      are heavy-REE enriched — primarily Chinese ion adsorption clay operations — meaning
+      the country-level shares derived from aggregate REO totals significantly overstate
+      contribution from LREE-dominant producers such as Mountain Pass.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        quantity:
+          value: 405
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share: 270,000 / 390,000 = 69.2%.
+          Estimated Ho component: ~405 t Ho₂O₃ at 0.15% basket share. China's southern
+          ion adsorption clay deposits in Jiangxi, Fujian, and Guangdong have above-average
+          Ho content (~0.2–0.5% Ho₂O₃ of total REOs), meaning China's actual share of
+          global Ho output likely exceeds 69%. Bayan Obo bastnaesite-monazite contributes
+          below-average Ho relative to total REOs. China's 2024 quota rose from 255,000 t
+          in 2023 to 270,000 t per USGS footnote 14.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        quantity:
+          value: 67
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain Pass,
+          CA (MP Materials), valued at ~$260 million. Share: 45,000 / 390,000 = 11.5%.
+          Estimated Ho at 0.15% basket: ~67 t — but this is a significant overestimate.
+          Mountain Pass bastnaesite is LREE-dominant with very low Ho content (~0.04–0.08%
+          Ho₂O₃ of total REOs, roughly 2–4× below the global basket average). Actual Ho
+          from Mountain Pass concentrate is likely ~18–36 t at deposit-specific Ho
+          concentration; concentrate is shipped to China for separation and essentially
+          no Ho is separated domestically. The 67 t derived figure should be treated as a
+          ceiling assuming the global average basket applies, which it does not here.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        quantity:
+          value: 46
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28% YoY). Share: 31,000 / 390,000 = 7.9%. Estimated Ho: ~46 t. Burma
+          produces primarily from ion adsorption clay deposits in Kachin State and the
+          Sino-Burmese border region, which are heavy-REE enriched; actual Ho content in
+          Burmese production is likely above the 0.15% global basket average (~0.2–0.4%),
+          making Burma a disproportionately important Ho contributor at its peak. Production
+          estimated from China import records (USGS footnote 12). The 28% decline in 2024
+          reduced global heavy REE supply, including Ho, from Burma-sourced clay deposits.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 19
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia), processed at the
+          Lynas Advanced Materials Plant (LAMP) in Malaysia. Mt. Weld is a carbonatite
+          deposit with LREE dominance; actual Ho₂O₃ fraction is very low (~0.05–0.1%),
+          so the 0.15% basket average likely overstates Australian Ho production.
+          Estimated Ho at 0.15% basket: ~19 t. Production estimated from China import
+          data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        quantity:
+          value: 19
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023 (+81% YoY).
+          USGS cites Nigeria as a driver of 2024 global production growth. Nigerian REE
+          production is from weathered laterite or placer deposits; Ho content is
+          uncertain. Estimated Ho at 0.15% basket: ~19 t. Production estimated from
+          China import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        quantity:
+          value: 19
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023 (+261% YoY).
+          Thailand produces from ion adsorption clay deposits; these are heavy-REE enriched,
+          so actual Ho content may be above the 0.15% global basket average. Estimated Ho
+          at 0.15% basket: ~19 t. Production estimated from China import data (USGS
+          footnote 12). Thailand reserves: 4,500 t REO (USGS MCS 2025).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        quantity:
+          value: 13
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Remaining producers 2024e: India 2,900 + Russia 2,500 + Madagascar 2,000 +
+          Other 1,100 + Vietnam 300 + Malaysia 130 + Brazil 20 ≈ 8,950 t REO, ~2.3%
+          of world total. Estimated combined Ho contribution ~13 t at 0.15% basket share.
+          India produces primarily from monazite in heavy mineral sands (moderate Ho
+          content ~0.1–0.2%); Russia from apatite-nepheline at Kola (very low Ho).
+          Overall Ho contribution from this residual group is uncertain.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 92
+        notes: |
+          China controls approximately 90–92% of global REE separation and refining
+          capacity. Ho₂O₃ separation is concentrated in southern China, particularly
+          Jiangxi and Fujian provinces where ion adsorption clay mining operations co-locate
+          with separation facilities. Ho:YAG crystal growth for laser applications is also
+          predominantly a Chinese capability. USGS MCS 2025 import sources (2020–23)
+          confirm China supplied 70% of US REE compound and metal imports; for heavy REEs
+          like Ho the actual global separation share is higher (~90–92%).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 5
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Australian Mt. Weld concentrate into separated REE products. USGS MCS 2025
+          import sources (2020–23): Malaysia 13% of US REE imports. Mt. Weld is
+          LREE-dominant; LAMP's Ho output is minimal relative to China's. LAMP's
+          contribution to the heavy REE separation market is small.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Other non-Chinese Ho₂O₃ separation: Neo Performance Materials (Sillamäe,
+          Estonia, 5% of US imports 2020–23), Japanese processors (6% of US imports
+          2020–23), and nascent US separation capacity. Ho metal and Ho:YAG crystal
+          production outside China is very limited; laser-grade Ho doping intermediates
+          are largely a Chinese capability. Estonia and Japan source intermediates from
+          Australian and Chinese concentrates per USGS chapter text.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). All Ho-specific figures derived from REO totals using the ~0.15%
+    basket share assumption; actual per-element disaggregation is not available from
+    public USGS data. Ho's heavy-REE character means its actual geographic concentration
+    is higher than the REO basket totals imply: Chinese southern-province clay deposits
+    and Burmese clay operations are the dominant Ho sources, not the bastnaesite operations
+    at Mountain Pass or Mt. Weld. Country shares sum to ~100.8% due to rounding of
+    reported integers against the rounded world total.
+
+reserves:
+  economic_reserves:
+    value: 135000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves >90,000,000 t REO
+      (floor value stated as ">90,000,000 t"). Applying Ho's typical basket share (~0.15%)
+      gives ~135,000 t Ho₂O₃ equivalent. USGS does not report per-element reserve
+      breakdowns; all Ho-specific reserve figures are derived. The true figure depends
+      on the actual Ho content in each country's reserve base ore types; bastnaesite-
+      dominant reserves (China's Bayan Obo, Australia's Mt. Weld) will yield lower Ho
+      tonnages at their actual Ho fractions, while the world's ion adsorption clay
+      resources (predominantly in southern China) contain higher Ho fractions than the
+      0.15% basket average applied here. The floor nature of the world total understates
+      global Ho reserves; actual reserves are likely higher.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 66000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of >90,000,000 t world total).
+          Estimated Ho₂O₃ reserves: ~66,000 t (44,000,000 × 0.15%). China's IAC
+          deposits in southern China are the primary Ho-bearing reserve base; the 0.15%
+          basket average applied here is a conservative estimate relative to actual Ho
+          content in IAC ore types (~0.2–0.5%).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 31500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — second-largest world reserve base.
+          Estimated Ho₂O₃: ~31,500 t at 0.15% basket share. Current Brazilian REE
+          production is near zero (20 t REO in 2024e). Deposit types are unclear
+          in the USGS data; actual Ho fraction may differ from the 0.15% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 10350
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Ho₂O₃: ~10,350 t. India produces
+          ~2,900 t REO/year primarily from monazite in heavy mineral sands; monazite has
+          moderate Ho content (~0.1–0.2% of REOs).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 8550
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t total (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Estimated Ho₂O₃: ~8,550 t at 0.15% basket
+          share. Mt. Weld carbonatite is LREE-dominant; actual Ho₂O₃ fraction is likely
+          well below 0.15% (~0.05–0.1%), so this estimate likely overstates Australian
+          Ho reserves.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 5700
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports
+          in USGS MCS 2025). Estimated Ho₂O₃: ~5,700 t. Kola Peninsula apatite-nepheline
+          deposits are LREE-dominant; actual Ho fraction is likely low.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 2850
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          United States REO reserves: 1,900,000 t (revised per company and government
+          reports in USGS MCS 2025). Mountain Pass, CA is the primary US reserve base.
+          Estimated Ho₂O₃: ~2,850 t. Mountain Pass bastnaesite is LREE-dominant with
+          very low actual Ho content; this figure likely overstates US Ho reserves.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves: Vietnam (3,500,000 t), Greenland (1,500,000 t), Tanzania (890,000 t),
+    South Africa (860,000 t), Canada (830,000 t), Thailand (4,500 t). Reserves for Russia,
+    South Africa, United States, and Vietnam were revised in MCS 2025 based on company
+    and government reports. All Ho-specific reserve figures derived from applying ~0.15%
+    basket share to country-level REO reserves; actual per-element data not publicly
+    disaggregated by USGS.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 0.35
+    notes: |
+      Ion adsorption clay deposits in southern China (Jiangxi, Fujian, Guangdong) and
+      Southeast Asia (Burma, Thailand) contain higher proportions of heavy REEs including
+      Ho (~0.2–0.5% of total REOs) than bastnaesite-dominant mines. These deposits are
+      the primary commercial source of holmium and account for the preponderance of
+      global Ho supply. USGS MCS 2025 confirms Thailand and Burma production is from
+      clay-type or ion adsorption deposits.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.06
+    notes: |
+      Bastnaesite (fluorocarbonate mineral, CeFCO₃) is the primary commercial source
+      of light rare earth elements but contains only minor Ho (~0.04–0.08% of total REOs
+      at Mountain Pass; ~0.1–0.2% at Bayan Obo). Bastnaesite-sourced Ho is a low-value
+      co-product rarely recovered commercially. USGS MCS 2025 confirms bastnaesite was
+      mined as a primary product at Mountain Pass in 2024.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.15
+    notes: |
+      Monazite (phosphate mineral, (Ce,La,Pr,Nd)PO₄) as recovered from heavy-mineral-sand
+      concentrates contains moderate Ho (~0.1–0.2% of total REOs). Monazite processing
+      in India and its stockpiling in the southeastern United States (per USGS MCS 2025)
+      provide a secondary Ho source. Thorium content in monazite complicates processing
+      under radioactive materials regulations.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: holmium_yag_lasers
+    availability: partial
+    notes: |
+      USGS MCS 2025 states "Substitutes are available for many applications but generally
+      are less effective." For Ho:YAG solid-state lasers operating at 2.09 μm — the
+      dominant medical laser wavelength for urological lithotripsy (kidney/bladder stone
+      ablation), soft-tissue surgery, and ophthalmology — alternatives include Er:YAG
+      (2.94 μm, effective but different tissue penetration depth), Nd:YAG with frequency
+      conversion (less efficient), and thulium fiber lasers (1.9 μm, increasingly adopted
+      in urological applications). Thulium fiber lasers are growing as a partial substitute
+      for Ho:YAG in lithotripsy due to improved pulse shaping; however, Ho:YAG remains
+      dominant for high-energy stone ablation and is preferred for some surgical applications.
+      No complete drop-in substitute exists across all Ho:YAG application contexts.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: specialty_magnets
+    availability: partial
+    notes: |
+      Holmium is used as a minor additive in some NdFeB formulations and in research
+      magnetostrictive materials. For NdFeB magnet high-temperature performance
+      enhancement, dysprosium and terbium are the primary heavy REE additives; Ho
+      is not a principal NdFeB dopant and its substitution question is therefore largely
+      moot in commercial magnet production. In specialized ultra-high-field research
+      magnets exploiting Ho's extreme magnetic moment at cryogenic temperatures, no
+      substitute element offers equivalent performance.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: lasers_medical_surgical
+      share_pct: 45
+      confidence: low
+      notes: |
+        Ho:YAG (holmium-doped yttrium aluminum garnet) lasers operating at 2.09 μm are
+        the dominant commercial application for holmium. The 2.09 μm wavelength is strongly
+        absorbed by water in biological tissue, enabling precise soft-tissue ablation with
+        limited thermal spread. Medical applications include urological lithotripsy (laser
+        ablation of kidney and bladder stones — the largest single market), prostate
+        treatments (holmium laser enucleation of the prostate, HoLEP), soft-tissue surgery,
+        and ophthalmology. Ho:YAG systems are produced by companies including Lumenis,
+        Olympus, and Boston Scientific. USGS MCS 2025 lists "lasers" as an REE end use.
+        Share is an industry estimate; USGS does not report per-element end-use percentages.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: specialty_magnets_additives
+      share_pct: 25
+      confidence: low
+      notes: |
+        Holmium is incorporated in small quantities in specialty permanent magnet alloys
+        and in experimental high-field magnets. Ho has the highest magnetic moment per
+        atom of any natural element (10.6 μB) but practical exploitation requires
+        cryogenic temperatures, limiting commercial magnet applications. Ho is also used
+        in magnetostrictive research materials and as a minor additive in some HREE-doped
+        NdFeB formulations. USGS MCS 2025 lists "magnets" and "metallurgical additives"
+        as REE end uses. Share is an industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: glass_ceramics_optical
+      share_pct: 20
+      confidence: low
+      notes: |
+        Ho₂O₃ produces a distinctive yellow to orange-red coloration in glass and ceramics,
+        and holmium-doped glass is used as a calibration standard for optical spectrometers
+        due to its sharp, well-defined absorption peaks across the UV-visible spectrum.
+        Specialty applications include Ho-doped optical filter glass, neutron-absorbing glass
+        for nuclear shielding, and use in holmium-doped fiber amplifiers for wavelength-
+        division-multiplexed telecommunications in the 2 μm window. USGS MCS 2025 lists
+        "ceramics and glass" as an REE end use. Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_nuclear_research
+      share_pct: 10
+      confidence: low
+      notes: |
+        Residual end uses including Ho's application in nuclear reactor design (Ho-165
+        has a significant thermal neutron capture cross-section of ~65 barns, enabling
+        use in neutron-absorbing control materials), holmium compounds in specialty
+        catalysis research, and Ho-doped scintillators. USGS MCS 2025 lists "catalysts"
+        and "other" as REE end-use categories. These applications are commercially minor
+        relative to Ho:YAG laser uses. Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices: []
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Holmium is classified as critical under the US 2022 Critical Minerals List (as
+    part of "rare earth elements"), the EU Critical Raw Materials Regulation 2024/1252
+    (as a heavy rare earth element), and the EU Critical Raw Materials Act 2024 strategic
+    materials list. Net import reliance for REE compounds and metals was ~80% in 2024e
+    per USGS MCS 2025 salient statistics (down from >95% in 2020–2023 due to domestic
+    compound production growth). Ho's criticality is amplified by its specific role in
+    Ho:YAG medical lasers — a commercially dominant application with limited near-term
+    substitutes — and by the near-total dependence on Chinese heavy-REE separation
+    capacity for Ho₂O₃ production. Import sources 2020–23 for REE overall: China 70%,
+    Malaysia 13%, Japan 6%, Estonia 5% (USGS MCS 2025). Ho was not directly named in
+    China's April 2025 export controls (which targeted Sm, Gd, Tb, Dy, Lu, Sc, and Y),
+    but broader basket supply dynamics were affected.
+
+geopolitical_events:
+  - date: "2025-04"
+    event: "China imposes export controls on 7 HREEs (Sm, Gd, Tb, Dy, Lu, Sc, Y) — holmium not directly targeted but heavy REE basket dynamics affected"
+    impact: |
+      China's April 2025 export controls required export licenses for samarium, gadolinium,
+      terbium, dysprosium, lutetium, scandium, and yttrium but did not explicitly name
+      holmium. However, the controls elevated awareness of heavy REE supply chain
+      vulnerability across the basket and disrupted some supply logistics for HREE
+      separation intermediates from which Ho co-occurs. Ho:YAG laser manufacturers
+      monitoring supply chain risk noted holmium's similar single-source dependency
+      on Chinese ion adsorption clay operations, even without direct license requirements.
+    source_id: china_mofcom_export_controls_2025
+  - date: "2024-01"
+    event: "Global REE mine production increased to 390,000 t REO in 2024e, driven by China, Nigeria, and Thailand; Burma declined 28%"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t REO, up from 376,000 t
+      in 2023. China rose from 255,000 to 270,000 t; Nigeria from 7,200 to 13,000 t;
+      Thailand from 3,600 to 13,000 t; Burma fell from 43,000 to 31,000 t. For Ho, the
+      Burma decline is particularly significant since Burmese ion adsorption clay operations
+      are heavy-REE enriched and disproportionately important for HREE supply including Ho.
+      At the ~0.15% basket share, world Ho production rose from ~564 t in 2023 to ~585 t
+      in 2024e, but the Burma decline constrained heavy-REE contribution to global supply.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US net import reliance for REE compounds and metals declined to 80% in 2024e"
+    impact: |
+      USGS MCS 2025 salient statistics report US net import reliance for REE compounds and
+      metals at 80% in 2024e, down from >95% in 2020–2023. Domestic compound production grew
+      to 1,300 t reported in 2024. Despite this improvement, Ho-specific domestic processing
+      capacity is absent: no US facility produces Ho₂O₃ or Ho:YAG crystal intermediates
+      from domestic concentrates, meaning US medical device and laser manufacturers are
+      entirely dependent on imported Ho oxides, primarily from Chinese suppliers.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Holmium is a minor heavy rare earth element whose commercial importance is
+  concentrated in a single dominant application: Ho:YAG (holmium-doped yttrium
+  aluminum garnet) solid-state lasers operating at 2.09 μm. This wavelength is strongly
+  absorbed by biological water, enabling Ho:YAG systems to achieve precise tissue
+  ablation with limited thermal damage — making them the preferred tool for urological
+  lithotripsy (laser ablation of kidney and bladder stones), prostate surgery (HoLEP),
+  and a range of soft-tissue surgical procedures. Ho:YAG laser systems from manufacturers
+  including Lumenis and Olympus represent the primary commercial demand for holmium oxide,
+  and medical device supply chains are therefore the main interface between holmium's
+  geological reality and its economic relevance.
+
+  Global Ho production is estimated at ~585 tonnes Ho₂O₃ equivalent in 2024 (derived
+  from the USGS-reported 390,000 t world REE total at a ~0.15% basket share), with China
+  supplying ~69% of mine output at aggregate REO shares — but a meaningfully higher actual
+  share when deposit-type correction is applied, since Ho is enriched in China's southern
+  ion adsorption clay deposits (~0.2–0.5% Ho₂O₃) rather than in LREE-dominant bastnaesite.
+  China controls approximately 92% of global heavy REE separation capacity including Ho₂O₃
+  production. Burma's ion adsorption clay operations, before their 28% output decline in 2024,
+  were a significant secondary Ho source due to the same HREE-enriched deposit character.
+
+  Unlike dysprosium or terbium, holmium was not directly targeted in China's April 2025
+  heavy REE export control measures (which named Sm, Gd, Tb, Dy, Lu, Sc, and Y). However,
+  the structural supply chain reality is identical: near-total dependence on Chinese
+  separation capacity for a material with no short-term domestic substitute production in
+  the United States or Europe. Thulium fiber lasers at 1.9 μm are emerging as partial
+  substitutes in some urological applications, but Ho:YAG remains the gold standard for
+  high-energy stone ablation and broader surgical use. The path to supply chain resilience
+  for Ho:YAG medical devices requires non-Chinese Ho₂O₃ separation capacity — a gap not
+  yet addressed by current diversification investments that focus primarily on NdPr and HREE
+  magnets.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: china_mofcom_export_controls_2025
+    title: "China Ministry of Commerce export controls on rare earth elements (April 2025)"
+    publisher: Ministry of Commerce of the People's Republic of China
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: secondary
