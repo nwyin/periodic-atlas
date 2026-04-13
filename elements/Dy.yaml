@@ -1,0 +1,675 @@
+symbol: Dy
+atomic_number: 66
+name: dysprosium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a grouped commodity chapter ("rare
+  earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element tonnage
+  is not published for individual REEs. Per-element attribution for dysprosium requires
+  multiplying the aggregate by Dy's typical basket share. Dysprosium is commercially
+  traded primarily as Dy₂O₃ (dysprosium(III) oxide) at ≥99.5% minimum purity for most
+  applications — the purity tier listed in USGS MCS 2025 salient statistics. USGS MCS
+  2025 explicitly prices dysprosium oxide at 99.5% minimum purity (Argus Media Group,
+  Argus Non-Ferrous Markets, footnote 6). For magnet applications, dysprosium metal
+  or DyFe alloys are used as grain-boundary diffusion additives to NdFeB sintered
+  magnets to raise coercivity at elevated temperatures. All production figures in this
+  file are derived by multiplying the USGS-reported aggregate REO totals by Dy's
+  typical basket share of ~2%, which is not reported directly by USGS. The basket share
+  varies strongly by deposit type: bastnaesite-dominant mines (Mountain Pass CA ~0.1–0.2%,
+  Bayan Obo CN ~0.3–0.5%) yield very low Dy fractions because bastnaesite is a
+  light-REE-dominant mineral; ion adsorption clay deposits in southern China (Jiangxi,
+  Fujian, Guangdong) and Southeast Asia (Myanmar, Thailand) yield ~1.5–3% Dy₂O₃ because
+  these deposits are heavy-REE enriched. A global weighted average of ~2% is used as
+  the central estimate, heavily influenced by Chinese clay production. US figures are
+  significantly overstated by this approach since Mountain Pass bastnaesite contributes
+  almost no Dy to the basket. All data are in metric tons REO equivalent unless
+  otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 7800
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Dy's typical basket share of ~2% gives
+      ~7,800 t Dy₂O₃ equivalent. Dy basket share is not reported separately by USGS;
+      the 2% factor is an industry consensus figure reflecting the global weighted
+      average, dominated by heavy-REE-enriched ion adsorption clay deposits in southern
+      China and Southeast Asia (~1.5–3% Dy) and diluted by LREE-dominant bastnaesite
+      mines at Mountain Pass (~0.1–0.2% Dy) and Bayan Obo (~0.3–0.5% Dy). Actual Dy
+      output is not officially disaggregated from the REE basket in public USGS data.
+      The 2023 comparable estimate is ~7,520 t at the same 2% share applied to 376,000 t
+      world total. The 2% basket share implies Dy production is disproportionately
+      concentrated in southern China and SE Asia relative to the overall REO basket.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        quantity:
+          value: 5397
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share: 270,000 / 390,000 = 69.2%.
+          Estimated Dy component: ~5,397 t (69.2% × 7,800 t world Dy). China's Dy
+          production is disproportionately sourced from ion adsorption clay deposits in
+          Jiangxi, Fujian, and Guangdong provinces, which are heavy-REE enriched (~1.5–3%
+          Dy₂O₃ of total REOs). The 2% global average underestimates China's actual Dy
+          share, as Bayan Obo bastnaesite (a LREE-dominant ore) contributes little Dy
+          while southern China ion adsorption clays contribute most of China's Dy output.
+          China's 2024 quota rose from 255,000 t in 2023 to 270,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        quantity:
+          value: 897
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain Pass,
+          CA (MP Materials), valued at ~$260 million. Share: 45,000 / 390,000 = 11.5%.
+          Derived Dy at 2% basket share: ~897 t — but this is a significant overestimate
+          in absolute terms. Mountain Pass bastnaesite is LREE-dominant with very low Dy
+          content (~0.1–0.2% Dy₂O₃ of total REOs, roughly 10× below the global basket
+          average). Actual US mine-stage Dy production is likely ~45–90 t at Mountain Pass
+          Dy concentration; Mountain Pass concentrate is shipped to China for separation,
+          and essentially no Dy is separated domestically. The 897 t derived figure should
+          be treated as a ceiling assuming the global average basket applies, which it does
+          not here.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        quantity:
+          value: 616
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28% YoY). Share: 31,000 / 390,000 = 7.9%. Estimated Dy: ~616 t. Burma
+          produces primarily from ion adsorption clay deposits in Kachin State and the
+          Sino-Burmese border region, which are heavy-REE enriched; actual Dy content
+          in Burmese production is likely above the 2% global basket average (~2–4%),
+          making Burma a disproportionately important Dy supplier at its peak. Production
+          estimated from China import records (USGS footnote 12). The 28% decline in 2024
+          reduced global Dy supply from Burma-sourced clay deposits.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 257
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia), processed at the
+          Lynas Advanced Materials Plant (LAMP) in Malaysia. Mt. Weld is a carbonatite
+          deposit with LREE dominance; actual Dy₂O₃ fraction is very low (~0.1–0.3%),
+          so the 2% basket average overstates Australian Dy production considerably.
+          Estimated Dy at 2% basket: ~257 t. Production estimated from China import data
+          (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        quantity:
+          value: 257
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023 (+81% YoY).
+          USGS cites Nigeria as a driver of 2024 global production growth. Nigerian REE
+          production is from weathered laterite or placer deposits; Dy content is
+          uncertain. Estimated Dy at 2% basket: ~257 t. Production estimated from China
+          import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        quantity:
+          value: 257
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023 (+261% YoY).
+          Thailand produces from ion adsorption clay deposits; these are heavy-REE
+          enriched, so actual Dy content may be above the 2% global basket average.
+          Estimated Dy at 2% basket: ~257 t. Production estimated from China import data
+          (USGS footnote 12). Thailand reserves: 4,500 t REO (USGS MCS 2025).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        quantity:
+          value: 179
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Remaining producers 2024e: India 2,900 + Russia 2,500 + Madagascar 2,000 +
+          Other 1,100 + Vietnam 300 + Malaysia 130 + Brazil 20 ≈ 8,950 t REO, ~2.3%
+          of world total. Estimated combined Dy contribution ~179 t at 2% basket share.
+          India produces primarily from monazite in heavy mineral sands (moderate Dy
+          content); Russia from apatite-nepheline at Kola (very low Dy). Overall Dy
+          contribution from this group is uncertain.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 92
+        notes: |
+          China controls approximately 90–92% of global REE separation and refining
+          capacity. Dy₂O₃ separation and DyFe alloy production for NdFeB magnet grain
+          boundary diffusion are concentrated in southern China, particularly Jiangxi and
+          Fujian provinces where ion adsorption clay mining operations co-locate with
+          separation facilities. China's near-monopoly on Dy refining is reinforced by
+          its dominance in both the IAC ore source and the downstream sintered NdFeB
+          magnet industry that consumes Dy. USGS MCS 2025 import sources (2020–23)
+          confirm China supplied 70% of US REE compound and metal imports; China's
+          actual global separation share for heavy REEs like Dy is higher (~90–92%)
+          given the ore-type dependence on Chinese clay deposits.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 5
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Australian Mt. Weld concentrate into separated REE products. USGS MCS 2025
+          import sources (2020–23): Malaysia 13% of US REE imports. However, Mt. Weld
+          is LREE-dominant; LAMP's Dy output is minimal relative to China's. LAMP's
+          contribution to the heavy REE separation market is small.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Other non-Chinese Dy₂O₃ separation: Neo Performance Materials (Sillamäe,
+          Estonia, 5% of US imports 2020–23), Japanese processors (6% of US imports
+          2020–23), and nascent US separation capacity. Dy metal and DyFe alloy
+          production outside China is essentially absent; magnet-grade Dy processing
+          is a near-exclusive Chinese capability. Estonia and Japan source intermediates
+          from Australian and Chinese concentrates per USGS text.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). All Dy-specific figures derived from REO totals using the ~2% basket
+    share assumption; actual per-element disaggregation is not available from public
+    USGS data. Dy's heavy-REE character means its actual geographic concentration is
+    higher than the REO basket totals imply: Chinese southern-province clay deposits and
+    Burmese clay operations are the dominant Dy sources, not the bastnaesite operations
+    at Mountain Pass or Mt. Weld. Country shares sum to ~100.8% due to rounding of
+    reported integers against the rounded world total.
+
+reserves:
+  economic_reserves:
+    value: 1800000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves >90,000,000 t REO
+      (floor value used). Applying Dy's typical basket share (~2%) gives ~1,800,000 t
+      Dy₂O₃ equivalent. USGS does not report per-element reserve breakdowns; all
+      Dy-specific reserve figures are derived. The true figure depends on the actual Dy
+      content in each country's reserve base ore types; bastnaesite-dominant reserves
+      (China's Bayan Obo, Australia's Mt. Weld) will yield lower Dy tonnages at their
+      actual Dy fractions, while the world's ion adsorption clay resources (predominantly
+      in southern China) contain higher Dy fractions than the 2% basket average applied here.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 880000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of >90,000,000 t world total).
+          Estimated Dy₂O₃ reserves: ~880,000 t (44,000,000 × 2%). China's IAC deposits
+          in southern China are likely the primary Dy-bearing reserve base; the 2%
+          basket average applied here is a conservative estimate relative to actual Dy
+          content in IAC ore types.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 420000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — second-largest world reserve base.
+          Estimated Dy₂O₃: ~420,000 t at 2% basket share. Current Brazilian REE
+          production is near zero (20 t REO in 2024e). Deposit types are unclear
+          in the USGS data; actual Dy fraction may differ from the 2% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 138000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Dy₂O₃: ~138,000 t. India produces
+          ~2,900 t REO/year primarily from monazite in heavy mineral sands; monazite has
+          moderate Dy content (~1.5–2.5% of REOs) depending on deposit location.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 114000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t total (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Estimated Dy₂O₃: ~114,000 t at 2% basket
+          share. Mt. Weld carbonatite is LREE-dominant; actual Dy₂O₃ fraction is likely
+          well below 2% (~0.1–0.3%), so this estimate overstates Australian Dy reserves.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 76000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports).
+          Estimated Dy₂O₃: ~76,000 t. Kola Peninsula apatite-nepheline deposits are
+          LREE-dominant; actual Dy fraction is below the 2% basket average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 38000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US REO reserves: 1,900,000 t (revised per company and government reports).
+          Mountain Pass, CA is the primary US reserve base. Estimated Dy₂O₃: ~38,000 t
+          at 2% basket share — a significant overestimate given Mountain Pass bastnaesite's
+          very low Dy fraction (~0.1–0.2%).
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves: Vietnam (3,500,000 t), Greenland (1,500,000 t), Tanzania (890,000 t),
+    South Africa (860,000 t), Canada (830,000 t), Thailand (4,500 t). Reserves for Russia,
+    South Africa, United States, and Vietnam were revised in MCS 2025 based on company
+    and government reports. All Dy₂O₃ reserve figures are derived from applying ~2%
+    basket share to country-level REO reserves; actual per-element data are not publicly
+    disaggregated by USGS. Ion adsorption clay deposits in southern China likely hold
+    the bulk of economically significant Dy reserves.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 2.0
+    notes: |
+      Ion adsorption clay (IAC) deposits in southern China (Jiangxi, Fujian, Guangdong,
+      Yunnan) and Southeast Asia (Myanmar border regions, Thailand) are the primary
+      commercial source of heavy rare earth elements including dysprosium. IAC deposits
+      contain ~1.5–3% Dy₂O₃ of total REOs, making them essential for the global Dy
+      supply chain. These deeply weathered granite residual deposits are mined by in-situ
+      leaching (ammonium sulfate or ammonium bicarbonate injection), yielding a mixed
+      heavy-REE leachate that is processed into separated Dy₂O₃. USGS MCS 2025 confirms
+      ion adsorption clay production is included in China, Myanmar, and Thailand figures.
+      The environmental and geopolitical concentration of IAC deposits in southern China
+      and neighboring regions is the core supply-chain vulnerability for Dy.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.3
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate mineral, CeFCO₃) is a light-REE-dominant
+      mineral that contains very low concentrations of heavy REEs including Dy. Mountain
+      Pass (CA) bastnaesite contains ~0.1–0.2% Dy₂O₃ of total REOs; Bayan Obo (CN)
+      bastnaesite-monazite complex contains ~0.3–0.5% Dy₂O₃. USGS MCS 2025 confirms
+      bastnaesite mined as a primary product at Mountain Pass in 2024. Bastnaesite is
+      the primary source for La, Ce, Pr, and Nd but a minor and secondary source for Dy.
+      Mountain Pass concentrate is exported (primarily to China) for separation; Dy is
+      recovered in the heavy-REE separation stream.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 1.5
+    notes: |
+      Monazite (rare-earth phosphate, (Ce,La,Pr,Nd)PO₄ with heavy REE substitution) is
+      stockpiled as a separated concentrate or recovered as an accessory mineral in
+      heavy-mineral-sand concentrates. USGS MCS 2025 confirms monazite was stockpiled
+      in the southeastern United States in 2024. Monazite typically contains ~1.5–2.5%
+      Dy₂O₃ of total REOs depending on deposit location. Thorium content in monazite
+      complicates processing under radioactive materials regulations. Monazite is an
+      important potential source of Dy for Indian and Brazilian reserve development.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: ndfeb_magnets_high_temperature
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally are
+      less effective." For Dy as a NdFeB magnet additive: terbium (Tb) can partially
+      substitute for Dy to improve high-temperature coercivity (Tb is more effective
+      per unit mass but far more expensive and scarcer — $810/kg Tb₂O₃ vs. $260/kg
+      Dy₂O₃ in 2024e per USGS MCS 2025). Grain boundary diffusion (GBD) techniques
+      can reduce total heavy-REE loading per magnet by concentrating Dy/Tb at grain
+      surfaces rather than throughout the bulk, lowering consumption without sacrificing
+      performance. In applications below ~80°C, Dy-free NdFeB formulations (e.g., for
+      consumer electronics) exist, but EV traction motors operating at elevated
+      temperatures (~120–180°C) require heavy-REE additives for adequate coercivity.
+      No complete substitute exists for Dy in high-temperature NdFeB applications that
+      simultaneously achieves required coercivity, thermal stability, and energy product.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: magnetostrictive_alloys
+    availability: none
+    notes: |
+      Terfenol-D (Tb₀.₃Dy₀.₇Fe₂) is a giant magnetostrictive alloy used in precision
+      actuators, sonar transducers (undersea detection, submarine sonar), and vibration
+      control systems. Dysprosium is structurally essential to Terfenol-D; the
+      Tb:Dy ratio is tuned to achieve room-temperature magnetostriction. No direct
+      material substitute provides equivalent magnetostrictive performance at ambient
+      temperatures. Alternative transducer technologies (piezoelectric ceramics, PZT)
+      substitute at reduced performance levels in non-defense applications.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: magnets_ndfeb_heavy_ree_additive
+      share_pct: 80
+      confidence: low
+      notes: |
+        Dysprosium's dominant end use is as a sintering additive to neodymium-iron-boron
+        (NdFeB) permanent magnets, where it improves high-temperature coercivity — the
+        resistance to demagnetization at elevated operating temperatures. EV traction
+        motors operate at temperatures of 120–180°C and require NdFeB magnets with
+        sufficient coercivity across that range; without Dy (or Tb) additions, standard
+        NdFeB magnets demagnetize at these temperatures. Wind turbine permanent magnet
+        generators (direct-drive PMSG) similarly require Dy-containing NdFeB magnets.
+        Typical Dy loading is 3–7 wt% of the final magnet alloy for high-performance
+        grades; grain boundary diffusion (GBD) techniques are reducing Dy content per
+        magnet to ~1–3 wt% for lower-temperature applications. USGS MCS 2025 lists
+        permanent magnets as a major REE end use. The 80% share is an industry consensus
+        estimate; USGS does not report per-element end-use percentages. Dy demand is
+        directly coupled to EV production growth: an average EV traction motor requires
+        ~0.1–0.3 kg Dy depending on magnet grade and GBD usage.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: magnetostrictive_alloys_terfenol
+      share_pct: 8
+      confidence: low
+      notes: |
+        Terfenol-D (Tb₀.₃Dy₀.₇Fe₂) is a giant magnetostrictive material used in high-
+        precision sonar transducers (submarine and undersea surveillance sonar), active
+        vibration control actuators, precision displacement actuators for metrology and
+        optics, and linear motors. Dysprosium is a structural component of Terfenol-D
+        (not merely an additive) making up ~70 mol% of the rare-earth component. USGS
+        MCS 2025 Government Stockpile tables reflect defense procurement interest in
+        materials including Dy. Share is an industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: nuclear_neutron_absorbers
+      share_pct: 5
+      confidence: low
+      notes: |
+        Dysprosium has a relatively high thermal neutron absorption cross-section
+        (~1,000–2,700 barns across its naturally occurring isotopes Dy-164, Dy-162,
+        Dy-163). Dy₂O₃ and Dy-bearing compounds are used as burnable neutron absorbers
+        in nuclear fuel assemblies, where they burn out as the reactor cycle progresses,
+        allowing self-regulation of reactivity. Applications include Dy-doped UO₂ fuel
+        pellets and Dy₂O₃ control rod materials. USGS MCS 2025 lists metallurgical
+        applications among REE end uses. Share is an estimate; nuclear use competes with
+        gadolinium and hafnium as alternative neutron absorbers.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_specialties
+      share_pct: 7
+      confidence: low
+      notes: |
+        Other Dy applications include: Dy-doped specialty laser crystals (Dy:YAG, Dy:LiYF₄
+        for mid-infrared laser emission near 2.9 μm used in medical laser procedures and
+        atmospheric sensing); Dy₂O₃ as a yellow-to-green phosphor component in specialized
+        lighting; Dy-halide lamps (DyI₃ in metal halide discharge lamps); and minor use in
+        Dy-doped solid oxide fuel cell electrolytes (ceria doped with Dy for improved ionic
+        conductivity). These applications are individually small but technically significant
+        in their respective niches. Share aggregates several minor uses; USGS does not
+        disaggregate per-element end-use shares.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices:
+  - year: 2024
+    value: 260
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: dysprosium oxide (Dy₂O₃), 99.5% minimum purity,
+      average price 2024e = $260/kg. Source cited by USGS: Argus Media Group, Argus
+      Non-Ferrous Markets (footnote 6). Price declined from $330/kg in 2023, consistent
+      with broad REE price moderation following the 2021–2022 run-up. The 99.5% purity
+      specification is standard for most Dy applications including NdFeB magnet production;
+      unlike Eu and Tb which are priced at 99.99% minimum, Dy is tracked at 99.5% minimum
+      in USGS statistics. At $260/kg, Dy₂O₃ is priced approximately 4.6× Nd₂O₃ ($56/kg)
+      and approximately 9,600× La₂O₃ ($1/kg in 2024e per same source), reflecting the
+      heavy REE scarcity premium.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2023
+    value: 330
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: Dy₂O₃ (99.5% min) 2023 = $330/kg. Source:
+      Argus Media Group. Elevated relative to 2024e as broader REE market was still
+      supported by EV demand optimism in 2023.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2022
+    value: 382
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: Dy₂O₃ (99.5% min) 2022 = $382/kg. Source:
+      Argus Media Group. 2022 represented near-peak pricing during the REE market run-up
+      driven by EV production forecasts and supply-chain anxiety post-COVID.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2021
+    value: 410
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: Dy₂O₃ (99.5% min) 2021 = $410/kg. Source:
+      Argus Media Group. 2021 was the price peak in the USGS 5-year range, driven by
+      post-COVID demand recovery, EV sector momentum, and Chinese production quota
+      concerns.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2020
+    value: 261
+    unit: usd_per_kg
+    form: oxide
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: Dy₂O₃ (99.5% min) 2020 = $261/kg. Source:
+      Argus Media Group. 2020 was the price floor in the 5-year range, reflecting
+      COVID-period demand reduction and pre-EV-boom baseline pricing.
+    source_id: usgs_mcs_2025_rare_earths
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Dysprosium is classified as critical under the US 2022 Critical Minerals List (as
+    part of "rare earth elements" group designation). US net import reliance for REE
+    compounds and metals: 80% in 2024e (down from >95% in 2020–2023) per USGS MCS 2025
+    salient statistics. Dy's specific criticality is amplified beyond the general REE
+    basket because: (1) Dy is sourced predominantly from heavy-REE-enriched ion
+    adsorption clay deposits concentrated in southern China and bordering Southeast Asia,
+    not the broadly distributed bastnaesite mines; (2) no separation or magnet-grade Dy
+    metal production exists outside China at significant scale; (3) Dy is structurally
+    essential for high-temperature NdFeB permanent magnets in EV traction motors and
+    wind turbines — the two fastest-growing demand categories for which there is no
+    near-term material substitute. Dysprosium is included in EU Regulation 2024/1252
+    (Critical Raw Materials Act, CRMA) under "heavy rare earth elements" as a Critical
+    Raw Material and Strategic Raw Material. China's April 2025 export controls directly
+    named dysprosium as one of seven REEs subject to export license requirements,
+    representing the most acute supply-chain disruption event for Dy in recent history.
+    Import sources 2020–23: China 70%, Malaysia 13%, Japan 6%, Estonia 5% (USGS MCS 2025).
+
+geopolitical_events:
+  - date: "2025-04"
+    event: "China imposes direct export controls on dysprosium and 6 other REEs (Sm, Gd, Tb, Lu, Sc, Y)"
+    impact: |
+      China's April 2025 announcement of export controls on seven rare earth elements
+      explicitly named dysprosium metal, Dy₂O₃ oxide, and Dy-containing alloys as
+      controlled substances requiring export licenses. This is the most significant
+      supply-chain disruption event for Dy in the USGS MCS 2025 reporting window, with
+      direct implications for NdFeB magnet producers outside China (primarily Japan,
+      Germany, and emerging US capacity) that depend on Chinese Dy₂O₃ and DyFe alloy
+      imports. EV manufacturers relying on Dy-containing NdFeB traction motors
+      (including non-Chinese automakers with global supply chains) face medium-term
+      supply uncertainty. The export controls, applied through China's Dual-Use Export
+      Control list mechanism, allow China to selectively approve or deny licenses,
+      creating pricing and availability uncertainty without necessarily halting all
+      exports. Non-Chinese magnet producers with stockpiles gained short-term buffer;
+      longer-term responses include accelerated GBD adoption to reduce Dy loading per
+      magnet, Tb substitution, and sourcing from non-Chinese ion adsorption clay deposits
+      (primarily Myanmar and Thailand, which supply Dy precursors to China anyway).
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "Burma (Myanmar) REE production falls 28% to 31,000 t REO in 2024e, reducing global heavy-REE supply"
+    impact: |
+      USGS MCS 2025 reports Burma REE production declined from 43,000 t in 2023 to
+      31,000 t in 2024e, a 28% drop attributed to reduced mining activity in border
+      regions. Myanmar's ion adsorption clay deposits are heavy-REE enriched (~2–4%
+      Dy₂O₃) making them disproportionately important for global Dy supply relative
+      to their share of total REO production. The 12,000 t REO decline from Burma
+      implies a reduction of ~240–480 t Dy₂O₃ equivalent (at 2–4% basket share) from
+      this source. Production estimated from China import records (USGS footnote 12).
+      Myanmar IAC output has been politically volatile due to military conflict since
+      the 2021 coup; further supply disruptions are possible.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "Global REE mine production increases to 390,000 t REO in 2024e, with heavy-REE contribution driven by China quota increase"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t REO, up from
+      376,000 t in 2023. China rose from 255,000 to 270,000 t; Nigeria from 7,200 to
+      13,000 t; Thailand from 3,600 to 13,000 t; Burma fell from 43,000 to 31,000 t.
+      For Dy specifically, the China quota increase (+15,000 t REO) is significant
+      because it includes heavy-REE output from southern-province ion adsorption clay
+      operations (Jiangxi, Fujian, Guangdong quotas). The Nigerian and Thai increases
+      contribute uncertain Dy volumes; Thailand's clay deposits may add meaningful
+      heavy-REE supply. At ~2% basket share, world Dy production rose from ~7,520 t
+      in 2023 to ~7,800 t in 2024e.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US net import reliance for REE compounds and metals declines to 80% in 2024e; Dy-specific domestic separation remains absent"
+    impact: |
+      USGS MCS 2025 salient statistics report US net import reliance for REE compounds
+      and metals at 80% in 2024e, down from >95% in 2020–2023. Domestic compound
+      production grew to 1,300 t reported (7,600 t total per USGS footnote 3) in 2024.
+      Despite this improvement, Dy-specific domestic processing capacity is entirely
+      absent: Mountain Pass bastnaesite concentrate (LREE-dominant, low Dy) is shipped
+      to China for separation, and no US facility separates Dy₂O₃ or produces DyFe
+      alloy. US NdFeB magnet manufacturers and their EV OEM customers remain entirely
+      dependent on imported Dy metal or oxide intermediates. The 80% figure for overall
+      REE net import reliance understates the dependency for heavy REEs like Dy, which
+      lack any domestic production pathway.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Dysprosium is the most commercially critical heavy rare earth element, defined almost
+  entirely by its role as a coercivity-enhancing additive to neodymium-iron-boron (NdFeB)
+  permanent magnets. NdFeB magnets are the dominant magnet technology for EV traction
+  motors and wind turbine generators — the two fastest-growing applications in the energy
+  transition — but without dysprosium (or terbium) additions of 3–7 wt%, NdFeB magnets
+  lose coercivity at the elevated temperatures (120–180°C) that characterize EV motor
+  operation. Grain boundary diffusion (GBD) technology is reducing Dy loading per magnet
+  to ~1–3 wt% in some applications, but Dy cannot be eliminated from high-performance
+  NdFeB grades. Unlike neodymium and praseodymium — which are the bulk of the NdFeB
+  alloy — dysprosium is consumed in relatively small amounts per magnet, but its extreme
+  supply-chain concentration makes it the strategic chokepoint in the heavy-REE basket.
+
+  Dysprosium's geographic concentration problem is categorically different from light
+  REEs. While La, Ce, and Nd can be sourced from multiple deposit types including widely
+  distributed bastnaesite mines, Dy is predominantly produced from ion adsorption clay
+  (IAC) deposits — a deposit type concentrated in southern China's weathered granites
+  (Jiangxi, Fujian, Guangdong) and the border regions of Myanmar and Thailand. At ~2%
+  of total REO in IAC deposits versus ~0.1–0.2% in Mountain Pass bastnaesite, China's
+  IAC operations and Burmese cross-border clay mining supply the overwhelming majority
+  of global Dy₂O₃. USGS MCS 2025 data show world production of 390,000 t REO in 2024e,
+  implying ~7,800 t Dy₂O₃ at 2% basket share. China's 92% refining dominance for Dy
+  is reinforced by the ore-type dependency: the IAC mining regions in southern China
+  co-locate with the refining infrastructure. US import sources (2020–23): China 70%,
+  Malaysia 13%, Japan 6%, Estonia 5% per USGS MCS 2025.
+
+  China's April 2025 imposition of export controls on dysprosium — one of seven REEs
+  explicitly named — is the sharpest supply-chain risk materialization for Dy in recent
+  history. USGS MCS 2025 salient statistics show Dy₂O₃ (99.5%) at $260/kg in 2024e,
+  down from a peak of $410/kg in 2021 but still at a heavy scarcity premium: roughly
+  4.6× the price of Nd₂O₃ and 260× Ce₂O₃ per the same source. The combination of
+  export controls, Myanmar supply volatility (28% production decline in 2024), and
+  absence of any significant non-Chinese separation capacity for Dy₂O₃ or DyFe alloy
+  creates chronic single-supplier dependency for a material that is structurally
+  essential to the energy transition technology base.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
