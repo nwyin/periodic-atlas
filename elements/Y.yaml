@@ -1,0 +1,673 @@
+symbol: Y
+atomic_number: 39
+name: yttrium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Yttrium (Y, atomic number 39) is a group 3 d-block transition metal; it is not a
+  lanthanide but is classified with the rare earth elements by USGS due to its
+  similar chemistry and occurrence. USGS MCS 2025 covers yttrium in a dedicated
+  Yttrium chapter (separate from the grouped Rare Earths chapter) and in the Rare
+  Earths chapter as an included component (footnote 1 of the Rare Earths chapter:
+  "Data include lanthanides and yttrium but exclude most scandium"). All USGS
+  yttrium production data are reported in metric tons of yttrium oxide (Y₂O₃)
+  equivalent; prices are free on board (FOB) China per Argus Rare Earths.
+
+  Unlike most heavy rare earth elements for which USGS only reports aggregate REO
+  totals requiring basket-share derivation, the USGS MCS 2025 Yttrium chapter
+  directly reports world mine production of Y₂O₃ as 15,000–20,000 tonnes, making
+  the production estimate more reliable than for other HREEs. The midpoint of this
+  range (~17,500 t) is used as the central estimate. The implied Y₂O₃ basket share
+  in the 390,000 t 2024e world REO total is approximately 3.8–5.1% (midpoint ~4.5%).
+
+  Y is commercially traded primarily as Y₂O₃ at ≥99.9% purity (standard grade) or
+  ≥99.999% purity (optical-grade for laser and phosphor applications), and as yttrium
+  metal at ≥99.9% purity for metallurgical additions. The USGS Yttrium chapter tracks
+  two price series: Y₂O₃ at 99.999% minimum purity and yttrium metal at 99.9% minimum
+  purity, both FOB China (Argus Rare Earths). USGS does not report per-country Y₂O₃
+  production tonnage; country-level shares are inferred from USGS qualitative statements
+  and the relative REO production totals in the Rare Earths chapter. Mountain Pass
+  bastnaesite was estimated to contain approximately 0.12% yttrium of rare-earth
+  elements per USGS MCS 2025 Yttrium chapter. Yttrium ore production in the United
+  States is reported as NA by USGS for all years 2020–2024.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 17500
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 Yttrium chapter directly reports world mine production of Y₂O₃
+      equivalent contained in rare-earth mineral concentrates as 15,000–20,000 tonnes
+      (2024e). This is a directly reported range, not a basket-share derivation —
+      unlike most heavy rare earth elements. The midpoint of 17,500 t is used as the
+      central estimate; the full range spans 15,000–20,000 t. Using the midpoint
+      against the USGS-reported 390,000 t 2024e world REO total (Rare Earths chapter)
+      implies a Y₂O₃ basket share of approximately 4.5% (range 3.8–5.1%), substantially
+      higher than lighter REE basket shares because Y is strongly enriched in ion
+      adsorption clay deposits (8–15% Y₂O₃) relative to bastnaesite (0.12% at Mountain
+      Pass) and monazite (~1–3% Y₂O₃). USGS states: "Most of this production took
+      place in China and Burma." China's Ministry of Industry and Information Technology
+      allocated 19,150 t of the 2024 rare-earth mining quota to ion-adsorption clays
+      (IAC), which are the primary yttrium ore type; the remaining 250,850 t was
+      allocated to light rare earths (bastnaesite-dominant). IAC deposits at Y₂O₃
+      concentrations of 8–15% would yield approximately 1,500–2,900 t from the official
+      19,150 t IAC quota alone; undocumented production and broader Chinese IAC
+      operations imply substantially higher actual output. China exported an estimated
+      3,100 t Y₂O₃ equivalent in 2024 (leading destinations: Japan, US, Netherlands,
+      Republic of Korea) per USGS, confirming meaningful production well above the
+      official IAC quota figure. The 2023 world total would be approximately 14,400–
+      19,200 t applying the same range to 376,000 t total REO reported for 2023.
+      Confidence is medium (directly reported USGS range vs. low for basket derivations).
+    source_id: usgs_mcs_2025_yttrium
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 75.0
+        notes: |
+          USGS MCS 2025 Yttrium chapter states China produced most world yttrium from
+          weathered clay ion-adsorption ore deposits in southern provinces — primarily
+          Fujian, Guangdong, and Jiangxi, with lesser deposits in Guangxi and Hunan.
+          China's 2024 REE mining quota of 270,000 t REO (Rare Earths chapter footnote
+          14) included 19,150 t from ion-adsorption clays, the primary yttrium ore type.
+          China's actual IAC output (and thus Y production) includes undocumented
+          production beyond the quota. The 75% country share is an estimate derived from
+          USGS qualitative statements; the proportional REO share alone (270,000 /
+          390,000 = 69.2%) understates China's yttrium dominance because southern
+          Chinese IAC deposits are substantially enriched in Y relative to bastnaesite.
+          China exported 3,100 t Y₂O₃ equivalent in 2024 (USGS Yttrium chapter), which
+          represents a lower bound on Chinese Y production given domestic consumption.
+        source_id: usgs_mcs_2025_yttrium
+      - country: MM
+        share_pct: 15.0
+        notes: |
+          USGS MCS 2025 Yttrium chapter explicitly cites Burma (Myanmar) as the other
+          primary Y producer, from "similar clay deposits" (ion adsorption clay). Burma's
+          2024 total REO output was 31,000 t (7.9% of world per Rare Earths chapter),
+          down from 43,000 t in 2023 (-28% YoY). Burmese IAC deposits (primarily Kachin
+          State and Shan State) are heavy-REE-enriched and contain above-average Y₂O₃
+          fractions (~8–15%); at 15% country share of world Y₂O₃, the implied Burma Y
+          output is ~2,600 t. Production is estimated from China import records (Rare
+          Earths footnote 12). Burma's Y₂O₃ contribution exceeds its 7.9% REO share
+          because its deposits are IAC-type and HREE/Y-enriched versus the LREE-dominant
+          mines that dominate global REO tonnage.
+        source_id: usgs_mcs_2025_yttrium
+      - country: ZZ
+        share_pct: 10.0
+        notes: |
+          Residual producers: Thailand (13,000 t REO 2024e, IAC deposits with elevated
+          Y content), India (2,900 t REO from monazite/xenotime in heavy mineral sands,
+          ~1–3% Y₂O₃), Australia (13,000 t REO from Mt. Weld bastnaesite, very low Y
+          ~0.12%), Vietnam (300 t), Russia (2,500 t), Madagascar (2,000 t), Malaysia
+          (130 t), and other (1,100 t) per the Rare Earths chapter. Thailand's IAC-type
+          production contributes above-average Y relative to its REO share; bastnaesite-
+          dominant producers (Australia, Mountain Pass-equivalent sources) contribute
+          below-average Y. Overall contribution from this group is estimated at ~10% of
+          world Y₂O₃ (~1,750 t at midpoint). Country shares are approximate; USGS does
+          not report per-country Y₂O₃ tonnage.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 93.0
+        notes: |
+          USGS MCS 2025 Yttrium chapter reports US import sources 2020–23: China 93%,
+          Germany 3%, other 4%. The chapter notes "Nearly all imports of yttrium metal
+          and compounds are derived from mineral concentrates processed in China."
+          Germany's 3% share reflects re-export and downstream processing of
+          Chinese-origin yttrium intermediates, not independent primary separation.
+          China controls both the dominant IAC ore base and essentially all commercial-
+          scale Y₂O₃ separation and high-purity yttrium processing capacity; no fully
+          commercial rare-earth separation facility existed in the United States in 2024
+          per USGS. China's 2024 separation quota of 250,000 t REO equivalent (USGS
+          Yttrium chapter) includes yttrium separation from both IAC concentrate and
+          mixed REE streams. For high-purity optical-grade Y₂O₃ (99.999%), Chinese
+          specialist separation facilities are essentially the sole commercial source.
+        source_id: usgs_mcs_2025_yttrium
+      - country: DE
+        share_pct: 3.0
+        notes: |
+          Germany accounts for approximately 3% of US yttrium compound imports (2020–23)
+          per USGS. German yttrium processing involves re-processing of Chinese-sourced
+          yttrium intermediates or co-production from mixed REE streams; Germany is not
+          an independent primary yttrium separation source. The 3% share represents a
+          small but non-trivial non-Chinese Y source for US consumers.
+        source_id: usgs_mcs_2025_yttrium
+      - country: ZZ
+        share_pct: 4.0
+        notes: |
+          Remaining 4% of US yttrium imports from other sources (2020–23). These likely
+          include Japan (downstream Y processor), Estonia (Neo Performance Materials,
+          processes Australian/Chinese intermediates), and other minor sources. All
+          are ultimately derived from Chinese-processed mineral concentrates per USGS.
+        source_id: usgs_mcs_2025_yttrium
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 4050000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025 Yttrium chapter explicitly states "Global reserves of Y₂O₃ were
+      not quantified." This derived estimate uses the world REE reserve floor of
+      >90,000,000 t REO reported in the Rare Earths chapter (2025) multiplied by the
+      implied Y₂O₃ basket share (~4.5% midpoint of the 3.8–5.1% range implied by
+      USGS-reported 2024 production). 90,000,000 × 4.5% = 4,050,000 t Y₂O₃ floor
+      estimate. The leading countries for total REO reserves — Australia, Brazil, China,
+      India, Russia, and Vietnam — are the most important for Y resource potential
+      (per USGS Yttrium chapter). However, USGS cautions that recent high demand for
+      IAC rare earths in Burma and China, plus economic conditions, environmental issues,
+      and trade restrictions, could affect availability. This derived figure carries low
+      confidence; actual Y₂O₃ reserves depend on deposit-specific Y content which varies
+      from ~0.1% in bastnaesite to ~8–15% in IAC deposits.
+    source_id: usgs_mcs_2025_yttrium
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 1980000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of world total). Derived Y₂O₃ floor:
+          ~1,980,000 t at 4.5% implied basket share. China's IAC deposits in southern
+          provinces contain 8–15% Y₂O₃, well above the average, making China's actual
+          Y₂O₃ reserve share likely higher than the 48.9% REO share suggests. Bayan Obo
+          bastnaesite (the largest REO deposit by mass) contains very low Y (~0.12%).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 945000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t (second-largest globally). Derived Y₂O₃
+          floor: ~945,000 t. Current Brazilian REE production is minimal (20 t REO in
+          2024e). Brazilian deposits are predominantly LREE-bearing carbonatites (e.g.,
+          Araxá); actual Y₂O₃ fraction may be below the 4.5% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 310500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Derived Y₂O₃ floor: ~310,500 t. India
+          produces from monazite/xenotime in heavy mineral sands; xenotime (YPO₄) is
+          Y-rich (~60% Y₂O₃) and monazite contains ~1–3% Y₂O₃, making Indian reserves
+          broadly in line with the 4.5% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 256500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t (JORC-compliant: 3,300,000 t per Rare
+          Earths footnote 13). Derived Y₂O₃ floor: ~256,500 t. Mt. Weld carbonatite
+          (Lynas) is LREE-dominant; actual Australian Y₂O₃ content is well below the
+          4.5% average (Mountain Pass-type bastnaesite contains ~0.12% Y).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 171000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised). Derived Y₂O₃ floor: ~171,000 t.
+          Kola Peninsula apatite-nepheline deposits are LREE-dominant with low Y content.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        quantity:
+          value: 157500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Vietnam REO reserves: 3,500,000 t (revised). Derived Y₂O₃ floor: ~157,500 t.
+          Vietnam holds large reserves but produces only ~300 t REO per year currently.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    USGS MCS 2025 Yttrium chapter explicitly states global Y₂O₃ reserves were not
+    quantified; all per-country figures derived by applying the ~4.5% implied basket
+    share to country-level REO reserves from the Rare Earths chapter. Reserve data
+    for Russia, South Africa, United States, and Vietnam were revised in the 2025
+    Rare Earths chapter based on company and government reports. Burma — a significant
+    Y producer — has no available reserve data (NA per USGS). World REO reserves
+    floor is >90,000,000 t; actual total may be higher. The leading countries for
+    total REO reserves per USGS Yttrium chapter are Australia, Brazil, China, India,
+    Russia, and Vietnam.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 10.0
+    notes: |
+      Ion adsorption clay (IAC) deposits in southern China (Fujian, Guangdong,
+      Jiangxi, Guangxi, Hunan) and Southeast Asia (Burma/Myanmar) are the dominant
+      commercial yttrium source. USGS MCS 2025 Yttrium chapter identifies China's
+      southern province IAC deposits and Burmese clay deposits as the primary
+      production locations. IAC deposits are weathered granites or tuffaceous rocks
+      in which rare earth ions (including Y³⁺) are adsorbed onto clay mineral surfaces
+      rather than locked in crystalline minerals; they are processed by in-situ or heap
+      leaching with ammonium sulfate solution. Yttrium typically represents 8–15% of
+      total REOs in Chinese southern IAC concentrates (compared to ~0.12% at bastnaesite
+      Mountain Pass), making IAC deposits disproportionately important for Y supply
+      relative to their REO tonnage share. China's 2024 quota of 19,150 t from IAC
+      (of 270,000 t total quota) reflects the smaller REO tonnage but higher per-tonne
+      Y value of these deposits vs. LREE bastnaesite operations.
+    source_id: usgs_mcs_2025_yttrium
+  - substrate: monazite_sand
+    typical_concentration_pct: 2.0
+    notes: |
+      Monazite (rare-earth phosphate) concentrates often contain xenotime (YPO₄,
+      yttrium phosphate) as an associated accessory mineral; xenotime is essentially
+      pure yttrium phosphate and is the richest Y mineral (~60% Y₂O₃). USGS MCS 2025
+      Yttrium chapter notes monazite was produced as a separated concentrate in Florida
+      "that includes yttrium-rich xenotime as part of heavy-mineral-sand concentrates."
+      India produces ~2,900 t REO per year from monazite/xenotime in beach sands.
+      Monazite itself contains ~1–3% Y₂O₃. Thorium content in monazite complicates
+      processing under radioactive materials regulations.
+    source_id: usgs_mcs_2025_yttrium
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.12
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate) is the primary source of light REEs
+      (La, Ce, Pr, Nd) but contains only trace yttrium. USGS MCS 2025 Yttrium chapter
+      states Mountain Pass bastnaesite contains approximately 0.12% yttrium of total
+      rare-earth elements — well below even the global REO basket average (4.5%). While
+      Mountain Pass contributed 45,000 t REO in 2024 (11.5% of world REO total), its
+      actual Y₂O₃ contribution is only ~54 t at 0.12% Y fraction. Bastnaesite at
+      Bayan Obo (China) similarly has below-average Y content. Bastnaesite-type ore
+      is a minor yttrium source despite dominating global REO tonnage.
+    source_id: usgs_mcs_2025_yttrium
+
+substitutes:
+  - application: zirconia_ceramics_stabilizer
+    availability: partial
+    notes: |
+      USGS MCS 2025 Yttrium chapter: "As a stabilizer in zirconia ceramics, Y₂O₃ may
+      be substituted with calcium oxide or magnesium oxide, but the substitutes
+      generally impart lower toughness." Yttria-stabilized zirconia (YSZ) at 3–8 mol%
+      Y₂O₃ produces the tetragonal phase associated with transformation toughening;
+      CaO-stabilized (CSZ) and MgO-stabilized zirconia achieve full cubic stabilization
+      but at lower toughness and poorer thermal cycling resistance. For thermal barrier
+      coatings on jet-engine hot-section components and for medical-grade dental
+      zirconia requiring highest toughness, YSZ has no fully satisfactory substitute.
+      In lower-end ceramic applications (refractories, cutting tool binders), CaO and
+      MgO substitution is commercially practiced.
+    source_id: usgs_mcs_2025_yttrium
+  - application: electronics_lasers_phosphors
+    availability: none
+    notes: |
+      USGS MCS 2025 Yttrium chapter: "In most uses, especially in electronics, lasers,
+      and phosphors, yttrium is generally not subject to direct substitution by other
+      elements." Yttrium-iron garnet (YIG, Y₃Fe₅O₁₂) microwave devices exploit Y's
+      specific lattice parameter and magneto-optical properties; no other material
+      provides the same narrow ferromagnetic resonance linewidth essential for microwave
+      filter and oscillator applications. Yttrium-aluminum garnet (YAG, Y₃Al₅O₁₂) laser
+      crystals and phosphor hosts (Y₂O₃:Eu red phosphors, YAG:Ce white-LED converters)
+      similarly have no economically viable Y-free substitutes at comparable performance.
+    source_id: usgs_mcs_2025_yttrium
+
+end_uses:
+  uses:
+    - application: ceramics_ysz_refractories
+      share_pct: 40
+      confidence: low
+      notes: |
+        Yttria-stabilized zirconia (YSZ) is the largest commercial Y application.
+        Y₂O₃ at 3–8 mol% stabilizes the tetragonal or cubic ZrO₂ phase, imparting
+        transformation toughening (t-YSZ) or ionic conductivity (c-YSZ). Applications:
+        (1) Thermal barrier coatings (TBC) on turbine blades and combustion chambers in
+        aircraft engines and industrial gas turbines — the leading aerospace-industrial
+        use. (2) Solid oxide fuel cell (SOFC) electrolytes, where c-YSZ provides O²⁻
+        conductivity at 800–1000°C. (3) Oxygen sensors in automobile engines (λ-sensors)
+        using YSZ's oxygen-ion conductivity. (4) High-temperature refractories for
+        steel continuous-casting nozzles and other metallurgical equipment. (5) Medical-
+        dental zirconia (3Y-TZP) for crowns, bridges, and implant components — one of
+        the fastest-growing Y applications. USGS MCS 2025 Yttrium chapter lists bearings
+        and seals, refractories, jet-engine coatings, and O₂ sensors as ceramic uses.
+        Share is an industry consensus estimate; USGS does not report per-element end-use
+        percentages.
+      source_id: usgs_mcs_2025_yttrium
+    - application: phosphors_displays_lighting
+      share_pct: 25
+      confidence: low
+      notes: |
+        Yttrium-based phosphors include: (1) Y₂O₃:Eu³⁺ (red phosphor), historically the
+        dominant use in cathode-ray tube (CRT) televisions and fluorescent lamps; volume
+        has declined with CRT phase-out but Y₂O₃:Eu remains in specialty fluorescent and
+        UV-lamp applications. (2) YAG:Ce (yttrium aluminum garnet doped with cerium,
+        Y₃Al₅O₁₂:Ce³⁺), the dominant wavelength-converter phosphor for white LED lamps
+        and displays; YAG:Ce converts blue LED emission to broad-spectrum white light and
+        is incorporated in phosphor layers of virtually all white LEDs for general
+        lighting, backlights, and automotive lighting globally. This is the fastest-growing
+        Y phosphor application as white LED adoption continues. (3) YVO₄:Eu and
+        Y₂SiO₅:Ce specialty phosphors for displays and x-ray imaging. USGS MCS 2025
+        Yttrium chapter lists phosphors for flat-panel displays and lighting as leading
+        Y end uses.
+      source_id: usgs_mcs_2025_yttrium
+    - application: catalysts
+      share_pct: 12
+      confidence: low
+      notes: |
+        Yttrium compounds (Y₂O₃, yttrium stabilized catalysts) are used in fluid
+        catalytic cracking (FCC) of petroleum and as promoters in chemical synthesis
+        catalysts. USGS MCS 2025 Yttrium chapter and the Domestic Production and Use
+        section both cite catalysts as a leading Y end use (the Rare Earths chapter also
+        identifies catalysts as the "estimated leading domestic end use of rare earths"
+        in the US). Y₂O₃ improves catalyst thermal stability and selectivity in FCC
+        units processing heavy crude fractions. Share is an industry consensus estimate.
+      source_id: usgs_mcs_2025_yttrium
+    - application: metallurgical_additives_superalloys
+      share_pct: 10
+      confidence: low
+      notes: |
+        Yttrium metal and Y₂O₃ are used in metallurgical applications: (1) Grain-refining
+        additive and deoxidizer in specialty steels and aluminum alloys — USGS MCS 2025
+        Yttrium chapter explicitly cites grain-refining and deoxidizing. (2) Heating-
+        element alloys (e.g., FeCrAl + Y "Kanthal" alloys) — Y additions (~0.1–0.5 wt%)
+        dramatically improve the high-temperature oxidation resistance of iron-chromium-
+        aluminum resistance heaters; used in industrial furnaces, electric stoves, and
+        catalytic converters. (3) Nickel-based superalloys for jet engine and industrial
+        turbine components — Y additions stabilize the α-Al₂O₃ oxide scale against
+        spallation. (4) High-temperature superconductors (HTS): YBCO (YBa₂Cu₃O₇₋δ)
+        rare-earth barium copper oxide wire is the dominant second-generation HTS
+        conductor for MRI magnets, power cables, and future fusion machine coils. USGS
+        cites heating-element alloys, high-temperature superconductors, and superalloys
+        as Y metallurgical uses.
+      source_id: usgs_mcs_2025_yttrium
+    - application: lasers_yag
+      share_pct: 8
+      confidence: low
+      notes: |
+        Yttrium aluminum garnet (YAG, Y₃Al₅O₁₂) is one of the most widely used solid-
+        state laser host crystals. USGS MCS 2025 Yttrium chapter: "Yttrium was an
+        important component in yttrium-aluminum-garnet laser crystals used in dental and
+        medical surgical procedures, digital communications, distance and temperature
+        sensing, industrial cutting and welding, nonlinear optics, photochemistry, and
+        photoluminescence." Nd:YAG (1064 nm) is a mature platform for medical laser
+        surgery, rangefinders, and industrial machining. Er:YAG (2940 nm) is used in
+        dental and dermatological procedures. Ho:YAG (2097 nm) in urological surgery.
+        Tm:YAG (2013 nm) and Yb:YAG (1030 nm) are modern ultrashort-pulse platforms.
+        YAG is also the host for Ce³⁺ in scintillator crystals (YAG:Ce scintillators)
+        used in electron microscopy and x-ray imaging. Significant Y₂O₃ is consumed
+        in YAG boule growth for all these applications.
+      source_id: usgs_mcs_2025_yttrium
+    - application: electronics_yig_microwave
+      share_pct: 5
+      confidence: low
+      notes: |
+        Yttrium-iron garnet (YIG, Y₃Fe₅O₁₂) is the preferred material for microwave
+        and millimeter-wave signal processing components. USGS MCS 2025 Yttrium chapter:
+        "In electronics, yttrium-iron garnets were components in microwave radar to
+        control high-frequency signals." YIG exhibits the narrowest ferromagnetic
+        resonance linewidth of any known material, enabling low-loss, frequency-tunable
+        filters, oscillators, and isolators in military radar, electronic warfare, and
+        communications systems. YIG-based tunable bandpass filters are used in spectrum
+        analyzers, signal generators, and phased-array radar. Small-volume but high-
+        value strategic end use; essentially no substitute.
+      source_id: usgs_mcs_2025_yttrium
+  completeness: complete
+
+prices:
+  - year: 2024
+    value: 6
+    unit: usd_per_kg
+    form: oxide
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: Y₂O₃, minimum 99.999% purity,
+      average price 2024e = $6/kg FOB China. Source: Argus Media Group, Argus Rare
+      Earths (USGS footnote 6). Price decreased from $8/kg in 2023 per USGS chapter
+      text ("In 2024, the average price for Y₂O₃ decreased"). At $6/kg, Y₂O₃ is
+      among the least expensive of the priced rare earth elements, reflecting its
+      relatively high natural abundance in IAC deposits compared to critical HREEs
+      like Dy ($260/kg), Tb ($810/kg), or Eu ($27/kg).
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2023
+    value: 8
+    unit: usd_per_kg
+    form: oxide
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: Y₂O₃ 99.999% minimum purity,
+      2023 average = $8/kg FOB China. Source: Argus Media Group, Argus Rare Earths.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2022
+    value: 12
+    unit: usd_per_kg
+    form: oxide
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: Y₂O₃ 99.999% minimum purity,
+      2022 average = $12/kg FOB China. Price peaked in 2022 alongside the broader
+      REE price run-up driven by EV/magnet demand growth and supply concerns.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2021
+    value: 6
+    unit: usd_per_kg
+    form: oxide
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: Y₂O₃ 99.999% minimum purity,
+      2021 average = $6/kg FOB China.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2020
+    value: 3
+    unit: usd_per_kg
+    form: oxide
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: Y₂O₃ 99.999% minimum purity,
+      2020 average = $3/kg FOB China.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2024
+    value: 33
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: yttrium metal, minimum 99.9%
+      purity, 2024e average = $33/kg FOB China. Source: Argus Media Group, Argus Rare
+      Earths. Price unchanged from 2023 ($33/kg) per USGS ("the average price for
+      yttrium metal remained the same as that in 2023"). Y metal is substantially more
+      expensive than Y₂O₃ (5.5× at 2024 prices) reflecting the energy-intensive
+      reduction process (Ca or Mg reduction of YF₃). Y metal is used in metallurgical
+      applications including FeCrAl heating alloys and superalloy additions.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2023
+    value: 33
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: yttrium metal 99.9% minimum,
+      2023 average = $33/kg FOB China.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2022
+    value: 41
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: yttrium metal 99.9% minimum,
+      2022 average = $41/kg FOB China.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2021
+    value: 39
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: yttrium metal 99.9% minimum,
+      2021 average = $39/kg FOB China.
+    source_id: usgs_mcs_2025_yttrium
+  - year: 2020
+    value: 34
+    unit: usd_per_kg
+    form: metal
+    basis: china_domestic
+    notes: |
+      USGS MCS 2025 Yttrium chapter salient statistics: yttrium metal 99.9% minimum,
+      2020 average = $34/kg FOB China.
+    source_id: usgs_mcs_2025_yttrium
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_yttrium
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Yttrium is classified as critical under the US 2022 Critical Minerals List as
+    part of "rare earth elements" (a group designation). US net import reliance for
+    yttrium compounds and metals was 100% in 2024e (USGS MCS 2025 Yttrium chapter
+    salient statistics), with 93% of imports sourced from China (2020–23 average).
+    Heavy rare earth elements including yttrium are designated as Critical Raw
+    Materials (Annex I) and Strategic Raw Materials (Annex II) under EU Regulation
+    2024/1252 (Critical Raw Materials Act, CRMA); the EU explicitly distinguishes
+    light REEs and heavy REEs as separate CRM/SRM entries. Yttrium's criticality is
+    amplified by: (1) its direct inclusion in China's April 2025 export controls on
+    seven heavy REEs; (2) 100% US import reliance with no commercial domestic
+    separation; (3) its non-substitutability in YAG lasers, YIG electronics, and
+    YSZ thermal barrier coatings for jet engines; (4) its growing role in white-LED
+    phosphors (YAG:Ce) and HTS conductors (YBCO). The USGS Yttrium chapter (footnote 1)
+    notes the Rare Earths chapter trade data include yttrium, confirming Y's
+    classification alongside lanthanides in US critical mineral policy.
+
+geopolitical_events:
+  - date: "2024"
+    event: "Global REE mine production rises to 390,000 t REO in 2024e; China raises IAC clay quota to 19,150 t, China exports 3,100 t Y₂O₃ in 2024"
+    impact: |
+      USGS MCS 2025 Rare Earths chapter reports 2024e world REE production of 390,000 t
+      REO, up from 376,000 t in 2023. Growth driven by China (+15,000 t to 270,000 t),
+      Nigeria (+5,800 t to 13,000 t), and Thailand (+9,400 t to 13,000 t); partially
+      offset by Burma's 28% YoY decline (43,000 → 31,000 t). China's Ministry of
+      Industry and Information Technology raised mining quotas to 270,000 t, allocating
+      19,150 t to ion-adsorption clays (the primary Y ore type) — up from 2023 levels.
+      The USGS Yttrium chapter reports China exported an estimated 3,100 t Y₂O₃
+      equivalent in 2024, with Japan, US, Netherlands, and Republic of Korea as leading
+      destinations. Burma's 28% production decline, driven by conflict-related
+      disruptions to HREE-enriched IAC operations in Kachin and Shan States, had a
+      disproportionate impact on yttrium supply relative to Burma's 7.9% share of REO
+      tonnage, since Burmese deposits are HREE/Y-enriched.
+    source_id: usgs_mcs_2025_yttrium
+  - date: "2025-04"
+    event: "China imposes export licensing controls directly on yttrium — one of seven named heavy REEs"
+    impact: |
+      China's Ministry of Commerce (MOFCOM) announced export control measures requiring
+      licenses for exports of seven heavy rare earth elements: samarium (Sm), gadolinium
+      (Gd), terbium (Tb), dysprosium (Dy), lutetium (Lu), scandium (Sc), and yttrium (Y).
+      Unlike elements such as erbium and ytterbium — which were not directly named —
+      yttrium was explicitly included in the April 2025 controls. The announcement
+      coincided with US tariff escalation and served as a significant geopolitical signal
+      given China's ~93% share of global Y compound supply. Controls create licensing
+      friction for all downstream Y consumers outside China including makers of white-LED
+      phosphors (YAG:Ce), YSZ thermal barrier coatings, YAG laser systems, and YIG
+      microwave components. Strategic Y inventories outside China were limited at the
+      time of the announcement.
+    source_id: china_mofcom_2025_ree_controls
+
+narrative: |
+  Yttrium occupies a distinctive position in the rare earth family: it is not a
+  lanthanide (it is a group 3 d-block element at atomic number 39), but its ionic
+  radius and trivalent chemistry are so similar to the heavy lanthanides that it
+  co-occurs with them in every commercial deposit type and is classified alongside
+  them in USGS reporting. Unlike most heavy rare earth elements for which USGS
+  publishes only a grouped REO total requiring basket-share derivation, yttrium
+  receives a dedicated USGS MCS chapter that directly reports world Y₂O₃ mine
+  production at 15,000–20,000 tonnes (2024e) — making it the best-documented HREE
+  in terms of production statistics. This directly reported range implies a basket
+  share of approximately 3.8–5.1% of global REO production, far larger than most
+  individual lanthanides, reflecting yttrium's exceptional enrichment in ion
+  adsorption clay (IAC) deposits where it can constitute 8–15% of total REOs.
+
+  The commercial story of yttrium centers on three material platforms. First, yttria-
+  stabilized zirconia (YSZ) — the coating that enables modern gas turbines, dental
+  implants, and solid oxide fuel cells — commands the largest demand share (~40%).
+  Second, yttrium-based phosphors including Y₂O₃:Eu (red, legacy CRT/fluorescent) and
+  YAG:Ce (white LED wavelength converter, growing) together account for ~25% of
+  demand. Third, catalysts (~12%), metallurgical applications including FeCrAl
+  heating alloys and YBCO high-temperature superconductors (~10%), and YAG laser
+  crystals (~8%) round out the portfolio. In each application, substitution is either
+  impractical (YIG microwave components, YAG lasers) or costly in performance terms
+  (CaO-stabilized zirconia is lower-toughness than YSZ). US net import reliance for
+  yttrium compounds and metals was 100% in 2024e.
+
+  Yttrium was directly named in China's April 2025 export licensing controls on seven
+  heavy rare earth elements — a geopolitically significant inclusion given China's 93%
+  share of US yttrium import sources (2020–23) and the absence of any commercial-scale
+  Y₂O₃ separation outside China. Both the US and EU have designated rare earth elements
+  including yttrium as critical materials. The combination of irreplaceable roles in
+  jet-engine thermal barrier coatings, LED phosphors, and microwave electronics, with
+  complete US import dependence and direct Chinese export control targeting, makes
+  yttrium one of the most acute supply security exposures in the heavy rare earth basket.
+
+sources:
+  - id: usgs_mcs_2025_yttrium
+    title: Mineral Commodity Summaries 2025 — Yttrium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-yttrium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: china_mofcom_2025_ree_controls
+    title: "Export Control Measures on Rare Earth Elements Including Gadolinium, Samarium, Terbium, Dysprosium, Lutetium, Scandium, and Yttrium"
+    publisher: China Ministry of Commerce (MOFCOM)
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: secondary
