@@ -1,0 +1,510 @@
+symbol: I
+atomic_number: 53
+name: iodine
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports all production, import, and export data in metric tons of
+  elemental iodine content, unless otherwise specified. Commercial iodine is traded
+  primarily as crude iodine crystals (flakes or prills, typically ≥99.5% I purity)
+  and as a range of inorganic and organic derivatives. The reference price used by
+  USGS is the average cost, insurance, and freight (CIF) unit value of U.S. iodine
+  imports in U.S. dollars per kilogram of elemental iodine. Industry publications
+  (cited in USGS Events text) also report spot prices for iodine crystal in $/kg.
+  U.S. domestic production is withheld (W) in all USGS statistics to protect
+  company proprietary data; published world production totals therefore exclude U.S.
+  output (USGS MCS 2025 table footnote 4: "Excludes U.S. production.").
+
+  NOTE on pdftotext layout artifact: the USGS table footnote superscript "4" is
+  appended to the "World total (rounded)" row label; pdftotext merges it into the
+  leading digit of the 2023 figure, rendering "32,600" as "432,600". The correct
+  world totals are 32,600 (2023) and 33,000 (2024e), consistent with the sum of
+  all named-country rows.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 33000
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 pp.92-93: world total mine production (elemental iodine) 2024e =
+      33,000 metric tons (rounded), up from 32,600 metric tons in 2023. IMPORTANT: this
+      world total EXCLUDES U.S. production, which is withheld (W) to protect company
+      proprietary data. U.S. iodine production from three companies in northwestern
+      Oklahoma was estimated to have increased from 2023. The actual global total
+      including U.S. output is therefore higher than 33,000 metric tons. China and
+      Uzbekistan also produce crude iodine, but output is not officially reported and
+      available information was inadequate to make reliable estimates (USGS MCS 2025).
+      As in recent years, Chile was the world's leading producer, followed by Japan
+      and the United States. Excluding U.S. production, Chile accounted for about
+      two-thirds of world production in 2024.
+    source_id: usgs_mcs_2025_iodine
+  mining_by_country:
+    shares:
+      - country: CL
+        share_pct: 66.64
+        quantity:
+          value: 22000
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: |
+          Chile 2024e: 22,000 metric tons (estimated), up from 21,000 in 2023. Chile is
+          the world's leading iodine producer. Iodine is extracted from caliche (sodium
+          nitrate ore) deposits in the Atacama Desert, where iodate minerals co-occur
+          with sodium nitrate in evaporite sequences.
+        source_id: usgs_mcs_2025_iodine
+      - country: JP
+        share_pct: 28.17
+        quantity:
+          value: 9300
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: |
+          Japan 2024e: 9,300 metric tons (estimated), down from 9,900 in 2023. Japan is
+          the world's second-largest iodine producer. Iodine is extracted from brine
+          co-produced with natural gas and oil in fields primarily in Chiba and Miyazaki
+          Prefectures.
+        source_id: usgs_mcs_2025_iodine
+      - country: TM
+        share_pct: 2.33
+        quantity:
+          value: 770
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Turkmenistan 2024e: 770 metric tons (estimated), unchanged from 2023. Reserves: 70,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+      - country: IR
+        share_pct: 2.12
+        quantity:
+          value: 700
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Iran 2024e: 700 metric tons (estimated), unchanged from 2023. Reserves: 40,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+      - country: AZ
+        share_pct: 0.64
+        quantity:
+          value: 210
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Azerbaijan 2024e: 210 metric tons (estimated), up from 200 in 2023. Reserves: 170,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+      - country: ID
+        share_pct: 0.09
+        quantity:
+          value: 30
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Indonesia 2024e: 30 metric tons (estimated), unchanged from 2023. Reserves: NA."
+        source_id: usgs_mcs_2025_iodine
+      - country: RU
+        share_pct: 0.01
+        quantity:
+          value: 3
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Russia 2024e: 3 metric tons (estimated), unchanged from 2023. Reserves: 120,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+    completeness: partial
+  notes: |
+    World mine production 2024e = 33,000 metric tons elemental iodine (rounded),
+    EXCLUDING the United States. Named-country entries sum to 33,013 metric tons vs.
+    stated world ex-US total of 33,000 metric tons; difference is within rounding.
+    U.S. production from three companies in northwestern Oklahoma brine operations is
+    withheld. China and Uzbekistan also produce crude iodine without official reporting.
+    Completeness is partial because U.S., Chinese, and Uzbek production are excluded
+    from the world total. Import sources (2020-23 average): Chile 90%, Japan 9%, other 1%.
+
+reserves:
+  economic_reserves:
+    value: 6200000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 world total reserves: 6,200,000 metric tons elemental iodine.
+      Japan alone holds 4,900,000 metric tons (79% of world total). The sum of all
+      named-country reserves (excluding Indonesia NA) = 6,160,000 metric tons; the
+      stated world total of 6,200,000 likely includes rounding and possibly estimates
+      for unlisted countries. China and Uzbekistan have no officially reported reserves.
+    source_id: usgs_mcs_2025_iodine
+  reserves_by_country:
+    shares:
+      - country: JP
+        share_pct: 79.03
+        quantity:
+          value: 4900000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Japan reserves: 4,900,000 metric tons. World's largest known iodine reserve base, associated with gas and oil brine fields in Chiba and Miyazaki Prefectures."
+        source_id: usgs_mcs_2025_iodine
+      - country: CL
+        share_pct: 9.84
+        quantity:
+          value: 610000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Chile reserves: 610,000 metric tons. Caliche (sodium nitrate ore) deposits of the Atacama Desert."
+        source_id: usgs_mcs_2025_iodine
+      - country: US
+        share_pct: 4.03
+        quantity:
+          value: 250000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "U.S. reserves: 250,000 metric tons. Iodine-rich brine deposits in northwestern Oklahoma (Anadarko Basin)."
+        source_id: usgs_mcs_2025_iodine
+      - country: AZ
+        share_pct: 2.74
+        quantity:
+          value: 170000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Azerbaijan reserves: 170,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+      - country: RU
+        share_pct: 1.94
+        quantity:
+          value: 120000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Russia reserves: 120,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+      - country: TM
+        share_pct: 1.13
+        quantity:
+          value: 70000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Turkmenistan reserves: 70,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+      - country: IR
+        share_pct: 0.65
+        quantity:
+          value: 40000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_iodine
+        notes: "Iran reserves: 40,000 metric tons."
+        source_id: usgs_mcs_2025_iodine
+    completeness: partial
+  notes: |
+    World total reserves = 6,200,000 metric tons elemental iodine per USGS MCS 2025.
+    Japan dominates with 79% of world reserves despite being only the second-largest
+    producer. Indonesia reserves are listed as NA; China and Uzbekistan have no reported
+    reserves despite active production. Share percentages computed against USGS-stated
+    world total (6,200,000 metric tons). Completeness is partial because Indonesia (NA),
+    China, and Uzbekistan have no reported reserves.
+    World resources: Seawater contains 0.06 parts per million iodine; the oceans are
+    estimated to contain approximately 90 billion tons of iodine. Seaweeds of the
+    Laminaria family can accumulate up to 0.45% iodine on a dry basis and represented
+    the major commercial source of iodine prior to 1959 (USGS MCS 2025 World Resources).
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: caliche_ore
+    notes: |
+      Chilean iodine is extracted from caliche — sodium nitrate evaporite deposits of the
+      Atacama Desert. Iodate minerals (predominantly lautarite and dietzeite) co-occur
+      with nitrate salts in the caliche horizon. During leaching operations, iodate ions
+      dissolve with the nitrate and are subsequently reduced with sodium bisulfite to
+      precipitate iodine crystals. Chile produced 22,000 metric tons in 2024e (~67% of
+      world production ex-US). USGS MCS 2025 describes this as production from "Chilean
+      desert nitrate mines."
+    source_id: usgs_mcs_2025_iodine
+  - substrate: gas_and_oil_brine
+    notes: |
+      Iodine-rich brine co-produced with natural gas and oil from deep subsurface
+      reservoirs is the dominant feedstock outside Chile. In Japan (9,300 t/yr in 2024e,
+      world's second-largest producer), iodine is extracted from brine associated with
+      petroleum and gas fields in Chiba and Miyazaki Prefectures; elemental iodine is
+      recovered by oxidizing iodide with chlorine and blowing out the iodine vapor. In
+      the United States (three companies in northwestern Oklahoma), iodine-rich brine is
+      extracted from Anadarko Basin formations. Azerbaijan, Turkmenistan, Russia, and Iran
+      also produce iodine from gas- and oil-field brines. USGS MCS 2025 describes these
+      as production from "gasfields and oilfields in Japan" and "iodine-rich brine wells
+      in northwestern Oklahoma."
+    source_id: usgs_mcs_2025_iodine
+
+substitutes:
+  - application: animal_feed_catalytic_nutritional_pharmaceutical_photographic
+    availability: none
+    notes: |
+      USGS MCS 2025 substitutes: "No comparable substitutes exist for iodine in many of
+      its principal applications, such as in animal feed, catalytic, nutritional,
+      pharmaceutical, and photographic uses." Iodine's unique chemistry — its role as an
+      essential micronutrient (thyroid hormone synthesis requires iodine), the radiopaque
+      properties of iodinated contrast agents in X-ray and CT imaging, and its specific
+      reactivity in catalysis and photographic silver iodide chemistry — makes it
+      essentially irreplaceable in these applications.
+    source_id: usgs_mcs_2025_iodine
+  - application: biocide_colorant_ink
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes: "Bromine and chlorine could be substituted for iodine
+      in biocide, colorant, and ink, although they are usually considered less desirable
+      than iodine." Chlorine and bromine-based disinfectants are effective in many
+      contexts but may underperform iodine at certain pH ranges, temperatures, or against
+      specific pathogens such as Cryptosporidium.
+    source_id: usgs_mcs_2025_iodine
+  - application: iodine_biocides
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes: "Antibiotics can be used as a substitute for iodine
+      biocides." In wound and skin antisepsis, topical antibiotics (such as bacitracin
+      or mupirocin) or alternative antiseptics (chlorhexidine) can replace iodine-based
+      preparations in some clinical settings, though antibiotic resistance concerns limit
+      this substitution.
+    source_id: usgs_mcs_2025_iodine
+
+end_uses:
+  uses:
+    - application: x_ray_contrast_media
+      share_pct: 35
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists X-ray contrast media (XRCM) as the leading worldwide use of
+        iodine in descending order of quantity consumed. Triiodinated benzene derivatives
+        (e.g., iohexol, iomeprol, iopamidol) are used as contrast agents in CT scanning,
+        angiography, myelography, and urography. Share estimate (~35%) is approximate;
+        USGS MCS 2025 does not provide explicit percentage breakdowns for worldwide end
+        uses; the ordering is stated as descending by quantity consumed.
+      source_id: usgs_mcs_2025_iodine
+    - application: pharmaceuticals
+      share_pct: 20
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists pharmaceuticals as the second leading worldwide use of iodine.
+        Applications include antiseptics (povidone-iodine), thyroid disorder treatments,
+        disinfectants, and radiopharmaceuticals (I-131 for thyroid cancer treatment).
+        Share estimate (~20%) is approximate; no explicit percentage stated in chapter.
+      source_id: usgs_mcs_2025_iodine
+    - application: liquid_crystal_displays
+      share_pct: 15
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists liquid crystal displays (LCDs) as the third leading worldwide
+        use of iodine. Iodine is incorporated into polyvinyl alcohol (PVA) polarizing films
+        used in LCD panels for televisions, computer monitors, and smartphones. The growth
+        of consumer electronics drove strong iodine demand in this application.
+        Share estimate (~15%) is approximate.
+      source_id: usgs_mcs_2025_iodine
+    - application: iodophors
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists iodophors as the fourth leading worldwide use of iodine.
+        Iodophors are complexes of iodine with a carrier polymer (commonly
+        polyvinylpyrrolidone, PVP) used as antiseptics and disinfectants in animal
+        husbandry, food processing, and healthcare (e.g., Betadine). Share estimate
+        (~10%) is approximate.
+      source_id: usgs_mcs_2025_iodine
+    - application: animal_feed
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists animal feed as the fifth leading worldwide use of iodine.
+        Iodine is an essential micronutrient added to animal feeds as potassium iodate,
+        calcium iodate, or ethylenediamine dihydroiodide (EDDI) for thyroid function and
+        growth. USGS MCS 2025 also notes no comparable substitutes exist for iodine in
+        animal feed. Share estimate (~10%) is approximate.
+      source_id: usgs_mcs_2025_iodine
+    - application: fluorochemicals
+      share_pct: 6
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists fluorochemicals as the sixth leading worldwide use of iodine.
+        Iodine serves as a catalyst or intermediate in the production of fluorinated
+        organic compounds including fluoropolymers and refrigerants via iodofluorocarbon
+        intermediates. Share estimate (~6%) is approximate.
+      source_id: usgs_mcs_2025_iodine
+    - application: other_uses
+      share_pct: 4
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists other applications including biocides, food supplements, and
+        nylon. Iodized salt (sodium iodate or potassium iodate added to table salt)
+        provides iodine as a dietary supplement to prevent iodine deficiency disorders.
+        Nylon production may use iodine as an additive. U.S. domestic consumption context:
+        crude iodine and inorganic iodine compounds account for approximately 80% of
+        domestic consumption; organic iodine compounds account for about 20% (USGS MCS
+        2025 Domestic Production and Use).
+      source_id: usgs_mcs_2025_iodine
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Iodine is not included on the U.S. 2022 Critical Minerals List, the EU Critical Raw
+    Materials list (CRM 2023/Regulation 2024/1252), or the EU Strategic Raw Materials
+    list (CRMA 2024). Although the U.S. is heavily import-reliant for iodine (net import
+    reliance >50% in 2020-22 and 2024e, <50% in 2023), with Chile supplying 90% and
+    Japan 9% of imports (2020-23 average), the element does not appear on government
+    critical minerals frameworks. U.S. domestic production from Oklahoma brine operations
+    (three companies) provides a meaningful domestic base, and world resources are
+    effectively unlimited given seawater's estimated 90 billion tons of iodine content.
+
+prices:
+  - year: 2024
+    value: 59.00
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average unit value of U.S. iodine imports (CIF),
+      2024e = $59.00 per kilogram elemental iodine. About 4% less than the 2023 CIF
+      value of $61.55/kg.
+    source_id: usgs_mcs_2025_iodine
+  - year: 2024
+    value: 69.00
+    unit: usd_per_kg
+    form: contained_element
+    basis: spot
+    notes: |
+      Industry publications: spot prices for iodine crystal averaged about $69 per
+      kilogram during the first 9 months of 2024 (cited in USGS MCS 2025 Events,
+      Trends, and Issues). About 3% less than the 2023 annual average spot price of
+      $71.48/kg. Spot price basis; partial-year average (9 months).
+    source_id: usgs_mcs_2025_iodine
+  - year: 2023
+    value: 61.55
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. iodine imports (CIF), 2023 = $61.55/kg."
+    source_id: usgs_mcs_2025_iodine
+  - year: 2023
+    value: 71.48
+    unit: usd_per_kg
+    form: contained_element
+    basis: spot
+    notes: "Industry publications 2023 annual average spot price for iodine crystal = $71.48/kg (cited in USGS MCS 2025 Events text)."
+    source_id: usgs_mcs_2025_iodine
+  - year: 2022
+    value: 45.81
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. iodine imports (CIF), 2022 = $45.81/kg."
+    source_id: usgs_mcs_2025_iodine
+  - year: 2021
+    value: 32.72
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. iodine imports (CIF), 2021 = $32.72/kg."
+    source_id: usgs_mcs_2025_iodine
+  - year: 2020
+    value: 31.57
+    unit: usd_per_kg
+    form: contained_element
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average unit value of U.S. iodine imports (CIF), 2020 = $31.57/kg."
+    source_id: usgs_mcs_2025_iodine
+
+geopolitical_events:
+  - date: "2024-07"
+    event: "US iodine producer opens seventh production plant; adds 100-150 t/yr crystalline iodine capacity from Oklahoma brine wells"
+    impact: |
+      One U.S. iodine producer opened a seventh iodine production plant in the second half
+      of 2024, expected to add an additional 100 to 150 metric tons per year of crystalline
+      iodine to the company's annual production (USGS MCS 2025 Events). The same company
+      signed an agreement for an eighth plant expected to become operational in 2025. U.S.
+      production from all three Oklahoma producers was estimated to have increased from
+      2023. This expansion reflects continued investment in domestic iodine supply capacity
+      from Anadarko Basin brine operations.
+    source_id: usgs_mcs_2025_iodine
+  - date: "2024-01"
+    event: "Iodine spot prices decline ~3% from 2023 annual average to ~$69/kg; sales increase on strong global demand"
+    impact: |
+      Spot prices for iodine crystal averaged about $69/kg during the first 9 months of
+      2024, approximately 3% less than the 2023 annual average of $71.48/kg. Despite lower
+      average prices, iodine sales increased in 2024, reflecting strong global demand. The
+      CIF unit value of U.S. iodine imports fell to $59.00/kg in 2024e from $61.55/kg in
+      2023, following a sharp price rise from $32.72/kg in 2021 driven by post-COVID demand
+      recovery and tightening supply. U.S. imports for consumption rose to 3,300 metric
+      tons in 2024e from 2,860 in 2023.
+    source_id: usgs_mcs_2025_iodine
+  - date: "2024-01"
+    event: "Chile produces ~two-thirds of world iodine output (ex-US); Chile 90% and Japan 9% of US import sources (2020-23 average)"
+    impact: |
+      As in recent years, Chile was the world's leading iodine producer (22,000 t in 2024e),
+      followed by Japan (9,300 t) and the United States (withheld). Excluding U.S.
+      production, Chile accounted for about two-thirds of world output in 2024. The
+      concentration of U.S. import sourcing — Chile 90% and Japan 9% on a 2020-23 average
+      basis — represents a supply chain dependence on two geographically distant producers.
+      This dependence is partially offset by three domestic Oklahoma producers, though net
+      import reliance was >50% in most years 2020-2024e.
+    source_id: usgs_mcs_2025_iodine
+
+narrative: |
+  Iodine is a halogen commodity produced from two primary feedstock systems: caliche
+  (sodium nitrate ore) deposits in Chile's Atacama Desert, and iodine-rich brines
+  co-produced with natural gas and oil in Japan, the United States (Oklahoma), Azerbaijan,
+  Turkmenistan, Iran, and Russia. Global mine production excluding the U.S. (withheld)
+  totaled approximately 33,000 metric tons in 2024e, led by Chile (22,000 t, ~67% of
+  the ex-U.S. total) and Japan (9,300 t, ~28%). U.S. production from three Oklahoma brine
+  companies was estimated to have grown from 2023; one company opened a seventh production
+  plant in mid-2024 and contracted an eighth for 2025. China and Uzbekistan also produce
+  crude iodine without official reporting. Three production geographies — Chilean nitrate
+  mines, Japanese gas-field brines, and Oklahoma brine wells — supply the vast majority
+  of global iodine.
+
+  The leading global applications of iodine, in descending order of quantity consumed
+  (USGS MCS 2025), are: X-ray contrast media used in CT scanning and angiography,
+  pharmaceuticals including antiseptics and thyroid medications, polarizing films for
+  liquid crystal displays, iodophors as biocide and disinfectant carriers, animal feed
+  supplements, and fluorochemical intermediates. No comparable substitutes exist for
+  iodine in its principal nutritional, pharmaceutical, catalytic, and photographic
+  applications. This diversity of high-value end uses with limited substitutability gives
+  iodine a structurally stable demand profile. In the U.S., approximately 80% of iodine
+  consumption goes to crude and inorganic compounds and 20% to organic compounds.
+
+  Iodine prices reflected the post-COVID demand cycle: average CIF import values rose
+  from $31.57/kg in 2020 to $61.55/kg in 2023 as demand outpaced supply, then eased to
+  $59.00/kg in 2024e. Industry spot prices averaged $71.48/kg in 2023 and $69/kg in the
+  first nine months of 2024 — about 3% lower but still elevated relative to the 2020 base.
+  Sales volumes increased in 2024 despite lower prices, signaling robust global demand.
+  The U.S. sources 90% of its iodine imports from Chile and 9% from Japan; net import
+  reliance was >50% in most years 2020-2024e. Japan holds the world's largest known
+  iodine reserves (4,900,000 t, 79% of the world total of 6,200,000 t), far exceeding
+  its current production base, because most Japanese brine-field resources remain
+  unexploited. World resources are effectively unlimited on a geological basis — seawater
+  contains an estimated 90 billion tons of iodine — but commercial production is restricted
+  to economically concentrated, low-cost sources.
+
+sources:
+  - id: usgs_mcs_2025_iodine
+    title: Mineral Commodity Summaries 2025 — Iodine
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-iodine.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
