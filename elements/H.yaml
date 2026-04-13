@@ -1,0 +1,247 @@
+symbol: H
+atomic_number: 1
+name: hydrogen
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Hydrogen is commercially supplied mainly as compressed gaseous H2 and, for
+  smaller transport-intensive markets, as liquid cryogenic hydrogen. The IEA's
+  global totals are reported as elemental hydrogen mass, not merchant shipment
+  volumes, and mostly describe captive or adjacent-to-customer production rather
+  than seaborne trade. In practice, most hydrogen is produced near the point of
+  use, with only a minority entering merchant distribution networks.
+
+production:
+- reporting_year: 2024
+  refined:
+    value: 100
+    unit: million_tonnes_per_year
+    form: unspecified
+    approximate: true
+    confidence: high
+    notes: |
+      IEA Global Hydrogen Review 2025 reports that global hydrogen demand and
+      production reached almost 100 Mt in 2024, with less than 1% from
+      low-emissions pathways. Because hydrogen is still predominantly produced
+      close to the point of use and traded only in limited merchant volumes, the
+      global demand total is used here as the best available proxy for refined
+      commercial supply.
+    source_id: iea_ghr_2025_exec
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 33
+        confidence: medium
+        quantity:
+          value: 33
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: medium
+          notes: |
+            IEA Global Hydrogen Review 2025 says China is the world's largest
+            hydrogen market, accounting for nearly one-third of global demand.
+            Because hydrogen is mostly produced and consumed onsite, this demand
+            share is used as a proxy for production geography.
+          source_id: iea_ghr_2025_five_questions
+        notes: |
+          Demand-based production proxy. China also accounts for about 90% of
+          global coal consumption for hydrogen production in the IEA hydrogen
+          tracking data, underscoring its central role in the incumbent supply base.
+        source_id: iea_ghr_2025_five_questions
+      - country: ZZ
+        share_pct: 67
+        confidence: low
+        quantity:
+          value: 67
+          unit: million_tonnes_per_year
+          form: unspecified
+          approximate: true
+          confidence: low
+          notes: |
+            Residual world share after assigning China's approximately one-third
+            demand share. The IEA source does not publish a full current
+            country-by-country production table for hydrogen.
+          source_id: iea_ghr_2025_five_questions
+        notes: |
+          Rest of world. This bucket aggregates the large incumbent refining and
+          chemical markets outside China, including the United States, India, the
+          Middle East, Europe and Southeast Asia.
+        source_id: iea_ghr_2025_five_questions
+    completeness: top_producers_only
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: natural_gas
+    notes: |
+      IEA reports that the supply base remained dominated by fossil fuels in
+      2024, using 290 bcm of natural gas globally. In 2023, around two-thirds of
+      dedicated hydrogen production was met with natural gas.
+    source_id: iea_ghr_2025_exec
+  - substrate: coal
+    notes: |
+      IEA hydrogen tracking reports that around 20% of dedicated hydrogen
+      production in 2023 used coal, mostly in China, which alone accounted for
+      about 90% of global coal consumption for hydrogen production.
+    source_id: iea_hydrogen_tracking_2025
+  - substrate: refinery_and_petrochemical_process_streams
+    notes: |
+      Around one-sixth of global hydrogen supply comes from by-product hydrogen,
+      mainly in the petrochemical industry, rather than from dedicated hydrogen
+      plants.
+    source_id: iea_hydrogen_tracking_2025
+  - substrate: water
+    notes: |
+      Water electrolysis is the key non-fossil production route, but IEA reports
+      that low-emissions hydrogen still accounted for less than 1% of global
+      production in 2024.
+    source_id: iea_ghr_2025_prod
+
+substitutes:
+  - application: emerging_transport_and_power_uses
+    availability: full
+    notes: |
+      IEA reports that hydrogen-based fuels in shipping compete directly with
+      first-generation biofuels and even LNG in the short term, while road
+      transport fuel-cell trucks still face higher total cost of ownership than
+      battery-electric or diesel trucks. In these newer energy uses, hydrogen is
+      one option rather than an irreplaceable input.
+    source_id: iea_ghr_2025_demand
+
+end_uses:
+  uses:
+    - application: oil_refining
+      share_pct: 68
+      notes: |
+        EIA reports that petroleum refiners used 68% of total U.S. hydrogen
+        production in 2018. IEA says global demand in 2024 was still concentrated
+        in established sectors such as refining, ammonia, methanol and fossil-based
+        DRI, so refining remains one of the core incumbent markets globally.
+      source_id: eia_hydrogen_consumption_2024
+    - application: ammonia_and_fertilizers
+      share_pct: 21
+      notes: |
+        EIA reports that nitrogenous fertilizer industries used 21% of total U.S.
+        hydrogen production in 2018. This aligns with IEA's global picture in
+        which ammonia remains one of the dominant established hydrogen uses.
+      source_id: eia_hydrogen_consumption_2024
+    - application: other_chemicals_metals_foods_and_new_uses
+      share_pct: 11
+      notes: |
+        Residual share from the EIA U.S. sector split, covering other chemicals,
+        metal treatment, food processing and smaller uses. IEA adds that globally,
+        methanol, fossil-based DRI and new applications such as biofuels, mobility
+        and power together occupy this remaining portion, with all new
+        applications still below 1% of demand in 2024.
+      source_id: eia_hydrogen_consumption_2024
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+prices: []
+
+geopolitical_events:
+  - date: 2025-01-03
+    event: "U.S. Treasury and IRS issued final Section 45V clean hydrogen tax credit rules"
+    impact: |
+      The final rules provided investment certainty and clarified eligibility for
+      electrolysis-, natural-gas-, renewable-natural-gas- and coal-mine-methane-
+      based hydrogen pathways. For the commercial market, the event mattered less
+      for incumbent grey hydrogen volumes than for whether announced low-emissions
+      projects could move toward financing and construction.
+    source_id: treasury_45v_final_2025
+  - date: 2025-04-11
+    event: "IMO approved the Net-Zero Framework for global shipping"
+    impact: |
+      The framework introduced a marine fuel standard and GHG pricing signal that
+      could create future demand for hydrogen-derived fuels such as e-methanol and
+      ammonia. IEA notes, however, that in the short term the same framework may
+      also favour biofuels or LNG, so the demand pull for hydrogen molecules is
+      real but still uncertain.
+    source_id: imo_net_zero_framework_2025
+
+narrative: |
+  Hydrogen is one of the world's largest industrial molecules, but most of the
+  market is still invisible to end users because it is produced onsite or next
+  door to refineries, ammonia plants, methanol plants and a smaller set of steel
+  operations. IEA's 2025 review puts 2024 supply at almost 100 Mt, still almost
+  entirely fossil-based and still overwhelmingly tied to long-established feedstock
+  uses rather than to the clean-energy use cases that dominate public discussion.
+
+  Commercially, hydrogen is a split market. A minority moves through merchant
+  pipelines, tube trailers or as liquid cryogenic hydrogen; the majority is
+  captive production embedded in refinery and chemical complexes. Natural gas is
+  the dominant feedstock, coal remains important in China, and by-product hydrogen
+  from petrochemical processes still supplies roughly a sixth of the market.
+  Electrolysis is growing quickly from a tiny base, but low-emissions hydrogen
+  remained below 1% of global output in 2024.
+
+  The strategic story in 2025 is therefore not scarcity of hydrogen itself, but
+  whether policy can turn a huge incumbent fossil hydrogen business into a
+  low-emissions one. The U.S. 45V rules and the IMO shipping framework both
+  improved the policy architecture for future demand and investment, but the IEA's
+  assessment is that cost gaps, uncertain offtake and slow infrastructure buildout
+  still dominate the commercial reality.
+
+sources:
+  - id: iea_ghr_2025_exec
+    title: Global Hydrogen Review 2025 - Executive summary
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_ghr_2025_demand
+    title: Global Hydrogen Review 2025 - Demand
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-hydrogen-review-2025/demand
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_ghr_2025_prod
+    title: Global Hydrogen Review 2025 - Production highlights
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-hydrogen-review-2025/production-highlights-2
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_ghr_2025_five_questions
+    title: Global Hydrogen Review 2025 - Five key questions about hydrogen
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/global-hydrogen-review-2025/five-key-questions-about-hydrogen
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_hydrogen_tracking_2025
+    title: Hydrogen - IEA tracking page
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/hydrogen
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eia_hydrogen_consumption_2024
+    title: U.S. refiners and chemical manufacturers lead hydrogen production and consumption
+    publisher: U.S. Energy Information Administration
+    url: https://www.eia.gov/todayinenergy/detail.php?id=61763
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: treasury_45v_final_2025
+    title: U.S. Department of the Treasury Releases Final Rules for Clean Hydrogen Production Tax Credit
+    publisher: U.S. Department of the Treasury
+    url: https://home.treasury.gov/news/press-releases/jy2768
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: imo_net_zero_framework_2025
+    title: IMO approves net-zero regulations for global shipping
+    publisher: International Maritime Organization
+    url: https://www.imo.org/en/MediaCentre/PressBriefings/pages/IMO-approves-netzero-regulations.aspx
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
