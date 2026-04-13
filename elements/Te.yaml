@@ -1,0 +1,439 @@
+symbol: Te
+atomic_number: 52
+name: tellurium
+category: metalloid
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS Mineral Commodity Summaries 2025 reports tellurium quantities in metric tons of
+  tellurium content unless otherwise specified. Commercial output is recovered chiefly as
+  copper telluride from tellurium-bearing copper anode slimes and then further refined into
+  high-purity tellurium metal, tellurium compounds, and tellurium dioxide. The published
+  price series is quoted in U.S. dollars per kilogram for minimum 99.95% purity material
+  free on board U.S. warehouse and minimum 99.99% purity material in warehouse Rotterdam.
+
+production:
+  - reporting_year: 2024
+    refined:
+      value: 980
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 reports 2024 world refinery production at a rounded 980 metric tons of
+        tellurium content, excluding withheld U.S. copper-telluride output. The chapter
+        states that more than 90% of tellurium has historically been produced from anode
+        slimes as a byproduct of electrolytic copper refining, and that U.S. copper
+        telluride from domestic refineries was exported for further processing rather than
+        refined domestically.
+      source_id: usgs_mcs_2025_tellurium
+    mining_by_country:
+      shares: []
+      completeness: partial
+    refining_by_country:
+      shares:
+        - country: BG
+          share_pct: 0.1
+          quantity:
+            value: 1
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tellurium
+          notes: "USGS MCS 2025 table: Bulgaria 2024 estimated refinery production 1 metric ton."
+          source_id: usgs_mcs_2025_tellurium
+        - country: CA
+          share_pct: 2.75
+          quantity:
+            value: 27
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tellurium
+          notes: "USGS MCS 2025 table: Canada 2024 estimated refinery production 27 metric tons."
+          source_id: usgs_mcs_2025_tellurium
+        - country: CN
+          share_pct: 76.45
+          quantity:
+            value: 750
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_tellurium
+          notes: |
+            USGS MCS 2025 table: China 2024 estimated refinery production 750 metric tons.
+            The chapter text adds that China accounted for approximately 75% of estimated
+            global refined tellurium output in 2024.
+          source_id: usgs_mcs_2025_tellurium
+        - country: JP
+          share_pct: 7.14
+          quantity:
+            value: 70
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tellurium
+          notes: "USGS MCS 2025 table: Japan 2024 estimated refinery production 70 metric tons."
+          source_id: usgs_mcs_2025_tellurium
+        - country: RU
+          share_pct: 7.14
+          quantity:
+            value: 70
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tellurium
+          notes: "USGS MCS 2025 table: Russia 2024 estimated refinery production 70 metric tons."
+          source_id: usgs_mcs_2025_tellurium
+        - country: ZA
+          share_pct: 0.41
+          quantity:
+            value: 4
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tellurium
+          notes: "USGS MCS 2025 table: South Africa 2024 estimated refinery production 4 metric tons."
+          source_id: usgs_mcs_2025_tellurium
+        - country: SE
+          share_pct: 4.69
+          quantity:
+            value: 46
+            unit: tonnes_per_year
+            form: concentrate
+            source_id: usgs_mcs_2025_tellurium
+          notes: |
+            USGS MCS 2025 table: Sweden 2024 refinery-production line is reported as
+            concentrates, 46 metric tons tellurium content.
+          source_id: usgs_mcs_2025_tellurium
+        - country: UZ
+          share_pct: 1.33
+          quantity:
+            value: 13
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_tellurium
+          notes: "USGS MCS 2025 table: Uzbekistan 2024 estimated refinery production 13 metric tons."
+          source_id: usgs_mcs_2025_tellurium
+      completeness: complete
+    notes: |
+      USGS publishes tellurium as a refinery-output commodity, not a mine-stage commodity.
+      The named-country refinery subtotal is 981 metric tons versus a rounded published world
+      total of 980 metric tons; share_pct values are therefore calculated against the
+      named-country subtotal rather than the rounded world total.
+
+reserves:
+  economic_reserves:
+    value: 35000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 reports world tellurium reserves at a rounded 35,000 metric tons. The
+      reserves mostly reflect estimated tellurium content of copper reserves, except for
+      China and Sweden where they represent reported tellurium reserves.
+    source_id: usgs_mcs_2025_tellurium
+  reserves_by_country:
+    shares:
+      - country: US
+        share_pct: 10.81
+        quantity:
+          value: 3800
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: |
+          USGS MCS 2025 table: United States reserves 3,800 metric tons tellurium content.
+          The chapter states this is based on identified copper deposits and revised company
+          and Government reports.
+        source_id: usgs_mcs_2025_tellurium
+      - country: CA
+        share_pct: 2.56
+        quantity:
+          value: 900
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: "USGS MCS 2025 table: Canada reserves 900 metric tons."
+        source_id: usgs_mcs_2025_tellurium
+      - country: CN
+        share_pct: 8.82
+        quantity:
+          value: 3100
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: "USGS MCS 2025 table: China reported tellurium reserves 3,100 metric tons."
+        source_id: usgs_mcs_2025_tellurium
+      - country: RU
+        share_pct: 16.51
+        quantity:
+          value: 5800
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: "USGS MCS 2025 table: Russia reserves 5,800 metric tons."
+        source_id: usgs_mcs_2025_tellurium
+      - country: ZA
+        share_pct: 2.28
+        quantity:
+          value: 800
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: "USGS MCS 2025 table: South Africa reserves 800 metric tons."
+        source_id: usgs_mcs_2025_tellurium
+      - country: SE
+        share_pct: 2.11
+        quantity:
+          value: 740
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: "USGS MCS 2025 table: Sweden reported tellurium reserves 740 metric tons."
+        source_id: usgs_mcs_2025_tellurium
+      - country: ZZ
+        share_pct: 56.92
+        quantity:
+          value: 20000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_tellurium
+        notes: |
+          USGS MCS 2025 table: other countries reserves 20,000 metric tons. The chapter
+          notes that reserves for Canada, Sweden, the United States, and Other countries
+          were revised based on company and Government reports.
+        source_id: usgs_mcs_2025_tellurium
+    completeness: complete
+  notes: |
+    The country reserve entries sum to 35,140 metric tons versus a rounded world total of
+    35,000 metric tons. Share_pct values are calculated against the country subtotal so the
+    complete reserve distribution remains internally consistent despite USGS rounding.
+
+byproduct_of: [Cu]
+
+feedstock_origins:
+  - substrate: copper_anode_slimes
+    notes: |
+      USGS MCS 2025 states that tellurium is recovered principally as a byproduct of the
+      electrolytic refining of primary copper, where it accumulates in the residues of
+      copper anodes.
+    source_id: usgs_mcs_2025_tellurium
+  - substrate: lead_refinery_skimmings
+    notes: |
+      USGS MCS 2025 world-resources paragraph states that part of tellurium supply has been
+      derived from skimmings at lead refineries.
+    source_id: usgs_mcs_2025_tellurium
+  - substrate: bismuth_copper_and_lead_zinc_smelter_flue_dusts_and_gases
+    notes: |
+      USGS MCS 2025 world-resources paragraph states that additional tellurium has been
+      derived from flue dusts and gases generated during the smelting of bismuth, copper,
+      and lead-zinc ores.
+    source_id: usgs_mcs_2025_tellurium
+  - substrate: gold_telluride_ores
+    notes: |
+      USGS MCS 2025 identifies gold telluride ores as a potential additional source of
+      tellurium.
+    source_id: usgs_mcs_2025_tellurium
+
+substitutes:
+  - application: thin_film_photovoltaics
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: amorphous silicon and copper indium gallium
+      diselenide are the two principal competitors with cadmium telluride in thin-film
+      photovoltaic solar cells.
+    source_id: usgs_mcs_2025_tellurium
+  - application: thermoelectric_devices
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that bismuth selenide and organic polymers can substitute for
+      bismuth telluride in some thermoelectric devices.
+    source_id: usgs_mcs_2025_tellurium
+  - application: free_machining_steels
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that bismuth, calcium, lead, phosphorus, selenium, and sulfur
+      can be used in place of tellurium in many free-machining steels.
+    source_id: usgs_mcs_2025_tellurium
+  - application: chemical_catalysis
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that several chemical-process reactions catalyzed by tellurium
+      can be carried out with other catalysts or by means of noncatalyzed processes.
+    source_id: usgs_mcs_2025_tellurium
+  - application: rubber_compounding
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that sulfur and or selenium can act as vulcanization agents in
+      place of tellurium in rubber compounding.
+    source_id: usgs_mcs_2025_tellurium
+  - application: solid_lubricants
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that the selenides and sulfides of niobium and tantalum can
+      serve as electrically conducting solid lubricants in place of tellurides of those
+      metals.
+    source_id: usgs_mcs_2025_tellurium
+
+end_uses:
+  uses:
+    - application: solar_power_cells
+      share_pct: 60
+      confidence: high
+      notes: "USGS MCS 2025 estimated 2024 global tellurium consumption: solar power cells 60%."
+      source_id: usgs_mcs_2025_tellurium
+    - application: thermoelectric_devices
+      share_pct: 20
+      confidence: high
+      notes: "USGS MCS 2025 estimated 2024 global tellurium consumption: thermoelectric devices 20%."
+      source_id: usgs_mcs_2025_tellurium
+    - application: metallurgy
+      share_pct: 15
+      confidence: high
+      notes: "USGS MCS 2025 estimated 2024 global tellurium consumption: metallurgy 15%."
+      source_id: usgs_mcs_2025_tellurium
+    - application: other_applications
+      share_pct: 5
+      confidence: high
+      notes: "USGS MCS 2025 estimated 2024 global tellurium consumption: other applications 5%."
+      source_id: usgs_mcs_2025_tellurium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_2025_critical_minerals
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+prices:
+  - year: 2024
+    value: 75
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 annual average U.S. warehouse price for minimum 99.95% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2023
+    value: 79.09
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 annual average U.S. warehouse price for minimum 99.95% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2022
+    value: 70.34
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 annual average U.S. warehouse price for minimum 99.95% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2021
+    value: 69.72
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 annual average U.S. warehouse price for minimum 99.95% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2020
+    value: 59.37
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 annual average U.S. warehouse price for minimum 99.95% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2024
+    value: 80
+    unit: usd_per_kg
+    form: metal
+    basis: europe_domestic
+    region: EU
+    notes: "USGS MCS 2025 annual average Rotterdam warehouse price for minimum 99.99% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2023
+    value: 76.74
+    unit: usd_per_kg
+    form: metal
+    basis: europe_domestic
+    region: EU
+    notes: "USGS MCS 2025 annual average Rotterdam warehouse price for minimum 99.99% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2022
+    value: 68.1
+    unit: usd_per_kg
+    form: metal
+    basis: europe_domestic
+    region: EU
+    notes: "USGS MCS 2025 annual average Rotterdam warehouse price for minimum 99.99% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2021
+    value: 67.26
+    unit: usd_per_kg
+    form: metal
+    basis: europe_domestic
+    region: EU
+    notes: "USGS MCS 2025 annual average Rotterdam warehouse price for minimum 99.99% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+  - year: 2020
+    value: 56.05
+    unit: usd_per_kg
+    form: metal
+    basis: europe_domestic
+    region: EU
+    notes: "USGS MCS 2025 annual average Rotterdam warehouse price for minimum 99.99% purity tellurium."
+    source_id: usgs_mcs_2025_tellurium
+
+geopolitical_events:
+  - date: "2024"
+    event: "First Solar opened a fourth U.S. module factory and continued building a fifth plant scheduled for 2025 commissioning"
+    impact: |
+      USGS MCS 2025 links the expansion to expected U.S. solar-panel capacity of 14 gigawatts
+      per year by the end of 2026. Because cadmium telluride thin-film solar cells are the
+      dominant tellurium use, this adds a visible North American demand-growth vector to an
+      otherwise byproduct-constrained market.
+    source_id: usgs_mcs_2025_tellurium
+
+narrative: |
+  Tellurium is a classic byproduct critical mineral: its supply responds first to copper
+  refinery throughput, not to tellurium price. USGS MCS 2025 says more than 90% of
+  historical tellurium supply has come from copper anode slimes, and the 2024 refinery table
+  shows a market dominated by China at about three-quarters of global refined output. The
+  United States recovered copper telluride at two electrolytic copper refineries in Texas and
+  Utah, but did not refine tellurium domestically; that intermediate was exported for further
+  processing while downstream firms imported refined tellurium, compounds, and dioxide.
+
+  Demand is concentrated even more tightly than supply. USGS estimates that 60% of 2024
+  global tellurium consumption went into cadmium telluride solar cells, with thermoelectric
+  devices another 20% and metallurgy 15%. That makes tellurium strategically important not
+  because of large tonnage, but because a single energy-transition use now anchors the market
+  while output still depends on copper-refining residues and a small number of specialist
+  recovery circuits.
+
+  Commercially, the market split in 2024 between a well-supplied North American warehouse
+  market and a tighter European market facing higher costs to source material from China. The
+  U.S. annual average price fell 5% to $75/kg, while the European average rose 4% to $80/kg.
+  At the same time, First Solar expanded domestic CdTe module manufacturing, underscoring the
+  central tellurium reality: refined availability can stay tight even when end-use growth is
+  strong, because the element is chained to upstream copper and other host-metal flows.
+
+sources:
+  - id: usgs_mcs_2025_tellurium
+    title: Mineral Commodity Summaries 2025 — Tellurium
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-tellurium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: us_federal_register_2025_critical_minerals
+    title: Final 2025 List of Critical Minerals
+    publisher: Federal Register / U.S. Geological Survey
+    url: https://www.federalregister.gov/documents/2025/11/07/2025-19813/final-2025-list-of-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
