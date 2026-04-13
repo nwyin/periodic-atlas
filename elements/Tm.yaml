@@ -1,0 +1,548 @@
+symbol: Tm
+atomic_number: 69
+name: thulium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a grouped commodity chapter ("rare
+  earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element tonnage
+  is not published for individual REEs. Per-element attribution for thulium requires
+  multiplying the aggregate by Tm's typical basket share (~0.07%), which is not
+  reported directly by USGS. Thulium is commercially traded primarily as Tm2O3
+  (thulium(III) oxide) at ≥99.9% purity for optical and laser applications, and as
+  irradiated Tm2O3 targets for Tm-170 radioisotope production. USGS MCS 2025 salient
+  statistics table does not list thulium oxide as a tracked price commodity (the table
+  covers only Ce, Dy, Eu, La, mischmetal, Nd, and Tb). All production and reserve
+  figures in this file are derived by multiplying USGS-reported aggregate REO totals by
+  Tm's typical basket share of ~0.07% (global weighted average). This basket share
+  varies strongly by deposit type: bastnaesite (Mountain Pass CA, Bayan Obo CN) yields
+  ~0.02–0.05% Tm2O3; ion adsorption clay deposits (southern China, Myanmar, Thailand)
+  yield ~0.2–0.5% Tm2O3 due to heavy-REE enrichment. Thulium is among the rarest
+  commercially recovered lanthanides by basket share — comparable to lutetium (~0.04%)
+  and rarer than holmium (~0.15%), europium (~0.10%), and all lighter REEs. All data
+  are in metric tons REO equivalent unless otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 270
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent (2023: 376,000 t). Multiplying by Tm's typical basket
+      share of ~0.07% gives ~273 t Tm2O3, rounded to ~270 t for this estimate.
+      Thulium's basket share is not reported separately by USGS; the 0.07% figure
+      is an industry consensus estimate for the global weighted average across all
+      deposit types. Ion adsorption clay deposits (contributing ~11% of world REO in
+      2024 from Myanmar and Thailand) have substantially higher Tm content (0.2–0.5%)
+      than bastnaesite-dominant mines (0.02–0.05%), meaning China's southern provinces
+      and Southeast Asian producers contribute a disproportionate share of global Tm
+      output relative to their REO tonnage. Thulium output is not officially disaggregated
+      from the REE basket in public USGS data. The 2023 comparable estimate is ~263 t
+      at the same 0.07% share applied to 376,000 t world total. Confidence is low
+      because both the basket share estimate and the world REO total (rounded) carry
+      meaningful uncertainty.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        notes: |
+          China 2024e REE total: 270,000 t REO (USGS footnote 14: production quota;
+          excludes undocumented production). China share: 270,000 / 390,000 = 69.2%.
+          Derived Tm2O3 share: ~189 t at 0.07% basket fraction. China's southern ion
+          adsorption clay deposits in Jiangxi, Fujian, and Guangdong are substantially
+          enriched in heavy REEs including Tm, meaning China's actual share of global
+          Tm output likely exceeds 69%. Production increased from 255,000 t REO in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain
+          Pass, CA (MP Materials), valued at ~$260 million. Share: 45,000 / 390,000 =
+          11.5%. Derived Tm2O3 share: ~32 t at 0.07% basket fraction; actual US Tm
+          contribution is likely below this because Mountain Pass bastnaesite is
+          strongly LREE-dominant with very low Tm content (~0.02–0.05%). Production
+          up from 41,600 t REO in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO (USGS footnote 12: estimated
+          from Chinese import data), 7.9% of world total. Derived Tm2O3 share: ~22 t
+          at 0.07% basket fraction; actual Myanmar Tm contribution may be significantly
+          above this because Myanmar's deposits are predominantly HREE-enriched ion
+          adsorption clays. Production declined from 43,000 t in 2023 (-28% YoY).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        notes: |
+          Australia 2024e REE total: 13,000 t REO (USGS footnote 12), 3.3% of world
+          total. Derived Tm2O3 share: ~9 t. Lynas Rare Earths mines Mount Weld
+          carbonatite deposit (Western Australia), processed at LAMP (Malaysia). Mt.
+          Weld bastnaesite-carbonatite is LREE-dominant with below-average Tm content.
+          Production down from 16,000 t in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO (USGS footnote 12), 3.3% of world
+          total. Derived Tm2O3 share: ~9 t. Production increased from 7,200 t in 2023
+          (+81% YoY). Nigeria produces primarily from monazite and xenotime in alluvial
+          deposits. USGS cites Nigeria as a key driver of 2024 global REO production
+          growth. Reserves reported as NA by USGS.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO (USGS footnote 12), 3.3% of world
+          total. Derived Tm2O3 share: ~9 t. Production more than tripled from 3,600 t
+          in 2023 (+261% YoY). Thailand produces from ion adsorption clay deposits
+          and alluvial tin-mining residues; some Thai deposits are HREE-enriched and
+          may yield above-average Tm fractions. Reserves: 4,500 t REO per USGS.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        notes: |
+          Rest-of-world 2024e: India 2,900 + Russia 2,500 + Madagascar 2,000 +
+          Other 1,100 + Vietnam 300 + Malaysia 130 + Brazil 20 ≈ 8,950 t REO,
+          ~2.3% of world total. Derived combined Tm2O3 contribution: ~6 t at 0.07%
+          basket fraction. Vietnam's ion adsorption-type occurrences may have
+          above-average Tm content.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 90
+        notes: |
+          China controls approximately 90% of global REE separation and refining
+          capacity, including Tm2O3 production and Tm metal manufacturing.
+          High-purity Tm2O3 (≥99.9%) for optical and laser applications requires
+          multi-stage solvent extraction conducted almost entirely in Chinese REE
+          separation facilities (Jiangxi, Fujian, Sichuan, Inner Mongolia). Per
+          USGS MCS 2025: China supplied 70% of US REE compound and metal imports
+          (2020–23 average). Essentially all refined Tm2O3 for commercial laser
+          and radioisotope production originates from Chinese refineries.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 7
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Mt. Weld (Australia) concentrate through solvent extraction, producing
+          separated REO products including a HREE-fraction oxide that contains Tm.
+          USGS cites Malaysia as 13% of US REE compound and metal import sources
+          (2020–23). LAMP is the largest non-Chinese REE separation facility globally;
+          Tm separation from the HREE fraction is a minor component of LAMP output.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Early-stage non-Chinese REE separation: Neo Performance Materials Sillamäe
+          (Estonia, 5% of US REE imports 2020–23) and Japan-based processors (6% of
+          US REE imports 2020–23). Both source feed from Australian and Chinese
+          intermediates per USGS chapter text. Some Tm separation occurs in Japan
+          for high-purity optical glass and laser feedstock supply chains.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO, up from 376,000 t in 2023.
+    Applying 0.07% Tm basket share gives ~270 t Tm2O3 equivalent in 2024e
+    vs. ~263 t in 2023. Country-level Tm2O3 tonnage is further derived and
+    carries low confidence. Countries with no reported mine production (Canada,
+    Greenland, South Africa, Tanzania) had zero or NA production per USGS.
+    Basket share of 0.07% is a central estimate; the actual global weighted
+    average may be 0.05–0.10% depending on the mix of ion adsorption clay
+    vs. bastnaesite production.
+
+reserves:
+  economic_reserves:
+    value: 63000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world REE reserves >90,000,000 t
+      REO equivalent (stated as a floor value). Applying Tm's estimated ~0.07%
+      basket share gives ~63,000 t Tm2O3 as a floor. USGS does not report
+      per-element reserve breakdowns; all Tm-specific reserve figures are derived
+      from aggregate REO totals. Confidence is low because (1) the world REO
+      total is a floor, not an exact figure, and (2) the 0.07% Tm basket share
+      is an estimate with substantial deposit-level variability. Actual Tm
+      reserves could be meaningfully higher given the prevalence of HREE-enriched
+      deposits not fully quantified in USGS aggregate data.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 30800
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of the >90 Mt floor).
+          Derived Tm2O3: ~30,800 t (44,000,000 × 0.07%). Bayan Obo holds the
+          bulk of Chinese reserves by mass; southern ion adsorption clay deposits
+          contribute Tm-enriched resources not fully quantified in USGS data.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 14700
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t (23.3% of world floor). Derived
+          Tm2O3: ~14,700 t. Large carbonatite and laterite deposits (ARAXÁ,
+          others), mostly unexploited. Current production was only 20 t REO
+          in 2024e.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 4830
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Derived Tm2O3: ~4,830 t. Primarily
+          monazite-bearing beach sand deposits along the eastern and western
+          coasts. India produces ~2,900 t REO/year from these operations.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 3990
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t total (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Derived Tm2O3: ~3,990 t. Mount Weld
+          (Lynas) is the principal Australian reserve base.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 2660
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government
+          reports in MCS 2025 edition). Derived Tm2O3: ~2,660 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        quantity:
+          value: 2450
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Vietnam REO reserves: 3,500,000 t (revised). Derived Tm2O3: ~2,450 t.
+          Dong Pao and other northwest Vietnam deposits; ion adsorption-type
+          occurrences may be HREE-enriched with above-average Tm content.
+          Vietnam produces only ~300 t REO/year.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 5.7
+        quantity:
+          value: 4190
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Rest-of-world quantified reserves: US 1,900,000 + Greenland 1,500,000 +
+          Tanzania 890,000 + South Africa 860,000 + Canada 830,000 + Thailand 4,500
+          ≈ 5,985,000 t REO, ~5.7% of the 90 Mt floor used as denominator.
+          Derived Tm2O3: ~4,190 t applying the 0.07% global basket average. Burma,
+          Madagascar, Malaysia, and Nigeria reserves reported as NA by USGS.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves reported as >90,000,000 t REO (floor value) per USGS
+    MCS 2025. Reserves were revised for Russia, South Africa, United States, and
+    Vietnam. All Tm2O3 reserve figures derived from REO totals using ~0.07% basket
+    share; actual per-element data is not publicly disaggregated by USGS. Countries
+    with NA reserves (Burma, Madagascar, Malaysia, Nigeria) are not included in the
+    quantified reserve base.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 0.35
+    notes: |
+      Ion adsorption clay deposits (weathered granite clays in southern China —
+      Jiangxi, Guangdong, Fujian — and similar deposits in Myanmar and Thailand)
+      are the primary commercial source of thulium. These HREE-enriched deposits
+      yield Tm2O3 content of approximately 0.2–0.5% of total REO, well above the
+      global basket average of ~0.07%. Leaching uses ammonium sulfate or ammonium
+      bicarbonate solution, either by heap-leach or in-situ methods. USGS MCS 2025
+      identifies Myanmar and Thailand REO production as derived from such deposits,
+      consistent with their HREE-dominant output profiles.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.03
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate mineral) is the dominant global REE
+      ore by volume but contains very low Tm2O3 (~0.02–0.05%). Mountain Pass, CA
+      (MP Materials bastnaesite mine, confirmed as primary US production source in
+      USGS MCS 2025) and Bayan Obo (China) are the largest bastnaesite producers.
+      While bastnaesite contributes the largest share of total REO by mass, it is a
+      minor source of Tm relative to ion adsorption clays.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.07
+    notes: |
+      Monazite (rare-earth phosphate mineral) contains approximately 0.05–0.10%
+      Tm2O3. Recovered as a co-product from heavy-mineral-sand operations (rutile,
+      ilmenite, zircon) or stockpiled as a separated concentrate. USGS MCS 2025
+      confirms monazite was stockpiled in the southeastern United States in 2024
+      and is produced in Nigeria, India, and other countries. Thorium contamination
+      (~5–10% ThO2 in monazite) requires licensed handling and constrains
+      processing options.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally
+      are less effective." For thulium's niche applications, partial substitution is
+      possible but no single alternative replicates the full performance profile.
+      The narrow set of applications and small market scale limit the commercial
+      urgency of substitution research relative to higher-volume REEs.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: portable_xray_radioisotope
+    availability: partial
+    notes: |
+      In industrial radiography applications using radioisotope X-ray sources, Tm-170
+      (half-life 128.6 days, generates Yb K X-rays at ~52–59 keV) can be partially
+      substituted by iridium-192 (Ir-192, higher energy gamma, used for thicker
+      materials), selenium-75 (Se-75, lower energy, similar gamma range), or ytterbium-
+      169 (Yb-169, comparable energy to Tm-170). The choice depends on material
+      thickness, required energy, and access to reactor irradiation facilities. None
+      replicates the specific energy spectrum and compact source geometry of Tm-170
+      across all applications.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: lasers_fiber_and_solid_state
+    availability: partial
+    notes: |
+      In surgical and medical laser applications at ~2 µm wavelength, holmium:YAG
+      (Ho:YAG, 2.09 µm) and erbium:YAG (Er:YAG, 2.94 µm) can partially substitute
+      for thulium:YAG (Tm:YAG, 2.01 µm) in some soft-tissue and urological
+      applications, with different tissue interaction profiles. For Tm-doped fiber
+      lasers in the 1.9–2.1 µm range, erbium-doped fiber amplifiers (EDFA, 1.5 µm)
+      and holmium-doped fiber systems provide partial coverage at different wavelengths.
+      No substitute provides equivalent performance in the specific 1.9–2.0 µm window
+      where Tm-fiber lasers excel for atmospheric transmission and water absorption.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: specialty_glass_ceramics_optics
+      share_pct: 40
+      confidence: low
+      notes: |
+        Tm2O3 is incorporated into specialty optical glass and ceramics as a dopant
+        for near-infrared absorption, optical fiber amplifiers (Tm-doped fiber for
+        the 1.45–1.53 µm and 1.9–2.1 µm spectral windows), and laser gain medium
+        hosts. Tm3+ ions in glass matrices exhibit characteristic absorption bands
+        useful for optical filtering. Tm-doped garnet crystals (Tm:YAG, Tm:LiYF4)
+        are laser host materials. USGS MCS 2025 lists ceramics and glass as a REE
+        end-use category. Share is a Tm-specific industry estimate; USGS does not
+        report per-element end-use percentages.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: lasers_fiber_and_solid_state
+      share_pct: 35
+      confidence: low
+      notes: |
+        Thulium-doped lasers constitute the fastest-growing Tm application. Tm:YAG
+        solid-state lasers operating at 2.01 µm are used in soft-tissue surgery
+        (urology, otolaryngology), where water's high absorption at ~2 µm limits
+        thermal spread in tissue. Tm-doped fiber lasers (1.9–2.1 µm, multi-watt
+        to kilowatt class) serve industrial cutting of polymers, remote sensing
+        LIDAR, and countermeasure systems where the 2 µm atmospheric transmission
+        window is advantageous. Tm-doped fiber amplifiers extend optical
+        communication to the S-band (1.46–1.53 µm) and emerging L+-band.
+        Growing demand for Tm-fiber lasers in industrial applications is the
+        primary driver of commercial Tm2O3 consumption growth. Share is an
+        industry estimate; USGS does not report per-element end-use data.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: portable_xray_radioisotope
+      share_pct: 15
+      confidence: low
+      notes: |
+        Thulium-170 (produced by neutron activation of Tm-169 in nuclear reactors:
+        ⁶⁹Tm + n → ⁷⁰Tm-170) is a portable gamma and X-ray source used in industrial
+        nondestructive testing and field radiography. Tm-170 decays (half-life 128.6 d)
+        primarily by beta emission to excited Yb-170, which emits characteristic X-rays
+        at 52–59 keV — suitable for imaging welds, castings, and light structural
+        components where electrical power is unavailable. This application consumes
+        Tm2O3 to manufacture reactor irradiation targets. Although small in absolute
+        volume, it represents one of the unique demand drivers for Tm that has no
+        counterpart among the lighter lanthanides. Share is an industry estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_uses
+      share_pct: 10
+      confidence: low
+      notes: |
+        Other thulium applications include: Tm-doped crystals and powders in
+        upconversion phosphors (Tm3+ provides blue emission under 980 nm excitation
+        in Er/Tm co-doped upconversion systems); Tm metal in specialized alloys;
+        minor additions to permanent magnet alloys; and research-grade Tm compounds
+        for spectroscopy and quantum information experiments. Share is an estimate
+        aggregating several minor applications.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices: []
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Thulium is classified as critical under the US 2022 Critical Minerals List as
+    part of "rare earth elements" (a group designation covering both light and heavy
+    REEs, including Tm). Heavy rare earth elements — including Tm as a heavy
+    lanthanide — are designated as Critical Raw Materials (Annex I) and Strategic
+    Raw Materials (Annex II) under EU Regulation 2024/1252 (Critical Raw Materials
+    Act, CRMA). US net import reliance for REE compounds and metals was 80% in 2024e
+    (USGS MCS 2025); Tm separation from the REE basket occurs almost entirely in
+    China, making effective Tm import reliance essentially 100%. While Thulium was
+    not directly targeted by China's April 2025 HREE export licensing controls (which
+    named Sm, Gd, Tb, Dy, Lu, Sc, and Y), the regulatory infrastructure governing
+    heavy REE exports from China applies to the entire HREE-enriched product stream
+    that contains Tm.
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "Global REE mine production rose to 390,000 t REO in 2024e, expanding available thulium feedstock"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t REO, up from
+      376,000 t in 2023 (+3.7%). Applying a 0.07% Tm basket share, estimated global
+      Tm2O3 production was approximately 270 t in 2024e vs. ~263 t in 2023. Growth
+      was driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+      and Thailand (+9,400 t to 13,000 t), partially offset by Burma's decline
+      (-12,000 t to 31,000 t). Myanmar's decline is particularly relevant to Tm
+      supply because its HREE-enriched deposits contribute a disproportionate share
+      of Tm relative to their REO tonnage. Thailand's growth — from HREE-bearing
+      ion adsorption clays — partially offsets this loss in Tm terms.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US net import reliance for REE compounds and metals declined to 80% in 2024e, but Tm separation remains fully import-dependent"
+    impact: |
+      US domestic REE compound and metal production reached 7,600 t total in 2024
+      (USGS footnote 3), up from 1,920 t in 2023, reflecting Mountain Pass NdPr
+      compound processing and Utah operations. Despite the improvement in aggregate
+      REE import reliance, no US domestic Tm separation or high-purity Tm2O3
+      production capacity exists. Thulium for laser and optical applications as
+      well as Tm-170 radioisotope target production continues to be sourced entirely
+      from Chinese-origin or China-processed material. Import sources 2020–23:
+      China 70%, Malaysia 13%, Japan 6%, Estonia 5%.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2025-04"
+    event: "China imposes export licensing controls on seven heavy rare earth elements; thulium not directly listed but HREE basket dynamics affected"
+    impact: |
+      China's Ministry of Commerce (MOFCOM) announced export control measures
+      requiring licenses for exports of seven heavy rare earth elements: samarium
+      (Sm), gadolinium (Gd), terbium (Tb), dysprosium (Dy), lutetium (Lu), scandium
+      (Sc), and yttrium (Y). Thulium was not explicitly named in the controlled list.
+      However, the controls apply to refined HREE oxide products and concentrates
+      that contain the regulated elements; since Tm is co-processed with the named
+      HREEs in the same ion adsorption clay separation streams, HREE concentrate
+      export licenses may effectively encompass Tm-bearing fractions. Heavy REE
+      oxide prices rose sharply following the announcement. The development increases
+      the strategic risk profile of all heavy rare earth elements, including Tm,
+      and reinforces the urgency of non-Chinese HREE separation capacity investment.
+    source_id: china_mofcom_2025_ree_controls
+
+narrative: |
+  Thulium (Tm, Z=69) is among the scarcest of the commercially recovered lanthanides
+  by basket share — approximately 0.07% of the global rare earth oxide basket — yielding
+  an estimated world output of roughly 270 tonnes Tm2O3 in 2024e (derived from the USGS
+  MCS 2025 aggregate of 390,000 t REO). Its commercial importance is disproportionate to
+  its tonnage, concentrated in three specialized applications that exploit properties
+  unique to the element: rare-earth-doped solid-state and fiber lasers in the 1.9–2.1 µm
+  atmospheric window, specialty optical glass for fiber amplifiers and near-infrared optics,
+  and the Tm-170 radioisotope used as a compact portable X-ray source in field radiography.
+  Unlike the magnet REEs (Nd, Pr, Dy, Tb) that dominate rare earth demand growth from EVs
+  and wind turbines, Thulium's demand profile is driven by specialized photonics and
+  nondestructive testing markets rather than bulk clean-energy applications.
+
+  The Tm:YAG solid-state laser (2.01 µm) and Tm-doped fiber laser systems represent the
+  fastest-growing application segment. The 2 µm wavelength aligns with strong water
+  absorption, enabling precise soft-tissue incision with minimal thermal spread — making
+  Tm lasers competitive with Ho:YAG in urological procedures, otolaryngology, and
+  ophthalmology. Industrial Tm-fiber lasers (multi-watt to kilowatt class) serve polymer
+  cutting, atmospheric LIDAR, and defense countermeasure applications. The Tm-170
+  radioisotope application is niche but unique: reactor-irradiated Tm-169 targets generate
+  compact sources of ~52–59 keV X-rays for field inspection of welds and structural
+  components where portable, battery-free radiography is required.
+
+  Supply is structurally dependent on China's ion adsorption clay sector, where HREE
+  enrichment yields Tm content of 0.2–0.5% of total REO — roughly 3–7 times the global
+  weighted basket average of ~0.07%. China controls approximately 90% of global REE
+  separation and refining capacity. Thulium was not directly targeted by China's April
+  2025 export licensing controls on seven HREEs, but the regulatory infrastructure
+  governing HREE concentrate exports from China creates indirect exposure for Tm supply
+  chains. Both the US Critical Minerals List and EU Regulation 2024/1252 (Critical Raw
+  Materials Act) designate rare earth elements — including heavy REEs such as Tm — as
+  critical and strategic materials. The practical supply risk is less acute than for
+  controlled HREEs like Tb and Dy, but Tm's extremely small production volume (~270 t/y)
+  and concentration in Chinese HREE-enriched deposits means that even minor supply
+  disruptions could materially affect the specialty laser and radioisotope markets it serves.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: china_mofcom_2025_ree_controls
+    title: "Export Control Measures on Rare Earth Elements Including Samarium, Gadolinium, Terbium, Dysprosium, Lutetium, Scandium, and Yttrium"
+    publisher: China Ministry of Commerce (MOFCOM)
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: secondary
