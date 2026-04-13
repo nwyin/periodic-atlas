@@ -1,0 +1,83 @@
+symbol: Cn
+atomic_number: 112
+name: copernicium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Copernicium exists only as individual atoms synthesized in
+  accelerator fusion experiments; lifetimes are reported in milliseconds to
+  seconds, with the longest-lived nuclide observed in primary references lasting
+  on the order of tens of seconds.
+
+research_only:
+  longest_lived_isotope: Cn-285
+  half_life_seconds: 33
+  discovered_year: 1996
+  iupac_recognized_year: 2009
+  discovered_at: |
+    Gesellschaft fur Schwerionenforschung (GSI, now GSI Helmholtzzentrum fur
+    Schwerionenforschung), Darmstadt, Germany. GSI reports first synthesis on
+    1996-02-09 from 70Zn + 208Pb fusion producing 277Cn after one-neutron
+    evaporation. IUPAC later assigned the discovery of element 112 to the
+    Hofmann collaboration at GSI, and the name copernicium with symbol Cn was
+    approved in 2010.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - GSI Darmstadt
+    - JINR Dubna
+    - RIKEN
+  notes: |
+    Copernicium is a research-only superheavy element with no commercial supply
+    chain, no traded metal, and no reserves. GSI first produced element 112 in
+    1996 via 70Zn bombardment of 208Pb targets, while later work at JINR and
+    GSI produced neutron-richer isotopes in 48Ca + 238U reactions and RIKEN
+    reported confirming observations. NNDC ENSDF data identify Cn-285 as the
+    longest-lived copernicium isotope presently evaluated, with a half-life of
+    33 s from 17 observed events.
+
+narrative: |
+  Copernicium has no commercial reality in the atlas sense. It is not mined,
+  refined, traded, stockpiled, or consumed industrially; it is created atom by
+  atom in heavy-ion accelerator experiments to study superheavy-nucleus
+  formation, decay chains, and the approach to the predicted island of enhanced
+  stability.
+
+  The primary-source record is straightforward. GSI reports first synthesis of
+  element 112 on 1996-02-09 using 70Zn projectiles on 208Pb targets, producing
+  277Cn. IUPAC assigned discovery priority to the GSI team in 2009, and its
+  2010 naming recommendation formalized the name copernicium and symbol Cn.
+  Current evaluated NNDC data list Cn-285 as the longest-lived isotope with a
+  33-second half-life, which is long by superheavy standards but still far from
+  any viable material supply chain.
+
+sources:
+  - id: gsi_element_112
+    title: "The Discovery of Element 112 - proposed name COPERNICIUM"
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/work/forschung/nustarenna/nustarenna_divisions/she_physik/research/super_heavy_elements/element_112
+    retrieved: 2026-04-13
+    publication_year: 2009
+    source_tier: primary
+  - id: iupac_discovery_112
+    title: "Discovery of the element with atomic number 112"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://media.iupac.org/publications/pac/2009/pdf/8107x1331.pdf
+    retrieved: 2026-04-13
+    publication_year: 2009
+    source_tier: primary
+  - id: iupac_name_112
+    title: "Name and symbol of the element with atomic number 112 (IUPAC Recommendations 2010)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/82/3/0753/index.html
+    retrieved: 2026-04-13
+    publication_year: 2010
+    source_tier: primary
+  - id: nndc_cn285_ensdf
+    title: "285Cn Adopted Levels"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensnds/285/Cn/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
