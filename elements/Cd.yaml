@@ -1,0 +1,498 @@
+symbol: Cd
+atomic_number: 48
+name: cadmium
+category: transition_metal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Cadmium has no independent mine production — it is recovered exclusively as a byproduct
+  of zinc smelting and refining. USGS MCS 2025 reports world cadmium figures as "Refinery
+  production" (not mine production) in metric tons of cadmium metal content.
+
+  Primary cadmium metal is produced by roasting zinc sulfide concentrates; cadmium is
+  volatilised, collected in flue dust, and reduced to metal (99.95% purity). Commercial
+  trade forms include unwrought cadmium metal and powders, wrought articles, cadmium oxide,
+  cadmium sulfide, and cadmium pigments/preparations based on cadmium compounds. Prices are
+  quoted in US dollars per kilogram for 99.95% purity in 10-ton lots, cost insurance and
+  freight (CIF), global ports, as reported by Fastmarkets MB. Data are in metric tons unless
+  otherwise specified.
+
+byproduct_of: [Zn]
+
+feedstock_origins:
+  - substrate: sphalerite_zinc_ore
+    typical_concentration_pct: 0.03
+    notes: |
+      Cadmium is generally recovered from zinc ores and concentrates. Sphalerite, the most
+      economically significant zinc ore mineral, commonly contains minor amounts of cadmium,
+      which shares certain similar chemical properties with zinc and often substitutes for
+      zinc in the sphalerite crystal lattice. The average cadmium content of typical zinc
+      ores is about 0.03%. The cadmium mineral greenockite (CdS) is frequently associated
+      with weathered sphalerite and wurtzite.
+    source_id: usgs_mcs_2025_cadmium
+  - substrate: zinc_roaster_flue_dust
+    notes: |
+      Cadmium is volatilised during the roasting of zinc sulfide concentrates and collected
+      in flue dusts and bag-house residues. At the only US zinc smelter (Tennessee), primary
+      cadmium metal is recovered as a byproduct of zinc leaching from roasted sulfide
+      concentrates.
+    source_id: usgs_mcs_2025_cadmium
+  - substrate: nickel_cadmium_battery_scrap
+    notes: |
+      Secondary cadmium is mainly recovered from spent consumer and industrial NiCd batteries.
+      Other scrap sources include copper-cadmium alloy scrap, complex nonferrous alloy scrap,
+      cadmium-containing dust from electric-arc furnaces, and CdTe solar panels. In 2024 a
+      company in Ohio shut down its NiCd battery recycling line to focus on lithium-ion
+      battery recycling; a separate Ohio company established in 2022 continued processing
+      consumer and industrial NiCd batteries and planned to refine recovered cadmium to
+      battery-grade purity.
+    source_id: usgs_mcs_2025_cadmium
+
+production:
+- reporting_year: 2024
+  refined:
+    value: 300
+    unit: tonnes_per_year
+    form: metal
+    approximate: false
+    confidence: high
+    notes: |
+      US primary refined cadmium production 2024e (reported): 300 metric tons, produced as
+      a byproduct of zinc leaching from roasted sulfide concentrates at the only domestic
+      zinc smelter in Tennessee. Value estimated at $1.2 million. US secondary production
+      (from NiCd battery scrap) withheld (W) to avoid disclosing company proprietary data.
+    source_id: usgs_mcs_2025_cadmium
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 38.75
+        quantity:
+          value: 9300
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "China 2024e: 9,300 metric tons — the world's largest cadmium refiner by a wide margin."
+        source_id: usgs_mcs_2025_cadmium
+      - country: KR
+        share_pct: 18.75
+        quantity:
+          value: 4500
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Republic of Korea 2024e: 4,500 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: CA
+        share_pct: 7.08
+        quantity:
+          value: 1700
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Canada 2024e: 1,700 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: JP
+        share_pct: 7.08
+        quantity:
+          value: 1700
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Japan 2024e: 1,700 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: MX
+        share_pct: 5.00
+        quantity:
+          value: 1200
+          unit: tonnes_per_year
+          form: metal
+          approximate: false
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Mexico 2024e: 1,200 metric tons (reported, per USGS footnote 10)."
+        source_id: usgs_mcs_2025_cadmium
+      - country: KZ
+        share_pct: 4.17
+        quantity:
+          value: 1000
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Kazakhstan 2024e: 1,000 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: AU
+        share_pct: 3.75
+        quantity:
+          value: 900
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Australia 2024e: 900 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: RU
+        share_pct: 3.33
+        quantity:
+          value: 800
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Russia 2024e: 800 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: PE
+        share_pct: 2.58
+        quantity:
+          value: 620
+          unit: tonnes_per_year
+          form: metal
+          approximate: false
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Peru 2024e: 620 metric tons (reported, per USGS footnote 10)."
+        source_id: usgs_mcs_2025_cadmium
+      - country: NL
+        share_pct: 1.67
+        quantity:
+          value: 400
+          unit: tonnes_per_year
+          form: metal
+          approximate: false
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Netherlands 2024e: 400 metric tons (reported, per USGS footnote 10)."
+        source_id: usgs_mcs_2025_cadmium
+      - country: "NO"
+        share_pct: 1.46
+        quantity:
+          value: 350
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Norway 2024e: 350 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: BG
+        share_pct: 1.25
+        quantity:
+          value: 300
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Bulgaria 2024e: 300 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: US
+        share_pct: 1.25
+        quantity:
+          value: 300
+          unit: tonnes_per_year
+          form: metal
+          approximate: false
+          source_id: usgs_mcs_2025_cadmium
+        notes: "United States 2024e: 300 metric tons (reported, byproduct of zinc refining in Tennessee)."
+        source_id: usgs_mcs_2025_cadmium
+      - country: PL
+        share_pct: 1.04
+        quantity:
+          value: 250
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Poland 2024e: 250 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: UZ
+        share_pct: 0.83
+        quantity:
+          value: 200
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Uzbekistan 2024e: 200 metric tons."
+        source_id: usgs_mcs_2025_cadmium
+      - country: DE
+        share_pct: 0.71
+        quantity:
+          value: 170
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: "Germany 2024e: 170 metric tons (zero in 2023)."
+        source_id: usgs_mcs_2025_cadmium
+      - country: ZZ
+        share_pct: 1.29
+        quantity:
+          value: 310
+          unit: tonnes_per_year
+          form: metal
+          source_id: usgs_mcs_2025_cadmium
+        notes: |
+          Other countries 2024e: approximately 310 metric tons, computed as world total
+          (24,000 rounded) minus the sum of named countries (23,690).
+        source_id: usgs_mcs_2025_cadmium
+    completeness: complete
+  notes: |
+    World refinery production 2024e (rounded): 24,000 metric tons. USGS reports this table
+    as "Refinery production" — there is no separate world mine production table for cadmium,
+    as cadmium has no independent mining and is recovered solely as a byproduct of zinc
+    smelting. China dominates global refining at ~39% of world output; the Republic of Korea
+    is second at ~19%. All country share_pct values are computed as country_value / 24,000
+    and should be treated as inferred. US, Mexico, Netherlands, and Peru values are explicitly
+    marked "Reported" in USGS footnote 10; all others are estimated.
+
+reserves:
+  notes: |
+    USGS MCS 2025 states: "Quantitative estimates of reserves were not available. The
+    cadmium content of typical zinc ores averages about 0.03%. See the Zinc chapter for
+    zinc reserves." Cadmium reserves are therefore a derived quantity from zinc ore reserves,
+    not reported independently. No economic_reserves quantity is assigned for cadmium.
+
+substitutes:
+  - application: nickel_cadmium_batteries
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes: "Batteries with other chemistries, particularly lithium-ion,
+      can replace NiCd batteries in many applications." This is the most important substitution
+      trend — LFP and NMC lithium-ion chemistries have displaced NiCd in consumer electronics
+      and power tools. NiCd retains advantages in temperature extremes, high-cycle applications,
+      and some industrial/aviation uses, limiting full substitution.
+    source_id: usgs_mcs_2025_cadmium
+  - application: coatings_and_plating
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Except where the surface characteristics of a coating are critical (for
+      example, fasteners for aircraft), coatings such as zinc-nickel can be substituted for
+      cadmium in many plating applications." Cadmium plating on aerospace fasteners remains
+      largely irreplaceable due to its specific corrosion-resistance and lubricity properties.
+    source_id: usgs_mcs_2025_cadmium
+  - application: pigments
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Cerium sulfide is used as a replacement for cadmium pigments, mostly
+      in plastics." Regulatory pressure in the EU and elsewhere has driven substitution of
+      cadmium-based pigments (cadmium red, cadmium yellow, cadmium orange) in many markets,
+      though cadmium pigments retain advantages in high-temperature processing applications.
+    source_id: usgs_mcs_2025_cadmium
+  - application: pvc_stabilizers
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Barium stabilizers can replace barium-cadmium stabilizers in flexible
+      polyvinyl chloride (PVC) applications." Cadmium-based PVC heat stabilizers have largely
+      been phased out in Europe; calcium-zinc and organotin systems are the primary alternatives.
+    source_id: usgs_mcs_2025_cadmium
+  - application: cdte_solar_and_semiconductors
+    availability: none
+    notes: |
+      USGS MCS 2025: "Thin-film technologies based on copper-indium-gallium-selenide and
+      perovskite materials continued to be investigated but were not yet commercially feasible"
+      as alternatives to CdTe thin-film solar panels at the scale and cost of established
+      CdTe manufacturing. CIGS and perovskite represent potential long-term substitutes, but
+      CdTe remains the dominant non-silicon thin-film technology as of 2025.
+    source_id: usgs_mcs_2025_cadmium
+
+end_uses:
+  uses:
+    - application: nickel_cadmium_batteries
+      share_pct: 73
+      confidence: low
+      notes: |
+        USGS MCS 2025: cadmium metal and compounds "are mainly consumed for NiCd batteries."
+        NiCd batteries are the dominant global end use. The 73% approximate share is consistent
+        with international industry data but is not explicitly stated as a percentage in USGS
+        MCS 2025. China replaced India as the leading cadmium consumer in 2024; India had been
+        importing large quantities (>11,400 t in 2023) for NiCd battery manufacturing.
+      source_id: usgs_mcs_2025_cadmium
+    - application: pigments
+      share_pct: 10
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists pigments as a secondary end use. Cadmium-based pigments (cadmium
+        red, yellow, orange) are used in plastics, ceramics, and glass. Regulatory pressure
+        in Europe has reduced this share. US export of cadmium pigments and preparations in
+        2024e was ~500 tonnes; imports were ~120 tonnes.
+      source_id: usgs_mcs_2025_cadmium
+    - application: coatings_and_plating
+      share_pct: 9
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists coatings as a secondary end use. Cadmium electroplating is used
+        on fasteners, connectors, and structural components in aerospace, defense, and marine
+        applications for its combination of corrosion resistance, lubricity, and compatibility
+        with aluminum. Largely irreplaceable in aircraft fastener applications.
+      source_id: usgs_mcs_2025_cadmium
+    - application: alloys
+      share_pct: 4
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists alloys as a secondary end use. Cadmium alloys are used in
+        low-friction bearing alloys (cadmium-copper, cadmium-nickel, cadmium-silver) and
+        brazing alloys. Approximately 4% of global cadmium consumption.
+      source_id: usgs_mcs_2025_cadmium
+    - application: cdte_solar_and_semiconductors
+      share_pct: 4
+      confidence: low
+      notes: |
+        USGS MCS 2025: "An increasing use for cadmium was in cadmium-telluride (CdTe) thin-film
+        solar panels, and in cadmium-zinc-telluride (CdZnTe) substrates for radiation detectors
+        and imaging applications." The leading US CdTe solar manufacturer commenced commercial
+        production at a fourth facility in Alabama in Q3 2024, increasing total US CdTe capacity
+        to nearly 11 GW/year. A fifth facility in Louisiana is expected to add 3.5 GW/year in
+        H2 2025. Worldwide CdTe capacity reached ~21 GW/year in 2024.
+      source_id: usgs_mcs_2025_cadmium
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Cadmium is not on the US 2022 Critical Minerals List, the EU Critical Raw Materials list
+    (2023), or the EU Strategic Raw Materials list (CRMA 2024). Despite strategic uses (CdZnTe
+    substrates for radiation detectors and imaging; the US Defense Logistics Agency FY2025
+    stockpile target includes 2,800 sq cm of CdZnTe substrates, a 180% increase from FY2024),
+    cadmium itself is not designated as critical, partly because it is a byproduct commodity
+    linked to zinc production and partly due to regulatory trends (REACH, EU RoHS) restricting
+    cadmium use in many applications. Net import reliance for the US turned to net-exporter
+    status (E) in 2023 and 2024.
+
+prices:
+  - year: 2024
+    value: 4.10
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: global
+    notes: |
+      USGS MCS 2025 salient statistics: 2024e average price $4.10/kg for 99.95% purity
+      cadmium in 10-ton lots, CIF global ports (Fastmarkets MB). Average prices decreased
+      midyear reflecting seasonal buying patterns in India, then ended the year higher than
+      January levels. US was a net exporter for second consecutive year.
+    source_id: usgs_mcs_2025_cadmium
+  - year: 2023
+    value: 4.06
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: global
+    notes: |
+      USGS MCS 2025 salient statistics: 2023 average price $4.06/kg (Fastmarkets MB, CIF
+      global ports, 99.95% purity, 10-ton lots). India was the leading importer of cadmium
+      metal with more than 11,400 tonnes imported in 2023.
+    source_id: usgs_mcs_2025_cadmium
+  - year: 2022
+    value: 3.42
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: 2022 average price $3.42/kg (Fastmarkets MB, CIF global ports)."
+    source_id: usgs_mcs_2025_cadmium
+  - year: 2021
+    value: 2.56
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: 2021 average price $2.56/kg (Fastmarkets MB, CIF global ports)."
+    source_id: usgs_mcs_2025_cadmium
+  - year: 2020
+    value: 2.29
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: 2020 average price $2.29/kg (Fastmarkets MB, CIF global ports)."
+    source_id: usgs_mcs_2025_cadmium
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "US becomes net exporter of cadmium for second consecutive year"
+    impact: |
+      The US was a net exporter of cadmium in 2024 (and 2023), as indicated by the "E"
+      (net exporter) designation in the USGS salient statistics for net import reliance.
+      This reflects increased primary production (375 t in 2023, 300 t in 2024e at the
+      Tennessee zinc smelter) combined with reduced imports of unwrought cadmium (from 282 t
+      in 2020 to just 7 t in 2024e). Exports of unwrought cadmium peaked at 100 t in 2023
+      and declined to 20 t in 2024e.
+    source_id: usgs_mcs_2025_cadmium
+  - date: "2024-03"
+    event: "China replaces India as world's leading cadmium consumer"
+    impact: |
+      Based on estimated production, imports, and exports, China replaced India as the leading
+      global consumer of cadmium in 2024. India had been the leading importer of cadmium metal
+      with more than 11,400 tonnes imported in 2023 and nearly 6,000 tonnes as of August 2024;
+      however, despite substantial cadmium sponge production as a zinc smelting byproduct,
+      India did not report cadmium metal production as of August 2024.
+    source_id: usgs_mcs_2025_cadmium
+  - date: "2024-07"
+    event: "Leading US CdTe solar manufacturer begins commercial production at Alabama facility (4th plant)"
+    impact: |
+      The Inflation Reduction Act of 2022 (IRA) provided tax incentives for domestic solar
+      manufacturing. The leading US CdTe thin-film solar panel manufacturer (First Solar, based
+      in Ohio) began commercial production in Q3 2024 at a fourth facility in Alabama, increasing
+      total US CdTe manufacturing capacity to nearly 11 GW per year. A fifth site in Louisiana
+      was under construction, expected to add another 3.5 GW/year in H2 2025. Worldwide CdTe
+      manufacturing capacity reached approximately 21 GW/year, including a facility in India
+      that opened in early 2024.
+    source_id: usgs_mcs_2025_cadmium
+  - date: "2024-01"
+    event: "NREL awards $1.8 million in second-round CdTe photovoltaic accelerator contracts"
+    impact: |
+      The National Renewable Energy Laboratory (NREL), as administrator of the 3-year Cadmium
+      Telluride Photovoltaics Accelerator Program, announced in January 2024 that $1.8 million
+      had been awarded in a second round of contracts to support development of more efficient
+      and lower-cost CdTe solar cells.
+    source_id: usgs_mcs_2025_cadmium
+  - date: "2024-01"
+    event: "US government FY2025 stockpile target for CdZnTe substrates increased 180%"
+    impact: |
+      The Defense Logistics Agency FY2025 potential acquisitions include 2,800 square centimeters
+      of CdZnTe (cadmium-zinc-telluride) substrates, a 180% increase from 1,000 sq cm in FY2024.
+      CdZnTe substrates are critical for radiation detectors and imaging systems used in defense
+      and homeland security applications.
+    source_id: usgs_mcs_2025_cadmium
+  - date: "2024-01"
+    event: "Ohio NiCd battery recycler shuts cadmium recovery line to focus on lithium-ion recycling"
+    impact: |
+      A company in Ohio that had been recovering secondary cadmium metal shut down its NiCd
+      battery recycling line in 2024, shifting focus to lithium-ion battery recycling. This
+      reflects the broader market trend away from NiCd toward Li-ion chemistries, reducing
+      secondary cadmium recovery. A separate Ohio company established in 2022 continued
+      processing both consumer and industrial NiCd batteries, recovering cadmium metal and
+      planning to refine it to battery-grade purity.
+    source_id: usgs_mcs_2025_cadmium
+
+narrative: |
+  Cadmium is produced exclusively as a byproduct of zinc smelting and refining, with no
+  independent primary mining. World refinery production was approximately 24,000 metric tons
+  in 2024, dominated by China (~39%), the Republic of Korea (~19%), Canada and Japan (~7%
+  each), and Mexico (~5%). The US recovered 300 metric tons at the single domestic zinc
+  smelter in Tennessee, making it a net cadmium exporter for the second consecutive year
+  as domestic primary production exceeded unwrought import volumes. Cadmium prices rose
+  steadily from $2.29/kg in 2020 to $4.10/kg in 2024e (Fastmarkets MB, CIF global ports),
+  with intra-year dips reflecting seasonal demand patterns from India, historically the
+  leading importer. In 2024, China replaced India as the world's leading cadmium consumer.
+
+  The dominant end use for cadmium remains nickel-cadmium (NiCd) batteries, which account
+  for an estimated 70–75% of global consumption, primarily in rechargeable consumer batteries,
+  power tools, and industrial/aviation applications. Cadmium pigments, coatings, and alloys
+  represent secondary applications. The most significant growth vector is cadmium telluride
+  (CdTe) thin-film photovoltaic panels, which are gaining market share under IRA-driven
+  incentives. The US CdTe industry leader reached ~11 GW/year of domestic manufacturing
+  capacity in 2024 and is adding a fifth facility in Louisiana, with global CdTe capacity
+  reaching ~21 GW/year. CdZnTe substrates for radiation detectors represent a small but
+  strategically important use, with US government stockpile acquisitions increasing 180%
+  in FY2025. Reserves are not quantified independently — cadmium availability is directly
+  tied to zinc ore reserves, with typical ore grades of approximately 0.03% Cd.
+
+  Cadmium faces significant regulatory headwinds: EU RoHS, REACH, and analogous frameworks
+  restrict cadmium in batteries, pigments, plating, and PVC stabilizers across major markets,
+  accelerating substitution toward lithium-ion chemistries, zinc-nickel coatings, cerium
+  sulfide pigments, and calcium-zinc PVC stabilizers. Cadmium is not designated as critical
+  by the US, EU, or other major economies, in part because its supply is structurally linked
+  to zinc and because policy trends toward reducing cadmium use outweigh strategic supply
+  concerns for most applications. The notable exception is CdZnTe for defense radiation
+  detectors, where no viable substitute technology has been commercialized.
+
+sources:
+  - id: usgs_mcs_2025_cadmium
+    title: Mineral Commodity Summaries 2025 — Cadmium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-cadmium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
