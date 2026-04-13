@@ -1,0 +1,488 @@
+symbol: Pr
+atomic_number: 59
+name: praseodymium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a single commodity chapter ("rare
+  earths") in metric tons of rare-earth-oxide (REO) equivalent. Praseodymium is
+  commercially traded as Pr₆O₁₁ (praseodymium oxide) or as mixed
+  neodymium-praseodymium (NdPr) oxide, which is the dominant commercial form for
+  permanent magnet applications. All production figures in this file are derived by
+  multiplying the USGS-reported aggregate REO totals by Pr's typical share of the
+  REE basket (~4.5%), which is not reported directly by USGS. The basket share varies
+  by deposit type: bastnaesite and carbonatite deposits (Mountain Pass CA, Mt. Weld
+  AU, Bayan Obo CN) yield ~4.5–5.5% Pr₆O₁₁; ion adsorption clay deposits (SE Asia,
+  southern China) are heavy-REE enriched and yield lower Pr percentages (~2–3%). All
+  data are in metric tons REO equivalent unless otherwise noted. Prices for Pr are not
+  reported separately in USGS MCS 2025 (only Nd oxide price is given); Pr typically
+  trades at a small discount to Nd as part of the NdPr basket price.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 17550
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Pr's typical basket share of ~4.5% gives
+      ~17,550 t Pr₆O₁₁ equivalent. Pr basket share is not reported separately by USGS;
+      the 4.5% factor is an industry consensus figure for bastnaesite-dominant global
+      production (Lynas Mt. Weld: ~5.2% Pr; Bayan Obo: ~5.0% Pr; weighted global average
+      slightly lower due to heavy-REE-enriched ion adsorption clay contributions). Actual
+      Pr output is not officially disaggregated from the REE basket in public USGS data.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        quantity:
+          value: 12150
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share of world: 270,000 / 390,000 =
+          69.2%. Estimated Pr component: ~12,150 t (69.2% × 17,550 t world Pr). Bayan
+          Obo bastnaesite-monazite complex in Inner Mongolia is China's largest deposit;
+          significant production also from ion adsorption clays in Jiangxi, Fujian, and
+          Guangdong. China's 2024 production rose from 255,000 t in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        quantity:
+          value: 2025
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US 2024e REE total: 45,000 t REO from mineral concentrates at Mountain Pass,
+          CA (MP Materials bastnaesite mine), valued at $260 million. Estimated Pr:
+          ~2,025 t. USGS footnote 3 notes total domestic compound production (including
+          Pr+Nd compounds from California and RE compounds from Utah) was 7,600 t in 2024,
+          separate from the 45,000 t mineral concentrate figure. MP Materials basket is
+          ~22–24% NdPr with Pr at approximately one-quarter of that fraction.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        quantity:
+          value: 1395
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28%). Share: 31,000 / 390,000 = 7.9%. Estimated Pr: ~1,395 t. Burma produces
+          primarily from ion adsorption clay deposits that are heavy-REE enriched (Tb, Dy);
+          actual Pr% in Burmese production is likely lower than the basket average applied
+          here. Production data estimated from China import records (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 585
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia) with processing at
+          the Lynas Advanced Materials Plant (LAMP) in Malaysia. Mt. Weld bastnaesite
+          yields ~5.2% Pr₆O₁₁; estimated Pr: ~585 t. Production estimated from China
+          import data (USGS footnote 12). Australia holds 5,700,000 t REO reserves
+          (JORC-compliant: 3,300,000 t per USGS footnote 13).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        quantity:
+          value: 585
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023. USGS MCS 2025
+          cites Nigeria as a driver of global production growth alongside China and Thailand.
+          Estimated Pr: ~585 t. Production estimated from China import data (footnote 12).
+          Nigerian reserves not available in USGS data.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        quantity:
+          value: 585
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023. Also cited
+          by USGS as a driver of global production growth. Thailand produces from ion
+          adsorption clay deposits; actual Pr% is likely lower than the bastnaesite
+          basket average applied here. Estimated Pr: ~585 t. Production estimated from
+          China import data (footnote 12). Thailand reserves: 4,500 t REO.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        quantity:
+          value: 404
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Remaining producers 2024e: India (2,900 t), Russia (2,500 t), Madagascar
+          (2,000 t), Other USGS bucket (1,100 t), Vietnam (300 t), Malaysia (130 t),
+          Brazil (20 t) = ~9,050 t total REO, or ~2.3% of world. Estimated combined
+          Pr contribution ~404 t, applying the ~4.5% basket average (acknowledges that
+          ion adsorption clay producers Vietnam, Malaysia, and Madagascar yield lower Pr%).
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 90
+        notes: |
+          China controls approximately 90% of global REE separation and refining capacity,
+          including Pr₆O₁₁ oxide production and NdPr alloy manufacturing. Refineries are
+          concentrated in Jiangxi, Fujian, Sichuan, and Inner Mongolia. Import data confirm
+          China supplied 70% of US REE compound and metal imports (2020–23 average) while
+          also processing concentrates from non-Chinese mines before re-export.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 7
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Australian Mt. Weld concentrate producing separated NdPr oxide and other REE
+          products. LAMP is the world's largest non-Chinese rare earth separation facility.
+          USGS cites Malaysia as 13% of US REE compound and metal import sources (2020–23).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Early-stage non-Chinese separation: MP Materials Mountain Pass (California),
+          Neo Performance Materials Sillamäe (Estonia, 5% of US imports 2020–23), and
+          Japan-based processors (Japan 6% of US imports 2020–23). Estonia and Japan source
+          feed from Australian and Chinese intermediates per USGS chapter text.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). Country shares sum to ~100.8% due to rounding of reported integers
+    against the rounded world total. All Pr-specific figures derived from REO totals
+    using the ~4.5% basket share assumption; actual per-element disaggregation is not
+    available from public USGS data.
+
+reserves:
+  economic_reserves:
+    value: 4050000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves of >90,000,000 t
+      REO equivalent. Applying Pr's typical basket share (~4.5%) gives ~4,050,000 t Pr
+      REO. USGS does not report per-element reserve breakdowns; all Pr-specific reserve
+      figures are derived.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 1980000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of world >90,000,000 t). Estimated Pr
+          reserves: ~1,980,000 t (44,000,000 × 4.5%). Bayan Obo holds the majority of
+          Chinese reserves.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 945000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — largest single-country reserve base after
+          China. Estimated Pr reserves: ~945,000 t. Current Brazilian production is low
+          (only 20 t REO in 2024e).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 310500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Pr reserves: ~310,500 t. India
+          produces 2,900 t REO per year, primarily from monazite in heavy mineral sands.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 256500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t total (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Estimated Pr reserves: ~256,500 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 171000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports).
+          Estimated Pr reserves: ~171,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 85500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          United States REO reserves: 1,900,000 t (revised per company and government
+          reports). Mountain Pass, CA is the primary US reserve base. Estimated Pr
+          reserves: ~85,500 t.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves not individually listed above: Vietnam (3,500,000 t), Greenland
+    (1,500,000 t), Tanzania (890,000 t), South Africa (860,000 t), Canada (830,000 t),
+    and the United States (1,900,000 t, listed above). Reserves for Russia, South Africa,
+    United States, and Vietnam were revised in MCS 2025 based on company and government
+    reports. All Pr-specific reserve figures derived from applying ~4.5% basket share to
+    country-level REO reserves; actual per-element data not publicly disaggregated by USGS.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 4.5
+    notes: |
+      Bastnaesite (fluorocarbonate mineral, CeFCO₃) is the primary commercial source of
+      light rare earth elements including Pr. Mountain Pass (MP Materials, California)
+      and Bayan Obo (China, Inner Mongolia) are the world's largest bastnaesite deposits.
+      Pr₆O₁₁ typically represents ~4.5–5.5% of total REOs in commercial bastnaesite
+      concentrates. USGS MCS 2025 confirms bastnaesite was mined as a primary product at
+      Mountain Pass in 2024.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 4.0
+    notes: |
+      Monazite (phosphate mineral, (Ce,La,Pr,Nd)PO₄) is stockpiled as a separated
+      concentrate or recovered as an accessory mineral in heavy-mineral-sand concentrates.
+      USGS MCS 2025 confirms monazite was stockpiled in the southeastern United States in
+      2024. Pr typically represents ~4–5% of total REOs in monazite. Thorium content in
+      monazite complicates processing under radioactive materials regulations.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 2.5
+    notes: |
+      Ion adsorption clay deposits in southern China (Jiangxi, Fujian, Guangdong) and
+      Southeast Asia (Burma, Thailand) are enriched in heavy rare earths (Tb, Dy, Ho, Er)
+      and contain lower Pr proportions (~2–3% of total REOs) than bastnaesite. These
+      deposits account for most world heavy REE supply and for the production in Thailand
+      and Burma reported by USGS MCS 2025.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally are
+      less effective." For permanent magnet applications, ferrite (iron oxide) magnets
+      can substitute in low-performance uses but have significantly lower energy density
+      than NdPr-Fe-B magnets. Within the NdFeB alloy, Pr can partially substitute for
+      Nd at up to ~25% Pr (by NdPr mass) without significant performance loss, meaning
+      Pr and Nd are partially interchangeable within the magnet application itself. For
+      glass and ceramics coloring, other colorants can substitute for Pr-derived yellow-
+      green hues. No large-scale substitute exists for NdPr magnets in EV traction motors
+      or wind turbine generators where high coercivity and energy density are required.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: magnets_ndfeb_permanent
+      share_pct: 83
+      confidence: low
+      notes: |
+        Praseodymium is co-processed with neodymium as NdPr oxide and alloy for NdFeB
+        permanent magnet production — the dominant end use. Applications include EV
+        traction motors, wind turbine generators, industrial motors, hard disk drives,
+        and defense systems. USGS MCS 2025 notes "significant amounts of rare earths are
+        imported as permanent magnets embedded in finished goods." Government FY2024–2025
+        potential stockpile acquisitions specifically list neodymium-praseodymium oxide
+        and NdFeB magnet blocks. Share is an industry consensus estimate; USGS does not
+        report per-element end-use percentages.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: ceramics_and_glass
+      share_pct: 8
+      confidence: low
+      notes: |
+        Pr₆O₁₁ imparts a characteristic yellow-green color to ceramics and glass. Used
+        in ceramic tile glazes, artist pigments, and specialty optical glass. USGS MCS
+        2025 lists "ceramics and glass" as an end use for REEs overall. Share is an
+        estimate for Pr specifically.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: metallurgical_additives
+      share_pct: 5
+      confidence: low
+      notes: |
+        Pr is used in mischmetal (mixed rare earth metal alloy) and as a minor additive
+        in high-strength low-alloy steels. USGS MCS 2025 lists "metallurgical applications
+        and alloys" as an end use. Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: catalysts_and_polishing
+      share_pct: 4
+      confidence: low
+      notes: |
+        Minor Pr contribution to fluid catalytic cracking (FCC) catalysts (dominated by
+        La and Ce in the REE basket) and polishing compounds. USGS MCS 2025 lists
+        "catalysts" as the leading domestic end use for REEs overall and "polishing" as
+        an additional use. Pr share in these applications is small relative to Ce and La.
+        Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Praseodymium is classified as critical under the US 2022 Critical Minerals List (as
+    part of "rare earth elements"), the EU Critical Raw Materials Regulation 2024/1252
+    (light and heavy rare earths), and the EU Critical Raw Materials Act 2024 strategic
+    materials list. Net import reliance for REE compounds and metals was 80% in 2024e
+    (down from >95% in 2020–2023) and 100% for mineral concentrates historically. US
+    government potential stockpile acquisitions for FY2024–2025 specifically include
+    neodymium-praseodymium oxide and NdFeB magnet blocks, underscoring Pr's strategic
+    designation. Import sources 2020–23: China 70%, Malaysia 13%, Japan 6%, Estonia 5%.
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "US government potential stockpile acquisitions for FY2024-2025 explicitly include neodymium-praseodymium oxide and neodymium-iron-boron magnet blocks"
+    impact: |
+      USGS MCS 2025 Government Stockpile table lists NdPr oxide and NdFeB magnet blocks
+      as potential FY2024–2025 acquisitions alongside samarium-cobalt alloy, cerium (550 t
+      FY2024), and lanthanum (1,300 t FY2024, 1,100 t FY2025). The explicit naming of NdPr
+      oxide in US stockpile targeting signals official recognition of Pr as a strategically
+      critical material for defense magnet supply chains, distinct from the broader REE
+      basket policy.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "Global REE mine production increased to 390,000 t REO, driven by growth in China, Nigeria, and Thailand; Burma declined 28%"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t REO, up from 376,000 t
+      in 2023. China rose from 255,000 to 270,000 t; Nigeria from 7,200 to 13,000 t;
+      Thailand from 3,600 to 13,000 t. Burma fell from 43,000 to 31,000 t. For Pr
+      specifically, the Nigerian and Thai production growth is less directly relevant as
+      these are heavy-REE-focused deposits; the Chinese and US increases are the primary
+      Pr-supply events.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "US net import reliance for REE compounds and metals declined to 80% in 2024e, reflecting domestic compound production growth at Mountain Pass"
+    impact: |
+      US domestic compound and metal production reached 1,300 t reported (7,600 t total
+      including California and Utah production not in reported totals, per USGS footnote 3)
+      in 2024, up from 250 t reported (1,920 t total) in 2023. This includes praseodymium
+      and neodymium compounds specifically named in USGS footnote 3. Import reliance fell
+      to 80% from >95% in 2020–2023. Despite improvement, China remains the dominant
+      source (70% of US imports 2020–23 average).
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024-01"
+    event: "REE reserves revised for Russia, South Africa, United States, and Vietnam based on company and government reports"
+    impact: |
+      USGS MCS 2025 notes reserve revisions for four countries, affecting the global REO
+      reserve base used to derive Pr reserve estimates. The direction and magnitude of each
+      revision are not stated in the chapter text. US reserves remain 1,900,000 t REO.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Praseodymium's commercial identity is almost entirely fused with neodymium. The two
+  elements are chemically similar and are routinely sold as a blended NdPr oxide because
+  separation into pure Pr and Nd streams requires additional solvent-extraction steps
+  that add cost without proportional value in the dominant magnet application. NdPr
+  permanent magnets — the core input for EV traction motors, offshore wind turbines,
+  defense actuators, and industrial drives — account for an estimated 80–85% of Pr
+  demand. Pr's remaining uses include ceramic yellow-green pigmentation, minor
+  metallurgical alloying, and trace use in FCC catalysts.
+
+  Global REE mine production reached 390,000 tonnes REO in 2024, up from 376,000 t in
+  2023, driven by growth in China (270,000 t), Nigeria (13,000 t), and Thailand
+  (13,000 t), partially offset by Burma's decline (31,000 t from 43,000 t in 2023).
+  Applying Pr's typical basket share of ~4.5% yields an estimated 2024 Pr production of
+  ~17,550 tonnes Pr₆O₁₁ equivalent — a figure not directly reported by USGS but
+  derivable from aggregate REO totals. China's share of ~69% of world REE mine output,
+  combined with its ~90% control of separation and refining capacity, means China
+  effectively sets the supply conditions for NdPr oxide available to global magnet
+  manufacturers. Non-Chinese supply is primarily routed through Lynas's Mt. Weld /
+  LAMP chain (Australia/Malaysia) and the early-stage Mountain Pass separation
+  operations (California).
+
+  The US government's FY2024–2025 potential stockpile acquisitions — explicitly naming
+  neodymium-praseodymium oxide alongside NdFeB magnet blocks — mark a policy shift
+  that treats Pr as a named strategic material rather than a passive component of the
+  REE basket. US net import reliance fell to 80% in 2024 from over 95% in prior years,
+  reflecting Mountain Pass concentrate output and the start of domestic NdPr compound
+  production (7,600 t total in 2024 vs. 1,920 t in 2023 per USGS). Nevertheless, China
+  continues to supply 70% of US REE compound and metal imports, and the path to supply
+  chain resilience for Pr runs through building non-Chinese separation and magnet
+  manufacturing capacity — not simply expanding mine output in North America.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
