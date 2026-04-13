@@ -1,0 +1,76 @@
+symbol: Rn
+atomic_number: 86
+name: radon
+category: noble_gas
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Radon is handled only as a transient radioactive noble
+  gas, principally as radon-222 generated in situ from radium-226 decay for
+  calibration, metrology, or research setups rather than as a stockpiled bulk
+  commodity. IUPAC lists radon with bracketed mass number [222], and NuDat
+  reports isotope half-lives on an isotope-specific basis rather than any
+  ambient-temperature trade specification.
+
+research_only:
+  longest_lived_isotope: Rn-222
+  half_life_seconds: 330238.08
+  discovered_year: 1900
+  discovered_at: |
+    Ernst Dorn identified a radioactive emanation released from radium in
+    Germany in 1900; IUPAC's historical review treats this as the observation
+    that established radon as a distinct radioactive gas.
+  production_mode: decay_product
+  active_production_labs: []
+  notes: |
+    Radon has no stable isotopes and no persistent commercial supply chain.
+    IUPAC's current periodic table lists [222] for radon because Rn-222 is the
+    nuclide with the longest confirmed half-life, and NNDC NuDat gives that
+    half-life as 3.8222 days. In practice this means radon is generated where
+    needed from the decay of parent radionuclides rather than mined, refined,
+    stored, or globally traded as a bulk commodity.
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+narrative: |
+  Radon is a naturally arising radioactive noble gas, not a commercial gas
+  business. The atlas treatment is research-only because the element has no
+  stable isotope, the IUPAC table anchors it to mass number 222 rather than a
+  standard atomic weight, and the longest-lived nuclide lasts only 3.8222
+  days. That lifetime is long enough for environmental measurement and
+  laboratory use but far too short for a durable mined-and-refined commodity
+  chain.
+
+  The historical discovery path also differs from mined elements. IUPAC's
+  history of radioactivity credits Rutherford with thorium emanation in 1899
+  and Ernst Dorn with radium emanation in 1900; the radium-derived gas was the
+  longer-lived isotope later identified as radon-222. Commercial reality
+  therefore centers on on-site generation from radioactive parents and on
+  hazard monitoring, not on reserves, prices, or traded end-use markets.
+
+sources:
+  - id: iupac_periodic_table_2022
+    title: "Periodic Table of Elements"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/what-we-do/periodic-table-of-elements/
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: nndc_nudat_rn222
+    title: "ENSDF decay dataset for 222Rn"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/nudat3/getdecaydataset.jsp?dsid=226ra+a+decay+%281603+y%29&nucleus=222RN
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: iupac_radvanyi_2011
+    title: "Physics and Radioactivity after the Discovery of Polonium and Radium"
+    publisher: Chemistry International / International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/publications/ci/2011/3301/8_radvanyi.html
+    retrieved: 2026-04-13
+    publication_year: 2011
+    source_tier: secondary
