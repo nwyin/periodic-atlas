@@ -1,0 +1,302 @@
+symbol: Li
+atomic_number: 3
+name: lithium
+category: alkali_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports lithium quantities in metric tons of lithium content unless otherwise specified.
+  Commercial trade spans upstream brine- and hard-rock-derived lithium units plus downstream compounds such as
+  lithium carbonate, lithium hydroxide, and lithium chloride. The chapter's headline price series is battery-grade
+  lithium carbonate in U.S. dollars per metric ton; chapter text also quotes China spot carbonate on a c.i.f. basis,
+  China spot hydroxide on an f.o.b. basis, and Australian spodumene concentrate prices for 6% Li2O material.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 240000
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      notes: |
+        USGS MCS 2025 reports world lithium production of approximately 240,000 metric tons of lithium content in
+        2024, up 18% from 204,000 tons in 2023. Footnote 7 states this world total excludes withheld U.S. production.
+      source_id: usgs_mcs_2025_lithium
+    mining_by_country:
+      shares:
+        - country: AU
+          share_pct: 36.7
+          quantity:
+            value: 88000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          notes: "Australia remained the largest producer, principally from hard-rock mineral operations."
+          source_id: usgs_mcs_2025_lithium
+        - country: CL
+          share_pct: 20.4
+          quantity:
+            value: 49000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          notes: "Chile's output came from brine operations, with capacity expansion noted in 2024."
+          source_id: usgs_mcs_2025_lithium
+        - country: CN
+          share_pct: 17.1
+          quantity:
+            value: 41000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          notes: "China operated both mineral and brine projects and also expanded production capacity in 2024."
+          source_id: usgs_mcs_2025_lithium
+        - country: ZW
+          share_pct: 9.2
+          quantity:
+            value: 22000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          notes: "Zimbabwe's output rose materially in 2024 as one of the countries with significant capacity expansion."
+          source_id: usgs_mcs_2025_lithium
+        - country: AR
+          share_pct: 7.5
+          quantity:
+            value: 18000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          notes: "Argentina's production doubled year over year from 8,630 tons to 18,000 tons."
+          source_id: usgs_mcs_2025_lithium
+        - country: BR
+          share_pct: 4.2
+          quantity:
+            value: 10000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          notes: "Brazil included a mineral tailings operation in the major-producing set described by USGS."
+          source_id: usgs_mcs_2025_lithium
+        - country: CA
+          share_pct: 1.8
+          quantity:
+            value: 4300
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          source_id: usgs_mcs_2025_lithium
+        - country: NA
+          share_pct: 1.1
+          quantity:
+            value: 2700
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          source_id: usgs_mcs_2025_lithium
+        - country: PT
+          share_pct: 0.2
+          quantity:
+            value: 380
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_lithium
+          source_id: usgs_mcs_2025_lithium
+      completeness: top_producers_only
+    notes: |
+      USGS describes the 2024 market as oversupplied in the short term: production rose to about 240,000 tons while
+      global consumption rose to an estimated 220,000 tons. The country table excludes withheld U.S. output, and USGS
+      separately notes additional smaller operations in Australia, Brazil, China, Namibia, Portugal, and the United States.
+
+reserves:
+  economic_reserves:
+    value: 30000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: "USGS MCS 2025 world total lithium reserves (rounded), in metric tons of lithium content."
+    source_id: usgs_mcs_2025_lithium
+  resources:
+    value: 115000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS MCS 2025: measured and indicated lithium resources total about 115 million tons worldwide, including
+      19 million tons in the United States and 96 million tons in other countries.
+    source_id: usgs_mcs_2025_lithium
+  notes: |
+    The USGS chapter reports country reserve values, but the printed Australia reserve entry is internally inconsistent
+    with both the world reserve total and footnote 5 on Australian JORC-compliant reserves. This file therefore encodes
+    the world reserve and resource totals directly from the chapter and leaves `reserves_by_country` empty pending a
+    clarified primary-country table.
+
+byproduct_of: []
+feedstock_origins:
+  - substrate: continental_brines
+    notes: |
+      USGS identifies continental brines as a major U.S. and global lithium source and lists brine-based sources in
+      development or exploration in Argentina, Bolivia, Canada, Chile, China, and the United States.
+    source_id: usgs_mcs_2025_lithium
+  - substrate: pegmatite_mineral_ore
+    notes: |
+      USGS describes mineral operations in Australia, Brazil, Canada, China, and Zimbabwe as accounting for much of
+      current production and notes broader mineral-based exploration across multiple countries.
+    source_id: usgs_mcs_2025_lithium
+  - substrate: lithium_clay
+    notes: "USGS notes lithium-clay sources in various stages of development or exploration in Mexico and the United States."
+    source_id: usgs_mcs_2025_lithium
+
+substitutes:
+  - application: batteries
+    availability: partial
+    notes: |
+      USGS states that substitution for lithium compounds is possible in batteries and gives calcium, magnesium,
+      mercury, and zinc as alternative anode materials in primary batteries.
+    source_id: usgs_mcs_2025_lithium
+  - application: lubricating_greases
+    availability: partial
+    notes: "USGS lists calcium and aluminum soaps as substitutes for lithium stearates in greases."
+    source_id: usgs_mcs_2025_lithium
+  - application: ceramics_and_glass
+    availability: partial
+    notes: "USGS lists sodic and potassic fluxes as substitutes in ceramics and glass manufacture."
+    source_id: usgs_mcs_2025_lithium
+
+end_uses:
+  uses:
+    - application: batteries
+      share_pct: 87
+      notes: |
+        USGS global end-use estimate. Battery demand was driven by electric vehicles, portable electronics, power tools,
+        and grid storage.
+      source_id: usgs_mcs_2025_lithium
+    - application: ceramics_and_glass
+      share_pct: 5
+      notes: "USGS notes lithium minerals were also used directly as mineral concentrates in ceramics and glass."
+      source_id: usgs_mcs_2025_lithium
+    - application: lubricating_greases
+      share_pct: 2
+      source_id: usgs_mcs_2025_lithium
+    - application: air_treatment
+      share_pct: 1
+      source_id: usgs_mcs_2025_lithium
+    - application: continuous_casting_mold_flux_powders
+      share_pct: 1
+      source_id: usgs_mcs_2025_lithium
+    - application: medical
+      share_pct: 1
+      source_id: usgs_mcs_2025_lithium
+    - application: other
+      share_pct: 3
+      source_id: usgs_mcs_2025_lithium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_critical_minerals_list_2025
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: "Lithium is on the 2025 U.S. Critical Minerals List, on the EU 2024 critical raw materials list, and as battery-grade lithium on the EU strategic raw materials list."
+
+prices:
+  - year: 2024
+    value: 14000
+    unit: usd_per_tonne
+    form: carbonate
+    basis: us_domestic
+    region: US
+    notes: "USGS salient statistics: annual average real price for battery-grade lithium carbonate in 2024."
+    source_id: usgs_mcs_2025_lithium
+  - year: 2023
+    value: 41300
+    unit: usd_per_tonne
+    form: carbonate
+    basis: us_domestic
+    region: US
+    notes: "USGS salient statistics: annual average real price for battery-grade lithium carbonate in 2023."
+    source_id: usgs_mcs_2025_lithium
+  - year: 2022
+    value: 71100
+    unit: usd_per_tonne
+    form: carbonate
+    basis: us_domestic
+    region: US
+    notes: "USGS salient statistics: annual average real price for battery-grade lithium carbonate in 2022."
+    source_id: usgs_mcs_2025_lithium
+  - year: 2021
+    value: 14200
+    unit: usd_per_tonne
+    form: carbonate
+    basis: us_domestic
+    region: US
+    notes: "USGS salient statistics: annual average real price for battery-grade lithium carbonate in 2021."
+    source_id: usgs_mcs_2025_lithium
+  - year: 2020
+    value: 10100
+    unit: usd_per_tonne
+    form: carbonate
+    basis: us_domestic
+    region: US
+    notes: "USGS salient statistics: annual average real price for battery-grade lithium carbonate in 2020."
+    source_id: usgs_mcs_2025_lithium
+
+geopolitical_events:
+  - date: 2024
+    event: "Lithium prices fell sharply amid short-term oversupply and weaker-than-expected EV sales in early 2024"
+    impact: |
+      USGS reports China spot carbonate prices fell from about $14,500 per ton in January to $9,400 per ton in November;
+      China spot hydroxide fell from about $17,000 to $9,900 per ton; Australian spodumene concentrate fell from about
+      $1,250 to $730 per ton. Low prices led to project postponements and cancellations.
+    source_id: usgs_mcs_2025_lithium
+  - date: 2024
+    event: "Utah brine-sourced tailings lithium production was idled"
+    impact: "USGS attributes the idling of this U.S. commercial production stream directly to lower lithium prices in 2024."
+    source_id: usgs_mcs_2025_lithium
+  - date: 2024
+    event: "U.S. Department of Energy announced $3 billion across 25 projects supporting lithium extraction, processing, recycling, and battery manufacturing"
+    impact: "Signals active industrial policy to build domestic lithium supply security and downstream battery capacity."
+    source_id: usgs_mcs_2025_lithium
+
+narrative: |
+  Lithium in 2025 is a battery metal first and foremost: USGS assigns 87% of global end use to batteries, with the
+  rest fragmented across ceramics and glass, greases, air treatment, mold fluxes, medical uses, and minor applications.
+  The market is split between hard-rock mineral supply led by Australia and brine supply led by Chile and Argentina,
+  while China combines meaningful mine output with dominant downstream conversion capacity that the USGS chapter
+  references through its discussion of carbonate and hydroxide markets.
+
+  The commercial reality in 2024 was a sharp transition from scarcity to oversupply. USGS reports world production up
+  18% to about 240,000 tons of lithium content while consumption rose to about 220,000 tons. Prices fell across all major
+  reference streams, forcing some project delays and idling one U.S. tailings-based operation, even as capacity expansions
+  still occurred in Argentina, Chile, China, and Zimbabwe.
+
+  Supply security remains a strategic policy priority on both sides of the Atlantic. The United States remained more than
+  50% net import reliant, sourcing most imports from Chile and Argentina, while Washington funded new domestic extraction,
+  processing, recycling, and battery projects. The EU classified lithium as both critical and, in battery-grade form,
+  strategic, reflecting its central role in electrification supply chains.
+
+sources:
+  - id: usgs_mcs_2025_lithium
+    title: Mineral Commodity Summaries 2025 — Lithium
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_critical_minerals_list_2025
+    title: "Final 2025 List of Critical Minerals"
+    publisher: U.S. Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/eli/reg/2024/1252/oj
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
