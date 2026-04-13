@@ -1,0 +1,530 @@
+symbol: Pd
+atomic_number: 46
+name: palladium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports platinum-group metals (PGMs) collectively in one chapter,
+  with production data in kilograms of PGM content. Unlike rare earth elements, USGS
+  separately reports palladium and platinum production by country; rhodium, ruthenium,
+  iridium, and osmium are not individually disaggregated in production tables. Reserves
+  are reported as a combined "PGM reserves" figure not split by individual element.
+  Palladium is commercially traded as Pd metal sponge, ingot, powder, or in salt form
+  (palladium chloride, palladium nitrate) for chemical and catalyst applications. Prices
+  are quoted in US dollars per troy ounce (Engelhard unallocated metal average, reported
+  by S&P Global Platts Metals Week per USGS footnote 6). All production data are on a
+  palladium-content (metal-equivalent) basis in kilograms unless otherwise noted.
+  PGM production reporting uses kg as the base unit (1,000 kg = 1 metric ton).
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 190000
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 (p.137): world mine production of palladium 2024e = 190,000 kg
+      (rounded), down from 208,000 kg in 2023 (−8.7% YoY). Palladium is directly
+      reported by country in the USGS PGM chapter; per-Pd tonnage is not derived
+      from a basket share but is explicitly tabulated. Pd represents approximately
+      44% of the full 6-PGM basket by 2024e production: Pd 190,000 kg + Pt 170,000
+      kg + Rh ~30,000 kg + Ru ~35,000 kg + Ir ~7,000 kg + Os negligible ≈ 432,000 kg
+      total PGMs 2024e. Production declined primarily due to Russia disruptions
+      (natural disasters, lower ore grades, Russia-Ukraine conflict impacts on
+      Nornickel) and South Africa care-and-maintenance decisions amid low prices.
+      US mine production 2024e: 8,000 kg from one company in Montana (Sibanye-Stillwater).
+    source_id: usgs_mcs_2025_pgm
+  grouped_reporting: true
+  commodity_group: platinum_group_metals
+  mining_by_country:
+    shares:
+      - country: RU
+        share_pct: 39.5
+        quantity:
+          value: 75000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Russia 2024e: 75,000 kg Pd; down from 87,000 kg in 2023 (−14% YoY).
+          Nornickel (Norilsk Nickel) in the Norilsk-Talnakh district (Krasnoyarsk
+          Krai, Siberia) dominates Russian PGM production, processing nickel-copper
+          sulfide ores where Pd is the dominant PGM (~60-65% of Norilsk PGM basket).
+          Production decreased owing to natural disasters, lower metal grades, ore
+          recovery issues, Russia-Ukraine conflict disruptions, and planned outages
+          at a major metallurgical plant per USGS chapter text. Russia is historically
+          the world's largest Pd producer.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZA
+        share_pct: 37.9
+        quantity:
+          value: 72000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          South Africa 2024e: 72,000 kg Pd; down from 74,900 kg in 2023 (−4% YoY).
+          Production from the Bushveld Igneous Complex (BIC), mined principally by
+          Anglo American Platinum (Amplats), Impala Platinum (Implats), and
+          Sibanye-Stillwater. Pd is secondary to Pt in Merensky Reef ores but
+          approaches parity in UG-2 reef (~40-45% of PGM basket in BIC depending on
+          reef). Production reduced by care-and-maintenance decisions, workforce
+          reductions, high electricity costs, deep-level mining challenges, and
+          labor disputes per USGS chapter text.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 7.9
+        quantity:
+          value: 15000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Zimbabwe 2024e: 15,000 kg Pd; unchanged from 2023. Mined from the Great
+          Dyke intrusion by Zimplats (Impala Platinum subsidiary), Mimosa Mining
+          (Sibanye-Stillwater/Impala JV), and Unki Mine (Amplats). The Great Dyke
+          is a Pt+Pd deposit with roughly equal proportions of both metals.
+          Zimbabwe is the world's third-largest PGM producer.
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 7.9
+        quantity:
+          value: 15000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Canada 2024e: 15,000 kg Pd; down from 16,100 kg in 2023. PGMs produced
+          as byproducts of nickel-copper mining in the Sudbury Basin (Ontario) by
+          Vale and Glencore, and from the Lac des Iles palladium mine (Ontario) by
+          North American Palladium (Impala Platinum subsidiary). Lac des Iles is
+          one of the few primary Pd mines outside South Africa and Russia.
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 4.2
+        quantity:
+          value: 8000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          United States 2024e: 8,000 kg Pd; down from 10,300 kg in 2023 (−22% YoY).
+          One company (Sibanye-Stillwater) mined and processed PGMs from the
+          Stillwater Complex, Montana, with an estimated value of ~$310 million in
+          2024 (down 42% from $541 million in 2023). The company placed operations
+          on care-and-maintenance and reduced its workforce owing to high costs and
+          declining PGM prices. US mine is the only primary PGM deposit in the
+          contiguous United States.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZZ
+        share_pct: 2.2
+        quantity:
+          value: 4200
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          "Other countries" 2024e: 4,200 kg Pd (unchanged from 2023). Includes minor
+          production from Finland (byproduct of nickel refining), Australia,
+          Madagascar, Botswana, and other sources. USGS does not itemize individual
+          countries in this residual bucket.
+        source_id: usgs_mcs_2025_pgm
+    completeness: complete
+  refining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 40
+        confidence: low
+        notes: |
+          South Africa refines the majority of its own PGM output via the three
+          major producers' refineries (Amplats Waterval, Implats Precious Metals
+          Refinery, Sibanye-Stillwater). Combined ~40% of world Pd refining
+          estimated; USGS does not publish world refining shares by country for PGMs.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 40
+        confidence: low
+        notes: |
+          Russia refines its own production through Nornickel's Krastsvetmet refinery
+          (Krasnoyarsk) and Norilsk Nickel's integrated metallurgical operations.
+          Nornickel is the world's largest Pd refiner by volume. ~40% of world Pd
+          refining estimated; USGS does not publish world refining shares for PGMs.
+        source_id: usgs_mcs_2025_pgm
+      - country: BE
+        share_pct: 8
+        confidence: medium
+        notes: |
+          Belgium 2020-23: cited as 8% of US Pd imports per USGS MCS 2025 import
+          sources table. Umicore SA (Brussels) is a major secondary PGM refiner,
+          recovering Pd from spent autocatalysts and industrial scrap globally.
+        source_id: usgs_mcs_2025_pgm
+      - country: IT
+        share_pct: 8
+        confidence: medium
+        notes: |
+          Italy 2020-23: cited as 8% of US Pd imports per USGS MCS 2025 import
+          sources table. Chimet SpA (Arezzo) is Italy's primary PGM refiner.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZZ
+        share_pct: 4
+        confidence: low
+        notes: |
+          Other Pd refiners: Japan (Tanaka Kikinzoku, Asahi Holdings), Germany,
+          Canada (Vale CBNC), and others. Secondary refining of spent catalytic
+          converters (~45,000 kg Pd recovered globally in 2024 per USGS chapter)
+          adds significant recycled supply across multiple countries.
+        source_id: usgs_mcs_2025_pgm
+    completeness: top_producers_only
+  notes: |
+    World mine production 2023: 208,000 kg Pd; 2024e: 190,000 kg Pd (−8.7% YoY).
+    Country shares sum to 99.6% due to rounding of 2024e world total (190,000 kg
+    rounded). Palladium production by country is directly reported in USGS MCS 2025
+    PGM chapter tables, not derived from a basket share multiplication.
+
+reserves:
+  economic_reserves:
+    value: 81000000
+    unit: kg
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 (p.137): world PGM reserves >81,000,000 kg combined for all
+      six platinum-group metals. USGS does not disaggregate reserves by individual
+      PGM. Applying Pd's approximate share of the PGM production basket (~44%)
+      as a proxy yields an indicative Pd reserve of ~35,600,000 kg; actual Pd
+      share of reserves varies by deposit (Norilsk-type Ni-Cu sulfides are ~60-65%
+      Pd of PGM content; Bushveld Complex BIC deposits are ~35-45% Pd depending on
+      reef). All country figures below are combined PGM reserves from USGS.
+      World PGM resources total more than 100,000,000 kg per USGS chapter text;
+      the largest resources are in South Africa's Bushveld Complex.
+    source_id: usgs_mcs_2025_pgm
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 77.8
+        quantity:
+          value: 63000000
+          unit: kg
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          South Africa: 63,000,000 kg combined PGM reserves (77.8% of world total).
+          Predominantly in the Bushveld Igneous Complex (Merensky Reef, UG-2 Reef,
+          Platreef). The BIC is the world's most PGM-rich geological formation.
+          USGS does not report Pd-specific SA reserves separately.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 19.8
+        quantity:
+          value: 16000000
+          unit: kg
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Russia: >16,000,000 kg combined PGM reserves (floor value; USGS footnote 10:
+          based on Russian Classification system A+B+C1+C2, which includes reserves
+          being developed or prepared for development). Norilsk-Talnakh deposits are
+          highly Pd-rich; actual Pd-specific fraction likely ~60-65% of Russian PGM
+          reserves, well above the global average.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 1.5
+        quantity:
+          value: 1200000
+          unit: kg
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: "Zimbabwe: 1,200,000 kg combined PGM reserves in the Great Dyke intrusion."
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.0
+        quantity:
+          value: 820000
+          unit: kg
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: "United States: 820,000 kg combined PGM reserves in the Stillwater Complex, Montana."
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 0.4
+        quantity:
+          value: 310000
+          unit: kg
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: "Canada: 310,000 kg combined PGM reserves. Sudbury Basin and Lac des Iles."
+        source_id: usgs_mcs_2025_pgm
+    completeness: top_producers_only
+  notes: |
+    All reserve figures are combined PGM basket quantities, not Pd-specific. USGS MCS
+    2025 does not disaggregate PGM reserves by individual element. Country share
+    percentages sum to ~100.5% due to rounding. World PGM resources exceed
+    100,000,000 kg per USGS chapter text.
+
+end_uses:
+  uses:
+    - application: autocatalysts_gasoline_twc
+      share_pct: 80
+      confidence: medium
+      notes: |
+        Palladium is the primary PGM in three-way catalytic converters (TWC) for
+        gasoline-engine automobiles, reducing CO, hydrocarbons, and NOx emissions.
+        USGS MCS 2025: "The leading domestic use for PGMs was in catalytic converters
+        to decrease harmful emissions from automobiles." Pd replaced Pt in gasoline
+        TWC in the 1990s owing to cost advantage, and now dominates this application.
+        Each light-duty vehicle gasoline TWC contains approximately 2-7 grams Pd.
+        ~80% share is an industry consensus estimate; USGS does not provide a
+        Pd-specific end-use percentage breakdown.
+      source_id: usgs_mcs_2025_pgm
+    - application: electronics_capacitors_connectors
+      share_pct: 10
+      confidence: medium
+      notes: |
+        Pd used in multilayer ceramic capacitors (MLCCs) as internal electrodes
+        (Pd-Ag alloys), computer hard disk components, hybridized integrated
+        circuits, and connector plating. USGS MCS 2025 chapter text cites
+        "electronic applications, such as in computer hard disks, hybridized
+        integrated circuits, and multilayer ceramic capacitors" as a major end use.
+      source_id: usgs_mcs_2025_pgm
+    - application: dental_alloys
+      share_pct: 4
+      confidence: medium
+      notes: |
+        Pd-Ag and Pd-Au dental alloys used for crowns, bridges, and inlays.
+        USGS MCS 2025 chapter text cites "dental and medical devices" as a
+        PGM end use. Market is declining as composite resin and zirconia
+        ceramics displace metal alloys in dentistry.
+      source_id: usgs_mcs_2025_pgm
+    - application: industrial_chemical_catalysts
+      share_pct: 3
+      confidence: medium
+      notes: |
+        Pd catalysts for bulk-chemical production (hydrogen peroxide, purified
+        terephthalic acid, vinyl acetate monomer) and petroleum refining.
+        USGS MCS 2025: "catalysts for bulk-chemical production and petroleum
+        refining" cited as a major end use for PGMs.
+      source_id: usgs_mcs_2025_pgm
+    - application: investment_and_jewelry
+      share_pct: 3
+      confidence: medium
+      notes: |
+        Pd investment (coins, small bars) and jewelry (white metal alloy rings,
+        watch components). USGS MCS 2025 chapter text cites "investment" and
+        "jewelry" as PGM end uses. Pd jewelry demand grew in China 2000s when
+        prices were low but has declined with rising prices and return to
+        platinum/white-gold preference.
+      source_id: usgs_mcs_2025_pgm
+  completeness: complete
+
+byproduct_of:
+  - Ni
+  - Cu
+
+feedstock_origins:
+  - substrate: nickel_copper_sulfide_ore
+    typical_concentration_pct: null
+    notes: |
+      Norilsk-type Ni-Cu sulfide ores (Russia Norilsk-Talnakh; Canada Sudbury Basin)
+      contain Pd as a byproduct PGM. Typical Pd grades of ~0.5-15 g/t in ore feed
+      depending on deposit (Norilsk ores are anomalously PGM-rich; Sudbury ores are
+      lower grade). USGS MCS 2025: "Small quantities of PGMs also were recovered as
+      byproducts of copper-nickel mining in Michigan." Pd is dominant (~60-65%) among
+      PGMs in Norilsk-type deposits due to sulfide mineralogy.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: platinum_group_mineral_ore_bushveld
+    typical_concentration_pct: null
+    notes: |
+      Bushveld Igneous Complex primary PGM ores (South Africa): UG-2 reef ~3-4 g/t
+      4E PGM (Pt+Pd+Rh+Au), Merensky Reef ~4-7 g/t 4E. Pd is ~35-45% of 4E basket
+      depending on reef. Mining is by conventional hard-rock underground methods.
+      Produced ~72,000 kg Pd from South Africa in 2024e.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: platinum_group_mineral_ore_great_dyke
+    typical_concentration_pct: null
+    notes: |
+      Zimbabwe Great Dyke intrusion Main Sulfide Zone (MSZ): ~2.5 g/t 4E PGM with
+      Pt and Pd in roughly equal proportions. Produced ~15,000 kg Pd in Zimbabwe
+      in 2024e. Mined by Zimplats, Mimosa, and Unki Mine operators.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: stillwater_complex_ore
+    typical_concentration_pct: null
+    notes: |
+      Stillwater Complex (Montana, USA): Pd-dominant PGM deposit (~3:1 Pd:Pt ratio
+      at the J-M Reef, contrasting with Bushveld's Pt-dominant ores). One of the
+      highest-grade primary PGM deposits in the world (~18-20 g/t 2E at J-M Reef).
+      Produced ~8,000 kg Pd from the United States in 2024e.
+    source_id: usgs_mcs_2025_pgm
+
+substitutes:
+  - application: autocatalysts_gasoline_twc
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Palladium has been used as a substitute for platinum in most
+      gasoline-engine catalytic converters because of the historically lower price for
+      palladium relative to that of platinum." Substitution is directional — Pd replaced
+      Pt in gasoline TWC but the reverse substitution (Pt for Pd) is technically feasible
+      via catalyst washcoat reformulation, constrained by automotive engineering lead
+      times and PGC price parity (Pd ~$980/oz vs Pt ~$950/oz in 2024, near parity for
+      first time since mid-2000s).
+    source_id: usgs_mcs_2025_pgm
+  - application: autocatalysts_diesel
+    availability: partial
+    notes: |
+      USGS MCS 2025: "About 25% of palladium can routinely be substituted for platinum
+      in diesel catalytic converters; the proportion can be as much as 50% in some
+      applications." Diesel oxidation catalysts (DOCs) use primarily Pt; Pd blending is
+      technically feasible but limited by Pd's lower activity in lean diesel exhaust and
+      lower sulfur tolerance than Pt.
+    source_id: usgs_mcs_2025_pgm
+  - application: general
+    availability: partial
+    notes: |
+      USGS MCS 2025: "For some industrial end uses, one PGM can substitute for another,
+      but with losses in efficiency." Within the PGM group, Pd-for-Pt interchangeability
+      is the primary commercially relevant substitution path. Rh has no adequate
+      substitute in NOx reduction. EV adoption reduces aggregate TWC demand for all PGMs.
+    source_id: usgs_mcs_2025_pgm
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_pgm
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Palladium is included in the US 2022 Critical Minerals List under "platinum-group
+    metals" (6 elements: Ir, Os, Pd, Pt, Rh, Ru), designated critical for supply
+    risk and economic importance; the US relies on imports for ~36% of apparent
+    consumption (2024e) with Russia (32%) and South Africa (32%) as top import
+    sources per USGS. EU CRMA Regulation 2024/1252 designates platinum-group metals
+    collectively as Critical Raw Materials (Annex I). Platinum (Pt) is separately
+    listed in Annex II (Strategic Raw Materials) for its fuel-cell importance;
+    Pd is not specifically listed as a strategic raw material as of 2024.
+
+geopolitical_events:
+  - date: "2022-02"
+    event: "Russia invades Ukraine; financial sanctions and logistics disruptions affect Nornickel PGM export channels"
+    impact: "Pd prices spiked above $3,000/oz in March 2022 on supply security fears. Russia supplies ~40% of world Pd; direct PGM sanctions were avoided but financial/shipping channels were disrupted. USGS: ongoing Russia-Ukraine conflict cited as a factor in declining Russian PGM output through 2024."
+    source_id: usgs_mcs_2025_pgm
+  - date: "2023-01"
+    event: "Sibanye-Stillwater reduces US PGM operations; East Boulder mine placed on care-and-maintenance"
+    impact: "US Pd production fell from ~11,000 kg (2022) to 10,300 kg (2023) to 8,000 kg (2024e). Value of US output fell 42% to $310 million in 2024. Reflects structural cost pressure at sub-$1,000/oz Pd prices from a single high-cost primary producer."
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-01"
+    event: "Palladium annual average price falls to ~$980/oz — lowest annual average since 2017; down 27% from $1,352 in 2023 and 59% from $2,419 peak in 2021"
+    impact: "Price collapse driven by EV adoption reducing gasoline catalyst demand growth, Chinese automotive market softness, investor liquidation of Pd positions, and supply surplus from secondary recycling. USGS attributes decreases to 'decreased demand, investor uncertainty, and oversupply.' South Africa and Russia both curtailed output in response."
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-06"
+    event: "South Africa PGM sector enters structural downcycle with multiple mine closures and workforce reductions at Amplats, Implats, and Sibanye-Stillwater"
+    impact: "Combined SA Pd output fell 4% in 2024e. Amplats announced closure of Bokoni mine; Sibanye-Stillwater reduced headcount at Stillwater (US). The sector faces prolonged restructuring absent a Pd price recovery above ~$1,200/oz operating threshold for marginal mines."
+    source_id: usgs_mcs_2025_pgm
+
+prices:
+  - year: 2020
+    value: 2205.27
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "Engelhard unallocated metal average annual price. Source: S&P Global Platts Metals Week (USGS MCS 2025 footnote 6)."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2021
+    value: 2419.18
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "Engelhard unallocated metal average annual price. Source: S&P Global Platts Metals Week. Peak year for Pd prices; supply tightness drove Pd above Pt for first time in decades."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2022
+    value: 2133.81
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "Engelhard unallocated metal average annual price. Source: S&P Global Platts Metals Week. Down 12% from 2021; spike to $3,000+ in March 2022 on Russia-Ukraine fears, then decline."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2023
+    value: 1351.66
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "Engelhard unallocated metal average annual price. Source: S&P Global Platts Metals Week. Down 37% from 2022."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2024
+    value: 980
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "Engelhard unallocated metal average annual price 2024e. Source: S&P Global Platts Metals Week. Down 27% from 2023; lowest annual average since 2017. Pd at near-parity with Pt ($950/oz 2024e) for first time since mid-2000s."
+    source_id: usgs_mcs_2025_pgm
+
+narrative: |
+  Palladium is the dominant platinum-group metal by mine volume (~44% of the 6-PGM
+  basket) and the world's primary autocatalytic metal for gasoline three-way catalytic
+  converters (TWC), which reduce CO, hydrocarbon, and NOx emissions from light-duty
+  vehicles. Russia (Nornickel, ~40% of world Pd supply) and South Africa (Bushveld
+  Complex, ~38%) together account for ~78% of world mine production, creating acute
+  geographic concentration risk. The US produces from the Stillwater Complex (Montana),
+  the world's highest-grade primary Pd deposit, though Sibanye-Stillwater's care-and-
+  maintenance reductions in 2023-2024 cut US output to 8,000 kg — a single-site
+  dependency. Canada's Lac des Iles mine adds a second primary Pd source in North America.
+
+  Palladium's price history is one of the most dramatic in industrial metals: from a
+  prolonged discount to platinum through the 2010s (driven by diesel-engine dominance
+  in Europe preferring Pt catalysts), to a peak of $2,419/oz annual average in 2021
+  (supply tightness, gasoline engine resurgence, Russian supply risk premium), and then
+  a 59% collapse to $980/oz in 2024 as electric vehicle adoption erodes gasoline catalyst
+  demand growth, Chinese automotive sales softened, and secondary recycling (~45,000 kg
+  Pd recovered globally in 2024) added structural supply. At near-Pt-price parity for
+  the first time since the early 2000s, autocatalyst engineers are reassessing Pd/Pt
+  loading ratios, though full reformulation faces multi-year lead times.
+
+  Supply security concerns remain geopolitically concentrated: Russia (under Western
+  financial sanctions since 2022 but with PGM exports not directly sanctioned) is the
+  world's largest Pd supplier; South Africa's deepening cost crisis and labor-relations
+  challenges are forcing mine closures; and the Stillwater Complex in Montana is the
+  sole primary PGM mine in the US. The long-run demand outlook is contested — aggressive
+  EV adoption scenarios could structurally erode Pd demand by the 2030s, while the
+  hydrogen economy offers a partial offset via Pd use in electrolyzers and some fuel
+  cell applications.
+
+sources:
+  - id: usgs_mcs_2025_pgm
+    title: "Mineral Commodity Summaries 2025 — Platinum-Group Metals"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-platinum-group.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
