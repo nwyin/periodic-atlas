@@ -1,0 +1,498 @@
+symbol: Sb
+atomic_number: 51
+name: antimony
+category: metalloid
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports antimony data in metric tons of antimony content unless otherwise
+  specified. Commercial trade forms in the chapter include ore and concentrates, antimony
+  oxide, unwrought metal and powder, antimony articles, and secondary antimonial lead
+  recovered from spent lead-acid batteries. The published price series is for antimony
+  metal minimum 99.65% purity on a cost-insurance-freight basis, quoted in US dollars
+  per pound by Argus Media Group.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 100000
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 reports 2024 world mine production at 100,000 metric tons antimony
+        content (rounded). No marketable antimony was mined in the United States in 2024.
+        US primary antimony metal and oxide were produced in Montana from imported feedstock,
+        but primary output data were withheld; US secondary production from antimonial lead
+        recovered from spent lead-acid batteries was 3,500 metric tons.
+      source_id: usgs_mcs_2025_antimony
+    mining_by_country:
+      shares:
+        - country: CN
+          share_pct: 60.0
+          quantity:
+            value: 60000
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_antimony
+          notes: "China 2024e mine production: 60,000 metric tons; reserves revised based on Government reports."
+          source_id: usgs_mcs_2025_antimony
+        - country: TJ
+          share_pct: 17.0
+          quantity:
+            value: 17000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Tajikistan 2024e mine production: 17,000 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: RU
+          share_pct: 13.0
+          quantity:
+            value: 13000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Russia 2024 mine production: 13,000 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: MM
+          share_pct: 4.5
+          quantity:
+            value: 4500
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_antimony
+          notes: "Burma (Myanmar) 2024e mine production: 4,500 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: BO
+          share_pct: 3.7
+          quantity:
+            value: 3700
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Bolivia 2024 mine production: 3,700 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: AU
+          share_pct: 2.0
+          quantity:
+            value: 2000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Australia 2024 mine production: 2,000 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: TR
+          share_pct: 1.6
+          quantity:
+            value: 1600
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_antimony
+          notes: "Turkey 2024e mine production: 1,600 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: MX
+          share_pct: 0.8
+          quantity:
+            value: 800
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Mexico 2024 mine production: 800 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: IR
+          share_pct: 0.5
+          quantity:
+            value: 500
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_antimony
+          notes: "Iran 2024e mine production: 500 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: VN
+          share_pct: 0.3
+          quantity:
+            value: 300
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Vietnam 2024 mine production: 300 metric tons; reserves revised based on Government reports."
+          source_id: usgs_mcs_2025_antimony
+        - country: PK
+          share_pct: 0.25
+          quantity:
+            value: 250
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Pakistan 2024 mine production: 250 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: LA
+          share_pct: 0.2
+          quantity:
+            value: 200
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_antimony
+          notes: "Laos 2024e mine production: 200 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: GT
+          share_pct: 0.05
+          quantity:
+            value: 50
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Guatemala 2024 mine production: 50 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: KZ
+          share_pct: 0.04
+          quantity:
+            value: 40
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_antimony
+          notes: "Kazakhstan 2024e mine production: 40 metric tons."
+          source_id: usgs_mcs_2025_antimony
+        - country: KG
+          share_pct: 0.02
+          quantity:
+            value: 20
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_antimony
+          notes: "Kyrgyzstan 2024 mine production: 20 metric tons."
+          source_id: usgs_mcs_2025_antimony
+      completeness: complete
+    notes: |
+      The sum of named-country mine output in the USGS table is 103,960 metric tons versus
+      the stated rounded world total of 100,000 metric tons. The overage reflects the mix of
+      estimated country values and a rounded world total; share_pct values are computed against
+      the published 100,000-ton world total.
+
+reserves:
+  economic_reserves:
+    value: 2000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 reports world antimony reserves as ">2,000,000" metric tons antimony
+      content. This quantity is modeled as the published lower bound rather than an exact total.
+    source_id: usgs_mcs_2025_antimony
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 29.71
+        quantity:
+          value: 670000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "China reserves: 670,000 metric tons; revised based on Government reports."
+        source_id: usgs_mcs_2025_antimony
+      - country: RU
+        share_pct: 15.52
+        quantity:
+          value: 350000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Russia reserves: 350,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: BO
+        share_pct: 13.75
+        quantity:
+          value: 310000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Bolivia reserves: 310,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: KG
+        share_pct: 11.53
+        quantity:
+          value: 260000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Kyrgyzstan reserves: 260,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: AU
+        share_pct: 6.21
+        quantity:
+          value: 140000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: |
+          Australia reserves: 140,000 metric tons. USGS footnote 9 states JORC-compliant or
+          equivalent reserves were 20,000 tons.
+        source_id: usgs_mcs_2025_antimony
+      - country: MM
+        share_pct: 6.21
+        quantity:
+          value: 140000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Burma (Myanmar) reserves: 140,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: TR
+        share_pct: 4.39
+        quantity:
+          value: 99000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Turkey reserves: 99,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: CA
+        share_pct: 3.46
+        quantity:
+          value: 78000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Canada reserves: 78,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: US
+        share_pct: 2.66
+        quantity:
+          value: 60000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: |
+          United States reserves: 60,000 metric tons. USGS footnote 8 attributes this to
+          company-reported probable reserves for the Stibnite Gold Project in Idaho.
+        source_id: usgs_mcs_2025_antimony
+      - country: VN
+        share_pct: 2.39
+        quantity:
+          value: 54000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Vietnam reserves: 54,000 metric tons; revised based on Government reports."
+        source_id: usgs_mcs_2025_antimony
+      - country: TJ
+        share_pct: 2.22
+        quantity:
+          value: 50000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Tajikistan reserves: 50,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: PK
+        share_pct: 1.15
+        quantity:
+          value: 26000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Pakistan reserves: 26,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+      - country: MX
+        share_pct: 0.8
+        quantity:
+          value: 18000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_antimony
+        notes: "Mexico reserves: 18,000 metric tons."
+        source_id: usgs_mcs_2025_antimony
+    completeness: partial
+  notes: |
+    USGS gives a lower-bound world reserve figure (>2,000,000 metric tons) and lists several
+    countries with reserve values marked NA (Guatemala, Iran, Kazakhstan, and Laos). The
+    country share_pct values above are inferred from the subtotal of quantified country reserves
+    (2,255,000 metric tons), not from the lower-bound world total. USGS describes world resources
+    qualitatively but does not publish a global antimony resource tonnage in this chapter.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: antimony_ore_and_concentrates
+    notes: |
+      Primary antimony metal and oxide production in the United States used imported feedstock
+      in 2024. USGS lists commercial trade in ore and concentrates, oxide, and unwrought metal
+      and powder; 2024 imports for consumption were 310 metric tons of ore and concentrates,
+      20,000 metric tons of oxide, and 4,100 metric tons of unwrought metal and powder.
+    source_id: usgs_mcs_2025_antimony
+  - substrate: spent_lead_acid_batteries
+    notes: |
+      Secondary antimony production came from antimonial lead recovered from spent lead-acid
+      batteries and was intended for the lead-acid battery industry. Recycling supplied about
+      15% of estimated US apparent consumption in 2024.
+    source_id: usgs_mcs_2025_antimony
+
+substitutes:
+  - application: flame_retardants
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: selected organic compounds and hydrated aluminum
+      oxide are substitutes for antimony as flame retardants.
+    source_id: usgs_mcs_2025_antimony
+  - application: nonmetal_products
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that chromium, tin, titanium, zinc, and zirconium compounds
+      substitute for antimony chemicals in enamels, paint, and pigments.
+    source_id: usgs_mcs_2025_antimony
+  - application: metal_products
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that combinations of calcium, copper, selenium, sulfur, and tin
+      can substitute for antimony-bearing alloys in lead-acid batteries.
+    source_id: usgs_mcs_2025_antimony
+
+end_uses:
+  uses:
+    - application: metal_products
+      share_pct: 40
+      confidence: high
+      notes: "USGS MCS 2025: metal products, including antimonial lead and ammunition, accounted for 40% of US antimony use in 2024."
+      source_id: usgs_mcs_2025_antimony
+    - application: flame_retardants
+      share_pct: 39
+      confidence: high
+      notes: "USGS MCS 2025: flame retardants accounted for 39% of US antimony use in 2024."
+      source_id: usgs_mcs_2025_antimony
+    - application: nonmetal_products
+      share_pct: 21
+      confidence: high
+      notes: "USGS MCS 2025: nonmetal products, including ceramics and glass and rubber products, accounted for 21% of US antimony use in 2024."
+      source_id: usgs_mcs_2025_antimony
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_2025_critical_minerals_list
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+
+prices:
+  - year: 2024
+    value: 9.5
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: antimony metal minimum 99.65%, CIF, average 2024e price $9.50/lb."
+    source_id: usgs_mcs_2025_antimony
+  - year: 2023
+    value: 5.49
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: antimony metal minimum 99.65%, CIF, average 2023 price $5.49/lb."
+    source_id: usgs_mcs_2025_antimony
+  - year: 2022
+    value: 6.18
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: antimony metal minimum 99.65%, CIF, average 2022 price $6.18/lb."
+    source_id: usgs_mcs_2025_antimony
+  - year: 2021
+    value: 5.31
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: antimony metal minimum 99.65%, CIF, average 2021 price $5.31/lb."
+    source_id: usgs_mcs_2025_antimony
+  - year: 2020
+    value: 2.67
+    unit: usd_per_lb
+    form: metal
+    basis: other
+    region: global
+    notes: "USGS MCS 2025 salient statistics: antimony metal minimum 99.65%, CIF, average 2020 price $2.67/lb."
+    source_id: usgs_mcs_2025_antimony
+
+geopolitical_events:
+  - date: "2024-02"
+    event: "A mining company in Idaho receives additional US Department of Defense funding to reestablish a domestic antimony source"
+    impact: |
+      USGS reports the conditional February 2024 award raised total Department of Defense
+      funding for the Idaho project to $59.4 million. The project is tied to the Stibnite
+      Gold Project reserve base and reflects US concern over 85% net import reliance and the
+      absence of marketable domestic mine output.
+    source_id: usgs_mcs_2025_antimony
+  - date: "2024-08"
+    event: "China imposes export-license requirements on antimony ore, metal, oxides, hydrides, indium antimonides, organo-antimony compounds, and gold-antimony separation technology"
+    impact: |
+      After the August 2024 announcement, the antimony metal price nearly doubled according
+      to the USGS-cited Argus series, rising from $8.91/lb in July to $17.50/lb in November.
+      The licensing regime tightened the already concentrated global antimony supply chain.
+    source_id: usgs_mcs_2025_antimony
+  - date: "2024-12"
+    event: "China bans all antimony exports to the United States"
+    impact: |
+      USGS reports that China escalated from licensing to a US-specific export ban in
+      December 2024. Because China remained the dominant mine producer at 60% of 2024 world
+      output and supplied 63% of US metal-and-oxide imports in 2020–23, the ban materially
+      heightened US supply-chain vulnerability.
+    source_id: usgs_mcs_2025_antimony
+
+narrative: |
+  Antimony sits in the narrow band of industrial minerals that matter far more than their
+  tonnage suggests. World mine supply in 2024 was only about 100,000 metric tons antimony
+  content, but the market is structurally exposed because China alone accounted for about 60%
+  of that output and also dominates trade in oxide and metal. The United States had no
+  marketable mine production in 2024, relied on imports for roughly 85% of apparent
+  consumption, and kept a secondary stream alive mainly through antimonial lead recovered
+  from spent lead-acid batteries.
+
+  Commercial demand in the United States is split across metal products such as antimonial
+  lead and ammunition (40%), flame retardants (39%), and nonmetal products such as ceramics,
+  glass, and rubber (21%). The trade forms match that split: oxide is the largest import
+  stream by volume, while secondary recycling feeds directly back into the battery industry.
+  Substitutes exist in each major use class, but they are application-specific rather than
+  universal, which limits how quickly demand can move away from antimony when supply tightens.
+
+  The 2024 market confirmed how geopolitical this element has become. China first imposed
+  export-license requirements in August and then banned all antimony exports to the United
+  States in December; over the same period the cited antimony metal price jumped from
+  $8.91/lb in July to $17.50/lb in November. That shock coincided with US Department of
+  Defense funding to restart domestic mine supply in Idaho, underscoring that antimony is
+  now treated less as a routine alloying or flame-retardant additive and more as a strategic
+  chokepoint material.
+
+sources:
+  - id: usgs_mcs_2025_antimony
+    title: Mineral Commodity Summaries 2025 — Antimony
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-antimony.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_2025_critical_minerals_list
+    title: "Final 2025 List of Critical Minerals (Federal Register Vol. 90, No. 214, November 7, 2025)"
+    publisher: US Geological Survey / US Department of the Interior
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act (Annex II)"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
