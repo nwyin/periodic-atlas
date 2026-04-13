@@ -1,0 +1,488 @@
+symbol: Pt
+atomic_number: 78
+name: platinum
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports platinum-group metals (PGMs) as a single grouped commodity
+  chapter covering all six elements: platinum, palladium, iridium, osmium, rhodium,
+  and ruthenium. Production data are expressed in kilograms of PGM content. Mine
+  production is reported separately for platinum and palladium by country; iridium,
+  osmium, rhodium, and ruthenium production are not disaggregated by country. Prices
+  are quoted in US dollars per troy ounce (Engelhard unfabricated metal average annual
+  price; source: S&P Global Platts Metals Week). One troy ounce = 31.1035 g; one
+  metric ton = 32,150.7 troy ounces per the USGS chapter note. Platinum is traded
+  commercially as refined metal sponge or ingot (≥99.95% Pt), PGM concentrates (as
+  mined at source), and platinum salts/compounds for catalytic applications. Platinum
+  is the second-most-produced PGM by weight: 2024e world total of 170,000 kg Pt vs.
+  190,000 kg Pd; together they represent ~94% of the two primary PGMs. Platinum's
+  basket share of combined Pt+Pd production is approximately 47% (170,000 / 360,000
+  kg 2024e). All production figures in this file are in kg PGM content unless otherwise
+  noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 170000
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world mine production 2024e: 170,000 kg Pt (rounded), down from
+      179,000 kg in 2023 (~5% decline). Platinum is the second-largest PGM by production
+      weight after palladium (190,000 kg world 2024e); combined Pt+Pd accounts for
+      approximately 94% of the two primary PGMs. Platinum's basket share of Pt+Pd combined
+      is ~47% (170,000 / 360,000 kg). Iridium, osmium, rhodium, and ruthenium world mine
+      production is not disaggregated in this USGS chapter; from US import data, Rh
+      (15,000 kg US imports), Ru (10,000 kg), and Ir (1,400 kg) are substantially smaller
+      markets. Platinum is the primary commercial product from the Bushveld Igneous Complex
+      in South Africa, which accounts for ~71% of world platinum mine output.
+    source_id: usgs_mcs_2025_pgm
+  grouped_reporting: true
+  commodity_group: platinum_group_metals
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 70.6
+        quantity:
+          value: 120000
+          unit: kg_per_year
+          form: contained_element
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          South Africa 2024e: 120,000 kg Pt, down from 125,000 kg in 2023. South Africa
+          is overwhelmingly the world's dominant platinum producer; the Bushveld Igneous
+          Complex (BIC) hosts the largest known PGM resource, mined from the Merensky
+          Reef and UG2 Reef. Production declined owing to declining PGM prices, higher
+          costs of deep-level mining, labor disputes, and ongoing electricity supply
+          disruptions. Primary producers: Anglo American Platinum (Amplats), Impala Platinum
+          (Implats), Sibanye Stillwater (SA operations), Northam Platinum.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 11.2
+        quantity:
+          value: 19000
+          unit: kg_per_year
+          form: contained_element
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Zimbabwe 2024e: 19,000 kg Pt, essentially flat vs. 19,200 kg in 2023. Zimbabwe's
+          Great Dyke complex contains substantial PGM resources. Primary producer: Zimplats
+          (majority-owned by Impala Platinum). Zimbabwe is the second-largest platinum
+          producer globally after South Africa.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 10.6
+        quantity:
+          value: 18000
+          unit: kg_per_year
+          form: contained_element
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Russia 2024e: 18,000 kg Pt, down from 21,000 kg in 2023 (~14% decline). Russian
+          PGM production is dominated by Nornickel (Norilsk Nickel), where Pt and Pd are
+          recovered as co-products of nickel-copper sulfide mining at the Norilsk-Talnakh
+          deposit in Siberia and Kola Peninsula. Production declined owing to disruptions
+          from natural disasters, lower metal grades and ore recovery, ongoing issues related
+          to the Russia-Ukraine conflict, and planned outages at a major metallurgical plant.
+          Russia is the world's largest palladium producer but only the third-largest
+          platinum producer.
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 3.1
+        quantity:
+          value: 5200
+          unit: kg_per_year
+          form: contained_element
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Canada 2024e: 5,200 kg Pt (stable vs. 5,170 kg in 2023). Canadian platinum
+          is primarily recovered as a co-product of nickel-copper mining in Sudbury,
+          Ontario (Vale, Glencore) and from other Ni-Cu sulfide deposits.
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.2
+        quantity:
+          value: 2000
+          unit: kg_per_year
+          form: contained_element
+          confidence: high
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          United States 2024e: 2,000 kg Pt, down from 3,040 kg in 2023 (~34% decline).
+          Virtually all US platinum mine production comes from one company in Montana
+          (Sibanye Stillwater's Stillwater Complex, one of the few significant primary
+          PGM deposits outside southern Africa). The company placed one of its operations
+          on care-and-maintenance status in 2024 and reduced employment from ~1,450 to
+          ~900 workers owing to high operating costs and declining PGM prices. Small
+          byproduct quantities are also recovered from copper-nickel mining in Michigan
+          and sold abroad for refining. The 2024 total estimated value of US PGM mine
+          output was ~$310 million, down 42% from $541 million in 2023.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZZ
+        share_pct: 2.7
+        quantity:
+          value: 4600
+          unit: kg_per_year
+          form: contained_element
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Other countries 2024e: 4,600 kg Pt (down from 5,710 kg in 2023). Includes
+          small production from Colombia, Ethiopia, and other minor sources. USGS MCS
+          2025 production table does not separately identify these countries.
+        source_id: usgs_mcs_2025_pgm
+    completeness: complete
+
+reserves:
+  economic_reserves:
+    value: 81000000
+    unit: kg
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 world total PGM reserves: >81,000,000 kg (floor value). Reserves
+      are reported as total PGM content — not disaggregated by individual element.
+      World PGM resources are estimated at more than 100,000,000 kg per the same
+      chapter. The world's largest PGM reserves and resources are concentrated in the
+      Bushveld Igneous Complex, South Africa.
+    source_id: usgs_mcs_2025_pgm
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 77.8
+        quantity:
+          value: 63000000
+          unit: kg
+          form: contained_element
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          South Africa PGM reserves: 63,000,000 kg — by far the largest national reserve
+          base. Dominated by Bushveld Igneous Complex Merensky Reef and UG2 Reef deposits.
+          All figures are total PGM content; platinum-specific fraction not disaggregated
+          by USGS.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 19.8
+        quantity:
+          value: 16000000
+          unit: kg
+          form: contained_element
+          confidence: low
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          Russia PGM reserves: 16,000,000 kg per Russian Classification A+B+C1+C2 (where
+          C2 includes deposits being developed or prepared for development). USGS explicitly
+          footnotes that this figure uses the Russian Classification system and is not
+          directly comparable to Western JORC or SEC-style reserves; actual marketable
+          reserves under Western standards would be lower.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 1.5
+        quantity:
+          value: 1200000
+          unit: kg
+          form: contained_element
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: "Zimbabwe PGM reserves: 1,200,000 kg. Located in the Great Dyke complex."
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.0
+        quantity:
+          value: 820000
+          unit: kg
+          form: contained_element
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: |
+          US PGM reserves: 820,000 kg. Concentrated in the Stillwater Complex, Montana.
+          Total PGM content; platinum-specific share not disaggregated.
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 0.4
+        quantity:
+          value: 310000
+          unit: kg
+          form: contained_element
+          confidence: medium
+          source_id: usgs_mcs_2025_pgm
+        notes: "Canada PGM reserves: 310,000 kg. Primarily from Sudbury and other Ni-Cu mining districts."
+        source_id: usgs_mcs_2025_pgm
+    completeness: complete
+  notes: |
+    Reserve figures are total PGM content (all six elements combined) as reported by
+    USGS MCS 2025. Per-element breakdowns are not publicly available. Russia's reserve
+    figure uses Russian Classification A+B+C1+C2 (USGS footnote) and is not comparable
+    to JORC/SEC standards. The world total of >81,000,000 kg is a floor value; listed
+    country totals (81,330,000 kg) sum slightly above the floor owing to rounding.
+    "Other countries: NA" in the original USGS table — no other countries reported.
+
+end_uses:
+  uses:
+    - application: autocatalysts
+      share_pct: 40
+      confidence: low
+      notes: |
+        USGS MCS 2025 identifies catalytic converters for automobile emission control as
+        "the leading domestic use of platinum." Platinum dominates diesel catalytic
+        converters (heavy-duty trucks, buses, diesel passenger cars). Palladium has
+        substituted for platinum in most gasoline-engine converters owing to historically
+        lower palladium prices, but platinum retains significant share in diesel
+        after-treatment. Global platinum autocatalyst demand estimated at approximately
+        40% of total consumption; not explicitly quantified in percentage terms by USGS.
+      source_id: usgs_mcs_2025_pgm
+    - application: jewelry
+      share_pct: 28
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists jewelry as a named platinum end use. Platinum jewelry is
+        particularly significant in Japan, China, and Europe where platinum wedding
+        bands and luxury items are common. Estimated at approximately 28% of total
+        platinum demand; not explicitly quantified by USGS.
+      source_id: usgs_mcs_2025_pgm
+    - application: chemical_and_industrial_catalysts
+      share_pct: 17
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists "catalysts for the production of bulk chemicals and petroleum
+        refining" as a major platinum end use. Includes platinum gauze catalysts for nitric
+        acid synthesis (ammonia oxidation), silicone polymer curing, petroleum reforming
+        (platforming), and fuel cell electrocatalysts. Estimated at approximately 17% of
+        total platinum demand; not explicitly quantified by USGS.
+      source_id: usgs_mcs_2025_pgm
+    - application: investment
+      share_pct: 8
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists investment as a named platinum end use. Includes platinum
+        bullion coins, bars, and exchange-traded fund (ETF) holdings. Estimated at
+        approximately 8% of total platinum demand.
+      source_id: usgs_mcs_2025_pgm
+    - application: other_industrial
+      share_pct: 7
+      confidence: low
+      notes: |
+        USGS MCS 2025 lists dental and medical devices, electronic applications (computer
+        hard disks, hybridized integrated circuits, multilayer ceramic capacitors), glass
+        manufacturing (platinum-rhodium alloy bushings for fiberglass and glass fiber
+        production), and laboratory equipment as further platinum end uses. Combined
+        estimated at approximately 7% of total platinum demand.
+      source_id: usgs_mcs_2025_pgm
+  completeness: complete
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: bushveld_pgm_ore
+    typical_concentration_pct: null
+    notes: |
+      South Africa's Bushveld Igneous Complex (BIC) is the world's largest primary PGM
+      source (~71% of world Pt supply). Platinum is the primary-value PGM recovered from
+      Merensky Reef (typically 4–6 g/t combined 4E PGM including Au) and UG2 Reef (higher
+      chromite content, Cr co-product). Pt is the dominant product; Pd, Rh, Ru, Ir, Os,
+      and Au are co-products. Concentration is in g/t (parts per million) — sub-ppm mass
+      fractions not expressed as percentage.
+    source_id: usgs_mcs_2025_pgm
+  - substrate: nickel_copper_sulfide_ore
+    typical_concentration_pct: null
+    notes: |
+      In Russia (Norilsk-Talnakh Ni-Cu sulfide deposit; ~11% of world Pt) and Canada
+      (Sudbury basin; ~3%), platinum and palladium are recovered as economically significant
+      co-products of primary nickel and copper mining. Nickel is the primary-value metal;
+      PGMs are recovered during Ni-Cu smelting and refining. This distinguishes the
+      Russian/Canadian supply stream from the South African primary-Pt stream.
+    source_id: usgs_mcs_2025_pgm
+
+substitutes:
+  - application: autocatalysts
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Palladium has been used as a substitute for platinum in most
+      gasoline-engine catalytic converters because of the historically lower price for
+      palladium relative to that of platinum. About 25% of palladium can routinely be
+      substituted for platinum in diesel catalytic converters; the proportion can be as
+      much as 50% in some applications."
+    source_id: usgs_mcs_2025_pgm
+  - application: general
+    availability: partial
+    notes: |
+      USGS MCS 2025: "For some industrial end uses, one PGM can substitute for another,
+      but with losses in efficiency." Non-PGM substitutes for platinum are limited in
+      high-temperature catalysis and jewelry; in proton-exchange membrane (PEM) fuel
+      cells and electrolyzers, reducing or replacing Pt loading is an active research
+      area but no commercial non-Pt catalyst has yet achieved comparable performance
+      and durability at scale.
+    source_id: usgs_mcs_2025_pgm
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_pgm
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Platinum-group metals are on the US 2022 Final List of Critical Minerals (Federal
+    Register Vol. 87, No. 37; reaffirmed through 2025). The US is approximately 85%
+    net import reliant for platinum in 2024e (USGS MCS 2025 salient statistics; 71,000 kg
+    apparent consumption vs. 2,000 kg domestic mine production). Primary import sources
+    2020–23: South Africa 45%, Belgium 12%, Germany 10%, Italy 9%, other 24%. Under EU
+    Regulation 2024/1252 (Critical Raw Materials Act, CRMA), platinum-group metals are
+    listed as both Critical Raw Materials (Annex I) and Strategic Raw Materials (Annex II).
+    Criticality is driven by extreme geographic concentration of primary production (South
+    Africa ~71% + Zimbabwe ~11% both sourcing from a single geological feature — the
+    Bushveld Igneous Complex or its Great Dyke extension) and high Western import reliance.
+
+geopolitical_events:
+  - date: "2024"
+    event: "Sibanye Stillwater places one Stillwater Complex mine on care-and-maintenance; US platinum output falls 34% YoY"
+    impact: |
+      USGS MCS 2025 reports the sole significant US PGM producer placed one of its
+      Montana operations on care-and-maintenance status in 2024, citing high operating
+      costs and declining PGM prices. US platinum mine production fell from 3,040 kg
+      (2023) to 2,000 kg (2024e), a 34% decline. Employment at the mine fell from
+      ~1,450 to ~900 workers. Total estimated value of US PGM mine output was ~$310
+      million in 2024, down 42% from $541 million in 2023. The Stillwater Complex is
+      the only significant primary PGM deposit in the Western Hemisphere outside South
+      America; its curtailment further concentrates US import reliance.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024"
+    event: "South Africa PGM production declines; deep-level mining costs, labor disputes, and electricity disruptions reduce output"
+    impact: |
+      South Africa, the world's leading platinum producer, saw mine output decline from
+      125,000 kg (2023) to 120,000 kg (2024e), approximately a 4% decline. USGS MCS
+      2025 attributes this to declining PGM prices, higher costs associated with deep-level
+      mining, labor disputes, and ongoing electricity supply disruptions (Eskom load-shedding
+      context). South Africa holds ~71% of world platinum production; any sustained output
+      reduction materially tightens global supply balances.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024"
+    event: "Russia PGM production declines; Ukraine conflict disruptions, natural disasters, and plant outages reduce Nornickel output"
+    impact: |
+      Russian platinum production fell from 21,000 kg (2023) to 18,000 kg (2024e),
+      a ~14% decline. USGS MCS 2025 attributes this to disruptions from natural disasters,
+      lower metal grades and ore recovery, ongoing issues related to the Russia-Ukraine
+      conflict, and planned outages at a major metallurgical plant. Russia is the world's
+      largest palladium producer and the third-largest platinum producer; its PGM exports
+      to Western markets have faced geopolitical scrutiny and sanctions-related logistics
+      complications since 2022.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024"
+    event: "Platinum price remains below $1,000/troy oz amid PGM basket-wide price deflation"
+    impact: |
+      USGS MCS 2025 salient statistics: estimated 2024 average platinum price ~$950/troy
+      oz, slightly down from $973 in 2023 and well below the 2021 high of $1,094/troy oz.
+      Rhodium fell 31% in 2024, palladium -27%; price declines attributed to decreased
+      demand, investor uncertainty, and oversupply. The depressed price environment
+      contributed directly to mine curtailments in South Africa and the US, creating a
+      self-reinforcing cycle of supply reduction.
+    source_id: usgs_mcs_2025_pgm
+
+prices:
+  - year: 2024
+    value: 950
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics (estimated): average 2024 platinum price ~$950/troy
+      oz (Engelhard unfabricated metal average annual; source: S&P Global Platts Metals
+      Week). Down slightly from $973 in 2023. Decline attributed to decreased demand,
+      investor uncertainty, and oversupply.
+    source_id: usgs_mcs_2025_pgm
+  - year: 2023
+    value: 973
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2023 average platinum price $973.00/troy oz."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2022
+    value: 966.54
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2022 average platinum price $966.54/troy oz."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2021
+    value: 1094.31
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: 2021 average platinum price $1,094.31/troy oz.
+      Highest platinum price in the 2020–2024 period.
+    source_id: usgs_mcs_2025_pgm
+  - year: 2020
+    value: 886.02
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: 2020 average platinum price $886.02/troy oz."
+    source_id: usgs_mcs_2025_pgm
+
+narrative: |
+  Platinum is the flagship element of the platinum-group metals and one of the world's
+  rarest commercially traded industrial metals. With 2024e world mine production of
+  170,000 kg (~170 tonnes), it is produced in quantities roughly 20 times smaller than
+  gold by weight, yet commands comparable geopolitical scrutiny. Its industrial importance
+  rests on three pillars: automotive catalysis (the leading end use), chemical process
+  catalysis (nitric acid production, petroleum reforming), and jewelry. Supply is
+  extraordinarily concentrated: the Bushveld Igneous Complex in South Africa accounts
+  for ~71% of world mine production, with Zimbabwe's Great Dyke (a BIC-related structure)
+  adding another ~11%. No other deposit type or geography approaches this concentration
+  level. Combined, two countries — South Africa and Zimbabwe — control roughly 82% of
+  world platinum mine supply from what is geologically a single magmatic province.
+
+  The 2024 price environment (~$950/troy oz) reflects two intersecting pressures. First,
+  palladium substituted into platinum's traditional gasoline-engine catalytic converter
+  market over the preceding decade when palladium traded at a discount; this reduced
+  platinum's largest end-use share. Second, weak automotive production growth in major
+  markets and post-COVID normalization of PGM demand created surplus conditions, driving
+  prices down across the basket (rhodium -31%, palladium -27% in 2024). The depressed
+  pricing contributed directly to mine curtailments: South Africa reduced output by ~4%,
+  Russia by ~14%, and the US's Stillwater Complex placed one operation on care-and-
+  maintenance. The US is approximately 85% net import reliant for platinum, sourcing
+  primarily from South Africa (45%), Belgium (12%), and Germany (10%) — the latter two
+  largely re-processing southern African and Russian metal.
+
+  Looking forward, platinum's potential role in green hydrogen infrastructure (PEM
+  electrolyzers and fuel cells) is frequently cited as a demand growth catalyst. PEM
+  electrolysis requires platinum-group catalysts with no current commercial-scale PGM
+  substitute. Secondary supply — autocatalyst recycling — provides approximately 8,500
+  kg/year from US sources alone (roughly 12% of US apparent consumption), growing as
+  the legacy vehicle fleet ages. Despite this, the structural supply concentration in
+  the Bushveld Complex and the associated political and infrastructure risks in South
+  Africa ensure platinum remains among the highest-supply-risk commodities in the US
+  and EU critical minerals frameworks.
+
+sources:
+  - id: usgs_mcs_2025_pgm
+    title: Mineral Commodity Summaries 2025 — Platinum-Group Metals
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-platinum-group-metals.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Critical Raw Materials) and Annex II (Strategic Raw Materials)"
+    publisher: European Parliament and Council of the European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
