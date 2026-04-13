@@ -1,0 +1,522 @@
+symbol: Eu
+atomic_number: 63
+name: europium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a grouped commodity chapter ("rare
+  earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element tonnage
+  is not published for individual REEs. Per-element attribution for europium requires
+  multiplying the aggregate by Eu's typical basket share. Europium is commercially
+  traded as Eu₂O₃ (europium(III) oxide) at ≥99.99% minimum purity for phosphor and
+  specialty applications — a higher purity specification than the 99.5% grade typical
+  for La, Ce, and Nd oxides, reflecting Eu's use in precision luminescent applications.
+  USGS MCS 2025 salient statistics table explicitly lists europium oxide at 99.99%
+  minimum purity as a tracked price commodity. All production figures in this file are
+  derived by multiplying the USGS-reported aggregate REO totals by Eu's typical basket
+  share of ~0.1%, which is not reported directly by USGS. The basket share varies by
+  deposit type: bastnaesite (Mountain Pass CA, Bayan Obo CN) yields ~0.1–0.15% Eu₂O₃;
+  ion adsorption clay deposits (southern China, Myanmar, Thailand) yield ~0.2–0.5%
+  Eu₂O₃ due to heavy-REE enrichment. All data are in metric tons REO equivalent unless
+  otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 390
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Eu's typical basket share of ~0.1% gives
+      ~390 t Eu₂O₃ equivalent. Europium's basket share is not reported separately by
+      USGS; the 0.1% factor is an industry consensus figure for the global weighted
+      average across bastnaesite-dominant production. Ion adsorption clay deposits
+      contributing ~11% of world REO (Myanmar + Thailand + SE Asia) have higher Eu
+      content (~0.2–0.5%), suggesting the true global average may be 0.10–0.15%.
+      Europium output is not officially disaggregated from the REE basket in public
+      USGS data; this figure carries low confidence. The 2023 comparable estimate is
+      ~376 t at the same 0.1% share applied to 376,000 t world total.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share: 270,000 / 390,000 = 69.2%.
+          Estimated Eu component: ~270 t Eu₂O₃ at 0.1% basket share. China's southern
+          ion adsorption clay deposits in Jiangxi, Fujian, and Guangdong have above-average
+          Eu content, meaning China's actual share of global Eu output may exceed 69%.
+          Production increased from 255,000 t REO in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain Pass,
+          CA (MP Materials), valued at ~$260 million. Share: 45,000 / 390,000 = 11.5%.
+          Estimated Eu: ~45 t Eu₂O₃ at 0.1% basket share. Mountain Pass bastnaesite
+          contains approximately 0.1–0.15% Eu₂O₃ of total REOs. Production up from
+          41,600 t REO in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28% YoY). Share: 31,000 / 390,000 = 7.9%. Production primarily from ion
+          adsorption clay deposits which are heavy-REE enriched and contain above-average
+          Eu concentrations; estimated Eu contribution ~31 t at 0.1% (conservative).
+          Production estimated from China import records (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia), processed at LAMP
+          (Malaysia). Share: 3.3% of world. Estimated Eu: ~13 t at 0.1% basket share.
+          Production estimated from China import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023 (+81% YoY).
+          USGS cites Nigeria as a driver of 2024 global production growth. Share: 3.3%.
+          Estimated Eu: ~13 t at 0.1% basket share. Production estimated from China
+          import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023 (+261% YoY).
+          Ion adsorption clay deposits; Eu content likely above the bastnaesite basket
+          average. Share: 3.3% of world. Estimated Eu: ~13 t at 0.1% basket share.
+          Production estimated from China import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        notes: |
+          Remaining producers 2024e: India 2,900 + Russia 2,500 + Madagascar 2,000 +
+          Other 1,100 + Vietnam 300 + Malaysia 130 + Brazil 20 ≈ 8,950 t REO, ~2.3%
+          of world total. Estimated combined Eu contribution ~9 t at 0.1% basket share.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 90
+        notes: |
+          China controls approximately 90% of global REE separation and refining
+          capacity. High-purity Eu₂O₃ (≥99.99%) production for phosphor applications
+          is concentrated in specialized Chinese facilities in Jiangxi and Fujian
+          provinces. USGS MCS 2025 import sources (2020–23) confirm China supplied 70%
+          of US REE compound and metal imports; China's actual global separation share
+          is higher (~85–90%) as non-Chinese separators also serve non-US markets.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 7
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Australian Mt. Weld concentrate and produces separated REE products including
+          Eu₂O₃. USGS MCS 2025 import sources (2020–23): Malaysia 13% of US REE imports.
+          LAMP is the world's largest non-Chinese REE separation facility.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Other non-Chinese Eu₂O₃ producers: Neo Performance Materials (Sillamäe,
+          Estonia, 5% of US imports 2020–23), Japanese processors (6% of US imports
+          2020–23), and nascent Mountain Pass separation (California). Phosphor-grade
+          Eu₂O₃ at ≥99.99% purity is primarily a Chinese specialty product. Estonia
+          and Japan source feed from Australian and Chinese intermediates per USGS text.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). All Eu-specific figures derived from REO totals using the ~0.1% basket
+    share assumption; actual per-element disaggregation is not available from public
+    USGS data. Europium is the rarest of the commercially-recovered light-to-middle
+    lanthanides by basket share; its low tonnage combined with a relatively high price
+    (~$27/kg in 2024e) means the Eu market is a small fraction of total REE value.
+
+reserves:
+  economic_reserves:
+    value: 90000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves >90,000,000 t REO
+      (floor value used). Applying Eu's typical basket share (~0.1%) gives ~90,000 t
+      Eu₂O₃ equivalent. USGS does not report per-element reserve breakdowns; all
+      Eu-specific reserve figures are derived. The true figure could be higher if actual
+      Eu basket share exceeds 0.1% in deposit types (particularly ion adsorption clays).
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 44000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of >90,000,000 t world total).
+          Estimated Eu₂O₃ reserves: ~44,000 t (44,000,000 × 0.1%). Bayan Obo holds the
+          majority; southern China ion adsorption clay deposits may have above-average Eu.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 21000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — second-largest world reserve base.
+          Estimated Eu₂O₃: ~21,000 t. Current Brazilian production is near zero (20 t
+          REO in 2024e).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 6900
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Eu₂O₃: ~6,900 t. India produces
+          ~2,900 t REO/year from monazite in heavy mineral sand operations.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 5700
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t (JORC-compliant: 3,300,000 t per USGS
+          footnote 13). Estimated Eu₂O₃: ~5,700 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 3800
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports).
+          Estimated Eu₂O₃: ~3,800 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        quantity:
+          value: 3500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Vietnam REO reserves: 3,500,000 t (revised). Estimated Eu₂O₃: ~3,500 t.
+          Vietnam holds large reserves but produces only ~300 t REO/year.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 1900
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US REO reserves: 1,900,000 t (revised). Mountain Pass, CA is the primary US
+          reserve base. Estimated Eu₂O₃: ~1,900 t.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves not individually listed above: Greenland (1,500,000 t), Tanzania
+    (890,000 t), South Africa (860,000 t), Canada (830,000 t), Thailand (4,500 t).
+    Reserves for Russia, South Africa, United States, and Vietnam were revised in MCS
+    2025 based on company and government reports. All Eu₂O₃ reserve figures are
+    derived from applying ~0.1% basket share to country-level REO reserves; actual
+    per-element data are not publicly disaggregated by USGS.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.12
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate) is the primary commercial source of light
+      and middle rare earth elements including Eu. Eu₂O₃ typically represents ~0.1–0.15%
+      of total REOs in commercial bastnaesite concentrates (Mountain Pass ~0.1–0.15%;
+      Bayan Obo ~0.1%). USGS MCS 2025 confirms bastnaesite mined as primary product at
+      Mountain Pass in 2024. Europium is typically concentrated in the heavy-fraction
+      separation stream during solvent extraction processing.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.1
+    notes: |
+      Monazite (rare-earth phosphate, (Ce,La,Pr,Nd,Eu)PO₄) stockpiled as a separated
+      concentrate or recovered as an accessory mineral in heavy-mineral-sand concentrates.
+      USGS MCS 2025 confirms monazite stockpiled in the southeastern United States in 2024.
+      Eu typically represents ~0.1% of total REOs in monazite. Thorium content in monazite
+      complicates processing under radioactive materials regulations.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 0.3
+    notes: |
+      Ion adsorption clay deposits in southern China (Jiangxi, Fujian, Guangdong) and
+      Southeast Asia (Myanmar, Thailand) are enriched in middle and heavy rare earths
+      relative to bastnaesite. Eu content is higher (~0.2–0.5% of total REOs) in these
+      deposits than in bastnaesite, making them disproportionately important sources of
+      Eu despite contributing a minority share of total REO production. These deposits
+      account for most of the production from Myanmar and Thailand reported in USGS MCS 2025.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: phosphors_led_and_lamp
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally are
+      less effective." For Eu-based phosphors specifically: manganese(IV)-activated
+      potassium fluorosilicate (K₂SiF₆:Mn⁴⁺) provides narrow-band red emission and
+      has partially displaced Eu³⁺-based red phosphors in some LED lighting products,
+      with comparable luminous efficacy. Ce³⁺-doped YAG (Ce:YAG) phosphors provide
+      warm-white LED emission without europium, though with different color rendering
+      characteristics. For blue LED phosphors, Eu²⁺-activated BAM
+      (BaMgAl₁₀O₁₇:Eu²⁺) faces partial substitution from Ce³⁺-doped alternatives.
+      No complete substitute matches the full spectral and efficiency profile of
+      Eu-based phosphors across all lighting applications.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: nuclear_neutron_absorption
+    availability: partial
+    notes: |
+      In nuclear reactor neutron absorption and control applications, gadolinium (Gd)
+      and hafnium (Hf) can substitute for Eu-based control rod materials. Gd has an
+      even higher thermal neutron absorption cross-section than Eu and is more commonly
+      used in neutron poison applications. Partial substitutability exists within the
+      neutron-absorber materials class. USGS MCS 2025 general substitutes statement
+      applies.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: phosphors_led_and_lamp
+      share_pct: 75
+      confidence: low
+      notes: |
+        Phosphors are the dominant end use for europium. Eu³⁺ provides the red
+        emission in rare-earth-activated phosphors for fluorescent lamps, compact
+        fluorescent lamps (CFLs), and LED lighting (Y₂O₃:Eu, Y₂O₂S:Eu, and related
+        host materials). Eu²⁺ provides blue emission in LED phosphors (BAM:Eu²⁺) and
+        contributes to warm-white LED spectra. The phosphor market has contracted
+        significantly since ~2010 due to: (1) extinction of CRT televisions and
+        monitors (a large former Eu consumer); (2) declining CFL market with LED
+        substitution; (3) LED phosphors require less total phosphor per lumen than
+        fluorescent technology. USGS MCS 2025 lists "ceramics and glass" as a REE
+        end use, which includes phosphor applications. The 75% share is an industry
+        consensus estimate; USGS does not report per-element end-use percentages.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: glass_ceramics_specialty
+      share_pct: 10
+      confidence: low
+      notes: |
+        Eu₂O₃ and Eu-doped compounds are used in specialty glass for UV absorption,
+        security printing inks (exploiting Eu fluorescence under UV illumination for
+        anti-counterfeiting in banknotes and documents), and luminescent ceramics.
+        Eu-doped crystal materials are used in scintillators and X-ray imaging screens.
+        Share is an industry estimate; USGS MCS 2025 lists ceramics and glass among
+        REE end uses.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: nuclear_neutron_absorption
+      share_pct: 8
+      confidence: low
+      notes: |
+        Europium has a very high thermal neutron absorption cross-section (~4,600 barns
+        for Eu-151 and ~9,200 barns for Eu-153 combined), making Eu₂O₃ and Eu-bearing
+        compounds useful as neutron poisons and control rod materials in nuclear reactors.
+        Applications include burnable absorbers in nuclear fuel and reactor shielding
+        elements. Share is an estimate; this application is stable relative to phosphors.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_uses
+      share_pct: 7
+      confidence: low
+      notes: |
+        Other applications include Eu-labelled biochemical reagents for medical diagnostics
+        (time-resolved fluorescence immunoassays exploiting Eu³⁺ long fluorescence
+        lifetime), electroluminescent devices, research-grade Eu-doped laser materials,
+        and minor metallurgical additions. Share is an estimate aggregating several minor
+        applications.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices:
+  - year: 2024
+    value: 27
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: europium oxide, 99.99% minimum purity, average
+      price 2024e = $27/kg. Source cited by USGS: Argus Media Group, Argus Non-Ferrous
+      Markets (footnote 6). Price unchanged from 2023. The 99.99% minimum purity
+      specification reflects phosphor-grade requirements; lower-purity Eu₂O₃ grades
+      are not separately tracked in USGS data. Price is significantly lower than the
+      >$1,000/kg peaks reached during the 2010–2012 Chinese REE export restriction
+      period, reflecting market normalization.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2023
+    value: 27
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: europium oxide, 99.99% minimum, $27/kg (2023). Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2022
+    value: 30
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: europium oxide, 99.99% minimum, $30/kg (2022). Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2021
+    value: 31
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: europium oxide, 99.99% minimum, $31/kg (2021). Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2020
+    value: 31
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: europium oxide, 99.99% minimum, $31/kg (2020). Source: Argus Media Group."
+    source_id: usgs_mcs_2025_rare_earths
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Europium is classified as critical under the US 2022 Critical Minerals List as part
+    of "rare earth elements" (a group designation). US net import reliance for REE
+    compounds and metals: 80% in 2024e (down from >95% in 2020–2023) per USGS MCS 2025
+    salient statistics. Light rare earth elements and heavy rare earth elements are both
+    designated as Critical Raw Materials and Strategic Raw Materials under EU Regulation
+    2024/1252 (Critical Raw Materials Act, CRMA); europium's position between the light
+    and heavy lanthanide groups means it falls within the broadly-defined "rare earths"
+    category on both EU lists. Import sources 2020–23: China 70%, Malaysia 13%,
+    Japan 6%, Estonia 5% (USGS MCS 2025).
+
+geopolitical_events:
+  - date: "2024"
+    event: "Global REE mine production increases to 390,000 t REO in 2024e; Eu output estimated at ~390 t Eu₂O₃ derived at 0.1% basket share"
+    impact: |
+      USGS MCS 2025 reports world REE production up from 376,000 t in 2023 to 390,000 t
+      in 2024e, driven by China (+15,000 t), Nigeria (+5,800 t), and Thailand (+9,400 t),
+      partially offset by Burma (-12,000 t). For europium, the implied production increase
+      is from ~376 t to ~390 t at 0.1% basket share — a ~3.7% rise largely irrelevant to
+      Eu market conditions, which are driven by phosphor demand trends rather than REO
+      basket volumes.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024"
+    event: "Europium oxide price stabilizes at $27/kg for 2023–2024, down from peak levels exceeding $1,000/kg during 2010–2012 Chinese export restrictions"
+    impact: |
+      USGS MCS 2025 salient statistics show Eu₂O₃ (99.99%) at $27/kg in both 2023 and
+      2024e, $30/kg in 2022, and $31/kg in 2020–2021. The gradual decline reflects
+      structural demand contraction from CRT television extinction (early 2010s) and
+      accelerating LED adoption displacing CFL and fluorescent lamp phosphors. Unlike
+      magnet REEs (Nd, Pr, Dy) which face demand growth from EVs and wind turbines,
+      europium's phosphor-dominated demand base is in structural decline, suppressing
+      price recovery. The ~$27–31/kg range represents market equilibrium for the current
+      phosphor-dominated demand profile.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024"
+    event: "US net import reliance for REE compounds and metals declines to 80% in 2024e from >95% in prior years"
+    impact: |
+      USGS MCS 2025: US domestic REE compound and metal production reached 7,600 t
+      total in 2024 (including California NdPr compounds and Utah RE compounds per
+      footnote 3), up from 1,920 t in 2023. Net import reliance fell to 80%. For
+      europium specifically, no domestic US separation of high-purity Eu₂O₃ is
+      reported; phosphor-grade Eu₂O₃ continues to be imported primarily from Chinese
+      sources.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Europium occupies a distinctive commercial niche within the rare earth supply chain:
+  it is the rarest of the commonly-traded lanthanides by basket share (~0.1% of total
+  REO production, yielding an estimated ~390 tonnes Eu₂O₃ in 2024), yet it commands a
+  significantly higher price ($27/kg in 2024e for 99.99% Eu₂O₃) than the bulk REEs
+  La and Ce ($1/kg) and even Nd ($56/kg for 99.5%). This premium reflects Eu's
+  concentrated end-use profile in high-purity phosphor applications, where its unique
+  luminescent properties — Eu³⁺ provides narrow-band red emission and Eu²⁺ provides
+  blue-to-green emission — are difficult to replicate with cheaper alternatives. USGS
+  MCS 2025 explicitly tracks Eu₂O₃ price at 99.99% minimum purity, the only REE in the
+  salient statistics table priced at that purity tier alongside the 99.5% bulk grades.
+
+  The defining narrative for europium is structural demand contraction from the LED
+  lighting revolution. Eu was historically the critical element in CRT television red
+  phosphors and compact fluorescent lamp (CFL) phosphors — both applications now
+  essentially extinct or in terminal decline. LED phosphors use far less phosphor mass
+  per lumen than fluorescent technology, and some LED formulations use Mn⁴⁺-activated
+  or Ce³⁺-based alternatives that avoid Eu entirely. The combination of CRT extinction
+  (~2000–2015), CFL displacement by LEDs (~2015–present), and phosphor mass efficiency
+  gains has compressed the Eu market significantly from its pre-2010 scale. Unlike
+  neodymium and praseodymium, europium does not benefit from EV or wind turbine demand
+  growth. Eu prices stabilized in the $27–31/kg range from 2020–2024, far below the
+  >$1,000/kg peaks seen during the 2010–2012 Chinese REE export restriction episode.
+
+  China controls approximately 90% of REE separation capacity and dominates Eu₂O₃
+  production at phosphor-grade purity. US net import reliance for REE compounds and
+  metals was 80% in 2024e (down from >95% in 2020–2023), but high-purity Eu₂O₃ for
+  phosphor applications has no significant non-Chinese source. Despite its modest
+  market scale, europium retains strategic designation under the US Critical Minerals
+  List and EU Regulation 2024/1252 (Critical Raw Materials Act), reflecting its
+  supply-chain concentration risk and specialized application profile. Minor but
+  stable nuclear applications (neutron absorbers in reactor control), security printing
+  (anti-counterfeiting inks exploiting Eu fluorescence), and biochemical assay
+  reagents (time-resolved fluorescence immunoassays) diversify Eu demand modestly
+  beyond the declining phosphor market.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
