@@ -1,0 +1,626 @@
+symbol: Lu
+atomic_number: 71
+name: lutetium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a grouped commodity chapter ("rare
+  earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element tonnage
+  is not published for individual REEs. Per-element attribution for lutetium requires
+  multiplying the aggregate by Lu's typical basket share. Lutetium is commercially
+  traded primarily as Lu₂O₃ (lutetium(III) oxide) at ≥99.9% to ≥99.99% minimum
+  purity depending on application — medical imaging scintillator and radiopharmaceutical
+  grades demand the highest purity. Lu metal is produced for research and specialty
+  applications. Lutetium is the heaviest stable lanthanide and one of the rarest
+  elements in the REE basket. All production figures in this file are derived by
+  multiplying USGS-reported aggregate REO totals by Lu's typical basket share of ~0.05%,
+  which is not reported directly by USGS. The basket share varies by deposit type:
+  bastnaesite and carbonatite deposits (Mountain Pass CA, Bayan Obo CN, Mt. Weld AU)
+  contain very low Lu fractions (~0.01–0.05% Lu₂O₃ of total REOs) as lutetium
+  preferentially enriches heavy-REE-bearing deposits; ion adsorption clay deposits in
+  southern China (Jiangxi, Fujian, Guangdong) and Southeast Asia (Myanmar, Thailand)
+  yield higher Lu proportions (~0.05–0.15% Lu₂O₃) because these HREE-enriched deposits
+  concentrate the heaviest lanthanides. Monazite from heavy mineral sands typically
+  contains ~0.05–0.10% Lu₂O₃. A global weighted average of ~0.05% is used as the
+  central estimate; at this share Lu production is among the smallest of any commercially
+  traded REE. Lu₂O₃ prices are NOT listed in the USGS MCS 2025 salient statistics table;
+  only Ce, Dy, Eu, La, mischmetal, Nd, and Tb oxide prices are reported therein. All
+  data are in metric tons REO equivalent unless otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 195
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Lu's typical basket share of ~0.05% gives
+      ~195 t Lu₂O₃ equivalent. Lutetium's basket share is not reported separately by USGS;
+      the 0.05% factor is an industry consensus figure for the global weighted average
+      across deposit types. Lu is the heaviest stable lanthanide and is enriched in HREE
+      deposits: ion adsorption clay mines in southern China (~0.05–0.15% Lu₂O₃) are the
+      primary commercial Lu source, while LREE-dominant bastnaesite mines at Mountain Pass
+      (CA), Bayan Obo (CN), and Mt. Weld (AU) contain only ~0.01–0.05% Lu₂O₃. The 2023
+      comparable estimate is ~188 t at the same 0.05% share applied to 376,000 t world
+      total. Actual Lu output is not officially disaggregated from the REE basket in public
+      USGS data; this figure carries low confidence. Lutetium is commercially produced in
+      smaller absolute quantities than any other commercially traded REE except promethium
+      (synthetic) and thulium.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        quantity:
+          value: 135
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share of world: 270,000 / 390,000 =
+          69.2%. Estimated Lu component at 0.05% basket share: ~135 t Lu₂O₃. China's
+          actual Lu share is higher than 69.2% by REO tonnage because southern China
+          ion adsorption clay deposits (Jiangxi, Fujian, Guangdong) — the world's primary
+          HREE source — contain ~0.05–0.15% Lu₂O₃, well above the global basket average.
+          Bayan Obo bastnaesite (LREE-dominant, ~0.01–0.02% Lu) dilutes the national
+          average. China's 2024 quota rose from 255,000 t in 2023 to 270,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        quantity:
+          value: 22
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain Pass,
+          CA (MP Materials), valued at ~$260 million. Share: 45,000 / 390,000 = 11.5%.
+          Estimated Lu at 0.05% global basket: ~22 t — a significant overestimate for
+          Mountain Pass, where bastnaesite contains only ~0.01–0.03% Lu₂O₃ of total REOs.
+          Actual Lu in Mountain Pass concentrate is likely only ~4–14 t. Mountain Pass
+          concentrate is shipped to China for separation; no commercial Lu₂O₃ is produced
+          domestically in the United States.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        quantity:
+          value: 15
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28% YoY). Share: 31,000 / 390,000 = 7.9%. Estimated Lu at 0.05% average:
+          ~15 t. Burma produces primarily from ion adsorption clay deposits in Kachin State
+          and Shan State, which are heavy-REE enriched; actual Lu fraction in Burmese
+          production (~0.08–0.15% Lu₂O₃) likely exceeds the global basket average applied
+          here, meaning real Lu output from Burma may be ~25–47 t rather than the derived
+          ~15 t. The 28% YoY production decline reduced global HREE supply
+          disproportionately. Production estimated from China import records (USGS
+          footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 6
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia), processed at LAMP
+          (Malaysia). Mt. Weld is LREE-dominant; Lu content is very low (~0.01–0.03% of
+          REOs). Applying the 0.05% global average overestimates actual Australian Lu
+          output; real Lu from Mt. Weld is likely only ~1–4 t. Estimated at 0.05% global
+          average for consistency: ~6 t. Production estimated from China import data
+          (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        quantity:
+          value: 6
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023 (+81% YoY).
+          USGS cites Nigeria as a driver of 2024 global production growth. Estimated Lu
+          at 0.05% global average: ~6 t. Nigerian REE deposit types are not specified in
+          USGS data; actual Lu content is uncertain. Production estimated from China import
+          data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        quantity:
+          value: 6
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023 (+261% YoY).
+          Thailand produces from ion adsorption clay deposits; Lu content is likely above
+          the global basket average (~0.07–0.12% Lu₂O₃). Applying 0.05% global average
+          gives ~6 t, which likely understates actual Thai Lu output. Cited by USGS as a
+          driver of global production growth alongside China and Nigeria. Production
+          estimated from China import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        quantity:
+          value: 4
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Remaining producers 2024e: India (2,900 t), Russia (2,500 t), Madagascar
+          (2,000 t), Other USGS bucket (1,100 t), Vietnam (300 t), Malaysia (130 t),
+          Brazil (20 t) ≈ 8,950 t total REO, ~2.3% of world. Estimated combined Lu
+          contribution ~4 t at 0.05% global basket average. India produces from monazite
+          in heavy mineral sands (moderate Lu content ~0.05–0.10%); Russia from apatite-
+          nepheline at Kola (very low Lu). Overall Lu contribution from this group is
+          uncertain and likely very small.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 95
+        notes: |
+          China controls approximately 95% or more of global Lu₂O₃ separation and refining
+          capacity; for the heaviest lanthanides like Lu, China's dominance is even greater
+          than for lighter HREEs because the primary ore sources (southern China ion
+          adsorption clays) are processed domestically, and because Lu separation — as the
+          last element in the lanthanide series — requires the most sophisticated solvent
+          extraction or ion exchange fractionation steps. High-purity Lu₂O₃ (≥99.99%)
+          production for LYSO scintillator and radiopharmaceutical applications is
+          concentrated almost exclusively in specialized Chinese separation facilities.
+          USGS MCS 2025 import sources (2020–23) confirm China supplied 70% of US REE
+          compound and metal imports broadly; China's actual share of Lu₂O₃ separation
+          substantially exceeds that figure.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 5
+        notes: |
+          Other Lu₂O₃ producers are extremely limited: Neo Performance Materials
+          (Sillamäe, Estonia, ~5% of US REE imports 2020–23), Japanese specialty
+          processors (Japan ~6% of US REE imports 2020–23), and no significant US
+          separation capacity for Lu. These non-Chinese processors source feed from
+          Australian and Chinese intermediates per USGS chapter text; their Lu-specific
+          output fractions are very small. High-purity Lu₂O₃ for LYSO crystal growth
+          and Lu-177 radiopharmaceutical production is essentially a Chinese specialty.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). All Lu-specific figures derived from REO totals using the ~0.05%
+    basket share assumption; actual per-element disaggregation is not available from
+    public USGS data. Lutetium as the heaviest stable lanthanide is disproportionately
+    concentrated in southern China IAC deposits and HREE-enriched Myanmar/Thailand clay
+    mines relative to its share of total REO tonnage. The 0.05% global average likely
+    underestimates actual Lu output from HREE-rich IAC sources and overestimates it from
+    LREE-dominant mines (Mountain Pass, Mt. Weld). Country shares sum to ~100.8% due to
+    rounding of reported integers against the rounded world total.
+
+reserves:
+  economic_reserves:
+    value: 45000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves >90,000,000 t REO
+      (floor value used). Applying Lu's typical basket share (~0.05%) gives ~45,000 t
+      Lu₂O₃ equivalent. USGS does not report per-element reserve breakdowns; all
+      Lu-specific reserve figures are derived. The true figure depends on the actual Lu
+      content in each country's reserve base ore types. Bastnaesite-dominant reserves
+      (China's Bayan Obo, US Mountain Pass, Australia's Mt. Weld) yield lower Lu tonnages
+      at their actual very low Lu fractions (~0.01–0.05%); ion adsorption clay resources
+      in southern China contain higher Lu fractions (~0.05–0.15%), making them
+      economically significant for Lu supply despite smaller reserve tonnage.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 22000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of >90,000,000 t world total). Estimated
+          Lu₂O₃ reserves: ~22,000 t (44,000,000 × 0.05%). China's IAC deposits in southern
+          China are the primary Lu-bearing reserve base and have higher Lu concentrations
+          (~0.05–0.15%) than the 0.05% basket average implies, so the true China Lu reserve
+          likely exceeds this estimate. Bayan Obo bastnaesite (very low Lu) does not
+          contribute meaningfully.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 10500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — second-largest world reserve base after
+          China. Estimated Lu₂O₃: ~10,500 t. Current Brazilian production is minimal
+          (20 t REO in 2024e). Brazilian REE deposits are predominantly LREE-bearing
+          carbonatites (e.g., Araxá); actual Lu fraction may be below the 0.05% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 3450
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Lu₂O₃: ~3,450 t. India produces
+          ~2,900 t REO per year from monazite in heavy mineral sands; monazite typically
+          contains ~0.05–0.10% Lu₂O₃, near the 0.05% average applied here.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 2850
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t (JORC-compliant or equivalent: 3,300,000 t
+          per USGS footnote 13). Estimated Lu₂O₃: ~2,850 t. Mt. Weld carbonatite is
+          LREE-dominant; actual Lu content is likely well below the 0.05% average
+          (~0.01–0.03%), so this estimate somewhat overstates Australian Lu reserves.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 1900
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports).
+          Estimated Lu₂O₃: ~1,900 t. Kola Peninsula apatite-nepheline deposits are
+          LREE-dominant; actual Lu fraction is below the 0.05% basket average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 950
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US REO reserves: 1,900,000 t (revised). Mountain Pass, CA is the primary US
+          reserve base; Mountain Pass bastnaesite is highly LREE-dominant (~0.01–0.03%
+          Lu₂O₃), so the 0.05% average overstates actual US Lu reserves. Estimated Lu₂O₃
+          at 0.05% global average: ~950 t; actual Mountain Pass Lu content likely ~190–570 t.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves not individually listed: Vietnam (3,500,000 t), Greenland (1,500,000 t),
+    Tanzania (890,000 t), South Africa (860,000 t), Canada (830,000 t), Thailand (4,500 t).
+    Reserves for Russia, South Africa, United States, and Vietnam were revised in MCS 2025
+    based on company and government reports. All Lu₂O₃ reserve figures derived from
+    applying ~0.05% basket share to country-level REO reserves; actual per-element data
+    not publicly disaggregated by USGS. For HREEs like Lu, China's ion adsorption clay
+    reserves represent a disproportionately important source relative to the 0.05% global
+    basket average.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 0.1
+    notes: |
+      Ion adsorption clay (IAC) deposits in southern China (Jiangxi, Fujian, Guangdong)
+      and Southeast Asia (Burma/Myanmar, Thailand) are the world's most important commercial
+      source of lutetium and other heavy rare earth elements. These deposits are enriched in
+      HREEs relative to LREE-dominant bastnaesite and carbonatite mines. Lu₂O₃ typically
+      represents ~0.05–0.15% of total REOs in southern China ionic clay concentrates,
+      compared to ~0.01–0.03% in bastnaesite. USGS MCS 2025 cites Myanmar and Thailand
+      production as estimated from China import data; these represent predominantly
+      clay-derived HREE concentrates. The high Lu fraction in IAC deposits makes them the
+      economic backbone of global Lu supply despite contributing only ~30% of world REO
+      tonnage. Lu is recovered from the heavy-REE fraction of the IAC leach solution during
+      solvent extraction separation.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.03
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate) is the primary commercial source of light
+      REEs (La, Ce, Pr, Nd) but contains very low lutetium. Lu₂O₃ typically represents
+      only ~0.01–0.05% of total REOs in commercial bastnaesite concentrates (Mountain Pass
+      CA ~0.01–0.03%; Bayan Obo CN ~0.02–0.05%). USGS MCS 2025 confirms bastnaesite was
+      mined as a primary product at Mountain Pass in 2024. Very small amounts of Lu are
+      recovered during Chinese processing of mixed bastnaesite concentrate, but Mountain
+      Pass and Bayan Obo bastnaesite contribute a negligible fraction of world Lu supply
+      relative to HREE-enriched clay-deposit sources.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.07
+    notes: |
+      Monazite (rare-earth phosphate) is stockpiled as a separated concentrate or recovered
+      as an accessory mineral in heavy-mineral-sand concentrates. USGS MCS 2025 confirms
+      monazite was stockpiled in the southeastern United States in 2024. Lu typically
+      represents ~0.05–0.10% of total REOs in monazite, making it a minor but meaningful
+      Lu source from Indian and Brazilian heavy mineral sand operations. Thorium content in
+      monazite complicates processing under radioactive materials regulations.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: lyso_scintillator_pet_scanners
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally are
+      less effective." For lutetium's dominant application in LYSO (lutetium yttrium
+      orthosilicate, Lu₂(1-x)Y₂xSiO₅:Ce) and LSO (lutetium oxyorthosilicate, Lu₂SiO₅:Ce)
+      scintillator crystals used in PET/CT medical imaging: BGO (bismuth germanate,
+      Bi₄Ge₃O₁₂) and GSO (gadolinium orthosilicate, Gd₂SiO₅:Ce) can substitute in
+      older-generation PET scanner designs but with lower light yield and poorer time
+      resolution (BGO: ~8–9 ns coincidence time resolution vs. ~200–400 ps for LYSO).
+      Modern time-of-flight PET (TOF-PET) scanners — the current clinical standard for
+      oncological imaging — depend on LYSO's superior timing characteristics (light output
+      ~30 photons/keV, decay time ~40 ns, high effective atomic number). Replacing LYSO
+      with BGO or NaI(Tl) would degrade time-of-flight resolution and sensitivity.
+      Partially Lu-substituted compositions (lower Lu:Y ratios in LYSO) reduce Lu content
+      per crystal but alter scintillator performance. No substitute matches LYSO in
+      combined light output, timing, density, and non-hygroscopic character for clinical
+      TOF-PET.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: petroleum_refining_catalysts
+    availability: full
+    notes: |
+      In fluid catalytic cracking (FCC) and other refinery catalysts where Lu₂O₃ is a
+      minor additive, other lanthanide oxides (La₂O₃, Ce₂O₃, mixed REO) readily substitute
+      at higher dosing because catalyst activity is less sensitive to the specific heavy
+      lanthanide used. The petroleum refining catalyst application is a relatively minor
+      Lu end use and is not Lu-specific in its chemistry. USGS MCS 2025 notes general
+      lanthanide interchangeability in many catalyst applications.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: lyso_lso_scintillator_pet_ct
+      share_pct: 45
+      confidence: low
+      notes: |
+        Lutetium's dominant commercial application is as the primary component of LYSO
+        (lutetium yttrium orthosilicate, Lu₂(1-x)Y₂xSiO₅:Ce) and LSO (Lu₂SiO₅:Ce)
+        scintillator crystals used in positron emission tomography (PET) and combined
+        PET/CT medical imaging systems. A single modern clinical PET scanner contains
+        hundreds to thousands of LYSO crystal elements requiring significant Lu₂O₃ input.
+        LYSO's high effective atomic number (Zeff ~65), density (7.1 g/cm³), and fast
+        scintillation decay time (~40 ns) make it the preferred scintillator for
+        time-of-flight PET (TOF-PET), where coincidence time resolution below 400 ps is
+        critical for image quality improvement. LYSO/LSO became the dominant clinical PET
+        scintillator material from the early 2000s, displacing BGO. Growth is driven by
+        expanding global installation of clinical PET/CT scanners for oncology staging,
+        cardiac imaging, and neurological diagnostics. Industrial and security inspection
+        applications (radiation portal monitors, high-energy physics detectors) also use
+        LYSO. Share is an industry consensus estimate; USGS does not report per-element
+        end-use percentages for Lu.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: petroleum_refining_catalysts
+      share_pct: 25
+      confidence: low
+      notes: |
+        Lu₂O₃ is used in small quantities as a promoter or additive in fluid catalytic
+        cracking (FCC) catalysts and other petroleum refinery applications where lanthanide
+        oxides enhance catalyst selectivity, stability, and cracking activity. In FCC
+        catalysts, rare earth oxides (including La, Ce, and mixed REO) exchange into the
+        zeolite framework to stabilize the catalyst structure at high temperatures
+        (~700°C). While La and Ce are far more common as FCC catalyst promoters, heavy
+        lanthanides including Lu may be present in mixed REO streams. USGS MCS 2025 lists
+        catalysts as one of the major REE end uses broadly. The 25% share estimate for Lu
+        in catalysis reflects its use in miscellaneous chemical process applications where
+        Lu₂O₃ may be added to mixed REO catalyst formulations.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: lu177_radiopharmaceuticals
+      share_pct: 15
+      confidence: low
+      notes: |
+        Lutetium-177 (Lu-177, half-life 6.647 days, β⁻ emitter) is the active isotope in
+        targeted radionuclide therapy drugs. Lu-177-DOTATATE (commercial name Lutathera,
+        approved by FDA in 2018 and EMA in 2017) treats somatostatin receptor-positive
+        gastroenteropancreatic neuroendocrine tumors (GEP-NETs). Lu-177-PSMA-617
+        (Pluvicto, approved FDA 2022) treats PSMA-positive metastatic castration-resistant
+        prostate cancer. Both drugs deliver targeted beta radiation to tumor cells
+        expressing the relevant receptor. Lu-177 is produced by neutron irradiation of
+        enriched Lu-176 targets or natural Lu in nuclear reactors. Demand for Lu-177
+        radiopharmaceuticals is growing rapidly with clinical adoption and expanded
+        indications; this is the fastest-growing end use for Lu. Total Lu consumed in
+        radiopharmaceutical production is still small relative to scintillator use but
+        growing at double-digit annual rates. High-purity (≥99.99%) Lu₂O₃ feed and
+        reactor capacity are both required. Share is an industry estimate; USGS does not
+        separately report radiopharmaceutical Lu demand.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: specialty_glass_ceramics_lasers
+      share_pct: 10
+      confidence: low
+      notes: |
+        Lu₂O₃ is incorporated into specialty optical glass compositions for high-refractive-
+        index applications and as a sintering aid in transparent ceramics. LuAG (lutetium
+        aluminum garnet, Lu₃Al₅O₁₂) is used as a scintillator and as a laser host crystal
+        (Lu:YAG for near-IR lasers). LuLiF₄ single crystals are laser host materials for
+        rare-earth-doped solid-state lasers. Lu₂O₃ is also used as a sintering aid in
+        silicon nitride and other advanced ceramic compositions. These applications are
+        individually small-volume but collectively represent a significant specialty fraction
+        of Lu consumption. Share aggregates several minor specialty applications.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_research_specialty
+      share_pct: 5
+      confidence: low
+      notes: |
+        Other minor applications include use of Lu₂O₃ in specialty coatings, research-
+        grade reagents, and as a dopant in other functional materials for photonics and
+        electronics research. Lu metal is used in very small quantities for specialty
+        alloy research. Aggregate of very small-volume applications for which USGS does
+        not report specific tonnages or end-use shares.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices: []
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Lutetium is classified as critical under the US 2022 Critical Minerals List as part
+    of "rare earth elements" (a group designation). US net import reliance for REE
+    compounds and metals was 80% in 2024e (USGS MCS 2025 salient statistics). Heavy rare
+    earth elements including lutetium are designated as Critical Raw Materials and Strategic
+    Raw Materials under EU Regulation 2024/1252 (Critical Raw Materials Act, CRMA); the EU
+    explicitly distinguishes light REEs and heavy REEs as separate CRM entries. Lutetium's
+    criticality is compounded by its extreme scarcity in the REE basket (~0.05% global
+    average), its concentration in Chinese HREE processing, and its non-substitutable role
+    in LYSO scintillators for modern time-of-flight PET/CT medical imaging. China's April
+    2025 direct export controls explicitly named lutetium as one of seven HREEs subject to
+    export license requirements. Import sources 2020–23: China 70%, Malaysia 13%, Japan 6%,
+    Estonia 5% (for REE compounds and metals broadly; Lu-specific import data not
+    separately reported by USGS).
+
+geopolitical_events:
+  - date: "2025-04"
+    event: "China imposes direct export controls on lutetium and 6 other REEs (Sm, Gd, Tb, Dy, Sc, Y)"
+    impact: |
+      China's April 2025 announcement of export license requirements for seven rare earth
+      elements explicitly named lutetium metal, Lu₂O₃ oxide, and Lu-containing compounds.
+      Lutetium's inclusion in the controlled list — alongside Sm, Gd, Tb, Dy, Sc, and Y —
+      has direct implications for LYSO scintillator crystal growers outside China (primarily
+      in the US, Japan, and Germany) that depend on imported Lu₂O₃ as the primary feedstock.
+      The Lu-177 radiopharmaceutical supply chain is also affected: Lu-177 production from
+      natural Lu targets requires access to Lu₂O₃ feed material; disruption could impact
+      availability of Lutathera and Pluvicto for cancer patients. The export controls
+      operate through China's Dual-Use Export Control list mechanism, allowing selective
+      approval or denial of licenses rather than a total ban, creating pricing uncertainty
+      and procurement risk for non-Chinese buyers. Non-Chinese scintillator manufacturers
+      and Lu-177 producers hold limited strategic inventory; the absence of ex-China Lu₂O₃
+      separation capacity means no rapid supply-side substitution is possible. China's
+      dominance in both Lu₂O₃ supply and LYSO crystal manufacturing gives it structural
+      leverage over the global medical imaging sector.
+    source_id: mofcom_2025_export_controls
+  - date: "2024"
+    event: "Burma (Myanmar) REE production falls 28% to 31,000 t REO in 2024e, reducing global heavy-REE supply"
+    impact: |
+      USGS MCS 2025 reports Burma REE production declined from 43,000 t in 2023 to 31,000 t
+      in 2024e, a 28% drop attributed to reduced mining activity. Myanmar's ion adsorption
+      clay deposits are HREE-enriched (~0.08–0.15% Lu₂O₃), making them disproportionately
+      important for global Lu supply relative to their share of total REO production. The
+      12,000 t REO decline from Burma at the heavy-REE basket average implies a reduction of
+      ~6–18 t Lu₂O₃ equivalent — modest in absolute terms but significant relative to a
+      world Lu market of only ~195 t/year. Production estimated from China import records
+      (USGS footnote 12). Myanmar IAC output has been politically volatile due to military
+      conflict since the 2021 coup; further supply disruptions remain possible.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024"
+    event: "Global REE mine production increases to 390,000 t REO in 2024e, with HREE contribution driven by China quota increase and Thailand growth"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t REO, up from 376,000 t
+      in 2023. China rose from 255,000 to 270,000 t; Nigeria from 7,200 to 13,000 t;
+      Thailand from 3,600 to 13,000 t; Burma fell from 43,000 to 31,000 t. For Lu, Thailand's
+      261% YoY growth (+9,400 t REO) partially offsets Burma's decline, since Thailand's IAC
+      deposits also carry above-average Lu concentrations. At ~0.05% basket share, world Lu
+      production rose from ~188 t in 2023 to ~195 t in 2024e based on USGS aggregate REO
+      figures.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Lutetium is the heaviest and rarest of the commercially produced stable lanthanides, and
+  its commercial story is defined almost entirely by a single application: LYSO (lutetium
+  yttrium orthosilicate) scintillator crystals, the enabling material for modern time-of-
+  flight positron emission tomography (TOF-PET) medical imaging. Virtually every clinical
+  PET/CT scanner manufactured in the past two decades uses LYSO or LSO as its detector
+  crystal, exploiting lutetium's high density (7.1 g/cm³), excellent light yield, and
+  fast scintillation timing. Lu₂O₃ is also used in petroleum refining catalysts, specialty
+  glass, and laser host crystals, but these applications are secondary. The most rapidly
+  growing Lu end use is Lu-177 radiopharmaceuticals — Lutathera (FDA-approved 2018) and
+  Pluvicto (FDA-approved 2022) — which deliver targeted radiation therapy to neuroendocrine
+  tumors and prostate cancer respectively, driving demand growth at a rate well above the
+  underlying REE market.
+
+  Lutetium's supply chain is the most geographically concentrated of any commercially
+  traded rare earth element. At a basket share of only ~0.05% of global REO production,
+  world output is estimated at ~195 t Lu₂O₃ in 2024e from USGS-reported aggregate REO
+  data — the smallest absolute production volume of any REE in regular commercial trade.
+  The primary ore source is ion adsorption clay (IAC) deposits in southern China (Jiangxi,
+  Fujian, Guangdong) and neighboring Southeast Asia (Myanmar, Thailand), which contain
+  ~0.05–0.15% Lu₂O₃ — well above the global basket average and orders of magnitude above
+  LREE-dominant bastnaesite deposits at Mountain Pass (CA) or Bayan Obo (CN). China
+  controls approximately 95% of global Lu₂O₃ separation capacity, reflecting both its
+  dominance in the IAC ore base and the specialized solvent extraction infrastructure
+  required to separate the heaviest lanthanides. No significant ex-China Lu₂O₃ production
+  at commercial scale exists. USGS MCS 2025 aggregate REO data underpins all production
+  estimates; per-element tonnage is not disaggregated in public USGS reporting.
+
+  China's April 2025 imposition of direct export controls on lutetium — one of seven REEs
+  explicitly named alongside Sm, Gd, Tb, Dy, Sc, and Y — represents the most acute supply
+  risk materialization in the modern Lu market. Unlike the broader REE basket, where some
+  non-Chinese production of La, Ce, and NdPr exists (US, Australia, Estonia), there is
+  essentially no alternative supply chain for Lu₂O₃ at commercial scale. LYSO crystal
+  growers outside China, Lu-177 radiopharmaceutical manufacturers, and medical device OEMs
+  face structural dependence on Chinese export license approval for their primary feedstock.
+  Burma's 28% production decline in 2024 further tightened the HREE supply picture.
+  The combination of sub-200 t/year world production, single-supplier separation, direct
+  export control targeting, and rapidly growing radiopharmaceutical demand makes lutetium
+  one of the most supply-constrained materials in the critical minerals landscape.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: mofcom_2025_export_controls
+    title: China Ministry of Commerce April 2025 export control announcement — lutetium and 6 other rare earth elements
+    publisher: China Ministry of Commerce (MOFCOM)
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: primary
