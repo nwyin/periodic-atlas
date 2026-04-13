@@ -1,0 +1,176 @@
+symbol: Po
+atomic_number: 84
+name: polonium
+category: post_transition_metal
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Polonium's commercial reality is an isotope market rather than a bulk elemental
+  metal market. The current industrial isotope is Po-210, used mainly in static
+  eliminators where the NRC says the isotope is combined with silver or other
+  metals in a foil mounted inside a protective cage; the NRC also says only about
+  100 grams of Po-210 is produced worldwide each year. DOE/NIDC separately lists
+  research-grade Po-209 as a stock product in 5 M nitric acid solution, shipped in
+  a glass bottle and quoted in microcuries rather than mass units. Sources:
+  `nrc_polonium_2024`, `nidc_po209_product_2024`.
+
+isotope_markets:
+  - isotope: Po-210
+    half_life_seconds: 11955686.4
+    production_mode: reactor_generated
+    production_quantity:
+      value: 100
+      unit: grams_per_year
+      form: contained_element
+      approximate: true
+      confidence: medium
+      notes: |
+        The NRC states that for industrial purposes polonium-210 is produced in
+        milligram amounts in nuclear reactors and that only about 100 grams is
+        believed to be produced worldwide each year.
+      source_id: nrc_polonium_2024
+    precursor: |
+      Commercial Po-210 is produced by neutron capture on Bi-209 to form Bi-210,
+      which then decays to Po-210. The NEA's nuclear-data entry describes the route
+      explicitly as 209Bi(n,g)210Bi followed by rapid decay into 210Po. Source:
+      `nea_bi209_capture_2022`.
+    delivery_form: |
+      The NRC describes the dominant industrial form as Po-210 combined with silver
+      or other metals in a foil mounted inside a protective cage for static
+      elimination devices. Exempt calibration/check sources are also used at 0.1
+      microcurie activity. Source: `nrc_polonium_2024`.
+    reporting_year: 2024
+    notes: |
+      Public primary sources reviewed here describe world scale and trade form, but
+      not a country-by-country producer split or public list pricing. The U.S.
+      market is mostly an import-and-distribution channel for NRC-regulated devices
+      rather than a transparent domestic commodity market. Source:
+      `nrc_polonium_2024`.
+  - isotope: Po-209
+    half_life_seconds: 3912624000
+    production_mode: stockpile_separated
+    precursor: |
+      DOE/NIDC's current product sheet lists the production route simply as "legacy
+      material", indicating sale from existing isotope inventory rather than a
+      continuously disclosed current production campaign. Source:
+      `nidc_po209_product_2024`.
+    delivery_form: |
+      DOE/NIDC lists Po-209 in 5 M nitric acid solution with about 185 kBq
+      (~5 microcuries) per milliliter, glass-bottle primary containment, stock
+      availability, and microcuries as the unit of sale. Source:
+      `nidc_po209_product_2024`.
+    reporting_year: 2024
+    notes: |
+      This is a niche research/tracer isotope listing rather than an industrial bulk
+      market. The product sheet does not disclose annual output or pricing, only
+      current trade form and stock availability. Source:
+      `nidc_po209_product_2024`.
+
+feedstock_origins:
+  - substrate: irradiated_bismuth_targets
+    notes: |
+      The commercial Po-210 route runs through neutron capture on Bi-209 followed by
+      decay of Bi-210 into Po-210, so the practical feedstock is irradiated bismuth
+      target material.
+    source_id: nea_bi209_capture_2022
+  - substrate: legacy_isotope_inventory
+    notes: |
+      DOE/NIDC's Po-209 product sheet lists the production route as legacy material.
+    source_id: nidc_po209_product_2024
+
+end_uses:
+  uses:
+    - application: static_elimination_devices
+      share_pct: 90
+      confidence: low
+      notes: |
+        Qualitative split inferred from the NRC's statement that Po-210 has limited
+        uses, mainly in static eliminators. This remains the dominant commercial
+        market for polonium-bearing devices.
+      source_id: nrc_polonium_2024
+    - application: instrument_calibration_and_check_sources
+      share_pct: 5
+      confidence: low
+      notes: |
+        The NRC states that small Po-210 sources can be used to check or calibrate
+        instruments. The 5% share is an inferred residual rather than a directly
+        reported market share.
+      source_id: nrc_polonium_2024
+    - application: research_tracer_sources
+      share_pct: 5
+      confidence: low
+      notes: |
+        DOE/NIDC's stock Po-209 listing shows a continuing research-lab market in
+        solution form. The 5% share is an inferred residual to reflect that this is
+        a real but much smaller market than Po-210 static elimination.
+      source_id: nidc_po209_product_2024
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Polonium is strategically sensitive and tightly regulated, but it does not
+    appear on the mainstream U.S. critical-minerals list or the EU's 2024 critical
+    and strategic raw-materials annexes. The commercial footprint is an isotope and
+    device-regulation market, not a mineral-policy market.
+
+geopolitical_events:
+  - date: 1999
+    event: "Contamination incident involving Po-210 static eliminators prompted scrutiny of device integrity"
+    impact: |
+      A Brookhaven/OSTI paper examined six static eliminators after a contamination
+      incident at a commercial facility and found cracked or broken microspheres and
+      leakage risk under handling, heat, moisture, solvent exposure, or vibration.
+      The incident illustrated that polonium demand depends as much on device design
+      approval and regulatory confidence as on isotope availability.
+    source_id: osti_static_eliminators_1999
+
+narrative: |
+  Polonium is commercially real only in very small isotope markets. The main
+  industrial isotope is Po-210, which the NRC says is produced in reactors, used
+  mainly in static eliminators, and manufactured worldwide at only about 100 grams
+  per year. In the device supply chain, the isotope is embedded in silver-bearing or
+  similar foil inside protective cages rather than traded as free metal. Source:
+  `nrc_polonium_2024`.
+
+  The present U.S. catalog evidence for broader polonium commerce is DOE/NIDC's
+  Po-209 product sheet, which offers stock material in nitric-acid solution and
+  quotes it in microcuries. That makes polonium a clear fit for the atlas
+  isotope-market pattern: reactor or legacy-inventory supply, radiological controls,
+  no transparent country-share tables, and no public bulk price series. The most
+  important commercial constraint is not ore or smelting capacity but regulatory
+  control of source fabrication, containment, and disposal. Sources:
+  `nidc_po209_product_2024`, `osti_static_eliminators_1999`, `nea_bi209_capture_2022`.
+
+sources:
+  - id: nrc_polonium_2024
+    title: "Backgrounder on Polonium-210"
+    publisher: U.S. Nuclear Regulatory Commission
+    url: https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/polonium
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: nidc_po209_product_2024
+    title: "Polonium-209 Product Information"
+    publisher: U.S. Department of Energy / National Isotope Development Center
+    url: https://isotopes.gov/sites/default/files/2024-11/Polonium-209%20Product%20Information.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: nea_bi209_capture_2022
+    title: "83-Bi-209(n,g)Bi-210g,m"
+    publisher: OECD Nuclear Energy Agency
+    url: https://www.oecd-nea.org/jcms/pl_68900/83-bi-209-n-g-bi-210g-m
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: osti_static_eliminators_1999
+    title: "Evaluation of static eliminators containing polonium-210"
+    publisher: U.S. Department of Energy Office of Scientific and Technical Information
+    url: https://www.osti.gov/biblio/338399
+    retrieved: 2026-04-13
+    publication_year: 1999
+    source_tier: primary
