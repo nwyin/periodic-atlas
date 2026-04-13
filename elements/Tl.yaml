@@ -1,0 +1,206 @@
+symbol: Tl
+atomic_number: 81
+name: thallium
+category: post_transition_metal
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports thallium "in kilograms unless otherwise specified." The
+  commercial market is not a bulk ore trade: thallium is recovered in very small
+  quantities as refined primary metal or compounds from flue dust generated during
+  roasting of copper-, lead-, and zinc-bearing sulfide ores. USGS price data are an
+  estimated average for 99.99%-pure thallium granules sold in 100-gram lots by three
+  retailers and producers as of October 31 of each year.
+
+production:
+  - reporting_year: 2023
+    refined:
+      value: 10000
+      unit: kg_per_year
+      form: metal
+      approximate: true
+      confidence: medium
+      notes: |
+        USGS MCS 2025 states that in 2023, the latest year for which data were
+        available, global thallium production was estimated to be about 10,000
+        kilograms. The chapter presents this under "World Refinery Production and
+        Reserves" and describes thallium as a byproduct recovered from flue dust in
+        roasting of copper, lead, and zinc ores.
+      source_id: usgs_mcs_2025_thallium
+    refining_by_country:
+      shares: []
+      completeness: partial
+    notes: |
+      USGS does not publish a country-by-country production table for thallium because
+      most producers withhold output data. The chapter identifies China, Kazakhstan,
+      and Russia as the leading producers of primary thallium, but without numerical
+      shares, so no country-share estimates are assigned here.
+
+reserves:
+  notes: |
+    USGS MCS 2025 reports that quantitative estimates of thallium reserves were not
+    available because it is difficult to identify deposits where thallium can be
+    extracted economically. The chapter notes substantial thallium-rich deposits in
+    Brazil, China, North Macedonia, and Russia, and says previous reserve estimates
+    were based on the thallium content of zinc ores. It also states that world
+    resources are adequate to meet requirements because recoverable thallium occurs
+    in trace amounts in sulfide ores of copper, lead, zinc, and other metallic
+    elements.
+
+byproduct_of:
+  - Cu
+  - Pb
+  - Zn
+
+feedstock_origins:
+  - substrate: copper_lead_zinc_sulfide_ore_roaster_flue_dust
+    notes: |
+      USGS identifies the major commercial source of thallium as flue dust produced
+      during roasting of copper, lead, and zinc ores. Thallium is recovered as a
+      byproduct from these metallurgical process streams rather than mined from
+      dedicated thallium ore.
+    source_id: usgs_mcs_2025_thallium
+  - substrate: polymetallic_sulfide_ores
+    notes: |
+      The USGS world-resources discussion says recoverable thallium occurs in trace
+      amounts in sulfide ores of copper, lead, zinc, and other metallic elements.
+      This ore association is the reason thallium supply is structurally dependent on
+      other base-metal smelting chains.
+    source_id: usgs_mcs_2025_thallium
+
+substitutes:
+  - application: gamma_radiation_detection_and_infrared_optics
+    availability: partial
+    notes: |
+      USGS MCS 2025 says other materials and formulations can substitute for
+      thallium in gamma-radiation detection equipment and optics used for infrared
+      detection and transmission, but thallium materials remain superior and more
+      cost effective for these specialized uses.
+    source_id: usgs_mcs_2025_thallium
+  - application: cardiovascular_imaging
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that technetium-99m can be used in cardiovascular-imaging
+      applications instead of thallium. The same chapter also says demand for
+      thallium in medical nuclear imaging continued to decline because alternatives
+      such as technetium-99m offered superior performance and availability.
+    source_id: usgs_mcs_2025_thallium
+  - application: high_density_liquids_gravity_separation
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that nontoxic substitutes such as tungsten compounds were
+      being marketed as replacements for thallium in high-density liquids used for
+      gravity separation of minerals.
+    source_id: usgs_mcs_2025_thallium
+
+end_uses:
+  uses:
+    - application: specialty_medical_electronic_optical_and_chemical_compounds
+      share_pct: 100
+      confidence: medium
+      notes: |
+        USGS MCS 2025 describes thallium demand as a small specialty market spanning
+        radioisotope thallium-201 for cardiovascular imaging, sodium iodide crystals
+        doped with thallium for photoelectric cells and gamma-radiation detection,
+        thallium-barium-calcium-copper-oxide superconductors, infrared optical
+        materials, thallium-arsenic-selenium crystal filters, mercury alloys for
+        low-temperature thermometers and switches, glass additives, catalysts, and
+        high-density liquids for mineral separation. The source does not publish a
+        percentage split among these uses, so the market is represented here as one
+        aggregated specialty-demand bucket.
+      source_id: usgs_mcs_2025_thallium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+prices:
+  - year: 2024
+    value: 9500
+    unit: usd_per_kg
+    form: metal
+    basis: retail
+    region: global
+    notes: |
+      USGS MCS 2025 estimated average price for 99.99%-pure thallium granules in
+      100-gram lots from three retailers and producers, as of October 31, 2024.
+    source_id: usgs_mcs_2025_thallium
+  - year: 2023
+    value: 8800
+    unit: usd_per_kg
+    form: metal
+    basis: retail
+    region: global
+    notes: |
+      USGS MCS 2025 estimated average price for 99.99%-pure thallium granules in
+      100-gram lots from three retailers and producers, as of October 31, 2023.
+    source_id: usgs_mcs_2025_thallium
+  - year: 2022
+    value: 9400
+    unit: usd_per_kg
+    form: metal
+    basis: retail
+    region: global
+    notes: |
+      USGS MCS 2025 estimated average price for 99.99%-pure thallium granules in
+      100-gram lots from three retailers and producers, as of October 31, 2022.
+    source_id: usgs_mcs_2025_thallium
+  - year: 2021
+    value: 8400
+    unit: usd_per_kg
+    form: metal
+    basis: retail
+    region: global
+    notes: |
+      USGS MCS 2025 estimated average price for 99.99%-pure thallium granules in
+      100-gram lots from three retailers and producers, as of October 31, 2021.
+    source_id: usgs_mcs_2025_thallium
+  - year: 2020
+    value: 8200
+    unit: usd_per_kg
+    form: metal
+    basis: retail
+    region: global
+    notes: |
+      USGS MCS 2025 estimated average price for 99.99%-pure thallium granules in
+      100-gram lots from three retailers and producers, as of October 31, 2020.
+    source_id: usgs_mcs_2025_thallium
+
+geopolitical_events:
+  - date: "2024-07"
+    event: Dominican Republic-origin thallium waste and scrap appeared in U.S. import data for Puerto Rico after not being a prior source.
+    impact: |
+      USGS flagged 1,620 kilograms of waste and scrap imported to Puerto Rico in July
+      2024 as likely a commodity misclassification, probably involving medical devices
+      or equipment containing thallium rather than genuine thallium scrap. The episode
+      illustrates how tiny thallium trade flows can be distorted by customs reporting
+      noise.
+    source_id: usgs_mcs_2025_thallium
+
+narrative: |
+  Thallium is a tiny, toxic byproduct metal rather than a standalone mining industry.
+  USGS reports no U.S. domestic production since 1981 and estimates global production
+  at only about 10,000 kilograms in 2023, recovered from flue dust generated while
+  roasting copper, lead, and zinc ores. That makes thallium supply structurally
+  dependent on base-metal smelting systems and producer willingness to recover a very
+  small, hazardous side stream.
+
+  Demand is similarly niche. The USGS chapter describes thallium consumption as a
+  collection of specialty applications in medical imaging, radiation detection,
+  infrared optics, superconductors, specialty glass, catalysts, and dense liquids for
+  mineral separation. The most visible demand erosion is in nuclear cardiology, where
+  technetium-99m continues to displace thallium-201. Prices remain extremely high on a
+  per-kilogram basis because the market is quoted in small 100-gram retail lots of
+  99.99%-pure granules rather than in bulk commodity contracts.
+
+sources:
+  - id: usgs_mcs_2025_thallium
+    title: "Mineral Commodity Summaries 2025: Thallium"
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-thallium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
