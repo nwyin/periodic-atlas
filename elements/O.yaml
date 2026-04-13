@@ -1,0 +1,350 @@
+symbol: O
+atomic_number: 8
+name: oxygen
+category: reactive_nonmetal
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Commercial oxygen is produced from ambient air, primarily in cryogenic air
+  separation units (ASUs). Linde's 2024 annual report describes oxygen as a
+  typical large-volume on-site gas supplied by pipeline from cryogenic plants,
+  while merchant oxygen is distributed as a cryogenic liquid by tanker truck and
+  small-volume demand is served in cylinders. WHO's medical-oxygen guidance
+  distinguishes medical oxygen made by air liquefaction at not less than 99.5%
+  v/v O2 from PSA output at 93% +/- 3%; industrial and medical oxygen are not
+  interchangeable.
+
+production:
+  - reporting_year: 2024
+    stream: steelmaking_captive_oxygen
+    mining_by_country:
+      shares: []
+      completeness: partial
+    refined:
+      value: 106.6
+      unit: million_tonnes_per_year
+      form: unspecified
+      approximate: true
+      confidence: low
+      notes: |
+        Inferred oxygen demand for the dominant captive steelmaking stream, not a
+        full all-uses world oxygen balance. Calculation: worldsteel reported
+        1,882.6 Mt of crude steel in 2024; the IEA reported that BF-BOF routes
+        make up about 70% of global steel production; an EPA BOF background
+        document uses 3.1 standard cubic meters of oxygen per minute per metric
+        ton of steel during blowing, which is conventionally approximated to
+        about 56.6 Nm3 O2 per tonne of BOF steel over an ~18-minute blow. That
+        yields about 74.6 billion Nm3/y, equivalent to about 106.6 Mt/y at
+        1.429 kg/Nm3. This intentionally tracks the best-documented oxygen
+        stream rather than forcing a single hard total for merchant, medical,
+        chemical, glass, wastewater, and other uses.
+      source_id: worldsteel_2024_global_steel
+    refining_by_country:
+      shares:
+        - country: CN
+          share_pct: 55
+          confidence: low
+          quantity:
+            value: 58.6
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: |
+              Inferred from China's 1,005.1 Mt of 2024 crude steel output and
+              the continued dominance of BF-BOF steelmaking in China. This is a
+              route-weighted oxygen share estimate for captive steelmaking ASUs,
+              not a published oxygen table.
+            source_id: worldsteel_2024_global_steel
+          notes: |
+            Largest oxygen-consuming steel geography because China remains by far
+            the largest crude-steel producer and still relies heavily on primary
+            BF-BOF capacity.
+          source_id: worldsteel_2024_global_steel
+        - country: IN
+          share_pct: 10
+          confidence: low
+          quantity:
+            value: 10.7
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: |
+              Inferred from India's 149.6 Mt of 2024 crude steel output and its
+              still-material primary steel route share.
+            source_id: worldsteel_2024_global_steel
+          notes: "Route-weighted estimate from crude-steel output; oxygen table not published directly."
+          source_id: worldsteel_2024_global_steel
+        - country: JP
+          share_pct: 6
+          confidence: low
+          quantity:
+            value: 6.4
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: "Inferred from Japan's 84.0 Mt of 2024 crude steel output."
+            source_id: worldsteel_2024_global_steel
+          notes: "Japan remains a major BF-BOF steel producer, so oxygen intensity is high."
+          source_id: worldsteel_2024_global_steel
+        - country: RU
+          share_pct: 5
+          confidence: low
+          quantity:
+            value: 5.3
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: "Inferred from Russia's estimated 70.7 Mt of 2024 crude steel output."
+            source_id: worldsteel_2024_global_steel
+          notes: "Route-weighted estimate from worldsteel crude-steel production."
+          source_id: worldsteel_2024_global_steel
+        - country: KR
+          share_pct: 5
+          confidence: low
+          quantity:
+            value: 5.3
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: "Inferred from South Korea's 63.5 Mt of 2024 crude steel output."
+            source_id: worldsteel_2024_global_steel
+          notes: "South Korea's steel industry remains oxygen-intensive despite decarbonization pilots."
+          source_id: worldsteel_2024_global_steel
+        - country: DE
+          share_pct: 3
+          confidence: low
+          quantity:
+            value: 3.2
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: "Inferred from Germany's 37.2 Mt of 2024 crude steel output."
+            source_id: worldsteel_2024_global_steel
+          notes: "Germany remains a major BF-BOF producer while also investing in DRI transition."
+          source_id: worldsteel_2024_global_steel
+        - country: BR
+          share_pct: 3
+          confidence: low
+          quantity:
+            value: 3.2
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: "Inferred from Brazil's 33.7 Mt of 2024 crude steel output."
+            source_id: worldsteel_2024_global_steel
+          notes: "Brazil is a large primary steel producer and therefore a meaningful oxygen consumer."
+          source_id: worldsteel_2024_global_steel
+        - country: IR
+          share_pct: 2
+          confidence: low
+          quantity:
+            value: 2.1
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: "Inferred from Iran's 31.0 Mt of 2024 crude steel output."
+            source_id: worldsteel_2024_global_steel
+          notes: "Iran remains a significant steel producer with meaningful oxygen demand."
+          source_id: worldsteel_2024_global_steel
+        - country: ZZ
+          share_pct: 11
+          confidence: low
+          quantity:
+            value: 11.7
+            unit: million_tonnes_per_year
+            form: unspecified
+            approximate: true
+            confidence: low
+            notes: |
+              Residual covering other oxygen-intensive steel geographies such as
+              Turkiye, Viet Nam, Italy, Taiwan, Indonesia, Mexico, and others.
+              The United States is largely captured here because its steel route
+              mix is EAF-heavy, so crude steel tonnage overstates BOF oxygen
+              demand.
+            source_id: worldsteel_2024_global_steel
+          notes: "Residual route-weighted share for all remaining steelmaking oxygen demand."
+          source_id: worldsteel_2024_global_steel
+      completeness: top_producers_only
+    notes: |
+      Oxygen has a real schema ambiguity between captive/on-site production and
+      merchant or medical distribution. This block tracks the dominant,
+      best-documented captive stream used in steelmaking because public primary
+      sources do not publish a unified annual world oxygen-production table
+      across all end markets.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: atmospheric_air
+    typical_concentration_pct: 20.95
+    notes: |
+      Oxygen is separated from ambient air. WHO's oxygen guidance cites room air
+      as 21% oxygen for concentrator specifications, which is consistent with
+      standard atmospheric composition and with cryogenic-ASU feed assumptions.
+    source_id: who_oxygen_topic_2025
+
+substitutes:
+  - application: medical_oxygen
+    availability: none
+    notes: |
+      WHO describes oxygen as a life-saving essential medicine with no
+      substitution. Industrial oxygen is not interchangeable with medical oxygen,
+      and patient use requires medical-grade product or regulated on-site
+      generation meeting healthcare specifications.
+    source_id: who_oxygen_topic_2025
+
+end_uses:
+  uses:
+    - application: steelmaking_and_metallurgy
+      share_pct: 55
+      confidence: low
+      notes: |
+        Inferred dominant end use. worldsteel reported 1,882.6 Mt of crude steel
+        in 2024, and the IEA reports BF-BOF routes still make up about 70% of
+        global steel production. That makes steelmaking the anchor demand center
+        for commercial oxygen even though public primary sources do not publish a
+        direct global oxygen-by-end-use table.
+      source_id: iea_breakthrough_2025_steel
+    - application: chemicals_fuels_and_refining
+      share_pct: 20
+      confidence: low
+      notes: |
+        Inferred from very large on-site oxygen deployments into fuels and
+        chemicals. Air Liquide's Secunda installation alone added a 5,000 t/d
+        oxygen unit and brought its Sasol site total above 45,000 t/d of oxygen
+        capacity for fuels and chemicals, demonstrating that chemical complexes
+        are the second major oxygen sink after steel.
+      source_id: airliquide_secunda_2018
+    - application: healthcare_medical_oxygen
+      share_pct: 10
+      confidence: low
+      notes: |
+        Inferred global share for medical oxygen as a distinct but smaller stream
+        than steel or chemicals. WHO classifies oxygen as an essential medicine
+        used across wards, ICU, surgery, trauma, pneumonia, and COVID-19 care,
+        but does not publish a global tonnage share; the 10% value is a cautious
+        market-share estimate rather than a published official statistic.
+      source_id: who_oxygen_topic_2025
+    - application: glass_water_wastewater_cutting_welding_pulp_paper_and_other
+      share_pct: 15
+      confidence: low
+      notes: |
+        Residual industrial uses supplied through merchant liquid and packaged
+        oxygen. Linde's annual report identifies oxygen as a core merchant and
+        packaged atmospheric gas delivered as liquid by tanker truck or in
+        cylinders to smaller-volume customers across manufacturing and other
+        sectors.
+      source_id: linde_annual_2024
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+prices: []
+
+geopolitical_events:
+  - date: 2021-02
+    event: "WHO and partners launched an oxygen-emergency response as COVID-19 sharply increased medical oxygen demand"
+    impact: |
+      WHO reported that the pandemic accelerated global oxygen demand and that
+      more than half a million COVID-19 patients in low- and middle-income
+      countries were estimated to need oxygen treatment every day. The episode
+      exposed the fragility of medical-oxygen logistics, cylinder supply, power
+      reliability for concentrators and PSA plants, and the distinction between
+      industrial oxygen capacity and patient-ready medical oxygen systems.
+    source_id: who_covid_oxygen_emergency_2021
+  - date: 2024-05
+    event: "Linde signed a long-term agreement to supply oxygen, nitrogen, and argon to H2 Green Steel's first large-scale green-steel plant in Sweden"
+    impact: |
+      The project shows that oxygen remains infrastructure-critical even in lower
+      emissions steel routes. Decarbonization does not remove oxygen from the
+      steel value chain; instead it shifts new ASU investment toward DRI-EAF and
+      integrated green-steel hubs.
+    source_id: linde_h2greensteel_2024
+
+narrative: |
+  Oxygen is one of the highest-volume industrial elements, but unlike sulfur,
+  chlorine, or helium it is not reported by USGS as a dedicated mineral
+  commodity. The commercial reality is an industrial-gas business layered on top
+  of atmospheric air: very large customers take pipeline oxygen from on-site
+  cryogenic ASUs, merchant customers receive liquid oxygen by tanker, and
+  healthcare systems use either air-liquefaction product that meets
+  pharmacopoeial purity or regulated on-site generation such as PSA plants.
+
+  The dominant oxygen sink is still steelmaking, which is why the most
+  defensible production metric in public primary sources is a steel-linked
+  captive stream rather than a single global oxygen total for every market. The
+  secondary anchors are fuels-and-chemicals complexes, followed by the medical
+  oxygen system that became strategically visible during the COVID-19 emergency.
+  Decarbonization changes where new ASUs get built, but it does not eliminate
+  oxygen demand: low-emissions steel, gasification, and many chemical processes
+  still require large oxygen flows.
+
+sources:
+  - id: linde_annual_2024
+    title: 2024 Annual Report to Shareholders
+    publisher: Linde plc
+    url: https://assets.linde.com/-/media/global/corporate/corporate/documents/investors/full-year-financial-reports/2024-annual-report-to-shareholders.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: who_oxygen_topic_2025
+    title: Oxygen
+    publisher: World Health Organization
+    url: https://www.who.int/teams/health-product-policy-and-standards/assistive-and-medical-technology/medical-devices/oxygen
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: worldsteel_2024_global_steel
+    title: December 2024 crude steel production and 2024 global crude steel production totals
+    publisher: World Steel Association
+    url: https://worldsteel.org/media/press-releases/2025/december-2024-crude-steel-production-and-2024-global-totals/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: iea_breakthrough_2025_steel
+    title: Steel
+    publisher: International Energy Agency
+    url: https://www.iea.org/reports/breakthrough-agenda-report-2025/steel
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: epa_bof_background_1978
+    title: Revised Standards for Basic Oxygen Process Furnaces - Background Information for Proposed Standards, Preliminary Draft
+    publisher: United States Environmental Protection Agency
+    url: https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100INPU.txt
+    retrieved: 2026-04-13
+    publication_year: 1978
+    source_tier: primary
+  - id: who_covid_oxygen_emergency_2021
+    title: COVID-19 oxygen emergency impacting more than half a million people in low- and middle-income countries every day, as demand surges
+    publisher: World Health Organization
+    url: https://www.who.int/news/item/25-02-2021-covid-19-oxygen-emergency-impacting-more-than-half-a-million-people-in-low--and-middle-income-countries-every-day-as-demand-surges
+    retrieved: 2026-04-13
+    publication_year: 2021
+    source_tier: primary
+  - id: linde_h2greensteel_2024
+    title: Linde Signs Agreement to Supply Industrial Gases to World's First Large-Scale Green Steel Plant
+    publisher: Linde plc
+    url: https://www.linde.com/news-and-media/2024/linde-signs-agreement-to-supply-industrial-gases-to-world%E2%80%99s-first-large-scale-green-steel-plant
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: airliquide_secunda_2018
+    title: "South Africa: Air Liquide starts up the world's largest oxygen production unit"
+    publisher: Air Liquide
+    url: https://za.airliquide.com/south-africa-air-liquide-starts-worlds-largest-oxygen-production-unit
+    retrieved: 2026-04-13
+    publication_year: 2018
+    source_tier: primary
