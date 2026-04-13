@@ -1,0 +1,678 @@
+symbol: Tb
+atomic_number: 65
+name: terbium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a single grouped commodity chapter
+  ("rare earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element
+  tonnage is not published for individual REEs. Per-element attribution for terbium
+  requires multiplying the aggregate by Tb's typical basket share. Terbium is
+  commercially traded as Tb₄O₇ (terbium(III,IV) oxide) at ≥99.99% minimum purity —
+  the same high-purity specification as europium oxide in the USGS MCS 2025 salient
+  statistics table, and distinct from the 99.5% grade tracked for La, Ce, and Nd
+  oxides. USGS MCS 2025 explicitly lists terbium oxide (99.99% minimum) as a tracked
+  price commodity, alongside dysprosium oxide (99.5% minimum) and europium oxide
+  (99.99% minimum), sourced from Argus Media Group (footnote 6). All production
+  figures in this file are derived by multiplying USGS-reported aggregate REO totals
+  by Tb's typical basket share of ~0.1%, which is not reported directly by USGS.
+  The basket share varies significantly by deposit type: bastnaesite and carbonatite
+  deposits (Mountain Pass CA, Bayan Obo CN, Mt. Weld AU) are LREE-dominant and yield
+  very low Tb fractions (~0.01–0.03% Tb₄O₇ of total REOs); ion adsorption clay
+  deposits in southern China and Southeast Asia yield much higher Tb proportions
+  (~0.2–0.5%) because these deposits are enriched in the heavy REEs (Gd–Lu). Terbium
+  is the lightest heavy REE with significant commercial application. A global weighted
+  average of ~0.1% is used as the central estimate here, but China's actual share of
+  world Tb production substantially exceeds its 69% share of total REO because its
+  HREE-enriched southern-China ion adsorption clay deposits are the world's dominant
+  source of commercial terbium. All data are in metric tons REO equivalent unless
+  otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 390
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Tb's typical basket share of ~0.1% gives
+      ~390 t Tb₄O₇ equivalent. Terbium's basket share is not reported separately by USGS;
+      the 0.1% factor is an industry consensus figure for the global weighted average across
+      deposit types. LREE-dominant bastnaesite mines at Mountain Pass (CA), Bayan Obo (CN),
+      and Mt. Weld (AU) have Tb fractions of only ~0.01–0.03% of REO; ion adsorption clay
+      deposits in southern China and Southeast Asia (Myanmar, Thailand) contain ~0.2–0.5%
+      Tb₄O₇, making them the dominant commercial Tb source despite contributing only ~30% of
+      world REO tonnage. Actual Tb output is not officially disaggregated from the REE basket
+      in public USGS data; this figure carries low confidence. The 2023 comparable estimate
+      is ~376 t at the same 0.1% share applied to 376,000 t world total.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        quantity:
+          value: 270
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share of world: 270,000 / 390,000 =
+          69.2%. Estimated Tb component at 0.1% basket share: ~270 t Tb₄O₇. However,
+          China's actual Tb share is substantially higher than 69.2% because southern
+          China ion adsorption clay deposits (Jiangxi, Fujian, Guangdong) contain
+          ~0.3–0.5% Tb₄O₇ — far above the global basket average — and are the world's
+          primary commercial Tb source. Undocumented production from smaller Chinese ion
+          adsorption clay mines further increases China's effective Tb share. The 0.1%
+          global average applied here underestimates China's actual Tb output. China's
+          2024 quota rose from 255,000 t in 2023 to 270,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        quantity:
+          value: 45
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain Pass,
+          CA (MP Materials), valued at ~$260 million. Estimated Tb at 0.1% global average:
+          ~45 t. This is a significant overestimate for Mountain Pass: bastnaesite from
+          Mountain Pass contains approximately 0.01–0.03% Tb₄O₇ of total REOs, far below
+          the global basket average applied here. Actual US Tb content in Mountain Pass
+          concentrate is likely only ~5–15 t. Mountain Pass concentrate is shipped primarily
+          to China for separation; virtually no commercial Tb₄O₇ is separated domestically.
+          Production up from 41,600 t REO in 2023.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        quantity:
+          value: 31
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28% YoY). Share: 31,000 / 390,000 = 7.9%. Estimated Tb at 0.1% average:
+          ~31 t. Burma produces primarily from ion adsorption clay deposits in Kachin
+          State and Shan State, which are heavy-REE enriched; actual Tb fraction in
+          Burmese production (~0.3–0.5%) likely exceeds the global basket average applied
+          here, meaning real Tb output from Burma may be 90–155 t rather than the
+          derived ~31 t. Production estimated from China import records (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 13
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia), processed at LAMP
+          (Malaysia). Mt. Weld bastnaesite-carbonatite is LREE-dominant; Tb content is
+          very low (~0.01–0.02% of REOs). Applying the 0.1% global average overestimates
+          actual Australian Tb output; real Tb from Mt. Weld is likely only ~1–3 t.
+          Estimated at 0.1% global average for consistency: ~13 t. Production estimated
+          from China import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        quantity:
+          value: 13
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023 (+81% YoY).
+          USGS cites Nigeria as a driver of 2024 global production growth. Estimated Tb
+          at 0.1% global average: ~13 t. Nigerian REE deposit types are not specified in
+          USGS data; if predominantly placer or carbonatite, actual Tb content may be
+          lower than the global average. Production estimated from China import data
+          (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        quantity:
+          value: 13
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023 (+261% YoY).
+          Thailand produces from ion adsorption clay deposits; Tb content is likely above
+          the global basket average (~0.2–0.4%). Applying 0.1% global average gives ~13 t,
+          which likely understates actual Thai Tb output. Cited by USGS as a driver of
+          global production growth alongside China and Nigeria. Production estimated from
+          China import data (USGS footnote 12). Thailand REO reserves: 4,500 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        quantity:
+          value: 9
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Remaining producers 2024e: India (2,900 t), Russia (2,500 t), Madagascar
+          (2,000 t), Other USGS bucket (1,100 t), Vietnam (300 t), Malaysia (130 t),
+          Brazil (20 t) ≈ 8,950 t total REO, ~2.3% of world. Estimated combined Tb
+          contribution ~9 t at 0.1% global basket average.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 93
+        notes: |
+          China controls approximately 90–95% of global REE separation and refining
+          capacity; for heavy REEs like Tb, China's dominance is even greater than for
+          LREEs because the primary ore sources (southern China ion adsorption clays)
+          are processed domestically. High-purity Tb₄O₇ (≥99.99%) production is
+          concentrated in specialized Chinese separation facilities in Jiangxi, Fujian,
+          and Guangdong provinces. USGS MCS 2025 import sources (2020–23) confirm China
+          supplied 70% of US REE compound and metal imports; China's actual share of
+          Tb₄O₇ separation is higher (~93%+) as non-Chinese separators have very limited
+          HREE processing capacity. Mountain Pass concentrate exported to China contains
+          trace Tb that is recovered there, not in the US.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 4
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Australian Mt. Weld concentrate and produces separated REE oxides including
+          minor quantities of Tb₄O₇. LAMP is the world's largest non-Chinese REE
+          separation facility. However, as Mt. Weld concentrate is LREE-dominant,
+          LAMP's contribution to global Tb₄O₇ output is minimal relative to Chinese
+          ion adsorption clay processors. USGS cites Malaysia as 13% of US REE compound
+          and metal imports (2020–23), but most of that is LREE products (La, Ce, NdPr).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 3
+        notes: |
+          Other non-Chinese Tb₄O₇ producers are limited: Neo Performance Materials
+          (Sillamäe, Estonia, 5% of US imports 2020–23), Japanese processors (Japan 6%
+          of US imports 2020–23), and nascent separation capacity in the US. Estonia and
+          Japan source feed from Australian and Chinese intermediates per USGS chapter
+          text. Phosphor- and magnet-grade Tb₄O₇ at ≥99.99% purity is an overwhelmingly
+          Chinese specialty product. Non-Chinese HREE separation capacity is very limited
+          compared to LREE separation.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). All Tb-specific figures derived from REO totals using the ~0.1%
+    basket share assumption; actual per-element disaggregation is not available from
+    public USGS data. Terbium as a HREE is disproportionately concentrated in China's
+    ion adsorption clay deposits and Myanmar/Thailand HREE-enriched clays; the 0.1%
+    global average applied here likely underestimates actual Tb output from HREE-rich
+    sources and overestimates it from LREE-dominant mines (Mountain Pass, Mt. Weld).
+
+reserves:
+  economic_reserves:
+    value: 90000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves >90,000,000 t REO
+      (floor value used). Applying Tb's typical basket share (~0.1%) gives ~90,000 t
+      Tb₄O₇ equivalent. USGS does not report per-element reserve breakdowns; all
+      Tb-specific reserve figures are derived. The true figure is uncertain because
+      (1) the world REO total is stated as ">90,000,000 t" (a floor), and (2) Tb's
+      actual fraction varies by deposit type. Ion adsorption clay reserves in southern
+      China have higher Tb concentrations (~0.3–0.5%) than bastnaesite or carbonatite
+      reserves (~0.01–0.03%), meaning the effective Tb reserve concentration by deposit
+      type does not track total REO reserve distribution.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 44000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of >90,000,000 t world total).
+          Estimated Tb₄O₇ reserves: ~44,000 t (44,000,000 × 0.1%). China's reserve base
+          includes Bayan Obo (predominantly LREE, low Tb) and southern China ion
+          adsorption clay deposits (high Tb, ~0.3–0.5%); the true China Tb reserve likely
+          exceeds the 0.1% average estimate due to clay deposit enrichment.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 21000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — second-largest world reserve base after
+          China. Estimated Tb₄O₇: ~21,000 t. Current Brazilian production is minimal
+          (only 20 t REO in 2024e). Brazilian REE deposits are predominantly LREE-bearing
+          carbonatites (e.g., Araxá); actual Tb fraction may be below the 0.1% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 6900
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Tb₄O₇: ~6,900 t. India produces
+          ~2,900 t REO per year from monazite in heavy mineral sands; monazite typically
+          contains ~0.05–0.08% Tb₄O₇ of total REOs, below the 0.1% average applied.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 5700
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Estimated Tb₄O₇: ~5,700 t. Mt. Weld
+          carbonatite is LREE-dominant; actual Tb content may be below 0.1% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 3800
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports).
+          Estimated Tb₄O₇: ~3,800 t. Kola Peninsula apatite-nepheline deposits and
+          other Russian REE deposits are predominantly LREE-bearing.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        quantity:
+          value: 3500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Vietnam REO reserves: 3,500,000 t (revised). Estimated Tb₄O₇: ~3,500 t.
+          Vietnam holds large reserves but produces only ~300 t REO per year.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 1900
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US REO reserves: 1,900,000 t (revised). Mountain Pass, CA is the primary US
+          reserve base; Mountain Pass bastnaesite is highly LREE-dominant (~0.01–0.03%
+          Tb₄O₇), so the 0.1% average significantly overestimates actual US Tb reserves.
+          Estimated Tb₄O₇ at 0.1% global average: ~1,900 t.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves not individually listed: Greenland (1,500,000 t), Tanzania (890,000 t),
+    South Africa (860,000 t), Canada (830,000 t), Thailand (4,500 t). Reserves for Russia,
+    South Africa, United States, and Vietnam were revised in MCS 2025 based on company and
+    government reports. All Tb₄O₇ reserve figures derived from applying ~0.1% basket share
+    to country-level REO reserves; actual per-element data not publicly disaggregated by
+    USGS. For heavy REEs like Tb, China's ion adsorption clay reserves represent a
+    disproportionate share of economically recoverable Tb globally, making China's effective
+    Tb reserve position stronger than its 48.9% share of total REO reserves would suggest.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 0.35
+    notes: |
+      Ion adsorption clay deposits in southern China (Jiangxi, Fujian, Guangdong) and
+      Southeast Asia (Burma/Myanmar, Thailand) are the world's primary commercial source
+      of terbium. These deposits are enriched in heavy rare earth elements relative to
+      the LREE-dominant bastnaesite and carbonatite mines. Tb₄O₇ typically represents
+      ~0.2–0.5% of total REOs in southern China ionic clay concentrates, compared to
+      ~0.01–0.03% in bastnaesite. USGS MCS 2025 cites Myanmar and Thailand production
+      as estimated from China import data; these represent predominantly clay-derived
+      HREE concentrates. The high Tb fraction in clay deposits makes them the economic
+      backbone of global Tb supply despite contributing only ~30% of world REO tonnage.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.02
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate) is the primary commercial source of light
+      REEs (La, Ce, Pr, Nd) but contains very little terbium. Tb₄O₇ typically represents
+      only ~0.01–0.03% of total REOs in commercial bastnaesite concentrates (Mountain Pass
+      CA ~0.01–0.02%; Bayan Obo CN ~0.02%; Mt. Weld AU ~0.02%). USGS MCS 2025 confirms
+      bastnaesite was mined as a primary product at Mountain Pass in 2024. Small amounts of
+      Tb are recovered during Chinese processing of mixed bastnaesite concentrate, but
+      Mountain Pass concentrate exported to China contributes a minor fraction of world Tb
+      supply relative to clay-deposit sources. The very low Tb content of bastnaesite makes
+      it an uneconomic primary Tb source.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.06
+    notes: |
+      Monazite (rare-earth phosphate) is stockpiled as a separated concentrate or recovered
+      as an accessory mineral in heavy-mineral-sand concentrates. USGS MCS 2025 confirms
+      monazite was stockpiled in the southeastern United States in 2024. Tb typically
+      represents ~0.05–0.08% of total REOs in monazite. Thorium content in monazite
+      complicates processing under radioactive materials regulations. Monazite contributes
+      modestly to world Tb supply through Indian and other heavy mineral sand operations.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: ndfeb_magnet_coercivity_enhancer
+    availability: partial
+    notes: |
+      USGS MCS 2025: "Substitutes are available for many applications but generally are
+      less effective." For Tb's role as a heavy-REE coercivity enhancer in NdFeB permanent
+      magnets, dysprosium (Dy) is the primary substitute: both Tb and Dy are added to
+      NdFeB alloys (as Tb₃Fe₅, TbFe₂, or grain-boundary diffusion layers) to increase
+      coercivity and extend operating temperature range for EV traction motors and wind
+      turbine generators. Tb provides higher coercivity per unit weight than Dy but at
+      significantly higher cost ($810/kg versus $260/kg in 2024e). Holmium (Ho) is a
+      weaker substitute with lower anisotropy. Motor redesign to operate at lower
+      temperatures reduces or eliminates the need for HREE dopants, but this limits
+      power density. No complete substitute exists for the combination of energy density
+      and high-temperature performance that Tb/Dy-doped NdFeB provides in high-performance
+      EV traction and wind turbine applications.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: green_phosphors_fluorescent_led
+    availability: partial
+    notes: |
+      For Tb³⁺-activated green phosphors in fluorescent lamps and LED applications
+      (lanthanum phosphate Ce,Tb:LaPO₄ and terbium aluminum garnet Ce:TAG), europium
+      (Eu³⁺) and cerium (Ce³⁺) provide different emission colors (red and blue-to-yellow)
+      but cannot replace Tb³⁺ green emission. Ce³⁺-doped YAG (Y₃Al₅O₁₂:Ce) provides
+      warm-white LED phosphor without Tb but with different color rendering. LED phosphors
+      require less total phosphor mass per lumen than fluorescent technology, reducing
+      total Tb consumption per lighting unit. The shift from fluorescent to LED has reduced
+      Tb demand for phosphors structurally, but Tb-based green phosphors retain some use
+      in tri-color fluorescent lamps and specialty LED applications. USGS MCS 2025 general
+      substitutes statement applies.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: magnets_ndfeb_hree_dopant
+      share_pct: 60
+      confidence: low
+      notes: |
+        Terbium's dominant and fastest-growing end use is as a heavy-REE additive in
+        neodymium-iron-boron (NdFeB) permanent magnets to increase coercivity at elevated
+        operating temperatures. Tb is added at ~0.1–0.5% by weight (as Tb₃Fe₅ alloy or
+        via grain-boundary diffusion) to NdFeB magnets used in EV traction motors (~1–2 kg
+        Nd/vehicle; Tb/Dy content is a fraction of that) and direct-drive wind turbine
+        generators. High-coercivity NdFeB with Tb/Dy additions is essential for EV motor
+        designs that operate at elevated temperatures (>150°C in traction applications)
+        without loss of field strength. Compared to Dy, Tb provides superior coercivity
+        enhancement per unit weight, reducing the HREE addition needed in advanced magnet
+        designs. Tb use in magnets grows with EV and wind turbine deployment; USGS MCS
+        2025 lists permanent magnets as a major REE end use. The 60% share is an industry
+        consensus estimate; USGS does not report per-element end-use percentages.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: phosphors_fluorescent_led
+      share_pct: 25
+      confidence: low
+      notes: |
+        Tb³⁺ (terbium(III) ion) is a highly efficient green-emitting activator in rare-earth
+        phosphors, used in tri-color fluorescent lamps (Ce,Tb:LaPO₄ "LAP" phosphor, green
+        channel), compact fluorescent lamps (CFLs), and some LED and display phosphors.
+        The Tb³⁺ → ⁵D₄ → ⁷F_J emission at ~544 nm provides saturated green color. Phosphor
+        demand for Tb has declined significantly since peak CFL production (~2010–2015) due
+        to LED adoption and the obsolescence of CRT displays. LED systems require less
+        phosphor mass per lumen than fluorescent technology. USGS MCS 2025 lists ceramics
+        and glass (including phosphors) as REE end uses. The 25% share reflects the
+        declining but still significant phosphor segment; it was the dominant Tb use
+        prior to NdFeB magnet growth. Share is an industry consensus estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: solid_oxide_fuel_cells_specialty
+      share_pct: 8
+      confidence: low
+      notes: |
+        Terbium oxide (Tb₄O₇) is used as a dopant in solid oxide fuel cells (SOFCs) and
+        in specialty functional ceramics. Tb-doped ceria (TDC) and mixed Tb-Ce oxides have
+        ionic conductivity properties used in SOFC electrolyte layers and in electrochromic
+        materials. Terbium is also used in terbium-doped garnets (Tb₃Al₅O₁₂, TAG) for
+        magneto-optical applications (Faraday rotators, isolators) and in specialty optical
+        glass. The magnetostrictive compound Terfenol-D (Tb₀.₃Dy₀.₇Fe₂) uses Tb as a
+        primary constituent for precision actuation in sonar transducers, vibration
+        cancellation, and industrial motion control. Share is an estimate aggregating
+        several specialty applications.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: other_uses
+      share_pct: 7
+      confidence: low
+      notes: |
+        Other minor applications include Tb-doped materials for neutron imaging, Tb-chelate
+        complexes as labels in time-resolved fluorescence bioassays (Tb³⁺ has a long
+        fluorescence lifetime enabling time-gated detection), specialty glass for UV
+        absorption, research-grade laser host materials, and minor metallurgical uses.
+        Aggregate of several small-volume specialty applications. Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices:
+  - year: 2024
+    value: 810
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: terbium oxide (Tb₄O₇), 99.99% minimum purity,
+      average price 2024e = $810/kg. Source: Argus Media Group, Argus Non-Ferrous Markets
+      (footnote 6). Price declined sharply from the 2022 peak of $2,051/kg, reflecting
+      normalization after the 2021–2022 REE market run-up driven by EV and wind turbine
+      demand forecasts. At $810/kg, terbium oxide is among the most valuable REE commodities
+      by unit price, far above NdPr oxide ($56/kg), Dy oxide ($260/kg), and Eu oxide ($27/kg)
+      in 2024e. The 99.99% minimum purity specification reflects the high-purity requirements
+      for both magnet alloy production and phosphor applications.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2023
+    value: 1298
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: Tb₄O₇ (99.99% minimum) 2023 = $1,298/kg. Source: Argus Media Group. Declining from 2022 peak."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2022
+    value: 2051
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: Tb₄O₇ (99.99% minimum) 2022 = $2,051/kg —
+      the peak year in the 2020–2024 price series. Source: Argus Media Group. The 2022
+      peak reflected heightened demand forecasts for EV and wind turbine NdFeB magnets
+      (which incorporate Tb as a HREE dopant) against constrained Chinese HREE supply
+      during post-COVID economic recovery. Tb's 2022 price exceeded the 2021 level by 52%.
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2021
+    value: 1346
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: Tb₄O₇ (99.99% minimum) 2021 = $1,346/kg. Source: Argus Media Group. Doubled from 2020 level of $670/kg."
+    source_id: usgs_mcs_2025_rare_earths
+  - year: 2020
+    value: 670
+    unit: usd_per_kg
+    form: oxide
+    basis: spot
+    region: US
+    notes: "USGS MCS 2025 salient statistics: Tb₄O₇ (99.99% minimum) 2020 = $670/kg. Source: Argus Media Group. Base year of the 2020–2022 price surge cycle."
+    source_id: usgs_mcs_2025_rare_earths
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Terbium is classified as critical under the US 2022 Critical Minerals List as part
+    of "rare earth elements" (a group designation). US net import reliance for REE
+    compounds and metals was 80% in 2024e (USGS MCS 2025 salient statistics). Heavy rare
+    earth elements including terbium are designated as Critical Raw Materials and Strategic
+    Raw Materials under EU Regulation 2024/1252 (Critical Raw Materials Act, CRMA); the EU
+    explicitly distinguishes light REEs and heavy REEs as separate CRM entries. Terbium's
+    criticality is amplified by its growing use in NdFeB magnets for EV traction motors and
+    wind turbine generators — clean energy applications with rapid demand growth — and by
+    its near-complete dependence on Chinese HREE supply chains (ion adsorption clay
+    processing). In April 2025 China directly named Tb as one of seven rare earth elements
+    subject to export controls, the most acute supply-chain risk event in the USGS 2025
+    reporting window. Import sources 2020–23: China 70%, Malaysia 13%, Japan 6%, Estonia 5%.
+
+geopolitical_events:
+  - date: "2025-04"
+    event: "China imposes export controls on 7 REEs including terbium, dysprosium, gadolinium, samarium, lutetium, scandium, and yttrium"
+    impact: |
+      China's April 2025 REE export controls directly targeted terbium by name, requiring
+      export licenses for Tb metal, Tb₄O₇ oxide, and Tb-containing alloy intermediates.
+      Terbium is particularly sensitive because (1) its dominant commercial application —
+      HREE dopant in NdFeB magnets for EV traction motors and wind turbines — is on a
+      strong growth trajectory with clean energy deployment, and (2) China controls the
+      near-entirety of commercial Tb supply through its ion adsorption clay deposits and
+      processing facilities. Non-Chinese producers of Tb₄O₇ are essentially absent at
+      commercial scale. The controls placed direct pressure on NdFeB magnet manufacturers
+      outside China that use Tb for high-temperature coercivity enhancement, with no
+      near-term alternative supply source.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2022"
+    event: "Terbium oxide price peaks at $2,051/kg driven by EV and wind turbine demand forecasts — the highest unit price in the 2020–2024 price series"
+    impact: |
+      USGS MCS 2025 salient statistics show Tb₄O₇ (99.99%) rising from $670/kg in 2020 to
+      $1,346/kg in 2021 and peaking at $2,051/kg in 2022, before declining to $1,298/kg in
+      2023 and $810/kg in 2024e. The 2022 peak was driven by rapid scaling of EV production
+      and accelerated wind farm deployment globally, both of which require NdFeB magnets with
+      Tb/Dy HREE additions for high-temperature performance. The subsequent price decline
+      from the 2022 peak reflects partial demand-side adjustment (magnet manufacturers
+      reducing Tb loading via grain-boundary diffusion techniques and motor redesign) and
+      recovery of Myanmar ion adsorption clay supply. At $810/kg in 2024e, Tb remains by
+      far the most expensive of the commonly tracked REE oxides.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024"
+    event: "Global REE mine production increases to 390,000 t REO in 2024e; Burma REE production falls 28% YoY, affecting HREE supply"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t, up from 376,000 t in
+      2023, driven by China, Nigeria, and Thailand growth. However, Burma (Myanmar) fell
+      from 43,000 t to 31,000 t REO (-28% YoY). Burma's ion adsorption clay deposits are
+      HREE-enriched (high Tb content), so its 12,000 t decline has a disproportionate
+      impact on world Tb supply relative to its 8% share of total REO. At 0.1% basket
+      average, Burma's 12,000 t decline implies ~12 t less Tb, but the true reduction may
+      be higher given above-average Tb fractions in Burmese clay deposits. Production data
+      for Burma estimated from China import records (USGS footnote 12).
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024"
+    event: "US net import reliance for REE compounds and metals declines to 80% in 2024e; Tb-specific US processing capacity remains absent"
+    impact: |
+      USGS MCS 2025 salient statistics report US net import reliance for REE compounds and
+      metals at 80% in 2024e, down from >95% in 2020–2023, reflecting growth in domestic
+      compound production to 7,600 t total in 2024. However, this improvement is concentrated
+      in LREE processing (NdPr compounds in California, RE compounds in Utah). No domestic US
+      separation of Tb₄O₇ at commercial scale is reported. Mountain Pass concentrate, which
+      contains trace quantities of Tb (~0.01–0.02% of REO), is processed in China. US NdFeB
+      magnet manufacturers requiring Tb for high-temperature coercivity remain entirely
+      dependent on imported Tb₄O₇ or pre-alloyed NdFeB with Tb additions from Chinese
+      processors.
+    source_id: usgs_mcs_2025_rare_earths
+
+narrative: |
+  Terbium stands apart within the rare earth supply chain as the most commercially
+  valuable of the HREE oxides tracked by USGS MCS 2025, priced at $810/kg in 2024e
+  (≥99.99% Tb₄O₇) — more than three times the price of dysprosium oxide ($260/kg) and
+  nearly 15 times the price of neodymium oxide ($56/kg). This premium reflects Tb's
+  unique combination of high demand growth (driven by clean energy applications) and
+  extreme supply concentration in Chinese ion adsorption clay deposits. Unlike the
+  light rare earths (La, Ce, Nd), which are produced in large volumes from LREE-dominant
+  bastnaesite at Mountain Pass and Bayan Obo, terbium is predominantly recovered from
+  heavy-REE-enriched ion adsorption clays in southern China's Jiangxi, Fujian, and
+  Guangdong provinces — a deposit type with essentially no significant non-Chinese
+  counterpart at commercial scale. Burma (Myanmar) and Thailand contribute HREE clay
+  production, but Chinese processing of their concentrates means China controls the
+  full value chain.
+
+  Terbium's fastest-growing and now dominant application is as a coercivity enhancer in
+  NdFeB permanent magnets for high-temperature environments — specifically EV traction
+  motors and direct-drive wind turbine generators. Both applications require magnets that
+  maintain strong fields at operating temperatures well above ambient (EV motors: >150°C);
+  adding Tb or Dy at ~0.1–0.5 wt% dramatically increases the magnet's coercivity and
+  operating temperature ceiling. Advanced grain-boundary diffusion techniques reduce the
+  required HREE loading per magnet (by concentrating Tb/Dy at grain boundaries rather than
+  dissolving it throughout the alloy), partially dampening demand growth per unit of EV or
+  wind capacity, but the absolute growth in EV and wind deployment more than offsets this
+  efficiency gain. This demand dynamic drove the 2021–2022 price surge to $2,051/kg and
+  is the structural force maintaining Tb prices well above the long-run lows seen for bulk
+  LREEs. Phosphors — once the dominant Tb end use (Tb³⁺ green emission in tri-color
+  fluorescent lamps) — remain significant but are in structural decline with the ongoing
+  shift to LED lighting.
+
+  China's direct targeting of terbium in its April 2025 export controls — explicitly naming
+  Tb alongside Dy, Sm, Gd, Lu, Sc, and Y — marked the sharpest formalization of Tb supply
+  risk since the 2010–2012 REE export restriction era. Unlike neodymium and praseodymium,
+  which are targeted indirectly through NdFeB magnet technology and equipment controls, Tb
+  was named as a directly controlled substance, with export licenses required for Tb metal,
+  Tb₄O₇ oxide, and processed alloy products. Building resilient non-Chinese Tb supply chains
+  requires developing non-Chinese ion adsorption clay operations at scale — a decade-long
+  challenge involving ore body development, hydromet processing, and separation technology
+  — or developing viable magnet designs with substantially reduced or eliminated Tb loading.
+  Neither pathway is close to commercial realization at the scale required to replace Chinese
+  HREE supply.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
