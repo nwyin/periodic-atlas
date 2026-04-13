@@ -1,0 +1,200 @@
+symbol: Bk
+atomic_number: 97
+name: berkelium
+category: actinide
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Berkelium's commercial reality is an isotope market centered on Bk-249 rather
+  than a bulk element market. DOE/NIDC lists Bk-249 as a special-order product
+  sold in micrograms, with solid nitrate or chloride chemistry packaged in a
+  glass screw-cap bottle.
+
+isotope_markets:
+  - isotope: Bk-249
+    half_life_seconds: 28512000
+    production_mode: reactor_generated
+    reporting_year: 2025
+    precursor: |
+      Bk-249 is made by neutron capture on curium-248 in irradiated curium
+      targets. ORNL's production and purification route then separates berkelium
+      from neighboring transplutonium actinides after HFIR irradiation and REDC
+      processing.
+    delivery_form: |
+      DOE/NIDC lists Bk-249 in solid nitrate or chloride form, supplied on
+      special order in microgram quantities, with primary containment in a glass
+      screw-cap bottle. Downstream use is as ultra-high-purity research material
+      and target feed for heavy-element experiments rather than as a metallic
+      commodity.
+    producers:
+      shares:
+        - country: US
+          share_pct: 100
+          confidence: medium
+          notes: |
+            DOE/NIDC's current catalog and availability notices point to Oak
+            Ridge National Laboratory's HFIR/REDC complex as the commercial
+            supply route. ORNL states it is the only place in the world that can
+            produce sufficient quantities of berkelium for element-117 work,
+            which supports treating the currently identified commercial Bk-249
+            market as effectively US-supplied.
+          source_id: ornl_element_117_timeline
+      completeness: complete
+    notes: |
+      Public primary sources describe Bk-249 as a tiny, special-order isotope
+      market. DOE has published packaging, purity, and occasional batch
+      availability, but not routine annual output or public list prices.
+
+feedstock_origins:
+  - substrate: curium_248_targets
+    notes: |
+      DOE/NIDC lists the production route as neutron capture on curium-248, and
+      ORNL describes berkelium recovery as part of the chemical processing of
+      irradiated curium-bearing transplutonium campaigns.
+    source_id: nidc_bk249_product_2019
+
+substitutes:
+  - application: element_117_synthesis_targets
+    availability: none
+    notes: |
+      ORNL states that element 117 identification was not possible without
+      berkelium target material, supporting the conclusion that there was no
+      substitute for Bk-249 in that experimental pathway.
+    source_id: ornl_element_117_timeline
+
+end_uses:
+  uses:
+    - application: heavy_element_chemistry_and_nuclear_physics_research
+      share_pct: 100
+      confidence: medium
+      notes: |
+        DOE/NIDC's availability notice says Bk-249 is of particular interest in
+        heavy-element chemistry and nuclear physics research. In practice this
+        includes target material for superheavy-element experiments and
+        high-purity heavy-actinide research.
+      source_id: nidc_bk249_available_2020
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Berkelium does not appear on the U.S. 2025 critical-minerals list or the
+    EU's 2024 critical and strategic raw-materials annexes. Its supply chain is
+    governed through isotope-program and nuclear-research infrastructure rather
+    than mainstream mineral-policy frameworks.
+
+geopolitical_events:
+  - date: 2008
+    event: ORNL revived californium-252 production, restoring the campaign route from which commercial Bk-249 is recovered.
+    impact: |
+      Because berkelium is recovered as a byproduct of californium production at
+      HFIR/REDC, the 2008 restart of californium work re-opened the pathway that
+      later supplied Bk-249 for superheavy-element experiments and DOE isotope
+      distribution.
+    source_id: ornl_superheavy_science_2021
+  - date: 2020-10-27
+    event: DOE/NIDC announced that Bk-249 was available for sale again in a small batch.
+    impact: |
+      NIDC said about 0.3 mg was currently available and that an additional
+      batch of less than 16 mg was expected in May 2021, illustrating the
+      campaign-based, milligram-scale nature of the market.
+    source_id: nidc_bk249_available_2020
+  - date: 2023-04-12
+    event: DOE highlighted a faster stacked-column purification method for Bk-249.
+    impact: |
+      DOE said the new process delivered very high purity with less room for
+      error and produced the purest Bk-249 to date, improving the quality and
+      reliability of an already supply-constrained isotope.
+    source_id: nidc_getting_purer_2023
+
+narrative: |
+  Berkelium is commercially real only in the narrow isotope-program sense. There
+  is no bulk market in berkelium metal, oxide, or salts for industrial
+  consumption. Instead, the usable commercial form is Bk-249 sold through the DOE
+  Isotope Program as a special-order research isotope in microgram quantities.
+  The supply chain begins with neutron irradiation of curium feedstock in ORNL's
+  High Flux Isotope Reactor and ends with high-purity chemical separation and
+  dispensing at the Radiochemical Engineering Development Center.
+
+  The market is tiny in mass and highly strategic in function. DOE's own
+  availability notices frame Bk-249 as a material for heavy-element chemistry and
+  nuclear physics research, while ORNL's superheavy-element record shows that
+  berkelium target material was essential to the creation of tennessine. Public
+  sources describe campaign outputs in milligrams, occasional availability
+  windows, and process improvements, but they do not disclose routine annual
+  production or public prices. The atlas record therefore focuses on trade form,
+  feedstock route, and the research-driven structure of supply.
+
+sources:
+  - id: nidc_berkelium_catalog_2025
+    title: "Berkelium"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/products/berkelium
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_bk249_product_2019
+    title: "Berkelium-249 Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/sites/default/files/2019-09/Bk-249.pdf
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: nidc_bk249_available_2020
+    title: "Berkelium-249 Available Now"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/680
+    retrieved: 2026-04-13
+    publication_year: 2020
+    source_tier: primary
+  - id: nidc_getting_purer_2023
+    title: "Getting Purer Berkelium, Faster than Ever"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/1254
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: ornl_transplutonium_2020
+    title: "Production of Cf-252 and other transplutonium isotopes at Oak Ridge National Laboratory"
+    publisher: Oak Ridge National Laboratory / Radiochimica Acta
+    url: https://www.ornl.gov/publication/production-cf-252-and-other-transplutonium-isotopes-oak-ridge-national-laboratory
+    retrieved: 2026-04-13
+    publication_year: 2020
+    source_tier: primary
+  - id: ornl_superheavy_targets_2023
+    title: "Actinide targets for the synthesis of superheavy nuclei"
+    publisher: Oak Ridge National Laboratory / The European Physical Journal A
+    url: https://www.ornl.gov/publication/actinide-targets-synthesis-superheavy-nuclei
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: ornl_superheavy_science_2021
+    title: "Superheavy science: ORNL's actinide abilities enable the discovery of new elements"
+    publisher: Oak Ridge National Laboratory
+    url: https://www.ornl.gov/news/superheavy-science-ornls-actinide-abilities-enable-discovery-new-elements
+    retrieved: 2026-04-13
+    publication_year: 2021
+    source_tier: secondary
+  - id: ornl_element_117_timeline
+    title: "Element 117 timeline"
+    publisher: Oak Ridge National Laboratory
+    url: https://www.ornl.gov/content/element-117-timeline
+    retrieved: 2026-04-13
+    source_tier: secondary
+  - id: us_federal_register_critical_minerals_2025
+    title: "Final 2025 List of Critical Minerals"
+    publisher: US Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://faolex.fao.org/docs/pdf/eur231131.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
