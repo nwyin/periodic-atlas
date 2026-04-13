@@ -1,0 +1,353 @@
+symbol: Ir
+atomic_number: 77
+name: iridium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Iridium is sold commercially mainly as high-purity refined metal sponge, powder,
+  grains, and fabricated stock for crucibles and specialty alloys; oxide or chloride
+  intermediates are used for mixed-metal-oxide electrode coatings and chemical
+  catalysts. USGS MCS 2025 reports platinum-group-metal production in kilograms of
+  contained PGM and prices in U.S. dollars per troy ounce.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 8200
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      Iridium is not tabulated separately in USGS MCS 2025. DOE's platinum-group
+      metals supply-chain assessment reports 2020 global iridium production of
+      8.17 metric tons and lists representative South African UG2 grades of
+      Pt 2.0, Pd 1.3, Rh 0.34, Ru 0.45, Ir 0.13, and Os 0.05 g/t, implying an
+      iridium basket share of about 3% of a representative 6E reef basket by
+      grade. This file therefore carries an 8.2 metric ton per year
+      high-single-digit proxy for the 2025 snapshot rather than a false-precision
+      standalone 2024 figure.
+    source_id: doe_pgm_supply_chain_2022
+  grouped_reporting: true
+  commodity_group: platinum_group_metals
+  mining_by_country:
+    shares:
+      - country: ZA
+        share_pct: 83.0
+        notes: |
+          DOE Table A2 iridium mine-production share, 2020. South Africa's Bushveld
+          Complex overwhelmingly dominates iridium supply, especially UG2 ore where
+          iridium is richer than in Merensky Reef.
+        source_id: doe_pgm_supply_chain_2022
+      - country: ZW
+        share_pct: 10.2
+        notes: |
+          DOE Table A2 iridium mine-production share, 2020. Zimbabwean output comes
+          from the Great Dyke PGM belt and is materially smaller than South Africa's
+          but still the second-largest national source.
+        source_id: doe_pgm_supply_chain_2022
+      - country: CA
+        share_pct: 3.7
+        notes: |
+          DOE Table A2 iridium mine-production share, 2020. Canadian iridium is
+          recovered mainly from nickel-copper-PGM sulfide systems such as Sudbury.
+        source_id: doe_pgm_supply_chain_2022
+      - country: RU
+        share_pct: 3.1
+        notes: |
+          DOE Table A2 iridium mine-production share, 2020. Russian output is tied
+          to Norilsk-type nickel-copper-PGM sulfide mining and associated refining.
+        source_id: doe_pgm_supply_chain_2022
+    completeness: complete
+  refining_by_country:
+    shares: []
+    completeness: partial
+  notes: |
+    USGS MCS 2025 remains the anchor source for the 2025 PGM market snapshot, but it
+    does not publish a standalone iridium mine table. The mine quantity and mine-share
+    geography above therefore use the latest official iridium-specific appendix data
+    located directly in DOE's PGM supply-chain assessment, while grouped_reporting stays
+    true to reflect the continuing USGS basket treatment.
+
+reserves:
+  economic_reserves:
+    value: 2430000
+    unit: kg
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025 reports world PGM reserves of more than 81,000,000 kg but does
+      not disaggregate iridium. Applying the representative ~3% iridium share used in
+      the production proxy implies more than 2,430,000 kg of contained iridium in
+      economic reserves.
+    source_id: usgs_mcs_2025_pgm
+  resources:
+    value: 3000000
+    unit: kg
+    form: contained_element
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025 reports world PGM resources of more than 100,000,000 kg. Applying
+      a representative ~3% iridium share implies more than 3,000,000 kg of contained
+      iridium resources globally, concentrated chiefly in the Bushveld Complex.
+    source_id: usgs_mcs_2025_pgm
+  reserves_by_country:
+    shares:
+      - country: ZA
+        share_pct: 77.8
+        notes: |
+          Share of total reported PGM reserves from USGS MCS 2025. South Africa's
+          Bushveld Complex contains by far the largest iridium-bearing reserve base.
+        source_id: usgs_mcs_2025_pgm
+      - country: RU
+        share_pct: 19.8
+        notes: |
+          Share of total reported PGM reserves from USGS MCS 2025. Russian reserve
+          figures are reported under the Russian A+B+C1+C2 classification system.
+        source_id: usgs_mcs_2025_pgm
+      - country: ZW
+        share_pct: 1.5
+        notes: "Share of total reported PGM reserves from USGS MCS 2025."
+        source_id: usgs_mcs_2025_pgm
+      - country: US
+        share_pct: 1.0
+        notes: "Share of total reported PGM reserves from USGS MCS 2025."
+        source_id: usgs_mcs_2025_pgm
+      - country: CA
+        share_pct: 0.4
+        notes: "Share of total reported PGM reserves from USGS MCS 2025."
+        source_id: usgs_mcs_2025_pgm
+    completeness: complete
+  notes: |
+    USGS reports only combined PGM reserve and resource stocks. Country shares above
+    are the published PGM-reserve shares; iridium-specific reserve tonnage remains a
+    basket-share derivation rather than a separately tabulated reserve series.
+
+end_uses:
+  uses:
+    - application: electrochemical_applications
+      share_pct: 36
+      confidence: medium
+      notes: |
+        DOE Table A1 gives 2021 iridium gross demand of 3.0 metric tons in
+        electrochemical applications, the largest identified demand bucket. This
+        includes chlor-alkali and other mixed-metal-oxide anode coatings and
+        electrolysis-related catalyst demand.
+      source_id: doe_pgm_supply_chain_2022
+    - application: other_industrial
+      share_pct: 32
+      confidence: medium
+      notes: |
+        DOE Table A1 gives 2021 iridium gross demand of 2.7 metric tons in the
+        residual "other" category. In commercial practice this bucket includes
+        high-temperature hardware such as crucibles, spark-plug components, and other
+        specialty industrial uses.
+      source_id: doe_pgm_supply_chain_2022
+    - application: electronics
+      share_pct: 22
+      confidence: medium
+      notes: |
+        DOE Table A1 gives 2021 iridium gross demand of 1.8 metric tons in electronics.
+        Iridium is used where oxidation resistance and high-temperature stability matter,
+        including advanced electronics manufacturing hardware.
+      source_id: doe_pgm_supply_chain_2022
+    - application: chemical_catalysts
+      share_pct: 10
+      confidence: medium
+      notes: |
+        DOE Table A1 gives 2021 iridium gross demand of 0.8 metric tons in chemical
+        applications. USGS also identifies PGMs as catalysts for bulk chemicals and
+        petroleum refining.
+      source_id: doe_pgm_supply_chain_2022
+  completeness: complete
+
+byproduct_of:
+  - Pt
+  - Ni
+  - Cu
+
+feedstock_origins:
+  - substrate: ug2_chromitite_reef
+    notes: |
+      Representative South African UG2 ore carries about 0.13 g/t iridium alongside
+      Pt 2.0, Pd 1.3, Rh 0.34, Ru 0.45, and Os 0.05 g/t in DOE Table 3. UG2 is the
+      most iridium-rich major PGM reef and the backbone of global primary supply.
+    source_id: doe_pgm_supply_chain_2022
+  - substrate: merensky_reef_pgm_ore
+    notes: |
+      DOE Table 3 lists Merensky Reef ore at about 0.05 g/t iridium, lower than UG2
+      but still an important platinum-group feedstock in South Africa's Bushveld Complex.
+    source_id: doe_pgm_supply_chain_2022
+  - substrate: nickel_copper_pgm_sulfide_ore
+    notes: |
+      Norilsk and Sudbury type nickel-copper-PGM sulfide ores provide the main
+      non-Bushveld iridium stream. DOE Table 3 shows very low iridium grades in these
+      systems relative to South African reefs, which is why South Africa dominates
+      iridium supply far more strongly than it dominates platinum or palladium.
+    source_id: doe_pgm_supply_chain_2022
+
+substitutes:
+  - application: electrochemical_applications
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that one PGM can substitute for another in some industrial
+      end uses, but with losses in efficiency. For iridium's electrochemical uses,
+      ruthenium-rich mixed-oxide systems can reduce iridium loading but trade off
+      durability and stability.
+    source_id: usgs_mcs_2025_pgm
+  - application: electrochemical_applications
+    availability: partial
+    notes: |
+      Heraeus and Sibanye-Stillwater announced a ruthenium-based PEM-water-electrolysis
+      catalyst that can cut iridium use by about 85% relative to an iridium-oxide
+      catalyst. The claim is partial rather than full because the new catalyst is a
+      loading-reduction path, not a universal iridium elimination route.
+    source_id: heraeus_ruthenium_pem_catalyst_2023
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2022
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_annex_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_annex_2024
+  notes: |
+    Iridium is explicitly named on the U.S. 2022 final critical-minerals list and is
+    covered by the EU Critical Raw Materials Act's Annex I strategic list and Annex II
+    critical list under platinum group metals. Extreme mine concentration in South
+    Africa and limited substitution in electrochemical uses make the designation
+    commercially intuitive rather than merely formal.
+
+prices:
+  - year: 2024
+    value: 4800
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: |
+      USGS MCS 2025 salient statistics: estimated annual average iridium price
+      $4,800 per troy ounce in 2024, up about 3% from 2023.
+    source_id: usgs_mcs_2025_pgm
+  - year: 2023
+    value: 4672.78
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2023 annual average iridium price $4,672.78 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2022
+    value: 4581.93
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2022 annual average iridium price $4,581.93 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2021
+    value: 5158.4
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2021 annual average iridium price $5,158.40 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+  - year: 2020
+    value: 1633.51
+    unit: usd_per_troy_oz
+    form: metal
+    basis: spot
+    notes: "USGS MCS 2025 salient statistics: 2020 annual average iridium price $1,633.51 per troy ounce."
+    source_id: usgs_mcs_2025_pgm
+
+geopolitical_events:
+  - date: "2024-01"
+    event: "South African PGM mined-material output declined amid low prices, deep-level mining costs, labor disputes, and electricity disruptions"
+    impact: |
+      Because South Africa is the dominant iridium supplier, the same constraints that
+      reduced 2024 South African PGM output tightened the iridium market even as the
+      broader PGM complex weakened.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-01"
+    event: "Russian PGM output declined because of natural disasters, lower grades and recovery, Ukraine-war disruptions, and planned metallurgical outages"
+    impact: |
+      Russia is a much smaller iridium source than it is for palladium, but any loss of
+      Russian nickel-copper-PGM feed further narrows the already concentrated iridium
+      supply base.
+    source_id: usgs_mcs_2025_pgm
+  - date: "2024-06"
+    event: "Heraeus acquired McCol Metals, a specialist in recovering iridium from spent mixed-metal-oxide electrodes"
+    impact: |
+      The transaction expanded industrial recycling capacity focused specifically on
+      iridium-bearing MMO anodes, improving circular supply options in one of iridium's
+      largest end-use chains.
+    source_id: heraeus_mccol_2024
+
+narrative: |
+  Iridium is the smallest-volume mainstream platinum-group metal and one of the most
+  supply-constrained. Commercial supply is a byproduct stream rather than a primary
+  mining target: most metal comes from South African Bushveld reefs, especially UG2,
+  with much smaller additions from Zimbabwe and nickel-copper-PGM sulfide districts in
+  Canada and Russia. That geology matters commercially because UG2 is unusually rich in
+  iridium relative to other major PGM ores, so the metal's supply concentration is even
+  tighter than platinum's or palladium's.
+
+  Demand is industrial rather than decorative. DOE's breakdown shows electrochemical
+  applications as the largest bucket, followed by a broad industrial residual category,
+  electronics, and chemical catalysts. In practice that means MMO anodes, electrolyzer
+  catalysts, crucibles and other high-temperature hardware, and specialized electronics
+  components. Substitution exists only at the margin: ruthenium can reduce iridium
+  loading in some electrochemical systems, but usually with performance or durability
+  penalties.
+
+  The market stayed structurally tight even as the wider PGM complex softened in 2024.
+  USGS recorded an iridium price increase to about $4,800/troy ounce while palladium,
+  rhodium, and ruthenium all fell. That divergence fits the underlying commercial
+  reality: iridium is tiny, concentrated, and hard to replace, while new recycling and
+  low-iridium catalyst technologies are advancing precisely because the supply base is so
+  narrow.
+
+sources:
+  - id: usgs_mcs_2025_pgm
+    title: "Mineral Commodity Summaries 2025 — Platinum-Group Metals (pp. 136-137)"
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: doe_pgm_supply_chain_2022
+    title: "Platinum Group Metals Supply Chain Deep Dive Assessment"
+    publisher: U.S. Department of Energy
+    url: https://www.energy.gov/sites/default/files/2022-02/PGM%20catalyst%20supply%20chain%20report%20-%20final%20draft%202.25.22.pdf
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2022
+    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 22, 2022)"
+    publisher: U.S. Department of the Interior / U.S. Geological Survey
+    url: https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: eu_crma_annex_2024
+    title: "Regulation (EU) 2024/1252 — Critical Raw Materials Act, Annex I (Strategic) and Annex II (Critical Raw Materials)"
+    publisher: European Commission
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: heraeus_mccol_2024
+    title: "Inclusion of McCol Metals in the Heraeus Precious Metals Brand"
+    publisher: Heraeus Precious Metals
+    url: https://www.heraeus-precious-metals.com/en/company/press-and-news/inclusion-of-mccol-metals-brand/
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: heraeus_ruthenium_pem_catalyst_2023
+    title: "Heraeus and Sibanye-Stillwater introduce a ruthenium-based catalyst to reduce reliance on iridium for PEM water electrolysis"
+    publisher: Heraeus Precious Metals
+    url: https://www.heraeus-precious-metals.com/en/company/press-and-news/heraeus-and-sibanye-stillwater-introduce-a-ruthenium-based-catalyst-to-reduce-reliance-on-iridium-for-pem-water-electrolysis/
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
