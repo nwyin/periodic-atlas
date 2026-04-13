@@ -1,0 +1,97 @@
+symbol: Rg
+atomic_number: 111
+name: roentgenium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Roentgenium is created atom-by-atom in heavy-ion
+  accelerator experiments and observed through correlated alpha-decay chains
+  rather than shipped in any bulk metal, compound, or isotope product form.
+
+research_only:
+  longest_lived_isotope: Rg-282
+  half_life_seconds: 100
+  discovered_year: 1994
+  iupac_recognized_year: 2003
+  discovered_at: |
+    Gesellschaft fur Schwerionenforschung (GSI; now GSI Helmholtzzentrum fur
+    Schwerionenforschung) in Darmstadt, Germany. The discovery experiment used
+    fusion-evaporation of a nickel-64 beam on a bismuth-209 target at the SHIP
+    separator and first identified isotope Rg-272 through three decay chains.
+    IUPAC later credited the Hofmann et al. GSI collaboration with the
+    discovery, citing a total of six decay chains from the 64Ni + 209Bi route.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - GSI Helmholtzzentrum fur Schwerionenforschung
+    - Flerov Laboratory of Nuclear Reactions, JINR Dubna
+  notes: |
+    The longest-lived roentgenium isotope adopted in the current ENSDF/NNDC
+    mass-chain index is Rg-282, appearing as the alpha-decay daughter of Nh-286
+    with a 100-second dataset label. JINR's 2010 element-117 announcement
+    described the daughter isotopes of elements 115, 113, and 111 as having
+    lifetimes measured in seconds, which is long enough for chemistry-oriented
+    studies but still far from any commercial supply chain.
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+narrative: |
+  Roentgenium is a pure research element. GSI first synthesized element 111 in
+  December 1994 by fusing nickel-64 with bismuth-209, observing three decay
+  chains attributed to Rg-272. IUPAC recognized the discovery in 2003 and
+  formally adopted the name roentgenium with symbol Rg on 1 November 2004.
+
+  There is no mine output, refining stage, reserves base, or commercial end-use
+  market to describe. The element only exists as individual atoms created in
+  accelerator facilities. Later superheavy-element work at JINR generated
+  roentgenium isotopes such as Rg-282 as daughters in decay chains from heavier
+  nuclei, and NNDC's ENSDF index shows the currently longest-lived adopted
+  roentgenium dataset as Rg-282 with a 100-second alpha-decay record.
+
+sources:
+  - id: gsi_element_111
+    title: "Element 111"
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/en/work/forschung/nustarenna/nustarenna_divisions/she_physik/research/super_heavy_elements/element_111
+    retrieved: 2026-04-13
+    publication_year: 1994
+    source_tier: primary
+  - id: iupac_naming_111_2004
+    title: "Element 111 is named roentgenium"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/news/archives/2004/naming111.html
+    retrieved: 2026-04-13
+    publication_year: 2004
+    source_tier: primary
+  - id: iupac_recommendation_111_2004
+    title: "Name and symbol of the element with atomic number 111 (IUPAC Recommendations 2004)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/2004/pdf/7612x2101.pdf
+    retrieved: 2026-04-13
+    publication_year: 2004
+    source_tier: primary
+  - id: nndc_ensdf_a282_index
+    title: "Index to ENSDF for A = 282"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/DatasetFetchServlet?datasource=ensdf&mass=282&nucmass=isMass&searchType=ensdfIndex
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: nndc_282rg_decay_refs
+    title: "ENSDF references for 282Rg alpha decay (100 s)"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/getrefs.jsp?dsid=282RG+A+DECAY+%28100+S%29&recid=278109008
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: jinr_element_117_2010
+    title: "Element 117 is synthesized"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/post_4010/
+    retrieved: 2026-04-13
+    publication_year: 2010
+    source_tier: primary
