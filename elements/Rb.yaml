@@ -1,0 +1,243 @@
+symbol: Rb
+atomic_number: 37
+name: rubidium
+category: alkali_metal
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rubidium data in metric tons of rubidium oxide unless
+  otherwise specified. Commercial rubidium is not traded as a bulk mined metal;
+  the source describes imported rubidium concentrate produced as a byproduct of
+  pollucite (cesium) and lepidolite (lithium) mining and processed into small
+  batches of metal ampoules and specialty compounds such as carbonate, acetate,
+  bromide, chloride, nitrate, and formate hydrate.
+
+production:
+  - reporting_year: 2024
+    mining_by_country:
+      completeness: partial
+    refining_by_country:
+      completeness: partial
+    notes: |
+      USGS MCS 2025 explicitly states that there were no official sources for
+      rubidium production data in 2024. The same chapter says no rubidium was
+      mined in the United States, known production of rubidium ore outside China
+      had ceased within the past two decades, and primary global producers of
+      refined rubidium compounds were estimated to include China, Germany, and
+      Russia. Existing stockpiles at multiple former mine sites continued feeding
+      downstream refineries, so the commercial market remained real even though a
+      defensible public tonnage table was not published.
+
+reserves:
+  economic_reserves:
+    value: 200000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      USGS MCS 2025 says Australia, Canada, China, and Namibia were estimated to
+      have reserves totaling less than 200,000 tons of recoverable rubidium
+      materials. Because the chapter header states data are in metric tons of
+      rubidium oxide unless otherwise specified, this entry encodes the published
+      global upper bound as an approximate oxide-equivalent reserve ceiling rather
+      than a point estimate.
+    source_id: usgs_mcs_2025_rubidium
+  reserves_by_country:
+    completeness: partial
+  notes: |
+    The source names Australia, Canada, China, and Namibia as reserve-holding
+    countries but does not provide a country-level reserve split.
+
+byproduct_of:
+  - Cs
+  - Li
+
+feedstock_origins:
+  - substrate: pollucite_ore
+    notes: |
+      USGS MCS 2025 states that rubidium concentrate is produced as a byproduct
+      of pollucite (cesium) mining and that pollucite can contain up to 1.5%
+      rubidium oxide.
+    source_id: usgs_mcs_2025_rubidium
+  - substrate: lepidolite_ore
+    notes: |
+      USGS MCS 2025 states that rubidium concentrate is produced as a byproduct
+      of lepidolite (lithium) mining and that lepidolite can contain up to 3.5%
+      rubidium oxide.
+    source_id: usgs_mcs_2025_rubidium
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      USGS states that rubidium and cesium can be used interchangeably in many
+      applications because they have similar physical properties and atomic
+      radii, although cesium's greater electropositivity makes it the preferred
+      material in some uses.
+    source_id: usgs_mcs_2025_rubidium
+
+end_uses:
+  uses:
+    - application: specialty_glass_and_niche_uses
+      share_pct: 100
+      confidence: medium
+      notes: |
+        The open USGS sources do not publish a quantitative end-use split for
+        rubidium. This grouped application represents the entire commercial
+        market described by USGS: specialty glass for fiber-optic
+        telecommunications as the leading outlet, plus biomedical research and
+        imaging, electronics and photoemissive devices, catalysts, pyrotechnics,
+        ceramics, and atomic-frequency-reference uses. The market is extremely
+        small and better characterized by niche functionality than by tonnage
+        segmentation.
+      source_id: usgs_profile_2003_rubidium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2025
+  eu_crm_list_as_of_2024: false
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Rubidium appears on the final U.S. 2025 critical minerals list but is not
+    listed in Annex II (critical raw materials) or Annex I section 1 (strategic
+    raw materials) of Regulation (EU) 2024/1252.
+
+prices:
+  - year: 2024
+    value: 128
+    unit: usd_per_gram
+    form: metal
+    basis: price_list
+    region: US
+    notes: |
+      USGS MCS 2025: one company offered 1-gram ampoules of 99.75% (metal basis)
+      rubidium at the end of September 2024 for $128.
+    source_id: usgs_mcs_2025_rubidium
+  - year: 2023
+    value: 121
+    unit: usd_per_gram
+    form: metal
+    basis: price_list
+    region: US
+    notes: |
+      USGS MCS 2025: the same 1-gram ampoules of 99.75% (metal basis) rubidium
+      were priced at $121 in 2023.
+    source_id: usgs_mcs_2025_rubidium
+  - year: 2024
+    value: 30.2
+    unit: usd_per_gram
+    form: compound_other
+    basis: price_list
+    region: US
+    notes: |
+      USGS MCS 2025: 10-gram ampoules of 99.8% (metal basis) rubidium formate
+      hydrate were priced at $302 at the end of September 2024, equivalent to
+      $30.2 per gram.
+    source_id: usgs_mcs_2025_rubidium
+  - year: 2023
+    value: 29
+    unit: usd_per_gram
+    form: compound_other
+    basis: price_list
+    region: US
+    notes: |
+      USGS MCS 2025: the same 10-gram ampoules of 99.8% (metal basis) rubidium
+      formate hydrate were priced at $290 in 2023, equivalent to $29.0 per gram.
+    source_id: usgs_mcs_2025_rubidium
+  - year: 2024
+    value: 1244.19
+    unit: usd_per_kg
+    form: carbonate
+    basis: price_list
+    notes: |
+      USGS MCS 2025 says one company cited a rubidium carbonate price of
+      $1,244.19 per kilogram, value-added tax included, at the end of September
+      2024.
+    source_id: usgs_mcs_2025_rubidium
+
+geopolitical_events:
+  - date: 2024
+    event: "Commercial rubidium supply outside China remained dependent on legacy stockpiles from former mines"
+    impact: |
+      USGS reported that known rubidium ore production outside China had ceased
+      within the past two decades and that stockpiles at former mine sites were
+      still feeding downstream refineries, with those stockpiles outside China
+      potentially nearing depletion at current processing rates. This leaves the
+      market highly dependent on residual inventories and potential Chinese
+      production.
+    source_id: usgs_mcs_2025_rubidium
+  - date: 2024
+    event: "A Namibian lepidolite project advanced with downstream rubidium conversion planned in Abu Dhabi"
+    impact: |
+      USGS said one company continued developing a lepidolite concentration mine
+      and processing facility in Namibia, targeting 5,700 t/yr of lithium
+      hydroxide capacity from 2026, with byproduct rubidium intended for a
+      downstream chemical conversion facility in Abu Dhabi. The project shows that
+      new rubidium supply is being pursued indirectly through lithium-led project
+      economics rather than through standalone rubidium mines.
+    source_id: usgs_mcs_2025_rubidium
+  - date: 2024-08
+    event: "Mount Edon in Western Australia published an inferred resource containing rubidium oxide"
+    impact: |
+      USGS reports that the Mount Edon Project announced an initial
+      JORC-compliant inferred mineral resource of 3.6 million tons containing an
+      estimated 7,900 tons of rubidium oxide, with a mining proposal targeted by
+      yearend 2025. This is evidence that prospective new rubidium supply remains
+      tied to lithium- and cesium-bearing pegmatite developments.
+    source_id: usgs_mcs_2025_rubidium
+
+narrative: |
+  Rubidium is commercially real, but it is not a bulk commodity in the usual
+  mining sense. USGS describes a market built around byproduct recovery from
+  cesium- and lithium-bearing pegmatites, imported concentrate, and downstream
+  processing into small quantities of metal and specialty compounds. The leading
+  application is specialty glass for fiber-optic telecommunications, with the
+  rest of demand spread across biomedical uses, electronics, catalysts,
+  pyrotechnics, ceramics, and atomic-frequency-reference systems. The older USGS
+  profile still captures the core commercial fact pattern: the market is tiny,
+  measured in only about 1 to 2 metric tons per year in the United States.
+
+  The current supply picture is structurally fragile. USGS MCS 2025 says there
+  were no official 2024 production statistics, no U.S. mine output, and that
+  known ore production outside China had already ceased, leaving downstream
+  refiners reliant on legacy stockpiles from former mines. New potential supply
+  is coming mainly from lithium- or cesium-led pegmatite projects in Namibia and
+  Australia rather than from dedicated rubidium mines. That combination of tiny
+  market size, byproduct dependence, and sparse public reporting explains why
+  rubidium can be on the U.S. critical minerals list while still looking almost
+  invisible in ordinary commodity statistics.
+
+sources:
+  - id: usgs_mcs_2025_rubidium
+    title: "Rubidium"
+    publisher: U.S. Geological Survey, Mineral Commodity Summaries 2025
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rubidium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_profile_2003_rubidium
+    title: "Mineral Commodity Profiles -- Rubidium"
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/publication/ofr0345
+    retrieved: 2026-04-13
+    publication_year: 2003
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2025
+    title: "Final 2025 List of Critical Minerals"
+    publisher: U.S. Geological Survey / Federal Register
+    url: https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
