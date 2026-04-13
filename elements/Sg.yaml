@@ -1,0 +1,111 @@
+symbol: Sg
+atomic_number: 106
+name: seaborgium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Seaborgium is produced only as individual atoms in
+  accelerator fusion experiments; half-life values here follow NNDC ENSDF/NuDat
+  conventions and are expressed in seconds.
+
+production: []
+isotope_markets: []
+byproduct_of: []
+feedstock_origins: []
+substitutes: []
+prices: []
+geopolitical_events: []
+
+research_only:
+  longest_lived_isotope: Sg-269
+  half_life_seconds: 186
+  discovered_year: 1974
+  iupac_recognized_year: 1997
+  discovered_at: |
+    Berkeley-Livermore collaboration: Lawrence Berkeley Laboratory and Lawrence
+    Livermore Laboratory, California, USA. IUPAC's transfermium review described
+    the 1974 Berkeley-Livermore synthesis as the first convincing demonstration of
+    element 106, while noting contemporaneous Dubna work that did not yet meet the
+    same evidentiary standard.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - JINR Dubna
+  notes: |
+    Seaborgium is a research-only superheavy element with no commercial supply
+    chain, reserves, or downstream market. IUPAC's 1997 naming recommendation fixed
+    the name and symbol as seaborgium (Sg), and JINR's Superheavy Element Factory
+    remained an active source of new seaborgium isotopes by 2025, including the
+    2022-2023 work that identified Sg-268 in thorium-calcium fusion experiments.
+
+end_uses:
+  uses: []
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Research-only transactinide; no commercial raw-material market and no placement
+    on mainstream critical-minerals lists in this dataset.
+
+narrative: |
+  Seaborgium is not a commodity. It exists only in atom-at-a-time accelerator
+  experiments, beginning with the 1974 Berkeley-Livermore synthesis that IUPAC
+  later treated as the first convincing production of element 106 and culminating
+  in the 1997 formal adoption of the name seaborgium (Sg). There is no mining,
+  refining, reserves accounting, or price discovery because the element decays far
+  too quickly and is made only for nuclear-structure research.
+
+  By the 2025 atlas snapshot, the relevant commercial-reality analogue is simply
+  research infrastructure. JINR's Superheavy Element Factory was in full-scale
+  operation from 2024 and reported continued synthesis work on superheavy nuclides,
+  including discovery of the new seaborgium isotope Sg-268 during 2020-2022 runs.
+  NNDC ENSDF data identify Sg-269, with a 3.1-minute half-life, as the longest-
+  lived seaborgium isotope represented in the evaluated dataset used here.
+
+sources:
+  - id: iupac_transfermium_discovery_1997
+    title: "Recent developments concerning the discovery of elements 100-111"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/pdf/1997/pdf/6901x0179.pdf
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: iupac_transfermium_names_1997
+    title: "Names and symbols of transfermium elements (IUPAC Recommendations 1997)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/69/12/2471/index.html
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: iupac_transfermium_press_1997
+    title: "IUPAC Adopts Final Recommendations for Names of Transfermium Elements"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://old.iupac.org/news/archives/1997/august97.html
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: nndc_ensdf_sg269_2022
+    title: "Index to ENSDF for A = 269"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/DatasetFetchServlet?datasource=ensdf&mass=269&nucmass=isMass&searchType=ensdfIndex
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: jinr_she_factory_isotopes_2023
+    title: "Five new isotopes synthesised at Superheavy Element Factory"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/five-new-isotopes-synthesised-at-superheavy-element-factory/
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: jinr_strategy_2024
+    title: "JINR Development Strategic"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/science-en/planning-and-reporting/roadmap/
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
