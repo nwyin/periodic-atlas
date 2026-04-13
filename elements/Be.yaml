@@ -1,0 +1,368 @@
+symbol: Be
+atomic_number: 4
+name: beryllium
+category: alkaline_earth
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 tracks beryllium in metric tons of beryllium content. The
+  commercial chain is vertically integrated: bertrandite ore mined in Utah and
+  imported beryl are converted to beryllium hydroxide, then into beryllium
+  metal, beryllium oxide, and beryllium-copper master alloy. The published
+  price series is the annual average unit value of beryllium-copper master
+  alloy, stated in dollars per kilogram of contained beryllium and calculated
+  from import gross weight and customs value with beryllium content estimated at
+  4%.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 180
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 Salient Statistics lists 2024 estimated U.S. mine
+        shipments at 180 metric tons of contained beryllium. The only domestic
+        mine source is bertrandite ore in Utah.
+      source_id: usgs_mcs_2025_beryllium
+    mining_by_country:
+      shares:
+        - country: US
+          share_pct: 50.0
+          quantity:
+            value: 180
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: |
+            United States 2024e mine production: 180 metric tons of contained
+            beryllium from bertrandite mined in Utah.
+          source_id: usgs_mcs_2025_beryllium
+        - country: BR
+          share_pct: 22.22
+          quantity:
+            value: 80
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: "Brazil 2024e mine production: 80 metric tons."
+          source_id: usgs_mcs_2025_beryllium
+        - country: CN
+          share_pct: 21.39
+          quantity:
+            value: 77
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: "China 2024e mine production: 77 metric tons."
+          source_id: usgs_mcs_2025_beryllium
+        - country: MZ
+          share_pct: 6.67
+          quantity:
+            value: 24
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: "Mozambique 2024e mine production: 24 metric tons."
+          source_id: usgs_mcs_2025_beryllium
+        - country: MG
+          share_pct: 0.28
+          quantity:
+            value: 1
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: "Madagascar 2024e mine production: 1 metric ton."
+          source_id: usgs_mcs_2025_beryllium
+        - country: RW
+          share_pct: 0.28
+          quantity:
+            value: 1
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: "Rwanda 2024e mine production: 1 metric ton."
+          source_id: usgs_mcs_2025_beryllium
+        - country: UG
+          share_pct: 0.28
+          quantity:
+            value: 1
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            source_id: usgs_mcs_2025_beryllium
+          notes: "Uganda 2024e mine production: 1 metric ton."
+          source_id: usgs_mcs_2025_beryllium
+      completeness: complete
+    notes: |
+      USGS MCS 2025 reports world mine production at a rounded 360 metric tons
+      in 2024; the sum of the listed country estimates is 364 metric tons
+      because of table rounding. USGS does not publish a refined-production
+      tonnage series for beryllium metal, oxide, or master alloy.
+
+reserves:
+  economic_reserves:
+    value: 19000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025: proven and probable bertrandite reserves in Utah total
+      about 19,000 tons of beryllium content. USGS also states that world
+      beryllium reserves were not available.
+    source_id: usgs_mcs_2025_beryllium
+  resources:
+    value: 100000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025: identified world resources of beryllium are estimated to
+      be more than 100,000 tons, with about 60% in the United States.
+    source_id: usgs_mcs_2025_beryllium
+  notes: |
+    USGS gives only a Utah proven-and-probable bertrandite reserve figure and
+    explicitly states that world beryllium reserves were not available. World
+    resources are reported qualitatively as greater than 100,000 tons, with the
+    main U.S. districts in Utah, Nevada, South Dakota, Texas, and Alaska.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: bertrandite_ore
+    notes: |
+      One company in Utah mined bertrandite ore and converted it into
+      beryllium hydroxide before downstream conversion to metal, oxide, and
+      beryllium-copper master alloy.
+    source_id: usgs_mcs_2025_beryllium
+  - substrate: beryl
+    notes: |
+      Imported beryl supplements Utah bertrandite feed and is processed into
+      beryllium hydroxide by the same domestic producer.
+    source_id: usgs_mcs_2025_beryllium
+
+substitutes:
+  - application: beryllium_metal_and_composites
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that in some applications metal matrix or organic
+      composites, high-strength grades of aluminum, pyrolytic graphite, silicon
+      carbide, steel, or titanium may substitute for beryllium metal or
+      beryllium composites, but only where the full property set is not crucial.
+    source_id: usgs_mcs_2025_beryllium
+  - application: beryllium_copper_alloys
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that copper alloys containing nickel and silicon,
+      tin, titanium, or other alloying elements, or phosphor bronze alloys,
+      may substitute for beryllium-copper alloys, but with substantially
+      reduced performance.
+    source_id: usgs_mcs_2025_beryllium
+  - application: beryllium_oxide_ceramics
+    availability: partial
+    notes: |
+      USGS MCS 2025 states that aluminum nitride or boron nitride may be
+      substituted for beryllium oxide.
+    source_id: usgs_mcs_2025_beryllium
+
+end_uses:
+  uses:
+    - application: industrial_components
+      share_pct: 20
+      notes: |
+        USGS MCS 2025 reports that approximately 20% of beryllium product sales
+        revenue was from industrial components in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: aerospace_and_defense
+      share_pct: 19
+      notes: |
+        USGS MCS 2025 reports that aerospace and defense applications accounted
+        for approximately 19% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: automotive_electronics
+      share_pct: 11
+      notes: |
+        USGS MCS 2025 reports that automotive electronics accounted for
+        approximately 11% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: telecommunications_infrastructure
+      share_pct: 8
+      notes: |
+        USGS MCS 2025 reports that telecommunications infrastructure accounted
+        for approximately 8% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: consumer_electronics
+      share_pct: 6
+      notes: |
+        USGS MCS 2025 reports that consumer electronics accounted for
+        approximately 6% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: energy_applications
+      share_pct: 6
+      notes: |
+        USGS MCS 2025 reports that energy applications accounted for
+        approximately 6% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: semiconductor_applications
+      share_pct: 2
+      notes: |
+        USGS MCS 2025 reports that semiconductor applications accounted for
+        approximately 2% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+    - application: other_applications
+      share_pct: 28
+      notes: |
+        USGS MCS 2025 reports that other applications accounted for
+        approximately 28% of beryllium product sales revenue in 2024.
+      source_id: usgs_mcs_2025_beryllium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_critical_minerals_2025
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    The U.S. Geological Survey's final 2025 list includes beryllium as a U.S.
+    critical mineral. The EU Critical Raw Materials Act lists beryllium in
+    Annex II (critical raw materials) but not in Annex I (strategic raw
+    materials). USGS MCS 2025 also notes direct Department of Defense support
+    for domestic availability of beryllium metal.
+
+prices:
+  - year: 2024
+    value: 1500
+    unit: usd_per_kg
+    form: alloy
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: annual average unit value of
+      beryllium-copper master alloy in 2024e was $1,500 per kilogram of
+      contained beryllium.
+    source_id: usgs_mcs_2025_beryllium
+  - year: 2023
+    value: 1400
+    unit: usd_per_kg
+    form: alloy
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: annual average unit value of
+      beryllium-copper master alloy in 2023 was $1,400 per kilogram of
+      contained beryllium.
+    source_id: usgs_mcs_2025_beryllium
+  - year: 2022
+    value: 660
+    unit: usd_per_kg
+    form: alloy
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: annual average unit value of
+      beryllium-copper master alloy in 2022 was $660 per kilogram of contained
+      beryllium.
+    source_id: usgs_mcs_2025_beryllium
+  - year: 2021
+    value: 680
+    unit: usd_per_kg
+    form: alloy
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: annual average unit value of
+      beryllium-copper master alloy in 2021 was $680 per kilogram of contained
+      beryllium.
+    source_id: usgs_mcs_2025_beryllium
+  - year: 2020
+    value: 620
+    unit: usd_per_kg
+    form: alloy
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics: annual average unit value of
+      beryllium-copper master alloy in 2020 was $620 per kilogram of contained
+      beryllium.
+    source_id: usgs_mcs_2025_beryllium
+
+geopolitical_events:
+  - date: 2010
+    event: "Defense Production Act Title III partnership reestablished domestic beryllium metal production"
+    impact: |
+      USGS MCS 2025 states that the U.S. Department of Defense supported a
+      public-private partnership in 2010 that reestablished domestic beryllium
+      metal production, reinforcing the material's defense-critical domestic
+      supply chain.
+    source_id: usgs_mcs_2025_beryllium
+  - date: 2024
+    event: "Beryllium trade flows contracted sharply in key import and export lanes"
+    impact: |
+      USGS MCS 2025 reports apparent consumption rose 18% in 2024 largely
+      because exports fell 56% while imports fell 20%. Export weakness reflected
+      lower beryllium metal shipments to Canada, Germany, Japan, and Mexico;
+      import weakness reflected lower metal imports from Belgium, Kazakhstan,
+      and Latvia.
+    source_id: usgs_mcs_2025_beryllium
+
+narrative: |
+  Commercial beryllium remains a small, defense-sensitive specialty market built
+  around one vertically integrated U.S. producer. The ore side is simple: Utah
+  bertrandite is the only domestic mine feed, supplemented by imported beryl.
+  Those feeds move into beryllium hydroxide and then into metal, oxide, and
+  beryllium-copper master alloy. USGS estimates 2024 U.S. apparent consumption
+  at only 170 metric tons of contained beryllium, yet the value of that market
+  was about $260 million because beryllium is sold into performance-critical
+  niches rather than bulk tonnage markets.
+
+  Supply is concentrated but not purely American. USGS estimates 2024 world mine
+  production at about 360 metric tons, with the United States, Brazil, and China
+  accounting for nearly all reported output. Reserve visibility is unusually
+  thin: USGS reports about 19,000 tons of proven and probable bertrandite
+  reserves in Utah but does not publish a world reserve total, only world
+  identified resources of more than 100,000 tons. Recycling is economically
+  meaningful in this tiny market, with USGS indicating recovered material may
+  account for 20% to 25% of total consumption.
+
+  Demand is spread across industrial components, aerospace and defense,
+  automotive electronics, telecom infrastructure, and a long tail of other
+  uses. That mix explains both the lack of full substitutes and the outsized
+  role of U.S. policy support. The DoD-backed reestablishment of domestic metal
+  production remains part of the market structure, and 2024 trade data showed
+  how small shifts in import and export lanes can materially change apparent
+  consumption in such a thinly traded commodity.
+
+sources:
+  - id: usgs_mcs_2025_beryllium
+    title: Mineral Commodity Summaries 2025 — Beryllium
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-beryllium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: us_federal_register_critical_minerals_2025
+    title: Final 2025 List of Critical Minerals
+    publisher: U.S. Geological Survey
+    url: https://www.federalregister.gov/documents/2025/11/07/2025-19813/final-2025-list-of-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials
+    publisher: European Parliament and Council of the European Union
+    url: https://faolex.fao.org/docs/pdf/eur231131.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
