@@ -1,0 +1,80 @@
+symbol: Nh
+atomic_number: 113
+name: nihonium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Nihonium exists only as individual atoms synthesized in
+  heavy-ion accelerator fusion experiments; half-life values in this record are
+  expressed in seconds.
+
+research_only:
+  longest_lived_isotope: Nh-286
+  half_life_seconds: 9.5
+  discovered_year: 2004
+  iupac_recognized_year: 2015
+  discovered_at: |
+    RIKEN Nishina Center for Accelerator-Based Science, using the RILAC linear
+    accelerator and GARIS recoil separator.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - RIKEN Nishina Center for Accelerator-Based Science
+  notes: |
+    Nihonium is a synthetic superheavy element produced atom-by-atom in
+    accelerator experiments rather than mined, refined, or traded. RIKEN first
+    observed element 113 on 2004-07-23, followed by confirming decay chains in
+    2005 and 2012 that led IUPAC/IUPAP to assign discovery priority to the
+    RIKEN collaboration in 2015. NNDC ENSDF datasets list Nh-286 with a
+    9.5-second alpha-decay half-life, making it the longest-lived nihonium
+    isotope represented in the cited datasets.
+
+narrative: |
+  Nihonium has no commercial supply chain. It is a laboratory-made superheavy
+  element whose significance is scientific rather than industrial: confirming
+  the synthesis and decay of element 113 helped complete the seventh row of the
+  periodic table and informs ongoing work on nuclear stability near the
+  superheavy region.
+
+  In practice, nihonium exists only as single atoms created in accelerator
+  facilities. RIKEN's superheavy-element program remains active as of the 2025
+  snapshot, but the work is focused on new-element and isotope research, not on
+  any bulk production or market application.
+
+sources:
+  - id: iupac_2015_discovery_113
+    title: "Discovery and Assignment of Elements with Atomic Numbers 113, 115, 117 and 118"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/news/news-detail/article/discovery-and-assignment-of-elements-with-atomic-numbers-113-115-117-and-118.html
+    retrieved: 2026-04-13
+    publication_year: 2015
+    source_tier: primary
+  - id: iupac_2016_nihonium_named
+    title: "IUPAC Announces the Names of the Elements 113, 115, 117, and 118"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/
+    retrieved: 2026-04-13
+    publication_year: 2016
+    source_tier: primary
+  - id: riken_2015_element_113_discovered
+    title: "It's official! Element 113 was discovered at RIKEN"
+    publisher: RIKEN
+    url: https://www.riken.jp/en/news_pubs/research_news/pr/2015/20151231_1/index.html/
+    retrieved: 2026-04-13
+    publication_year: 2015
+    source_tier: primary
+  - id: riken_2025_superheavy_group
+    title: "RIKEN Nishina Center for Accelerator-Based Science Superheavy Element Research Group"
+    publisher: RIKEN
+    url: https://www.riken.jp/en/research/labs/rnc/superhvy_elem/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nndc_ensdf_286nh
+    title: "ENSDF datasets including 286NH A DECAY (9.5 S)"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/DSfromRefServlet?kn=2017WA10&searchType=references
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
