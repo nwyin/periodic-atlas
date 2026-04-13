@@ -1,0 +1,808 @@
+symbol: U
+atomic_number: 92
+name: uranium
+category: actinide
+industrial_tier: 4
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Uranium is traded commercially as uranium concentrate (yellowcake), whose nominal composition
+  is triuranium octoxide (U₃O₈, typically 65–85% U₃O₈ by mass) produced at mine sites or uranium
+  mills by processing uranium ore or in-situ recovery (ISR) leachate. The NEA/IAEA Red Book
+  convention — used throughout this file — reports all production and resource figures in tonnes
+  of uranium content (tU), where 1 tU = 1.17926 tonnes U₃O₈ equivalent. Market prices are quoted
+  universally in US dollars per pound of U₃O₈ equivalent ($/lb U₃O₈e). Subsequent processing
+  converts U₃O₈ concentrate to uranium hexafluoride (UF₆) at conversion facilities, then to
+  enriched UF₆ or low-enriched uranium (LEU, <5% U-235) at enrichment plants, and finally to
+  sintered ceramic UO₂ fuel pellets at fuel-fabrication facilities. These downstream stages are
+  distinct from the mining/milling stage tracked here. No standard temperature convention applies;
+  all reserve and resource figures are as of 1 January 2023 (the Red Book 2024 reference date).
+
+production:
+- reporting_year: 2023
+  mine:
+    value: 54345
+    unit: tonnes_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      NEA/IAEA Red Book 2024 Table 1.18: world uranium mine production 2023 = 54,345 tU
+      (NEA/IAEA secretariat estimate). This is a 9.8% increase from 49,490 tU in 2022 and
+      a 14.3% recovery from the COVID-19 low of 47,361 tU in 2021. Production was still
+      approximately 86% of the 2016 peak of ~63,000 tU. 17 countries produced uranium in
+      2022 (most recent full-country verified count). All quantities in tonnes of uranium
+      content (tU); multiply by 1.17926 for U₃O₈ equivalent tonnes.
+    source_id: nea_iaea_redbook_2024
+  mining_by_country:
+    shares:
+      - country: KZ
+        share_pct: 38.85
+        quantity:
+          value: 21112
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Kazakhstan 2023: 21,112 tU (NEA/IAEA estimate). Kazakhstan is the world's dominant
+          uranium producer at ~39% of global supply. All production is via in-situ recovery
+          (ISR/ISL) at sandstone deposits in the Chu-Sarysu and Syr Darya basins. State-owned
+          Kazatomprom operates or holds stakes in all major ISR fields. In late 2023 and 2024,
+          Kazatomprom revised guidance downward due to sulphuric acid shortages, a key ISR
+          reagent. Even at reduced rates, Kazakhstan alone produces more uranium than Canada,
+          Namibia, Australia, and Uzbekistan combined.
+        source_id: nea_iaea_redbook_2024
+      - country: CA
+        share_pct: 20.21
+        quantity:
+          value: 10986
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Canada 2023: 10,986 tU (NEA/IAEA estimate). McArthur River/Key Lake (Cameco 70%
+          operator, Orano 30%) and Cigar Lake (Cameco 54.547%, Orano 37.1%, TEPCO 5%,
+          KOGAS 3.453%) are the two operating high-grade unconformity-type deposits in
+          Saskatchewan's Athabasca Basin. McArthur River restarted in 2022 after a four-year
+          care-and-maintenance period; Canada's share rose from 15% in 2022 as production
+          ramped up. Cameco's 2024 target was 6,925 tU at each mine (~13,850 tU combined).
+        source_id: nea_iaea_redbook_2024
+      - country: NA
+        share_pct: 12.85
+        quantity:
+          value: 6985
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Namibia 2023: 6,985 tU (NEA/IAEA estimate). Main operations: Husab (Swakop Uranium,
+          majority-owned by CGN subsidiary China National Uranium Corp, 69%) and Rössing (China
+          National Uranium Corp acquired ~68% stake from Rio Tinto, effective 2019). Both are
+          open-pit alaskite-hosted deposits in the Namib Desert. Namibia has become the world's
+          third-largest producer as Husab ramped to full capacity during 2019–2023.
+        source_id: nea_iaea_redbook_2024
+      - country: AU
+        share_pct: 8.57
+        quantity:
+          value: 4658
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Australia 2023: 4,658 tU (NEA/IAEA estimate). Olympic Dam (BHP, underground
+          iron-oxide copper-gold-uranium deposit, South Australia) is the sole Australian
+          operating uranium mine; uranium is a co-product of copper refining. Ranger mine
+          (ERA/Rio Tinto) in the Northern Territory ceased mining January 2021. Australia
+          holds the world's largest identified uranium resources (28% of global total at
+          <USD 130/kgU) but has a domestic nuclear power moratorium excluding new reactors.
+        source_id: nea_iaea_redbook_2024
+      - country: UZ
+        share_pct: 7.36
+        quantity:
+          value: 4000
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Uzbekistan 2023: 4,000 tU (NEA/IAEA secretariat estimate; Uzbekistan does not
+          publicly report detailed production data). State-owned Navoi Mining and Metallurgical
+          Combine (NMMC) operates ISR mines in the Kyzylkum Desert (Navoi and Bukhara regions).
+          Uzbekistan supplies uranium to Russia for enrichment and has supply agreements with
+          China, France, and Japan.
+        source_id: nea_iaea_redbook_2024
+      - country: RU
+        share_pct: 4.78
+        quantity:
+          value: 2600
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Russia 2023: 2,600 tU (NEA/IAEA secretariat estimate). ARMZ Uranium Holding
+          (Rosatom subsidiary) operates mines primarily in Transbaikalia (Priargunsky,
+          Krasnokamensk). Russia is also the majority shareholder in Uranium One, which
+          holds ISR operations in Kazakhstan and acquired Uranium One Americas (formerly
+          Uranium One Inc.) operations in the US. Russia is a dominant global supplier of
+          enrichment services.
+        source_id: nea_iaea_redbook_2024
+      - country: CN
+        share_pct: 2.94
+        quantity:
+          value: 1600
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          China 2023: 1,600 tU (NEA/IAEA secretariat estimate). China's domestic production
+          substantially undercovers its growing nuclear fleet (55+ operating reactors as of
+          2023 requiring ~9,000–10,000 tU/yr). China is the world's largest net importer of
+          uranium and has aggressively secured equity positions in mines in Kazakhstan, Namibia,
+          Niger, and elsewhere. China's CNNC and CGN each operate domestic mines and hold
+          global equity stakes.
+        source_id: nea_iaea_redbook_2024
+      - country: NE
+        share_pct: 2.08
+        quantity:
+          value: 1130
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Niger 2023: 1,130 tU. Production declined sharply from 2,020 tU in 2022. A military
+          coup in July 2023 disrupted operations at French operator Orano's SOMAIR open-pit
+          mine near Arlit. Niger had previously supplied ~15% of EU uranium imports. Post-coup,
+          Niger terminated Orano's Imouraren development permit; in 2024 Niger expelled Orano
+          from the SOMAIR joint venture. Niger's identified resources at <USD 130/kgU are
+          336,000 tU, making it potentially among the world's top resource holders.
+        source_id: nea_iaea_redbook_2024
+      - country: IN
+        share_pct: 0.89
+        quantity:
+          value: 485
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          India 2023: 485 tU. Uranium Corporation of India Ltd (UCIL) operates underground
+          mines at Jaduguda, Bagjata, Banduhurang (Jharkhand) and Tummalapalle (Andhra
+          Pradesh). India's domestic production covers only a fraction of reactor fuel needs;
+          government-to-government supply agreements cover imports from Canada, Kazakhstan,
+          Russia, and Australia. India's nuclear program is partially outside the NPT/IAEA
+          full-scope safeguards framework, limiting some supply options.
+        source_id: nea_iaea_redbook_2024
+      - country: ZA
+        share_pct: 0.37
+        quantity:
+          value: 200
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          South Africa 2023: 200 tU (NEA/IAEA secretariat estimate). Uranium is recovered
+          as a byproduct from gold mining operations in the Witwatersrand Basin. Production
+          has declined from historical highs (South Africa was once a top-3 producer).
+          South Africa holds 320,900 tU in identified resources at <USD 130/kgU.
+        source_id: nea_iaea_redbook_2024
+      - country: UA
+        share_pct: 0.55
+        quantity:
+          value: 300
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Ukraine 2023: 300 tU (NEA/IAEA secretariat estimate; WNA estimate: 340 tU).
+          VostGOK (Eastern Mining and Processing Plant) operates uranium mines in Kirovograd
+          and Dnipropetrovsk oblasts. War-related infrastructure disruptions since February
+          2022 affect production. Ukraine is strategically important as it moves to diversify
+          away from Russian enrichment toward Westinghouse fuel assemblies and alternative
+          supply chains.
+        source_id: nea_iaea_redbook_2024
+      - country: US
+        share_pct: 0.03
+        quantity:
+          value: 19
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          USA 2023: ~19 tU (NEA/IAEA secretariat estimate; EIA: 50,000 lb U₃O₈ =
+          ~19 tU). US domestic ISR producers operated at near-minimal levels through 2022–2023
+          in the low-price environment. US production recovered sharply in 2024 to 677,000
+          lb U₃O₈ (~260 tU) as six ISR facilities reactivated with combined capacity of
+          14.1 million lb/yr. The US is heavily import-dependent: US reactor operators
+          purchased 55.9 million lb U₃O₈e from foreign sources in 2024 (EIA UMAR 2024).
+        source_id: nea_iaea_redbook_2024
+      - country: ZZ
+        share_pct: 0.50
+        quantity:
+          value: 270
+          unit: tonnes_per_year
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Remaining producers 2023: ~270 tU. Includes Brazil (171 tU), Pakistan (50 tU,
+          estimate), Czech Republic (25 tU), Iran (21 tU, estimate), Hungary (3 tU). These
+          are minor producers operating for domestic programs or from aging operations.
+        source_id: nea_iaea_redbook_2024
+    completeness: top_producers_only
+  notes: |
+    World uranium mine production 2023 = 54,345 tU (NEA/IAEA estimate). All production
+    figures are in tonnes of uranium content (tU). Kazakhstan alone accounts for ~39% of
+    global supply. The top six producers (KZ, CA, NA, AU, UZ, RU) account for ~93% of
+    world production. Production has recovered steadily from the 2020–2021 COVID lows
+    but remains below the 2016 peak of ~63,000 tU.
+
+reserves:
+  economic_reserves:
+    value: 1881100
+    unit: tonnes
+    form: contained_element
+    approximate: false
+    confidence: medium
+    notes: |
+      NEA/IAEA Red Book 2024 Table 1.1: total global identified recoverable conventional
+      uranium resources at cost <USD 80/kgU (≈$41/lb U₃O₈) = 1,881,100 tU, as of
+      1 January 2023. This cost category approximates economically recoverable reserves
+      under price conditions prevailing in 2022–2023 ($47–$91/lb spot). Resources in
+      this category declined 5.5% from 1,990,800 tU in 2021, primarily due to
+      reclassifications in Brazil and Uzbekistan.
+    source_id: nea_iaea_redbook_2024
+  resources:
+    value: 5925700
+    unit: tonnes
+    form: contained_element
+    approximate: false
+    confidence: high
+    notes: |
+      NEA/IAEA Red Book 2024 Table 1.1: total global identified recoverable conventional
+      uranium resources at cost <USD 130/kgU (≈$67/lb U₃O₈) = 5,925,700 tU, as of
+      1 January 2023. This is the standard "identified recoverable resources" figure
+      cited by the uranium industry (RAR + Inferred resources at <USD 130/kgU). Decreased
+      2.5% from 6,078,500 tU in 2021, primarily from Brazil, Uzbekistan reclassifications
+      and Australian depletion, partially offset by additions in China, Namibia, Niger,
+      and Türkiye from exploration. Total identified resources at <USD 260/kgU: 7,934,500 tU.
+    source_id: nea_iaea_redbook_2024
+  reserves_by_country:
+    shares:
+      - country: AU
+        share_pct: 28.21
+        quantity:
+          value: 1671200
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Australia 1,671,200 tU at <USD 130/kgU; 1,935,200 tU at <USD 260/kgU. Holds the
+          world's largest uranium resources. Olympic Dam (BHP) contains the largest single
+          uranium resource globally (~1 million tU in-situ). Australia has a domestic nuclear
+          power moratorium; its resources are exported entirely for civilian nuclear fuel use.
+        source_id: nea_iaea_redbook_2024
+      - country: KZ
+        share_pct: 13.73
+        quantity:
+          value: 813900
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Kazakhstan 813,900 tU at <USD 130/kgU; 873,400 tU at <USD 260/kgU. Holds
+          498,700 tU in the lowest-cost category (<USD 40/kgU), reflecting Kazakhstan's
+          low-cost ISR mining method. Kazakhstan's resources support sustained high
+          production rates; Kazatomprom reports resource life well in excess of 50 years
+          at current production rates.
+        source_id: nea_iaea_redbook_2024
+      - country: CA
+        share_pct: 9.82
+        quantity:
+          value: 582000
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Canada 582,000 tU at <USD 130/kgU; 852,200 tU at <USD 260/kgU. Athabasca Basin
+          unconformity-type deposits are the highest-grade uranium deposits in the world
+          (McArthur River averages ~17% U₃O₈, Cigar Lake ~15%). 287,900 tU recoverable at
+          <USD 80/kgU. Canada's resources and current production rank it among the top
+          three globally in both categories.
+        source_id: nea_iaea_redbook_2024
+      - country: NA
+        share_pct: 8.40
+        quantity:
+          value: 497900
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Namibia 497,900 tU at <USD 130/kgU; 550,800 tU at <USD 260/kgU. Resources
+          increased from earlier editions reflecting continued drilling at Husab and Rössing.
+          Only 33,200 tU recoverable at <USD 80/kgU (open-pit alaskite mining has higher
+          unit costs than ISR). Chinese ownership of both major mines (Husab and Rössing)
+          raises concentration-of-control considerations.
+        source_id: nea_iaea_redbook_2024
+      - country: RU
+        share_pct: 8.04
+        quantity:
+          value: 476600
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Russia 476,600 tU at <USD 130/kgU; 652,500 tU at <USD 260/kgU. Resource base
+          concentrated in Transbaikalia and Siberia; only 32,400 tU recoverable at <USD 80/kgU.
+          Russian resources are produced domestically and through ARMZ/Uranium One global
+          assets. Geopolitical constraints following the Russia-Ukraine war limit Russia's
+          integration in Western uranium supply chains going forward.
+        source_id: nea_iaea_redbook_2024
+      - country: NE
+        share_pct: 5.67
+        quantity:
+          value: 336000
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Niger 336,000 tU at <USD 130/kgU; 454,000 tU at <USD 260/kgU. Includes the large
+          Imouraren deposit (105,000 tU at <USD 130/kgU), which Orano's development permit
+          was terminated post-coup. Niger's resource base could support much higher production
+          if political stability returns and mining investment resumes.
+        source_id: nea_iaea_redbook_2024
+      - country: ZA
+        share_pct: 5.42
+        quantity:
+          value: 320900
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          South Africa 320,900 tU at <USD 130/kgU; 436,400 tU at <USD 260/kgU. Large
+          resources associated with the Witwatersrand gold-bearing conglomerates and the
+          Karoo basin. 228,000 tU recoverable at <USD 80/kgU. Production is currently
+          a small byproduct from gold mining.
+        source_id: nea_iaea_redbook_2024
+      - country: CN
+        share_pct: 4.57
+        quantity:
+          value: 270500
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          China 270,500 tU at <USD 130/kgU; 291,300 tU at <USD 260/kgU. Includes
+          73,200 tU in the lowest-cost category (<USD 40/kgU). Resources in Xinjiang,
+          Inner Mongolia, Gansu, and other provinces. China's resources are far below its
+          growing reactor fleet demand, driving aggressive overseas uranium acquisition.
+        source_id: nea_iaea_redbook_2024
+      - country: BR
+        share_pct: 2.83
+        quantity:
+          value: 167800
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Brazil 167,800 tU at <USD 130/kgU; 177,800 tU at <USD 260/kgU. Resources
+          decreased substantially in the 2023 Red Book due to a comprehensive national
+          reassessment that removed >100,000 tU from the <USD 130/kgU category. Caetité-
+          Lagoa Real mine (INB, state-owned) is Brazil's only operating uranium mine.
+        source_id: nea_iaea_redbook_2024
+      - country: MN
+        share_pct: 2.44
+        quantity:
+          value: 144600
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Mongolia 144,600 tU at <USD 130/kgU; same at <USD 260/kgU (no additional
+          higher-cost resources reported). Sandstone-hosted deposits in the Gobi region.
+          Several multinational companies have explored for uranium in Mongolia; no
+          commercial production as of 2023.
+        source_id: nea_iaea_redbook_2024
+      - country: UA
+        share_pct: 1.80
+        quantity:
+          value: 106700
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Ukraine 106,700 tU at <USD 130/kgU; 184,800 tU at <USD 260/kgU. The Kirovohrad
+          uranium ore district and Dnipropetrovsk deposits. War-related exploration suspension
+          limits resource reassessment; Ukraine's resource base is strategically important
+          for domestic energy security.
+        source_id: nea_iaea_redbook_2024
+      - country: US
+        share_pct: 1.14
+        quantity:
+          value: 67800
+          unit: tonnes
+          form: contained_element
+          approximate: true
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          USA 67,800 tU at <USD 130/kgU (NEA/IAEA secretariat estimate; full cost-category
+          breakdown withheld for company confidentiality); 121,400 tU at <USD 260/kgU.
+          Resources in Wyoming, Colorado, Utah, Texas, and the Athabasca Basin extension
+          in Wyoming. ISR-amenable sandstone deposits dominate. US domestic resources cover
+          only a small fraction of annual national reactor requirements.
+        source_id: nea_iaea_redbook_2024
+      - country: ZZ
+        share_pct: 7.93
+        quantity:
+          value: 469800
+          unit: tonnes
+          form: contained_element
+          source_id: nea_iaea_redbook_2024
+        notes: |
+          Remaining countries (469,800 tU at <USD 130/kgU). Includes Uzbekistan 45,000 tU,
+          Botswana 87,200 tU, Peru 33,400 tU, Argentina 34,300 tU, Tanzania 57,700 tU,
+          Malawi 15,900 tU, and numerous smaller resource holders. Several countries
+          (India 0 tU at <130, Jordan 0 tU at <130) have resources only at higher cost
+          categories.
+        source_id: nea_iaea_redbook_2024
+    completeness: top_producers_only
+  notes: |
+    All resource figures as of 1 January 2023 from NEA/IAEA Red Book 2024. The conventional
+    uranium resource classification (RAR + Inferred at <USD 130/kgU = 5,925,700 tU) is the
+    industry standard cited by the WNA and IAEA. This is not equivalent to the USGS "reserves"
+    concept; the Red Book does not use the word "reserves" for these figures. Total global
+    identified resources at <USD 260/kgU are 7,934,500 tU; unconventional resources (seawater,
+    phosphate co-product, black shale) could add orders of magnitude more at higher cost.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: uraninite_ore
+    typical_concentration_pct: 0.1
+    notes: |
+      Uraninite (pitchblende, UO₂/UO₃) is the primary uranium mineral in high-grade
+      unconformity-type deposits (Athabasca Basin, Canada: 10–20% U₃O₈) and lower-grade
+      deposits globally. Conventional underground or open-pit mining followed by crushing,
+      grinding, leaching (acid or alkaline), solvent extraction, and precipitation to
+      yellowcake (U₃O₈). Average ore grade in unconformity deposits (~0.5–20% U₃O₈) is
+      far above typical sandstone (~0.05–0.15%) or other deposit types.
+    source_id: nea_iaea_redbook_2024
+  - substrate: sandstone_uranium_ore
+    typical_concentration_pct: 0.05
+    notes: |
+      Sandstone-hosted uranium deposits (roll-front type in permeable, reduced sediments)
+      are the dominant form for in-situ recovery (ISR/ISL). Dilute sulfuric acid or sodium
+      bicarbonate solution is injected to dissolve uranium in situ; pregnant solution is
+      pumped to surface for processing. ISR accounted for approximately 52% of world uranium
+      production by method in 2024 (WNA). Kazakhstan's entire production and ~80% of US
+      production uses ISR. No milling of physical ore required; lower environmental
+      disturbance footprint than conventional mining.
+    source_id: wna_uranium_production_2024
+  - substrate: phosphate_rock
+    typical_concentration_pct: 0.015
+    notes: |
+      Phosphate rock (marine phosphorite, fluorapatite) contains trace uranium (50–200 ppm
+      U₃O₈). Uranium is a byproduct of phosphate fertilizer manufacture; most is lost in
+      processing unless specifically recovered. Historically significant in the 1970s–1980s;
+      currently minimal commercial recovery. Red Book unconventional resource: seawater
+      (~4.5 billion tU at ~3 ppb U) and phosphate deposits represent vast unconventional
+      resources not currently economic.
+    source_id: nea_iaea_redbook_2024
+
+substitutes:
+  - application: nuclear_power_fuel
+    availability: partial
+    notes: |
+      No direct substitute for enriched uranium in conventional light water reactors (LWRs),
+      which supply ~70% of global nuclear electricity. MOX fuel (mixed oxide, a blend of
+      uranium dioxide and plutonium dioxide from reprocessed spent fuel) is a partial
+      substitute used in LWRs in France, Germany (historically), Japan, Belgium, and
+      Switzerland; it displaces ~10–15% of fresh uranium requirements on a per-reactor basis.
+      Thorium (as ThO₂ with U-233 or Pu-239 driver in molten salt or heavy-water reactors)
+      is a longer-term potential substitute but no commercial-scale thorium reactor operates
+      as of 2025. Highly enriched uranium (HEU) from decommissioned weapons, downblended to
+      LEU, served as a secondary supply equivalent to ~10% of annual mine production during
+      the 1990s–2013 Megatons-to-Megawatts programme; this source is now essentially exhausted.
+      Fast breeder reactors and closed fuel cycles could dramatically reduce primary uranium
+      demand by breeding fissile material from U-238 or Th-232, but no commercial-scale
+      fleet exists.
+    source_id: nea_iaea_redbook_2024
+  - application: nuclear_power_fuel
+    availability: none
+    notes: |
+      For conventional uranium enrichment in gas centrifuge or gaseous diffusion plants, there
+      is no substitute material that achieves LEU without uranium feedstock. Enrichment
+      underfeeding (operating enrichment plants at higher separative work per kg of product to
+      reduce uranium feed) can temporarily reduce uranium demand but is constrained by enrichment
+      capacity and economics; it does not eliminate uranium demand. The Red Book notes that
+      secondary sources including HEU downblend, re-enrichment of depleted uranium tails, and
+      underfeeding have historically supplied 15–25% of annual requirements but are declining.
+    source_id: nea_iaea_redbook_2024
+
+end_uses:
+  uses:
+    - application: nuclear_power_fuel
+      share_pct: 99
+      confidence: medium
+      notes: |
+        Nuclear power (commercial civilian reactors) consumes approximately 99% of world
+        uranium mine production. As of 1 January 2023, 438 commercial nuclear reactors
+        were operational globally with 394 GWe net generating capacity requiring ~59,018 tU
+        annually (NEA/IAEA Red Book 2024). This figure represents virtually all global uranium
+        demand from primary mine supply plus secondary sources (HEU downblend, re-enriched
+        tails, commercial inventories). Global nuclear power generation in 2023 was
+        approximately 2,600 TWh, covering ~10% of world electricity supply. Low-enriched
+        uranium (<5% U-235) fuel assemblies serve light water reactors (PWR, BWR); CANDU
+        reactors use natural uranium (unenriched). Growth in demand is expected as more
+        than 30 countries at COP28 (December 2023) pledged to triple installed nuclear
+        capacity by 2050.
+      source_id: nea_iaea_redbook_2024
+    - application: research_reactors_defense_other
+      share_pct: 1
+      confidence: low
+      notes: |
+        Approximately 1% of uranium is consumed in research reactors (~220 operating
+        globally), naval nuclear propulsion (submarine and surface warship reactors using
+        highly enriched uranium), weapons stockpile maintenance (HEU and plutonium pit
+        replacement), and industrial/medical isotope production (Mo-99/Tc-99m generator
+        material). Exact defense consumption is classified; most Western naval uranium
+        programs use existing HEU stockpiles rather than freshly mined material. This 1%
+        estimate is based on the proportion of total demand not attributable to commercial
+        power reactors.
+      source_id: nea_iaea_redbook_2024
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Uranium was removed from the US 2022 Final List of Critical Minerals (Federal Register
+    87 FR 10381, 24 February 2022), having been on the 2018 list (83 FR 23295). The USGS
+    MCS 2025 overview explicitly states that uranium was among the minerals removed from
+    the 2022 revision alongside helium, potash, rhenium, and strontium. The rationale for
+    removal was that uranium has sufficient domestic and allied-nation supply capacity to
+    meet US nuclear fuel requirements, even though US domestic mine production is minimal.
+    Uranium is not on the EU Critical Raw Materials list (Regulation EU 2024/1252) nor the
+    EU Strategic Raw Materials list; nuclear materials are governed under a separate Euratom
+    Treaty framework (Euratom Supply Agency/ESA). Despite its absence from formal criticality
+    lists, uranium's strategic importance for energy security and nuclear deterrence is
+    universally acknowledged; the US, France, UK, and others maintain uranium stockpiles and
+    reserve supply arrangements outside the commercial market.
+
+prices:
+  - year: 2020
+    value: 33.27
+    unit: usd_per_lb
+    form: oxide
+    basis: contract
+    region: US
+    notes: |
+      EIA UMAR 2024 Table S1b: US civilian reactor operator weighted-average purchase price
+      2020 = $33.27/lb U₃O₈e. Includes spot and long-term contract deliveries; predominantly
+      long-term contract prices (~76% long-term in 2020). This is the average price paid by
+      US reactor operators, not the open-market spot price (which reached a low of ~$25/lb in
+      early-mid 2020 at the start of COVID-19 production curtailments).
+    source_id: eia_umar_2024
+  - year: 2021
+    value: 33.91
+    unit: usd_per_lb
+    form: oxide
+    basis: contract
+    region: US
+    notes: |
+      EIA UMAR 2024 Table S1b: US civilian reactor operator weighted-average purchase price
+      2021 = $33.91/lb U₃O₈e. Spot prices began recovering in late 2021, rising from ~$30/lb
+      at the start of the year as the Sprott Physical Uranium Trust and other financial buyers
+      entered the market; but long-term contract prices (which dominate US purchasing)
+      remained near 2020 levels.
+    source_id: eia_umar_2024
+  - year: 2022
+    value: 39.08
+    unit: usd_per_lb
+    form: oxide
+    basis: contract
+    region: US
+    notes: |
+      EIA UMAR 2024 Table S1b: US civilian reactor operator weighted-average purchase price
+      2022 = $39.08/lb U₃O₈e. Spot market surged following Russia's invasion of Ukraine in
+      February 2022; spot reached ~$64/lb in April 2022 (11-year high) before retreating.
+      Year-end 2022 spot: $47.75/lb U₃O₈ (NEA/IAEA Red Book 2024). US reactor operators
+      continued purchasing mostly under pre-existing long-term contracts.
+    source_id: eia_umar_2024
+  - year: 2022
+    value: 47.75
+    unit: usd_per_lb
+    form: oxide
+    basis: spot
+    notes: |
+      NEA/IAEA Red Book 2024: uranium spot price (TradeTech Exchange Value) at year-end
+      2022 = USD 47.75/lb U₃O₈ (USD 124/kgU). The spot price surged earlier in 2022 to
+      ~$64/lb (April 2022) on Russia-Ukraine war supply concerns before retreating.
+    source_id: nea_iaea_redbook_2024
+  - year: 2023
+    value: 43.80
+    unit: usd_per_lb
+    form: oxide
+    basis: contract
+    region: US
+    notes: |
+      EIA UMAR 2024 Table S1b: US civilian reactor operator weighted-average purchase price
+      2023 = $43.80/lb U₃O₈e, a 12% increase from 2022. Long-term contract prices rose
+      as utilities renegotiated or executed new contracts in anticipation of Russian supply
+      chain disruptions. 91% of 2023 US deliveries were under long-term/medium-term contracts.
+    source_id: eia_umar_2024
+  - year: 2023
+    value: 91.00
+    unit: usd_per_lb
+    form: oxide
+    basis: spot
+    notes: |
+      NEA/IAEA Red Book 2024: uranium spot price (TradeTech Exchange Value) at year-end
+      2023 = USD 91.00/lb U₃O₈ (USD 236/kgU), a 16-year high. Spot prices surged throughout
+      2023 on demand expectations from the COP28 nuclear declaration and accumulating utility
+      procurement activity; reached ~$87/lb by September 2023 (15-year high), then continued
+      rising to above $91/lb by year-end.
+    source_id: nea_iaea_redbook_2024
+  - year: 2024
+    value: 52.71
+    unit: usd_per_lb
+    form: oxide
+    basis: contract
+    region: US
+    notes: |
+      EIA UMAR 2024: US civilian reactor operator weighted-average purchase price 2024 =
+      $52.71/lb U₃O₈e, the highest since 2012 and a 20% increase from 2023. Total US
+      reactor operator purchases: 55.9 million lb U₃O₈e in 2024, up 8% from 51.6 million
+      lb in 2023. Spot contracts (9% of deliveries) averaged $54.09/lb; long-term contracts
+      (91%) averaged $50.97/lb. New contracts signed in 2024: 21 contracts at $86.20/lb
+      average — reflecting the higher spot-market clearing prices.
+    source_id: eia_umar_2024
+
+geopolitical_events:
+  - date: "2022-02"
+    event: "Russia-Ukraine war reshapes global uranium and enrichment supply chains; utilities scramble for non-Russian alternatives"
+    impact: |
+      Russia's invasion of Ukraine in February 2022 triggered a fundamental reassessment of
+      nuclear fuel supply security across Europe and North America. Russia's Rosatom/TVEL
+      provides enrichment services to approximately 20% of global nuclear reactors, including
+      reactors in Bulgaria, Czech Republic, Finland, Hungary, Slovakia, and Ukraine that use
+      Russian-designed VVER reactors with Russian fuel assemblies. EU and US utilities began
+      seeking alternative enrichment suppliers (Urenco, Orano, Centrus). The spot uranium
+      price surged from ~$43/lb to ~$64/lb between February and April 2022. Russia also
+      supplies natural uranium UF6 conversion services and had mine equity stakes via
+      Uranium One in Kazakhstan. Utilities began rebuilding inventories and signing new
+      long-term contracts at sharply higher prices.
+    source_id: nea_iaea_redbook_2024
+  - date: "2023-07"
+    event: "Military coup in Niger disrupts Orano's uranium operations; threatens EU nuclear fuel supply"
+    impact: |
+      A military coup overthrew Niger's elected government on 26 July 2023. Niger had been
+      France's and the EU's primary source of uranium supply for decades; French operator
+      Orano (formerly Areva) operated SOMAIR (open-pit mine at Arlit) and had been developing
+      the large Imouraren deposit. Post-coup, Niger's junta: (1) terminated Orano's Imouraren
+      mining permit (June 2024); (2) revoked the SOMAIR operating license (September 2024);
+      (3) expelled Orano from Niger entirely. Niger accounted for ~20% of EU uranium imports
+      in prior years. Niger's production dropped from 2,020 tU in 2022 to 1,130 tU in 2023.
+      This event accelerated EU diversification efforts toward Kazakhstan, Canada, Australia,
+      and Namibia.
+    source_id: nea_iaea_redbook_2024
+  - date: "2023-12"
+    event: "COP28 nuclear declaration: 22+ countries pledge to triple nuclear capacity by 2050, boosting long-term uranium demand outlook"
+    impact: |
+      At the 28th Conference of the Parties (COP28) in Dubai in December 2023, more than 22
+      countries (subsequently expanding to 30+) signed a joint declaration to triple global
+      installed nuclear power capacity by 2050 relative to 2020 levels (from ~413 GWe to
+      ~1,200 GWe). Signatories include the United States, France, Japan, South Korea, Canada,
+      the UK, and 15+ others. The NEA/IAEA Red Book 2024 notes this as a significant driver
+      of the uranium spot price surge to $91/lb at year-end 2023 and $106/lb in January 2024.
+      Tripling nuclear capacity would require ~130,000–140,000 tU/yr of uranium demand by 2050
+      versus ~59,000 tU in 2023 — more than double current mine production.
+    source_id: nea_iaea_redbook_2024
+  - date: "2024-05"
+    event: "US Prohibiting Russian Uranium Imports Act bans most Russian low-enriched uranium imports effective August 2024"
+    impact: |
+      The United States enacted the Prohibiting Russian Uranium Imports Act (signed into law
+      May 2024; effective 11 August 2024), banning imports of low-enriched uranium (LEU)
+      produced in Russia for use in US nuclear reactors. The US had been importing Russian
+      LEU under long-standing supply agreements (Techsnabexport/TVEL). The Act includes a
+      waiver mechanism for DOE to permit limited Russian imports through 2027 to prevent
+      near-term supply disruptions. The law accelerated US domestic enrichment investment
+      (Centrus Energy, Urenco USA) and Canadian enrichment expansion (Cameco/Westinghouse
+      GLE centrifuge project). In response to the Act, Russia threatened to suspend its own
+      export of uranium and enrichment services to Western utilities.
+    source_id: nea_iaea_redbook_2024
+  - date: "2024-01"
+    event: "Uranium spot price reaches $106/lb (USD 275/kgU), highest in 17 years, driven by supply security and demand expectations"
+    impact: |
+      In January 2024, the uranium spot price broke through USD 100/lb U₃O₈ for the first
+      time since 2007 and reached a high of USD 106/lb (USD 275/kgU) as utility procurement
+      accelerated and financial buyers (Sprott Physical Uranium Trust, Yellow Cake plc)
+      accumulated uranium. Supply-side pressures included Kazatomprom's sulphuric acid
+      shortages (Kazakhstan), Niger disruptions, and deferred production ramp-ups. From
+      March through August 2024, the spot price averaged USD 80–90/lb before partially
+      correcting to ~$73/lb by year-end 2024. The 2024 price surge prompted multiple
+      idled US, Australian, and Canadian mines to announce restart plans.
+    source_id: nea_iaea_redbook_2024
+
+narrative: |
+  Uranium is the world's nuclear fuel feedstock: essentially all global mine production
+  is converted to enriched uranium for use in commercial nuclear power reactors, which
+  together generate approximately 10% of the world's electricity. The global uranium market
+  is concentrated — Kazakhstan alone supplies ~39% of world mine output via in-situ recovery
+  (ISR) operations operated or co-owned by state company Kazatomprom, while Canada (McArthur
+  River and Cigar Lake, both in the Athabasca Basin) contributes ~20%. The top six producing
+  nations — Kazakhstan, Canada, Namibia, Australia, Uzbekistan, and Russia — together account
+  for over 92% of world output. Global mine production reached 54,345 tU in 2023, recovering
+  from the 47,361 tU COVID-19 low in 2021 but still below the 2016 peak of ~63,000 tU.
+  US domestic production effectively ceased in 2017–2022 under sustained low prices, though
+  domestic ISR capacity has been rapidly reactivated since 2023, reaching 677,000 lb (~260 tU)
+  in 2024. US reactor operators remain heavily import-dependent, purchasing 55.9 million lb
+  U₃O₈e from foreign suppliers in 2024.
+
+  The uranium market underwent a structural price reset from 2022 to 2024. Spot prices had
+  declined from a 2007 peak of ~$140/lb to ~$20/lb by 2016, keeping marginal mines on
+  care-and-maintenance for years. The Russia-Ukraine war (February 2022) disrupted enrichment
+  supply chains and prompted European and US utilities to rebuild inventory and sign new
+  long-term contracts at higher prices. The military coup in Niger (July 2023) removed a key
+  EU uranium supply source and reinforced supply-security concerns. The uranium spot price
+  surged from ~$47/lb at year-end 2022 to $91/lb at year-end 2023 and $106/lb in January 2024,
+  the highest in 17 years. The US Prohibiting Russian Uranium Imports Act (enacted May 2024,
+  effective August 2024) further accelerated Western nuclear fuel supply chain restructuring
+  away from Russian enrichment services. Meanwhile, at COP28 in December 2023, over 22
+  countries pledged to triple global nuclear capacity by 2050, materially raising the long-term
+  demand outlook.
+
+  The global uranium resource base is sufficient to meet projected demand well into the second
+  half of this century. Identified recoverable resources at <USD 130/kgU total 5.9 million tU
+  (NEA/IAEA Red Book 2024), with Australia (28%), Kazakhstan (14%), Canada (10%), and Namibia
+  (8%) holding the largest shares. However, bringing new mines into production requires 10–15
+  years from discovery through permitting and construction, meaning the current price signal
+  must be sustained to fund the investment needed to close the anticipated supply gap by
+  ~2027–2030 under high-demand scenarios. Kazatomprom's sulphuric acid supply constraints,
+  Niger's political instability, and the concentration of supply in Kazakhstan (a single
+  country, further concentrated within Kazatomprom's portfolio) represent the primary
+  near-term supply risks. Uranium is not on the US 2022 Critical Minerals List — it was removed
+  in the 2022 revision — and is excluded from the EU Critical Raw Materials framework (nuclear
+  materials fall under the Euratom Supply Agency's separate regulatory mandate). Nevertheless,
+  nuclear fuel supply security is a central concern of every energy policy framework in
+  countries operating nuclear fleets.
+
+sources:
+  - id: nea_iaea_redbook_2024
+    title: "Uranium 2024: Resources, Production and Demand (Red Book), NEA No. 7683"
+    publisher: Nuclear Energy Agency (OECD) / International Atomic Energy Agency
+    url: https://www.oecd-nea.org/upload/docs/application/pdf/2025-04/7683_uranium_2024_-_resources_production_and_demand_2025-04-22_14-29-2_928.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eia_umar_2024
+    title: "2024 Uranium Marketing Annual Report"
+    publisher: US Energy Information Administration
+    url: https://www.eia.gov/uranium/marketing/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eia_domestic_prod_2024
+    title: "Domestic Uranium Production Report — Annual 2024"
+    publisher: US Energy Information Administration
+    url: https://www.eia.gov/uranium/production/annual/
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: wna_uranium_production_2024
+    title: "World Uranium Mining Production"
+    publisher: World Nuclear Association
+    url: https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: secondary
+  - id: usgs_mcs_2025_overview
+    title: "Mineral Commodity Summaries 2025 (overview and critical minerals section)"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
