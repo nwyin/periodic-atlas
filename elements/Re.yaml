@@ -1,0 +1,413 @@
+symbol: Re
+atomic_number: 75
+name: rhenium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rhenium data in kilograms of rhenium content unless otherwise
+  specified. Commercial primary output is recovered as byproduct ammonium perrhenate
+  (APR), metal powder, and perrhenic acid from roasting molybdenum concentrates derived
+  from porphyry copper-molybdenum deposits. The salient-statistics price series is quoted
+  in gross-weight dollars per kilogram for 99.99%-pure metal pellets and catalytic-grade
+  ammonium perrhenate; the chapter footnote states APR contains 69.42% rhenium.
+
+production:
+- reporting_year: 2024
+  stream: primary_mine_recovery
+  mine:
+    value: 62000
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 world mine production estimate for 2024 was 62,000 kilograms of
+      rhenium recovered in association with copper and molybdenum production. USGS
+      footnote 7 specifies this is estimated rhenium recovered from primary production
+      streams and excludes secondary rhenium production.
+    source_id: usgs_mcs_2025_rhenium
+  mining_by_country:
+    shares:
+      - country: US
+        share_pct: 15.32
+        quantity:
+          value: 9500
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: |
+          USGS MCS 2025 table: United States 9,500 kilograms in 2024. Domestic output
+          came from byproduct recovery during roasting of molybdenum concentrates in
+          Arizona and Montana.
+        source_id: usgs_mcs_2025_rhenium
+      - country: AM
+        share_pct: 0.32
+        quantity:
+          value: 200
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Armenia 200 kilograms in 2024."
+        source_id: usgs_mcs_2025_rhenium
+      - country: CL
+        share_pct: 46.77
+        quantity:
+          value: 29000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: |
+          USGS MCS 2025 table: Chile 29,000 kilograms in 2024. Footnote 9 states the
+          Chile entry includes estimated rhenium recovered from roaster residues from
+          Belgium, Chile, Mexico, and Peru.
+        source_id: usgs_mcs_2025_rhenium
+      - country: CN
+        share_pct: 8.55
+        quantity:
+          value: 5300
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: China 5,300 kilograms in 2024."
+        source_id: usgs_mcs_2025_rhenium
+      - country: KZ
+        share_pct: 0.81
+        quantity:
+          value: 500
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Kazakhstan 500 kilograms in 2024."
+        source_id: usgs_mcs_2025_rhenium
+      - country: KR
+        share_pct: 4.84
+        quantity:
+          value: 3000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Korea, Republic of 3,000 kilograms in 2024."
+        source_id: usgs_mcs_2025_rhenium
+      - country: PL
+        share_pct: 15.16
+        quantity:
+          value: 9400
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Poland 9,400 kilograms in 2024."
+        source_id: usgs_mcs_2025_rhenium
+      - country: UZ
+        share_pct: 8.06
+        quantity:
+          value: 5000
+          unit: kg_per_year
+          form: contained_element
+          approximate: true
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Uzbekistan 5,000 kilograms in 2024."
+        source_id: usgs_mcs_2025_rhenium
+    completeness: partial
+  refining_by_country:
+    completeness: partial
+  notes: |
+    The named-country total is 61,900 kilograms versus the rounded world total of
+    62,000 kilograms. Russia is listed as NA in the USGS mine-production table, so the
+    country breakdown is partial even though the quantified entries nearly sum to the
+    world total.
+
+- reporting_year: 2024
+  stream: secondary_recycling
+  refined:
+    value: 25000
+    unit: kg_per_year
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 reports industry estimates that approximately 25,000 kilograms of
+      secondary rhenium was produced worldwide in 2024. This stream covers recycled
+      rhenium recovered from nickel-base superalloy scrap, spent oil-refining catalysts,
+      and foundry revert.
+    source_id: usgs_mcs_2025_rhenium
+  mining_by_country:
+    completeness: partial
+  refining_by_country:
+    completeness: partial
+  notes: |
+    USGS identifies the United States and Germany as the leading secondary rhenium
+    producers and also names Canada, Estonia, France, Japan, Poland, and Russia as
+    secondary-producing countries, but it does not publish a country-by-country share
+    breakdown for 2024 recycled output.
+
+reserves:
+  reserves_by_country:
+    shares:
+      - country: US
+        share_pct: 17.29
+        quantity:
+          value: 400000
+          unit: kg
+          form: contained_element
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: United States reserves 400,000 kilograms."
+        source_id: usgs_mcs_2025_rhenium
+      - country: AM
+        share_pct: 4.11
+        quantity:
+          value: 95000
+          unit: kg
+          form: contained_element
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Armenia reserves 95,000 kilograms."
+        source_id: usgs_mcs_2025_rhenium
+      - country: CL
+        share_pct: 56.18
+        quantity:
+          value: 1300000
+          unit: kg
+          form: contained_element
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Chile reserves 1,300,000 kilograms."
+        source_id: usgs_mcs_2025_rhenium
+      - country: CN
+        share_pct: 0.82
+        quantity:
+          value: 19000
+          unit: kg
+          form: contained_element
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: China reserves 19,000 kilograms."
+        source_id: usgs_mcs_2025_rhenium
+      - country: KZ
+        share_pct: 8.21
+        quantity:
+          value: 190000
+          unit: kg
+          form: contained_element
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Kazakhstan reserves 190,000 kilograms."
+        source_id: usgs_mcs_2025_rhenium
+      - country: RU
+        share_pct: 13.40
+        quantity:
+          value: 310000
+          unit: kg
+          form: contained_element
+          source_id: usgs_mcs_2025_rhenium
+        notes: "USGS MCS 2025 table: Russia reserves 310,000 kilograms."
+        source_id: usgs_mcs_2025_rhenium
+    completeness: partial
+  notes: |
+    USGS reports the world total reserve position only as "Large" rather than a numeric
+    stock. Korea, Republic of; Poland; and Uzbekistan are listed as NA for reserves.
+    The shares above are therefore calculated against the quantified subset
+    (2,314,000 kilograms), not against a published world-total reserve number. The
+    World Resources section adds that identified U.S. resources are about 7 million
+    kilograms and that most rhenium occurs with molybdenum in porphyry copper deposits.
+
+byproduct_of: [Cu, Mo]
+
+feedstock_origins:
+  - substrate: molybdenum_concentrate_roaster_residues
+    notes: |
+      USGS states that U.S. rhenium-containing products were produced as byproducts from
+      roasting molybdenum concentrates from porphyry copper-molybdenum deposits.
+    source_id: usgs_mcs_2025_rhenium
+  - substrate: copper_smelter_rhenium_bearing_residues
+    notes: |
+      The World Resources section states that in Armenia, Kazakhstan, Poland, Russia,
+      and Uzbekistan rhenium is associated with copper minerals in sedimentary deposits,
+      where ore is processed for copper recovery and rhenium-bearing residues are
+      recovered at copper smelters.
+    source_id: usgs_mcs_2025_rhenium
+
+substitutes:
+  - application: petroleum_reforming_catalysts
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: platinum-rhenium catalyst substitutes continue to be
+      evaluated; an iridium-and-tin application has achieved commercial success, and
+      gallium, germanium, indium, selenium, silicon, tungsten, and vanadium are also
+      being evaluated for catalytic use.
+    source_id: usgs_mcs_2025_rhenium
+  - application: xray_target_coatings
+    availability: full
+    notes: "USGS substitutes paragraph: cobalt and tungsten can substitute for rhenium coatings on copper X-ray targets."
+    source_id: usgs_mcs_2025_rhenium
+  - application: high_temperature_thermocouples
+    availability: full
+    notes: "USGS substitutes paragraph: rhodium and rhodium-iridium can substitute for rhenium in high-temperature thermocouples."
+    source_id: usgs_mcs_2025_rhenium
+  - application: electrical_contact_coatings
+    availability: full
+    notes: "USGS substitutes paragraph: tungsten and platinum-ruthenium can substitute for rhenium coatings on electrical contacts."
+    source_id: usgs_mcs_2025_rhenium
+  - application: electron_emitters
+    availability: full
+    notes: "USGS substitutes paragraph: tungsten and tantalum can substitute for rhenium in electron emitters."
+    source_id: usgs_mcs_2025_rhenium
+
+end_uses:
+  uses:
+    - application: superalloys
+      share_pct: 80
+      notes: |
+        USGS MCS 2025 states that superalloys used in high-temperature turbine engine
+        components represented an estimated 80% of rhenium end uses in 2024.
+      source_id: usgs_mcs_2025_rhenium
+    - application: petroleum_reforming_catalysts
+      share_pct: 15
+      notes: |
+        USGS MCS 2025 states that petroleum-reforming catalysts represented an
+        estimated 15% of rhenium end uses in 2024.
+      source_id: usgs_mcs_2025_rhenium
+    - application: other_specialty_uses
+      share_pct: 5
+      notes: |
+        Residual end uses include crucibles, electrical contacts, electromagnets,
+        electron tubes and targets, heating elements, ionization gauges, mass
+        spectrographs, metallic coatings, semiconductors, temperature controls,
+        thermocouples, vacuum tubes, and related specialty applications listed by USGS.
+      source_id: usgs_mcs_2025_rhenium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+prices:
+  - year: 2020
+    value: 1030
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value of 99.99%-pure rhenium metal pellets in 2020."
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2021
+    value: 977
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value of 99.99%-pure rhenium metal pellets in 2021."
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2022
+    value: 1120
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value of 99.99%-pure rhenium metal pellets in 2022."
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2023
+    value: 1070
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value of 99.99%-pure rhenium metal pellets in 2023."
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2024
+    value: 1370
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: US
+    notes: "USGS MCS 2025 salient statistics: average value of 99.99%-pure rhenium metal pellets in 2024."
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2020
+    value: 1090
+    unit: usd_per_kg
+    form: compound_other
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average value of ammonium perrhenate in 2020.
+      The chapter footnote states APR contains 69.42% rhenium.
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2021
+    value: 866
+    unit: usd_per_kg
+    form: compound_other
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average value of ammonium perrhenate in 2021.
+      The chapter footnote states APR contains 69.42% rhenium.
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2022
+    value: 911
+    unit: usd_per_kg
+    form: compound_other
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average value of ammonium perrhenate in 2022.
+      The chapter footnote states APR contains 69.42% rhenium.
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2023
+    value: 920
+    unit: usd_per_kg
+    form: compound_other
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average value of ammonium perrhenate in 2023.
+      The chapter footnote states APR contains 69.42% rhenium.
+    source_id: usgs_mcs_2025_rhenium
+  - year: 2024
+    value: 1270
+    unit: usd_per_kg
+    form: compound_other
+    basis: other
+    region: US
+    notes: |
+      USGS MCS 2025 salient statistics: average value of ammonium perrhenate in 2024.
+      The chapter footnote states APR contains 69.42% rhenium.
+    source_id: usgs_mcs_2025_rhenium
+
+geopolitical_events: []
+
+narrative: |
+  Rhenium is a classic byproduct metal with a structurally inflexible supply chain.
+  Primary output comes from recovering rhenium during roasting of molybdenum
+  concentrates from porphyry copper-molybdenum systems, with additional recovery from
+  copper-smelter residues in some sediment-hosted copper districts. USGS estimated only
+  62,000 kilograms of primary mine recovery in 2024 worldwide, with Chile alone
+  accounting for nearly half of that output and the United States, Poland, China, and
+  Uzbekistan making up most of the balance.
+
+  Demand is dominated by a narrow set of high-performance applications. USGS assigns
+  80% of end use to superalloys for high-temperature turbine engine components and 15%
+  to petroleum-reforming catalysts, leaving only a small residual market for specialty
+  electrical, thermal, and vacuum applications. That concentration, combined with small
+  absolute production volumes, helps explain why annual prices for both metal pellets
+  and catalytic-grade APR moved sharply higher in 2024.
+
+  Recycling is a major stabilizer for this market. USGS identifies the United States and
+  Germany as the leading secondary rhenium producers and cites approximately
+  25,000 kilograms of recycled output worldwide in 2024, sourced from superalloy scrap
+  and spent catalysts. Even so, the United States remained 65% net import reliant in
+  2024, underlining how dependent rhenium consumers remain on a small number of primary
+  and secondary recovery circuits.
+
+sources:
+  - id: usgs_mcs_2025_rhenium
+    title: Mineral Commodity Summaries 2025 - Rhenium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rhenium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
