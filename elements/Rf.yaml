@@ -1,0 +1,107 @@
+symbol: Rf
+atomic_number: 104
+name: rutherfordium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade. Rutherfordium exists only as individual atoms made in
+  heavy-ion fusion experiments at accelerator laboratories. IUPAC's 2022
+  periodic table lists [267] as the nuclide with the longest confirmed
+  half-life; NNDC NuDat gives Rf-267 a half-life of about 1.3 hours.
+
+research_only:
+  longest_lived_isotope: Rf-267
+  half_life_seconds: 4680
+  discovered_year: 1964
+  iupac_recognized_year: 1997
+  discovered_at: |
+    Laboratory of Nuclear Reactions, Joint Institute for Nuclear Research
+    (JINR), Dubna. JINR's 1964 announcement reported synthesis of Rf-260 by
+    bombarding plutonium-242 with neon-22 ions; IUPAC later recorded the
+    priority of discovery for elements 104 and 105 as disputed before adopting
+    the name rutherfordium in 1997.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - JINR Dubna
+  notes: |
+    Rutherfordium has no practical bulk market. It is produced atom-by-atom to
+    study alpha decay, spontaneous fission, nuclear shell structure, and the
+    limits of stability in the transfermium/superheavy region. Recent JINR work
+    still reports active spectroscopy and decay studies on neutron-deficient Rf
+    isotopes, confirming that the element remains a laboratory research object
+    rather than a material commodity.
+
+end_uses:
+  uses:
+    - application: superheavy_nuclear_research
+      share_pct: 100
+      notes: |
+        JINR describes present-day Rf experiments as measurements of decay
+        properties, spectroscopy, and spontaneous-fission characteristics to
+        improve understanding of nuclear forces and the stability limits of
+        heavy nuclei.
+      source_id: jinr_rf_research_2023
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Research-only superheavy element with no commercial supply chain and no
+    appearance on mainstream critical-minerals lists.
+
+narrative: |
+  Rutherfordium is a research-only transactinide with no mine, refinery,
+  reserves base, or traded chemical form. Its entire "supply chain" consists of
+  accelerator time, actinide targets, and atom-by-atom detection at nuclear
+  physics laboratories. The current IUPAC periodic table treats Rf-267 as the
+  longest-lived confirmed nuclide, and NNDC NuDat gives that isotope a half-life
+  on the order of 1.3 hours.
+
+  The historical record is more about discovery priority than commerce. JINR's
+  1964 Dubna announcement reported synthesis of element 104 as Rf-260, while
+  IUPAC's 1997 transfermium recommendation noted that priority for elements 104
+  and 105 was disputed before settling the name "rutherfordium". In 2020s JINR
+  still reports active rutherfordium isotope spectroscopy and fission studies,
+  so the element remains relevant to basic nuclear-structure research but absent
+  from any industrial market.
+
+sources:
+  - id: iupac_periodic_table_2022
+    title: "Periodic Table of Elements"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/what-we-do/periodic-table-of-elements/
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: nndc_nudat_rf267
+    title: "267 Rf Adopted Levels"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensnds/267/Rf/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: iupac_transfermium_1997
+    title: "Names and symbols of transfermium elements (IUPAC Recommendations 1997)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/69/12/2471/index.html
+    retrieved: 2026-04-13
+    publication_year: 1997
+    source_tier: primary
+  - id: jinr_element_104_1964
+    title: "60 years ago. There is element 104!"
+    publisher: Joint Institute for Nuclear Research
+    url: https://jinrmag.jinr.ru/eng/2024/33/zk33.htm
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: jinr_rf_research_2023
+    title: "JINR scientists pioneered synthesising new, neutron-deficient isotope"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/jinr-scientists-pioneered-synthesising-new-neutron-deficient-isotope/
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
