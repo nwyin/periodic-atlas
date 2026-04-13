@@ -1,0 +1,320 @@
+symbol: Nb
+atomic_number: 41
+name: niobium
+category: transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS Mineral Commodity Summaries 2025 reports niobium data in metric tons,
+  niobium content, unless otherwise specified. Commercial niobium is traded
+  primarily as ferroniobium for steelmaking, with smaller streams in niobium
+  oxide, niobium metal, and ores and concentrates. The USGS ferroniobium price
+  series is the weighted average unit value of gross-weight U.S. ferroniobium
+  trade (imports plus exports) in dollars per kilogram.
+
+production:
+  - reporting_year: 2024
+    mine:
+      value: 110000
+      unit: tonnes_per_year
+      form: contained_element
+      approximate: true
+      confidence: high
+      notes: |
+        USGS MCS 2025 reports world mine production of niobium at 110,000 metric
+        tons Nb content in 2024e, unchanged from the rounded 2023 world total.
+        Significant U.S. niobium mine production has not been reported since 1959.
+        Brazil remained the dominant producer at approximately 92% of global
+        production, followed by Canada at about 7%.
+      source_id: usgs_mcs_2025_niobium
+    mining_by_country:
+      shares:
+        - country: BR
+          share_pct: 90.91
+          quantity:
+            value: 100000
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_niobium
+          notes: |
+            Brazil 2024e mine production: 100,000 metric tons Nb content.
+            USGS chapter text states Brazil accounted for approximately 92% of
+            global production and remained the world's leading exporter of
+            ferroniobium.
+          source_id: usgs_mcs_2025_niobium
+        - country: CA
+          share_pct: 6.45
+          quantity:
+            value: 7100
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_niobium
+          notes: |
+            Canada 2024e mine production: 7,100 metric tons Nb content, up from
+            6,700 metric tons in 2023. Canada was the second-largest producer.
+          source_id: usgs_mcs_2025_niobium
+        - country: CD
+          share_pct: 0.64
+          quantity:
+            value: 700
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_niobium
+          notes: "Congo (Kinshasa) 2024e mine production: 700 metric tons Nb content."
+          source_id: usgs_mcs_2025_niobium
+        - country: RU
+          share_pct: 0.32
+          quantity:
+            value: 350
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_niobium
+          notes: "Russia 2024e mine production: 350 metric tons Nb content."
+          source_id: usgs_mcs_2025_niobium
+        - country: RW
+          share_pct: 0.18
+          quantity:
+            value: 200
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_niobium
+          notes: "Rwanda 2024e mine production: 200 metric tons Nb content."
+          source_id: usgs_mcs_2025_niobium
+        - country: ZZ
+          share_pct: 0.11
+          quantity:
+            value: 120
+            unit: tonnes_per_year
+            form: contained_element
+            source_id: usgs_mcs_2025_niobium
+          notes: "USGS 'Other countries' 2024e mine production: 120 metric tons Nb content."
+          source_id: usgs_mcs_2025_niobium
+      completeness: complete
+    notes: |
+      Country-share percentages use the USGS rounded world total of 110,000
+      metric tons Nb content as the denominator. The named-country values sum to
+      108,470 metric tons, or 98.6% of the rounded world total, which is a
+      normal USGS rounding artifact.
+
+reserves:
+  economic_reserves:
+    value: 17000000
+    unit: tonnes
+    form: contained_element
+    approximate: true
+    confidence: medium
+    notes: |
+      USGS MCS 2025 reports world niobium reserves as greater than 17,000,000
+      metric tons Nb content. This is a lower bound rather than an exact total.
+    source_id: usgs_mcs_2025_niobium
+  reserves_by_country:
+    shares:
+      - country: BR
+        share_pct: 89.84
+        quantity:
+          value: 16000000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_niobium
+        notes: "Brazil reserves: 16,000,000 metric tons Nb content."
+        source_id: usgs_mcs_2025_niobium
+      - country: CA
+        share_pct: 8.98
+        quantity:
+          value: 1600000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_niobium
+        notes: "Canada reserves: 1,600,000 metric tons Nb content."
+        source_id: usgs_mcs_2025_niobium
+      - country: US
+        share_pct: 1.18
+        quantity:
+          value: 210000
+          unit: tonnes
+          form: contained_element
+          source_id: usgs_mcs_2025_niobium
+        notes: |
+          United States reserves: 210,000 metric tons Nb content. USGS notes
+          the prospective Nebraska project would be the only niobium mine and
+          primary niobium-processing facility in the United States if built.
+        source_id: usgs_mcs_2025_niobium
+    completeness: partial
+  notes: |
+    The sum of quantified country reserves in the USGS table is 17,810,000
+    metric tons Nb content, which exceeds the published world total because the
+    world number is given only as a lower bound (>17,000,000). Country reserve
+    shares are therefore calculated over the quantified-country sum and marked
+    partial. USGS states that world resources are more than adequate to supply
+    projected needs, with most identified resources occurring as pyrochlore in
+    carbonatite deposits outside the United States.
+
+feedstock_origins:
+  - substrate: pyrochlore_carbonatite_ore
+    notes: |
+      USGS states that most identified niobium resources occur as pyrochlore in
+      carbonatite deposits. In commercial practice, this is the dominant primary
+      feedstock for ferroniobium and niobium oxide production.
+    source_id: usgs_mcs_2025_niobium
+
+substitutes:
+  - application: superalloys
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: ceramic matrix composites, molybdenum,
+      tantalum, and tungsten can substitute for niobium in high-temperature
+      superalloy applications, but with performance loss or higher cost.
+    source_id: usgs_mcs_2025_niobium
+  - application: stainless_and_high_strength_steels
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: molybdenum, tantalum, and titanium can
+      substitute for niobium as alloying elements in stainless and
+      high-strength steels, but with performance loss or higher cost.
+    source_id: usgs_mcs_2025_niobium
+  - application: high_strength_low_alloy_steels
+    availability: partial
+    notes: |
+      USGS substitutes paragraph: molybdenum and vanadium can substitute for
+      niobium in high-strength low-alloy steels, but with performance loss or
+      higher cost.
+    source_id: usgs_mcs_2025_niobium
+
+end_uses:
+  uses:
+    - application: steels
+      share_pct: 77
+      notes: |
+        USGS estimated major end-use distribution of domestic niobium
+        consumption in 2024 as steels, about 77%. Niobium was consumed mostly
+        in the form of ferroniobium by the steel industry.
+      source_id: usgs_mcs_2025_niobium
+    - application: superalloys
+      share_pct: 21
+      notes: |
+        USGS estimated superalloys at about 21% of domestic niobium
+        consumption in 2024. Niobium alloys and metal were used by the
+        aerospace industry.
+      source_id: usgs_mcs_2025_niobium
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_critical_minerals_2025
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: false
+  notes: |
+    Niobium appears on the U.S. 2025 List of Critical Minerals and on Annex II
+    of the EU Critical Raw Materials Act as a critical raw material, but not on
+    Annex I as a strategic raw material. The supply chain is structurally
+    concentrated in Brazil, and the United States remained 100% net import
+    reliant in 2024 according to USGS.
+
+prices:
+  - year: 2024
+    value: 26
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: |
+      USGS ferroniobium average unit value for 2024e: $26/kg. This is the
+      weighted average unit value of gross-weight U.S. ferroniobium trade
+      (imports plus exports).
+    source_id: usgs_mcs_2025_niobium
+  - year: 2023
+    value: 25
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS ferroniobium average unit value for 2023: $25/kg."
+    source_id: usgs_mcs_2025_niobium
+  - year: 2022
+    value: 25
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS ferroniobium average unit value for 2022: $25/kg."
+    source_id: usgs_mcs_2025_niobium
+  - year: 2021
+    value: 21
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS ferroniobium average unit value for 2021: $21/kg."
+    source_id: usgs_mcs_2025_niobium
+  - year: 2020
+    value: 21
+    unit: usd_per_kg
+    form: alloy
+    basis: other
+    region: US
+    notes: "USGS ferroniobium average unit value for 2020: $21/kg."
+    source_id: usgs_mcs_2025_niobium
+
+geopolitical_events:
+  - date: "2024"
+    event: "Nebraska niobium project continued securing financing and off-take commitments"
+    impact: |
+      USGS reports that the Nebraska project secured all necessary construction
+      permits and had contracted 75% of planned ferroniobium production for the
+      first 10 years. If developed, it would become the only niobium mine and
+      primary niobium-processing facility in the United States, materially
+      reducing current 100% net import reliance.
+    source_id: usgs_mcs_2025_niobium
+  - date: 2024-09
+    event: "U.S. Department of Defense awarded $26.4 million to establish domestic high-purity niobium oxide production capability"
+    impact: |
+      The award supports a Pennsylvania site with existing tantalum operations
+      and would create the only high-purity niobium-processing facility in the
+      United States. This targets a downstream bottleneck for aerospace and
+      specialty-alloy applications even before any domestic mine comes online.
+    source_id: usgs_mcs_2025_niobium
+
+narrative: |
+  Niobium is a highly concentrated alloying metal market built around
+  ferroniobium. USGS MCS 2025 reports 110,000 metric tons of world mine
+  production in 2024e, with Brazil supplying about 100,000 metric tons and
+  Canada 7,100 metric tons; all other producers are marginal by comparison.
+  The U.S. has had no significant mine production since 1959 and remained 100%
+  net import reliant in 2024, importing niobium chiefly as ferroniobium,
+  niobium metal, and niobium oxide. Domestic demand is dominated by steels
+  (about 77%) and superalloys (about 21%).
+
+  The supply chain is strategically important because niobium improves strength
+  and heat resistance in steels and aerospace superalloys, but substitutes
+  usually impose either a performance penalty or higher cost. The 2024 chapter
+  highlights two U.S. attempts to narrow critical bottlenecks: continued
+  financing and permitting progress at the Nebraska mine-and-ferroniobium
+  project, and a September 2024 Department of Defense award to establish
+  high-purity niobium oxide processing in Pennsylvania. Even with those efforts,
+  commercial reality in 2025 remains a Brazil-centered global market with very
+  limited supply diversification.
+
+sources:
+  - id: usgs_mcs_2025_niobium
+    title: Mineral Commodity Summaries 2025 — Niobium (Columbium)
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-niobium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_critical_minerals_2025
+    title: 2025 List of Critical Minerals
+    publisher: U.S. Geological Survey
+    url: https://www.usgs.gov/media/images/2025-list-critical-minerals
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials
+    publisher: European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
