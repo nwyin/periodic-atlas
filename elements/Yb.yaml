@@ -1,0 +1,642 @@
+symbol: Yb
+atomic_number: 70
+name: ytterbium
+category: lanthanide
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports rare earth elements as a single grouped commodity chapter
+  ("rare earths") in metric tons of rare-earth-oxide (REO) equivalent; per-element
+  tonnage is not published for individual REEs. Per-element attribution for ytterbium
+  requires multiplying the aggregate by Yb's typical basket share. Ytterbium is
+  commercially traded primarily as Yb₂O₃ (ytterbium(III) oxide) at ≥99.9% minimum
+  purity for laser and optical applications; Yb-doped silica fiber and Yb metal are
+  used directly in fiber laser manufacturing. All production figures in this file are
+  derived by multiplying USGS-reported aggregate REO totals by Yb's typical basket
+  share of ~0.5%, which is not reported directly by USGS. The basket share varies by
+  deposit type: bastnaesite and carbonatite deposits (Mountain Pass CA, Bayan Obo CN,
+  Mt. Weld AU) are LREE-dominant and yield low Yb fractions (~0.1–0.2% Yb₂O₃ of
+  total REOs); ion adsorption clay deposits in southern China (Jiangxi, Fujian,
+  Guangdong) and Southeast Asia (Burma/Myanmar, Thailand) yield higher Yb proportions
+  (~1–2%) because these deposits are enriched in heavy rare earth elements. Monazite
+  from heavy mineral sands typically contains ~0.5–1.0% Yb₂O₃. A global weighted
+  average of ~0.5% is used as the central estimate, reflecting the dominance of
+  Chinese mixed bastnaesite-IAC production in the world total. Yb₂O₃ prices are NOT
+  listed in the USGS MCS 2025 salient statistics table; only Ce, Dy, Eu, La,
+  mischmetal, Nd, and Tb oxide prices are reported therein. All data are in metric
+  tons REO equivalent unless otherwise noted.
+
+production:
+- reporting_year: 2024
+  mine:
+    value: 1950
+    unit: tonnes_per_year
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports 2024e world total REE mine production of
+      390,000 t REO equivalent. Multiplying by Yb's typical basket share of ~0.5% gives
+      ~1,950 t Yb₂O₃ equivalent. Ytterbium's basket share is not reported separately by
+      USGS; the 0.5% factor reflects the global weighted average across deposit types.
+      LREE-dominant bastnaesite mines at Mountain Pass (CA), Bayan Obo (CN), and Mt. Weld
+      (AU) have Yb fractions of only ~0.1–0.2% of REO; ion adsorption clay deposits in
+      southern China and Southeast Asia contain ~1–2% Yb₂O₃, making them
+      disproportionately important Yb sources relative to their share of total REO
+      tonnage. Monazite in heavy mineral sands yields ~0.5–1.0% Yb₂O₃. Actual Yb output
+      is not officially disaggregated from the REE basket in public USGS data; this
+      figure carries low confidence. The 2023 comparable estimate is ~1,880 t at the
+      same 0.5% share applied to 376,000 t world total.
+    source_id: usgs_mcs_2025_rare_earths
+  grouped_reporting: true
+  commodity_group: rare_earths
+  mining_by_country:
+    shares:
+      - country: CN
+        share_pct: 69.2
+        quantity:
+          value: 1350
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China 2024e REE total: 270,000 t REO (production quota per USGS footnote 14;
+          excludes undocumented production). China share of world: 270,000 / 390,000 =
+          69.2%. Estimated Yb component at 0.5% basket share: ~1,350 t Yb₂O₃. However,
+          China's actual Yb share is higher than 69.2% because southern China ion
+          adsorption clay deposits (Jiangxi, Fujian, Guangdong) contain ~1–2% Yb₂O₃ —
+          well above the global basket average — and are the world's primary commercial
+          HREE source. Bayan Obo bastnaesite (LREE-dominant, ~0.1% Yb) dilutes the
+          national average. China's 2024 quota rose from 255,000 t in 2023 to 270,000 t.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 11.5
+        quantity:
+          value: 225
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US 2024e REE total: 45,000 t REO from bastnaesite concentrates at Mountain Pass,
+          CA (MP Materials), valued at ~$260 million. Estimated Yb at 0.5% global average:
+          ~225 t. This is a significant overestimate for Mountain Pass: bastnaesite from
+          Mountain Pass contains approximately 0.1–0.2% Yb₂O₃ of total REOs, well below
+          the 0.5% global basket average applied here. Actual US Yb content in Mountain
+          Pass concentrate is likely only ~45–90 t. Mountain Pass concentrate is shipped
+          primarily to China for separation; virtually no commercial Yb₂O₃ is separated
+          domestically.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MM
+        share_pct: 7.9
+        quantity:
+          value: 155
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Burma (Myanmar) 2024e REE total: 31,000 t REO, down from 43,000 t in 2023
+          (-28% YoY). Share: 31,000 / 390,000 = 7.9%. Estimated Yb at 0.5% average:
+          ~155 t. Burma produces primarily from ion adsorption clay deposits in Kachin
+          State and Shan State, which are heavy-REE enriched; actual Yb fraction in
+          Burmese production (~1–2% Yb₂O₃) likely exceeds the global basket average
+          applied here, meaning real Yb output from Burma may be 310–620 t rather than
+          the derived ~155 t. The 28% YoY production decline reduced global HREE supply
+          disproportionately. Production estimated from China import records (USGS
+          footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 3.3
+        quantity:
+          value: 65
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia 2024e REE total: 13,000 t REO, down from 16,000 t in 2023. Lynas
+          Rare Earths Mt. Weld carbonatite mine (Western Australia), processed at LAMP
+          (Malaysia). Mt. Weld is LREE-dominant; Yb content is low (~0.1–0.3% of REOs).
+          Applying the 0.5% global average overestimates actual Australian Yb output;
+          real Yb from Mt. Weld is likely only ~13–40 t. Estimated at 0.5% global
+          average for consistency: ~65 t. Production estimated from China import data
+          (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: NG
+        share_pct: 3.3
+        quantity:
+          value: 65
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Nigeria 2024e REE total: 13,000 t REO, up from 7,200 t in 2023 (+81% YoY).
+          USGS cites Nigeria as a driver of 2024 global production growth. Estimated Yb
+          at 0.5% global average: ~65 t. Nigerian REE deposit types are not specified in
+          USGS data; actual Yb content is uncertain. Production estimated from China
+          import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: TH
+        share_pct: 3.3
+        quantity:
+          value: 65
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Thailand 2024e REE total: 13,000 t REO, up from 3,600 t in 2023 (+261% YoY).
+          Thailand produces from ion adsorption clay deposits; Yb content is likely above
+          the global basket average (~1–1.5% Yb₂O₃). Applying 0.5% global average gives
+          ~65 t, which likely understates actual Thai Yb output. Cited by USGS as a
+          driver of global production growth alongside China and Nigeria. Production
+          estimated from China import data (USGS footnote 12).
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 2.3
+        quantity:
+          value: 45
+          unit: tonnes_per_year
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Remaining producers 2024e: India (2,900 t), Russia (2,500 t), Madagascar
+          (2,000 t), Other USGS bucket (1,100 t), Vietnam (300 t), Malaysia (130 t),
+          Brazil (20 t) ≈ 8,950 t total REO, ~2.3% of world. Estimated combined Yb
+          contribution ~45 t at 0.5% global basket average. India produces from monazite
+          in heavy mineral sands (moderate Yb content ~0.5–1.0%); Russia from apatite-
+          nepheline at Kola (very low Yb). Overall Yb contribution from this group is
+          uncertain.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: top_producers_only
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 90
+        notes: |
+          China controls approximately 90% of global REE separation and refining
+          capacity; for heavy REEs like Yb, China's dominance is even greater than for
+          LREEs because the primary ore sources (southern China ion adsorption clays) are
+          processed domestically, and because Yb separation requires sophisticated solvent
+          extraction or ion exchange infrastructure concentrated in Chinese facilities.
+          High-purity Yb₂O₃ (≥99.9%) and Yb-doped silica fiber preform production for
+          high-power fiber laser applications are concentrated in specialized Chinese
+          separation and materials processing facilities. USGS MCS 2025 import sources
+          (2020–23) confirm China supplied 70% of US REE compound and metal imports;
+          China's actual share of Yb₂O₃ separation is higher (~90%+) given its dominance
+          of both IAC ore supply and downstream processing.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: MY
+        share_pct: 5
+        notes: |
+          Lynas Advanced Materials Plant (LAMP) in Gebeng, Pahang, Malaysia processes
+          Australian Mt. Weld concentrate and produces separated REE oxides. However,
+          as Mt. Weld concentrate is LREE-dominant, LAMP's contribution to global Yb₂O₃
+          output is minimal. USGS cites Malaysia as 13% of US REE compound and metal
+          imports (2020–23), but most of that is LREE products (La, Ce, NdPr). LAMP's
+          Yb₂O₃ output fraction is small.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: ZZ
+        share_pct: 5
+        notes: |
+          Other non-Chinese Yb₂O₃ producers are limited: Neo Performance Materials
+          (Sillamäe, Estonia, 5% of US imports 2020–23), Japanese processors (Japan 6%
+          of US imports 2020–23), and nascent US separation capacity. Estonia and Japan
+          source feed from Australian and Chinese intermediates per USGS chapter text.
+          High-purity Yb₂O₃ and Yb-doped fiber preforms for high-power laser applications
+          are an overwhelmingly Chinese specialty product.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: complete
+  notes: |
+    World mine production 2024e = 390,000 t REO (rounded), up from 376,000 t in 2023.
+    Increase driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+    and Thailand (+9,400 t to 13,000 t), partially offset by Burma decline (-12,000 t
+    to 31,000 t). All Yb-specific figures derived from REO totals using the ~0.5%
+    basket share assumption; actual per-element disaggregation is not available from
+    public USGS data. Ytterbium as a HREE is disproportionately concentrated in southern
+    China IAC deposits and HREE-enriched Myanmar/Thailand clay mines relative to its
+    share of total REO tonnage. The 0.5% global average likely underestimates actual
+    Yb output from HREE-rich IAC sources and overestimates it from LREE-dominant
+    mines (Mountain Pass, Mt. Weld). Country shares sum to ~100.8% due to rounding
+    of reported integers against the rounded world total.
+
+reserves:
+  economic_reserves:
+    value: 450000
+    unit: tonnes
+    form: oxide
+    approximate: true
+    confidence: low
+    notes: |
+      Derived estimate: USGS MCS 2025 reports world total REE reserves >90,000,000 t REO
+      (floor value used). Applying Yb's typical basket share (~0.5%) gives ~450,000 t
+      Yb₂O₃ equivalent. USGS does not report per-element reserve breakdowns; all
+      Yb-specific reserve figures are derived. The true figure depends on the actual Yb
+      content in each country's reserve base ore types; bastnaesite-dominant reserves
+      (China's Bayan Obo, US Mountain Pass, Australia's Mt. Weld) will yield lower Yb
+      tonnages at their actual Yb fractions, while ion adsorption clay resources in
+      southern China contain higher Yb fractions (~1–2%) than the 0.5% basket average
+      applied here.
+    source_id: usgs_mcs_2025_rare_earths
+  reserves_by_country:
+    shares:
+      - country: CN
+        share_pct: 48.9
+        quantity:
+          value: 220000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          China REO reserves: 44,000,000 t (48.9% of >90,000,000 t world total).
+          Estimated Yb₂O₃ reserves: ~220,000 t (44,000,000 × 0.5%). China's IAC
+          deposits in southern China are the primary Yb-bearing reserve base and
+          have higher Yb concentrations (~1–2%) than the 0.5% basket average implies,
+          so the true China Yb reserve likely exceeds this estimate.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: BR
+        share_pct: 23.3
+        quantity:
+          value: 105000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Brazil REO reserves: 21,000,000 t — second-largest world reserve base after
+          China. Estimated Yb₂O₃: ~105,000 t. Current Brazilian production is minimal
+          (only 20 t REO in 2024e). Brazilian REE deposits are predominantly LREE-bearing
+          carbonatites (e.g., Araxá); actual Yb fraction may be below the 0.5% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: IN
+        share_pct: 7.7
+        quantity:
+          value: 34500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          India REO reserves: 6,900,000 t. Estimated Yb₂O₃: ~34,500 t. India produces
+          ~2,900 t REO per year from monazite in heavy mineral sands; monazite typically
+          contains ~0.5–1.0% Yb₂O₃ of total REOs, near the 0.5% average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: AU
+        share_pct: 6.3
+        quantity:
+          value: 28500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Australia REO reserves: 5,700,000 t (JORC-compliant or equivalent:
+          3,300,000 t per USGS footnote 13). Estimated Yb₂O₃: ~28,500 t. Mt. Weld
+          carbonatite is LREE-dominant; actual Yb content is likely below the 0.5%
+          average (~0.1–0.3%), so this estimate somewhat overstates Australian Yb
+          reserves.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: RU
+        share_pct: 4.2
+        quantity:
+          value: 19000
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Russia REO reserves: 3,800,000 t (revised per company and government reports).
+          Estimated Yb₂O₃: ~19,000 t. Kola Peninsula apatite-nepheline deposits are
+          LREE-dominant; actual Yb fraction is below the 0.5% basket average.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: VN
+        share_pct: 3.9
+        quantity:
+          value: 17500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          Vietnam REO reserves: 3,500,000 t (revised). Estimated Yb₂O₃: ~17,500 t.
+          Vietnam holds large reserves but produces only ~300 t REO per year.
+        source_id: usgs_mcs_2025_rare_earths
+      - country: US
+        share_pct: 2.1
+        quantity:
+          value: 9500
+          unit: tonnes
+          form: oxide
+          approximate: true
+          confidence: low
+          source_id: usgs_mcs_2025_rare_earths
+        notes: |
+          US REO reserves: 1,900,000 t (revised). Mountain Pass, CA is the primary US
+          reserve base; Mountain Pass bastnaesite is highly LREE-dominant (~0.1–0.2%
+          Yb₂O₃), so the 0.5% average significantly overstates actual US Yb reserves.
+          Estimated Yb₂O₃ at 0.5% global average: ~9,500 t.
+        source_id: usgs_mcs_2025_rare_earths
+    completeness: partial
+  notes: |
+    World total REE reserves >90,000,000 t REO per USGS MCS 2025. Additional countries
+    with reserves not individually listed: Greenland (1,500,000 t), Tanzania (890,000 t),
+    South Africa (860,000 t), Canada (830,000 t), Thailand (4,500 t). Reserves for Russia,
+    South Africa, United States, and Vietnam were revised in MCS 2025 based on company and
+    government reports. All Yb₂O₃ reserve figures derived from applying ~0.5% basket share
+    to country-level REO reserves; actual per-element data not publicly disaggregated by
+    USGS. For HREEs like Yb, China's ion adsorption clay reserves represent a
+    disproportionately important Yb source relative to the 0.5% global basket average.
+
+byproduct_of: []
+
+feedstock_origins:
+  - substrate: ion_adsorption_clay
+    typical_concentration_pct: 1.5
+    notes: |
+      Ion adsorption clay deposits in southern China (Jiangxi, Fujian, Guangdong) and
+      Southeast Asia (Burma/Myanmar, Thailand) are the world's most important commercial
+      source of ytterbium and other heavy rare earth elements. These deposits are enriched
+      in HREEs relative to LREE-dominant bastnaesite and carbonatite mines. Yb₂O₃
+      typically represents ~1–2% of total REOs in southern China ionic clay concentrates,
+      compared to ~0.1–0.2% in bastnaesite. USGS MCS 2025 cites Myanmar and Thailand
+      production as estimated from China import data; these represent predominantly
+      clay-derived HREE concentrates. The high Yb fraction in IAC deposits makes them
+      the economic backbone of global Yb supply despite contributing only ~30% of world
+      REO tonnage.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: bastnaesite_ore
+    typical_concentration_pct: 0.15
+    notes: |
+      Bastnaesite (rare-earth fluorocarbonate) is the primary commercial source of
+      light REEs (La, Ce, Pr, Nd) but contains modest ytterbium. Yb₂O₃ typically
+      represents only ~0.1–0.2% of total REOs in commercial bastnaesite concentrates
+      (Mountain Pass CA ~0.1–0.15%; Bayan Obo CN ~0.15–0.2%). USGS MCS 2025 confirms
+      bastnaesite was mined as a primary product at Mountain Pass in 2024. Small amounts
+      of Yb are recovered during Chinese processing of mixed bastnaesite concentrate,
+      but Mountain Pass concentrate contributes a minor fraction of world Yb supply
+      relative to HREE-enriched clay-deposit sources.
+    source_id: usgs_mcs_2025_rare_earths
+  - substrate: monazite_sand
+    typical_concentration_pct: 0.7
+    notes: |
+      Monazite (rare-earth phosphate) is stockpiled as a separated concentrate or
+      recovered as an accessory mineral in heavy-mineral-sand concentrates. USGS MCS
+      2025 confirms monazite was stockpiled in the southeastern United States in 2024.
+      Yb typically represents ~0.5–1.0% of total REOs in monazite, making it a
+      meaningful Yb source from Indian and other heavy mineral sand operations. Thorium
+      content in monazite complicates processing under radioactive materials regulations.
+    source_id: usgs_mcs_2025_rare_earths
+
+substitutes:
+  - application: yb_fiber_lasers_industrial
+    availability: partial
+    notes: |
+      USGS MCS 2025 states "Substitutes are available for many applications but generally
+      are less effective." For Yb-doped fiber lasers (1030–1090 nm) in industrial material
+      processing — the dominant commercial application — partial substitutes include CO₂
+      lasers (10.6 μm), which were the industry standard before fiber lasers displaced them
+      and remain in use for acrylic, wood, and some non-metal materials where 10.6 μm
+      absorption is favorable. Nd:YAG solid-state lasers (1064 nm) are older technology
+      now being displaced by Yb fiber lasers but remain installed in legacy systems.
+      Direct diode laser arrays operate near 940–980 nm and can substitute for some low-
+      brightness heating and welding tasks. However, for high-brightness precision cutting
+      and welding of metals — the largest market — Yb fiber lasers are unmatched in beam
+      quality, electrical efficiency (~30–40% wall-plug), and power scalability; no
+      alternative technology achieves equivalent performance at comparable cost.
+    source_id: usgs_mcs_2025_rare_earths
+  - application: yb_yag_solid_state_lasers
+    availability: partial
+    notes: |
+      For Yb:YAG (ytterbium-doped yttrium aluminum garnet) solid-state lasers used in
+      precision scientific and industrial applications, alternative gain media include
+      Nd:YAG (1064 nm, lower efficiency, well-established), Nd:YVO₄ (vanadate, used in
+      compact pulsed systems), Ti:sapphire (tunable 670–1100 nm, broadly tunable but
+      requires pump laser), and other Yb-doped host crystals (Yb:KGW, Yb:KYW).
+      No substitute exists for the specific combination of Yb:YAG's thermal properties,
+      efficiency, and 1030 nm wavelength that makes it preferred for ultrashort-pulse
+      (femtosecond/picosecond) amplification in scientific instruments and precision
+      micromachining. The USGS general substitutes statement applies.
+    source_id: usgs_mcs_2025_rare_earths
+
+end_uses:
+  uses:
+    - application: yb_fiber_lasers_industrial
+      share_pct: 55
+      confidence: low
+      notes: |
+        Ytterbium's dominant commercial application is as the active gain medium in
+        Yb-doped double-clad fiber lasers — the world's most widely deployed high-power
+        industrial laser platform. Yb³⁺ ions incorporated into silica fiber cores are
+        pumped at ~976 nm (matching a strong Yb absorption band) and emit stimulated
+        radiation at ~1030–1090 nm with slope efficiencies exceeding 80%. This near-
+        quantum-limited efficiency, combined with fiber's excellent thermal management
+        and near-diffraction-limited beam quality, allows kilowatt-class to multi-kilowatt
+        continuous-wave outputs from a compact fiber format. High-power Yb fiber laser
+        systems from manufacturers including IPG Photonics, nLIGHT, Coherent, and JDSU
+        have largely displaced both CO₂ lasers and flashlamp-pumped Nd:YAG systems in
+        industrial metal cutting, welding, drilling, and surface treatment applications.
+        USGS MCS 2025 lists lasers as a major REE end use. The 55% share is an industry
+        estimate; USGS does not report per-element end-use percentages.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: yb_yag_ultrashort_pulse_lasers
+      share_pct: 20
+      confidence: low
+      notes: |
+        Yb:YAG (ytterbium-doped yttrium aluminum garnet) and other Yb-doped crystals
+        (Yb:KGW, Yb:KYW, Yb:CaF₂) are the gain media of choice for ultrashort-pulse
+        (femtosecond and picosecond) laser systems used in precision micromachining,
+        ophthalmological surgery (LASIK and cataract procedures), scientific
+        spectroscopy, and attosecond-physics research. The broad gain bandwidth of
+        Yb-doped crystals supports sub-100 femtosecond pulse durations when combined
+        with chirped pulse amplification. Applications include semiconductor wafer
+        processing, display glass cutting, medical device fabrication, and research
+        instrumentation at universities and national laboratories. USGS MCS 2025 lists
+        lasers as a major REE end use. Share is an industry consensus estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: atomic_clocks_and_metrology
+      share_pct: 5
+      confidence: low
+      notes: |
+        Ytterbium-based optical lattice atomic clocks achieve the highest absolute
+        frequency accuracy of any current timekeeping technology. Yb-171 neutral atoms
+        cooled and confined in an optical lattice are interrogated at the 1S₀ → 3P₀
+        clock transition at 578.4 nm; stability has been demonstrated at the 10⁻¹⁹
+        fractional frequency level, roughly 100× better than Cs microwave fountain
+        clocks. National metrology institutes (NIST, PTB, SYRTE, NMIJ) and defense
+        research agencies operate Yb optical lattice clocks for next-generation UTC
+        timescale applications, relativistic geodesy, and tests of fundamental physics.
+        This application consumes very small Yb quantities but commands high-purity
+        material (isotopically enriched Yb-171). USGS MCS 2025 lists specialty uses
+        as a minor REE end-use category. Share is an estimate; absolute volumes are
+        negligible relative to fiber laser use.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: metallurgical_additives_and_alloys
+      share_pct: 10
+      confidence: low
+      notes: |
+        Small ytterbium additions (typically 0.1–0.5 wt%) to aluminum, magnesium, and
+        stainless steel alloys improve grain refinement, recrystallization behavior,
+        and mechanical properties. Yb additions to Al alloys have been studied for
+        aerospace structural applications, where refined microstructure improves fatigue
+        life and elevated-temperature strength. Yb is also used as a minor additive in
+        some specialty steels and in brazing alloys. These metallurgical uses are small-
+        volume compared to laser applications. USGS MCS 2025 lists metallurgical
+        additives as a minor REE end-use category. Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+    - application: upconversion_phosphors_and_other
+      share_pct: 10
+      confidence: low
+      notes: |
+        Ytterbium serves as a sensitizer ion in upconversion nanoparticle (UCNP) systems
+        — most commonly NaYF₄:Er,Yb — where Yb³⁺ absorbs 980 nm near-infrared radiation
+        and transfers energy to Er³⁺ activators, producing visible-wavelength upconverted
+        emission used in bioimaging, anti-counterfeiting inks, and photovoltaic down-
+        conversion research. Yb is also incorporated into specialty optical fibers for
+        signal amplification at 1 μm (Yb-doped fiber amplifiers in high-power fiber
+        oscillators), phosphor materials, specialty ceramics, and nuclear shielding glass.
+        These specialty applications collectively consume a modest but non-trivial fraction
+        of refined Yb₂O₃ output. USGS MCS 2025 lists phosphors, ceramics, and specialty
+        uses as REE end-use categories. Share is an estimate.
+      source_id: usgs_mcs_2025_rare_earths
+  completeness: complete
+
+prices: []
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: usgs_mcs_2025_rare_earths
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: usgs_mcs_2025_rare_earths
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: usgs_mcs_2025_rare_earths
+  notes: |
+    Ytterbium is classified as critical under the US 2022 Critical Minerals List as
+    part of "rare earth elements" (a group designation). US net import reliance for REE
+    compounds and metals was 80% in 2024e (USGS MCS 2025 salient statistics). Heavy rare
+    earth elements including ytterbium are designated as Critical Raw Materials and
+    Strategic Raw Materials under EU Regulation 2024/1252 (Critical Raw Materials Act,
+    CRMA); the EU explicitly distinguishes light REEs and heavy REEs as separate CRM
+    entries. Ytterbium's criticality is amplified by its role as the active gain medium
+    in Yb-doped fiber lasers — the dominant industrial laser platform for metal processing
+    — and by near-complete dependence on Chinese HREE supply chains (ion adsorption clay
+    processing) for high-purity Yb₂O₃. Import sources 2020–23: China 70%, Malaysia 13%,
+    Japan 6%, Estonia 5% (for REE compounds and metals broadly; Yb-specific import data
+    not separately reported by USGS).
+
+geopolitical_events:
+  - date: "2024"
+    event: "Global REE mine production increases to 390,000 t REO in 2024e; Burma REE production falls 28% YoY, reducing HREE supply including Yb"
+    impact: |
+      USGS MCS 2025 reports 2024e world REE production of 390,000 t, up from 376,000 t
+      in 2023, driven by China (+15,000 t to 270,000 t), Nigeria (+5,800 t to 13,000 t),
+      and Thailand (+9,400 t to 13,000 t). However, Burma (Myanmar) fell from 43,000 t
+      to 31,000 t REO (-28% YoY). Burma's ion adsorption clay deposits are HREE-enriched
+      (high Yb content ~1–2% Yb₂O₃), so its 12,000 t decline has a disproportionate
+      impact on world Yb supply relative to its 8% share of total REO. At 0.5% basket
+      average, Burma's 12,000 t decline implies ~60 t less Yb, but the true reduction may
+      be higher given above-average Yb fractions in Burmese clay deposits. Production data
+      for Burma estimated from China import records (USGS footnote 12).
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2024"
+    event: "US net import reliance for REE compounds and metals declines to 80% in 2024e; no domestic Yb₂O₃ separation capacity"
+    impact: |
+      USGS MCS 2025 salient statistics report US net import reliance for REE compounds
+      and metals at 80% in 2024e, down from >95% in 2020–2023, reflecting growth in
+      domestic compound production to 7,600 t total in 2024. However, this improvement
+      is concentrated in LREE processing (NdPr compounds in California, RE compounds in
+      Utah). No domestic US separation of Yb₂O₃ at commercial scale is reported.
+      Mountain Pass concentrate, which contains trace Yb (~0.1–0.2% of REO), is
+      processed in China. US fiber laser manufacturers (importing Yb-doped fiber and
+      Yb₂O₃) remain dependent on imported material from Chinese separation facilities.
+    source_id: usgs_mcs_2025_rare_earths
+  - date: "2025-04"
+    event: "China imposes export controls on 7 HREEs (Sm, Gd, Tb, Dy, Lu, Sc, Y) — ytterbium not directly targeted but HREE basket dynamics affected"
+    impact: |
+      China's April 2025 export controls required export licenses for samarium, gadolinium,
+      terbium, dysprosium, lutetium, scandium, and yttrium but did not explicitly name
+      ytterbium. However, the controls elevated awareness of heavy REE supply chain
+      vulnerability across the basket and disrupted some supply logistics for HREE
+      separation intermediates from which Yb co-occurs in processing streams. Fiber laser
+      manufacturers and defense contractors using Yb:YAG laser gain media noted ytterbium's
+      similar single-source dependency on Chinese ion adsorption clay operations, even
+      without direct license requirements on Yb.
+    source_id: china_mofcom_export_controls_2025
+
+narrative: |
+  Ytterbium's commercial story is dominated by one transformative application: Yb-doped
+  fiber lasers, which have become the global workhorse of industrial material processing
+  over the past two decades. The physical basis is elegant — Yb³⁺ ions in silica fiber
+  absorb pump photons at 976 nm and emit stimulated radiation at ~1070 nm with a near-
+  quantum-limited efficiency exceeding 80% slope efficiency, enabling multi-kilowatt
+  continuous-wave outputs with diffraction-limited beam quality from a fiber format that
+  is inherently air-cooled and mechanically robust. Starting from niche scientific
+  applications in the 1990s, Yb fiber lasers (led commercially by IPG Photonics,
+  subsequently by Coherent, nLIGHT, and Chinese manufacturers) have largely displaced CO₂
+  lasers and flashlamp-pumped Nd:YAG systems in the metal cutting, welding, and drilling
+  markets, while simultaneously expanding into new applications in additive manufacturing,
+  battery electrode production, and semiconductor processing. Unlike most rare earth
+  elements, whose industrial importance is primarily indirect (e.g., magnets or phosphors),
+  ytterbium is the active gain medium — the physical origin of the photons — in the
+  dominant industrial laser platform of the 21st century.
+
+  Ytterbium is a heavy rare earth element (HREE), and like Er, Dy, and Gd, its supply is
+  disproportionately concentrated in China's ion adsorption clay (IAC) deposits in Jiangxi,
+  Fujian, and Guangdong provinces, which contain ~1–2% Yb₂O₃ — well above the global
+  basket average of ~0.5% applied to USGS aggregate REO data. At that basket share, world
+  2024 ytterbium production is estimated at ~1,950 t Yb₂O₃ derived from 390,000 t world
+  REO production reported by USGS MCS 2025, though actual production may differ given
+  deposit-type concentration effects. USGS does not disaggregate REE production or reserves
+  by individual element. Burma (Myanmar), a meaningful HREE source via its own IAC deposits,
+  saw production fall 28% in 2024, tightening global HREE supply, while Thailand's 261% YoY
+  growth partially offset this decline. Mountain Pass bastnaesite, the dominant US REE
+  source, is LREE-dominant and contributes minimally to actual Yb supply despite representing
+  11.5% of world REO tonnage by USGS accounting.
+
+  Ytterbium was not among the seven heavy rare earth elements directly named in China's
+  April 2025 export controls (Sm, Gd, Tb, Dy, Lu, Sc, Y), suggesting somewhat lower
+  near-term supply disruption risk than the directly targeted HREEs. Nevertheless, Yb's
+  supply chain remains overwhelmingly Chinese: China controls both the dominant IAC ore
+  base and the downstream high-purity Yb₂O₃ separation and Yb-doped fiber preform
+  fabrication capacity required for fiber laser manufacturing. Beyond fiber lasers,
+  Yb:YAG crystals are the preferred gain medium for ultrashort-pulse (femtosecond/
+  picosecond) laser systems used in precision micromachining and scientific research, and
+  Yb-171 optical lattice clocks represent the frontier of timekeeping precision at national
+  metrology institutes. The combination of dominant laser market position, heavy-REE
+  supply concentration in China, and absence of non-Chinese Yb₂O₃ separation capacity
+  positions ytterbium as a quiet but consequential supply-chain vulnerability in advanced
+  manufacturing and defense laser systems.
+
+sources:
+  - id: usgs_mcs_2025_rare_earths
+    title: Mineral Commodity Summaries 2025 — Rare Earths
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: china_mofcom_export_controls_2025
+    title: "China Ministry of Commerce export controls on rare earth elements (April 2025)"
+    publisher: Ministry of Commerce of the People's Republic of China
+    url: null
+    retrieved: null
+    publication_year: 2025
+    source_tier: secondary
