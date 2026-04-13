@@ -1,0 +1,100 @@
+symbol: Pa
+atomic_number: 91
+name: protactinium
+category: actinide
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists for protactinium. In terrestrial materials, Pa is present only
+  in trace radiogenic equilibrium with uranium-series parents, so chemists obtain it by
+  radiochemical separation from uranium-bearing feed rather than mining a protactinium ore
+  or selling a standard metal/oxide product [iupac_pa_review_2000; iupac_iptei_pa]. Modern
+  laboratory work instead handles no-carrier-added isotopes such as Pa-230 separated from
+  proton-irradiated thorium targets; these are research fractions, not commercial trade forms
+  [ornl_pa230_sep_2024].
+
+production: []
+isotope_markets: []
+byproduct_of: []
+feedstock_origins: []
+substitutes: []
+prices: []
+geopolitical_events: []
+
+research_only:
+  longest_lived_isotope: Pa-231
+  half_life_seconds: 1025580000000
+  discovered_year: 1918
+  iupac_recognized_year: 1949
+  discovered_at: |
+    Otto Hahn and Lise Meitner identified the long-lived isotope Pa-231 in 1918 in Berlin;
+    Frederick Soddy and John Cranston independently identified it in Britain the same year
+    [iupac_pa_review_2000].
+  production_mode: decay_product
+  active_production_labs:
+    - Oak Ridge National Laboratory
+  notes: |
+    IUPAC's isotopic review describes Pa-231 as the dominant terrestrial isotope with a
+    half-life of 3.25(1) x 10^4 years, produced naturally in uranium decay series rather
+    than preserved as a primordial nuclide [iupac_pa_review_2000; iupac_iptei_pa]. NNDC's
+    current ENSDF index maintains an adopted-levels dataset for ^231Pa, consistent with its
+    status as the reference isotope for the element [nndc_ensdf_pa231]. Contemporary
+    production is still laboratory-scale: ORNL reported rapid isolation of no-carrier-added
+    Pa-230 from proton-irradiated Th-232 metal targets for targeted-alpha-therapy research,
+    showing that active handling remains confined to isotope R&D rather than any commercial
+    element market [ornl_pa230_sep_2024].
+
+end_uses:
+  uses: []
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+narrative: |
+  Protactinium is a real chemical element but not a commercial commodity. The authoritative
+  IUPAC review notes that primordial Pa has long since disappeared from Earth and that the
+  only terrestrial source is ongoing radioactive decay of heavier elements, principally in
+  uranium ores, where Pa-231 and Pa-234 occur in equilibrium proportions. In practice that
+  means protactinium exists as a trace radiochemical separation problem, not as a mined or
+  refined supply chain [iupac_pa_review_2000; iupac_iptei_pa].
+
+  Modern work is research-driven and isotope-specific. ORNL's 2024 Analytical Chemistry
+  paper describes separating Pa-230 from proton-irradiated Th-232 targets as part of a
+  medical-isotope workflow for harvesting ingrown U-230. That is the relevant commercial
+  reality for 2025: protactinium appears in specialist nuclear laboratories as an intermediate
+  or research radionuclide, with no published reserves, no quoted market price, and no
+  country-level mine or refining statistics [ornl_pa230_sep_2024].
+
+sources:
+  - id: iupac_pa_review_2000
+    title: "Atomic weights of the elements. Review 2000 (IUPAC Technical Report)"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://media.iupac.org/publications/pac/2003/pdf/7506x0683.pdf
+    retrieved: 2026-04-13
+    publication_year: 2003
+    source_tier: primary
+  - id: iupac_iptei_pa
+    title: "IUPAC Periodic Table of the Elements and Isotopes (IPTEI) for the Education Community"
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://iupac.org/wp-content/uploads/2015/02/IPTEI_postprint_20190301.pdf
+    retrieved: 2026-04-13
+    publication_year: 2018
+    source_tier: primary
+  - id: nndc_ensdf_pa231
+    title: "Index to ENSDF for A = 231"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/DatasetFetchServlet?datasource=ensdf&mass=231&nucmass=isMass&searchType=ensdfIndex
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: ornl_pa230_sep_2024
+    title: "Simultaneous Separation of Protactinium-230 and Uranium-230 Isotopes from a Proton-Irradiated Thorium Matrix"
+    publisher: Analytical Chemistry / Oak Ridge National Laboratory
+    url: https://www.ornl.gov/publication/simultaneous-separation-protactinium-230-and-uranium-230-isotopes-proton-irradiated
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
