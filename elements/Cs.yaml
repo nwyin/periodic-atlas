@@ -1,0 +1,246 @@
+symbol: Cs
+atomic_number: 55
+name: cesium
+category: alkali_metal
+industrial_tier: 2
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  Commercial cesium is sold mainly as specialty chemicals derived from pollucite
+  rather than as elemental metal. USGS MCS 2026 reports data in metric tons of
+  cesium oxide unless otherwise specified and notes that the leading products
+  consumed globally are cesium carbonate and cesium hydroxide, followed by
+  cesium formate, cesium iodide, cesium nitrate, and cesium chloride. The same
+  source notes that cesium metal is not traded in commercial quantities, while
+  publicly quoted prices are retail list prices for small laboratory packages
+  such as 1-gram metal ampoules or 25-gram salt lots.
+
+production:
+  - reporting_year: 2025
+    stream: cesium_formate_brine_replacement
+    refined:
+      value: 550
+      unit: tonnes_per_year
+      form: compound_other
+      approximate: true
+      confidence: medium
+      notes: |
+        USGS MCS 2026 states that an estimated 11,000 tons of cesium formate
+        were in use worldwide and that 5% were depleted and replaced per year.
+        This implies an annual replacement flow of about 550 metric tons per
+        year of cesium formate brine. It is the clearest recent quantified
+        commercial flow in the primary source, but it does not represent all
+        cesium chemicals.
+      source_id: usgs_mcs_2026_cesium
+    mining_by_country:
+      shares: []
+      completeness: partial
+    refining_by_country:
+      shares: []
+      completeness: partial
+    notes: |
+      USGS says there are no official sources for cesium production data. The
+      2026 chapter identifies intermittent cesium production and processing from
+      mined ore and stockpiles at Canada's Tanco Mine during 2025 and restarted
+      recovery from tailings at Zimbabwe's Bikita Mine for shipment to China,
+      but it does not publish tonnages or country shares for either stream.
+
+reserves:
+  economic_reserves:
+    value: 70000000
+    unit: kg
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS's 2004 cesium commodity profile estimated the world reserve base of
+      contained cesium at 70 million kilograms, with more than two-thirds at
+      Bernic Lake in Manitoba. The report's country table listed Canada with
+      70 million kilograms of contained cesium reserves and no quantified
+      reserve entries for other countries.
+    source_id: usgs_cesium_profile_2004
+  resources:
+    value: 110000000
+    unit: kg
+    form: contained_element
+    approximate: true
+    notes: |
+      USGS's 2004 cesium commodity profile reported a 110 million kilogram
+      world cesium reserve base. The same table listed reserve-base entries of
+      73 million kilograms for Canada, 23 million kilograms for Zimbabwe, and
+      9 million kilograms for Namibia. This older "reserve base" concept is
+      mapped here to `resources` because later USGS MCS editions no longer
+      publish a contained-cesium resource total.
+    source_id: usgs_cesium_profile_2004
+  reserves_by_country:
+    shares:
+      - country: CA
+        share_pct: 100
+        quantity:
+          value: 70000000
+          unit: kg
+          form: contained_element
+          approximate: true
+          notes: |
+            The USGS 2004 profile table lists Canada with 70 million kilograms
+            of contained cesium reserves, matching the full quantified reserve
+            total in that source.
+          source_id: usgs_cesium_profile_2004
+        notes: |
+          Bernic Lake (Tanco), Manitoba, was described by USGS as holding more
+          than two-thirds of the world's reserve base and as the dominant
+          reported reserve concentration for pollucite-derived cesium.
+        source_id: usgs_cesium_profile_2004
+    completeness: complete
+  notes: |
+    Reserve reporting for cesium is unusually weak. USGS MCS 2026 says no
+    reliable country reserve data were available and instead gives only a
+    global statement that Australia, Canada, China, and Namibia together were
+    estimated to have less than 200,000 tons of pollucite-type reserves. The
+    older 2004 contained-cesium table is therefore retained here because it is
+    still the only explicit reserve ledger the USGS has published for cesium.
+
+feedstock_origins:
+  - substrate: pollucite_ore
+    notes: |
+      Pollucite is the principal cesium ore mineral. USGS describes it as
+      occurring mainly in lithium-rich, lepidolite-bearing or petalite-bearing
+      zoned granite pegmatites and notes that commercial extraction is by acid
+      digestion or related processing routes that yield cesium chloride and
+      other refined compounds.
+    source_id: usgs_mcs_2026_cesium
+  - substrate: cesium_bearing_tailings
+    notes: |
+      USGS MCS 2026 notes that recovery and processing of cesium from tailings
+      at the Bikita Mine in Zimbabwe for shipment to China had restarted in
+      recent years, making tailings a live secondary feedstock in the current
+      market.
+    source_id: usgs_mcs_2026_cesium
+
+substitutes:
+  - application: general
+    availability: partial
+    notes: |
+      USGS MCS 2026 says cesium and rubidium can be used interchangeably in
+      many applications because of their similar physical properties and atomic
+      radii, but rubidium is no more readily available than cesium.
+    source_id: usgs_mcs_2026_cesium
+  - application: oil_and_gas_drilling_and_completion_fluids
+    availability: partial
+    notes: |
+      The USGS 2004 cesium profile says heavy brines such as zinc bromide can
+      substitute for some cesium-sodium-potassium formate fluids, but they are
+      more corrosive, less safe to handle, and impose cleanup and disposal
+      costs.
+    source_id: usgs_cesium_profile_2004
+
+end_uses:
+  uses: []
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+prices:
+  - year: 2024
+    value: 98
+    unit: usd_per_gram
+    form: metal
+    basis: retail
+    notes: |
+      USGS MCS 2026 reports that one company offered 1-gram ampoules of 99.8%
+      cesium metal for $98.00 in 2024.
+    source_id: usgs_mcs_2026_cesium
+  - year: 2025
+    value: 104
+    unit: usd_per_gram
+    form: metal
+    basis: retail
+    notes: |
+      USGS MCS 2026 reports that one company offered 1-gram ampoules of 99.8%
+      cesium metal for $104.00 in 2025.
+    source_id: usgs_mcs_2026_cesium
+  - year: 2024
+    value: 2.096
+    unit: usd_per_gram
+    form: compound_other
+    basis: retail
+    notes: |
+      USGS MCS 2026 reports a 2024 price of $52.40 for 25 grams of 98% cesium
+      formate, equivalent to $2.096 per gram.
+    source_id: usgs_mcs_2026_cesium
+  - year: 2025
+    value: 2.244
+    unit: usd_per_gram
+    form: compound_other
+    basis: retail
+    notes: |
+      USGS MCS 2026 reports a 2025 price of $56.10 for 25 grams of 98% cesium
+      formate, equivalent to $2.244 per gram.
+    source_id: usgs_mcs_2026_cesium
+
+geopolitical_events:
+  - date: 2020
+    event: "Cesium iodide recycling from X-ray panels became the industry standard."
+    impact: |
+      USGS MCS 2026 says one company developed an X-ray panel recycling program
+      in 2020 that recovered cesium iodide for reuse in new panels and that this
+      was believed to have become the industry standard. That reduced the need
+      for fresh primary cesium iodide in one of cesium's identifiable
+      industrial applications.
+    source_id: usgs_mcs_2026_cesium
+  - date: 2025
+    event: "Intermittent Tanco production and renewed Bikita tailings recovery defined the visible primary supply."
+    impact: |
+      USGS MCS 2026 describes one Canadian company reporting intermittent cesium
+      production and processing from mined ore and stockpiles at Tanco in 2025,
+      while recovery from Bikita tailings in Zimbabwe for shipment to China had
+      also restarted. The combination underscores that contemporary cesium
+      supply is thin, episodic, and tied to a handful of pollucite or tailings
+      streams rather than a broad mining industry.
+    source_id: usgs_mcs_2026_cesium
+  - date: 2025
+    event: "U.S. policy continued pushing cesium-137 blood irradiators toward replacement by 2027."
+    impact: |
+      USGS MCS 2026 states that Congress set a goal for the National Nuclear
+      Security Administration to eliminate cesium-137 blood irradiators by
+      2027 and that X-ray alternatives had been partially implemented. This
+      does not affect the small elemental-chemical market directly, but it does
+      shrink one visible radioactive-cesium application in the United States.
+    source_id: usgs_mcs_2026_cesium
+
+narrative: |
+  Cesium is commercially real, but it is not a bulk metal market. The modern
+  trade is a thin specialty-chemicals business built on pollucite feedstock and
+  sold mainly as carbonate, hydroxide, formate, iodide, chloride, nitrate, and
+  other derivative salts. USGS still characterizes the United States as 100%
+  import reliant, notes that elemental cesium itself is not traded in
+  commercial quantities, and withholds conventional production, consumption,
+  and trade series because the market is so small and opaque.
+
+  What can be seen publicly is a supply chain with very few moving parts.
+  Canada remains the anchor because Tanco is still one of the only named mined
+  ore and stockpile processing centers in current USGS reporting, while
+  Zimbabwe tailings recovery for shipment to China has re-emerged as a second
+  feed. The most recent quantified flow USGS publishes is not a mine tonnage
+  but the replacement demand implied by cesium formate drilling brines already
+  in circulation. That is typical of cesium: commercial significance is driven
+  by niche functionality in catalysts, dense clear brines, X-ray panels,
+  scintillators, and timing or isotope applications, not by large tonnage.
+
+sources:
+  - id: usgs_mcs_2026_cesium
+    title: "Cesium"
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cesium.pdf
+    retrieved: 2026-04-13
+    publication_year: 2026
+    source_tier: primary
+  - id: usgs_cesium_profile_2004
+    title: "Cesium--Mineral Commodity Profiles"
+    publisher: U.S. Geological Survey
+    url: https://pubs.usgs.gov/of/2004/1432/2004-1432.pdf
+    retrieved: 2026-04-13
+    publication_year: 2004
+    source_tier: primary
