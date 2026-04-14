@@ -2664,14 +2664,14 @@ def _index_body(
     data-hhi-mining="{_html_escape(hhi_mining_attr)}"
   >
     <td class="symbol-cell"><a href="elements/{_html_escape(symbol)}.html">{_html_escape(symbol)}</a></td>
-    <td class="atomic-num">[EL-{atomic:03d}]</td>
+    <td class="atomic-num">{atomic}</td>
     <td>{_html_escape(name)}</td>
     <td>{_html_escape(category)}</td>
     <td>{tier}</td>
-    <td>{comm_html}</td>
     {us_td}
     {crm_td}
     {strat_td}
+    <td class="production-cell">{comm_html}</td>
   </tr>
 """
 
@@ -2781,12 +2781,12 @@ def _index_body(
       <th class="th-sortable" data-sort-key="name" role="columnheader" aria-sort="none" tabindex="0">Name</th>
       <th class="th-sortable" data-sort-key="category" role="columnheader" aria-sort="none" tabindex="0">Category</th>
       <th class="th-sortable" data-sort-key="tier" role="columnheader" aria-sort="none" tabindex="0">Tier</th>
-      <th class="th-sortable" data-sort-key="commercial" role="columnheader" aria-sort="none" tabindex="0">Production</th>
       <th class="crit-cell th-sortable" data-sort-key="us_critical" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="USGS Final List of Critical Minerals (2022 Federal Register notice; governs US policy through 2025). 50 commodities deemed essential to the US economy / national security with significant supply-risk exposure.">US Critical</span></th>
       <th class="crit-cell th-sortable" data-sort-key="eu_crm" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="EU Critical Raw Materials Act (March 2024), Annex II. 34 critical raw materials with high economic importance and elevated supply-risk.">EU CRM</span></th>
       <th class="crit-cell th-sortable" data-sort-key="eu_strategic" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="EU Critical Raw Materials Act (March 2024), Annex I. 17 strategic raw materials prioritised for the green and digital transitions (subset of CRM).">EU Strategic</span></th>
       <th class="th-sortable" data-sort-key="top_country_share" role="columnheader" aria-sort="none" tabindex="0">Top country</th>
       <th class="th-sortable" data-sort-key="hhi_mining" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="Herfindahl\u2013Hirschman Index (mining). Sum of squared country mining shares (in %\u00b2). Scale: &lt;1500 = unconcentrated; 1500\u20132500 = moderately concentrated; &gt;2500 = highly concentrated; 10 000 = single-country monopoly. Rest-of-world buckets (ZZ / XX) excluded.">HHI</span></th>
+      <th class="th-sortable" data-sort-key="commercial" role="columnheader" aria-sort="none" tabindex="0">Production</th>
     </tr>
   </thead>
   <tbody>
@@ -3319,7 +3319,7 @@ def _element_body(
   <span class="el-name">{_html_escape(name)}</span>
 </div>
 <div class="el-meta">
-  [EL-{atomic:03d}] <span class="el-meta-sep">&#9472;&#9472;</span> {_html_escape(category)} <span class="el-meta-sep">&#9472;&#9472;</span> TIER {tier}
+  Atomic {atomic} <span class="el-meta-sep">&#9472;&#9472;</span> {_html_escape(category)} <span class="el-meta-sep">&#9472;&#9472;</span> Tier {tier}
 </div>
 <div class="badges-row">
   {comm_html}{crit_html}

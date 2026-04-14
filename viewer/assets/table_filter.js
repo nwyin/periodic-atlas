@@ -163,11 +163,14 @@ function initDerivedColumns(elementIndex) {
   const bySymbol = new Map(elementIndex.map((el) => [el.symbol, el]));
 
   // Insert two new <th> cells are already in the HTML (build_viewer.py emits them).
-  // We populate the <td> cells for each data row.
+  // We populate the <td> cells for each data row. Order is:
+  //   ... | US-Crit | EU-CRM | EU-Strat | Top country (JS) | HHI (JS) | Production (server) |
+  // so these two cells must be inserted BEFORE the last <td> (Production).
   const rows = Array.from(tbody.querySelectorAll("tr:not(.table-empty-state)"));
   rows.forEach((tr) => {
     const sym = tr.dataset.symbol;
     const entry = bySymbol.get(sym) || {};
+    const productionTd = tr.querySelector("td.production-cell");
 
     // Top country <td>
     const topTd = document.createElement("td");
@@ -180,7 +183,7 @@ function initDerivedColumns(elementIndex) {
       topTd.textContent = "\u2014";
       topTd.style.color = "var(--muted)";
     }
-    tr.appendChild(topTd);
+    tr.insertBefore(topTd, productionTd);
 
     // HHI <td>
     const hhiTd = document.createElement("td");
@@ -192,7 +195,7 @@ function initDerivedColumns(elementIndex) {
       hhiTd.textContent = "\u2014";
       hhiTd.style.color = "var(--muted)";
     }
-    tr.appendChild(hhiTd);
+    tr.insertBefore(hhiTd, productionTd);
   });
 }
 
