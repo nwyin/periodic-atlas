@@ -207,37 +207,37 @@ document.addEventListener("DOMContentLoaded", function () {
             return parseEventDate(a.date) - parseEventDate(b.date);
         });
 
-        var margin = { top: 30, right: 20, bottom: 30, left: 20 };
+        // ── Axis SVG (numbered dots only; event text lives in the HTML list below) ──
+        var margin = { top: 14, right: 24, bottom: 28, left: 24 };
         var containerW = parent.getBoundingClientRect().width || 700;
         var svgWidth = Math.min(Math.max(containerW, 400), 840);
         var width = svgWidth - margin.left - margin.right;
-
-        // Axis at fixed y; label rows stacked below
-        var axisY = 20;
-        var labelRowH = 22;
-        var svgHeight = margin.top + axisY + 20 + sorted.length * labelRowH + margin.bottom;
+        var axisY = 24;
+        var svgHeight = margin.top + axisY + margin.bottom;
 
         var allDates = sorted.map(function (e) { return parseEventDate(e.date); });
         var minD = d3.min(allDates);
         var maxD = d3.max(allDates);
         var span = maxD - minD;
-        // Pad domain so single events don't collide with axis ends
         var pad = span > 0 ? span * 0.14 : 1000 * 60 * 60 * 24 * 180;
 
         var x = d3.scaleTime()
             .domain([new Date(+minD - pad), new Date(+maxD + pad)])
             .range([0, width]);
 
-        var svg = d3.select(parent)
+        var svgWrap = d3.select(parent)
             .append("svg")
-                .attr("width", svgWidth)
-                .attr("height", svgHeight)
+                .attr("width", "100%")
+                .attr("viewBox", "0 0 " + svgWidth + " " + svgHeight)
+                .attr("preserveAspectRatio", "xMidYMid meet")
+                .style("display", "block")
+                .style("max-width", svgWidth + "px")
                 .attr("role", "img")
-                .attr("aria-label", "Geopolitical events timeline")
-            .append("g")
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+                .attr("aria-label", "Geopolitical events timeline");
 
-        // Time axis
+        var svg = svgWrap.append("g")
+            .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
         svg.append("g")
             .attr("transform", "translate(0," + axisY + ")")
             .call(
@@ -246,52 +246,129 @@ document.addEventListener("DOMContentLoaded", function () {
                     .ticks(Math.min(sorted.length + 2, 8))
             );
 
+        // Numbered dots on axis; each one is linked to its list-item below via data-evt-idx
+        var dotSel = [];
         sorted.forEach(function (ev, i) {
             var xPos = x(parseEventDate(ev.date));
-            var shortLabel = ev.date + ": " +
-                (ev.event.length > 60 ? ev.event.slice(0, 60) + "\u2026" : ev.event);
-            var labelY = axisY + 28 + i * labelRowH;
+            var num = i + 1;
 
-            // Tick mark on axis
-            svg.append("line")
-                .attr("x1", xPos).attr("x2", xPos)
-                .attr("y1", axisY - 6).attr("y2", axisY + 6)
-                .attr("stroke", "var(--accent, #2563eb)")
-                .attr("stroke-width", 2);
+            var group = svg.append("g")
+                .attr("class", "evt-dot")
+                .attr("data-evt-idx", num)
+                .style("cursor", "pointer");
 
-            // Dot
-            svg.append("circle")
+            group.append("circle")
                 .attr("cx", xPos)
                 .attr("cy", axisY)
-                .attr("r", 6)
+                .attr("r", 9)
                 .attr("fill", "var(--accent, #2563eb)")
                 .attr("stroke", "var(--bg, #fff)")
-                .attr("stroke-width", 2)
-                .style("cursor", "pointer")
+                .attr("stroke-width", 2);
+
+            group.append("text")
+                .attr("x", xPos)
+                .attr("y", axisY)
+                .attr("text-anchor", "middle")
+                .attr("dy", "0.35em")
+                .attr("font-size", "10px")
+                .attr("font-weight", "600")
+                .attr("fill", "#fff")
+                .style("pointer-events", "none")
+                .text(num);
+
+            group
                 .on("mouseover", function (event) {
                     showTooltip(event,
                         ev.date + "\n" + ev.event +
                         (ev.impact ? "\n\n" + ev.impact : "")
                     );
+                    highlight(num, true);
                 })
-                .on("mouseout", hideTooltip);
+                .on("mousemove", function (event) {
+                    showTooltip(event,
+                        ev.date + "\n" + ev.event +
+                        (ev.impact ? "\n\n" + ev.impact : "")
+                    );
+                })
+                .on("mouseout", function () {
+                    hideTooltip();
+                    highlight(num, false);
+                });
 
-            // Connector line from dot to label row
-            svg.append("line")
-                .attr("x1", xPos).attr("x2", xPos)
-                .attr("y1", axisY + 8).attr("y2", labelY - 6)
-                .attr("stroke", "var(--border, #d4d8de)")
-                .attr("stroke-width", 1)
-                .attr("stroke-dasharray", "3,2");
-
-            // Label text (left-aligned for readability)
-            svg.append("text")
-                .attr("x", 0)
-                .attr("y", labelY)
-                .attr("font-size", "11px")
-                .attr("fill", "currentColor")
-                .text(shortLabel);
+            dotSel.push(group);
         });
+
+        // ── Event list (HTML, wraps naturally; no SVG clipping) ──────────────────
+        var list = d3.select(parent)
+            .append("ol")
+                .attr("class", "events-list")
+                .style("list-style", "none")
+                .style("padding", "0")
+                .style("margin", "0.75rem 0 0")
+                .style("font-size", "0.88rem")
+                .style("line-height", "1.45");
+
+        sorted.forEach(function (ev, i) {
+            var num = i + 1;
+            var item = list.append("li")
+                .attr("data-evt-idx", num)
+                .style("display", "grid")
+                .style("grid-template-columns", "1.8rem 5.5rem 1fr")
+                .style("gap", "0.6rem")
+                .style("padding", "0.55rem 0.5rem")
+                .style("border-top", "1px solid var(--border, #e5e7eb)")
+                .style("align-items", "baseline")
+                .style("transition", "background 0.12s");
+
+            item.append("span")
+                .style("display", "inline-flex")
+                .style("width", "1.4rem")
+                .style("height", "1.4rem")
+                .style("border-radius", "50%")
+                .style("background", "var(--accent, #2563eb)")
+                .style("color", "#fff")
+                .style("font-size", "0.75rem")
+                .style("font-weight", "600")
+                .style("align-items", "center")
+                .style("justify-content", "center")
+                .style("flex-shrink", "0")
+                .text(num);
+
+            item.append("span")
+                .style("font-variant-numeric", "tabular-nums")
+                .style("color", "var(--muted, #6b7280)")
+                .style("font-size", "0.82rem")
+                .text(ev.date);
+
+            var body = item.append("div");
+            body.append("div")
+                .style("font-weight", "500")
+                .text(ev.event);
+            if (ev.impact) {
+                body.append("div")
+                    .style("margin-top", "0.25rem")
+                    .style("color", "var(--muted, #6b7280)")
+                    .style("font-size", "0.83rem")
+                    .text(ev.impact);
+            }
+
+            item
+                .on("mouseover", function () { highlight(num, true); })
+                .on("mouseout",  function () { highlight(num, false); });
+        });
+
+        function highlight(num, on) {
+            svgWrap.selectAll(".evt-dot circle")
+                .attr("r", function () {
+                    var idx = +this.parentNode.getAttribute("data-evt-idx");
+                    return (on && idx === num) ? 11 : 9;
+                });
+            list.selectAll("li")
+                .style("background", function () {
+                    var idx = +this.getAttribute("data-evt-idx");
+                    return (on && idx === num) ? "var(--surface, #f6f7f8)" : "transparent";
+                });
+        }
     }
 
 
