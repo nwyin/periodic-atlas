@@ -821,7 +821,7 @@ def _make_multistream_db(tmp_path: Path) -> Path:
     """Create a minimal DuckDB with two synthetic stream IDs for Co."""
     db_path = tmp_path / "multistream.duckdb"
     real = duckdb.connect(str(REAL_DB), read_only=True)
-    con  = duckdb.connect(str(db_path))
+    con = duckdb.connect(str(db_path))
     try:
         tables = [row[0] for row in real.execute("SHOW TABLES").fetchall()]
         for t in tables:
@@ -848,7 +848,7 @@ def _make_multistream_db(tmp_path: Path) -> Path:
 def test_b1_inv5_multistream_produces_separate_stream_entries(tmp_path):
     """Each unique stream_id in atlas_shares must produce its own stream entry."""
     db_path = _make_multistream_db(tmp_path)
-    out_dir  = tmp_path / "viewer_multistream"
+    out_dir = tmp_path / "viewer_multistream"
     build_viewer.generate_viewer(db_path, out_dir, timestamp=FIXED_TS)
 
     co_html = (out_dir / "elements" / "Co.html").read_text()
@@ -1088,3 +1088,248 @@ def test_b5_format_half_life_seconds():
     assert "second" in result, f"Expected 'second' in {result!r}"
     numeric = float(_re.search(r"[\d.]+", result).group())
     assert abs(numeric - 30.0) < 0.1
+
+
+# =============================================================================
+# Heatmap (HM) — choropleth map mode tests
+# =============================================================================
+
+
+def _extract_element_index(html: str) -> list[dict]:
+    """Extract and parse the atlas-element-index JSON block from index.html."""
+    m = _re.search(r'id="atlas-element-index"[^>]*>(.*?)</script>', html, _re.DOTALL)
+    assert m, "atlas-element-index script block not found in index.html"
+    return _json.loads(m.group(1))
+
+
+def _extract_country_map_data(html: str) -> dict:
+    """Extract and parse the atlas-country-map-data JSON block from index.html."""
+    m = _re.search(r'id="atlas-country-map-data"[^>]*>(.*?)</script>', html, _re.DOTALL)
+    assert m, "atlas-country-map-data script block not found in index.html"
+    return _json.loads(m.group(1))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM-INV-1: atlas-element-index block is present and valid JSON
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_inv1_element_index_present(viewer_dir):
+    """atlas-element-index script block must exist, be valid JSON, and contain Co with correct shape."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert 'id="atlas-element-index"' in index_html, "atlas-element-index script block missing from index.html"
+
+    data = _extract_element_index(index_html)
+    assert isinstance(data, list), "atlas-element-index must be a JSON array"
+    assert len(data) > 0, "atlas-element-index must not be empty"
+
+    # Co must be present with correct shape
+    co = next((e for e in data if e["symbol"] == "Co"), None)
+    assert co is not None, "Co not found in atlas-element-index"
+    assert co["has_mining"] is True, "Co should have has_mining=True"
+    assert co["has_refining"] is True, "Co should have has_refining=True"
+    assert co["has_reserves"] is True, "Co should have has_reserves=True"
+    assert isinstance(co["tier"], int), f"Co tier should be int, got {type(co['tier'])}"
+    assert isinstance(co["critical"], bool), f"Co critical should be bool, got {type(co['critical'])}"
+    assert co["critical"] is True, "Co should be flagged critical"
+    assert isinstance(co["name"], str) and co["name"], "Co name should be a non-empty string"
+    assert isinstance(co["category"], str), "Co category should be a string"
+
+    # Og (no commercial production, no stage data) must be present too
+    og = next((e for e in data if e["symbol"] == "Og"), None)
+    assert og is not None, "Og not found in atlas-element-index"
+    assert og["critical"] is False, "Og should not be flagged critical"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM-INV-2: critical flag matches the criticality columns in the DB
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_inv2_critical_flag_matches_db(viewer_dir):
+    """Every element flagged critical=True must have at least one criticality column set in the DB."""
+    index_html = (viewer_dir / "index.html").read_text()
+    data = _extract_element_index(index_html)
+
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        crit_rows = con.execute(
+            """
+            SELECT symbol,
+                   us_critical_list_as_of_2025,
+                   eu_crm_list_as_of_2024,
+                   eu_strategic_list_as_of_2024,
+                   doe_short_term_criticality_rank
+            FROM atlas_elements
+            """
+        ).fetchall()
+    finally:
+        con.close()
+
+    db_by_sym = {}
+    for sym, us, eu_crm, eu_strat, doe in crit_rows:
+        doe_set = doe is not None and str(doe) not in ("nan", "None", "")
+        db_by_sym[sym] = bool(us) or bool(eu_crm) or bool(eu_strat) or doe_set
+
+    for entry in data:
+        sym = entry["symbol"]
+        if sym not in db_by_sym:
+            continue
+        expected = db_by_sym[sym]
+        actual = entry["critical"]
+        assert actual == expected, f"{sym}: critical flag in index ({actual}) does not match DB ({expected})"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM-INV-3: reserves sub-key in country-map-data, excludes ZZ
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_inv3_reserves_in_map_payload(viewer_dir):
+    """atlas-country-map-data must have a 'reserves' key; ZZ must be excluded."""
+    index_html = (viewer_dir / "index.html").read_text()
+    data = _extract_country_map_data(index_html)
+
+    assert "reserves" in data, "atlas-country-map-data missing 'reserves' sub-key"
+    reserves = data["reserves"]
+    assert isinstance(reserves, dict), "'reserves' must be a dict keyed by ISO-2"
+    assert "ZZ" not in reserves, "ZZ (rest-of-world) must be excluded from reserves"
+
+    # At least some countries should have reserves data
+    assert len(reserves) > 0, "reserves dict is empty — expected data for multiple countries"
+
+    # Each entry must have the right shape
+    for iso, entries in reserves.items():
+        assert isinstance(entries, list) and len(entries) > 0, f"{iso}: reserves entry should be non-empty list"
+        for entry in entries:
+            assert "symbol" in entry, f"{iso}: reserves entry missing 'symbol'"
+            assert "share_pct" in entry, f"{iso}: reserves entry missing 'share_pct'"
+            assert entry["share_pct"] is not None, f"{iso}: reserves share_pct must not be null"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM-INV-4: has_mining / has_refining / has_reserves consistent with shares table
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_inv4_has_stage_flags_consistent(viewer_dir):
+    """has_mining/has_refining/has_reserves in element index must match atlas_shares rows."""
+    index_html = (viewer_dir / "index.html").read_text()
+    data = _extract_element_index(index_html)
+    by_sym = {e["symbol"]: e for e in data}
+
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        stage_rows = con.execute(
+            "SELECT DISTINCT symbol, share_type FROM atlas_shares WHERE share_type IN ('mining','refining','reserves')"
+        ).fetchall()
+    finally:
+        con.close()
+
+    has_stage: dict[str, set[str]] = {}
+    for sym, st in stage_rows:
+        has_stage.setdefault(sym, set()).add(st)
+
+    # Sample check: Co, He, Og
+    for sym in ["Co", "He", "Og"]:
+        if sym not in by_sym:
+            continue
+        entry = by_sym[sym]
+        stages_in_db = has_stage.get(sym, set())
+        assert entry["has_mining"] == ("mining" in stages_in_db), (
+            f"{sym}: has_mining={entry['has_mining']} but DB has mining={('mining' in stages_in_db)}"
+        )
+        assert entry["has_refining"] == ("refining" in stages_in_db), (
+            f"{sym}: has_refining={entry['has_refining']} but DB has refining={('refining' in stages_in_db)}"
+        )
+        assert entry["has_reserves"] == ("reserves" in stages_in_db), (
+            f"{sym}: has_reserves={entry['has_reserves']} but DB has reserves={('reserves' in stages_in_db)}"
+        )
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM-INV-5: _build_element_index is deterministic across repeated calls
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_inv5_element_index_deterministic():
+    """Two consecutive calls to _build_element_index must return identical output."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        elements_df = con.execute(
+            """
+            SELECT symbol, atomic_number, name, category, industrial_tier,
+                   commercial_production, narrative,
+                   us_critical_list_as_of_2025,
+                   eu_crm_list_as_of_2024,
+                   eu_strategic_list_as_of_2024,
+                   doe_short_term_criticality_rank,
+                   snapshot_year
+            FROM atlas_elements ORDER BY atomic_number
+            """
+        ).df()
+        elements_list = elements_df.to_dict(orient="records")
+
+        result1 = build_viewer._build_element_index(con, elements_list)
+        result2 = build_viewer._build_element_index(con, elements_list)
+    finally:
+        con.close()
+
+    assert result1 == result2, "_build_element_index produced different output on two consecutive calls"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM: heatmap controls HTML present in index.html
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_controls_html_in_index(viewer_dir):
+    """index.html must contain the heatmap controls, chips container, and stage toggle."""
+    text = (viewer_dir / "index.html").read_text()
+    assert 'id="heatmap-controls"' in text, "index.html missing heatmap-controls div"
+    assert 'id="heatmap-chips"' in text, "index.html missing heatmap-chips div"
+    assert 'id="heatmap-stage-toggle"' in text, "index.html missing heatmap-stage-toggle div"
+    assert 'id="heatmap-element-select"' in text, "index.html missing heatmap-element-select"
+    assert 'data-stage="mining"' in text, "index.html missing Mining stage button"
+    assert 'data-stage="refining"' in text, "index.html missing Refining stage button"
+    assert 'data-stage="reserves"' in text, "index.html missing Reserves stage button"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM: heatmap CSS present in atlas.css
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_css_classes_in_atlas_css(viewer_dir):
+    """atlas.css must contain the heatmap CSS classes."""
+    css = (viewer_dir / "assets" / "atlas.css").read_text()
+    for cls in [
+        ".heatmap-controls",
+        ".heatmap-element-select",
+        ".heatmap-stage-btn",
+        ".heatmap-chip",
+        ".heatmap-legend",
+        ".heatmap-legend-bar",
+    ]:
+        assert cls in css, f"atlas.css missing {cls} rule"
+    # --map-no-data CSS variable must be defined
+    assert "--map-no-data" in css, "atlas.css missing --map-no-data variable"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# HM: charts_map.js contains heatmap-mode code
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_hm_charts_map_js_has_heatmap_code(viewer_dir):
+    """charts_map.js must contain heatmap mode logic."""
+    js = (viewer_dir / "assets" / "charts_map.js").read_text()
+    assert "heatmapIndex" in js, "charts_map.js missing heatmapIndex"
+    assert "buildHeatmapIndex" in js, "charts_map.js missing buildHeatmapIndex function"
+    assert "activateHeatmap" in js, "charts_map.js missing activateHeatmap function"
+    assert "deactivateHeatmap" in js, "charts_map.js missing deactivateHeatmap function"
+    assert "atlas-element-index" in js, "charts_map.js must reference atlas-element-index"
+    assert "heatFill" in js, "charts_map.js missing heatFill function"
+    assert "interpolateYlOrRd" in js, "charts_map.js must use d3.interpolateYlOrRd"
+    assert "history.replaceState" in js, "charts_map.js must use history.replaceState for URL state"
+    assert "URLSearchParams" in js, "charts_map.js must parse URL params"
