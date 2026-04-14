@@ -560,3 +560,152 @@ footer {
   color: var(--muted);
 }
 footer a { color: var(--muted); }
+
+/* ── table controls (filter chips + search) ── */
+.table-controls {
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.table-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.table-search {
+  flex: 1 1 220px;
+  max-width: 340px;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.table-search:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.clear-all-btn {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clear-all-btn:hover { background: var(--border); }
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.filter-group-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 5.5rem;
+}
+
+.filter-chip {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 80ms ease, border-color 80ms ease;
+}
+
+.filter-chip:hover { border-color: var(--accent); }
+
+.filter-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.filter-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.filter-select {
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.country-page-link {
+  font-size: 0.8rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ── empty state row ── */
+.table-empty-state td {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.5rem 0.6rem;
+  font-size: 0.88rem;
+}
+
+.table-empty-state .clear-inline-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.88rem;
+  padding: 0 0.2rem;
+  text-decoration: underline;
+}
+
+/* ── sortable column headers ── */
+.th-sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.th-sortable:hover { background: var(--surface); }
+
+.th-sortable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.th-sortable::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  margin-left: 0.3em;
+  opacity: 0.35;
+}
+
+.th-sortable[aria-sort="ascending"]::after  { content: "▲"; opacity: 1; }
+.th-sortable[aria-sort="descending"]::after { content: "▼"; opacity: 1; }
+
+/* ── byproduct graph CTA ── */
+.byproduct-graph-cta {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+}
