@@ -58,11 +58,14 @@
   };
 
   // ── Node color by tier ────────────────────────────────────────────────────
+  // Muted, terminal-ish palette: low saturation, so nodes read as a family
+  // rather than a set of competing alarm colors.
   const TIER_COLOR = {
-    3: "#d97706",   // amber — CRITICAL_SCARCE
-    4: "#2563eb",   // steel blue — HIGH_VOLUME_WORKHORSE
+    3: "#b88a4e",   // muted tan/amber — CRITICAL_SCARCE
+    4: "#5b7a9a",   // dusty slate blue — HIGH_VOLUME_WORKHORSE
   };
   const DEFAULT_COLOR = "#9ca3af"; // muted gray — niche / novelty / unknown
+  const US_CRITICAL_STROKE = "#a05858"; // desaturated brick
 
   function tierColor(tier) {
     return TIER_COLOR[tier] || DEFAULT_COLOR;
@@ -269,7 +272,7 @@
     const r = nodeRadius(n);
     const fill = tierColor(n.tier);
     const strokeWidth = n.us_critical ? 3 : 1;
-    const strokeColor = n.us_critical ? "#dc2626" : "#6b7280";
+    const strokeColor = n.us_critical ? US_CRITICAL_STROKE : "#6b7280";
 
     if (isPrimary(n.symbol)) {
       // Rounded rectangle (D-shape approximation)
@@ -465,19 +468,19 @@
   legendEl.className = "byproduct-legend";
   legendEl.innerHTML = `
     <span class="byproduct-legend-item">
-      <span class="byproduct-legend-swatch-sq" style="background:#d97706"></span>
+      <span class="byproduct-legend-swatch-sq" style="background:${TIER_COLOR[3]}"></span>
       Critical / scarce (tier 3)
     </span>
     <span class="byproduct-legend-item">
-      <span class="byproduct-legend-swatch" style="background:#2563eb"></span>
+      <span class="byproduct-legend-swatch" style="background:${TIER_COLOR[4]}"></span>
       Workhorse (tier 4)
     </span>
     <span class="byproduct-legend-item">
-      <span class="byproduct-legend-swatch" style="background:#9ca3af"></span>
+      <span class="byproduct-legend-swatch" style="background:${DEFAULT_COLOR}"></span>
       Niche / novelty
     </span>
     <span class="byproduct-legend-item">
-      <span class="byproduct-legend-swatch" style="background:#dc2626;border-radius:50%;outline:3px solid #dc2626;outline-offset:2px"></span>
+      <span class="byproduct-legend-swatch" style="background:${US_CRITICAL_STROKE};border-radius:50%;outline:3px solid ${US_CRITICAL_STROKE};outline-offset:2px"></span>
       US critical minerals list
     </span>
     <span class="byproduct-legend-item">
@@ -485,7 +488,7 @@
       Primary node (no byproduct dependency)
     </span>
     <span class="byproduct-legend-item">
-      <span class="byproduct-legend-swatch" style="background:#2563eb"></span>
+      <span class="byproduct-legend-swatch" style="background:${TIER_COLOR[4]}"></span>
       Byproduct node (circle)
     </span>
     <span class="byproduct-legend-item" style="font-size:0.75rem">
