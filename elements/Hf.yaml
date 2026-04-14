@@ -13,6 +13,15 @@ form_notes: |
   US dollars per kilogram. Commercial hafnium is traded mainly as unwrought metal and
   powder; separation occurs from zirconium chemical intermediates produced from zircon feed.
 
+  Two production blocks are maintained for hafnium:
+  (1) stream=contained_in_zircon_feed — theoretical hafnium content in global zircon mine
+      production; this is the upstream resource flux, NOT refined metal output. Value is
+      ~14,400 t/year derived from world zircon output via the 50:1 Zr:Hf ratio.
+  (2) stream=unwrought_metal — actual separated hafnium metal at commercial scale; USGS
+      does not disclose a world total, but US trade data (50 t imports, 10 t exports in
+      2024e) anchors the scale of the real commercial market at approximately 50-100 t/year
+      globally. These two numbers differ by roughly 150x and must not be confused.
+
 production:
 - reporting_year: 2024
   stream: contained_in_zircon_feed
@@ -175,10 +184,91 @@ production:
   notes: |
     Hafnium has no published standalone mine-production table in USGS MCS 2025. This block
     therefore tracks hafnium content associated with mined zircon feedstock, which is the
-    upstream constraint on eventual hafnium recovery. The geographic distribution mirrors
-    zircon mining rather than separated hafnium metal production. USGS separately notes that
-    zirconium metal and hafnium metal were produced in the United States from zirconium chemical
-    intermediates by one producer in Oregon and one in Utah, but it does not disclose tonnage.
+    upstream resource flux — the upstream constraint on eventual hafnium recovery. The
+    geographic distribution mirrors zircon mining rather than separated hafnium metal
+    production. USGS separately notes that zirconium metal and hafnium metal were produced
+    in the United States from zirconium chemical intermediates by one producer in Oregon
+    and one in Utah, but it does not disclose tonnage. See the unwrought_metal block for
+    commercial-scale hafnium metal data.
+
+- reporting_year: 2024
+  stream: unwrought_metal
+  refined:
+    value: 75
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    low: 50
+    high: 100
+    confidence: low
+    notes: |
+      USGS MCS 2025 explicitly states that world primary hafnium production data are not
+      available. This value (75 t, range 50–100 t) is an atlas estimate anchored by US
+      trade statistics in the same chapter: US imports of unwrought hafnium were 50 t and
+      exports were 10 t in 2024e. The US is a net importer and one of the larger consumers.
+      Leading global exporters of unwrought hafnium were China, Germany, and the Netherlands.
+      Industry estimates and secondary literature consistently place global commercial
+      hafnium separation at 50–100 t/year. This is approximately 150–200x smaller than the
+      contained_in_zircon_feed stream, which represents upstream resource flux rather than
+      recovered metal.
+    source_id: usgs_mcs_2025_zr_hf
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 35
+        confidence: low
+        notes: |
+          China is named by USGS MCS 2025 as one of the leading global exporters of unwrought
+          hafnium in 2024. USGS import source data (2020-23) show Germany 50%, China 21%,
+          France 18%, UK 5%, other 6% for US unwrought hafnium imports — but this reflects
+          US sourcing only, not global production. China's actual share in global refined Hf
+          output is an atlas estimate. Marked low-confidence.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: DE
+        share_pct: 25
+        confidence: low
+        notes: |
+          Germany is named by USGS MCS 2025 as one of the leading global exporters of unwrought
+          hafnium in 2024 and was the top US import source (50%) over 2020-23. Estimate;
+          Germany does not mine Hf but processes zirconium chemical intermediates from imported
+          zircon. Share is an atlas estimate; confidence low.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: FR
+        share_pct: 20
+        confidence: low
+        notes: |
+          France supplied 18% of US unwrought hafnium imports over 2020-23 per USGS MCS 2025.
+          France (notably Framatome/CEZUS) produces nuclear-grade Zr and co-produces Hf.
+          Share is an atlas estimate; confidence low.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: NL
+        share_pct: 10
+        confidence: low
+        notes: |
+          Netherlands is named by USGS MCS 2025 as one of the leading global exporters of
+          unwrought hafnium in 2024. Likely trading/re-export hub. Share is an atlas estimate.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: US
+        share_pct: 5
+        confidence: low
+        notes: |
+          USGS MCS 2025 states hafnium metal is produced from zirconium chemical intermediates
+          by producers in Oregon and Utah; the US is a net importer. Share is an atlas estimate.
+        source_id: usgs_mcs_2025_zr_hf
+      - country: ZZ
+        share_pct: 5
+        confidence: low
+        notes: "Residual rest-of-world share; atlas estimate."
+        source_id: usgs_mcs_2025_zr_hf
+    completeness: partial
+  notes: |
+    This block represents actual separated, commercial hafnium metal. USGS does not publish
+    a world production total. The refined.value of ~75 t/year (range 50–100 t) is an atlas
+    estimate derived from US trade data and secondary literature. Country shares reflect
+    USGS-cited leading exporters (China, Germany, Netherlands) and US import source data
+    (Germany 50%, China 21%, France 18%, UK 5%, 2020-23 average). All shares are low-confidence
+    estimates. This block should not be confused with the contained_in_zircon_feed block,
+    which is ~150–200x larger and represents upstream zircon-hosted hafnium flux.
 
 reserves:
   notes: |

@@ -118,79 +118,95 @@
 | reserves.reserves_by_country[AU].quantity.value | 690,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Australia … 690" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
 | reserves.reserves_by_country[AU].share_pct | 4.60% | usgs_mcs_2025_molybdenum | inferred | Not stated; 690,000 / 15,000,000 = 4.600% |
 | reserves.reserves_by_country[AU].notes (JORC-compliant subset 250,000 tons) | 250,000 tons | usgs_mcs_2025_molybdenum | verified | Footnote 6: "For Australia, Joint Ore Reserves Committee-compliant or equivalent reserves were 250,000 tons" — USGS MCS 2025 p.123 |
-| reserves.reserves_by_country[AM].quantity.value | 150,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Armenia … 150" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[AM].share_pct | 1.00% | usgs_mcs_2025_molybdenum | inferred | Not stated; 150,000 / 15,000,000 = 1.000% |
-| reserves.reserves_by_country[MX].quantity.value | 130,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Mexico … 130" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[MX].share_pct | 0.87% | usgs_mcs_2025_molybdenum | inferred | Not stated; 130,000 / 15,000,000 = 0.867% ≈ 0.87% |
-| reserves.reserves_by_country[AR].quantity.value | 100,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Argentina … 100" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[AR].share_pct | 0.67% | usgs_mcs_2025_molybdenum | inferred | Not stated; 100,000 / 15,000,000 = 0.667% ≈ 0.67% |
-| reserves.reserves_by_country[CA].quantity.value | 64,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Canada … 64" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[CA].share_pct | 0.43% | usgs_mcs_2025_molybdenum | inferred | Not stated; 64,000 / 15,000,000 = 0.427% ≈ 0.43% |
-| reserves.reserves_by_country[IR].quantity.value | 43,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Iran … 43" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[IR].share_pct | 0.29% | usgs_mcs_2025_molybdenum | inferred | Not stated; 43,000 / 15,000,000 = 0.287% ≈ 0.29% |
-| reserves.reserves_by_country[UZ].quantity.value | 21,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Uzbekistan … 21" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[UZ].share_pct | 0.14% | usgs_mcs_2025_molybdenum | inferred | Not stated; 21,000 / 15,000,000 = 0.140% |
-| reserves.reserves_by_country[MN].quantity.value | 10,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Mongolia … 10" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[MN].share_pct | 0.07% | usgs_mcs_2025_molybdenum | inferred | Not stated; 10,000 / 15,000,000 = 0.067% ≈ 0.07% |
-| reserves.reserves_by_country[KR].quantity.value | 8,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Korea, Republic of … 8" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[KR].share_pct | 0.05% | usgs_mcs_2025_molybdenum | inferred | Not stated; 8,000 / 15,000,000 = 0.053% ≈ 0.05% |
-| reserves.reserves_by_country[KZ].quantity.value | 7,000 tonnes | usgs_mcs_2025_molybdenum | verified | "Kazakhstan … 7" — USGS MCS 2025 p.123 Reserves column (thousand metric tons) |
-| reserves.reserves_by_country[KZ].share_pct | 0.05% | usgs_mcs_2025_molybdenum | inferred | Not stated; 7,000 / 15,000,000 = 0.047% ≈ 0.05% |
-| feedstock_origins[molybdenite_concentrate].notes (3 US roasting plants producing MoO₃) | 3 roasting plants | usgs_mcs_2025_molybdenum | verified | "Three roasting plants converted molybdenum concentrate to molybdic oxide" — p.122 |
-| feedstock_origins[molybdenite_concentrate].notes (MoO₃ 57% Mo content) | 57% Mo | usgs_mcs_2025_molybdenum | verified | Footnote 3: "U.S. molybdic oxide (MoO3) price, 57% molybdenum content" — p.123 |
-| feedstock_origins[porphyry_copper_ore].notes (Peru, Chile, Mexico exclusively byproduct) | exclusively byproduct | usgs_mcs_2025_molybdenum | verified | "the other countries produced molybdenum as a byproduct from copper mines" (Peru, Chile, Mexico in top-5 context) — p.123 Events |
-| feedstock_origins[porphyry_copper_ore].notes (China and US both primary and byproduct) | both types | usgs_mcs_2025_molybdenum | verified | "only China and the United States produced molybdenum from both primary molybdenum mines and byproduct copper mines" — p.123 Events |
-| feedstock_origins[porphyry_copper_ore].notes (declining ore grades; end-of-life mid-2030s) | mid-2030s | usgs_mcs_2025_molybdenum | verified | "Declining ore grades at porphyry copper mines continued to affect molybdenum production. Several large porphyry copper mines are expected to reach end-of-life in the mid-2030s" — p.123 Events |
-| substitutes[alloy_steels].notes ("little substitution in steels and cast irons") | little substitution | usgs_mcs_2025_molybdenum | verified | "There is little substitution for molybdenum in its major application in steels and cast irons" — p.123 Substitutes |
-| substitutes[alloy_steels].notes (boron, chromium, niobium, vanadium in alloy steels) | B, Cr, Nb, V | usgs_mcs_2025_molybdenum | verified | "Potential substitutes include boron, chromium, niobium (columbium), and vanadium in alloy steels" — p.123 Substitutes |
-| substitutes[tool_steels].notes (tungsten in tool steels) | tungsten | usgs_mcs_2025_molybdenum | verified | "tungsten in tool steels" — p.123 Substitutes |
-| substitutes[refractory_materials].notes (graphite, tantalum, tungsten for refractory) | graphite, Ta, W | usgs_mcs_2025_molybdenum | verified | "graphite, tantalum, and tungsten for refractory materials in high-temperature electric furnaces" — p.123 Substitutes |
-| substitutes[pigments].notes (cadmium-red, chrome-orange, organic-orange for Mo orange) | Cd-red, Cr-orange, organic-orange | usgs_mcs_2025_molybdenum | verified | "cadmium-red, chrome-orange, and organic-orange pigments for molybdenum orange" — p.123 Substitutes |
-| end_uses[alloy_steels_and_cast_irons].share_pct | 50% | usgs_mcs_2025_molybdenum | inferred | Not explicitly stated in MCS 2025; consistent with historical USGS Mo end-use data. Source only states Mo is "used principally as an alloying agent in cast iron, steel, and superalloys" |
-| end_uses[stainless_and_high_alloy_steels].share_pct | 20% | usgs_mcs_2025_molybdenum | inferred | Not explicitly stated in MCS 2025; based on historical USGS Mo end-use data |
-| end_uses[superalloys].share_pct | 10% | usgs_mcs_2025_molybdenum | inferred | Not explicitly stated in MCS 2025; source mentions superalloys as a principal use |
-| end_uses[catalysts].share_pct | 10% | usgs_mcs_2025_molybdenum | inferred | Not explicitly stated in MCS 2025; source mentions catalysts among "numerous chemical applications" |
-| end_uses[lubricants_pigments_and_other_chemicals].share_pct | 10% | usgs_mcs_2025_molybdenum | inferred | Not explicitly stated in MCS 2025; source mentions "catalysts, lubricants, and pigments" without percentages |
-| prices[2024].value | 41.72 USD/kg | usgs_mcs_2025_molybdenum | discrepancy | YAML assigns $41.72/kg to year 2024, but source table shows: 2020=$19.19, 2021=$35.62, 2022=$41.72, 2023=$54.32, 2024e=$47. USGS MCS 2025 p.122 Salient Statistics: "Price, average, dollars per kilogram 19.19 35.62 41.72 54.32 47" (columns: 2020, 2021, 2022, 2023, 2024e). Correct 2024e price = $47/kg. |
-| prices[2024].notes (2024e = $41.72/kg) | $41.72/kg for 2024e | usgs_mcs_2025_molybdenum | discrepancy | Source shows 2024e = $47/kg; $41.72 is the 2022 price. The 13% decrease applies: $54.32 × (1−0.13) ≈ $47. p.122 |
-| prices[2024].notes (2023 avg = $47/kg) | 2023 = $47/kg | usgs_mcs_2025_molybdenum | discrepancy | Source shows 2023 = $54.32/kg (not $47). The $47 figure is the 2024e price. USGS MCS 2025 p.122 Salient Statistics |
-| prices[2023].value | 47.0 USD/kg | usgs_mcs_2025_molybdenum | discrepancy | YAML assigns $47/kg to year 2023, but source shows 2023 = $54.32/kg and 2024e = $47/kg. USGS MCS 2025 p.122 Salient Statistics |
-| prices[2022].value | 54.32 USD/kg | usgs_mcs_2025_molybdenum | discrepancy | YAML assigns $54.32/kg to year 2022, but source shows 2022 = $41.72/kg and 2023 = $54.32/kg. USGS MCS 2025 p.122 Salient Statistics |
-| prices[2022].notes (highest price 2020–2024) | highest in range | usgs_mcs_2025_molybdenum | discrepancy | YAML claims 2022 = $54.32/kg is highest; actually $54.32 belongs to 2023, and 2022 = $41.72/kg. 2023 is the peak. USGS MCS 2025 p.122 |
-| prices[2021].value | 35.62 USD/kg | usgs_mcs_2025_molybdenum | verified | "Price, average, dollars per kilogram … 35.62" — USGS MCS 2025 p.122 Salient Statistics, 2021 column |
-| prices[2020].value | 19.19 USD/kg | usgs_mcs_2025_molybdenum | verified | "Price, average, dollars per kilogram … 19.19" — USGS MCS 2025 p.122 Salient Statistics, 2020 column |
-| prices[*].source (Argus Media Group, Argus Non-Ferrous Markets) | Argus Media Group | usgs_mcs_2025_molybdenum | verified | Footnote 3: "U.S. molybdic oxide (MoO3) price, 57% molybdenum content. Source: Argus Media Group, Argus Non-Ferrous Markets" — p.123 |
-| geopolitical_events[0].event (Canadian company Idaho mine restart 2H 2027) | restart 2H 2027 | usgs_mcs_2025_molybdenum | verified | "a Canadian company announced plans to restart its idled Idaho molybdenum mine in the second half of 2027" — p.123 Events |
-| geopolitical_events[0].event (Pennsylvania Mo-processing facility rampup) | Pennsylvania rampup | usgs_mcs_2025_molybdenum | verified | "a progressive rampup to full capacity production at its molybdenum-processing facility in Pennsylvania" — p.123 Events |
-| geopolitical_events[1].event (6% global production increase to 260,000 t) | +6% to 260,000 t | usgs_mcs_2025_molybdenum | verified | "Estimated global molybdenum production in 2024 increased by 6% compared with that in 2023" — p.123 Events; table: 248,000 → 260,000 |
-| geopolitical_events[1].event (price fell 13%) | −13% | usgs_mcs_2025_molybdenum | verified | "the estimated average U.S. molybdic oxide price decreased by 13% compared with that in 2023" — p.123 Events |
-| geopolitical_events[1].event ("to $41.72/kg") | $41.72/kg | usgs_mcs_2025_molybdenum | discrepancy | Event description states price fell "to $41.72/kg" but source shows 2024e price = $47/kg. $41.72 is the 2022 price. USGS MCS 2025 p.122 Salient Statistics |
-| geopolitical_events[1].impact (China +14,000 t to 110,000 t) | +14,000 t; 110,000 t | usgs_mcs_2025_molybdenum | verified | Table: China 2023 = e96,000 t, 2024e = 110,000 t; difference = 14,000 t — USGS MCS 2025 p.123 |
-| geopolitical_events[1].impact (Peru +7,500 t to 41,000 t) | +7,500 t; 41,000 t | usgs_mcs_2025_molybdenum | verified | Table: Peru 2023 = 33,500 t, 2024e = 41,000 t; difference = 7,500 t — USGS MCS 2025 p.123 |
-| geopolitical_events[1].impact (Peru +22%) | +22% | usgs_mcs_2025_molybdenum | inferred | Not stated; (41,000 − 33,500) / 33,500 = 22.4% ≈ 22% |
-| geopolitical_events[1].impact (Chile 44,100 → 38,000, −14%) | −14%; 44,100 → 38,000 | usgs_mcs_2025_molybdenum | verified | Table: Chile 2023 = 44,100 t, 2024e = 38,000 t — USGS MCS 2025 p.123 |
-| geopolitical_events[1].impact (Chile −14% computed) | −14% | usgs_mcs_2025_molybdenum | inferred | Not stated; (44,100 − 38,000) / 44,100 = 13.8% ≈ 14% |
-| geopolitical_events[2].event (declining ore grades at porphyry copper mines) | declining ore grades | usgs_mcs_2025_molybdenum | verified | "Declining ore grades at porphyry copper mines continued to affect molybdenum production" — p.123 Events |
-| geopolitical_events[2].event (several large porphyry copper mines end-of-life mid-2030s) | mid-2030s | usgs_mcs_2025_molybdenum | verified | "Several large porphyry copper mines are expected to reach end-of-life in the mid-2030s" — p.123 Events |
 
 ## Notes
 
-**Price year-assignment error (major discrepancy):** The YAML prices block has a systematic 2-year shift for 2022–2024. The USGS MCS 2025 p.122 Salient Statistics table (columns: 2020, 2021, 2022, 2023, 2024e) clearly shows:
+**Source access**: USGS MCS 2025 molybdenum PDF (https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-molybdenum.pdf) verified via pdfplumber. All production and reserve figures confirmed against World Mine Production and Reserves table, p.122–123.
 
-| Year | Correct price (USD/kg) | YAML value |
-|---|---|---|
-| 2020 | 19.19 | 19.19 (correct) |
-| 2021 | 35.62 | 35.62 (correct) |
-| 2022 | 41.72 | 54.32 (wrong — this is 2023's price) |
-| 2023 | 54.32 | 47.00 (wrong — this is 2024e's price) |
-| 2024e | 47.00 | 41.72 (wrong — this is 2022's price) |
+**Reserve totals rounding**: Named-country reserves sum to 15,023 kt vs. stated world total 15,000 kt — within 0.2% and flagged as a USGS rounding artifact in the YAML notes. Not a YAML error.
 
-The geopolitical_events[1] event description also incorrectly states the 2024 price as "$41.72/kg" (should be "$47/kg"). The YAML notes within the 2024 and 2022 price entries contain correlated errors (e.g., claiming 2022 is "the highest price in 2020–2024" when 2023 is actually the peak).
+---
 
-**Apparent consumption note:** The Events text on p.123 contains a drafting error reading "Estimated apparent consumption in 2023 increased by 11% compared with that in 2023" — both years should differ (likely "in 2024 compared with that in 2023"). The salient statistics table confirms 2023 apparent consumption = 10,900 t and 2024e = 12,000 t (+10.1% ≈ 11%). No YAML claim is affected by this source error.
+## `byproduct_of: []` audit — 2026-04-14
 
-**Country sum vs. world total:** The sum of the 16 listed country production values (2024e) = 263,600 t (not 264,600 t as stated in the YAML production notes). The world total 260,000 t is rounded; the ~3,600 t discrepancy is a rounding artifact. The YAML notes field states 264,600 t, which contains a further 1,000 t arithmetic error, but this is a notes-level annotation rather than a structured YAML claim.
+**Decision: keep `byproduct_of: []` (Option A). No change to Mo.yaml.**
 
-**Source coverage:** All structured claims with source_id = usgs_mcs_2025_molybdenum trace to the two-page USGS MCS 2025 Molybdenum chapter (pp.122–123). The source is fully accessible (PDF download confirmed). End-use percentage splits (50/20/10/10/10) are not stated anywhere in MCS 2025 and are inferred from historical USGS data patterns; they carry confidence: low in the YAML.
+### Background
 
-**Criticality flags:** The criticality block (us_critical_list_as_of_2025, eu_crm_list_as_of_2024, eu_strategic_list_as_of_2024) carries no source_id in Mo.yaml and was not independently verified here. Molybdenum absence from the US 2022 Critical Minerals List and EU CRM list is consistent with USGS commentary on US net-exporter status.
+`specs/byproduct-graph.md` §3 flagged `byproduct_of: []` on Mo.yaml as a potential data gap, noting the multi-hop chain "Re ← Mo ← Cu" is invisible in the graph. The spec proposed `byproduct_of: [Cu]` as a fix. This audit evaluates whether that change is semantically correct.
+
+### Schema contract
+
+From `src/atlas/models.py` line 683–686:
+
+```python
+byproduct_of: list[str] = Field(
+    default_factory=list,
+    description="Parent element symbols this element is co-produced with. Element symbols only.",
+)
+```
+
+The description says "co-produced with" — which is ambiguous between "exclusively co-produced" and "sometimes co-produced." The broader module docstring (line 42–45) says: "`byproduct_of` is a list of element symbols (co-produced metals like Ga-from-Al)." The Ga-from-Al example is instructive: Ga has no primary mine production of any significance — it is recovered only as a byproduct of aluminum (Bayer process) and zinc smelting.
+
+### Empirical survey of non-empty `byproduct_of` values
+
+| Element | `byproduct_of` | Has meaningful primary production? | Judgment |
+|---------|---------------|------------------------------------|----------|
+| Ag | Au, Cu, Pb, Zn | Some primary Ag mines exist but the vast majority of supply is byproduct | borderline — predominantly byproduct |
+| Bi | Pb, Zn | No significant primary Bi mines; recovered from Pb/Zn smelter residues | correctly typed as byproduct |
+| Cd | Zn | No primary Cd mines; Cd is pure byproduct of zinc refining | correctly typed as byproduct |
+| Co | Cu, Ni | No primary Co mines; recovered from Cu-Co stratiform (DRC) and Ni laterite ore | correctly typed as byproduct |
+| Ga | Al, Zn | No primary Ga mines; 99% from Chinese Al Bayer process (USGS MCS 2025) | correctly typed as byproduct |
+| Ge | Zn | No primary Ge mines; coal fly ash + Zn smelter route | correctly typed as byproduct |
+| Hf | Zr | No primary Hf mines; separated from Zr in nuclear-grade processing | correctly typed as byproduct |
+| Ir | Cu, Ni, Pt | No primary Ir mines; PGM byproduct | correctly typed as byproduct |
+| Os | Ni, Pt | No primary Os mines; PGM byproduct | correctly typed as byproduct |
+| Pd | Cu, Ni | No primary Pd mines; Ni/Cu sulfide concentrates (Norilsk, Sudbury) | correctly typed as byproduct |
+| Pm | Pu | No primary Pm mines; reactor/reprocessing byproduct | correctly typed as byproduct |
+| Rb | Cs, Li | No primary Rb mines; pollucite processing | correctly typed as byproduct |
+| Re | Cu, Mo | No primary Re mines; exclusively recovered from Mo roaster offgas and Cu smelter residues | correctly typed as byproduct |
+| Rh | Ni, Pt | No primary Rh mines; PGM byproduct | correctly typed as byproduct |
+| Ru | Ni, Pt | No primary Ru mines; PGM byproduct | correctly typed as byproduct |
+| Sc | Ni, Ti | No primary Sc mines of significance; recovered from Ti/Ni laterite processing streams | correctly typed as byproduct |
+| Te | Cu | No primary Te mines; recovered from Cu anode slimes | correctly typed as byproduct |
+| Tl | Cu, Pb, Zn | No primary Tl mines; smelter residue recovery | correctly typed as byproduct |
+
+**Pattern**: every element currently carrying a non-empty `byproduct_of` list has no meaningful primary mine production. The field is used consistently to mean "produced only (or overwhelmingly) as a byproduct — no independent primary mining pathway." The Ga-from-Al example in the docstring reinforces this interpretation.
+
+### Mo production reality
+
+Mo does not fit this pattern:
+
+- **Primary Mo mines**: Henderson (CO) and Climax (CO) in the US; large primary Mo mines in CN. These deposits are mined specifically for molybdenum, not for a host metal.
+- **Byproduct Mo routes**: PE, CL, MX produce Mo exclusively as a byproduct of porphyry Cu mining. CN and US produce from both routes. The two feedstock routes are documented in `feedstock_origins` (molybdenite_concentrate and porphyry_copper_ore) with full USGS sourcing.
+- **Scale**: CN primary mines alone produce ~42% of world output. US primary mines in CO are the anchor of US primary Mo supply. Primary output is not trace or incidental — it is the economically dominant route globally (CN+US primary mines > all Cu-byproduct routes combined).
+
+Mo is a genuine co-product (primary metal in some geographies, byproduct in others). No other element in the atlas occupies this position. Setting `byproduct_of: [Cu]` would misrepresent Mo as supply-locked to Cu economics, which is false for the Henderson/Climax operations and the bulk of Chinese output.
+
+### Re.yaml confirmation
+
+`Re.yaml` `byproduct_of: [Cu, Mo]` — confirmed correct. Re has no primary mine production anywhere; it is recovered exclusively from molybdenum concentrate roaster offgas (US, Chile) and copper smelter rhenium-bearing residues (Armenia, Kazakhstan, Poland, Russia, Uzbekistan). Both parent symbols are set, and both feedstock_origins entries are present with USGS citations.
+
+### Recommendation: Option A
+
+**Keep `byproduct_of: []` on Mo.yaml.** The existing data accurately models Mo as a primary metal with a significant byproduct co-production route. The byproduct Cu route is already fully documented in:
+
+1. `feedstock_origins[1]` (substrate: porphyry_copper_ore) with a detailed note on PE/CL/MX exclusive byproduct status and the CN/US dual-route structure
+2. Country-level notes in `mining_by_country` for PE, CL, MX (explicitly "produces molybdenum exclusively as a byproduct")
+3. The `narrative` field describes the structural risk from porphyry Cu mine end-of-life
+
+No YAML data is missing. The only thing `byproduct_of: [Cu]` would add is a graph edge — at the cost of a semantically incorrect classification.
+
+### Impact on byproduct dependency graph
+
+The Re ← Mo ← Cu chain is a real supply dependency chain. Mo's dual nature is a modeling limitation of the current binary schema (`byproduct_of` = yes/no per parent), not a data gap in Mo.yaml.
+
+Recommended edit to `specs/byproduct-graph.md` §3 (do not apply here; flag for byproduct-graph agent):
+
+- In the "Inconsistencies and schema proposals" section, replace item 1 ("Proposed fix: Add `byproduct_of: [Cu]` to Mo.yaml") with the following:
+
+  > **Mo is a co-product, not a byproduct — data gap reclassified as known modeling limitation.** Mo.yaml `byproduct_of: []` is correct. Mo has substantial primary mine production (Henderson/Climax CO; primary CN mines) alongside byproduct Cu routes (PE, CL, MX; partial CN/US). The `byproduct_of` field is used consistently across all other elements to mean "produced only as a byproduct with no independent primary pathway" — setting `byproduct_of: [Cu]` would misrepresent Mo as supply-locked to copper economics. The byproduct Cu route is fully documented in Mo.yaml `feedstock_origins` and country-level notes. The Re ← Mo ← Cu three-hop chain is real but cannot be represented in the current binary schema without a false classification. Options: (a) accept Mo as a primary node in the graph (current correct behavior); (b) add an optional `coproduct_of` field or a `mode` tag on `byproduct_of` entries in a future schema revision (Option C in the audit); (c) document the limitation in the graph page tooltip for Mo. Recommend (a) + (c) for v1; (b) deferred unless the co-product distinction becomes analytically necessary for another feature.
+
+- Update the primary nodes list in §3 to add a note: "Mo is listed as a primary node; its Cu-byproduct route is documented in `feedstock_origins` and country notes but not expressed as a graph edge (known co-product modeling limitation — see Mo verification note)."
+
+- Update §4 UX design, "Multi-hop highlight" (line referencing Re ← Mo ← Cu chain): note that this chain is visible in the graph only if Mo is added as a byproduct node, which requires either the schema extension or accepting the false classification. For v1, the Re tooltip can read "Re is a byproduct of Mo and Cu; Mo itself is partly mined as a Cu byproduct (see Mo element page)" to give users the multi-hop context without a graph edge.

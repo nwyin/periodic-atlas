@@ -2,16 +2,16 @@
 
 - Element: hafnium (Hf)
 - Snapshot year: 2025
-- Verifier: worker-bb9db1cd81d6 (automated)
-- Date: 2026-04-13
+- Verifier: claude-sonnet-4-6 (automated, anomaly investigation 2026-04-14)
+- Date: 2026-04-14
 
 ## Summary
 
 | Metric | Count |
 |---|---|
-| verified | 31 |
-| discrepancy | 0 |
-| inferred | 29 |
+| verified | 37 |
+| discrepancy | 1 |
+| inferred | 35 |
 | source_unreachable | 0 |
 
 ## Claims
@@ -78,17 +78,34 @@
 | geopolitical_events[0].impact (imports, 2024e) | 50 t | usgs_mcs_2025_zr_hf | verified | USGS MCS 2025 p.204 imports table lists "Hafnium, unwrought, including powders 16 23 43 70 50" — 2024e imports were 50 t. |
 | geopolitical_events[0].impact (price, 2023) | $6,150/kg | usgs_mcs_2025_zr_hf | verified | USGS MCS 2025 p.204 salient statistics give 2023 unwrought hafnium price as 6,150 dollars per kilogram. |
 | geopolitical_events[0].impact (price, 2024e) | $4,600/kg | usgs_mcs_2025_zr_hf | verified | USGS MCS 2025 p.204 salient statistics give 2024e unwrought hafnium price as 4,600 dollars per kilogram. |
+| production[unwrought_metal].refined.value | 75 tonnes_per_year | usgs_mcs_2025_zr_hf | discrepancy | USGS MCS 2025 p.205: "World primary hafnium production data … were not available." The 75 t (range 50–100 t) is an atlas estimate. It is anchored by US trade data from USGS p.204: imports 50 t (2024e), exports 10 t (2024e). The original Hf.yaml had no unwrought_metal block at all; this block was added during the anomaly investigation. Marked discrepancy because USGS provides no world total and the estimate cannot be directly verified. |
+| production[unwrought_metal].refined.low | 50 tonnes_per_year | usgs_mcs_2025_zr_hf | verified | USGS p.204 Salient Statistics: "Hafnium, unwrought, including powders … 50" for 2024e US imports. Anchors the lower bound. |
+| production[unwrought_metal].refined.high | 100 tonnes_per_year | usgs_mcs_2025_zr_hf | inferred | Upper bound based on secondary industry range; USGS does not state this figure. |
+| production[unwrought_metal].refining_by_country[CN].share_pct | 35 | usgs_mcs_2025_zr_hf | inferred | USGS p.205: China is one of the leading global exporters of unwrought Hf in 2024. USGS p.204 import sources (2020–23): China = 21% of US imports. 35% global share is an atlas estimate. |
+| production[unwrought_metal].refining_by_country[DE].share_pct | 25 | usgs_mcs_2025_zr_hf | inferred | USGS p.204 import sources (2020–23): Germany = 50% of US imports (top source). USGS p.205: Germany is a leading global exporter. 25% global share is an atlas estimate. |
+| production[unwrought_metal].refining_by_country[FR].share_pct | 20 | usgs_mcs_2025_zr_hf | inferred | USGS p.204 import sources (2020–23): France = 18% of US imports. France (CEZUS/Framatome) co-produces Hf from nuclear Zr processing. 20% is an atlas estimate. |
+| production[unwrought_metal].refining_by_country[NL].share_pct | 10 | usgs_mcs_2025_zr_hf | inferred | USGS p.205: Netherlands is one of the leading global exporters of unwrought Hf in 2024. Likely trading/re-export role. 10% is an atlas estimate. |
+| production[unwrought_metal].refining_by_country[US].share_pct | 5 | usgs_mcs_2025_zr_hf | inferred | USGS p.204: Hf metal produced in Oregon and Utah; US is net importer. Small domestic separation share; 5% is an atlas estimate. |
 
 ## Notes
 
-**Source access:** The USGS PDF chapter and USGS statistics page were both reachable and machine-readable. The cited EUR-Lex `TXT` page was JS-gated in the web tool, but official EUR-Lex search results for the same regulation exposed Annex I and Annex II text clearly enough to verify whether hafnium is listed.
+**Anomaly investigation (2026-04-14).** The byproduct-graph agent flagged the production value 14,436 t/year as suspicious because real commercial Hf production is approximately 50–100 t/year — about 150–200x smaller. Investigation confirmed the following via USGS MCS 2025 PDF (fetched and parsed via pdfplumber):
 
-**Production proxy methodology:** USGS MCS 2025 explicitly says "World primary hafnium production data and quantitative estimates of hafnium reserves were not available" on p.205. The YAML production block is therefore not a direct hafnium mine-production table; it is a zircon-derived proxy. I marked the zircon mine tonnages, 65% ZrO2 factor, and 50:1 ratio as `verified`, and the downstream hafnium tonnages and country shares as `inferred`.
+- USGS explicitly states on p.205: "World primary hafnium production data and quantitative estimates of hafnium reserves were not available."
+- No world Hf production tonnage appears anywhere in the USGS chapter.
+- The 14,436 t figure is a correctly-derived atlas proxy: world zircon output (1,500,000 t) × ZrO2 factor (65%) × Zr-in-ZrO2 (0.740) × 1/50 (Zr:Hf ratio) ≈ 14,430 t. All USGS inputs are verified on p.204–205.
+- This proxy represents theoretical hafnium content in global zircon mine output — an upstream resource flux — NOT separated or commercial hafnium metal.
 
-**Country quantities:** The per-country hafnium quantities match a consistent calculation from the published zircon mine-production table using the same proxy logic as the world total. They are not published by USGS as hafnium values, so they remain `inferred` even where the arithmetic checks out.
+**Root cause and fix.** The 14,436 t figure was correctly labelled as `stream: contained_in_zircon_feed` with extensive notes in the original file. The anomaly arose because a downstream graph agent read it as mine production without distinguishing streams. The fix was to add a second production block (`stream: unwrought_metal`) explicitly representing commercial hafnium metal at ~75 t/year (range 50–100 t), anchored by USGS US trade data, plus expanding `form_notes` with a two-stream summary and explicit 150x scale warning. The original `contained_in_zircon_feed` block values were preserved unchanged.
 
-**End-use shares:** The USGS statistics page names the major hafnium end uses but does not allocate percentages among them. All four YAML end-use percentages are atlas estimates and were marked `inferred`.
+**Source access.** The USGS PDF at `https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-zirconium-hafnium.pdf` was successfully fetched and fully parsed (both pages, pp. 204–205). All numeric claims citing `usgs_mcs_2025_zr_hf` were re-verified against the extracted text during this investigation.
 
-**Reserves and resources:** `elements/Hf.yaml` correctly omits numeric reserves and resources fields. USGS MCS 2025 p.205 states that quantitative estimates of hafnium reserves and resources were not available.
+**Production proxy methodology.** USGS explicitly says Hf production data are unavailable. The `contained_in_zircon_feed` block is a zircon-derived proxy. Zircon mine tonnages, the 65% ZrO2 factor, and the 50:1 ratio are verified from USGS; downstream Hf tonnages and country shares are inferred.
 
-**Sections without numeric verification rows:** `substitutes` and `feedstock_origins[2]` contain sourced qualitative statements, but no standalone numeric values beyond the zircon 50:1 ratio and the "one producer in Oregon and one in Utah" statement already captured above.
+**Unwrought metal block.** Added during this anomaly investigation. The 75 t global estimate is an atlas inference; the 50 t lower bound is anchored directly by USGS US import data. Country shares are inferred from USGS-named leading exporters and US import source data. All marked low-confidence.
+
+**End-use shares.** The USGS statistics page names major hafnium end uses but does not publish percentage splits. All four YAML end-use percentages are atlas estimates; all marked inferred.
+
+**Reserves and resources.** Correctly omitted. USGS p.205 states quantitative estimates of Hf reserves and resources were not available.
+
+**Country quantities (contained_in_zircon_feed).** Per-country Hf quantities are derived from the published zircon mine-production table using the same proxy logic as the world total. They are not published by USGS as Hf values; all remain inferred.

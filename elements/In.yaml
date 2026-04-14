@@ -1,0 +1,449 @@
+symbol: In
+atomic_number: 49
+name: indium
+category: post_transition_metal
+industrial_tier: 3
+commercial_production: true
+snapshot_year: 2025
+form_notes: |
+  USGS MCS 2025 reports all figures in metric tons of indium content unless
+  otherwise specified. Indium has no mine-stage production figure; USGS tracks
+  only refinery production and capacity. The US has had zero domestic refinery
+  production since at least 2020, and all domestic consumption is met through
+  imports. Refinery production data for most countries were derived by USGS from
+  trade data, production capacity, and changes in related lead and zinc smelter
+  output (footnote 6 of MCS 2025 indium chapter); consequently, country-level
+  figures carry medium confidence.
+
+production:
+- reporting_year: 2024
+  stream: refinery
+  refined:
+    value: 1080
+    unit: tonnes_per_year
+    form: metal
+    approximate: true
+    confidence: high
+    notes: |
+      USGS MCS 2025 p.91 World Refinery Production and Capacity table:
+      "World total (rounded) … 1,080" (2024 estimated). The 2023 figure
+      was 1,020 tonnes. USGS footnote 6: refinery production data were
+      limited or unavailable for most countries; estimates were derived
+      from trade data, production capacity, and changes in related lead
+      and zinc smelter production.
+    source_id: usgs_mcs_2025_indium
+  mining_by_country:
+    shares: []
+    completeness: partial
+  refining_by_country:
+    shares:
+      - country: CN
+        share_pct: 70
+        quantity:
+          value: 760
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: high
+        notes: |
+          USGS MCS 2025 chapter text: "China is the leading global producer of
+          Indium, accounting for 70% of the world total." Absolute figure 760 t
+          is the 2024 estimated refinery production from the World Refinery
+          Production and Capacity table. Share is stated explicitly in source.
+        source_id: usgs_mcs_2025_indium
+      - country: KR
+        share_pct: 17
+        quantity:
+          value: 180
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          Republic of Korea. 180 t from USGS MCS 2025 World Refinery Production
+          and Capacity table, 2024 estimated column. Share derived: 180/1080 = 16.7%,
+          rounded to 17%.
+        source_id: usgs_mcs_2025_indium
+      - country: JP
+        share_pct: 6
+        quantity:
+          value: 60
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          Japan. 60 t from USGS MCS 2025 World Refinery Production table,
+          2024 estimated column. Share derived: 60/1080 = 5.6%, rounded to 6%.
+        source_id: usgs_mcs_2025_indium
+      - country: CA
+        share_pct: 3
+        quantity:
+          value: 35
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          Canada. 35 t from USGS MCS 2025 World Refinery Production table,
+          2024 estimated column. Share derived: 35/1080 = 3.2%, rounded to 3%.
+        source_id: usgs_mcs_2025_indium
+      - country: FR
+        share_pct: 2
+        quantity:
+          value: 21
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          France. 21 t from USGS MCS 2025 World Refinery Production table,
+          2024 estimated column. Share derived: 21/1080 = 1.9%, rounded to 2%.
+        source_id: usgs_mcs_2025_indium
+      - country: BE
+        share_pct: 1
+        quantity:
+          value: 10
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          Belgium. 10 t from USGS MCS 2025 World Refinery Production table,
+          2024 estimated column. The 2023 figure was 19 t — a significant
+          decline. Share derived: 10/1080 = 0.9%, rounded to 1%.
+        source_id: usgs_mcs_2025_indium
+      - country: RU
+        share_pct: 1
+        quantity:
+          value: 10
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          Russia. 10 t from USGS MCS 2025 World Refinery Production table,
+          2024 estimated column (2023 figure was 5 t). Share derived:
+          10/1080 = 0.9%, rounded to 1%.
+        source_id: usgs_mcs_2025_indium
+      - country: ZZ
+        share_pct: 0
+        quantity:
+          value: 2
+          unit: tonnes_per_year
+          form: metal
+          approximate: true
+          confidence: medium
+          source_id: usgs_mcs_2025_indium
+        confidence: medium
+        notes: |
+          Uzbekistan 1 t and Peru 0 t (capacity only, no 2024 production listed)
+          per USGS MCS 2025 table. ZZ bucket captures Uzbekistan's 1 t and any
+          unreported minor producers. Named-country sum (760+180+60+35+21+10+10)
+          = 1076 t; residual = 4 t attributed to rounding and Uzbekistan (1 t).
+          Share rounds to <1%, assigned 0%.
+        source_id: usgs_mcs_2025_indium
+    completeness: complete
+  notes: |
+    USGS reports no mine-stage tracking for indium; the refinery stage is the
+    first commercial aggregation point. Total 2024 world refinery capacity was
+    1,800 t, implying ~60% utilization. The US had zero refinery production
+    in every year of the 2020–2024 salient statistics series.
+
+reserves:
+  notes: |
+    USGS MCS 2025 does not publish indium reserves separately. The chapter text
+    states indium "is most commonly recovered from the zinc-sulfide ore mineral
+    sphalerite" and that the indium content of zinc deposits ranges from less
+    than 1 ppm to 100 ppm. Quantified reserves are reported only at the zinc
+    level; indium reserves can be inferred by applying recovery assumptions to
+    zinc reserves but USGS does not publish such a figure in the indium chapter.
+    See the USGS MCS 2025 Zinc chapter for zinc reserve data from which indium
+    reserves are partially derivable.
+
+byproduct_of: [Zn]
+feedstock_origins:
+  - substrate: zinc_sulfide_ore_sphalerite
+    notes: |
+      USGS MCS 2025 p.91: "Indium is most commonly recovered from the zinc-sulfide
+      ore mineral sphalerite. The indium content of zinc deposits from which it is
+      recovered ranges from less than 1 part per million to 100 parts per million."
+      Sphalerite is the primary feedstock for essentially all world refinery
+      production.
+    source_id: usgs_mcs_2025_indium
+  - substrate: chalcopyrite_and_stannite_base_metal_sulfides
+    notes: |
+      USGS MCS 2025 p.91: "Although the geochemical properties of indium are such
+      that it occurs in trace amounts in other base-metal sulfides — particularly
+      chalcopyrite and stannite — indium recovery from most deposits of these
+      minerals was not economic." Recovery is theoretically possible but not
+      currently a material supply source.
+    source_id: usgs_mcs_2025_indium
+
+substitutes:
+  - application: ito_flat_panel_displays
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph lists several ITO alternatives: antimony
+      tin oxide coatings (successfully annealed to LCD glass); carbon nanotube
+      coatings (for flexible displays, solar cells, touch screens); poly
+      (3,4-ethylene dioxythiophene) (PEDOT) for flexible displays and OLEDs;
+      copper or silver nanowires for touch screens; graphene for ITO electrodes in
+      solar cells and flexible touch screens; and zinc oxide nanopowder for LCDs.
+      All are partial substitutes; none has achieved commercial scale displacement
+      of ITO as of the snapshot year.
+    source_id: usgs_mcs_2025_indium
+  - application: nuclear_reactor_control_rod_alloys
+    availability: partial
+    notes: |
+      USGS MCS 2025 substitutes paragraph: "Hafnium can replace indium in nuclear
+      reactor control rod alloys." This is a niche application; hafnium is the
+      named substitute.
+    source_id: usgs_mcs_2025_indium
+
+end_uses:
+  uses:
+    - application: ito_flat_panel_displays_and_touchscreens
+      share_pct: 80
+      confidence: medium
+      notes: |
+        USGS MCS 2025 chapter text: "Production of indium tin oxide (ITO) continued
+        to account for most global indium consumption. ITO thin-film coatings were
+        primarily used for electrically conductive purposes in a variety of
+        flat-panel displays — most commonly liquid crystal displays (LCDs)." USGS
+        does not provide an explicit percentage for ITO in the 2025 MCS chapter.
+        The 80% figure is consistent with historical USGS and IEA reporting (ITO
+        typically cited at 70–85% of demand); assigned medium confidence pending a
+        primary quantitative citation for 2024.
+      source_id: usgs_mcs_2025_indium
+    - application: alloys_and_solders
+      share_pct: 7
+      confidence: medium
+      notes: |
+        USGS MCS 2025 Domestic Production and Use: "Other indium end uses included
+        alloys and solders, compounds, electrical components and semiconductors, and
+        research." USGS does not quantify individual non-ITO shares. 7% is an
+        illustrative partition of the remaining ~20% consistent with industry
+        sources; marked medium confidence.
+      source_id: usgs_mcs_2025_indium
+    - application: semiconductors_and_electrical_components
+      share_pct: 8
+      confidence: medium
+      notes: |
+        USGS MCS 2025 chapter text highlights InP (indium phosphide) use in 5G
+        fiber-optic telecommunications, AI chip materials, high-speed photodetectors,
+        and laser diodes. USGS does not provide a specific percentage. 8% is an
+        illustrative partition consistent with industry sources; marked medium
+        confidence. Includes CIGS thin-film solar cell use.
+      source_id: usgs_mcs_2025_indium
+    - application: other_compounds_and_research
+      share_pct: 5
+      confidence: medium
+      notes: |
+        Residual from USGS list of non-ITO end uses: compounds, research, and
+        data-center uses (ITO-coated fibers, indium-based solder alloys per MCS
+        2025 chapter). Marked medium confidence; no explicit share percentage given
+        in source.
+      source_id: usgs_mcs_2025_indium
+  completeness: complete
+
+criticality:
+  us_critical_list_as_of_2025: true
+  us_critical_source_id: us_federal_register_2025_critical_minerals
+  eu_crm_list_as_of_2024: true
+  eu_crm_source_id: eu_crma_2024
+  eu_strategic_list_as_of_2024: true
+  eu_strategic_source_id: eu_crma_2024
+  notes: |
+    Net import reliance 100% per USGS MCS 2025 salient statistics (all years
+    2020–2024). Indium is on the US 2025 critical minerals list (25% tariff on
+    indium from China announced September 2024 under Section 301 review).
+    Indium appears on both Annex I (strategic) and Annex II (critical raw
+    materials) of EU Regulation 2024/1252.
+
+prices:
+  - year: 2024
+    value: 340
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: |
+      USGS MCS 2025 Salient Statistics table: "U.S. warehouse, free on board"
+      2024 estimated average = $340/kg (99.99%-minimum-purity indium). Source
+      footnote 3: Argus Media Group, Argus Non-Ferrous Markets. Up 42% from 2023
+      ($244/kg). Price peaked at $420/kg in June 2024.
+    source_id: usgs_mcs_2025_indium
+  - year: 2024
+    value: 300
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: EU
+    notes: |
+      USGS MCS 2025 Salient Statistics: "Rotterdam, duties unpaid" 2024 estimated
+      average = $300/kg. Source footnote 4: Argus Media Group, Argus Non-Ferrous
+      Markets.
+    source_id: usgs_mcs_2025_indium
+  - year: 2023
+    value: 244
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 Salient Statistics: U.S. warehouse FOB 2023 = $244/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2023
+    value: 238
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: EU
+    notes: "USGS MCS 2025 Salient Statistics: Rotterdam duties unpaid 2023 = $238/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2022
+    value: 250
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 Salient Statistics: U.S. warehouse FOB 2022 = $250/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2022
+    value: 257
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: EU
+    notes: "USGS MCS 2025 Salient Statistics: Rotterdam duties unpaid 2022 = $257/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2021
+    value: 223
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 Salient Statistics: U.S. warehouse FOB 2021 = $223/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2021
+    value: 217
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: EU
+    notes: "USGS MCS 2025 Salient Statistics: Rotterdam duties unpaid 2021 = $217/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2020
+    value: 161
+    unit: usd_per_kg
+    form: metal
+    basis: us_domestic
+    region: US
+    notes: "USGS MCS 2025 Salient Statistics: U.S. warehouse FOB 2020 = $161/kg."
+    source_id: usgs_mcs_2025_indium
+  - year: 2020
+    value: 158
+    unit: usd_per_kg
+    form: metal
+    basis: other
+    region: EU
+    notes: "USGS MCS 2025 Salient Statistics: Rotterdam duties unpaid 2020 = $158/kg."
+    source_id: usgs_mcs_2025_indium
+
+geopolitical_events:
+  - date: 2024-09
+    event: "US announces 25% Section 301 tariff on critical minerals from China, explicitly including indium"
+    impact: |
+      USGS MCS 2025 chapter text: "Additional categories of goods from China were
+      subject to tariffs including a 25% ad valorem tariff on critical minerals,
+      which included indium." Over the prior 4-year average the US imported 8% of
+      indium from China; as of September 2024 that share rose to 25%. Tariff
+      increases US import cost from the world's dominant supplier (70% of world
+      refinery production).
+    source_id: usgs_mcs_2025_indium
+  - date: 2024-08
+    event: "InP wafer fabrication facility in Alhambra, CA, resumes production under US-based photonic devices manufacturer"
+    impact: |
+      USGS MCS 2025 chapter text: "In August, an indium-phosphide-wafer fabrication
+      facility, located in Alhambra, CA, resumed production after it was acquired by
+      a U.S.-based photonic devices manufacturer." Supports downstream US semiconductor
+      supply-chain security for InP-based devices (5G, AI).
+    source_id: usgs_mcs_2025_indium
+  - date: 2024-07
+    event: "Zinc-copper-silver-indium project in Utah fully permitted for exploration shaft and open pit mine construction"
+    impact: |
+      USGS MCS 2025 chapter text: "As of July, a zinc-copper-silver-indium project
+      in Utah was fully permitted for the construction of an exploration shaft and
+      open pit mine." Would be a rare US-domestic indium-bearing mine if developed
+      to production; current US net import reliance is 100%.
+    source_id: usgs_mcs_2025_indium
+
+narrative: |
+  Indium is the classic refinery-only byproduct: there are no indium mines.
+  Every tonne of indium reaches market as a trace co-product from zinc smelting,
+  primarily from sphalerite ores. USGS MCS 2025 places world 2024 refinery
+  production at 1,080 tonnes (estimated), with China at 70% (760 t), Korea
+  at ~17% (180 t), and Japan at ~6% (60 t). The US has had zero refinery
+  production throughout 2020–2024 and imports all its supply.
+
+  The dominant end use — ITO for flat-panel displays and touchscreens — drives
+  most demand. Emerging growth comes from indium phosphide (InP) substrates in
+  5G fiber-optic networks and AI-specialized photonic chips; USGS notes a domestic
+  InP substrate company reported 67% year-on-year revenue growth in Q2 2024.
+  Data-center expansion adds further incremental demand through ITO-coated fibers
+  and indium-based solders.
+
+  The September 2024 Section 301 tariff extension to critical minerals (25% ad
+  valorem on Chinese indium) is geopolitically salient: China accounts for 70%
+  of world refinery production and had become 25% of US imports by the time of
+  the announcement, up from an 8% four-year average. US warehouse prices rose
+  42% in 2024 (from $244/kg to $340/kg), peaking at $420/kg in June.
+
+  Reserves are not independently published for indium; USGS MCS 2025 explicitly
+  refers users to the zinc chapter. The indium content of zinc deposits ranges
+  from <1 ppm to 100 ppm, making economically recoverable quantities highly
+  mine-specific. Supply cannot respond independently to indium price signals
+  because production volumes are governed by zinc output at the smelter level.
+
+  The substitution threat to ITO — carbon nanotubes, PEDOT, silver nanowires,
+  graphene, zinc oxide nanopowder, antimony tin oxide — has been discussed for
+  over a decade without displacing ITO at commercial scale, partly because
+  large-scale recycling of ITO scrap (primarily in Japan and Korea) already
+  moderates effective supply tightness.
+
+sources:
+  - id: usgs_mcs_2025_indium
+    title: Mineral Commodity Summaries 2025 — Indium
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-indium.pdf
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: primary
+  - id: us_federal_register_2025_critical_minerals
+    title: Final 2025 List of Critical Minerals
+    publisher: Federal Register / US Geological Survey
+    url: https://www.federalregister.gov/documents/2025/11/07/2025-19813/final-2025-list-of-critical-minerals
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: primary
+  - id: eu_crma_2024
+    title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)"
+    publisher: European Union
+    url: https://eur-lex.europa.eu/legal-content/EN/TXT/?qid=1721651000373&uri=CELEX%3A32024R1252
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: primary
