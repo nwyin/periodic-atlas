@@ -153,13 +153,14 @@
   }
 
   // ── Layout geometry ────────────────────────────────────────────────────────
-  const ROW_HEIGHT = 110;
+  const ROW_HEIGHT = 140;
   const SVG_WIDTH = 860;
   const SVG_HEIGHT = numLayers * ROW_HEIGHT + 40;
   const PAD_TOP = 50;
+  const PAD_X = 36;
 
   function nodeX(sym) {
-    return (pos.get(sym)?.x ?? 0.5) * SVG_WIDTH;
+    return PAD_X + (pos.get(sym)?.x ?? 0.5) * (SVG_WIDTH - 2 * PAD_X);
   }
   function nodeY(sym) {
     return PAD_TOP + (pos.get(sym)?.y ?? 0) * ROW_HEIGHT;
@@ -187,7 +188,8 @@
     .attr("orient", "auto-start-reverse")
     .append("path")
     .attr("d", "M0,0 L0,8 L8,4 z")
-    .attr("fill", "#4b5563");
+    .attr("fill", C.muted)
+    .attr("fill-opacity", 0.45);
 
   // Highlighted arrowhead
   defs
@@ -233,8 +235,9 @@
     .attr("class", "bpg-edge")
     .attr("d", (d) => d.d)
     .attr("fill", "none")
-    .attr("stroke", "#4b5563")
-    .attr("stroke-width", 1.5)
+    .attr("stroke", C.muted)
+    .attr("stroke-opacity", 0.35)
+    .attr("stroke-width", 1)
     .attr("marker-end", "url(#bpg-arrow)")
     .style("cursor", "default");
 
@@ -384,9 +387,10 @@
     nodeSels.style("opacity", (n) => (connected.has(n.symbol) ? 1 : DIM));
     edgeSels
       .style("opacity", (_, i) => (connectedEdges.has(i) ? 1 : DIM))
-      .attr("stroke", (_, i) => (connectedEdges.has(i) ? C.accent : "#4b5563"))
+      .attr("stroke", (_, i) => (connectedEdges.has(i) ? C.accent : C.muted))
+      .attr("stroke-opacity", (_, i) => (connectedEdges.has(i) ? 1 : 0.35))
       .attr("marker-end", (_, i) => (connectedEdges.has(i) ? "url(#bpg-arrow-hi)" : "url(#bpg-arrow)"))
-      .attr("stroke-width", (_, i) => (connectedEdges.has(i) ? 2.5 : 1.5));
+      .attr("stroke-width", (_, i) => (connectedEdges.has(i) ? 2 : 1));
   }
 
   function highlightEdge(edgeIdx) {
@@ -395,18 +399,20 @@
     nodeSels.style("opacity", (n) => (connected.has(n.symbol) ? 1 : DIM));
     edgeSels
       .style("opacity", (_, i) => (i === edgeIdx ? 1 : DIM))
-      .attr("stroke", (_, i) => (i === edgeIdx ? C.accent : "#4b5563"))
+      .attr("stroke", (_, i) => (i === edgeIdx ? C.accent : C.muted))
+      .attr("stroke-opacity", (_, i) => (i === edgeIdx ? 1 : 0.35))
       .attr("marker-end", (_, i) => (i === edgeIdx ? "url(#bpg-arrow-hi)" : "url(#bpg-arrow)"))
-      .attr("stroke-width", (_, i) => (i === edgeIdx ? 2.5 : 1.5));
+      .attr("stroke-width", (_, i) => (i === edgeIdx ? 2 : 1));
   }
 
   function resetHighlight() {
     nodeSels.style("opacity", 1);
     edgeSels
       .style("opacity", 1)
-      .attr("stroke", "#4b5563")
+      .attr("stroke", C.muted)
+      .attr("stroke-opacity", 0.35)
       .attr("marker-end", "url(#bpg-arrow)")
-      .attr("stroke-width", 1.5);
+      .attr("stroke-width", 1);
   }
 
   // ── Node interactions ──────────────────────────────────────────────────────
