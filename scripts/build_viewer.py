@@ -63,11 +63,11 @@ COUNTRY_NAME_OVERRIDES: dict[str, str] = {}
 _LB_TO_KG = 0.4536
 
 CHART_PLACEHOLDERS = [
-    ("production-chart", "Production charts — see B1"),
-    ("reserves-chart", "Reserves + end uses — see B2"),
-    ("prices-chart", "Geopolitical events — see B3"),
-    ("sources-panel", "Sources — see B4"),
-    ("isotope-panel", "Isotope markets — see B5"),
+    ("production-chart", "No production data"),
+    ("reserves-chart", "No reserves or end-use data"),
+    ("prices-chart", "No price history"),
+    ("sources-panel", "No sources listed"),
+    ("isotope-panel", "No isotope market data"),
 ]
 
 # External price-chart provider. We link out rather than mirror the data.
@@ -2894,7 +2894,7 @@ def _render_isotope_panel(isotopes: list[dict]) -> str:
     for the charts_isotopes.js bar chart renderer.
     """
     if not isotopes:
-        return '<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>'
+        return '<div id="isotope-panel" class="chart-placeholder">No isotope market data</div>'
 
     # Inline JSON for the JS renderer (bar chart + low-confidence styling)
     isotope_json = json.dumps(isotopes, ensure_ascii=False, separators=(",", ":"))
@@ -3298,7 +3298,7 @@ def _element_body(
     sources_panel_html = _render_sources_panel(sources)
     # isotope_panel_html is passed in from generate_viewer; default is a placeholder div
     if not isotope_panel_html:
-        isotope_panel_html = '<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>'
+        isotope_panel_html = '<div id="isotope-panel" class="chart-placeholder">No isotope market data</div>'
 
     no_commercial_note = ""
     if not commercial:
@@ -3329,7 +3329,7 @@ def _element_body(
 {narrative_html}
 {producer_links_html}
 <script id="production-data" type="application/json">{production_data}</script>
-<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<div id="production-chart" class="chart-placeholder">No production data</div>
 <script id="reserves-data" type="application/json">{reserves_data}</script>
 {placeholders_html}
 {isotope_panel_html}
