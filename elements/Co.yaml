@@ -426,13 +426,10 @@ narrative: |
   child labour, human-rights violations, and opaque routing through
   Chinese trading houses, and the Entreprise Générale du Cobalt (EGC)
   monopoly set up to formalize the ASM stream has struggled with volume
-  uptake. The atlas schema has no native concept for within-country
-  production-mode splits, so this ASM-vs-industrial distinction is not
-  modelled in the structured `mining_by_country` data — the single DRC
-  row contains both. Per the 2026-04-14 project scope decision (see
-  `atlas/zz-decomposition-plan.md`), within-country decomposition and
-  formal-vs-informal splits are out of scope for the atlas; anyone
-  querying the DRC cobalt row should treat it as an aggregate.
+  uptake. Country-level production figures here do not split output by mode, so
+  the DRC row aggregates both the industrial stream and ASM; readers
+  should treat the DRC cobalt figure as a combined total rather than
+  interpreting it as either mode alone.
 
 sources:
   - id: usgs_mcs_2025_cobalt

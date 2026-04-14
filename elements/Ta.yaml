@@ -369,13 +369,11 @@ narrative: |
   a conflict-financing flow rather than a conventional mining output. ITSCI traceability,
   which underwrites most DRC / Rwanda / Burundi tonnage reporting, had its RMI listing
   suspended in 2024 after Global Witness's "ITSCI laundromat" investigation, further
-  weakening confidence in formal-vs-informal attribution. The atlas schema has no native
-  concept for within-country production-mode splits or formal-vs-informal decomposition, so
-  none of this is captured in the structured `mining_by_country` data. Per the 2026-04-14
-  project scope decision (see `atlas/zz-decomposition-plan.md`), within-country decomposition
-  is out of scope; readers querying the DRC and Rwanda tantalum rows should treat them as
-  aggregates across conflict-affected ASM, formal ITSCI-traced flows, and cross-border
-  smuggled material.
+  weakening confidence in formal-vs-informal attribution. Country-level production figures
+  here do not decompose within-country flows by mode or by formal/informal status, so none
+  of the dynamics above are separable in the DRC and Rwanda tantalum rows; readers should
+  treat those rows as aggregates across conflict-affected ASM, formal ITSCI-traced flows,
+  and cross-border smuggled material.
 
 sources:
   - id: usgs_mcs_2025_tantalum
