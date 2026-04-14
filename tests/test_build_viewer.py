@@ -662,9 +662,8 @@ def test_b3_inv4_og_empty_prices_and_events(viewer_dir):
 
 
 def test_b3_inv4_empty_state_strings_in_js(viewer_dir):
-    """charts_prices.js must contain the empty-state messages used when data is absent."""
+    """charts_prices.js must contain the empty-state message used when events are absent."""
     js_text = (viewer_dir / "assets" / "charts_prices.js").read_text()
-    assert "No price history" in js_text
     assert "No geopolitical events recorded" in js_text
 
 

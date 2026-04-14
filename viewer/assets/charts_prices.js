@@ -1,16 +1,12 @@
 // viewer/assets/charts_prices.js
-// B3 viewer: price timeline + geopolitical events timeline
+// B3 viewer: geopolitical events timeline.
 //
-// Unit normalisation (pre-applied in build_viewer.py before JSON injection):
-//   usd_per_lb → usd_per_kg   using   1 lb = 0.4536 kg
-//   i.e.  price_per_kg = price_per_lb / 0.4536  (≈ × 2.2046)
-//   Rationale: usd_per_kg is the SI-adjacent unit preferred by USGS tables.
-//   This normalises series that would otherwise share an x-axis but have
-//   mismatched y-axis units, making multi-series charts directly comparable.
+// The price-history chart was removed — coverage was too sparse across
+// elements to be useful. The `prices` payload is still injected into
+// `atlas-chart-data` in case we want to re-enable it later.
 //
 // Data source: <script type="application/json" id="atlas-chart-data">
-// Expected shape: { "prices": [{year, value, unit, form, basis, region}, ...],
-//                  "events": [{date, event, impact}, ...] }
+// Expected shape: { "events": [{date, event, impact}, ...] }
 
 document.addEventListener("DOMContentLoaded", function () {
     "use strict";
@@ -25,7 +21,6 @@ document.addEventListener("DOMContentLoaded", function () {
         return;
     }
 
-    var prices = Array.isArray(data.prices) ? data.prices : [];
     var events = Array.isArray(data.events) ? data.events : [];
 
     var container = document.getElementById("prices-chart");
@@ -35,152 +30,13 @@ document.addEventListener("DOMContentLoaded", function () {
     container.innerHTML = "";
     container.classList.remove("chart-placeholder");
 
-    // ── Price history section ────────────────────────────────────────────────
-    var priceSection = _section(container, "Price History");
-
-    if (prices.length === 0) {
-        _emptyState(priceSection, "No price history");
-    } else {
-        renderPricesChart(priceSection, prices);
-    }
-
     // ── Events timeline section ──────────────────────────────────────────────
     var eventsSection = _section(container, "Geopolitical Events");
-    eventsSection.style.marginTop = "2rem";
 
     if (events.length === 0) {
         _emptyState(eventsSection, "No geopolitical events recorded");
     } else {
         renderEventsTimeline(eventsSection, events);
-    }
-
-
-    // ────────────────────────────────────────────────────────────────────────
-    // Prices line chart
-    // ────────────────────────────────────────────────────────────────────────
-    function renderPricesChart(parent, prices) {
-        var margin = { top: 20, right: 175, bottom: 45, left: 72 };
-        var containerW = parent.getBoundingClientRect().width || 700;
-        var totalW = Math.min(Math.max(containerW, 400), 840);
-        var width = totalW - margin.left - margin.right;
-        var height = 260 - margin.top - margin.bottom;
-
-        // Group by "basis / region" key — each group is one line
-        var groups = d3.group(prices, function (d) { return d.basis + " / " + d.region; });
-        var groupKeys = Array.from(groups.keys()).sort();
-        var color = d3.scaleOrdinal(d3.schemeTableau10).domain(groupKeys);
-
-        var years = prices.map(function (d) { return d.year; });
-        var x = d3.scaleLinear()
-            .domain([d3.min(years) - 0.4, d3.max(years) + 0.4])
-            .range([0, width]);
-
-        var y = d3.scaleLinear()
-            .domain([0, d3.max(prices, function (d) { return d.value; }) * 1.15])
-            .nice()
-            .range([height, 0]);
-
-        var svg = d3.select(parent)
-            .append("svg")
-                .attr("width", totalW)
-                .attr("height", height + margin.top + margin.bottom)
-                .attr("role", "img")
-                .attr("aria-label", "Price history line chart")
-            .append("g")
-                .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
-
-        // Subtle horizontal grid
-        svg.append("g")
-            .attr("class", "grid")
-            .call(
-                d3.axisLeft(y)
-                    .ticks(5)
-                    .tickSize(-width)
-                    .tickFormat("")
-            )
-            .call(function (g) { g.select(".domain").remove(); })
-            .selectAll(".tick line")
-                .attr("stroke", "var(--border, #d4d8de)")
-                .attr("stroke-dasharray", "3,3");
-
-        // X axis — integer year labels
-        svg.append("g")
-            .attr("transform", "translate(0," + height + ")")
-            .call(
-                d3.axisBottom(x)
-                    .tickFormat(d3.format("d"))
-                    .ticks(Math.min(years.length, 8))
-            );
-
-        // Y axis
-        svg.append("g")
-            .call(d3.axisLeft(y));
-
-        // Y-axis unit label
-        var yUnit = prices[0].unit;
-        svg.append("text")
-            .attr("transform", "rotate(-90)")
-            .attr("y", -58)
-            .attr("x", -(height / 2))
-            .attr("text-anchor", "middle")
-            .attr("font-size", "11px")
-            .attr("fill", "currentColor")
-            .text(yUnit);
-
-        // One line + dots per (basis, region) group
-        var lineGen = d3.line()
-            .x(function (d) { return x(d.year); })
-            .y(function (d) { return y(d.value); })
-            .defined(function (d) { return d.value != null; });
-
-        groupKeys.forEach(function (key) {
-            var pts = groups.get(key);
-            var sorted = pts.slice().sort(function (a, b) { return a.year - b.year; });
-
-            svg.append("path")
-                .datum(sorted)
-                .attr("fill", "none")
-                .attr("stroke", color(key))
-                .attr("stroke-width", 2.2)
-                .attr("d", lineGen);
-
-            svg.selectAll(null)
-                .data(sorted)
-                .join("circle")
-                    .attr("cx", function (d) { return x(d.year); })
-                    .attr("cy", function (d) { return y(d.value); })
-                    .attr("r", 4.5)
-                    .attr("fill", color(key))
-                    .attr("stroke", "var(--bg, #fff)")
-                    .attr("stroke-width", 1.5)
-                    .style("cursor", "crosshair")
-                    .on("mouseover", function (event, d) {
-                        showTooltip(event,
-                            d.year + "  \u2192  " + d.value + " " + d.unit +
-                            "\nform: " + d.form +
-                            "\nbasis: " + d.basis + " / region: " + d.region
-                        );
-                    })
-                    .on("mouseout", hideTooltip);
-        });
-
-        // Legend (right side)
-        groupKeys.forEach(function (key, i) {
-            var ly = i * 20;
-            svg.append("rect")
-                .attr("x", width + 14)
-                .attr("y", ly)
-                .attr("width", 12)
-                .attr("height", 12)
-                .attr("rx", 2)
-                .attr("fill", color(key));
-            svg.append("text")
-                .attr("x", width + 30)
-                .attr("y", ly + 10)
-                .attr("font-size", "11px")
-                .attr("fill", "currentColor")
-                .text(key);
-        });
     }
 
 

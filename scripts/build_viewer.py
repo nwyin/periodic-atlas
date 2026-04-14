@@ -39,7 +39,7 @@ _LB_TO_KG = 0.4536
 CHART_PLACEHOLDERS = [
     ("production-chart", "Production charts — see B1"),
     ("reserves-chart", "Reserves + end uses — see B2"),
-    ("prices-chart", "Prices + events — see B3"),
+    ("prices-chart", "Geopolitical events — see B3"),
     ("sources-panel", "Sources — see B4"),
     ("isotope-panel", "Isotope markets — see B5"),
 ]
