@@ -795,7 +795,6 @@ CSS = """\
   --map-land-hover:      #bfdbfe;
   --map-land-hover-stroke: #2563eb;
 
-  --dots-color:          rgba(0, 0, 0, 0.10);
   --scanline-color:      transparent;
 }
 
@@ -811,7 +810,6 @@ CSS = """\
     --map-land-stroke:     #323a4b;
     --map-land-hover:      #1e3a8a;
     --map-land-hover-stroke: #93c5fd;
-    --dots-color:          rgba(255, 255, 255, 0.10);
     --scanline-color:      rgba(255, 255, 255, 0.018);
   }
 }
@@ -825,23 +823,10 @@ body {
   background: var(--bg);
   color: var(--text);
   margin: 0;
-  padding: 0 1rem 0 4.5rem;
+  padding: 0 1rem;
   /* Allow the map-panel-shell to break out to 100vw without a scrollbar */
   overflow-x: clip;
   position: relative;
-}
-
-/* dot-pattern left margin strip (blueprint / terminal feel) */
-body::before {
-  content: "";
-  position: fixed;
-  top: 0; left: 0;
-  width: 3.5rem;
-  height: 100vh;
-  background-image: radial-gradient(circle, var(--dots-color) 1px, transparent 1.2px);
-  background-size: 10px 10px;
-  pointer-events: none;
-  z-index: 0;
 }
 
 /* subtle CRT scanline overlay (dark mode only; the variable is transparent in light mode) */
