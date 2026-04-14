@@ -208,7 +208,7 @@ document.addEventListener("DOMContentLoaded", function () {
         });
 
         // ── Axis SVG (numbered dots only; event text lives in the HTML list below) ──
-        var margin = { top: 14, right: 24, bottom: 28, left: 24 };
+        var margin = { top: 14, right: 24, bottom: 34, left: 24 };
         var containerW = parent.getBoundingClientRect().width || 700;
         var svgWidth = Math.min(Math.max(containerW, 400), 840);
         var width = svgWidth - margin.left - margin.right;
@@ -238,23 +238,25 @@ document.addEventListener("DOMContentLoaded", function () {
         var svg = svgWrap.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
-        // Minor ticks — monthly when the axis has room (≥6 px per month),
-        // quarterly otherwise. Skip month 0 of each year so the year tick
-        // sits by itself without a doubled-up mark.
-        var monthsVisible = x.ticks(d3.timeMonth).length;
-        var minorInterval = (width / Math.max(monthsVisible, 1)) >= 6
-            ? d3.timeMonth
-            : d3.timeMonth.every(3);
-        var minorTicks = x.ticks(minorInterval).filter(function (d) {
-            return d.getMonth() !== 0;
-        });
+        // Minor ticks + short month labels. Density-adaptive: monthly ticks
+        // when ≥6 px per month, quarterly otherwise. Labels appear whenever
+        // there's room (≥22 px per month for every-month labels, else every
+        // quarter, else ticks without labels). January is skipped so the year
+        // tick/label sits by itself without a doubled-up mark.
+        var pxPerMonth = width / Math.max(x.ticks(d3.timeMonth).length, 1);
+        var tickInterval  = pxPerMonth >= 6  ? d3.timeMonth : d3.timeMonth.every(3);
+        var labelInterval = pxPerMonth >= 22 ? d3.timeMonth
+                          : pxPerMonth >= 10 ? d3.timeMonth.every(3)
+                          : null;
+        var nonJan = function (d) { return d.getMonth() !== 0; };
+
         svg.append("g")
             .attr("transform", "translate(0," + axisY + ")")
             .attr("fill", "none")
             .attr("stroke", "var(--muted, #9ca3af)")
             .attr("stroke-width", 1)
             .selectAll("line")
-            .data(minorTicks)
+            .data(x.ticks(tickInterval).filter(nonJan))
             .join("line")
                 .attr("x1", function (d) { return x(d); })
                 .attr("x2", function (d) { return x(d); })
@@ -262,7 +264,21 @@ document.addEventListener("DOMContentLoaded", function () {
                 .attr("y2", 3)
                 .attr("opacity", 0.55);
 
-        // Major (year) axis
+        if (labelInterval) {
+            svg.append("g")
+                .attr("transform", "translate(0," + axisY + ")")
+                .attr("fill", "var(--muted, #9ca3af)")
+                .attr("font-size", "9px")
+                .attr("text-anchor", "middle")
+                .selectAll("text")
+                .data(x.ticks(labelInterval).filter(nonJan))
+                .join("text")
+                    .attr("x", function (d) { return x(d); })
+                    .attr("y", 12)
+                    .text(d3.timeFormat("%b"));
+        }
+
+        // Major (year) axis — push labels below the month row
         svg.append("g")
             .attr("transform", "translate(0," + axisY + ")")
             .call(
@@ -270,7 +286,12 @@ document.addEventListener("DOMContentLoaded", function () {
                     .ticks(d3.timeYear)
                     .tickFormat(d3.timeFormat("%Y"))
                     .tickSizeOuter(0)
-            );
+            )
+            .call(function (g) {
+                g.selectAll("text")
+                    .attr("y", 22)
+                    .attr("font-weight", "600");
+            });
 
         // Numbered dots on axis; each one is linked to its list-item below via data-evt-idx
         var dotSel = [];
