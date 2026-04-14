@@ -3,13 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <title>South Africa (ZA) | Atlas 2025</title>
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
 <div class="container">
-<nav class="site-nav"><a href="../index.html">Elements</a> &bull; <a href="../byproducts.html">Byproduct graph</a></nav>
+<nav class="site-nav"><a href="../index.html">Elements</a> <a href="../byproducts.html">Byproduct graph</a></nav>
 <h1 class="country-page-header"><span class="country-flag">🇿🇦</span> South Africa <span class="country-iso-badge">(ZA)</span></h1>
 <p class="subtitle">Supply chain footprint &mdash; snapshot year 2025</p>
 <p><a href="../index.html">&larr; Atlas index</a></p>
@@ -160,6 +163,14 @@ based on Government reports.
     <td class="">high</td>
     <td><span title="USGS 2024e: 100 kt. South Africa; leading US rutile import source (53% of US rutile imports Sep 2024).">USGS 2024e: 100 kt. South Africa; leading US rutile import source (53% of US rutile imports Sep 2024).</span></td>
   </tr>
+  <tr class="producer-low-confidence">
+    <td><a href="../elements/Hf.html">Hf</a><br><small>hafnium</small></td>
+    <td style="text-align:right">20.0%</td>
+    <td>2,887 tonnes per year</td>
+    <td style="text-align:center">2nd</td>
+    <td class="producer-low-confidence">low</td>
+    <td><span title="Derived from South Africa&#39;s 2024e zircon output of 300,000 t gross weight; hafnium rides with zircon feed.">Derived from South Africa&#39;s 2024e zircon output of 300,000 t gross weight; hafnium rides with zircon feed.</span> <span class="byproduct-note">byproduct of Zr</span></td>
+  </tr>
   <tr class="">
     <td><a href="../elements/Zr.html">Zr</a><br><small>zirconium</small></td>
     <td style="text-align:right">20.0%</td>
@@ -171,14 +182,6 @@ based on Government reports.
 of zirconium mineral concentrates. Reserves revised 2024.
 ">South Africa 2024e: 300,000 tonnes gross weight (300 kt), up from 289,000 kt in
 2023. South Africa is the second-largest…</span></td>
-  </tr>
-  <tr class="producer-low-confidence">
-    <td><a href="../elements/Hf.html">Hf</a><br><small>hafnium</small></td>
-    <td style="text-align:right">20.0%</td>
-    <td>2,887 tonnes per year</td>
-    <td style="text-align:center">2nd</td>
-    <td class="producer-low-confidence">low</td>
-    <td><span title="Derived from South Africa&#39;s 2024e zircon output of 300,000 t gross weight; hafnium rides with zircon feed.">Derived from South Africa&#39;s 2024e zircon output of 300,000 t gross weight; hafnium rides with zircon feed.</span> <span class="byproduct-note">byproduct of Zr</span></td>
   </tr>
   <tr class="">
     <td><a href="../elements/Ti.html">Ti</a><br><small>titanium</small></td>
@@ -378,18 +381,6 @@ Bushveld Complex contains by far the largest iridium-bearing reserve base.
 Bushveld Complex contains by far the largest iri…</span> <span class="byproduct-note">byproduct of Cu, Ni, Pt</span></td>
   </tr>
   <tr class="">
-    <td><a href="../elements/Rh.html">Rh</a><br><small>rhodium</small></td>
-    <td style="text-align:right">77.5%</td>
-    <td>—</td>
-    <td style="text-align:center">1st</td>
-    <td class="">high</td>
-    <td><span title="South Africa holds 63,000 tonnes of the more than 81,000 tonnes of reported world PGM
-reserves. Rhodium-specific tonnage is not published, but South Africa overwhelmingly
-dominates the Bushveld-hosted PGM reserve base from which most rhodium is recovered.
-">South Africa holds 63,000 tonnes of the more than 81,000 tonnes of reported world PGM
-reserves. Rhodium-specific tonnage…</span> <span class="byproduct-note">byproduct of Ni, Pt</span></td>
-  </tr>
-  <tr class="">
     <td><a href="../elements/Os.html">Os</a><br><small>osmium</small></td>
     <td style="text-align:right">77.5%</td>
     <td>—</td>
@@ -401,6 +392,18 @@ Applying the derived osmium share implies roughly 16,000 kg osmium in
 Bushveld-associated reserves.
 ">Proxy from USGS combined PGM reserve geography: South Africa holds
 63,000,000 kg of the reported &gt;81,000,000 kg world PG…</span> <span class="byproduct-note">byproduct of Ni, Pt</span></td>
+  </tr>
+  <tr class="">
+    <td><a href="../elements/Rh.html">Rh</a><br><small>rhodium</small></td>
+    <td style="text-align:right">77.5%</td>
+    <td>—</td>
+    <td style="text-align:center">1st</td>
+    <td class="">high</td>
+    <td><span title="South Africa holds 63,000 tonnes of the more than 81,000 tonnes of reported world PGM
+reserves. Rhodium-specific tonnage is not published, but South Africa overwhelmingly
+dominates the Bushveld-hosted PGM reserve base from which most rhodium is recovered.
+">South Africa holds 63,000 tonnes of the more than 81,000 tonnes of reported world PGM
+reserves. Rhodium-specific tonnage…</span> <span class="byproduct-note">byproduct of Ni, Pt</span></td>
   </tr>
   <tr class="">
     <td><a href="../elements/Ru.html">Ru</a><br><small>ruthenium</small></td>
@@ -514,7 +517,7 @@ resources associated with the Witwatersrand g…</span></td>
 </table>
 </section>
 
-<script id="country-chart-data" type="application/json">[{"symbol":"Ir","element_name":"iridium","stage":"mining","share_pct":83.0},{"symbol":"Rh","element_name":"rhodium","stage":"mining","share_pct":82.6},{"symbol":"Pd","element_name":"palladium","stage":"reserves","share_pct":77.8},{"symbol":"Pt","element_name":"platinum","stage":"reserves","share_pct":77.8},{"symbol":"Ir","element_name":"iridium","stage":"reserves","share_pct":77.8},{"symbol":"Rh","element_name":"rhodium","stage":"reserves","share_pct":77.5},{"symbol":"Os","element_name":"osmium","stage":"reserves","share_pct":77.5},{"symbol":"Ru","element_name":"ruthenium","stage":"reserves","share_pct":77.5},{"symbol":"Ru","element_name":"ruthenium","stage":"mining","share_pct":75.0},{"symbol":"Os","element_name":"osmium","stage":"mining","share_pct":70.6},{"symbol":"Pt","element_name":"platinum","stage":"mining","share_pct":70.6},{"symbol":"Rh","element_name":"rhodium","stage":"refining","share_pct":65.0},{"symbol":"Cr","element_name":"chromium","stage":"mining","share_pct":44.7},{"symbol":"Pd","element_name":"palladium","stage":"refining","share_pct":40.0},{"symbol":"Pd","element_name":"palladium","stage":"mining","share_pct":37.9}]</script>
+<script id="country-chart-data" type="application/json">[{"symbol":"Ir","element_name":"iridium","stage":"mining","share_pct":83.0},{"symbol":"Rh","element_name":"rhodium","stage":"mining","share_pct":82.6},{"symbol":"Pd","element_name":"palladium","stage":"reserves","share_pct":77.8},{"symbol":"Pt","element_name":"platinum","stage":"reserves","share_pct":77.8},{"symbol":"Ir","element_name":"iridium","stage":"reserves","share_pct":77.8},{"symbol":"Os","element_name":"osmium","stage":"reserves","share_pct":77.5},{"symbol":"Rh","element_name":"rhodium","stage":"reserves","share_pct":77.5},{"symbol":"Ru","element_name":"ruthenium","stage":"reserves","share_pct":77.5},{"symbol":"Ru","element_name":"ruthenium","stage":"mining","share_pct":75.0},{"symbol":"Os","element_name":"osmium","stage":"mining","share_pct":70.6},{"symbol":"Pt","element_name":"platinum","stage":"mining","share_pct":70.6},{"symbol":"Rh","element_name":"rhodium","stage":"refining","share_pct":65.0},{"symbol":"Cr","element_name":"chromium","stage":"mining","share_pct":44.7},{"symbol":"Pd","element_name":"palladium","stage":"refining","share_pct":40.0},{"symbol":"Pd","element_name":"palladium","stage":"mining","share_pct":37.9}]</script>
 <div id="country-bar-chart" class="country-bar-chart"></div>
 <section class="country-related">
   <h2>Countries with overlapping top-3 positions</h2>
@@ -534,7 +537,7 @@ resources associated with the Witwatersrand g…</span></td>
   </div>
 </section>
 <footer>
-Built 2026-04-14T12:49:42Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T13:14:50Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_country.js"></script>
