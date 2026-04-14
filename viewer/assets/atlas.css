@@ -48,6 +48,8 @@ body {
   color: var(--text);
   margin: 0;
   padding: 0 1rem;
+  /* Allow the map-panel-shell to break out to 100vw without a scrollbar */
+  overflow-x: clip;
 }
 
 a { color: var(--accent); text-decoration: none; }
@@ -281,20 +283,26 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .country-map-shell {
   position: relative;
   background: linear-gradient(180deg, var(--surface), var(--bg));
-  border: 1px solid var(--border);
-  border-radius: 10px;
+  border-top: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
   overflow: hidden;
+  /* Break out of the 1100px container to use the full viewport width */
+  margin-left: calc(50% - 50vw);
+  margin-right: calc(50% - 50vw);
+  width: 100vw;
 }
 
 .country-map-root {
   min-height: 420px;
   padding: 0.5rem;
+  max-height: 80vh;
 }
 
 .country-map-root svg {
   display: block;
   width: 100%;
   height: auto;
+  max-height: 78vh;
 }
 
 .country-map-fallback {
