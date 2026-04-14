@@ -404,6 +404,36 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .badge-eu-strategic  { background: var(--badge-eu-strategic); }
 .badge-doe           { background: var(--badge-doe); color: #fff; }
 
+/* ── binary criticality cells (index table) ── */
+.crit-cell { text-align: center; }
+.crit-yes  { color: var(--badge-us-critical); font-weight: 700; }
+.crit-no   { color: var(--muted); }
+
+/* ── header tooltip (hover a <th> to see its source document) ── */
+.th-tip { position: relative; cursor: help; border-bottom: 1px dotted var(--muted); }
+.th-tip:hover::after,
+.th-tip:focus::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 4px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.45rem 0.6rem;
+  border-radius: 4px;
+  font-size: 0.72rem;
+  font-weight: 400;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  width: 240px;
+  z-index: 20;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.18);
+  pointer-events: none;
+}
+
 /* ── source tier badges — distinct colors required by INV-2 ── */
 .badge-tier-primary   { background: var(--tier-primary); }
 .badge-tier-secondary { background: var(--tier-secondary); }
@@ -1056,8 +1086,16 @@ def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict
         category = el["category"] or ""
         tier = el["industrial_tier"]
         commercial_flag = bool(el["commercial_production"])
-        crit_html = _criticality_badges(el)
         comm_html = _commercial_badge(commercial_flag)
+
+        def _crit_td(flag: object) -> str:
+            if flag:
+                return '<td class="crit-cell crit-yes" aria-label="yes">&#10003;</td>'
+            return '<td class="crit-cell crit-no" aria-label="no">&mdash;</td>'
+
+        us_td = _crit_td(el.get("us_critical_list_as_of_2025"))
+        crm_td = _crit_td(el.get("eu_crm_list_as_of_2024"))
+        strat_td = _crit_td(el.get("eu_strategic_list_as_of_2024"))
 
         rows_html += f"""\
   <tr>
@@ -1067,7 +1105,9 @@ def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict
     <td>{_html_escape(category)}</td>
     <td>{tier}</td>
     <td>{comm_html}</td>
-    <td>{crit_html}</td>
+    {us_td}
+    {crm_td}
+    {strat_td}
   </tr>
 """
 
@@ -1108,7 +1148,9 @@ def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict
       <th>Category</th>
       <th>Tier</th>
       <th>Production</th>
-      <th>Criticality</th>
+      <th class="crit-cell"><span class="th-tip" tabindex="0" data-tip="USGS Final List of Critical Minerals (2022 Federal Register notice; governs US policy through 2025). 50 commodities deemed essential to the US economy / national security with significant supply-risk exposure.">US Critical</span></th>
+      <th class="crit-cell"><span class="th-tip" tabindex="0" data-tip="EU Critical Raw Materials Act (March 2024), Annex II. 34 critical raw materials with high economic importance and elevated supply-risk.">EU CRM</span></th>
+      <th class="crit-cell"><span class="th-tip" tabindex="0" data-tip="EU Critical Raw Materials Act (March 2024), Annex I. 17 strategic raw materials prioritised for the green and digital transitions (subset of CRM).">EU Strategic</span></th>
     </tr>
   </thead>
   <tbody>
