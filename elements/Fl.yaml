@@ -1,0 +1,89 @@
+symbol: Fl
+atomic_number: 114
+name: flerovium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade form exists. Flerovium is created one atom at a time in
+  heavy-ion fusion experiments using actinide targets; half-lives in the cited
+  NNDC/ENSDF datasets are reported in seconds.
+
+production: []
+isotope_markets: []
+byproduct_of: []
+feedstock_origins: []
+substitutes: []
+prices: []
+geopolitical_events: []
+
+research_only:
+  longest_lived_isotope: Fl-289
+  half_life_seconds: 2.4
+  discovered_year: 2004
+  iupac_recognized_year: 2011
+  discovered_at: |
+    Joint Institute for Nuclear Research (Dubna, Russia) in collaboration with
+    Lawrence Livermore National Laboratory (California, USA). IUPAC credited
+    the Dubna-Livermore collaborations with discovery of elements 114 and 116,
+    and the accepted name "flerovium" honors the Flerov Laboratory of Nuclear
+    Reactions at JINR and its founder Georgiy N. Flerov.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - JINR Dubna
+  notes: |
+    IUPAC's discovery summary specifically points to the 2004 Dubna-Livermore
+    experiments from 48Ca + 242Pu fusion as the internally redundant evidence
+    establishing element 114. NNDC ENSDF datasets list short-lived isotopes
+    such as Fl-287, Fl-288, and Fl-289, with Fl-289 carrying the longest
+    evaluated half-life among confirmed flerovium isotopes in the cited data.
+
+end_uses:
+  uses: []
+  completeness: partial
+
+criticality: {}
+
+narrative: |
+  Flerovium has no commercial supply chain and no practical traded form. The
+  element exists only in nuclear-physics experiments that synthesize a few atoms
+  at a time and identify them through correlated alpha-decay chains. That keeps
+  the commercial fields empty even though the element is formally named and
+  recognized.
+
+  The primary commercial reality is therefore absence: no mining, no refining,
+  no reserves, no price series, and no end-use market. Its significance is
+  scientific rather than industrial, because synthesis and decay measurements
+  help test shell effects and the "island of stability" hypothesis for
+  superheavy nuclei.
+
+sources:
+  - id: iupac_discovery_114_116
+    title: Discovery of the elements with atomic numbers greater than or equal to 113
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/83/7/1485/index.html
+    retrieved: 2026-04-13
+    publication_year: 2011
+    source_tier: primary
+  - id: iupac_names_114_116
+    title: Names and symbols of the elements with atomic numbers 114 and 116
+    publisher: International Union of Pure and Applied Chemistry
+    url: https://publications.iupac.org/pac/84/7/1669/index.html
+    retrieved: 2026-04-13
+    publication_year: 2012
+    source_tier: primary
+  - id: nndc_ensdf_fl_289
+    title: ENSDF dataset index for Fl-289 alpha decay (2.4 s)
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/dsbykn.jsp?db=xundl&kn=2004OG07&nav=off
+    retrieved: 2026-04-13
+    publication_year: 2022
+    source_tier: primary
+  - id: jinr_laboratories
+    title: Laboratories
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/about-en/structure/laboratories/
+    retrieved: 2026-04-13
+    publication_year: 2026
+    source_tier: primary
