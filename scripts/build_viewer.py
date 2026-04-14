@@ -496,6 +496,7 @@ def _build_element_index(
     refining_shares_by_symbol: dict[str, list[dict]],
     end_uses_by_symbol: dict[str, list[dict]],
     byproduct_by_symbol: dict[str, list[str]],
+    reserves_shares_by_symbol: dict[str, list[dict]] | None = None,
 ) -> str:
     """Return compact JSON string for the atlas-element-index <script> block.
 
@@ -504,8 +505,10 @@ def _build_element_index(
         criticality {us_critical, eu_crm, eu_strategic, doe_rank},
         byproduct_of, top_mining_country, top_mining_share, hhi_mining,
         hhi_refining, end_use_buckets,
-        producer_countries_mining, top_country_mining, top_country_share_pct.
+        producer_countries_mining, top_country_mining, top_country_share_pct,
+        has_mining, has_refining, has_reserves, critical (heatmap extras).
     """
+    reserves_shares_by_symbol = reserves_shares_by_symbol or {}
     index: list[dict] = []
 
     for el in elements_list:
@@ -556,6 +559,13 @@ def _build_element_index(
         # Byproduct parents
         byproduct_of = byproduct_by_symbol.get(symbol, [])
 
+        # Heatmap extras (CC-1 additions): per-stage presence + simple criticality bool
+        us_crit = bool(el.get("us_critical_list_as_of_2025"))
+        eu_crm = bool(el.get("eu_crm_list_as_of_2024"))
+        eu_strat = bool(el.get("eu_strategic_list_as_of_2024"))
+        critical_bool = us_crit or eu_crm or eu_strat or (doe_rank is not None)
+        reserves_shares = reserves_shares_by_symbol.get(symbol, [])
+
         entry: dict = {
             "symbol": symbol,
             "name": str(el.get("name") or ""),
@@ -564,16 +574,20 @@ def _build_element_index(
             "tier": int(el["industrial_tier"]) if el.get("industrial_tier") is not None else 0,
             "commercial_production": bool(el.get("commercial_production")),
             "criticality": {
-                "us_critical": bool(el.get("us_critical_list_as_of_2025")),
-                "eu_crm": bool(el.get("eu_crm_list_as_of_2024")),
-                "eu_strategic": bool(el.get("eu_strategic_list_as_of_2024")),
+                "us_critical": us_crit,
+                "eu_crm": eu_crm,
+                "eu_strategic": eu_strat,
                 "doe_rank": doe_rank,
             },
+            "critical": critical_bool,
             "byproduct_of": byproduct_of,
             "top_mining_country": top_mining_country,
             "top_mining_share": top_mining_share,
             "hhi_mining": hhi_mining,
             "hhi_refining": hhi_refining,
+            "has_mining": len(mining_shares) > 0,
+            "has_refining": len(refining_shares) > 0,
+            "has_reserves": len(reserves_shares) > 0,
             "end_use_buckets": sorted(bucket_set),
             # Aliases used by table_filter.js (match spec §4.1 field names)
             "producer_countries_mining": producer_countries,
@@ -1350,6 +1364,193 @@ footer a { color: var(--muted); }
   margin: 0.75rem 0 0;
   font-size: 0.85rem;
 }
+
+/* ── sr-only utility ── */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0,0,0,0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* ── heatmap controls ── */
+:root {
+  --map-no-data: #e8e8e8;
+}
+@media (prefers-color-scheme: dark) {
+  :root { --map-no-data: #374151; }
+}
+
+.heatmap-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.5rem;
+}
+
+.heatmap-selector-wrap {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.heatmap-element-select {
+  width: 220px;
+  font-size: 0.85rem;
+  padding: 0.3rem 0.5rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.heatmap-clear {
+  background: none;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  width: 1.6rem;
+  height: 1.6rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--muted);
+  padding: 0;
+}
+.heatmap-clear:hover { color: var(--text); border-color: var(--text); }
+
+.heatmap-stage-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.heatmap-stage-btn {
+  background: var(--bg);
+  border: none;
+  border-right: 1px solid var(--border);
+  padding: 0.3rem 0.7rem;
+  font-size: 0.82rem;
+  cursor: pointer;
+  color: var(--muted);
+  transition: background 120ms, color 120ms;
+}
+.heatmap-stage-btn:last-child { border-right: none; }
+.heatmap-stage-btn:hover { background: var(--surface); color: var(--text); }
+.heatmap-stage-btn.is-active {
+  color: var(--accent);
+  font-weight: 600;
+  border-bottom: 2px solid var(--accent);
+}
+.heatmap-stage-toggle[aria-disabled="true"] .heatmap-stage-btn {
+  opacity: 0.4;
+  pointer-events: none;
+}
+
+.heatmap-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.heatmap-chip {
+  display: inline-block;
+  font-size: 0.78rem;
+  font-weight: 600;
+  padding: 0.2em 0.55em;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  background: transparent;
+  cursor: pointer;
+  transition: background 120ms, color 120ms;
+  white-space: nowrap;
+}
+.heatmap-chip:hover { background: var(--accent); color: #fff; }
+.heatmap-chip.is-active { background: var(--accent); color: #fff; }
+
+/* ── heatmap legend ── */
+.heatmap-legend {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+  padding: 0.4rem 0;
+  flex-wrap: wrap;
+}
+
+.heatmap-legend-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  white-space: nowrap;
+}
+
+.heatmap-legend-bar-wrap {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.heatmap-legend-bar {
+  display: block;
+  border-radius: 3px;
+}
+
+.heatmap-legend-ticks {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.7rem;
+  color: var(--muted);
+  width: 200px;
+}
+
+.heatmap-legend-footnote {
+  font-size: 0.72rem;
+  color: var(--muted);
+  font-style: italic;
+}
+
+/* ── heatmap tooltip / drawer extras ── */
+.country-map-heatmap-share {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-top: 0.3rem;
+}
+.country-map-heatmap-no-data {
+  font-weight: 400;
+  color: var(--muted);
+  font-style: italic;
+}
+
+.heatmap-drawer-primary {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  margin-bottom: 1rem;
+}
+.heatmap-drawer-element { font-size: 0.9rem; margin-bottom: 0.2rem; }
+.heatmap-drawer-element a { font-weight: 700; }
+.heatmap-drawer-stage-label { font-size: 0.78rem; color: var(--muted); margin-bottom: 0.4rem; }
+.heatmap-drawer-share-pct { font-size: 1.4rem; font-weight: 700; color: var(--accent); }
+.heatmap-drawer-quantity { font-size: 0.8rem; color: var(--muted); }
+.heatmap-drawer-no-data { font-size: 0.85rem; color: var(--muted); font-style: italic; }
+.heatmap-drawer-divider {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-align: center;
+  margin: 0.75rem 0 0.5rem;
+  border-top: 1px solid var(--border);
+  padding-top: 0.5rem;
+}
 """
 
 
@@ -1714,10 +1915,39 @@ def _build_country_map_data(con: "duckdb.DuckDBPyConnection") -> dict[str, objec
             )
         )
 
+    # ── Reserves augmentation ──────────────────────────────────────────────
+    # Add `reserves` sub-key: country ISO-2 → list of {symbol, share_pct, quantity_value, quantity_unit}
+    # Excludes ZZ (rest-of-world aggregate) and rows with null share_pct.
+    reserves_rows = con.execute(
+        """
+        SELECT country, symbol, share_pct, quantity_value, quantity_unit
+        FROM atlas_shares
+        WHERE share_type = 'reserves'
+          AND country IS NOT NULL
+          AND country NOT IN ('ZZ', 'XX')
+          AND share_pct IS NOT NULL
+        ORDER BY country, share_pct DESC
+        """
+    ).fetchall()
+
+    reserves: dict[str, list[dict[str, object]]] = {}
+    for country, symbol, share_pct, quantity_value, quantity_unit in reserves_rows:
+        if country is None or symbol is None:
+            continue
+        country_code = str(country)
+        entry = {
+            "symbol": str(symbol),
+            "share_pct": round(float(share_pct), 3),
+            "quantity_value": float(quantity_value) if quantity_value is not None else None,
+            "quantity_unit": str(quantity_unit) if quantity_unit else None,
+        }
+        reserves.setdefault(country_code, []).append(entry)
+
     return {
         "countries": countries,
         "country_count": len(countries),
         "row_count": sum(len(entries) for entries in countries.values()),
+        "reserves": reserves,
     }
 
 
@@ -1836,6 +2066,7 @@ def _index_body(
     element_index: list[dict] | None = None,
 ) -> str:
     country_map_json = json.dumps(country_map_data, ensure_ascii=False, separators=(",", ":"))
+    element_index_json = json.dumps(element_index or [], ensure_ascii=False, separators=(",", ":"))
 
     # Build a lookup from symbol -> element_index entry for data-* attribute rendering
     index_by_symbol: dict[str, dict] = {}
@@ -1948,8 +2179,23 @@ def _index_body(
 </header>
 <section class="map-panel">
   <div class="map-panel-header">
-    <p class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output.</p>
+    <p id="map-panel-copy" class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output.</p>
   </div>
+  <div class="heatmap-controls" id="heatmap-controls">
+    <div class="heatmap-selector-wrap">
+      <label for="heatmap-element-select" class="sr-only">Element</label>
+      <select id="heatmap-element-select" class="heatmap-element-select">
+        <option value="">&mdash; select element &mdash;</option>
+      </select>
+      <button id="heatmap-clear" class="heatmap-clear" hidden aria-label="Clear element selection">&times;</button>
+    </div>
+    <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true">
+      <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
+      <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
+      <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+    </div>
+  </div>
+  <div class="heatmap-chips" id="heatmap-chips"></div>
   <div class="country-map-shell">
     <div id="country-map-root" class="country-map-root" data-geojson-src="assets/world_countries_50m.geojson">
       <div class="country-map-fallback">Loading country map&hellip;</div>
@@ -1967,6 +2213,7 @@ def _index_body(
     </div>
     <div id="country-map-drawer-body" class="country-map-drawer-body"></div>
   </aside>
+  <script id="atlas-element-index" type="application/json">{element_index_json}</script>
   <script id="atlas-country-map-data" type="application/json">{country_map_json}</script>
 </section>
 <script id="atlas-element-index" type="application/json">{element_index_json}</script>
@@ -3112,6 +3359,7 @@ def generate_viewer(
             refining_shares_by_symbol,
             end_uses_by_symbol,
             byproduct_by_symbol,
+            reserves_shares_by_symbol=shares_by_symbol,
         )
         element_index_list = json.loads(element_index)
 
