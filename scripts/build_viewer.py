@@ -367,22 +367,6 @@ header { border-bottom: 1px solid var(--border); padding-bottom: 1rem; margin-bo
 header h1 { margin: 0 0 0.25rem; font-size: 1.5rem; }
 header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 
-/* ── stats row ── */
-.stats-row {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  gap: 0.75rem;
-  margin-bottom: 1.75rem;
-}
-.stat-card {
-  background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: 6px;
-  padding: 0.75rem 1rem;
-}
-.stat-card .stat-value { font-size: 2rem; font-weight: 700; line-height: 1; }
-.stat-card .stat-label { font-size: 0.8rem; color: var(--muted); margin-top: 0.2rem; }
-
 /* ── element grid / table ── */
 .element-table { width: 100%; border-collapse: collapse; font-size: 0.88rem; }
 .element-table th {
@@ -1061,18 +1045,8 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 </html>"""
 
 
-def _index_body(elements: list[dict], stats: dict, snapshot_year: int, country_map_data: dict[str, object]) -> str:
-    total = stats["total_elements"]
-    commercial = stats["commercial_production"]
-    us_crit = stats["us_critical_list_as_of_2025"]
-    eu_crm = stats["eu_crm_list_as_of_2024"]
+def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict[str, object]) -> str:
     country_map_json = json.dumps(country_map_data, ensure_ascii=False, separators=(",", ":"))
-
-    stat_cards = f"""\
-  <div class="stat-card"><div class="stat-value">{total}</div><div class="stat-label">elements</div></div>
-  <div class="stat-card"><div class="stat-value">{commercial}</div><div class="stat-label">commercial production</div></div>
-  <div class="stat-card"><div class="stat-value">{us_crit}</div><div class="stat-label">US Critical List 2025</div></div>
-  <div class="stat-card"><div class="stat-value">{eu_crm}</div><div class="stat-label">EU CRM List 2024</div></div>"""
 
     rows_html = ""
     for el in elements:
@@ -1125,9 +1099,6 @@ def _index_body(elements: list[dict], stats: dict, snapshot_year: int, country_m
   </aside>
   <script id="atlas-country-map-data" type="application/json">{country_map_json}</script>
 </section>
-<div class="stats-row">
-{stat_cards}
-</div>
 <table class="element-table">
   <thead>
     <tr>
@@ -1675,14 +1646,6 @@ def generate_viewer(
 
         snapshot_year: int = int(elements_df["snapshot_year"].iloc[0])
 
-        # Stats for index
-        stats = {
-            "total_elements": len(elements_df),
-            "commercial_production": int(elements_df["commercial_production"].sum()),
-            "us_critical_list_as_of_2025": int(elements_df["us_critical_list_as_of_2025"].fillna(False).sum()),
-            "eu_crm_list_as_of_2024": int(elements_df["eu_crm_list_as_of_2024"].fillna(False).sum()),
-        }
-
         elements_list = elements_df.to_dict(orient="records")
 
         # Build enriched sources data per symbol (includes referenced_by counts)
@@ -1824,7 +1787,7 @@ def generate_viewer(
     footer_element = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
 
     # index.html
-    index_body = _index_body(elements_list, stats, snapshot_year, country_map_data)
+    index_body = _index_body(elements_list, snapshot_year, country_map_data)
     index_html = _page_shell(f"Periodic Element Supply Chain Atlas — {snapshot_year}", index_body, footer_index)
     (viewer_dir / "index.html").write_text(index_html, encoding="utf-8")
 

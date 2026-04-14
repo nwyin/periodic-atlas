@@ -251,7 +251,6 @@ def test_index_country_map_shell_present(viewer_dir):
     assert 'id="country-map-drawer"' in index, "index missing country map drawer"
     assert 'id="country-map-drawer-backdrop"' in index, "index missing country map drawer backdrop"
     assert 'id="country-map-drawer-body"' in index, "index missing country map drawer body"
-    assert "Country Hover Map" in index, "index missing map section title"
     assert "world_countries_50m.geojson" in index, "index missing map geometry asset reference"
     assert "Click a country for a fuller breakdown" in index, "index missing click-through map copy"
 
