@@ -7,12 +7,20 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <title>Madagascar (MG) | Atlas 2025</title>
+  <meta name="description" content="Industrial-element footprint of Madagascar — mining, refining, and reserves.">
+  <meta property="og:title" content="Madagascar (MG) | Atlas 2025">
+  <meta property="og:description" content="Industrial-element footprint of Madagascar — mining, refining, and reserves.">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="Madagascar (MG) | Atlas 2025">
+  <meta name="twitter:description" content="Industrial-element footprint of Madagascar — mining, refining, and reserves.">
+  <link rel="icon" type="image/svg+xml" href="../assets/favicon.svg">
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
 <body>
 <div class="container">
-<nav class="site-nav"><a href="../index.html">Elements</a> <a href="../byproducts.html">Byproduct graph</a></nav>
+<nav class="site-nav"><a href="../index.html">Elements</a> <a href="../byproducts.html">Byproduct graph</a> <a href="../about.html">About</a></nav>
 <h1 class="country-page-header"><span class="country-flag">🇲🇬</span> Madagascar <span class="country-iso-badge">(MG)</span></h1>
 <p class="subtitle">Supply chain footprint &mdash; snapshot year 2025</p>
 <p><a href="../index.html">&larr; Atlas index</a></p>
@@ -49,14 +57,6 @@
     <td class="">high</td>
     <td><span title="USGS 2024e: 240 kt (down from 300 kt in 2023). Madagascar; leading US import source for ilmenite.">USGS 2024e: 240 kt (down from 300 kt in 2023). Madagascar; leading US import source for ilmenite.</span></td>
   </tr>
-  <tr class="producer-low-confidence">
-    <td><a href="../elements/Hf.html">Hf</a><br><small>hafnium</small></td>
-    <td style="text-align:right">2.0%</td>
-    <td>289 tonnes per year</td>
-    <td style="text-align:center">8th</td>
-    <td class="producer-low-confidence">low</td>
-    <td><span title="Derived from Madagascar&#39;s 2024e zircon output of 30,000 t gross weight.">Derived from Madagascar&#39;s 2024e zircon output of 30,000 t gross weight.</span> <span class="byproduct-note">byproduct of Zr</span></td>
-  </tr>
   <tr class="">
     <td><a href="../elements/Zr.html">Zr</a><br><small>zirconium</small></td>
     <td style="text-align:right">2.0%</td>
@@ -64,6 +64,14 @@
     <td style="text-align:center">8th</td>
     <td class="">high</td>
     <td><span title="Madagascar 2024e: 30,000 tonnes gross weight, down from 34,000 kt in 2023. Reserves revised 2024.">Madagascar 2024e: 30,000 tonnes gross weight, down from 34,000 kt in 2023. Reserves revised 2024.</span></td>
+  </tr>
+  <tr class="producer-low-confidence">
+    <td><a href="../elements/Hf.html">Hf</a><br><small>hafnium</small></td>
+    <td style="text-align:right">2.0%</td>
+    <td>289 tonnes per year</td>
+    <td style="text-align:center">8th</td>
+    <td class="producer-low-confidence">low</td>
+    <td><span title="Derived from Madagascar&#39;s 2024e zircon output of 30,000 t gross weight.">Derived from Madagascar&#39;s 2024e zircon output of 30,000 t gross weight.</span> <span class="byproduct-note">byproduct of Zr</span></td>
   </tr>
   <tr class="">
     <td><a href="../elements/Co.html">Co</a><br><small>cobalt</small></td>
@@ -138,13 +146,13 @@
 </table>
 </section>
 
-<script id="country-chart-data" type="application/json">[{"symbol":"Ti","element_name":"titanium","stage":"reserves","share_pct":5.14},{"symbol":"Zr","element_name":"zirconium","stage":"reserves","share_pct":2.87},{"symbol":"Ti","element_name":"titanium","stage":"mining","share_pct":2.7},{"symbol":"Hf","element_name":"hafnium","stage":"mining","share_pct":2.0},{"symbol":"Zr","element_name":"zirconium","stage":"mining","share_pct":2.0},{"symbol":"Co","element_name":"cobalt","stage":"mining","share_pct":1.0},{"symbol":"Co","element_name":"cobalt","stage":"reserves","share_pct":1.0},{"symbol":"Ce","element_name":"cerium","stage":"mining","share_pct":0.5},{"symbol":"Be","element_name":"beryllium","stage":"mining","share_pct":0.28}]</script>
+<script id="country-chart-data" type="application/json">[{"symbol":"Ti","element_name":"titanium","stage":"reserves","share_pct":5.14},{"symbol":"Zr","element_name":"zirconium","stage":"reserves","share_pct":2.87},{"symbol":"Ti","element_name":"titanium","stage":"mining","share_pct":2.7},{"symbol":"Zr","element_name":"zirconium","stage":"mining","share_pct":2.0},{"symbol":"Hf","element_name":"hafnium","stage":"mining","share_pct":2.0},{"symbol":"Co","element_name":"cobalt","stage":"mining","share_pct":1.0},{"symbol":"Co","element_name":"cobalt","stage":"reserves","share_pct":1.0},{"symbol":"Ce","element_name":"cerium","stage":"mining","share_pct":0.5},{"symbol":"Be","element_name":"beryllium","stage":"mining","share_pct":0.28}]</script>
 <div id="country-bar-chart" class="country-bar-chart"></div>
 <section class="country-related">
   <!-- Critical minerals overview: placeholder for future link -->
 </section>
 <footer>
-Built 2026-04-14T14:30:20Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T15:25:24Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_country.js"></script>

@@ -50,6 +50,7 @@ BYPRODUCT_GRAPH_ENABLED: bool = True
 _NAV_LINKS: list[tuple[str, str]] = [
     ("Elements", "index.html"),
     ("Byproduct graph", "byproducts.html"),
+    ("About", "about.html"),
 ]
 
 # ── Country name overrides ─────────────────────────────────────────────────────
@@ -2433,7 +2434,27 @@ def _nav_html(prefix: str = "") -> str:
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def _page_shell(title: str, body: str, footer: str, include_table_filter: bool = False) -> str:
+def _head_meta(description: str, page_title: str, asset_prefix: str = "") -> str:
+    """Return description + Open Graph + Twitter Card + favicon link tags.
+
+    asset_prefix: "" for top-level pages (index, about, byproducts); "../" for
+    pages one level deep (elements/*, countries/*).
+    """
+    desc = _html_escape(description)
+    title = _html_escape(page_title)
+    return (
+        f'  <meta name="description" content="{desc}">\n'
+        f'  <meta property="og:title" content="{title}">\n'
+        f'  <meta property="og:description" content="{desc}">\n'
+        f'  <meta property="og:type" content="website">\n'
+        f'  <meta name="twitter:card" content="summary">\n'
+        f'  <meta name="twitter:title" content="{title}">\n'
+        f'  <meta name="twitter:description" content="{desc}">\n'
+        f'  <link rel="icon" type="image/svg+xml" href="{asset_prefix}assets/favicon.svg">'
+    )
+
+
+def _page_shell(title: str, body: str, footer: str, description: str = "", include_table_filter: bool = False) -> str:
     nav = _nav_html(prefix="")
     table_filter_tag = (
         ('\n  <script src="assets/table_sort.js" defer></script>\n  <script src="assets/table_filter.js" defer></script>')
@@ -2450,6 +2471,7 @@ def _page_shell(title: str, body: str, footer: str, include_table_filter: bool =
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <title>{_html_escape(title)}</title>
+{_head_meta(description, title, asset_prefix="")}
   <link rel="stylesheet" href="assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="assets/charts_map.js" defer></script>{table_filter_tag}
@@ -2466,9 +2488,9 @@ def _page_shell(title: str, body: str, footer: str, include_table_filter: bool =
 </html>"""
 
 
-def _element_page_shell(title: str, body: str, footer: str) -> str:
+def _element_page_shell(title: str, body: str, footer: str, description: str = "") -> str:
     """Same as _page_shell but with ../ prefix for the CSS href.
-    Also loads d3 v7 + charts_prices.js (B3 charts).
+    Also loads d3 v7 + charts_prices.js.
     """
     nav = _nav_html(prefix="../")
     return f"""\
@@ -2481,6 +2503,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <title>{_html_escape(title)}</title>
+{_head_meta(description, title, asset_prefix="../")}
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="../assets/charts_prices.js" defer></script>
@@ -2500,7 +2523,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 </html>"""
 
 
-def _country_page_shell(title: str, body: str, footer: str) -> str:
+def _country_page_shell(title: str, body: str, footer: str, description: str = "") -> str:
     """Page shell for viewer/countries/{ISO}.html pages (one level deep)."""
     nav = _nav_html(prefix="../")
     return f"""\
@@ -2513,6 +2536,7 @@ def _country_page_shell(title: str, body: str, footer: str) -> str:
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
   <title>{_html_escape(title)}</title>
+{_head_meta(description, title, asset_prefix="../")}
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
@@ -2532,6 +2556,11 @@ def _country_page_shell(title: str, body: str, footer: str) -> str:
 def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: int, footer: str) -> str:
     """Render the full byproducts.html page."""
     nav = _nav_html(prefix="")
+    byproducts_title = f"Byproduct dependency graph | Atlas {snapshot_year}"
+    byproducts_desc = (
+        "Dependency graph of industrial elements whose supply is governed by "
+        "another commodity's economics — Re\u2190Mo\u2190Cu, Te\u2190Cu, Ga\u2190Al, and so on."
+    )
     return f"""\
 <!DOCTYPE html>
 <html lang="en">
@@ -2541,7 +2570,8 @@ def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: in
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&amp;display=swap" rel="stylesheet">
-  <title>Byproduct dependency graph | Atlas {snapshot_year}</title>
+  <title>{byproducts_title}</title>
+{_head_meta(byproducts_desc, byproducts_title, asset_prefix="")}
   <link rel="stylesheet" href="assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
 </head>
@@ -2565,6 +2595,89 @@ def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: in
 <script src="assets/charts_byproduct_graph.js"></script>
 </body>
 </html>"""
+
+
+def _about_body(snapshot_year: int) -> str:
+    """Render the About page body — methodology, scope, and known limits."""
+    return f"""\
+<header>
+  <h1>About this atlas</h1>
+  <p class="subtitle">What you&rsquo;re looking at, where the numbers come from, and what they don&rsquo;t cover.</p>
+</header>
+
+<h2 class="section-head">What this is</h2>
+<p>A snapshot of the {snapshot_year} industrial supply chain for the chemical
+elements: who mines them, who refines them, where reserves sit, what they get
+used for, and which ones are governed by another commodity&rsquo;s economics.
+Every element with non-trivial commercial production has its own page; every
+country with industrial-element output has one too.</p>
+
+<h2 class="section-head">Snapshot year</h2>
+<p>All quantitative figures are anchored to the {snapshot_year} reporting
+year. Where a 2024 figure is the latest available (the typical case for
+year-end USGS Mineral Commodity Summaries), it is labelled as such on the
+relevant page. Multi-year price histories run back as far as the underlying
+source publishes consistent data.</p>
+
+<h2 class="section-head">Industrial tiers</h2>
+<p>Each element is assigned a tier from 1 (foundational, hundreds of millions
+of tonnes per year &mdash; iron, aluminium) to 5 (research-only or
+synthetic). Tier reflects volume and breadth of industrial use, not strategic
+importance. A Tier 3 element can be more critical to a specific supply
+chain than a Tier 1 element &mdash; cobalt and the rare earths are the
+canonical examples.</p>
+
+<h2 class="section-head">Concentration (HHI)</h2>
+<p>Production and refining concentration is reported using the
+Herfindahl&ndash;Hirschman Index &mdash; the sum of squared market shares,
+scaled to 0&ndash;10,000. An HHI above 2,500 is considered highly
+concentrated; above 5,000 means a single producer dominates. The atlas
+calculates HHI separately for the mining stage and the refining stage,
+because for several elements (cobalt, rare earths, gallium) the two stages
+have very different geographies.</p>
+
+<h2 class="section-head">Sources</h2>
+<p>The default reference is the USGS Mineral Commodity Summaries series &mdash;
+the most consistent year-over-year dataset for global mine production,
+reserves, and prices. For refining-stage figures (which USGS reports
+unevenly), the IEA Critical Minerals Outlook and BGS World Mineral
+Production are used as cross-checks. Country-level breakdowns occasionally
+draw on company filings, national geological surveys, or trade press;
+those rows are flagged as &ldquo;secondary reporting&rdquo; in the per-country notes.
+Every page lists the sources that fed its specific figures.</p>
+
+<h2 class="section-head">Scope and known limits</h2>
+<p>Country rows aggregate output without splitting by production mode &mdash;
+industrial mining, artisanal small-scale mining (ASM), and informal flows
+are combined. This matters most for cobalt (DRC: industrial vs. ASM) and
+tantalum (DRC and Rwanda: ITSCI-traced vs. smuggled). The relevant element
+pages flag this explicitly.</p>
+<p>Refining-stage country shares are sparser than mining-stage shares.
+Where USGS does not publish a country-level refining breakdown, the atlas
+notes the gap rather than estimating one. China&rsquo;s refining share for
+cobalt, gallium, germanium, and the rare earths is qualitatively
+acknowledged but not quantified at high precision &mdash; that&rsquo;s a known
+limit of public data, not a data-entry omission.</p>
+<p>Recycling and secondary-supply figures are included where USGS or IEA
+publishes them, but coverage is uneven. End-of-life recycling rates for
+many minor metals are reported only as ranges or order-of-magnitude
+estimates; the atlas surfaces those as published rather than smoothing
+them.</p>
+
+<h2 class="section-head">The byproduct graph</h2>
+<p>A separate <a href="byproducts.html">byproduct dependency graph</a>
+tracks the elements whose supply is governed by another commodity&rsquo;s
+economics &mdash; rhenium follows molybdenum follows copper; tellurium
+follows copper; gallium follows aluminium. These elements cannot meaningfully
+respond to their own demand because their production volume is set by the
+host metal&rsquo;s market. The graph makes those dependency chains visible.</p>
+
+<h2 class="section-head">Corrections</h2>
+<p>If you spot a figure that disagrees with the cited source, or a citation
+that doesn&rsquo;t resolve, please open an issue against the repo (linked in the
+footer of every page). The data is intended to be reproducible from the
+listed sources end-to-end.</p>
+"""
 
 
 def _index_body(
@@ -3935,9 +4048,19 @@ def generate_viewer(
         f"Periodic Element Supply Chain Atlas — {snapshot_year}",
         index_body,
         footer_index,
+        description="Atlas of 100+ industrial elements — production, refining, reserves, criticality, and byproduct dependencies.",
         include_table_filter=True,
     )
     (viewer_dir / "index.html").write_text(index_html, encoding="utf-8")
+
+    # about.html
+    about_html = _page_shell(
+        f"About — Atlas {snapshot_year}",
+        _about_body(snapshot_year),
+        footer_index,
+        description="How the atlas is built, what the snapshot year covers, and where its figures come from.",
+    )
+    (viewer_dir / "about.html").write_text(about_html, encoding="utf-8")
 
     # Per-element pages
     for el in elements_list:
@@ -3968,7 +4091,8 @@ def generate_viewer(
             mining_refining_shares=mining_refining_shares_by_symbol.get(sym, []),
         )
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
-        html = _element_page_shell(title, body, footer_element)
+        el_desc = f"{el['name']} ({sym}) — production, reserves, end uses, criticality, and supply concentration."
+        html = _element_page_shell(title, body, footer_element, description=el_desc)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
 
     # Per-country pages
@@ -3984,7 +4108,8 @@ def generate_viewer(
             summary = _compute_country_summary(iso_rows)
             body = _render_country_page_full(iso, country_name, sovereignt, iso_rows, summary, iso_to_name, country_page_data)
             title = f"{country_name} ({iso}) | Atlas {snapshot_year}"
-            html = _country_page_shell(title, body, footer_country)
+            country_desc = f"Industrial-element footprint of {country_name} — mining, refining, and reserves."
+            html = _country_page_shell(title, body, footer_country, description=country_desc)
             (countries_dir / f"{iso}.html").write_text(html, encoding="utf-8")
             print(f"viewer/countries/{iso}.html written")
 

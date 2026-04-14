@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="#0a0d14"/>
+  <rect x="3" y="3" width="26" height="26" fill="none" stroke="#5ee7ff" stroke-width="1.5"/>
+  <text x="16" y="22" text-anchor="middle"
+        font-family="ui-monospace, 'JetBrains Mono', 'SF Mono', monospace"
+        font-weight="700" font-size="18" fill="#5ee7ff">A</text>
+</svg>
