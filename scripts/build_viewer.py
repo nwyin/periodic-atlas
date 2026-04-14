@@ -31,6 +31,7 @@ CHARTS_PRODUCTION_JS = ROOT / "viewer" / "assets" / "charts_production.js"
 CHARTS_ISOTOPES_JS = ROOT / "viewer" / "assets" / "charts_isotopes.js"
 CHARTS_MAP_JS = ROOT / "viewer" / "assets" / "charts_map.js"
 CHARTS_COUNTRY_JS = ROOT / "viewer" / "assets" / "charts_country.js"
+CHARTS_BYPRODUCT_GRAPH_JS = ROOT / "viewer" / "assets" / "charts_byproduct_graph.js"
 WORLD_COUNTRIES_GEOJSON = ROOT / "viewer" / "assets" / "world_countries_50m.geojson"
 TABLE_SORT_JS = ROOT / "viewer" / "assets" / "table_sort.js"
 TABLE_FILTER_JS = ROOT / "viewer" / "assets" / "table_filter.js"
@@ -43,11 +44,6 @@ TABLE_FILTER_JS = ROOT / "viewer" / "assets" / "table_filter.js"
 COUNTRY_PAGES_ENABLED: bool = True
 # Set True when byproduct graph (viewer/byproducts.html) is deployed.
 BYPRODUCT_GRAPH_ENABLED: bool = True
-
-# ── Feature flags ──────────────────────────────────────────────────────────────
-# Set to True once the destination page is generated; flip to False to suppress
-# links that would otherwise be broken.
-COUNTRY_PAGES_ENABLED = True
 
 # ── Site navigation ────────────────────────────────────────────────────────────
 # CC-6: shared nav links embedded in every page shell.
@@ -420,6 +416,162 @@ def _build_isotope_data(con: "duckdb.DuckDBPyConnection", symbol: str) -> list[d
             }
         )
     return result
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Byproduct graph data builder
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _normalize_mine_value(value: float | None, unit: str | None, stream: str | None) -> float | None:
+    """Normalize a production value to tonnes/yr.
+
+    Units handled:
+      - tonnes_per_year          → identity
+      - million_tonnes_per_year  → × 1e6
+      - kg_per_year              → ÷ 1000
+      - million_m3_per_year      → None (non-mass; not useful for node sizing)
+      - contained_in_zircon_feed (Hf upstream stream) → None (not refined metal)
+
+    Returns None when the unit is not mass-equivalent or value is absent.
+    """
+    if value is None or unit is None:
+        return None
+    # Reject the Hf upstream zircon-feed stream (not refined metal output)
+    if stream and "zircon_feed" in stream:
+        return None
+    if unit == "tonnes_per_year":
+        return float(value)
+    if unit == "million_tonnes_per_year":
+        return float(value) * 1_000_000
+    if unit == "kg_per_year":
+        return float(value) / 1000.0
+    # Other units (m3, etc.) are not mass-equivalent → None
+    return None
+
+
+def _byproduct_graph_json(con: "duckdb.DuckDBPyConnection") -> str:  # type: ignore[name-defined]
+    """Build the byproduct DAG JSON payload.
+
+    Pulls edges from atlas_byproducts, node metadata from atlas_elements and
+    atlas_production.  Normalises mine output to tonnes/yr.  Runs Kahn's
+    algorithm topological sort; raises ValueError on cycle.
+
+    Returns a JSON string suitable for embedding as:
+      <script id="byproduct-graph-data" type="application/json">…</script>
+    """
+    # ── 1. Edges ──────────────────────────────────────────────────────────────
+    edge_rows = con.execute("SELECT parent_symbol, symbol FROM atlas_byproducts ORDER BY symbol, parent_symbol").fetchall()
+    edges = [{"source": str(parent), "target": str(child)} for parent, child in edge_rows]
+
+    # ── 2. Node set: union of all symbols and parent_symbols ─────────────────
+    all_symbols: set[str] = set()
+    for parent, child in edge_rows:
+        all_symbols.add(str(parent))
+        all_symbols.add(str(child))
+
+    byproduct_of: dict[str, list[str]] = {}
+    for parent, child in edge_rows:
+        byproduct_of.setdefault(str(child), []).append(str(parent))
+
+    # ── 3. Element metadata ───────────────────────────────────────────────────
+    el_rows = con.execute(
+        """
+        SELECT symbol, name, industrial_tier,
+               us_critical_list_as_of_2025,
+               eu_crm_list_as_of_2024,
+               eu_strategic_list_as_of_2024
+        FROM atlas_elements
+        WHERE symbol = ANY(?)
+        """,
+        [list(all_symbols)],
+    ).fetchall()
+    meta: dict[str, dict] = {}
+    for sym, name, tier, us_crit, eu_crm, eu_strat in el_rows:
+        meta[str(sym)] = {
+            "name": str(name),
+            "tier": int(tier) if tier is not None else 0,
+            "us_critical": bool(us_crit),
+            "eu_crm": bool(eu_crm),
+            "eu_strategic": bool(eu_strat),
+        }
+
+    # ── 4. Production data — pick best mine value per symbol ─────────────────
+    prod_rows = con.execute(
+        """
+        SELECT symbol, value, unit, stream
+        FROM atlas_production
+        WHERE stage = 'mine'
+          AND symbol = ANY(?)
+        ORDER BY symbol
+        """,
+        [list(all_symbols)],
+    ).fetchall()
+
+    # Collect all candidate values per symbol; pick the best one:
+    # prefer non-None normalised values; among those pick the highest
+    # (handles multi-stream elements like Ti, Al)
+    prod_candidates: dict[str, list[float]] = {}
+    for sym, value, unit, stream in prod_rows:
+        sym = str(sym)
+        normed = _normalize_mine_value(
+            float(value) if value is not None else None,
+            str(unit) if unit else None,
+            str(stream) if stream else None,
+        )
+        if normed is not None:
+            prod_candidates.setdefault(sym, []).append(normed)
+
+    mine_value: dict[str, float | None] = {sym: None for sym in all_symbols}
+    for sym, vals in prod_candidates.items():
+        mine_value[sym] = max(vals)
+
+    # ── 5. Assemble nodes ─────────────────────────────────────────────────────
+    nodes = []
+    for sym in sorted(all_symbols):
+        m = meta.get(sym, {})
+        nodes.append(
+            {
+                "symbol": sym,
+                "name": m.get("name", sym),
+                "tier": m.get("tier", 0),
+                "us_critical": m.get("us_critical", False),
+                "eu_crm": m.get("eu_crm", False),
+                "eu_strategic": m.get("eu_strategic", False),
+                "mine_value": mine_value.get(sym),
+                "mine_unit": "tonnes_per_year",
+                "byproduct_of": sorted(byproduct_of.get(sym, [])),
+            }
+        )
+
+    # ── 6. DAG validation — Kahn's algorithm ─────────────────────────────────
+    in_degree: dict[str, int] = {sym: 0 for sym in all_symbols}
+    children: dict[str, list[str]] = {sym: [] for sym in all_symbols}
+    for e in edges:
+        children[e["source"]].append(e["target"])
+        in_degree[e["target"]] += 1
+
+    queue = [sym for sym in all_symbols if in_degree[sym] == 0]
+    visited: list[str] = []
+    while queue:
+        node = queue.pop(0)
+        visited.append(node)
+        for child in children[node]:
+            in_degree[child] -= 1
+            if in_degree[child] == 0:
+                queue.append(child)
+
+    if len(visited) != len(all_symbols):
+        cycle_nodes = [sym for sym in all_symbols if sym not in set(visited)]
+        raise ValueError(f"Cycle detected in byproduct graph involving nodes: {sorted(cycle_nodes)}")
+
+    payload = {
+        "nodes": nodes,
+        "edges": edges,
+        "dag_validated": True,
+        "snapshot_year": 2025,
+    }
+    return json.dumps(payload, ensure_ascii=False, separators=(",", ":"))
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1551,6 +1703,86 @@ footer a { color: var(--muted); }
   border-top: 1px solid var(--border);
   padding-top: 0.5rem;
 }
+
+/* ── byproduct graph page ── */
+.byproduct-graph-panel {
+  position: relative;
+  margin: 0 0 2rem;
+}
+
+#byproduct-graph-root {
+  overflow: visible;
+  min-height: 300px;
+}
+
+#byproduct-graph-root svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.byproduct-tooltip {
+  position: fixed;
+  z-index: 50;
+  max-width: 300px;
+  padding: 0.75rem 0.85rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
+  pointer-events: none;
+  font-size: 0.82rem;
+  line-height: 1.5;
+}
+
+.byproduct-tooltip[hidden] { display: none; }
+
+.byproduct-tooltip-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+.byproduct-tooltip-row {
+  color: var(--muted);
+  margin-bottom: 0.1rem;
+}
+
+.byproduct-tooltip-row strong {
+  color: var(--text);
+  font-weight: 600;
+}
+
+/* byproduct graph legend */
+.byproduct-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem 1.5rem;
+  margin: 0.5rem 0 1rem;
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+
+.byproduct-legend-item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.byproduct-legend-swatch {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.byproduct-legend-swatch-sq {
+  width: 14px;
+  height: 14px;
+  border-radius: 3px;
+  flex-shrink: 0;
+}
 """
 
 
@@ -2059,6 +2291,41 @@ def _country_page_shell(title: str, body: str, footer: str) -> str:
 </html>"""
 
 
+def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: int, footer: str) -> str:
+    """Render the full byproducts.html page."""
+    nav = _nav_html(prefix="")
+    return f"""\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Byproduct dependency graph | Atlas {snapshot_year}</title>
+  <link rel="stylesheet" href="assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<div class="container">
+{nav}
+<header>
+  <h1>Byproduct dependency graph</h1>
+  <p class="subtitle">Elements whose supply is governed by another commodity&rsquo;s economics.</p>
+</header>
+<section class="byproduct-graph-panel">
+  <div id="byproduct-graph-root"></div>
+  <div id="byproduct-tooltip" class="byproduct-tooltip" hidden></div>
+  <script id="byproduct-graph-data" type="application/json">{graph_json}</script>
+  <script id="atlas-element-index" type="application/json">{element_index_json}</script>
+</section>
+<footer>
+{footer}
+</footer>
+</div>
+<script src="assets/charts_byproduct_graph.js"></script>
+</body>
+</html>"""
+
+
 def _index_body(
     elements: list[dict],
     snapshot_year: int,
@@ -2215,6 +2482,7 @@ def _index_body(
   </aside>
   <script id="atlas-element-index" type="application/json">{element_index_json}</script>
   <script id="atlas-country-map-data" type="application/json">{country_map_json}</script>
+  <script id="atlas-element-index" type="application/json">{element_index_json}</script>
 </section>
 <script id="atlas-element-index" type="application/json">{element_index_json}</script>
 <div class="table-controls" id="table-controls"
@@ -3363,6 +3631,11 @@ def generate_viewer(
         )
         element_index_list = json.loads(element_index)
 
+        # Byproduct graph data (BPG) — requires atlas_byproducts table
+        graph_json: str = ""
+        if "atlas_byproducts" in tables and BYPRODUCT_GRAPH_ENABLED:
+            graph_json = _byproduct_graph_json(con)
+
     finally:
         con.close()
 
@@ -3403,11 +3676,17 @@ def generate_viewer(
     if TABLE_FILTER_JS.exists():
         (assets_dir / "table_filter.js").write_text(TABLE_FILTER_JS.read_text(encoding="utf-8"), encoding="utf-8")
 
+    if CHARTS_BYPRODUCT_GRAPH_JS.exists():
+        (assets_dir / "charts_byproduct_graph.js").write_text(CHARTS_BYPRODUCT_GRAPH_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
     # Footer shared across pages
     repo_url = "https://github.com/anomalyco/opencode"
     footer_index = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
     footer_element = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
     footer_country = footer_element
+
+    # element_index is already the compact JSON string (from _build_element_index)
+    element_index_json = element_index
 
     # index.html
     index_body = _index_body(elements_list, snapshot_year, country_map_data, element_index_list)
@@ -3468,6 +3747,14 @@ def generate_viewer(
             (countries_dir / f"{iso}.html").write_text(html, encoding="utf-8")
             print(f"viewer/countries/{iso}.html written")
 
+    # byproducts.html + byproducts-data.json
+    if graph_json and BYPRODUCT_GRAPH_ENABLED:
+        byproducts_html = _byproducts_page(graph_json, element_index_json, snapshot_year, footer_index)
+        (viewer_dir / "byproducts.html").write_text(byproducts_html, encoding="utf-8")
+        (viewer_dir / "byproducts-data.json").write_text(graph_json, encoding="utf-8")
+        print("viewer/byproducts.html written")
+        print("viewer/byproducts-data.json written")
+
     print(f"viewer/index.html written ({len(elements_list)} elements)")
     for el in elements_list:
         print(f"viewer/elements/{el['symbol']}.html written")
@@ -3488,6 +3775,8 @@ def generate_viewer(
         print("viewer/assets/table_sort.js written")
     if TABLE_FILTER_JS.exists():
         print("viewer/assets/table_filter.js written")
+    if CHARTS_BYPRODUCT_GRAPH_JS.exists():
+        print("viewer/assets/charts_byproduct_graph.js written")
 
 
 def main() -> None:

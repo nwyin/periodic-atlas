@@ -1816,3 +1816,221 @@ def test_hm_charts_map_js_has_heatmap_code(viewer_dir):
     assert "interpolateYlOrRd" in js, "charts_map.js must use d3.interpolateYlOrRd"
     assert "history.replaceState" in js, "charts_map.js must use history.replaceState for URL state"
     assert "URLSearchParams" in js, "charts_map.js must parse URL params"
+
+
+# =============================================================================
+# BPG — Byproduct graph tests (BPG-INV-1 through BPG-INV-7)
+# =============================================================================
+
+
+def _extract_byproduct_graph_data(viewer_dir) -> dict:
+    """Parse byproducts-data.json from the viewer output directory."""
+    data_path = viewer_dir / "byproducts-data.json"
+    assert data_path.exists(), "byproducts-data.json must exist after generate_viewer"
+    with open(data_path) as f:
+        return _json.load(f)
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-1: page presence
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv1_page_presence(viewer_dir):
+    """byproducts.html and byproducts-data.json must exist after generate_viewer."""
+    assert (viewer_dir / "byproducts.html").exists(), "byproducts.html not generated"
+    assert (viewer_dir / "byproducts-data.json").exists(), "byproducts-data.json not generated"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-2: correct node count (derive from DB, not hardcoded)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv2_node_count(viewer_dir):
+    """Node count in JSON must match the count of distinct symbols in atlas_byproducts."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        expected_count = con.execute(
+            """
+            SELECT COUNT(DISTINCT sym) FROM (
+                SELECT symbol AS sym FROM atlas_byproducts
+                UNION
+                SELECT parent_symbol AS sym FROM atlas_byproducts
+            ) t
+            """
+        ).fetchone()[0]
+    finally:
+        con.close()
+
+    data = _extract_byproduct_graph_data(viewer_dir)
+    assert len(data["nodes"]) == expected_count, f"Expected {expected_count} nodes in byproduct graph, got {len(data['nodes'])}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-3: correct edge list (derive from DB; spot-check key edges)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv3_edge_list(viewer_dir):
+    """Edge count must match atlas_byproducts; spot-check critical edges present."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        expected_edge_count = con.execute("SELECT COUNT(*) FROM atlas_byproducts").fetchone()[0]
+    finally:
+        con.close()
+
+    data = _extract_byproduct_graph_data(viewer_dir)
+    assert len(data["edges"]) == expected_edge_count, f"Expected {expected_edge_count} edges, got {len(data['edges'])}"
+
+    edges_set = {(e["source"], e["target"]) for e in data["edges"]}
+    assert ("Cu", "Co") in edges_set, "Missing edge Cu → Co"
+    assert ("Al", "Ga") in edges_set, "Missing edge Al → Ga"
+    assert ("Mo", "Re") in edges_set, "Missing edge Mo → Re"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-4: DAG property (no cycles)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv4_dag_no_cycles(viewer_dir):
+    """dag_validated flag must be True and the serialized edge list must be acyclic."""
+    data = _extract_byproduct_graph_data(viewer_dir)
+    assert data["dag_validated"] is True, "dag_validated must be True in byproduct graph JSON"
+
+    # Double-check with Python Kahn's algorithm on the serialized data
+    nodes = {n["symbol"] for n in data["nodes"]}
+    in_degree = {sym: 0 for sym in nodes}
+    children_map = {sym: [] for sym in nodes}
+    for e in data["edges"]:
+        children_map[e["source"]].append(e["target"])
+        in_degree[e["target"]] += 1
+
+    queue = [sym for sym in nodes if in_degree[sym] == 0]
+    visited = []
+    while queue:
+        node = queue.pop(0)
+        visited.append(node)
+        for child in children_map[node]:
+            in_degree[child] -= 1
+            if in_degree[child] == 0:
+                queue.append(child)
+
+    assert len(visited) == len(nodes), f"Cycle detected in serialized graph: only visited {len(visited)}/{len(nodes)} nodes"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-5: mine_value normalization
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv5_mine_value_normalization(viewer_dir):
+    """Cu (million_tonnes_per_year) → ~23e6 t/yr; Ir (kg_per_year) → ~8.2 t/yr."""
+    data = _extract_byproduct_graph_data(viewer_dir)
+    node_by_sym = {n["symbol"]: n for n in data["nodes"]}
+
+    cu = node_by_sym.get("Cu")
+    assert cu is not None, "Cu node missing from byproduct graph"
+    assert cu["mine_value"] is not None, "Cu mine_value must not be null"
+    assert abs(cu["mine_value"] - 23_000_000) < 1_000, f"Cu mine_value expected ~23,000,000, got {cu['mine_value']}"
+
+    ir = node_by_sym.get("Ir")
+    assert ir is not None, "Ir node missing from byproduct graph"
+    assert ir["mine_value"] is not None, "Ir mine_value must not be null"
+    assert abs(ir["mine_value"] - 8.2) < 0.5, f"Ir mine_value expected ~8.2 (from 8200 kg/yr), got {ir['mine_value']}"
+
+
+def test_bpg_inv5_normalize_mine_value_helper():
+    """Unit of _normalize_mine_value: tonnes, million_tonnes, kg, other."""
+    fn = build_viewer._normalize_mine_value
+    # tonnes_per_year → identity
+    assert fn(500.0, "tonnes_per_year", None) == 500.0
+    # million_tonnes_per_year → × 1e6
+    assert abs(fn(23.0, "million_tonnes_per_year", None) - 23_000_000) < 1
+    # kg_per_year → ÷ 1000
+    assert abs(fn(8200.0, "kg_per_year", None) - 8.2) < 0.01
+    # non-mass unit → None
+    assert fn(5000.0, "million_m3_per_year", None) is None
+    # Hf upstream zircon stream → None
+    assert fn(14436.0, "tonnes_per_year", "contained_in_zircon_feed") is None
+    # None value → None
+    assert fn(None, "tonnes_per_year", None) is None
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-6: page references JS and data script
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv6_page_references(viewer_dir):
+    """byproducts.html must reference charts_byproduct_graph.js and embed the data script."""
+    html = (viewer_dir / "byproducts.html").read_text()
+    assert "charts_byproduct_graph.js" in html, "byproducts.html missing charts_byproduct_graph.js reference"
+    assert 'id="byproduct-graph-data"' in html, "byproducts.html missing #byproduct-graph-data script block"
+    assert 'type="application/json"' in html, "byproducts.html data block must use type=application/json"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG-INV-7: nav links present on index, byproducts, and per-element pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_inv7_nav_links(viewer_dir):
+    """index.html links to byproducts.html; byproducts.html links to index.html.
+    At least one element page (Co.html) contains links to both.
+    """
+    index_html = (viewer_dir / "index.html").read_text()
+    assert "byproducts.html" in index_html, "index.html must link to byproducts.html"
+
+    byproducts_html = (viewer_dir / "byproducts.html").read_text()
+    assert "index.html" in byproducts_html, "byproducts.html must link to index.html"
+
+    co_html = (viewer_dir / "elements" / "Co.html").read_text()
+    assert "index.html" in co_html, "Co.html must link to index.html"
+    assert "byproducts.html" in co_html, "Co.html must link to byproducts.html"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG: charts_byproduct_graph.js deployed into assets
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_byproduct_graph_js_deployed(viewer_dir):
+    """charts_byproduct_graph.js must be written into assets/ during generation."""
+    assert (viewer_dir / "assets" / "charts_byproduct_graph.js").exists(), "charts_byproduct_graph.js not deployed into assets/"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG: element index present in byproducts.html
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_element_index_in_byproducts_page(viewer_dir):
+    """byproducts.html must contain the inline atlas-element-index script block."""
+    html = (viewer_dir / "byproducts.html").read_text()
+    assert 'id="atlas-element-index"' in html, "byproducts.html missing #atlas-element-index script block"
+
+
+def test_bpg_element_index_in_index_page(viewer_dir):
+    """index.html must contain the inline atlas-element-index script block (CC-1)."""
+    html = (viewer_dir / "index.html").read_text()
+    assert 'id="atlas-element-index"' in html, "index.html missing #atlas-element-index script block"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# BPG: deterministic output includes byproducts.html
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_bpg_deterministic_byproducts(tmp_path):
+    """Two runs with the same timestamp must produce byte-identical byproducts.html."""
+    out1 = tmp_path / "run1"
+    out2 = tmp_path / "run2"
+    build_viewer.generate_viewer(REAL_DB, out1, timestamp=FIXED_TS)
+    build_viewer.generate_viewer(REAL_DB, out2, timestamp=FIXED_TS)
+
+    for fname in ["byproducts.html", "byproducts-data.json"]:
+        f1 = (out1 / fname).read_text()
+        f2 = (out2 / fname).read_text()
+        assert f1 == f2, f"{fname} differs between runs (non-deterministic)"
