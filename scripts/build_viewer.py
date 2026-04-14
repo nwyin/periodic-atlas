@@ -2621,11 +2621,11 @@ source publishes consistent data.</p>
 
 <h2 class="section-head">Industrial tiers</h2>
 <p>Each element is assigned a tier from 1 (foundational, hundreds of millions
-of tonnes per year &mdash; iron, aluminium) to 5 (research-only or
-synthetic). Tier reflects volume and breadth of industrial use, not strategic
-importance. A Tier 3 element can be more critical to a specific supply
-chain than a Tier 1 element &mdash; cobalt and the rare earths are the
-canonical examples.</p>
+of tonnes per year, like iron and aluminium) to 5 (research-only or
+synthetic). A tier reflects volume and breadth of industrial use; it says
+nothing about strategic importance. A Tier 3 element can be more critical
+to a specific supply chain than a Tier 1 element, with cobalt and the rare
+earths as the canonical examples.</p>
 
 <h2 class="section-head">Concentration (HHI)</h2>
 <p>Production and refining concentration is reported using the
@@ -2633,13 +2633,13 @@ Herfindahl&ndash;Hirschman Index &mdash; the sum of squared market shares,
 scaled to 0&ndash;10,000. An HHI above 2,500 is considered highly
 concentrated; above 5,000 means a single producer dominates. The atlas
 calculates HHI separately for the mining stage and the refining stage,
-because for several elements (cobalt, rare earths, gallium) the two stages
-have very different geographies.</p>
+because the two stages have very different geographies for several
+commodities (cobalt, rare earths, gallium among them).</p>
 
 <h2 class="section-head">Sources</h2>
-<p>The default reference is the USGS Mineral Commodity Summaries series &mdash;
-the most consistent year-over-year dataset for global mine production,
-reserves, and prices. For refining-stage figures (which USGS reports
+<p>The default reference is the USGS Mineral Commodity Summaries series,
+which gives the most consistent year-over-year dataset for global mine
+tonnages and reserves. For refining-stage figures (which USGS reports
 unevenly), the IEA Critical Minerals Outlook and BGS World Mineral
 Production are used as cross-checks. Country-level breakdowns occasionally
 draw on company filings, national geological surveys, or trade press;
@@ -2647,17 +2647,17 @@ those rows are flagged as &ldquo;secondary reporting&rdquo; in the per-country n
 Every page lists the sources that fed its specific figures.</p>
 
 <h2 class="section-head">Scope and known limits</h2>
-<p>Country rows aggregate output without splitting by production mode &mdash;
-industrial mining, artisanal small-scale mining (ASM), and informal flows
-are combined. This matters most for cobalt (DRC: industrial vs. ASM) and
-tantalum (DRC and Rwanda: ITSCI-traced vs. smuggled). The relevant element
-pages flag this explicitly.</p>
+<p>Country rows aggregate output without splitting by production mode.
+Industrial mining, artisanal small-scale mining (ASM), and informal flows
+are combined into a single number. This matters most for cobalt (DRC:
+industrial vs. ASM) and tantalum (DRC and Rwanda: ITSCI-traced vs.
+smuggled), and the relevant element pages flag this explicitly.</p>
 <p>Refining-stage country shares are sparser than mining-stage shares.
 Where USGS does not publish a country-level refining breakdown, the atlas
-notes the gap rather than estimating one. China&rsquo;s refining share for
-cobalt, gallium, germanium, and the rare earths is qualitatively
-acknowledged but not quantified at high precision &mdash; that&rsquo;s a known
-limit of public data, not a data-entry omission.</p>
+notes the gap rather than estimating one. China&rsquo;s share of global
+refining for cobalt, gallium, germanium, and rare earths is acknowledged
+qualitatively but not quantified at high precision, because the public
+data itself does not resolve that cleanly.</p>
 <p>Recycling and secondary-supply figures are included where USGS or IEA
 publishes them, but coverage is uneven. End-of-life recycling rates for
 many minor metals are reported only as ranges or order-of-magnitude
@@ -2667,10 +2667,11 @@ them.</p>
 <h2 class="section-head">The byproduct graph</h2>
 <p>A separate <a href="byproducts.html">byproduct dependency graph</a>
 tracks the elements whose supply is governed by another commodity&rsquo;s
-economics &mdash; rhenium follows molybdenum follows copper; tellurium
-follows copper; gallium follows aluminium. These elements cannot meaningfully
-respond to their own demand because their production volume is set by the
-host metal&rsquo;s market. The graph makes those dependency chains visible.</p>
+economics. Rhenium follows molybdenum follows copper; tellurium follows
+copper; gallium follows aluminium. These elements cannot meaningfully
+respond to their own demand, because their production volume is set by
+the host metal&rsquo;s market. The graph makes those dependency chains
+visible.</p>
 
 <h2 class="section-head">Corrections</h2>
 <p>If you spot a figure that disagrees with the cited source, or a citation
