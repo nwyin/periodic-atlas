@@ -1088,3 +1088,284 @@ def test_b5_format_half_life_seconds():
     assert "second" in result, f"Expected 'second' in {result!r}"
     numeric = float(_re.search(r"[\d.]+", result).group())
     assert abs(numeric - 30.0) < 0.1
+
+
+# =============================================================================
+# TF — Table filter + sort tests (CC-1, CC-2, CC-5)
+# =============================================================================
+
+
+def _parse_element_index(index_html: str) -> list[dict]:
+    """Extract and parse the atlas-element-index JSON block from index.html."""
+    m = _re.search(r'<script id="atlas-element-index" type="application/json">(.*?)</script>', index_html, _re.DOTALL)
+    assert m, "atlas-element-index script block not found in index.html"
+    return _json.loads(m.group(1))
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-1: Element index is valid JSON and contains all elements
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv1_element_index_json_present_and_complete(viewer_dir):
+    """atlas-element-index script block must exist, be valid JSON, and contain known symbols."""
+    index_html = (viewer_dir / "index.html").read_text()
+    index = _parse_element_index(index_html)
+    assert isinstance(index, list), "atlas-element-index must be a JSON array"
+    symbols = {el["symbol"] for el in index}
+    for sym in ["Co", "He", "Og", "Nd"]:
+        assert sym in symbols, f"atlas-element-index missing symbol {sym}"
+    # Every entry must carry the required CC-1 top-level keys
+    required_keys = {"symbol", "name", "atomic_number", "category", "tier", "commercial_production",
+                     "criticality", "byproduct_of", "top_mining_country", "top_mining_share",
+                     "hhi_mining", "hhi_refining", "end_use_buckets", "producer_countries_mining"}
+    for entry in index:
+        missing = required_keys - entry.keys()
+        assert not missing, f"{entry['symbol']}: missing keys {missing}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-2: _compute_hhi correctness
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv2_compute_hhi_cobalt():
+    """_compute_hhi returns correct values for a Co-like share distribution."""
+    shares = [
+        {"country": "CD", "share_pct": 76.0},
+        {"country": "ID", "share_pct": 10.0},
+        {"country": "RU", "share_pct": 3.0},
+        {"country": "CA", "share_pct": 2.0},
+        {"country": "ZZ", "share_pct": 2.0},  # excluded from HHI
+    ]
+    hhi, top_country, top_pct = build_viewer._compute_hhi(shares)
+    assert top_country == "CD"
+    assert top_pct == 76.0
+    # HHI = 76^2 + 10^2 + 3^2 + 2^2 = 5776 + 100 + 9 + 4 = 5889
+    assert hhi == round(76**2 + 10**2 + 3**2 + 2**2)
+
+
+def test_tf_inv2_compute_hhi_no_data():
+    """Empty shares list → (None, None, None)."""
+    hhi, top, pct = build_viewer._compute_hhi([])
+    assert hhi is None and top is None and pct is None
+
+
+def test_tf_inv2_compute_hhi_zz_only():
+    """All-ZZ shares → (None, None, None) (ZZ excluded)."""
+    hhi, top, pct = build_viewer._compute_hhi([{"country": "ZZ", "share_pct": 100.0}])
+    assert hhi is None
+
+
+def test_tf_inv2_compute_hhi_single_country():
+    """Single named country → HHI = share^2 (monopoly case)."""
+    hhi, top, pct = build_viewer._compute_hhi([{"country": "CN", "share_pct": 100.0}])
+    assert hhi == 10000
+    assert top == "CN"
+    assert pct == 100.0
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-3: data-* attributes on Co row
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv3_data_attrs_cobalt(viewer_dir):
+    """The Co <tr> must carry the required data-* attributes with correct values."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert 'data-symbol="Co"' in index_html, "Co row missing data-symbol"
+    assert 'data-us-critical="true"' in index_html, "Co row missing data-us-critical=true"
+    assert 'data-byproduct="true"' in index_html, "Co row missing data-byproduct=true"
+    assert 'data-top-country="CD"' in index_html, "Co row missing data-top-country=CD"
+    assert 'data-hhi-mining="' in index_html, "index.html missing data-hhi-mining attribute"
+    assert 'data-eu-crm="true"' in index_html, "Co row missing data-eu-crm=true"
+    assert 'data-eu-strategic="true"' in index_html, "Co row missing data-eu-strategic=true"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-4: Filter UI DOM present
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv4_filter_ui_in_index(viewer_dir):
+    """index.html must contain the table-controls div with all required sub-elements."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert 'class="table-controls"' in index_html, "index.html missing .table-controls"
+    assert 'data-filter-key="us_critical"' in index_html, "index.html missing us_critical chip"
+    assert 'data-filter-key="eu_crm"' in index_html, "index.html missing eu_crm chip"
+    assert 'data-filter-key="eu_strategic"' in index_html, "index.html missing eu_strategic chip"
+    assert 'data-filter-key="byproduct_only"' in index_html, "index.html missing byproduct_only chip"
+    assert 'id="enduse-select"' in index_html, "index.html missing #enduse-select"
+    assert 'id="country-select"' in index_html, "index.html missing #country-select"
+    assert 'id="table-search"' in index_html, "index.html missing #table-search"
+    assert 'id="clear-all-btn"' in index_html, "index.html missing #clear-all-btn"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-5: He (noble gas) gets null HHI in the index (but actually has mining data)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv5_he_has_hhi_in_index(viewer_dir):
+    """He has mining shares (US, QA, etc.) so its HHI must be non-null."""
+    index_html = (viewer_dir / "index.html").read_text()
+    index = _parse_element_index(index_html)
+    he = next((el for el in index if el["symbol"] == "He"), None)
+    assert he is not None, "He not found in element index"
+    # He has mining data, so HHI should be non-null
+    assert he["hhi_mining"] is not None, "He has mining shares so hhi_mining should be non-null"
+    assert he["top_mining_country"] is not None, "He should have a top_mining_country"
+
+
+def test_tf_inv5_og_null_hhi_in_index(viewer_dir):
+    """Og (no commercial production, no mining shares) should have null HHI fields."""
+    index_html = (viewer_dir / "index.html").read_text()
+    index = _parse_element_index(index_html)
+    og = next((el for el in index if el["symbol"] == "Og"), None)
+    assert og is not None, "Og not found in element index"
+    assert og["hhi_mining"] is None, "Og should have null hhi_mining (no mining data)"
+    assert og["top_mining_country"] is None, "Og should have null top_mining_country"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-6: End-use bucket mapping for Co
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv6_enduse_buckets_cobalt(viewer_dir):
+    """Co's end_use_buckets must include 'superalloys' and 'cutting_tools'."""
+    index_html = (viewer_dir / "index.html").read_text()
+    index = _parse_element_index(index_html)
+    co = next((el for el in index if el["symbol"] == "Co"), None)
+    assert co is not None, "Co not found in element index"
+    buckets = co["end_use_buckets"]
+    assert "superalloys" in buckets, f"Co end_use_buckets missing 'superalloys': {buckets}"
+    assert "cutting_tools" in buckets, f"Co end_use_buckets missing 'cutting_tools': {buckets}"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF-INV-7: table_filter.js and table_sort.js are deployed into assets
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_inv7_table_js_deployed(viewer_dir):
+    """table_sort.js and table_filter.js must be written into assets/ during generation."""
+    assert (viewer_dir / "assets" / "table_sort.js").exists(), "assets/table_sort.js not deployed"
+    assert (viewer_dir / "assets" / "table_filter.js").exists(), "assets/table_filter.js not deployed"
+
+
+def test_tf_inv7_table_js_referenced_in_index(viewer_dir):
+    """index.html must reference both table JS files."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert "table_sort.js" in index_html, "index.html missing table_sort.js reference"
+    assert "table_filter.js" in index_html, "index.html missing table_filter.js reference"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF: New column headers (Top country, HHI) present in the table
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_new_column_headers_present(viewer_dir):
+    """index.html must contain the two new sortable column headers."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert 'data-sort-key="top_country_share"' in index_html, "index.html missing top_country_share column header"
+    assert 'data-sort-key="hhi_mining"' in index_html, "index.html missing hhi_mining column header"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF: Empty-state row present in tbody
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_empty_state_row_in_table(viewer_dir):
+    """index.html table must contain the hidden empty-state row."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert 'class="table-empty-state"' in index_html, "index.html missing .table-empty-state row"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF: Byproduct CTA div present
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_byproduct_cta_in_index(viewer_dir):
+    """index.html must contain the byproduct-graph CTA div with the correct href."""
+    index_html = (viewer_dir / "index.html").read_text()
+    assert 'id="byproduct-graph-cta"' in index_html, "index.html missing #byproduct-graph-cta"
+    assert "byproducts.html" in index_html, "byproduct CTA link must point to byproducts.html"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF: CSS contains filter chip and sort indicator rules
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_css_contains_filter_rules(viewer_dir):
+    """atlas.css must contain CSS rules for the filter UI and sort indicators."""
+    css = (viewer_dir / "assets" / "atlas.css").read_text()
+    assert ".filter-chip" in css, "CSS missing .filter-chip rule"
+    assert ".filter-chip.active" in css, "CSS missing .filter-chip.active rule"
+    assert ".th-sortable" in css, "CSS missing .th-sortable rule"
+    assert ".table-controls" in css, "CSS missing .table-controls rule"
+    assert ".table-search" in css, "CSS missing .table-search rule"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF: END_USE_BUCKET_MAP constant exists and contains required buckets
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_end_use_bucket_map_constant():
+    """END_USE_BUCKET_MAP must exist at module level with all 14 canonical buckets as values."""
+    bucket_map = build_viewer.END_USE_BUCKET_MAP
+    assert isinstance(bucket_map, dict), "END_USE_BUCKET_MAP must be a dict"
+    canonical_buckets = {"batteries", "magnets", "superalloys", "semiconductors", "catalysts",
+                        "fertilizers", "steel_and_alloys", "cutting_tools", "glass_and_ceramics",
+                        "pigments_and_coatings", "nuclear", "medical", "lighting"}
+    values_in_map = set(bucket_map.values())
+    missing = canonical_buckets - values_in_map
+    assert not missing, f"END_USE_BUCKET_MAP missing values for buckets: {missing}"
+    # Verify specific mappings from the spec
+    assert bucket_map.get("superalloys_aircraft_turbines") == "superalloys"
+    assert bucket_map.get("cemented_carbides_cutting_tools") == "cutting_tools"
+    assert bucket_map.get("autocatalysts") == "catalysts"
+    assert bucket_map.get("li_ion_batteries") == "batteries"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# TF: _build_element_index function exists and returns valid data
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_tf_build_element_index_function():
+    """_build_element_index must produce a valid JSON string when called directly."""
+    elements = [
+        {
+            "symbol": "Co",
+            "atomic_number": 27,
+            "name": "cobalt",
+            "category": "transition_metal",
+            "industrial_tier": 3,
+            "commercial_production": True,
+            "us_critical_list_as_of_2025": True,
+            "eu_crm_list_as_of_2024": True,
+            "eu_strategic_list_as_of_2024": True,
+            "doe_short_term_criticality_rank": None,
+        }
+    ]
+    mining = {"Co": [{"country": "CD", "share_pct": 76.0}, {"country": "ZZ", "share_pct": 2.0}]}
+    refining = {"Co": [{"country": "CN", "share_pct": 60.0}]}
+    end_uses = {"Co": [{"application": "superalloys_aircraft_turbines", "share_pct": 51.0}]}
+    byproduct = {"Co": ["Cu", "Ni"]}
+
+    result_json = build_viewer._build_element_index(elements, mining, refining, end_uses, byproduct)
+    result = _json.loads(result_json)
+    assert len(result) == 1
+    co = result[0]
+    assert co["symbol"] == "Co"
+    assert co["hhi_mining"] == round(76**2)  # only CD (ZZ excluded)
+    assert co["top_mining_country"] == "CD"
+    assert "superalloys" in co["end_use_buckets"]
+    assert co["byproduct_of"] == ["Cu", "Ni"]
+    assert co["criticality"]["us_critical"] is True

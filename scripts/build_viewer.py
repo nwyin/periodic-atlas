@@ -31,6 +31,17 @@ CHARTS_PRODUCTION_JS = ROOT / "viewer" / "assets" / "charts_production.js"
 CHARTS_ISOTOPES_JS = ROOT / "viewer" / "assets" / "charts_isotopes.js"
 CHARTS_MAP_JS = ROOT / "viewer" / "assets" / "charts_map.js"
 WORLD_COUNTRIES_GEOJSON = ROOT / "viewer" / "assets" / "world_countries_50m.geojson"
+TABLE_SORT_JS = ROOT / "viewer" / "assets" / "table_sort.js"
+TABLE_FILTER_JS = ROOT / "viewer" / "assets" / "table_filter.js"
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Feature flags — flip to True when destination pages ship
+# ─────────────────────────────────────────────────────────────────────────────
+
+# Set True when country pages (viewer/countries/{ISO}.html) are deployed.
+COUNTRY_PAGES_ENABLED: bool = True
+# Set True when byproduct graph (viewer/byproducts.html) is deployed.
+BYPRODUCT_GRAPH_ENABLED: bool = True
 
 # 1 lb = 0.4536 kg; usd_per_lb → usd_per_kg by dividing by this factor.
 # Preferred normalisation unit for price charts: usd_per_kg.
@@ -48,25 +59,175 @@ CHART_PLACEHOLDERS = [
 # External price-chart provider. We link out rather than mirror the data.
 PRICE_URL_TEMPLATE = "https://tradingeconomics.com/commodity/{slug}"
 ELEMENT_PRICE_SLUGS: dict[str, str] = {
-    "Au": "gold", "Ag": "silver", "Cu": "copper", "Al": "aluminum",
-    "Ni": "nickel", "Zn": "zinc", "Sn": "tin", "Pb": "lead",
-    "Pt": "platinum", "Pd": "palladium", "Rh": "rhodium",
-    "Ru": "ruthenium", "Ir": "iridium", "Os": "osmium",
-    "Li": "lithium", "Co": "cobalt", "V": "vanadium", "U": "uranium",
-    "Mo": "molybdenum", "W": "tungsten", "Re": "rhenium",
-    "Nb": "niobium", "Ta": "tantalum", "Zr": "zirconium",
-    "Hf": "hafnium", "Be": "beryllium", "Ti": "titanium",
-    "Fe": "iron-ore", "Mn": "manganese", "Cr": "chromium", "Mg": "magnesium",
-    "Nd": "neodymium", "Dy": "dysprosium",
-    "Sb": "antimony", "Bi": "bismuth", "Ga": "gallium",
-    "In": "indium", "Ge": "germanium", "Te": "tellurium",
-    "Se": "selenium", "Cd": "cadmium",
+    "Au": "gold",
+    "Ag": "silver",
+    "Cu": "copper",
+    "Al": "aluminum",
+    "Ni": "nickel",
+    "Zn": "zinc",
+    "Sn": "tin",
+    "Pb": "lead",
+    "Pt": "platinum",
+    "Pd": "palladium",
+    "Rh": "rhodium",
+    "Ru": "ruthenium",
+    "Ir": "iridium",
+    "Os": "osmium",
+    "Li": "lithium",
+    "Co": "cobalt",
+    "V": "vanadium",
+    "U": "uranium",
+    "Mo": "molybdenum",
+    "W": "tungsten",
+    "Re": "rhenium",
+    "Nb": "niobium",
+    "Ta": "tantalum",
+    "Zr": "zirconium",
+    "Hf": "hafnium",
+    "Be": "beryllium",
+    "Ti": "titanium",
+    "Fe": "iron-ore",
+    "Mn": "manganese",
+    "Cr": "chromium",
+    "Mg": "magnesium",
+    "Nd": "neodymium",
+    "Dy": "dysprosium",
+    "Sb": "antimony",
+    "Bi": "bismuth",
+    "Ga": "gallium",
+    "In": "indium",
+    "Ge": "germanium",
+    "Te": "tellurium",
+    "Se": "selenium",
+    "Cd": "cadmium",
 }
 
 # Wikipedia URL is derived from the element name; overrides catch disambiguation pages.
 WIKIPEDIA_NAME_OVERRIDES: dict[str, str] = {
     "Mercury": "Mercury_(element)",
 }
+
+# ─────────────────────────────────────────────────────────────────────────────
+# End-use canonicalization (CC-2)
+# ─────────────────────────────────────────────────────────────────────────────
+
+#: Maps raw atlas_end_uses.application slugs → one of 14 canonical buckets.
+#: Unmapped slugs fall through to the "other" bucket.  Add entries here as new
+#: element YAMLs introduce novel slugs; a build-time warning fires automatically
+#: when any element's unmapped share exceeds 20 %.
+END_USE_BUCKET_MAP: dict[str, str] = {
+    # batteries
+    "batteries": "batteries",
+    "battery_alloys_nimh": "batteries",
+    "li_ion_batteries": "batteries",
+    "lithium_ion_batteries": "batteries",
+    "battery_cathodes": "batteries",
+    "energy_storage": "batteries",
+    # magnets
+    "ndfeb_permanent_magnets": "magnets",
+    "permanent_magnets": "magnets",
+    "ceramic_ferrite_magnets": "magnets",
+    "magnets": "magnets",
+    # superalloys
+    "superalloys_aircraft_turbines": "superalloys",
+    "superalloys": "superalloys",
+    "superalloys_and_high_performance_alloys": "superalloys",
+    "aerospace_and_defense": "superalloys",
+    "aerospace_pressuring_purging": "superalloys",
+    # semiconductors
+    "semiconductors": "semiconductors",
+    "semiconductor_and_electronics": "semiconductors",
+    "electronics": "semiconductors",
+    "photovoltaics": "semiconductors",
+    "cdte_solar_and_semiconductors": "semiconductors",
+    "solar_panels": "semiconductors",
+    "fiber_optics": "semiconductors",
+    "optical_fiber": "semiconductors",
+    # catalysts
+    "catalysts": "catalysts",
+    "autocatalysts": "catalysts",
+    "autocatalysts_gasoline_twc": "catalysts",
+    "chemical_catalysts": "catalysts",
+    "catalysts_fcc_and_auto": "catalysts",
+    "catalysts_and_polishing": "catalysts",
+    "chemical_and_industrial_catalysts": "catalysts",
+    "catalysts_and_other": "catalysts",
+    "petroleum_refining_catalysts": "catalysts",
+    # fertilizers
+    "ammonia_and_fertilizers": "fertilizers",
+    "agriculture_and_fertilizers": "fertilizers",
+    "fertilizers": "fertilizers",
+    "agricultural": "fertilizers",
+    "animal_feed": "fertilizers",
+    # steel_and_alloys
+    "alloy_steels": "steel_and_alloys",
+    "alloy_steels_and_cast_irons": "steel_and_alloys",
+    "stainless_steel": "steel_and_alloys",
+    "steel": "steel_and_alloys",
+    "alloys": "steel_and_alloys",
+    "alloys_other": "steel_and_alloys",
+    "aluminum_alloys": "steel_and_alloys",
+    "aluminum_scandium_alloys": "steel_and_alloys",
+    "aluminum_smelting_flux": "steel_and_alloys",
+    "brass_and_bronze": "steel_and_alloys",
+    "babbitt_brass_bronze_tinning": "steel_and_alloys",
+    "brazing_and_soldering": "steel_and_alloys",
+    "bar_tin": "steel_and_alloys",
+    "battery_alloys": "steel_and_alloys",
+    # cutting_tools (carbides)
+    "cemented_carbides": "cutting_tools",
+    "cemented_carbides_cutting_tools": "cutting_tools",
+    "cutting_tools": "cutting_tools",
+    # glass_and_ceramics
+    "glass": "glass_and_ceramics",
+    "ceramics_and_glass": "glass_and_ceramics",
+    "ceramics_glass_optical": "glass_and_ceramics",
+    "ceramics_and_glazes": "glass_and_ceramics",
+    "ceramics_and_opacifiers": "glass_and_ceramics",
+    "ceramics_glass_other": "glass_and_ceramics",
+    "ceramics_ysz_refractories": "glass_and_ceramics",
+    "ceramic_and_refractory": "glass_and_ceramics",
+    "building_construction": "glass_and_ceramics",
+    # pigments_and_coatings
+    "pigments_and_coatings": "pigments_and_coatings",
+    "coatings_and_plating": "pigments_and_coatings",
+    "plating": "pigments_and_coatings",
+    # nuclear
+    "nuclear_fuel": "nuclear",
+    "nuclear_reactors": "nuclear",
+    "nuclear_and_isotope_applications": "nuclear",
+    "nuclear_shielding": "nuclear",
+    # medical
+    "medical_devices": "medical",
+    "medical_imaging": "medical",
+    "radiation_therapy": "medical",
+    "medical_isotopes": "medical",
+    "actinide_research_and_target_materials": "medical",
+    "beta_emitter_power_and_gauge_sources": "medical",
+    # lighting
+    "fluorescent_lamps": "lighting",
+    "lighting_and_displays": "lighting",
+    "leds": "lighting",
+    "lamps": "lighting",
+}
+
+#: Canonical bucket slugs — JS must mirror this list in END_USE_BUCKETS constant.
+END_USE_BUCKETS: list[str] = [
+    "batteries",
+    "magnets",
+    "superalloys",
+    "semiconductors",
+    "catalysts",
+    "fertilizers",
+    "steel_and_alloys",
+    "cutting_tools",
+    "glass_and_ceramics",
+    "pigments_and_coatings",
+    "nuclear",
+    "medical",
+    "lighting",
+    "other",
+]
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -231,7 +392,9 @@ def _build_isotope_data(con: "duckdb.DuckDBPyConnection", symbol: str) -> list[d
                 "reporting_year": int(row["reporting_year"]) if row.get("reporting_year") is not None else None,
                 "production_quantity": {
                     "value": _safe_float(row.get("production_value")),
-                    "unit": str(row["production_unit"]) if row.get("production_unit") and str(row.get("production_unit")) not in ("nan", "None") else None,
+                    "unit": str(row["production_unit"])
+                    if row.get("production_unit") and str(row.get("production_unit")) not in ("nan", "None")
+                    else None,
                 },
                 "producers": shares_by_isotope.get(iso, []),
                 "producers_completeness": completeness,
@@ -280,14 +443,135 @@ def _commercial_badge(commercial: bool) -> str:
     return _badge("No commercial production", "no-commercial")
 
 
+# ─────────────────────────────────────────────────────────────────────────────
+# HHI computation (CC-1 / CC-2)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _compute_hhi(shares: list[dict]) -> tuple[int | None, str | None, float | None]:
+    """Return (hhi, top_country, top_share_pct) from a list of share dicts.
+
+    Excludes the ZZ rest-of-world bucket from both HHI and top-country selection.
+    Returns (None, None, None) if no named-country shares exist or the list is empty.
+
+    Args:
+        shares: List of dicts with at minimum {"country": str, "share_pct": float|None}.
+    """
+    named = [s for s in shares if s.get("country") not in (None, "", "ZZ", "XX")]
+    if not named:
+        return None, None, None
+    hhi = round(sum((float(s["share_pct"]) ** 2) for s in named if s.get("share_pct") is not None))
+    top = max(named, key=lambda s: float(s["share_pct"]) if s.get("share_pct") is not None else -1.0)
+    top_country = str(top["country"])
+    top_share = float(top["share_pct"]) if top.get("share_pct") is not None else None
+    return hhi, top_country, top_share
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Element metadata index builder (CC-1)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _build_element_index(
+    elements_list: list[dict],
+    mining_shares_by_symbol: dict[str, list[dict]],
+    refining_shares_by_symbol: dict[str, list[dict]],
+    end_uses_by_symbol: dict[str, list[dict]],
+    byproduct_by_symbol: dict[str, list[str]],
+) -> str:
+    """Return compact JSON string for the atlas-element-index <script> block.
+
+    Schema per CC-1 (specs/README.md):
+        symbol, name, atomic_number, category, tier, commercial_production,
+        criticality {us_critical, eu_crm, eu_strategic, doe_rank},
+        byproduct_of, top_mining_country, top_mining_share, hhi_mining,
+        hhi_refining, end_use_buckets,
+        producer_countries_mining, top_country_mining, top_country_share_pct.
+    """
+    index: list[dict] = []
+
+    for el in elements_list:
+        symbol = str(el["symbol"])
+        doe_raw = el.get("doe_short_term_criticality_rank")
+        try:
+            doe_rank: int | None = int(float(doe_raw)) if doe_raw is not None and str(doe_raw) not in ("nan", "None", "") else None
+        except (ValueError, TypeError):
+            doe_rank = None
+
+        # Mining HHI + top country
+        mining_shares = mining_shares_by_symbol.get(symbol, [])
+        hhi_mining, top_mining_country, top_mining_share = _compute_hhi(mining_shares)
+
+        # Refining HHI (no top-country exposed; used by heatmap)
+        refining_shares = refining_shares_by_symbol.get(symbol, [])
+        hhi_refining, _top_ref, _share_ref = _compute_hhi(refining_shares)
+
+        # Producer countries (mining, excludes ZZ/XX)
+        producer_countries: list[str] = sorted({str(s["country"]) for s in mining_shares if s.get("country") not in (None, "", "ZZ", "XX")})
+
+        # End-use buckets
+        uses = end_uses_by_symbol.get(symbol, [])
+        bucket_set: set[str] = set()
+        unmapped_share: float = 0.0
+        total_share: float = sum(float(u["share_pct"]) for u in uses if u.get("share_pct") is not None)
+
+        for use in uses:
+            app = str(use.get("application") or "")
+            share = float(use["share_pct"]) if use.get("share_pct") is not None else 0.0
+            bucket = END_USE_BUCKET_MAP.get(app)
+            if bucket:
+                bucket_set.add(bucket)
+            else:
+                unmapped_share += share
+                if app:
+                    print(f"[warn] end_use slug not in bucket map: {app!r} (symbol={symbol})", file=sys.stderr)
+
+        if unmapped_share > 0 and uses:
+            bucket_set.add("other")
+            if total_share > 0 and (unmapped_share / total_share) > 0.20:
+                print(
+                    f"[warn] {symbol}: {unmapped_share:.0f}% of end-use share is unmapped to a bucket "
+                    f"(>{int(unmapped_share / total_share * 100)}% threshold exceeded)",
+                    file=sys.stderr,
+                )
+
+        # Byproduct parents
+        byproduct_of = byproduct_by_symbol.get(symbol, [])
+
+        entry: dict = {
+            "symbol": symbol,
+            "name": str(el.get("name") or ""),
+            "atomic_number": int(el["atomic_number"]),
+            "category": str(el.get("category") or ""),
+            "tier": int(el["industrial_tier"]) if el.get("industrial_tier") is not None else 0,
+            "commercial_production": bool(el.get("commercial_production")),
+            "criticality": {
+                "us_critical": bool(el.get("us_critical_list_as_of_2025")),
+                "eu_crm": bool(el.get("eu_crm_list_as_of_2024")),
+                "eu_strategic": bool(el.get("eu_strategic_list_as_of_2024")),
+                "doe_rank": doe_rank,
+            },
+            "byproduct_of": byproduct_of,
+            "top_mining_country": top_mining_country,
+            "top_mining_share": top_mining_share,
+            "hhi_mining": hhi_mining,
+            "hhi_refining": hhi_refining,
+            "end_use_buckets": sorted(bucket_set),
+            # Aliases used by table_filter.js (match spec §4.1 field names)
+            "producer_countries_mining": producer_countries,
+            "top_country_mining": top_mining_country,
+            "top_country_share_pct": top_mining_share,
+        }
+        index.append(entry)
+
+    return json.dumps(index, ensure_ascii=False, separators=(",", ":"))
+
+
 def _render_ext_links(symbol: str, name: str) -> str:
     title_name = (name or symbol).title()
     wiki_slug = WIKIPEDIA_NAME_OVERRIDES.get(title_name, title_name)
     wiki_url = "https://en.wikipedia.org/wiki/" + urllib.parse.quote(wiki_slug)
-    parts = [
-        f'<a href="{_html_escape(wiki_url)}" target="_blank" rel="noopener">'
-        f'Wikipedia<span class="arrow">↗</span></a>'
-    ]
+    parts = [f'<a href="{_html_escape(wiki_url)}" target="_blank" rel="noopener">Wikipedia<span class="arrow">↗</span></a>']
     price_slug = ELEMENT_PRICE_SLUGS.get(symbol)
     if price_slug:
         price_url = PRICE_URL_TEMPLATE.format(slug=price_slug)
@@ -865,6 +1149,155 @@ footer {
   color: var(--muted);
 }
 footer a { color: var(--muted); }
+
+/* ── table controls (filter chips + search) ── */
+.table-controls {
+  margin: 0 0 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.table-search-row {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.table-search {
+  flex: 1 1 220px;
+  max-width: 340px;
+  padding: 0.35rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.table-search:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+}
+
+.clear-all-btn {
+  padding: 0.3rem 0.65rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.clear-all-btn:hover { background: var(--border); }
+
+.filter-row {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.filter-group-label {
+  font-size: 0.78rem;
+  color: var(--muted);
+  font-weight: 600;
+  white-space: nowrap;
+  min-width: 5.5rem;
+}
+
+.filter-chip {
+  padding: 0.2rem 0.6rem;
+  border: 1px solid var(--border);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--text);
+  font-size: 0.78rem;
+  cursor: pointer;
+  white-space: nowrap;
+  transition: background 80ms ease, border-color 80ms ease;
+}
+
+.filter-chip:hover { border-color: var(--accent); }
+
+.filter-chip:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.filter-chip.active {
+  background: var(--accent);
+  border-color: var(--accent);
+  color: #fff;
+}
+
+.filter-select {
+  padding: 0.25rem 0.55rem;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  background: var(--bg);
+  color: var(--text);
+  font-size: 0.82rem;
+  cursor: pointer;
+}
+
+.country-page-link {
+  font-size: 0.8rem;
+  color: var(--accent);
+  white-space: nowrap;
+}
+
+/* ── empty state row ── */
+.table-empty-state td {
+  text-align: center;
+  color: var(--muted);
+  padding: 1.5rem 0.6rem;
+  font-size: 0.88rem;
+}
+
+.table-empty-state .clear-inline-btn {
+  background: none;
+  border: none;
+  color: var(--accent);
+  cursor: pointer;
+  font-size: 0.88rem;
+  padding: 0 0.2rem;
+  text-decoration: underline;
+}
+
+/* ── sortable column headers ── */
+.th-sortable {
+  cursor: pointer;
+  user-select: none;
+  position: relative;
+}
+
+.th-sortable:hover { background: var(--surface); }
+
+.th-sortable:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.th-sortable::after {
+  content: "";
+  display: inline-block;
+  width: 0.7em;
+  margin-left: 0.3em;
+  opacity: 0.35;
+}
+
+.th-sortable[aria-sort="ascending"]::after  { content: "▲"; opacity: 1; }
+.th-sortable[aria-sort="descending"]::after { content: "▼"; opacity: 1; }
+
+/* ── byproduct graph CTA ── */
+.byproduct-graph-cta {
+  margin: 0.75rem 0 0;
+  font-size: 0.85rem;
+}
 """
 
 
@@ -1023,7 +1456,12 @@ def _build_country_map_data(con: "duckdb.DuckDBPyConnection") -> dict[str, objec
 # ─────────────────────────────────────────────────────────────────────────────
 
 
-def _page_shell(title: str, body: str, footer: str) -> str:
+def _page_shell(title: str, body: str, footer: str, include_table_filter: bool = False) -> str:
+    table_filter_tag = (
+        ('\n  <script src="assets/table_sort.js" defer></script>\n  <script src="assets/table_filter.js" defer></script>')
+        if include_table_filter
+        else ""
+    )
     return f"""\
 <!DOCTYPE html>
 <html lang="en">
@@ -1033,7 +1471,7 @@ def _page_shell(title: str, body: str, footer: str) -> str:
   <title>{_html_escape(title)}</title>
   <link rel="stylesheet" href="assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
-  <script src="assets/charts_map.js" defer></script>
+  <script src="assets/charts_map.js" defer></script>{table_filter_tag}
 </head>
 <body>
 <div class="container">
@@ -1075,8 +1513,42 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 </html>"""
 
 
-def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict[str, object]) -> str:
+def _index_body(
+    elements: list[dict],
+    snapshot_year: int,
+    country_map_data: dict[str, object],
+    element_index: list[dict] | None = None,
+) -> str:
     country_map_json = json.dumps(country_map_data, ensure_ascii=False, separators=(",", ":"))
+
+    # Build a lookup from symbol -> element_index entry for data-* attribute rendering
+    index_by_symbol: dict[str, dict] = {}
+    if element_index:
+        for entry in element_index:
+            index_by_symbol[entry["symbol"]] = entry
+
+    # Category chips — derive from actual element data for completeness
+    _CATEGORY_LABELS: dict[str, str] = {
+        "actinide": "Actinide",
+        "alkali_metal": "Alkali metal",
+        "alkaline_earth_metal": "Alkaline earth metal",
+        "lanthanide": "Lanthanide",
+        "metalloid": "Metalloid",
+        "noble_gas": "Noble gas",
+        "nonmetal": "Nonmetal",
+        "post_transition_metal": "Post-transition metal",
+        "synthetic_superheavy": "Synthetic superheavy",
+        "transition_metal": "Transition metal",
+    }
+    categories_seen: list[str] = []
+    for el in elements:
+        cat = str(el.get("category") or "")
+        if cat and cat not in categories_seen:
+            categories_seen.append(cat)
+    category_chips_html = ""
+    for cat in sorted(categories_seen):
+        label = _CATEGORY_LABELS.get(cat, cat.replace("_", " ").title())
+        category_chips_html += f'    <button class="filter-chip" data-filter-key="cat" data-filter-val="{_html_escape(cat)}" aria-label="Category: {_html_escape(label)}">{_html_escape(label)}</button>\n'
 
     rows_html = ""
     for el in elements:
@@ -1097,8 +1569,45 @@ def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict
         crm_td = _crit_td(el.get("eu_crm_list_as_of_2024"))
         strat_td = _crit_td(el.get("eu_strategic_list_as_of_2024"))
 
+        # Derive data-* attributes from the element index entry (if available)
+        idx = index_by_symbol.get(symbol, {})
+        crit = idx.get("criticality", {})
+        us_critical_attr = "true" if crit.get("us_critical") else "false"
+        eu_crm_attr = "true" if crit.get("eu_crm") else "false"
+        eu_strat_attr = "true" if crit.get("eu_strategic") else "false"
+        doe_rank_raw = crit.get("doe_rank")
+        doe_rank_attr = str(int(doe_rank_raw)) if doe_rank_raw is not None else "0"
+        byproduct_of_list = idx.get("byproduct_of", [])
+        byproduct_attr = "true" if byproduct_of_list else "false"
+        enduse_buckets = idx.get("end_use_buckets", [])
+        enduse_attr = " ".join(enduse_buckets)
+        producer_countries = idx.get("producer_countries_mining", [])
+        prod_countries_attr = " ".join(producer_countries)
+        top_country_attr = str(idx.get("top_country_mining") or "")
+        top_share_val = idx.get("top_country_share_pct")
+        top_share_attr = f"{float(top_share_val):.1f}" if top_share_val is not None else ""
+        hhi_mining_val = idx.get("hhi_mining")
+        hhi_mining_attr = str(int(hhi_mining_val)) if hhi_mining_val is not None else ""
+
         rows_html += f"""\
-  <tr>
+  <tr
+    data-symbol="{_html_escape(symbol)}"
+    data-atomic-number="{atomic}"
+    data-name="{_html_escape(name)}"
+    data-category="{_html_escape(category)}"
+    data-tier="{tier}"
+    data-commercial="{str(commercial_flag).lower()}"
+    data-byproduct="{byproduct_attr}"
+    data-us-critical="{us_critical_attr}"
+    data-eu-crm="{eu_crm_attr}"
+    data-eu-strategic="{eu_strat_attr}"
+    data-doe-rank="{doe_rank_attr}"
+    data-enduse-buckets="{_html_escape(enduse_attr)}"
+    data-producer-countries="{_html_escape(prod_countries_attr)}"
+    data-top-country="{_html_escape(top_country_attr)}"
+    data-top-share="{_html_escape(top_share_attr)}"
+    data-hhi-mining="{_html_escape(hhi_mining_attr)}"
+  >
     <td class="symbol-cell"><a href="elements/{_html_escape(symbol)}.html">{_html_escape(symbol)}</a></td>
     <td class="atomic-num">{atomic}</td>
     <td>{_html_escape(name)}</td>
@@ -1110,6 +1619,11 @@ def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict
     {strat_td}
   </tr>
 """
+
+    # Serialize element_index for the inline <script> block
+    element_index_json = json.dumps(element_index or [], ensure_ascii=False, separators=(",", ":"))
+    country_flag_attr = "true" if COUNTRY_PAGES_ENABLED else "false"
+    byproduct_flag_attr = "true" if BYPRODUCT_GRAPH_ENABLED else "false"
 
     return f"""\
 <header>
@@ -1139,22 +1653,77 @@ def _index_body(elements: list[dict], snapshot_year: int, country_map_data: dict
   </aside>
   <script id="atlas-country-map-data" type="application/json">{country_map_json}</script>
 </section>
-<table class="element-table">
+<script id="atlas-element-index" type="application/json">{element_index_json}</script>
+<div class="table-controls" id="table-controls"
+     data-country-pages-enabled="{country_flag_attr}"
+     data-byproduct-graph-enabled="{byproduct_flag_attr}">
+  <div class="table-search-row">
+    <input type="search" class="table-search" id="table-search"
+           placeholder="Symbol, name, or number\u2026" aria-label="Search elements">
+    <button class="clear-all-btn" id="clear-all-btn" hidden>Clear all filters \u00d7</button>
+  </div>
+  <div class="filter-row" data-filter-group="criticality" aria-label="Criticality filters">
+    <span class="filter-group-label">Criticality</span>
+    <button class="filter-chip" data-filter-key="us_critical">US Critical</button>
+    <button class="filter-chip" data-filter-key="eu_crm">EU CRM</button>
+    <button class="filter-chip" data-filter-key="eu_strategic">EU Strategic</button>
+    <button class="filter-chip" data-filter-key="doe_rank">DOE rank</button>
+  </div>
+  <div class="filter-row" data-filter-group="tier" aria-label="Industrial tier filters">
+    <span class="filter-group-label">Tier</span>
+    <button class="filter-chip" data-filter-key="tier" data-filter-val="0">0</button>
+    <button class="filter-chip" data-filter-key="tier" data-filter-val="1">1</button>
+    <button class="filter-chip" data-filter-key="tier" data-filter-val="2">2</button>
+    <button class="filter-chip" data-filter-key="tier" data-filter-val="3">3</button>
+    <button class="filter-chip" data-filter-key="tier" data-filter-val="4">4</button>
+  </div>
+  <div class="filter-row" data-filter-group="category" aria-label="Category filters">
+    <span class="filter-group-label">Category</span>
+{category_chips_html}  </div>
+  <div class="filter-row" data-filter-group="misc" aria-label="Other filters">
+    <span class="filter-group-label">Other</span>
+    <button class="filter-chip" data-filter-key="commercial_only">Commercial only</button>
+    <button class="filter-chip" data-filter-key="no_commercial">No commercial production</button>
+    <button class="filter-chip" data-filter-key="byproduct_only">Byproduct-only</button>
+  </div>
+  <div class="filter-row" data-filter-group="selects">
+    <span class="filter-group-label">End-use</span>
+    <select class="filter-select" id="enduse-select" aria-label="Filter by end-use bucket">
+      <option value="">All end-uses</option>
+    </select>
+    <span class="filter-group-label">Country</span>
+    <select class="filter-select" id="country-select" aria-label="Filter by producer country (mining)">
+      <option value="">All countries</option>
+    </select>
+    <a class="country-page-link" id="country-page-link" href="#" hidden>View country page \u2192</a>
+  </div>
+</div>
+<div class="byproduct-graph-cta" id="byproduct-graph-cta" hidden>
+  <a href="byproducts.html">Open byproduct dependency graph \u2192</a>
+</div>
+<table class="element-table" id="element-table">
   <thead>
     <tr>
-      <th>Symbol</th>
-      <th>#</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Tier</th>
-      <th>Production</th>
-      <th class="crit-cell"><span class="th-tip" tabindex="0" data-tip="USGS Final List of Critical Minerals (2022 Federal Register notice; governs US policy through 2025). 50 commodities deemed essential to the US economy / national security with significant supply-risk exposure.">US Critical</span></th>
-      <th class="crit-cell"><span class="th-tip" tabindex="0" data-tip="EU Critical Raw Materials Act (March 2024), Annex II. 34 critical raw materials with high economic importance and elevated supply-risk.">EU CRM</span></th>
-      <th class="crit-cell"><span class="th-tip" tabindex="0" data-tip="EU Critical Raw Materials Act (March 2024), Annex I. 17 strategic raw materials prioritised for the green and digital transitions (subset of CRM).">EU Strategic</span></th>
+      <th class="th-sortable" data-sort-key="symbol" role="columnheader" aria-sort="none" tabindex="0">Symbol</th>
+      <th class="th-sortable" data-sort-key="atomic_number" role="columnheader" aria-sort="none" tabindex="0">#</th>
+      <th class="th-sortable" data-sort-key="name" role="columnheader" aria-sort="none" tabindex="0">Name</th>
+      <th class="th-sortable" data-sort-key="category" role="columnheader" aria-sort="none" tabindex="0">Category</th>
+      <th class="th-sortable" data-sort-key="tier" role="columnheader" aria-sort="none" tabindex="0">Tier</th>
+      <th class="th-sortable" data-sort-key="commercial" role="columnheader" aria-sort="none" tabindex="0">Production</th>
+      <th class="crit-cell th-sortable" data-sort-key="us_critical" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="USGS Final List of Critical Minerals (2022 Federal Register notice; governs US policy through 2025). 50 commodities deemed essential to the US economy / national security with significant supply-risk exposure.">US Critical</span></th>
+      <th class="crit-cell th-sortable" data-sort-key="eu_crm" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="EU Critical Raw Materials Act (March 2024), Annex II. 34 critical raw materials with high economic importance and elevated supply-risk.">EU CRM</span></th>
+      <th class="crit-cell th-sortable" data-sort-key="eu_strategic" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="EU Critical Raw Materials Act (March 2024), Annex I. 17 strategic raw materials prioritised for the green and digital transitions (subset of CRM).">EU Strategic</span></th>
+      <th class="th-sortable" data-sort-key="top_country_share" role="columnheader" aria-sort="none" tabindex="0">Top country</th>
+      <th class="th-sortable" data-sort-key="hhi_mining" role="columnheader" aria-sort="none" tabindex="0">HHI <sup title="Herfindahl-Hirschman Index (mining). Higher = more concentrated. Max 10,000 = single-country monopoly.">?</sup></th>
     </tr>
   </thead>
   <tbody>
-{rows_html}  </tbody>
+{rows_html}    <tr class="table-empty-state" hidden>
+      <td colspan="11">No elements match the active filters.
+        <button class="clear-inline-btn" type="button">Clear filters</button>
+      </td>
+    </tr>
+  </tbody>
 </table>"""
 
 
@@ -1271,10 +1840,18 @@ def _render_isotope_panel(isotopes: list[dict]) -> str:
         producers = iso.get("producers") or []
 
         # Production mode badge — use a known CSS class or fallback
-        safe_mode = prod_mode if prod_mode in (
-            "stockpile_separated", "reactor_generated", "accelerator_generated",
-            "decay_product", "naturally_occurring",
-        ) else "unknown"
+        safe_mode = (
+            prod_mode
+            if prod_mode
+            in (
+                "stockpile_separated",
+                "reactor_generated",
+                "accelerator_generated",
+                "decay_product",
+                "naturally_occurring",
+            )
+            else "unknown"
+        )
         mode_badge = f'<span class="badge badge-mode-{_html_escape(safe_mode)}">{_html_escape(prod_mode or "unknown")}</span>'
 
         # Meta rows: half-life, precursor, delivery form
@@ -1282,14 +1859,20 @@ def _render_isotope_panel(isotopes: list[dict]) -> str:
         if precursor:
             meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> {_html_escape(precursor)}</div>\n'
         if delivery_form:
-            meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> {_html_escape(delivery_form)}</div>\n'
+            meta_rows += (
+                f'<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> {_html_escape(delivery_form)}</div>\n'
+            )
         if reporting_year:
             meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> {reporting_year}</div>\n'
 
         # Producers: build an HTML table; JS will optionally replace with bar chart
         if producers:
             completeness_label = completeness.replace("_", " ").title() if completeness else ""
-            completeness_badge = f'<span class="badge badge-no-commercial" style="font-size:0.7rem">{_html_escape(completeness_label)}</span>' if completeness_label else ""
+            completeness_badge = (
+                f'<span class="badge badge-no-commercial" style="font-size:0.7rem">{_html_escape(completeness_label)}</span>'
+                if completeness_label
+                else ""
+            )
             producer_rows_html = ""
             for p in producers:
                 country = str(p.get("country") or "")
@@ -1792,6 +2375,35 @@ def generate_viewer(
             for sym in [el["symbol"] for el in elements_list]:
                 isotope_data_by_symbol[sym] = _build_isotope_data(con, sym)
 
+        # Byproduct parents per symbol — from atlas_byproducts table
+        byproduct_by_symbol: dict[str, list[str]] = {el["symbol"]: [] for el in elements_list}
+        if "atlas_byproducts" in tables:
+            bp_df = con.execute("SELECT symbol, parent_symbol FROM atlas_byproducts ORDER BY symbol, parent_symbol").df()
+            for row in bp_df.to_dict(orient="records"):
+                sym = str(row["symbol"])
+                parent = str(row["parent_symbol"])
+                byproduct_by_symbol.setdefault(sym, []).append(parent)
+
+        # Split mining vs refining shares for element index
+        mining_shares_by_symbol: dict[str, list[dict]] = {}
+        refining_shares_by_symbol: dict[str, list[dict]] = {}
+        for sym, shares in mining_refining_shares_by_symbol.items():
+            for s in shares:
+                if str(s.get("share_type", "")) == "mining":
+                    mining_shares_by_symbol.setdefault(sym, []).append(s)
+                elif str(s.get("share_type", "")) == "refining":
+                    refining_shares_by_symbol.setdefault(sym, []).append(s)
+
+        # Build element metadata index (CC-1)
+        element_index = _build_element_index(
+            elements_list,
+            mining_shares_by_symbol,
+            refining_shares_by_symbol,
+            end_uses_by_symbol,
+            byproduct_by_symbol,
+        )
+        element_index_list = json.loads(element_index)
+
     finally:
         con.close()
 
@@ -1823,14 +2435,25 @@ def generate_viewer(
     if WORLD_COUNTRIES_GEOJSON.exists():
         (assets_dir / "world_countries_50m.geojson").write_text(WORLD_COUNTRIES_GEOJSON.read_text(encoding="utf-8"), encoding="utf-8")
 
+    # table_sort.js + table_filter.js — copy from project source
+    if TABLE_SORT_JS.exists():
+        (assets_dir / "table_sort.js").write_text(TABLE_SORT_JS.read_text(encoding="utf-8"), encoding="utf-8")
+    if TABLE_FILTER_JS.exists():
+        (assets_dir / "table_filter.js").write_text(TABLE_FILTER_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
     # Footer shared across pages
     repo_url = "https://github.com/anomalyco/opencode"
     footer_index = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
     footer_element = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
 
     # index.html
-    index_body = _index_body(elements_list, snapshot_year, country_map_data)
-    index_html = _page_shell(f"Periodic Element Supply Chain Atlas — {snapshot_year}", index_body, footer_index)
+    index_body = _index_body(elements_list, snapshot_year, country_map_data, element_index_list)
+    index_html = _page_shell(
+        f"Periodic Element Supply Chain Atlas — {snapshot_year}",
+        index_body,
+        footer_index,
+        include_table_filter=True,
+    )
     (viewer_dir / "index.html").write_text(index_html, encoding="utf-8")
 
     # Per-element pages
@@ -1852,7 +2475,9 @@ def generate_viewer(
         }
         isotope_data = isotope_data_by_symbol.get(sym, [])
         iso_panel_html = _render_isotope_panel(isotope_data)
-        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data, production_data=prod_json, isotope_panel_html=iso_panel_html)
+        body = _element_body(
+            el, el_sources, reserves_data=res_json, chart_data=chart_data, production_data=prod_json, isotope_panel_html=iso_panel_html
+        )
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
         html = _element_page_shell(title, body, footer_element)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
@@ -1871,6 +2496,10 @@ def generate_viewer(
         print("viewer/assets/charts_map.js written")
     if WORLD_COUNTRIES_GEOJSON.exists():
         print("viewer/assets/world_countries_50m.geojson written")
+    if TABLE_SORT_JS.exists():
+        print("viewer/assets/table_sort.js written")
+    if TABLE_FILTER_JS.exists():
+        print("viewer/assets/table_filter.js written")
 
 
 def main() -> None:
