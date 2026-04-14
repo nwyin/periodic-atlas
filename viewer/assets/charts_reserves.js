@@ -159,17 +159,8 @@
   // ── Reserves by Country (horizontal bar chart) ────────────────────────────
   {
     const sec = makeSection("Reserves by Country");
-    const hdr = sec.querySelector("h3");
 
     const hasData = reserves_by_country && reserves_by_country.length > 0;
-
-    // completeness badge from first row
-    if (hasData) {
-      // (completeness is per-symbol in shares, grab from data structure not available here;
-      //  we just show the count of countries)
-      const badge = makeBadge(reserves_by_country.length + " countries", "complete");
-      hdr.appendChild(badge);
-    }
 
     if (!hasData) {
       sec.appendChild(makeEmptyState("No reserves data"));

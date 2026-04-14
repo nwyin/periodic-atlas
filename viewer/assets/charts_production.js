@@ -276,20 +276,19 @@
       return;
     }
 
-    // Header row: series label + completeness badge
+    // Header row: series label only
     const hdr = document.createElement("div");
     hdr.style.cssText = "display:flex; align-items:center; margin-bottom:0.5rem;";
     const lbl = document.createElement("span");
-    lbl.style.cssText = "font-size:0.88rem; font-weight:600; color:" + C.text + ";";
+    lbl.style.cssText = "font-size:0.95rem; font-weight:600; color:" + C.text + ";";
     lbl.textContent = seriesLabel;
     hdr.appendChild(lbl);
-    hdr.appendChild(makeBadge(completenessLabel(completenessVal), completenessColor(completenessVal)));
     parentEl.appendChild(hdr);
 
     // Dimensions
-    const margin = { top: 4, right: 52, bottom: 28, left: 40 };
-    const BAR_HEIGHT = 18;
-    const BAR_GAP    = 5;
+    const margin = { top: 4, right: 60, bottom: 28, left: 44 };
+    const BAR_HEIGHT = 22;
+    const BAR_GAP    = 6;
     const innerH = shares.length * (BAR_HEIGHT + BAR_GAP);
     const totalH = innerH + margin.top + margin.bottom;
     const containerW = container.clientWidth || 640;
@@ -318,7 +317,7 @@
         .attr("y", y + BAR_HEIGHT / 2)
         .attr("dy", "0.35em")
         .attr("text-anchor", "end")
-        .attr("font-size", "11px")
+        .attr("font-size", "12px")
         .attr("fill", C.muted)
         .text(d.country || "?");
 
@@ -337,7 +336,7 @@
         .attr("x", w + 4)
         .attr("y", y + BAR_HEIGHT / 2)
         .attr("dy", "0.35em")
-        .attr("font-size", "11px")
+        .attr("font-size", "12px")
         .attr("fill", C.text)
         .text((d.share_pct != null ? d.share_pct : "?") + "%");
 
@@ -399,11 +398,11 @@
     const totalsEl = makeWorldTotal(stream);
     if (totalsEl) sec.appendChild(totalsEl);
 
-    // Two-column layout for mining + refining (or single column if only one)
+    // Stacked single-column layout — mining above refining, each full width
     const grid = document.createElement("div");
     grid.style.cssText = [
       "display:grid",
-      "grid-template-columns:" + (hasMining && hasRefining ? "1fr 1fr" : "1fr"),
+      "grid-template-columns:1fr",
       "gap:1.5rem",
       "align-items:start",
     ].join(";");
