@@ -1,0 +1,104 @@
+symbol: Mt
+atomic_number: 109
+name: meitnerium
+category: synthetic_superheavy
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No commercial trade exists. Meitnerium is produced only as single atoms in
+  heavy-ion fusion experiments at accelerator laboratories; isotope half-lives
+  are therefore reported per nuclide in seconds rather than in any bulk trade
+  unit.
+
+research_only:
+  longest_lived_isotope: Mt-278
+  half_life_seconds: 4.5
+  discovered_year: 1982
+  iupac_recognized_year: 1993
+  discovered_at: |
+    Gesellschaft fur Schwerionenforschung (GSI; now GSI Helmholtzzentrum fur
+    Schwerionenforschung), Darmstadt, Germany. GSI's SHIP/UNILAC program lists
+    meitnerium as first produced on 1982-08-29 from bismuth and iron and as one
+    of the six heaviest elements discovered at SHIP.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - GSI Helmholtzzentrum fur Schwerionenforschung (Darmstadt, Germany)
+    - Joint Institute for Nuclear Research, Flerov Laboratory of Nuclear Reactions (Dubna, Russia)
+  notes: |
+    IUPAC and IUPAP's Transfermium Working Group concluded in 1993 that the
+    Darmstadt work gave confidence that element 109 had been observed. The
+    longest-lived confirmed isotope in NNDC NuDat / ENSDF is Mt-278 with a
+    4.5 s half-life, identified in decay studies of heavier superheavy nuclei.
+    Meitnerium remains a research-only transactinide with no bulk isolation,
+    no commercial applications, and no tonne-, gram-, or milligram-scale
+    production route.
+
+geopolitical_events:
+  - date: 2019-03-25
+    event: "JINR launched the DC-280 cyclotron and opened the Superheavy Element Factory in Dubna"
+    impact: |
+      The new facility materially expanded global capacity for superheavy
+      element synthesis and follow-on decay-chain studies, reinforcing JINR as
+      one of the few laboratories still able to generate and study nuclei in
+      the meitnerium region.
+    source_id: jinr_she_factory_opening_2019
+
+narrative: |
+  Meitnerium has no commercial supply chain. Every known atom has been created
+  in accelerator experiments, beginning with GSI Darmstadt's 1982 synthesis of
+  element 109 from bismuth and iron. IUPAC/IUPAP later recognized the discovery
+  claim in the 1993 Transfermium Working Group report, and the name
+  "meitnerium" was then adopted in the later transfermium naming settlement.
+
+  The element's practical reality is nuclear-physics research, not materials
+  commerce. NNDC's ENSDF/NuDat record identifies Mt-278 as the longest-lived
+  confirmed isotope at 4.5 seconds, still far too short-lived for bulk
+  chemistry or trade. Contemporary work is confined to a handful of specialist
+  accelerator centers such as GSI and JINR that can produce superheavy nuclei
+  and observe meitnerium isotopes directly or in decay chains from heavier
+  elements.
+
+sources:
+  - id: gsi_new_elements
+    title: "Discovery of new elements"
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/en/researchaccelerators/research_an_overview/new_elements?C=0
+    retrieved: 2026-04-13
+    publication_year: 2016
+    source_tier: primary
+  - id: iupac_twg_1993
+    title: "Discovery of the transfermium elements. Part II: Introduction to discovery profiles. Part III: Discovery profiles of the transfermium elements"
+    publisher: International Union of Pure and Applied Chemistry / International Union of Pure and Applied Physics
+    url: https://publications.iupac.org/pac-2007/1993/pdf/6508x1757.pdf
+    retrieved: 2026-04-13
+    publication_year: 1993
+    source_tier: primary
+  - id: nndc_nudat_mt278
+    title: "ENSDF file for 278MT / ADOPTED LEVELS"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/nudat3/checkENSDFDatasets.jsp?nucleus=278MT
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
+  - id: gsi_ship
+    title: "SHE-Physik: Welcome to the Velocity Filter SHIP"
+    publisher: GSI Helmholtzzentrum fur Schwerionenforschung
+    url: https://www.gsi.de/en/work/forschung/nustarenna/nustarenna_divisions/she_physik
+    retrieved: 2026-04-13
+    publication_year: 2011
+    source_tier: primary
+  - id: jinr_she_factory_results_2023
+    title: "Superheavy Element Factory: overview of obtained results"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/superheavy-element-factory-overview-of-obtained-results/
+    retrieved: 2026-04-13
+    publication_year: 2023
+    source_tier: primary
+  - id: jinr_she_factory_opening_2019
+    title: "Video: Superheavy Element Factory opened at JINR"
+    publisher: Joint Institute for Nuclear Research
+    url: https://www.jinr.ru/posts/video-factory-of-superheavy-elements-opened-at-jinr/
+    retrieved: 2026-04-13
+    publication_year: 2019
+    source_tier: primary
