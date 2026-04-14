@@ -122,7 +122,7 @@ narrative: |
 
 sources:
   - id: inquiry_periodic_elements_2025
-    title: "Every element on the periodic table, ranked by industrial relevance (inquiries/periodic-elements-industrial-contribution.md)"
+    title: "Every element on the periodic table, ranked by industrial relevance"
     publisher: egotheism project
     url: null
     retrieved: 2026-04-11
