@@ -261,13 +261,13 @@ end_uses:
 
 criticality:
   us_critical_list_as_of_2025: true
-  us_critical_source_id: us_federal_register_critical_minerals_2022
+  us_critical_source_id: usgs_critical_minerals_2025
   eu_crm_list_as_of_2024: true
   eu_crm_source_id: eu_crma_2024
   eu_strategic_list_as_of_2024: false
   notes: |
-    Tantalum is on the US 2022 Final List of Critical Minerals and on the EU 2024 Critical
-    Raw Materials list. It is not on the EU 2024 Strategic Raw Materials list. The supply
+    Tantalum is on the US 2025 List of Critical Minerals and on the EU 2024 Critical Raw
+    Materials list. It is not on the EU 2024 Strategic Raw Materials list. The supply
     risk logic in both jurisdictions aligns with the structure visible in USGS MCS 2025:
     the United States has had no mine production since 1959, net import reliance was 100%
     in 2024, and world mine supply is concentrated in a relatively small set of producers
@@ -373,12 +373,12 @@ sources:
     retrieved: 2026-04-13
     publication_year: 2017
     source_tier: primary
-  - id: us_federal_register_critical_minerals_2022
-    title: "2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 22, 2022)"
-    publisher: US Department of the Interior / US Geological Survey
-    url: https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals
+  - id: usgs_critical_minerals_2025
+    title: "About the 2025 List of Critical Minerals"
+    publisher: US Geological Survey
+    url: https://www.usgs.gov/programs/mineral-resources-program/science/about-2025-list-critical-minerals
     retrieved: 2026-04-13
-    publication_year: 2022
+    publication_year: 2025
     source_tier: primary
   - id: eu_crma_2024
     title: "Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)"
