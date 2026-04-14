@@ -238,12 +238,38 @@ document.addEventListener("DOMContentLoaded", function () {
         var svg = svgWrap.append("g")
             .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
 
+        // Minor ticks — monthly when the axis has room (≥6 px per month),
+        // quarterly otherwise. Skip month 0 of each year so the year tick
+        // sits by itself without a doubled-up mark.
+        var monthsVisible = x.ticks(d3.timeMonth).length;
+        var minorInterval = (width / Math.max(monthsVisible, 1)) >= 6
+            ? d3.timeMonth
+            : d3.timeMonth.every(3);
+        var minorTicks = x.ticks(minorInterval).filter(function (d) {
+            return d.getMonth() !== 0;
+        });
+        svg.append("g")
+            .attr("transform", "translate(0," + axisY + ")")
+            .attr("fill", "none")
+            .attr("stroke", "var(--muted, #9ca3af)")
+            .attr("stroke-width", 1)
+            .selectAll("line")
+            .data(minorTicks)
+            .join("line")
+                .attr("x1", function (d) { return x(d); })
+                .attr("x2", function (d) { return x(d); })
+                .attr("y1", 0)
+                .attr("y2", 3)
+                .attr("opacity", 0.55);
+
+        // Major (year) axis
         svg.append("g")
             .attr("transform", "translate(0," + axisY + ")")
             .call(
                 d3.axisBottom(x)
+                    .ticks(d3.timeYear)
                     .tickFormat(d3.timeFormat("%Y"))
-                    .ticks(Math.min(sorted.length + 2, 8))
+                    .tickSizeOuter(0)
             );
 
         // Numbered dots on axis; each one is linked to its list-item below via data-evt-idx
