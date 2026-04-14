@@ -158,8 +158,9 @@
   // ── Layout geometry ────────────────────────────────────────────────────────
   const ROW_HEIGHT = 140;
   const SVG_WIDTH = 860;
-  const SVG_HEIGHT = numLayers * ROW_HEIGHT + 40;
-  const PAD_TOP = 50;
+  const PAD_TOP = 72;
+  const LABEL_OFFSET = 48; // row-label sits this far above its row centre
+  const SVG_HEIGHT = PAD_TOP + (numLayers - 1) * ROW_HEIGHT + 60;
   const PAD_X = 36;
 
   function nodeX(sym) {
@@ -504,7 +505,7 @@
     labelGroup
       .append("text")
       .attr("x", 4)
-      .attr("y", PAD_TOP + l * ROW_HEIGHT - 18)
+      .attr("y", PAD_TOP + l * ROW_HEIGHT - LABEL_OFFSET)
       .attr("font-size", "10px")
       .attr("fill", C.muted)
       .attr("font-style", "italic")
