@@ -30,7 +30,25 @@ CHARTS_PRICES_JS = ROOT / "viewer" / "assets" / "charts_prices.js"
 CHARTS_PRODUCTION_JS = ROOT / "viewer" / "assets" / "charts_production.js"
 CHARTS_ISOTOPES_JS = ROOT / "viewer" / "assets" / "charts_isotopes.js"
 CHARTS_MAP_JS = ROOT / "viewer" / "assets" / "charts_map.js"
+CHARTS_COUNTRY_JS = ROOT / "viewer" / "assets" / "charts_country.js"
 WORLD_COUNTRIES_GEOJSON = ROOT / "viewer" / "assets" / "world_countries_50m.geojson"
+
+# ── Feature flags ──────────────────────────────────────────────────────────────
+# Set to True once the destination page is generated; flip to False to suppress
+# links that would otherwise be broken.
+COUNTRY_PAGES_ENABLED = True
+
+# ── Site navigation ────────────────────────────────────────────────────────────
+# CC-6: shared nav links embedded in every page shell.
+_NAV_LINKS: list[tuple[str, str]] = [
+    ("Elements", "index.html"),
+    ("Byproduct graph", "byproducts.html"),
+]
+
+# ── Country name overrides ─────────────────────────────────────────────────────
+# Parallel to WIKIPEDIA_NAME_OVERRIDES.  Allows brevity tweaks without touching
+# the GeoJSON.  Unresolved open question from spec §8 Q3: for now no overrides.
+COUNTRY_NAME_OVERRIDES: dict[str, str] = {}
 
 # 1 lb = 0.4536 kg; usd_per_lb → usd_per_kg by dividing by this factor.
 # Preferred normalisation unit for price charts: usd_per_kg.
@@ -48,19 +66,47 @@ CHART_PLACEHOLDERS = [
 # External price-chart provider. We link out rather than mirror the data.
 PRICE_URL_TEMPLATE = "https://tradingeconomics.com/commodity/{slug}"
 ELEMENT_PRICE_SLUGS: dict[str, str] = {
-    "Au": "gold", "Ag": "silver", "Cu": "copper", "Al": "aluminum",
-    "Ni": "nickel", "Zn": "zinc", "Sn": "tin", "Pb": "lead",
-    "Pt": "platinum", "Pd": "palladium", "Rh": "rhodium",
-    "Ru": "ruthenium", "Ir": "iridium", "Os": "osmium",
-    "Li": "lithium", "Co": "cobalt", "V": "vanadium", "U": "uranium",
-    "Mo": "molybdenum", "W": "tungsten", "Re": "rhenium",
-    "Nb": "niobium", "Ta": "tantalum", "Zr": "zirconium",
-    "Hf": "hafnium", "Be": "beryllium", "Ti": "titanium",
-    "Fe": "iron-ore", "Mn": "manganese", "Cr": "chromium", "Mg": "magnesium",
-    "Nd": "neodymium", "Dy": "dysprosium",
-    "Sb": "antimony", "Bi": "bismuth", "Ga": "gallium",
-    "In": "indium", "Ge": "germanium", "Te": "tellurium",
-    "Se": "selenium", "Cd": "cadmium",
+    "Au": "gold",
+    "Ag": "silver",
+    "Cu": "copper",
+    "Al": "aluminum",
+    "Ni": "nickel",
+    "Zn": "zinc",
+    "Sn": "tin",
+    "Pb": "lead",
+    "Pt": "platinum",
+    "Pd": "palladium",
+    "Rh": "rhodium",
+    "Ru": "ruthenium",
+    "Ir": "iridium",
+    "Os": "osmium",
+    "Li": "lithium",
+    "Co": "cobalt",
+    "V": "vanadium",
+    "U": "uranium",
+    "Mo": "molybdenum",
+    "W": "tungsten",
+    "Re": "rhenium",
+    "Nb": "niobium",
+    "Ta": "tantalum",
+    "Zr": "zirconium",
+    "Hf": "hafnium",
+    "Be": "beryllium",
+    "Ti": "titanium",
+    "Fe": "iron-ore",
+    "Mn": "manganese",
+    "Cr": "chromium",
+    "Mg": "magnesium",
+    "Nd": "neodymium",
+    "Dy": "dysprosium",
+    "Sb": "antimony",
+    "Bi": "bismuth",
+    "Ga": "gallium",
+    "In": "indium",
+    "Ge": "germanium",
+    "Te": "tellurium",
+    "Se": "selenium",
+    "Cd": "cadmium",
 }
 
 # Wikipedia URL is derived from the element name; overrides catch disambiguation pages.
@@ -231,7 +277,9 @@ def _build_isotope_data(con: "duckdb.DuckDBPyConnection", symbol: str) -> list[d
                 "reporting_year": int(row["reporting_year"]) if row.get("reporting_year") is not None else None,
                 "production_quantity": {
                     "value": _safe_float(row.get("production_value")),
-                    "unit": str(row["production_unit"]) if row.get("production_unit") and str(row.get("production_unit")) not in ("nan", "None") else None,
+                    "unit": str(row["production_unit"])
+                    if row.get("production_unit") and str(row.get("production_unit")) not in ("nan", "None")
+                    else None,
                 },
                 "producers": shares_by_isotope.get(iso, []),
                 "producers_completeness": completeness,
@@ -284,10 +332,7 @@ def _render_ext_links(symbol: str, name: str) -> str:
     title_name = (name or symbol).title()
     wiki_slug = WIKIPEDIA_NAME_OVERRIDES.get(title_name, title_name)
     wiki_url = "https://en.wikipedia.org/wiki/" + urllib.parse.quote(wiki_slug)
-    parts = [
-        f'<a href="{_html_escape(wiki_url)}" target="_blank" rel="noopener">'
-        f'Wikipedia<span class="arrow">↗</span></a>'
-    ]
+    parts = [f'<a href="{_html_escape(wiki_url)}" target="_blank" rel="noopener">Wikipedia<span class="arrow">↗</span></a>']
     price_slug = ELEMENT_PRICE_SLUGS.get(symbol)
     if price_slug:
         price_url = PRICE_URL_TEMPLATE.format(slug=price_slug)
@@ -865,7 +910,259 @@ footer {
   color: var(--muted);
 }
 footer a { color: var(--muted); }
+
+/* ── site nav ── */
+.site-nav {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+.site-nav a { color: var(--muted); }
+.site-nav a:hover { color: var(--accent); text-decoration: none; }
+
+/* ── country pages ── */
+.country-page-header { display: flex; align-items: baseline; gap: 0.5rem; flex-wrap: wrap; margin-bottom: 0.5rem; }
+.country-flag { font-size: 2rem; line-height: 1; }
+.country-iso-badge { font-size: 0.85rem; color: var(--muted); font-family: monospace; }
+.country-territory-note { font-size: 0.85rem; color: var(--muted); margin-left: 0.25rem; }
+.country-stat-pills { display: flex; gap: 0.75rem; flex-wrap: wrap; margin: 1rem 0; }
+.country-stat-pill { background: var(--surface); border: 1px solid var(--border); border-radius: 0.375rem; padding: 0.35rem 0.75rem; font-size: 0.85rem; }
+.country-stat-pill strong { display: block; font-size: 1.25rem; }
+.country-map-thumbnail { width: 240px; height: 135px; background: var(--surface); border: 1px solid var(--border); border-radius: 0.375rem; display: inline-block; vertical-align: top; margin-left: 1rem; }
+.country-header-row { display: flex; align-items: flex-start; flex-wrap: wrap; }
+.country-jump-nav { display: flex; gap: 1rem; margin: 1rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-size: 0.9rem; }
+.country-page-table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+.country-page-table th { text-align: left; padding: 0.5rem 0.4rem; border-bottom: 2px solid var(--border); color: var(--muted); font-weight: 600; cursor: pointer; user-select: none; white-space: nowrap; }
+.country-page-table th[aria-sort="ascending"]::after { content: " \2191"; }
+.country-page-table th[aria-sort="descending"]::after { content: " \2193"; }
+.country-page-table td { padding: 0.4rem 0.4rem; border-bottom: 1px solid var(--border); vertical-align: top; }
+.country-page-table tr:hover td { background: var(--surface); }
+.country-page-empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; }
+.country-bar-chart { margin: 1.5rem 0; }
+.country-related { margin-top: 2rem; padding-top: 1rem; border-top: 1px solid var(--border); }
+.country-related-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.5rem; }
+.country-related-tag { font-size: 0.8rem; background: var(--surface); border: 1px solid var(--border); border-radius: 0.25rem; padding: 0.2rem 0.4rem; }
+.country-map-drawer-link { margin-top: 0.75rem; font-size: 0.9rem; }
 """
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# ISO name / sovereignt map (built from bundled GeoJSON at call time)
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _build_iso_name_map() -> tuple[dict[str, str], dict[str, str]]:
+    """Return (iso_to_name, iso_to_sovereignt) built from the bundled GeoJSON.
+
+    Uses ISO_A2 (not ISO_A2_EH) as the key so that dependency territories
+    that share an ISO_A2_EH with their sovereign are not conflated.  When a
+    code appears in multiple features the first non-'-99' feature wins.
+    NAME_EN is preferred over ADMIN.  COUNTRY_NAME_OVERRIDES may further
+    substitute a display name.
+
+    Returns two dicts:
+        iso_to_name:      {ISO_A2: display_name}
+        iso_to_sovereignt:{ISO_A2: sovereignt_name}
+    """
+    iso_to_name: dict[str, str] = {}
+    iso_to_sovereignt: dict[str, str] = {}
+    if not WORLD_COUNTRIES_GEOJSON.exists():
+        return iso_to_name, iso_to_sovereignt
+
+    import json as _json
+
+    geojson = _json.loads(WORLD_COUNTRIES_GEOJSON.read_text(encoding="utf-8"))
+    for feature in geojson.get("features", []):
+        props = feature.get("properties") or {}
+        iso = props.get("ISO_A2") or ""
+        if not iso or iso == "-99":
+            continue
+        if iso in iso_to_name:
+            continue  # first non-'-99' feature wins
+        name_en = props.get("NAME_EN") or props.get("ADMIN") or iso
+        # Apply optional project-level override
+        display_name = COUNTRY_NAME_OVERRIDES.get(iso, name_en)
+        sovereignt = props.get("SOVEREIGNT") or display_name
+        iso_to_name[iso] = display_name
+        iso_to_sovereignt[iso] = sovereignt
+
+    return iso_to_name, iso_to_sovereignt
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Country page data inversion
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _build_country_page_data(con: "duckdb.DuckDBPyConnection") -> dict[str, list[dict]]:  # type: ignore[name-defined]
+    """Invert atlas_shares into a per-country dict with ranks and criticality.
+
+    Returns {ISO_A2: [row_dict, ...]} where each row_dict matches the shape
+    defined in spec §4.1.  ZZ and XX are excluded.  Share types covered:
+    mining, refining, reserves.
+    """
+    rows = con.execute(
+        """
+        SELECT
+            s.country,
+            s.symbol,
+            e.name AS element_name,
+            s.share_type AS stage,
+            s.stream,
+            s.share_pct,
+            s.quantity_value,
+            s.quantity_unit,
+            s.confidence,
+            s.notes,
+            e.us_critical_list_as_of_2025,
+            e.eu_crm_list_as_of_2024,
+            RANK() OVER (
+                PARTITION BY s.symbol, s.share_type
+                ORDER BY s.share_pct DESC NULLS LAST
+            ) AS global_rank
+        FROM atlas_shares s
+        JOIN atlas_elements e ON e.symbol = s.symbol
+        WHERE s.country NOT IN ('ZZ', 'XX')
+          AND s.country IS NOT NULL
+          AND s.share_type IN ('mining', 'refining', 'reserves')
+        ORDER BY s.country, s.share_type, s.share_pct DESC NULLS LAST
+        """
+    ).fetchall()
+
+    # Build byproduct_of lookup: symbol -> [parent_symbol, ...]
+    byproduct_of: dict[str, list[str]] = {}
+    tables = {r[0] for r in con.execute("SHOW TABLES").fetchall()}
+    if "atlas_byproducts" in tables:
+        bp_rows = con.execute("SELECT symbol, parent_symbol FROM atlas_byproducts ORDER BY symbol, parent_symbol").fetchall()
+        for sym, parent in bp_rows:
+            byproduct_of.setdefault(str(sym), []).append(str(parent))
+
+    def _safe_float(v) -> float | None:
+        if v is None:
+            return None
+        try:
+            f = float(v)
+            return None if (f != f) else f
+        except (TypeError, ValueError):
+            return None
+
+    def _safe_str(v) -> str | None:
+        if v is None:
+            return None
+        s = str(v)
+        return None if s in ("nan", "None", "") else s
+
+    country_data: dict[str, list[dict]] = {}
+    for row in rows:
+        (
+            country,
+            symbol,
+            element_name,
+            stage,
+            stream,
+            share_pct,
+            quantity_value,
+            quantity_unit,
+            confidence,
+            notes,
+            us_critical,
+            eu_crm,
+            global_rank,
+        ) = row
+
+        country_code = str(country)
+        entry = {
+            "symbol": str(symbol),
+            "element_name": str(element_name) if element_name else str(symbol),
+            "stage": str(stage),
+            "stream": _safe_str(stream),
+            "share_pct": _safe_float(share_pct),
+            "quantity_value": _safe_float(quantity_value),
+            "quantity_unit": _safe_str(quantity_unit),
+            "confidence": _safe_str(confidence) or "high",
+            "notes": _safe_str(notes),
+            "global_rank": int(global_rank) if global_rank is not None else None,
+            "us_critical": bool(us_critical) if us_critical is not None else False,
+            "eu_crm": bool(eu_crm) if eu_crm is not None else False,
+            "byproduct_of": byproduct_of.get(str(symbol), []),
+        }
+        country_data.setdefault(country_code, []).append(entry)
+
+    n_countries = len(country_data)
+    n_rows = sum(len(v) for v in country_data.values())
+    print(f"country pages: {n_countries} countries, {n_rows} total rows")
+    return country_data
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Country summary stats
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _compute_country_summary(rows: list[dict]) -> dict:
+    """Compute the four summary stat pills for a country page.
+
+    Args:
+        rows: All row dicts for this country (from _build_country_page_data).
+
+    Returns:
+        {"n_mined": int, "n_refined": int, "n_top3_reserves": int, "n_critical": int}
+    """
+    mined: set[str] = set()
+    refined: set[str] = set()
+    top3_reserves: set[str] = set()
+    critical: set[str] = set()
+
+    for row in rows:
+        sym = row["symbol"]
+        stage = row["stage"]
+        if stage == "mining":
+            mined.add(sym)
+        elif stage == "refining":
+            refined.add(sym)
+        elif stage == "reserves":
+            rank = row.get("global_rank")
+            if rank is not None and rank <= 3:
+                top3_reserves.add(sym)
+        if row.get("us_critical") or row.get("eu_crm"):
+            critical.add(sym)
+
+    return {
+        "n_mined": len(mined),
+        "n_refined": len(refined),
+        "n_top3_reserves": len(top3_reserves),
+        "n_critical": len(critical),
+    }
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Flag emoji helper
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _flag_emoji(iso2: str) -> str:
+    """Return the Unicode flag emoji for a two-letter ISO-2 code.
+
+    Rendering caveat: Windows browsers display letter pairs rather than flags.
+    This is acceptable for v1 (see spec §8 Q1).
+    """
+    if len(iso2) != 2 or not iso2.isalpha():
+        return ""
+    return "".join(chr(0x1F1E6 + ord(c) - ord("A")) for c in iso2.upper())
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Ordinal formatting
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _ordinal(n: int) -> str:
+    """Return 1st, 2nd, 3rd, 4th, … for integer n."""
+    if 11 <= (n % 100) <= 13:
+        return f"{n}th"
+    suffix = {1: "st", 2: "nd", 3: "rd"}.get(n % 10, "th")
+    return f"{n}{suffix}"
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1019,11 +1316,28 @@ def _build_country_map_data(con: "duckdb.DuckDBPyConnection") -> dict[str, objec
 
 
 # ─────────────────────────────────────────────────────────────────────────────
+# Nav helper
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _nav_html(prefix: str = "") -> str:
+    """Return the <nav class="site-nav"> block.
+
+    Args:
+        prefix: Path prefix for hrefs.  "" for index-level pages,
+                "../" for pages one level deep (elements/, countries/).
+    """
+    links = " &bull; ".join(f'<a href="{prefix}{href}">{_html_escape(label)}</a>' for label, href in _NAV_LINKS)
+    return f'<nav class="site-nav">{links}</nav>'
+
+
+# ─────────────────────────────────────────────────────────────────────────────
 # Page builders
 # ─────────────────────────────────────────────────────────────────────────────
 
 
 def _page_shell(title: str, body: str, footer: str) -> str:
+    nav = _nav_html(prefix="")
     return f"""\
 <!DOCTYPE html>
 <html lang="en">
@@ -1037,6 +1351,7 @@ def _page_shell(title: str, body: str, footer: str) -> str:
 </head>
 <body>
 <div class="container">
+{nav}
 {body}
 <footer>
 {footer}
@@ -1050,6 +1365,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
     """Same as _page_shell but with ../ prefix for the CSS href.
     Also loads d3 v7 + charts_prices.js (B3 charts).
     """
+    nav = _nav_html(prefix="../")
     return f"""\
 <!DOCTYPE html>
 <html lang="en">
@@ -1064,6 +1380,7 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 </head>
 <body>
 <div class="container">
+{nav}
 {body}
 <footer>
 {footer}
@@ -1071,6 +1388,32 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 </div>
 <script src="../assets/charts_production.js"></script>
 <script src="../assets/charts_reserves.js"></script>
+</body>
+</html>"""
+
+
+def _country_page_shell(title: str, body: str, footer: str) -> str:
+    """Page shell for viewer/countries/{ISO}.html pages (one level deep)."""
+    nav = _nav_html(prefix="../")
+    return f"""\
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{_html_escape(title)}</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<div class="container">
+{nav}
+{body}
+<footer>
+{footer}
+</footer>
+</div>
+<script src="../assets/charts_country.js"></script>
 </body>
 </html>"""
 
@@ -1271,10 +1614,18 @@ def _render_isotope_panel(isotopes: list[dict]) -> str:
         producers = iso.get("producers") or []
 
         # Production mode badge — use a known CSS class or fallback
-        safe_mode = prod_mode if prod_mode in (
-            "stockpile_separated", "reactor_generated", "accelerator_generated",
-            "decay_product", "naturally_occurring",
-        ) else "unknown"
+        safe_mode = (
+            prod_mode
+            if prod_mode
+            in (
+                "stockpile_separated",
+                "reactor_generated",
+                "accelerator_generated",
+                "decay_product",
+                "naturally_occurring",
+            )
+            else "unknown"
+        )
         mode_badge = f'<span class="badge badge-mode-{_html_escape(safe_mode)}">{_html_escape(prod_mode or "unknown")}</span>'
 
         # Meta rows: half-life, precursor, delivery form
@@ -1282,14 +1633,20 @@ def _render_isotope_panel(isotopes: list[dict]) -> str:
         if precursor:
             meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> {_html_escape(precursor)}</div>\n'
         if delivery_form:
-            meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> {_html_escape(delivery_form)}</div>\n'
+            meta_rows += (
+                f'<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> {_html_escape(delivery_form)}</div>\n'
+            )
         if reporting_year:
             meta_rows += f'<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> {reporting_year}</div>\n'
 
         # Producers: build an HTML table; JS will optionally replace with bar chart
         if producers:
             completeness_label = completeness.replace("_", " ").title() if completeness else ""
-            completeness_badge = f'<span class="badge badge-no-commercial" style="font-size:0.7rem">{_html_escape(completeness_label)}</span>' if completeness_label else ""
+            completeness_badge = (
+                f'<span class="badge badge-no-commercial" style="font-size:0.7rem">{_html_escape(completeness_label)}</span>'
+                if completeness_label
+                else ""
+            )
             producer_rows_html = ""
             for p in producers:
                 country = str(p.get("country") or "")
@@ -1297,9 +1654,14 @@ def _render_isotope_panel(isotopes: list[dict]) -> str:
                 conf = str(p.get("confidence") or "")
                 low_class = " producer-low-confidence" if conf == "low" else ""
                 share_str = f"{share:.0f}%" if share is not None else "?"
+                # Link country to country page when enabled and not an excluded pseudo-code
+                if COUNTRY_PAGES_ENABLED and country and country not in ("ZZ", "XX", ""):
+                    country_cell = f'<a href="../countries/{_html_escape(country)}.html">{_html_escape(country)}</a>'
+                else:
+                    country_cell = _html_escape(country)
                 producer_rows_html += f"""\
     <tr class="producer-row{low_class}">
-      <td style="padding:0.2rem 0.5rem;font-weight:600">{_html_escape(country)}</td>
+      <td style="padding:0.2rem 0.5rem;font-weight:600">{country_cell}</td>
       <td style="padding:0.2rem 0.5rem">{share_str}</td>
       <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">{_html_escape(conf)}</td>
     </tr>
@@ -1567,6 +1929,43 @@ def _production_json(production_rows: list[dict], shares_rows: list[dict]) -> st
     return json.dumps({"streams": result_streams}, separators=(",", ":"))
 
 
+def _render_producer_country_links(shares_rows: list[dict]) -> str:
+    """Return a compact static list of producer countries (with country-page links) for element pages.
+
+    Only renders mining and refining rows; used so the static HTML contains
+    href="../countries/{ISO}.html" links that test CP-4 can assert on.  The
+    full interactive chart is still rendered by charts_production.js.
+    """
+    if not COUNTRY_PAGES_ENABLED or not shares_rows:
+        return ""
+
+    # Deduplicate: keep the highest share_pct row per (country, share_type)
+    seen: dict[tuple[str, str], float] = {}
+    for r in shares_rows:
+        country = str(r.get("country") or "")
+        share_type = str(r.get("share_type") or "")
+        if not country or country in ("ZZ", "XX") or share_type not in ("mining", "refining"):
+            continue
+        share = float(r.get("share_pct") or 0)
+        key = (country, share_type)
+        if key not in seen or share > seen[key]:
+            seen[key] = share
+
+    if not seen:
+        return ""
+
+    # Sort by descending share
+    sorted_items = sorted(seen.items(), key=lambda kv: -kv[1])
+
+    # Build compact inline list: "CD (76%), ID (10%), …"
+    parts = []
+    for (country, _stage), share in sorted_items[:10]:  # cap at 10 for readability
+        href = f"../countries/{_html_escape(country)}.html"
+        parts.append(f'<a href="{href}">{_html_escape(country)}</a>')
+
+    return '<p class="el-producer-links" style="font-size:0.85rem;color:var(--muted)">Top producers: ' + ", ".join(parts) + "</p>"
+
+
 def _element_body(
     el: dict,
     sources: list[dict],
@@ -1574,6 +1973,7 @@ def _element_body(
     chart_data: dict | None = None,
     production_data: str = '{"streams":[]}',
     isotope_panel_html: str = "",
+    mining_refining_shares: list[dict] | None = None,
 ) -> str:
     symbol = el["symbol"]
     atomic = el["atomic_number"]
@@ -1610,6 +2010,9 @@ def _element_body(
     chart_data_json = json.dumps(chart_data or {}, ensure_ascii=False, separators=(",", ":"))
     inline_data_script = f'<script type="application/json" id="atlas-chart-data">{chart_data_json}</script>'
 
+    # Static producer country links (Step 10: wraps country ISOs in <a href="../countries/{ISO}.html">)
+    producer_links_html = _render_producer_country_links(mining_refining_shares or [])
+
     return f"""\
 {inline_data_script}
 <p><a href="../index.html">&larr; Back to index</a></p>
@@ -1626,12 +2029,356 @@ def _element_body(
 {ext_links_html}
 {no_commercial_note}
 {narrative_html}
+{producer_links_html}
 <script id="production-data" type="application/json">{production_data}</script>
 <div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{reserves_data}</script>
 {placeholders_html}
 {isotope_panel_html}
 {sources_panel_html}"""
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# Country page renderer
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def _render_stage_table(stage_rows: list[dict], has_notes_col: bool) -> str:
+    """Render the table for one stage section on a country page."""
+    rows_html = ""
+    for row in stage_rows:
+        sym = row["symbol"]
+        element_name = row["element_name"]
+        share_pct = row.get("share_pct")
+        qty_val = row.get("quantity_value")
+        qty_unit = row.get("quantity_unit")
+        rank = row.get("global_rank")
+        conf = row.get("confidence") or ""
+        notes = row.get("notes") or ""
+        byproduct_of = row.get("byproduct_of") or []
+
+        share_str = f"{share_pct:.1f}%" if share_pct is not None else "—"
+        if qty_val is not None and qty_unit:
+            unit_label = qty_unit.replace("_", " ")
+            qty_str = f"{qty_val:,.0f} {unit_label}" if qty_val >= 100 else f"{qty_val:.1f} {unit_label}"
+        else:
+            qty_str = "—"
+        rank_str = _ordinal(rank) if rank is not None else "—"
+        low_class = " producer-low-confidence" if conf == "low" else ""
+
+        # Notes: truncate + byproduct note
+        notes_parts = []
+        if notes:
+            truncated = notes[:120] + "…" if len(notes) > 120 else notes
+            notes_parts.append(f'<span title="{_html_escape(notes)}">{_html_escape(truncated)}</span>')
+        if byproduct_of:
+            parents = ", ".join(_html_escape(p) for p in byproduct_of)
+            notes_parts.append(f'<span class="byproduct-note">byproduct of {parents}</span>')
+        notes_td = " ".join(notes_parts)
+
+        notes_cell = f"<td>{notes_td}</td>" if has_notes_col else ""
+
+        rows_html += f"""\
+  <tr class="{low_class.strip()}">
+    <td><a href="../elements/{_html_escape(sym)}.html">{_html_escape(sym)}</a><br><small>{_html_escape(element_name)}</small></td>
+    <td style="text-align:right">{share_str}</td>
+    <td>{_html_escape(qty_str)}</td>
+    <td style="text-align:center">{rank_str}</td>
+    <td class="{low_class.strip()}">{_html_escape(conf)}</td>
+    {notes_cell}
+  </tr>
+"""
+
+    notes_th = "<th>Notes</th>" if has_notes_col else ""
+    header = f"""\
+<thead>
+  <tr>
+    <th>Element</th>
+    <th style="text-align:right">Share %</th>
+    <th>Quantity</th>
+    <th style="text-align:center">Global rank</th>
+    <th>Confidence</th>
+    {notes_th}
+  </tr>
+</thead>"""
+
+    return f'<table class="country-page-table sortable-table">\n{header}\n<tbody>\n{rows_html}</tbody>\n</table>'
+
+
+def _render_country_page(
+    iso: str,
+    country_name: str,
+    sovereignt: str,
+    rows: list[dict],
+    summary: dict,
+    iso_to_name: dict[str, str],
+) -> str:
+    """Build the full body HTML for a country page.
+
+    Args:
+        iso:          ISO-2 country code.
+        country_name: Display name from GeoJSON / overrides.
+        sovereignt:   Sovereign state name (for territory notes).
+        rows:         All row dicts for this country (from _build_country_page_data).
+        summary:      Output of _compute_country_summary(rows).
+        iso_to_name:  Full ISO→name map (for co-producer links).
+    """
+    flag = _flag_emoji(iso)
+    title_html = f'<h1 class="country-page-header"><span class="country-flag">{flag}</span> {_html_escape(country_name)} <span class="country-iso-badge">({_html_escape(iso)})</span>'
+
+    # Territory note: if sovereign differs from display name, note the relationship
+    if sovereignt and sovereignt != country_name:
+        title_html += f' <span class="country-territory-note">(administered by {_html_escape(sovereignt)})</span>'
+    title_html += "</h1>"
+
+    subtitle = '<p class="subtitle">Supply chain footprint &mdash; snapshot year 2025</p>'
+
+    # Summary stat pills
+    pills_html = f"""\
+<div class="country-stat-pills">
+  <div class="country-stat-pill"><strong>{summary["n_mined"]}</strong>Elements mined</div>
+  <div class="country-stat-pill"><strong>{summary["n_refined"]}</strong>Elements refined</div>
+  <div class="country-stat-pill"><strong>{summary["n_top3_reserves"]}</strong>Top-3 reserves</div>
+  <div class="country-stat-pill"><strong>{summary["n_critical"]}</strong>Critical elements</div>
+</div>"""
+
+    # World-map thumbnail (client-side initialised by charts_country.js)
+    map_thumb = f'<div class="country-map-thumbnail" id="country-map-thumb" data-country-code="{_html_escape(iso)}"></div>'
+
+    # Jump nav
+    jump_nav = """\
+<nav class="country-jump-nav">
+  <a href="#mining">Mining</a>
+  <a href="#refining">Refining</a>
+  <a href="#reserves">Reserves</a>
+</nav>"""
+
+    # Stage sections
+    stage_rows_map: dict[str, list[dict]] = {"mining": [], "refining": [], "reserves": []}
+    for r in rows:
+        stage_rows_map.setdefault(r["stage"], []).append(r)
+
+    # Default sort: descending share_pct
+    for stage_list in stage_rows_map.values():
+        stage_list.sort(key=lambda r: -(r.get("share_pct") or 0))
+
+    sections_html = ""
+    for stage_key, stage_label in [("mining", "Mining"), ("refining", "Refining"), ("reserves", "Reserves")]:
+        stage_list = stage_rows_map.get(stage_key, [])
+        n = len(stage_list)
+        has_notes = any(r.get("notes") or r.get("byproduct_of") for r in stage_list)
+        section_body = (
+            _render_stage_table(stage_list, has_notes_col=has_notes)
+            if stage_list
+            else '<p class="country-page-empty">No attributed data for this stage.</p>'
+        )
+        sections_html += f"""\
+<section id="{stage_key}">
+  <h2>{stage_label} ({n} element{"s" if n != 1 else ""})</h2>
+  {section_body}
+</section>
+"""
+
+    # Chart data: top-15 elements by share_pct across all stages
+    all_chart_rows = sorted(rows, key=lambda r: -(r.get("share_pct") or 0))[:15]
+    chart_data = [
+        {
+            "symbol": r["symbol"],
+            "element_name": r["element_name"],
+            "stage": r["stage"],
+            "share_pct": r.get("share_pct"),
+        }
+        for r in all_chart_rows
+    ]
+    chart_json = json.dumps(chart_data, ensure_ascii=False, separators=(",", ":"))
+    chart_section = ""
+    if len(rows) >= 3:
+        chart_section = f"""\
+<script id="country-chart-data" type="application/json">{chart_json}</script>
+<div id="country-bar-chart" class="country-bar-chart"></div>"""
+
+    # Related: co-producers — countries sharing top-3 rank for same element+stage
+    top3_by_el_stage: dict[tuple[str, str], set[str]] = {}
+    for r in rows:
+        rank = r.get("global_rank")
+        if rank is not None and rank <= 3:
+            key = (r["symbol"], r["stage"])
+            top3_by_el_stage.setdefault(key, set())
+
+    # We need to find other top-3 countries for the same element+stage
+    # Build from rows we have: rows only covers THIS country.
+    # The co-producer data needs all countries. We embed the needed info at render time.
+    # For now: collect symbols+stages where this country is top-3; the JS / build can
+    # expand later. We'll store for the HTML section.
+    # NOTE: Since _build_country_page_data returns only rows per-country,
+    # we need to pass the full dataset or re-query. Per spec §3.5 we find all
+    # other countries ranking top-3 in same element+stage. We store the
+    # co-producers in the page data at generate_viewer time.
+    # The actual co-producer rendering happens in generate_viewer where we have
+    # all country data. For now we embed a placeholder div that generate_viewer
+    # will fill via _render_country_page's `co_producers` parameter.
+    # → signature extended below, related section rendered via parameter.
+
+    # Related section placeholder (will be overridden in generate_viewer)
+    related_html = ""  # filled by caller
+
+    return (
+        f"{title_html}\n{subtitle}\n"
+        f'<div class="country-header-row">'
+        f"<div>{pills_html}</div>"
+        f"{map_thumb}"
+        f"</div>\n"
+        f"{jump_nav}\n"
+        f"{sections_html}\n"
+        f"{chart_section}\n"
+        f"{related_html}"
+    )
+
+
+def _render_country_page_full(
+    iso: str,
+    country_name: str,
+    sovereignt: str,
+    rows: list[dict],
+    summary: dict,
+    iso_to_name: dict[str, str],
+    all_country_data: dict[str, list[dict]],
+) -> str:
+    """Build the full body HTML for a country page including co-producers section.
+
+    Args:
+        all_country_data: Full {iso: rows} dict so we can find co-producers.
+    """
+    flag = _flag_emoji(iso)
+    title_html = (
+        f'<h1 class="country-page-header">'
+        f'<span class="country-flag">{flag}</span> '
+        f"{_html_escape(country_name)} "
+        f'<span class="country-iso-badge">({_html_escape(iso)})</span>'
+    )
+    if sovereignt and sovereignt != country_name:
+        title_html += f' <span class="country-territory-note">(administered by {_html_escape(sovereignt)})</span>'
+    title_html += "</h1>"
+
+    subtitle = '<p class="subtitle">Supply chain footprint &mdash; snapshot year 2025</p>'
+
+    pills_html = f"""\
+<div class="country-stat-pills">
+  <div class="country-stat-pill"><strong>{summary["n_mined"]}</strong>Elements mined</div>
+  <div class="country-stat-pill"><strong>{summary["n_refined"]}</strong>Elements refined</div>
+  <div class="country-stat-pill"><strong>{summary["n_top3_reserves"]}</strong>Top-3 reserves</div>
+  <div class="country-stat-pill"><strong>{summary["n_critical"]}</strong>Critical elements</div>
+</div>"""
+
+    map_thumb = f'<div class="country-map-thumbnail" id="country-map-thumb" data-country-code="{_html_escape(iso)}"></div>'
+
+    jump_nav = """\
+<nav class="country-jump-nav">
+  <a href="#mining">Mining</a>
+  <a href="#refining">Refining</a>
+  <a href="#reserves">Reserves</a>
+</nav>"""
+
+    stage_rows_map: dict[str, list[dict]] = {"mining": [], "refining": [], "reserves": []}
+    for r in rows:
+        stage_rows_map.setdefault(r["stage"], []).append(r)
+    for stage_list in stage_rows_map.values():
+        stage_list.sort(key=lambda r: -(r.get("share_pct") or 0))
+
+    sections_html = ""
+    for stage_key, stage_label in [("mining", "Mining"), ("refining", "Refining"), ("reserves", "Reserves")]:
+        stage_list = stage_rows_map.get(stage_key, [])
+        n = len(stage_list)
+        has_notes = any(r.get("notes") or r.get("byproduct_of") for r in stage_list)
+        section_body = (
+            _render_stage_table(stage_list, has_notes_col=has_notes)
+            if stage_list
+            else '<p class="country-page-empty">No attributed data for this stage.</p>'
+        )
+        sections_html += f"""\
+<section id="{stage_key}">
+  <h2>{stage_label} ({n} element{"s" if n != 1 else ""})</h2>
+  {section_body}
+</section>
+"""
+
+    # Chart data
+    all_chart_rows = sorted(rows, key=lambda r: -(r.get("share_pct") or 0))[:15]
+    chart_data = [
+        {
+            "symbol": r["symbol"],
+            "element_name": r["element_name"],
+            "stage": r["stage"],
+            "share_pct": r.get("share_pct"),
+        }
+        for r in all_chart_rows
+    ]
+    chart_json = json.dumps(chart_data, ensure_ascii=False, separators=(",", ":"))
+    chart_section = ""
+    if len(rows) >= 3:
+        chart_section = f"""\
+<script id="country-chart-data" type="application/json">{chart_json}</script>
+<div id="country-bar-chart" class="country-bar-chart"></div>"""
+
+    # Co-producers section
+    # For each element+stage where this country is top-3, find all other top-3 countries.
+    this_country_el_stage: set[tuple[str, str]] = set()
+    for r in rows:
+        rank = r.get("global_rank")
+        if rank is not None and rank <= 3:
+            this_country_el_stage.add((r["symbol"], r["stage"]))
+
+    co_producers: set[str] = set()
+    for other_iso, other_rows in all_country_data.items():
+        if other_iso == iso:
+            continue
+        for r in other_rows:
+            key = (r["symbol"], r["stage"])
+            if key in this_country_el_stage:
+                rank = r.get("global_rank")
+                if rank is not None and rank <= 3:
+                    co_producers.add(other_iso)
+
+    related_html = ""
+    if co_producers:
+        sorted_coproducers = sorted(co_producers)
+        # Cap at 20
+        extra = 0
+        if len(sorted_coproducers) > 20:
+            extra = len(sorted_coproducers) - 20
+            sorted_coproducers = sorted_coproducers[:20]
+        tags_html = ""
+        for cp_iso in sorted_coproducers:
+            cp_name = iso_to_name.get(cp_iso, cp_iso)
+            tags_html += (
+                f'<a href="{_html_escape(cp_iso)}.html" class="country-related-tag">{_html_escape(cp_name)} ({_html_escape(cp_iso)})</a>\n'
+            )
+        if extra:
+            tags_html += f'<span class="country-related-tag">and {extra} more</span>\n'
+        related_html = f"""\
+<section class="country-related">
+  <h2>Countries with overlapping top-3 positions</h2>
+  <div class="country-related-tags">
+{tags_html}  </div>
+</section>"""
+    else:
+        related_html = """\
+<section class="country-related">
+  <!-- Critical minerals overview: placeholder for future link -->
+</section>"""
+
+    return (
+        f"{title_html}\n{subtitle}\n"
+        f'<p><a href="../index.html">&larr; Atlas index</a></p>\n'
+        f'<div class="country-header-row">'
+        f"<div>{pills_html}</div>"
+        f"{map_thumb}"
+        f"</div>\n"
+        f"{jump_nav}\n"
+        f"{sections_html}\n"
+        f"{chart_section}\n"
+        f"{related_html}"
+    )
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -1792,6 +2539,11 @@ def generate_viewer(
             for sym in [el["symbol"] for el in elements_list]:
                 isotope_data_by_symbol[sym] = _build_isotope_data(con, sym)
 
+        # Country page data (one query, all countries)
+        country_page_data: dict[str, list[dict]] = {}
+        if COUNTRY_PAGES_ENABLED and "atlas_shares" in tables:
+            country_page_data = _build_country_page_data(con)
+
     finally:
         con.close()
 
@@ -1820,6 +2572,9 @@ def generate_viewer(
     if CHARTS_MAP_JS.exists():
         (assets_dir / "charts_map.js").write_text(CHARTS_MAP_JS.read_text(encoding="utf-8"), encoding="utf-8")
 
+    if CHARTS_COUNTRY_JS.exists():
+        (assets_dir / "charts_country.js").write_text(CHARTS_COUNTRY_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
     if WORLD_COUNTRIES_GEOJSON.exists():
         (assets_dir / "world_countries_50m.geojson").write_text(WORLD_COUNTRIES_GEOJSON.read_text(encoding="utf-8"), encoding="utf-8")
 
@@ -1827,6 +2582,7 @@ def generate_viewer(
     repo_url = "https://github.com/anomalyco/opencode"
     footer_index = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
     footer_element = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
+    footer_country = footer_element
 
     # index.html
     index_body = _index_body(elements_list, snapshot_year, country_map_data)
@@ -1852,10 +2608,35 @@ def generate_viewer(
         }
         isotope_data = isotope_data_by_symbol.get(sym, [])
         iso_panel_html = _render_isotope_panel(isotope_data)
-        body = _element_body(el, el_sources, reserves_data=res_json, chart_data=chart_data, production_data=prod_json, isotope_panel_html=iso_panel_html)
+        body = _element_body(
+            el,
+            el_sources,
+            reserves_data=res_json,
+            chart_data=chart_data,
+            production_data=prod_json,
+            isotope_panel_html=iso_panel_html,
+            mining_refining_shares=mining_refining_shares_by_symbol.get(sym, []),
+        )
         title = f"{sym} — {el['name']} | Atlas {snapshot_year}"
         html = _element_page_shell(title, body, footer_element)
         (elements_dir / f"{sym}.html").write_text(html, encoding="utf-8")
+
+    # Per-country pages
+    if COUNTRY_PAGES_ENABLED and country_page_data:
+        iso_to_name, iso_to_sovereignt = _build_iso_name_map()
+        countries_dir = viewer_dir / "countries"
+        countries_dir.mkdir(exist_ok=True)
+        for iso, iso_rows in sorted(country_page_data.items()):
+            country_name = iso_to_name.get(iso, iso)
+            if not iso_to_name.get(iso):
+                print(f"warning: ISO {iso!r} not found in GeoJSON name map; using code as name", file=sys.stderr)
+            sovereignt = iso_to_sovereignt.get(iso, country_name)
+            summary = _compute_country_summary(iso_rows)
+            body = _render_country_page_full(iso, country_name, sovereignt, iso_rows, summary, iso_to_name, country_page_data)
+            title = f"{country_name} ({iso}) | Atlas {snapshot_year}"
+            html = _country_page_shell(title, body, footer_country)
+            (countries_dir / f"{iso}.html").write_text(html, encoding="utf-8")
+            print(f"viewer/countries/{iso}.html written")
 
     print(f"viewer/index.html written ({len(elements_list)} elements)")
     for el in elements_list:
@@ -1869,6 +2650,8 @@ def generate_viewer(
         print("viewer/assets/charts_isotopes.js written")
     if CHARTS_MAP_JS.exists():
         print("viewer/assets/charts_map.js written")
+    if CHARTS_COUNTRY_JS.exists():
+        print("viewer/assets/charts_country.js written")
     if WORLD_COUNTRIES_GEOJSON.exists():
         print("viewer/assets/world_countries_50m.geojson written")
 

@@ -186,6 +186,10 @@
     drawerBackdrop.hidden = true;
   };
 
+  // Set of ISO-2 codes that have a generated country page.
+  // ZZ and XX are never generated; all other codes in the atlas data are assumed to have pages.
+  const hasCountryPage = (code) => code && code !== "ZZ" && code !== "XX" && code !== "-99";
+
   const openDrawer = (feature, node) => {
     const code = featureCode(feature);
     const rows = countries[code] || [];
@@ -204,6 +208,22 @@
     pinnedNode.classList.add("is-pinned");
     drawerTitle.textContent = featureName(feature);
     drawerSubtitle.textContent = "Pinned country detail";
+
+    // "View full country page →" link — CC-4
+    let countryLink = document.getElementById("country-map-drawer-country-link");
+    if (!countryLink) {
+      countryLink = document.createElement("p");
+      countryLink.id = "country-map-drawer-country-link";
+      countryLink.className = "country-map-drawer-link";
+      drawerSubtitle.after(countryLink);
+    }
+    if (hasCountryPage(code)) {
+      countryLink.innerHTML = `<a href="countries/${encodeURIComponent(code)}.html">View full page &rarr;</a>`;
+      countryLink.hidden = false;
+    } else {
+      countryLink.hidden = true;
+    }
+
     drawerBody.innerHTML = renderDrawerRows(code, rows);
     drawer.hidden = false;
     drawerBackdrop.hidden = false;
