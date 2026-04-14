@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Namibia (NA) | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+</head>
+<body>
+<div class="container">
+<nav class="site-nav"><a href="../index.html">Elements</a> &bull; <a href="../byproducts.html">Byproduct graph</a></nav>
+<h1 class="country-page-header"><span class="country-flag">🇳🇦</span> Namibia <span class="country-iso-badge">(NA)</span></h1>
+<p class="subtitle">Supply chain footprint &mdash; snapshot year 2025</p>
+<p><a href="../index.html">&larr; Atlas index</a></p>
+<div class="country-header-row"><div><div class="country-stat-pills">
+  <div class="country-stat-pill"><strong>3</strong>Elements mined</div>
+  <div class="country-stat-pill"><strong>0</strong>Elements refined</div>
+  <div class="country-stat-pill"><strong>0</strong>Top-3 reserves</div>
+  <div class="country-stat-pill"><strong>2</strong>Critical elements</div>
+</div></div><div class="country-map-thumbnail" id="country-map-thumb" data-country-code="NA"></div></div>
+<nav class="country-jump-nav">
+  <a href="#mining">Mining</a>
+  <a href="#refining">Refining</a>
+  <a href="#reserves">Reserves</a>
+</nav>
+<section id="mining">
+  <h2>Mining (3 elements)</h2>
+  <table class="country-page-table sortable-table">
+<thead>
+  <tr>
+    <th>Element</th>
+    <th style="text-align:right">Share %</th>
+    <th>Quantity</th>
+    <th style="text-align:center">Global rank</th>
+    <th>Confidence</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="">
+    <td><a href="../elements/U.html">U</a><br><small>uranium</small></td>
+    <td style="text-align:right">12.8%</td>
+    <td>6,985 tonnes per year</td>
+    <td style="text-align:center">3rd</td>
+    <td class="">high</td>
+    <td><span title="Namibia 2023: 6,985 tU (NEA/IAEA estimate). Main operations: Husab (Swakop Uranium,
+majority-owned by CGN subsidiary China National Uranium Corp, 69%) and Rössing (China
+National Uranium Corp acquired ~68% stake from Rio Tinto, effective 2019). Both are
+open-pit alaskite-hosted deposits in the Namib Desert. Namibia has become the world&#39;s
+third-largest producer as Husab ramped to full capacity during 2019–2023.
+">Namibia 2023: 6,985 tU (NEA/IAEA estimate). Main operations: Husab (Swakop Uranium,
+majority-owned by CGN subsidiary Chi…</span></td>
+  </tr>
+  <tr class="">
+    <td><a href="../elements/Li.html">Li</a><br><small>lithium</small></td>
+    <td style="text-align:right">1.1%</td>
+    <td>2,700 tonnes per year</td>
+    <td style="text-align:center">9th</td>
+    <td class="">high</td>
+    <td></td>
+  </tr>
+  <tr class="">
+    <td><a href="../elements/Sn.html">Sn</a><br><small>tin</small></td>
+    <td style="text-align:right">0.3%</td>
+    <td>800 tonnes per year</td>
+    <td style="text-align:center">15th</td>
+    <td class="">medium</td>
+    <td><span title="Namibia 2024e: ~800 t contained Sn (range 700–900 t). Single-asset country:
+Andrada Mining&#39;s Uis mine (Erongo) produced ~880 t contained Sn in FY24
+(Mar 2023–Feb 2024), ramping through CY2025 toward a 2,600 tpa concentrate
+target. ITA coverage and Thaisarco feedstock lists corroborate Namibia as
+a material source. Added via secondary-source decomposition of the USGS
+&#39;Other countries&#39; residual.
+">Namibia 2024e: ~800 t contained Sn (range 700–900 t). Single-asset country:
+Andrada Mining&#39;s Uis mine (Erongo) produced …</span></td>
+  </tr>
+</tbody>
+</table>
+</section>
+<section id="refining">
+  <h2>Refining (0 elements)</h2>
+  <p class="country-page-empty">No attributed data for this stage.</p>
+</section>
+<section id="reserves">
+  <h2>Reserves (1 element)</h2>
+  <table class="country-page-table sortable-table">
+<thead>
+  <tr>
+    <th>Element</th>
+    <th style="text-align:right">Share %</th>
+    <th>Quantity</th>
+    <th style="text-align:center">Global rank</th>
+    <th>Confidence</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="">
+    <td><a href="../elements/U.html">U</a><br><small>uranium</small></td>
+    <td style="text-align:right">8.4%</td>
+    <td>497,900 tonnes</td>
+    <td style="text-align:center">4th</td>
+    <td class="">high</td>
+    <td><span title="Namibia 497,900 tU at &lt;USD 130/kgU; 550,800 tU at &lt;USD 260/kgU. Resources
+increased from earlier editions reflecting continued drilling at Husab and Rössing.
+Only 33,200 tU recoverable at &lt;USD 80/kgU (open-pit alaskite mining has higher
+unit costs than ISR). Chinese ownership of both major mines (Husab and Rössing)
+raises concentration-of-control considerations.
+">Namibia 497,900 tU at &lt;USD 130/kgU; 550,800 tU at &lt;USD 260/kgU. Resources
+increased from earlier editions reflecting con…</span></td>
+  </tr>
+</tbody>
+</table>
+</section>
+
+<script id="country-chart-data" type="application/json">[{"symbol":"U","element_name":"uranium","stage":"mining","share_pct":12.85},{"symbol":"U","element_name":"uranium","stage":"reserves","share_pct":8.4},{"symbol":"Li","element_name":"lithium","stage":"mining","share_pct":1.1},{"symbol":"Sn","element_name":"tin","stage":"mining","share_pct":0.27}]</script>
+<div id="country-bar-chart" class="country-bar-chart"></div>
+<section class="country-related">
+  <h2>Countries with overlapping top-3 positions</h2>
+  <div class="country-related-tags">
+<a href="CA.html" class="country-related-tag">Canada (CA)</a>
+<a href="KZ.html" class="country-related-tag">Kazakhstan (KZ)</a>
+  </div>
+</section>
+<footer>
+Built 2026-04-14T12:15:24Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_country.js"></script>
+</body>
+</html>

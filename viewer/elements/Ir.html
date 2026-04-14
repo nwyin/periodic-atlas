@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+<nav class="site-nav"><a href="../index.html">Elements</a> &bull; <a href="../byproducts.html">Byproduct graph</a></nav>
 <script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":1633.51,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2021,"value":5158.4,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2022,"value":4581.93,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2023,"value":4672.78,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2024,"value":4800.0,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"}],"events":[{"date":"2024-01","event":"South African PGM mined-material output declined amid low prices, deep-level mining costs, labor disputes, and electricity disruptions","impact":"Because South Africa is the dominant iridium supplier, the same constraints that\nreduced 2024 South African PGM output tightened the iridium market even as the\nbroader PGM complex weakened.\n"},{"date":"2024-01","event":"Russian PGM output declined because of natural disasters, lower grades and recovery, Ukraine-war disruptions, and planned metallurgical outages","impact":"Russia is a much smaller iridium source than it is for palladium, but any loss of\nRussian nickel-copper-PGM feed further narrows the already concentrated iridium\nsupply base.\n"},{"date":"2024-06","event":"Heraeus acquired McCol Metals, a specialist in recovering iridium from spent mixed-metal-oxide electrodes","impact":"The transaction expanded industrial recycling capacity focused specifically on\niridium-bearing MMO anodes, improving circular supply options in one of iridium's\nlargest end-use chains.\n"}]}</script>
 <p><a href="../index.html">&larr; Back to index</a></p>
 <div class="el-header">
@@ -48,6 +49,7 @@ reality: iridium is tiny, concentrated, and hard to replace, while new recycling
 low-iridium catalyst technologies are advancing precisely because the supply base is so
 narrow.
 </div>
+<p class="el-producer-links" style="font-size:0.85rem;color:var(--muted)">Top producers: <a href="../countries/ZA.html">ZA</a>, <a href="../countries/ZW.html">ZW</a>, <a href="../countries/CA.html">CA</a>, <a href="../countries/RU.html">RU</a></p>
 <script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"ZA","share_pct":83.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZW","share_pct":10.2,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"CA","share_pct":3.7,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"RU","share_pct":3.1,"quantity":null,"unit":null,"form":null,"confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":8200.0,"unit":"kg_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
 <div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":2430000.0,"resources":3000000.0,"unit":"kg"},"reserves_by_country":[{"country":"ZA","share_pct":77.8,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"RU","share_pct":19.8,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"ZW","share_pct":1.5,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"US","share_pct":1.0,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"CA","share_pct":0.4,"quantity":null,"quantity_unit":"nan","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"electrochemical_applications","share_pct":36.0,"confidence":"medium"},{"application":"other_industrial","share_pct":32.0,"confidence":"medium"},{"application":"electronics","share_pct":22.0,"confidence":"medium"},{"application":"chemical_catalysts","share_pct":10.0,"confidence":"medium"}]}}</script>
@@ -115,7 +117,7 @@ narrow.
   </div>
 </div>
 <footer>
-Built 2026-04-14T10:32:02Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T12:15:24Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_production.js"></script>

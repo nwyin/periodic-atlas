@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+<nav class="site-nav"><a href="../index.html">Elements</a> &bull; <a href="../byproducts.html">Byproduct graph</a></nav>
 <script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":1046.0,"unit":"usd_per_kg","form":"metal","basis":"europe_domestic","region":"EU"},{"year":2020,"value":724.0,"unit":"usd_per_kg","form":"dioxide","basis":"europe_domestic","region":"EU"},{"year":2021,"value":1187.0,"unit":"usd_per_kg","form":"metal","basis":"europe_domestic","region":"EU"},{"year":2021,"value":770.0,"unit":"usd_per_kg","form":"dioxide","basis":"europe_domestic","region":"EU"},{"year":2022,"value":1294.0,"unit":"usd_per_kg","form":"metal","basis":"europe_domestic","region":"EU"},{"year":2022,"value":828.0,"unit":"usd_per_kg","form":"dioxide","basis":"europe_domestic","region":"EU"},{"year":2023,"value":1392.0,"unit":"usd_per_kg","form":"metal","basis":"europe_domestic","region":"EU"},{"year":2023,"value":883.0,"unit":"usd_per_kg","form":"dioxide","basis":"europe_domestic","region":"EU"},{"year":2024,"value":2100.0,"unit":"usd_per_kg","form":"metal","basis":"europe_domestic","region":"EU"},{"year":2024,"value":1400.0,"unit":"usd_per_kg","form":"dioxide","basis":"europe_domestic","region":"EU"}],"events":[{"date":"2023-08","event":"China implemented an export licensing program for germanium.","impact":"USGS MCS 2025 reports the licensing regime remained in force in 2024 and\nthat China's reported exports of germanium metal for January-August 2024\nfell 55% year over year to 16,700 kilograms.\n"},{"date":"2024-04","event":"U.S. Department of Defense awarded $14.4 million to expand germanium wafer manufacturing in Utah.","impact":"USGS MCS 2025 links the award to the Defense Production Act Investment\nProgram and the 2024 National Defense Industrial Strategy, aimed at\nincreasing domestic production and supply-chain resilience.\n"},{"date":"2024-05","event":"Belgian processor and Congolese partner agreed to recover germanium from Lubumbashi tailings.","impact":"USGS MCS 2025 describes the deal as a Minerals Security Partnership-backed\neffort to build a new recovery plant in Congo (Kinshasa), broadening\nnon-Chinese supply options from tailings feedstocks.\n"},{"date":"2024-12","event":"China banned all exports of germanium to the United States.","impact":"USGS MCS 2025 states the ban followed the 2023 licensing regime and hit a\nU.S. market already importing more than 94% of 2024 year-to-August metal\nand dioxide supply from Belgium, Germany, Canada, and China.\n"}]}</script>
 <p><a href="../index.html">&larr; Back to index</a></p>
 <div class="el-header">
@@ -51,6 +52,7 @@ based recovery projects in Congo (Kinshasa). Commercial reality is therefore a
 thin, strategically sensitive market organized around refined metal, dioxide,
 tetrachloride, and recycling rather than around visible mine output.
 </div>
+<p class="el-producer-links" style="font-size:0.85rem;color:var(--muted)">Top producers: <a href="../countries/CN.html">CN</a>, <a href="../countries/CA.html">CA</a>, <a href="../countries/RU.html">RU</a>, <a href="../countries/BE.html">BE</a></p>
 <script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[{"country":"CN","share_pct":85.7,"quantity":180.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"CA","share_pct":9.5,"quantity":20.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"RU","share_pct":2.9,"quantity":6.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"BE","share_pct":1.9,"quantity":4.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"}],"completeness":{"mining":"partial","refining":"complete"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":210.0,"unit":"tonnes_per_year","form":"metal"}}]}</script>
 <div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"fiber_optics","share_pct":40.0,"confidence":"medium"},{"application":"infrared_optics","share_pct":30.0,"confidence":"medium"},{"application":"electronics_and_solar","share_pct":20.0,"confidence":"medium"},{"application":"other","share_pct":10.0,"confidence":"medium"}]}}</script>
@@ -100,7 +102,7 @@ tetrachloride, and recycling rather than around visible mine output.
   </div>
 </div>
 <footer>
-Built 2026-04-14T10:32:02Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T12:15:24Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_production.js"></script>

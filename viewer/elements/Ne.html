@@ -11,6 +11,7 @@
 </head>
 <body>
 <div class="container">
+<nav class="site-nav"><a href="../index.html">Elements</a> &bull; <a href="../byproducts.html">Byproduct graph</a></nav>
 <script type="application/json" id="atlas-chart-data">{"prices":[{"year":2022,"value":2000.0,"unit":"usd_per_m3","form":"gas_grade_a","basis":"spot","region":"global"}],"events":[{"date":"2022-02","event":"Russia invades Ukraine, disrupting Ingas (Mariupol) and Cryoin (Odesa) neon production","impact":"Historical context: before the invasion, Ukraine supplied over 50%\nof global semiconductor-grade neon per industry reporting. Supply\nwas severely disrupted; semiconductor fab customers drew down\ninventories, switched to alternative suppliers (primarily China),\nand accelerated neon recycling investment. The semiconductor\nindustry avoided a hard shortage by combining these mitigations\nover 12-18 months.\n"}]}</script>
 <p><a href="../index.html">&larr; Back to index</a></p>
 <div class="el-header">
@@ -43,6 +44,7 @@ is the only option, and that such files should carry explicit
 confidence=low flags on quantitative claims and top_producers_only
 completeness on country share lists.
 </div>
+<p class="el-producer-links" style="font-size:0.85rem;color:var(--muted)">Top producers: <a href="../countries/UA.html">UA</a>, <a href="../countries/CN.html">CN</a></p>
 <script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"UA","share_pct":50.0,"quantity":null,"unit":null,"form":null,"confidence":"low"},{"country":"CN","share_pct":30.0,"quantity":null,"unit":null,"form":null,"confidence":"low"},{"country":"ZZ","share_pct":20.0,"quantity":null,"unit":null,"form":null,"confidence":"low"}],"refining":[],"completeness":{"mining":"top_producers_only","refining":"partial"},"world_mine":{"value":600.0,"unit":"million_L_per_year","form":"gas_grade_a"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
 <div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"duv_excimer_laser_buffer_gas","share_pct":85.0,"confidence":"high"},{"application":"gas_discharge_lighting_signage","share_pct":10.0,"confidence":"high"},{"application":"cryogenic_refrigerants_and_other","share_pct":5.0,"confidence":"high"}]}}</script>
@@ -74,7 +76,7 @@ completeness on country share lists.
   </div>
 </div>
 <footer>
-Built 2026-04-14T10:32:02Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T12:15:24Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_production.js"></script>
