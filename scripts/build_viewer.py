@@ -17,6 +17,7 @@ from __future__ import annotations
 import argparse
 import json
 import sys
+import urllib.parse
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -43,6 +44,29 @@ CHART_PLACEHOLDERS = [
     ("sources-panel", "Sources — see B4"),
     ("isotope-panel", "Isotope markets — see B5"),
 ]
+
+# External price-chart provider. We link out rather than mirror the data.
+PRICE_URL_TEMPLATE = "https://tradingeconomics.com/commodity/{slug}"
+ELEMENT_PRICE_SLUGS: dict[str, str] = {
+    "Au": "gold", "Ag": "silver", "Cu": "copper", "Al": "aluminum",
+    "Ni": "nickel", "Zn": "zinc", "Sn": "tin", "Pb": "lead",
+    "Pt": "platinum", "Pd": "palladium", "Rh": "rhodium",
+    "Ru": "ruthenium", "Ir": "iridium", "Os": "osmium",
+    "Li": "lithium", "Co": "cobalt", "V": "vanadium", "U": "uranium",
+    "Mo": "molybdenum", "W": "tungsten", "Re": "rhenium",
+    "Nb": "niobium", "Ta": "tantalum", "Zr": "zirconium",
+    "Hf": "hafnium", "Be": "beryllium", "Ti": "titanium",
+    "Fe": "iron-ore", "Mn": "manganese", "Cr": "chromium", "Mg": "magnesium",
+    "Nd": "neodymium", "Dy": "dysprosium",
+    "Sb": "antimony", "Bi": "bismuth", "Ga": "gallium",
+    "In": "indium", "Ge": "germanium", "Te": "tellurium",
+    "Se": "selenium", "Cd": "cadmium",
+}
+
+# Wikipedia URL is derived from the element name; overrides catch disambiguation pages.
+WIKIPEDIA_NAME_OVERRIDES: dict[str, str] = {
+    "Mercury": "Mercury_(element)",
+}
 
 
 # ─────────────────────────────────────────────────────────────────────────────
@@ -256,6 +280,24 @@ def _commercial_badge(commercial: bool) -> str:
     return _badge("No commercial production", "no-commercial")
 
 
+def _render_ext_links(symbol: str, name: str) -> str:
+    title_name = (name or symbol).title()
+    wiki_slug = WIKIPEDIA_NAME_OVERRIDES.get(title_name, title_name)
+    wiki_url = "https://en.wikipedia.org/wiki/" + urllib.parse.quote(wiki_slug)
+    parts = [
+        f'<a href="{_html_escape(wiki_url)}" target="_blank" rel="noopener">'
+        f'Wikipedia<span class="arrow">↗</span></a>'
+    ]
+    price_slug = ELEMENT_PRICE_SLUGS.get(symbol)
+    if price_slug:
+        price_url = PRICE_URL_TEMPLATE.format(slug=price_slug)
+        parts.append(
+            f'<a href="{_html_escape(price_url)}" target="_blank" rel="noopener">'
+            f'Live prices (Trading Economics)<span class="arrow">↗</span></a>'
+        )
+    return '<div class="ext-links">' + "".join(parts) + "</div>"
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # CSS
 # ─────────────────────────────────────────────────────────────────────────────
@@ -392,6 +434,21 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .el-symbol { font-size: 3rem; font-weight: 800; line-height: 1; }
 .el-name   { font-size: 1.6rem; font-weight: 300; }
 .el-meta   { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
+
+.ext-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 1rem;
+}
+.ext-links a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.ext-links a:hover { border-bottom-color: var(--accent); }
+.ext-links .arrow { opacity: 0.6; margin-left: 0.15em; }
 
 .narrative-block {
   background: var(--surface);
@@ -1508,6 +1565,7 @@ def _element_body(
 
     crit_html = _criticality_badges(el)
     comm_html = _commercial_badge(commercial)
+    ext_links_html = _render_ext_links(symbol, name)
 
     narrative_html = ""
     if el.get("narrative") and str(el["narrative"]) not in ("nan", "None", ""):
@@ -1546,6 +1604,7 @@ def _element_body(
 <div class="badges-row">
   {comm_html}{crit_html}
 </div>
+{ext_links_html}
 {no_commercial_note}
 {narrative_html}
 <script id="production-data" type="application/json">{production_data}</script>

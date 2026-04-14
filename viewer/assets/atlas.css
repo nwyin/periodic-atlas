@@ -130,6 +130,21 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
 .el-name   { font-size: 1.6rem; font-weight: 300; }
 .el-meta   { color: var(--muted); font-size: 0.9rem; margin-bottom: 0.75rem; }
 
+.ext-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1rem;
+  font-size: 0.85rem;
+  margin: 0.25rem 0 1rem;
+}
+.ext-links a {
+  color: var(--accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+}
+.ext-links a:hover { border-bottom-color: var(--accent); }
+.ext-links .arrow { opacity: 0.6; margin-left: 0.15em; }
+
 .narrative-block {
   background: var(--surface);
   border-left: 4px solid var(--accent);
