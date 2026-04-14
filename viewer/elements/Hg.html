@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hg — mercury | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2017-08-16","event":"Minamata Convention on Mercury entered into force","impact":"The treaty created the defining policy constraint for the modern mercury\nmarket: parties must not allow new primary mercury mining, and existing\nprimary mining is time-limited. The result is a structurally shrinking legal\nprimary-supply base and growing emphasis on recycling, storage, and\nuse-reduction compliance.\n"},{"date":"2023-11","event":"COP-5 adopted additional phase-out measures for mercury-added products and industrial processes","impact":"The convention's fifth conference of the parties tightened the timetable for\nseveral mercury-added products and processes, reinforcing the long-run\ncontraction of legal end-use demand outside a few hard-to-abate sectors such\nas ASGM and some chemical routes.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Hg</span>
+  <span class="el-name">mercury</span>
+</div>
+<div class="el-meta">
+  Atomic number 80 &bull; transition_metal &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Mercury remains commercially real in 2025, but unlike most metals its supply chain
+is shaped as much by environmental treaty law as by geology. Elemental mercury is
+still produced from cinnabar and sold as liquid metal, yet the Minamata Convention
+has made new primary mines illegal for parties and put a sunset on existing ones.
+That shifts the market&#39;s center of gravity toward legacy producers, recycling,
+and regulated storage and disposal channels rather than conventional mine-growth
+narratives.
+
+Demand is also unusual. The largest remaining intentional use is artisanal and
+small-scale gold mining, followed by acetylene-route vinyl chloride monomer
+production and a shrinking tail of chlor-alkali, lamps, switches, instruments, and
+specialty chemical uses. In other words, mercury is a live commodity, but it is a
+commodity in managed decline: still traded, still mined in a few jurisdictions, and
+still indispensable in some niches, while the dominant policy direction is phaseout
+and containment rather than expansion.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":80.0,"quantity":null,"unit":null,"form":null,"confidence":"low"},{"country":"KG","share_pct":8.0,"quantity":null,"unit":null,"form":null,"confidence":"low"},{"country":"MX","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"low"},{"country":"ZZ","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"low"},{"country":"TJ","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"low"}],"refining":[],"completeness":{"mining":"top_producers_only","refining":"partial"},"world_mine":{"value":2500.0,"unit":"tonnes_per_year","form":"metal"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"artisanal_and_small_scale_gold_mining","share_pct":38.0,"confidence":"low"},{"application":"vinyl_chloride_monomer_production","share_pct":25.0,"confidence":"low"},{"application":"products_and_other_industrial_uses","share_pct":21.0,"confidence":"low"},{"application":"chlor_alkali","share_pct":16.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (6)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://faolex.fao.org/docs/pdf/eur231131.pdf" target="_blank" rel="noopener">Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="minamata_convention_text">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://minamataconvention.org/sites/default/files/2022-01/Minamata-Convention-booklet-Sep2019-EN.pdf" target="_blank" rel="noopener">Minamata Convention on Mercury</a>
+    </div>
+    <div class='source-card-meta'>Minamata Convention Secretariat / United Nations Environment Programme &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="minamata_cop5_decisions">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://minamataconvention.org/en/documents/report-fifth-meeting-conference-parties-minamata-convention-mercury" target="_blank" rel="noopener">Report of the fifth meeting of the Conference of the Parties to the Minamata Convention on Mercury</a>
+    </div>
+    <div class='source-card-meta'>Minamata Convention Secretariat / United Nations Environment Programme &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="unep_global_mercury_assessment_2018">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://wedocs.unep.org/20.500.11822/27579" target="_blank" rel="noopener">Global Mercury Assessment 2018</a>
+    </div>
+    <div class='source-card-meta'>United Nations Environment Programme &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 4</span><span class="ref-chip">end_uses 4</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf" target="_blank" rel="noopener">Final 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey / Federal Register &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_mercury">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-mercury.pdf" target="_blank" rel="noopener">Mercury</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey, Mineral Commodity Summaries 2025 &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 1</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

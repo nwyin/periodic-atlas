@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -32,15 +33,15 @@ to express &quot;F production&quot; in tonnes of elemental F will silently
 misrepresent the industry — the production figures reported by USGS,
 BGS, and IEA are all CaF2 tonnage, not F tonnage.
 </div>
-<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":63.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"MX","share_pct":16.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZZ","share_pct":9.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"MN","share_pct":8.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZA","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":9500000.0,"unit":"tonnes_per_year","form":"halide"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":63.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"MX","share_pct":13.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"MN","share_pct":13.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZZ","share_pct":9.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZA","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":9500000.0,"unit":"tonnes_per_year","form":"halide"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
 <div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
 <script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":320000000.0,"resources":null,"unit":"tonnes"},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"fluorochemicals","share_pct":60.0,"confidence":"high"},{"application":"aluminum_smelting_flux","share_pct":15.0,"confidence":"high"},{"application":"steel_fluxing","share_pct":15.0,"confidence":"high"},{"application":"other","share_pct":5.0,"confidence":"high"},{"application":"uranium_hexafluoride_enrichment","share_pct":3.0,"confidence":"high"},{"application":"semiconductor_etching","share_pct":2.0,"confidence":"high"}]}}</script>
 <div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
 <div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
-<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
 
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
 <div id="sources-panel" class="sources-panel">
-  <h2>Sources (1)</h2>
+  <h2>Sources (2)</h2>
   <div class="source-cards">
   <div class="source-card" data-source-id="inquiry_periodic_elements_2025">
     <div class="source-card-header">
@@ -49,12 +50,21 @@ BGS, and IEA are all CaF2 tonnage, not F tonnage.
     </div>
     <div class='source-card-meta'>egotheism project &bull; 2026 &bull; retrieved 2026-04-11</div>
     
-    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 5</span><span class="ref-chip">reserves 1</span><span class="ref-chip">end_uses 6</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">criticality 4</span></div>
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 3</span><span class="ref-chip">reserves 1</span><span class="ref-chip">end_uses 6</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_fluorspar">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-fluorspar.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Fluorspar</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-11</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 2</span><span class="ref-chip">feedstocks 1</span></div>
   </div>
   </div>
 </div>
 <footer>
-Built 2026-04-11T13:23:58Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_production.js"></script>

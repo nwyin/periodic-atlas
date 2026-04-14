@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mo — molybdenum | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":19.19,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"US"},{"year":2021,"value":35.62,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"US"},{"year":2022,"value":54.32,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"US"},{"year":2023,"value":47.0,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"US"},{"year":2024,"value":41.72,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"US"}],"events":[{"date":"2024-01","event":"Global molybdenum mine production rises 6% to 260,000 t in 2024; molybdic oxide price falls 13% to $41.72/kg","impact":"World output increased from 248,000 to 260,000 metric tons Mo content. China posted\nthe largest absolute gain (+14,000 t to 110,000 t), and Peru rose +7,500 t to\n41,000 t (+22%), while Chile fell from 44,100 to 38,000 t (−14%). The 13% price\ndecline alongside production growth suggests supply expanded faster than demand.\nStrong demand in global power generation and clean energy infrastructure projects\nwas cited by USGS as supporting the market.\n"},{"date":"2024-01","event":"Canadian company announces restart of idled Idaho molybdenum mine for second half of 2027 and progressive ramp-up of Pennsylvania Mo-processing facility","impact":"The Idaho mine restart would represent a meaningful addition to U.S. primary molybdenum\ncapacity, which is currently limited to two primary operations in Colorado. The mine\nwas previously idled during a period of low prices; the restart announcement signals\nimproved long-term price or strategic supply expectations. The Pennsylvania processing\nfacility expansion would strengthen U.S. downstream Mo product capacity, potentially\nreducing U.S. dependence on ferromolybdenum imports (current supply: Chile 77%,\nKorea 19%, UK 3%).\n"},{"date":"2024-01","event":"Declining ore grades at porphyry copper mines and anticipated end-of-life closures in mid-2030s threaten molybdenum byproduct supply","impact":"A substantial share of global Mo supply (all of Peru, Chile, and Mexico; partial\ncontributions from China and the U.S.) comes from byproduct recovery at porphyry\ncopper mines. Declining ore grades reduce Mo recovery per tonne of ore processed,\nand several large porphyry copper operations are expected to reach end-of-life in\nthe mid-2030s. Unless new primary Mo deposits or expansions at existing primary mines\noffset this byproduct decline, a structural supply tightening is likely in the 2030s.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Mo</span>
+  <span class="el-name">molybdenum</span>
+</div>
+<div class="el-meta">
+  Atomic number 42 &bull; transition_metal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Molybdenum is a refractory transition metal used primarily as an alloying agent in
+steels, cast irons, and superalloys, and secondarily in catalysts, lubricants, and
+specialty chemicals. World mine production reached an estimated 260,000 metric tons
+(Mo content) in 2024, a 6% increase from 248,000 metric tons in 2023. China dominates
+global supply at approximately 42% of world output (110,000 t in 2024e), followed by
+Peru (16%), Chile (15%), and the United States (13%). Of the five major producers —
+China, Peru, Chile, the United States, and Mexico, which together provide 90% of
+global supply — only China and the U.S. operate both primary molybdenum mines and
+byproduct copper operations. The remaining major producers extract molybdenum entirely
+as a byproduct of porphyry copper mining.
+
+The U.S. molybdic oxide reference price averaged $41.72/kg in 2024 (13% below 2023&#39;s
+$47/kg and well off the 2022 peak of $54.32/kg), while production increased — a
+combination suggesting supply growth outpaced demand. U.S. mine production of 33,000
+metric tons exceeds domestic apparent consumption of approximately 12,000 metric tons,
+making the United States a net exporter with E-category import reliance. Recycling
+of molybdenum from ferrous and superalloy scrap contributes as much as 30% of apparent
+Mo supply, a significant secondary flow for which no separate refining process exists —
+the Mo content of recycled alloys is reused in-situ. World reserves total approximately
+15 million metric tons, concentrated in China (39%), the United States (23%), Peru (13%),
+and Chile (9%).
+
+A significant structural risk is emerging from the byproduct supply side. As porphyry
+copper mines — which collectively provide the majority of global Mo output — experience
+declining ore grades and approach end-of-life, byproduct Mo recovery per unit of copper
+production will decline. USGS notes that several large porphyry copper mines are expected
+to reach end-of-life in the mid-2030s, potentially tightening Mo supply unless primary
+Mo mine expansions or new deposits fill the gap. Molybdenum is not designated as a
+critical mineral by either the United States (2022 list) or the European Union (EU CRMA),
+reflecting U.S. net-exporter status and globally diversified supply, but the medium-term
+byproduct dynamics warrant monitoring. Clean energy infrastructure and global power
+generation projects are expected to sustain demand for molybdenum-bearing high-strength
+steels and corrosion-resistant alloys.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":42.31,"quantity":110000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"PE","share_pct":15.77,"quantity":41000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"CL","share_pct":14.62,"quantity":38000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"US","share_pct":12.69,"quantity":33000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"MX","share_pct":6.54,"quantity":17000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"AM","share_pct":3.08,"quantity":8000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"KZ","share_pct":1.5,"quantity":3900.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"MN","share_pct":1.19,"quantity":3100.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"IR","share_pct":1.15,"quantity":3000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"UZ","share_pct":0.65,"quantity":1700.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"RU","share_pct":0.65,"quantity":1700.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"CA","share_pct":0.46,"quantity":1200.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"AU","share_pct":0.38,"quantity":1000.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"KP","share_pct":0.27,"quantity":700.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"KR","share_pct":0.12,"quantity":300.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"},{"country":"AR","share_pct":0.0,"quantity":0.0,"unit":"tonnes_per_year","form":"concentrate","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":260000.0,"unit":"tonnes_per_year","form":"concentrate"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":15000000.0,"resources":25400000.0,"unit":"tonnes"},"reserves_by_country":[{"country":"CN","share_pct":39.33,"quantity":5900000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":23.33,"quantity":3500000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"PE","share_pct":12.67,"quantity":1900000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CL","share_pct":9.33,"quantity":1400000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":7.33,"quantity":1100000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AU","share_pct":4.6,"quantity":690000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AM","share_pct":1.0,"quantity":150000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"MX","share_pct":0.87,"quantity":130000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AR","share_pct":0.67,"quantity":100000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CA","share_pct":0.43,"quantity":64000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"IR","share_pct":0.29,"quantity":43000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"UZ","share_pct":0.14,"quantity":21000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"MN","share_pct":0.07,"quantity":10000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"KR","share_pct":0.05,"quantity":8000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"KZ","share_pct":0.05,"quantity":7000.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"partial","uses":[{"application":"alloy_steels_and_cast_irons","share_pct":50.0,"confidence":"low"},{"application":"stainless_and_high_alloy_steels","share_pct":20.0,"confidence":"low"},{"application":"superalloys","share_pct":10.0,"confidence":"low"},{"application":"catalysts","share_pct":10.0,"confidence":"low"},{"application":"lubricants_pigments_and_other_chemicals","share_pct":10.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_molybdenum">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-molybdenum.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Molybdenum</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-12</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 31</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 5</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 4</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

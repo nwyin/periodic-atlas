@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ra — radium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2015-03","event":"DOE established domestic Ra-224/Pb-212 generator capability after a private commercialization effort ended","impact":"NIDC said DOE initiated generator production capability at Oak Ridge National\nLaboratory after discontinuation of supply from a private initiative, restoring a\nroutinized domestic source of Ra-224-based generators for Pb-212 and Bi-212\ncancer-therapy research.\n"},{"date":"2021-09","event":"ORNL put thorium-228 into routine production to support radium-224 generator supply","impact":"DOE/NIDC said routine Th-228 production at Oak Ridge strengthened feedstock\navailability for Ra-224/Pb-212 generators, directly supporting targeted-alpha-\ntherapy research pathways based on lead-212 and bismuth-212.\n"},{"date":"2022-06","event":"DOE made research quantities of Ra-226 available to support emerging Ac-225 supply chains","impact":"DOE/NIDC explicitly linked rising Ac-225 demand to renewed availability of\nRa-226 feedstock, signaling that radium itself had become a strategic upstream\nbottleneck in the broader targeted-alpha-therapy ecosystem.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ra</span>
+  <span class="el-name">radium</span>
+</div>
+<div class="el-meta">
+  Atomic number 88 &bull; alkaline_earth &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Radium has a real commercial footprint in 2025, but not as a mined alkaline-earth
+metal. The economically relevant market is a tightly controlled isotope business run
+through the DOE isotope system and the medical-radiopharmaceutical chain. NIDC&#39;s
+catalog shows three live radium offerings: Ra-223, Ra-224, and a
+Ra-224/Pb-212/Bi-212 generator, all sold in millicurie units. That is the clearest
+indicator that &quot;radium&quot; in commerce means short-lived radioisotopes and generators,
+not elemental metal, refinery output, or reserves tables.
+
+The two commercial radium streams have distinct functions. Ra-223 is a finished
+therapeutic isotope: NIDC supplies it as nitrate solid, while the downstream drug
+product Xofigo is an FDA-labeled alpha-emitting injection for symptomatic
+bone-metastatic castration-resistant prostate cancer. Ra-224 is both a directly sold
+isotope and a generator parent for Pb-212 and Bi-212, which DOE describes as inputs
+to targeted alpha therapy research. In both cases, the production logic is decay
+supply from parent isotopes, not mine output.
+
+The supply chain is also unusually path-dependent. DOE sources show Ra-223 coming
+from Ac-227 cows, Ra-224 coming from Th-228, and part of the wider domestic alpha-
+emitter system being rebuilt around recovered Ra-226 from legacy medical devices.
+Public primary sources do not disclose annual global output or price series, so the
+atlas record is strongest on trade form, production route, and medical end use.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"medical_radiotherapy_and_targeted_alpha_therapy_research","share_pct":100.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (2)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Ra-223","half_life_seconds":987552.0,"half_life_display":"11.4 days","production_mode":"decay_product","precursor":"DOE/NIDC states that Ra-223 is obtained from Ac-227 cows through decay of\nTh-227. NIDC's 2017 availability notice said these Ac-227 cows had the\ncapability to produce hundreds of millicuries of Ra-223 per month, with product\nseparation and purification at Oak Ridge National Laboratory and Pacific\nNorthwest National Laboratory.","delivery_form":"NIDC sells Ra-223 as nitrate solid in a screw-cap vial with stock\navailability and millicuries as the unit of sale. Downstream commercial use is\nradium Ra 223 dichloride injection (Xofigo), an intravenous radiotherapeutic\ndrug supplied in single-dose vials for treatment of symptomatic bone-metastatic\ncastration-resistant prostate cancer.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[{"country":"US","share_pct":100.0,"confidence":"medium","notes":"The primary-source NIDC availability notice describes routine DOE Isotope\nProgram distribution from Oak Ridge National Laboratory and Pacific\nNorthwest National Laboratory. This entry only represents the directly\ndocumented DOE/NIDC supply chain, not the full global Xofigo finished-drug\nmanufacturing footprint.\n"}],"producers_completeness":"partial","notes":"Commercial radium is measurable here as a medical-isotope supply chain rather\nthan as elemental tonnage. Public primary sources reviewed for this file do not\ndisclose annual global Ra-223 curie output or pricing."},{"isotope":"Ra-224","half_life_seconds":313796.16,"half_life_display":"3.6 days","production_mode":"decay_product","precursor":"NIDC product sheets state that Ra-224 is produced by decay of thorium-228.\nDOE later reported that ORNL put thorium-228 into routine production for this\npurpose and that the same Th-228 feedstock is used to make Ra-224/Pb-212\ngenerators for targeted-alpha-therapy research.","delivery_form":"NIDC sells Ra-224 directly as radium chloride in 1 M HCl solution or as solid\nradium nitrate, both in millicurie units. It also sells a\nRa-224/Pb-212/Bi-212 generator in which Ra-224 is absorbed on AG MP-50 resin\nand housed in a one-inch lead pig, allowing lead-212 or bismuth-212 to be\neluted on demand.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[{"country":"US","share_pct":100.0,"confidence":"medium","notes":"DOE/NIDC states the generator production capability was established at Oak\nRidge National Laboratory and that the generator is routinely available\nthrough the NIDC catalog. This represents the documented DOE route rather\nthan a full global market-share estimate.\n"}],"producers_completeness":"partial","notes":"The February 2025 NIDC generator sheet states routine monthly availability up\nto 16 mCi for the generator, but public sources do not disclose broader annual\nmarket volume or pricing for either direct Ra-224 sales or generator sales."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Ra-223">
+    <div class="isotope-card-header">
+      <h3>Ra-223</h3>
+      <span class="badge badge-mode-decay_product">decay_product</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 11.4 days</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> DOE/NIDC states that Ra-223 is obtained from Ac-227 cows through decay of
+Th-227. NIDC&#39;s 2017 availability notice said these Ac-227 cows had the
+capability to produce hundreds of millicuries of Ra-223 per month, with product
+separation and purification at Oak Ridge National Laboratory and Pacific
+Northwest National Laboratory.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> NIDC sells Ra-223 as nitrate solid in a screw-cap vial with stock
+availability and millicuries as the unit of sale. Downstream commercial use is
+radium Ra 223 dichloride injection (Xofigo), an intravenous radiotherapeutic
+drug supplied in single-dose vials for treatment of symptomatic bone-metastatic
+castration-resistant prostate cancer.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    <div class="producers-section">
+  <h4>Producers <span class="badge badge-no-commercial" style="font-size:0.7rem">Partial</span></h4>
+  <div class="producers-chart" data-isotope="Ra-223">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  <div class="isotope-card" data-isotope="Ra-224">
+    <div class="isotope-card-header">
+      <h3>Ra-224</h3>
+      <span class="badge badge-mode-decay_product">decay_product</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 3.6 days</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> NIDC product sheets state that Ra-224 is produced by decay of thorium-228.
+DOE later reported that ORNL put thorium-228 into routine production for this
+purpose and that the same Th-228 feedstock is used to make Ra-224/Pb-212
+generators for targeted-alpha-therapy research.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> NIDC sells Ra-224 directly as radium chloride in 1 M HCl solution or as solid
+radium nitrate, both in millicurie units. It also sells a
+Ra-224/Pb-212/Bi-212 generator in which Ra-224 is absorbed on AG MP-50 resin
+and housed in a one-inch lead pig, allowing lead-212 or bismuth-212 to be
+eluted on demand.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    <div class="producers-section">
+  <h4>Producers <span class="badge badge-no-commercial" style="font-size:0.7rem">Partial</span></h4>
+  <div class="producers-chart" data-isotope="Ra-224">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (10)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="dailymed_xofigo_label_2019">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://dailymed.nlm.nih.gov/dailymed/drugInfo.cfm?setid=a398400e-bd31-41a9-9696-4f7c06569ede" target="_blank" rel="noopener">XOFIGO- radium ra 223 dichloride injection</a>
+    </div>
+    <div class='source-card-meta'>DailyMed / U.S. National Library of Medicine &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_cancer_drug_supply_2019">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/326" target="_blank" rel="noopener">Improving Isotope Supply for a Cancer-Fighting Drug</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_ra223_availability_2017">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/50" target="_blank" rel="noopener">Isotopes Routinely Available: radium-223 and thorium-227</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2017 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_ra223_product_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/sites/default/files/2023-07/Ra-223.pdf" target="_blank" rel="noopener">Radium-223 Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_ra224_generator_2015">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/123" target="_blank" rel="noopener">DOE Isotope Program Announces Availability of Radium-224/Lead-212 Generators</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2015 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_ra224_generator_product_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/sites/default/files/2023-05/Ra-224-Pb-212%20Gen%20v2.pdf" target="_blank" rel="noopener">Radium-224-Lead-212-Bismuth-212 Generator Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_ra224_product_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/sites/default/files/2023-07/Ra-224.pdf" target="_blank" rel="noopener">Radium-224 Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_ra226_available_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/radium-226_is_available" target="_blank" rel="noopener">Radium-226 is Available Now!</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_radium_catalog_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/products/Radium" target="_blank" rel="noopener">Radium</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_th228_routine_2021">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/thorium-228-in-routine-production" target="_blank" rel="noopener">Thorium-228 in Routine Production</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2021 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

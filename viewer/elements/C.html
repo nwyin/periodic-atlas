@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>C — carbon | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2022,"value":291.28,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"Northwest Europe thermal coal CIF ARA"},{"year":2022,"value":174.49,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"Australia Newcastle thermal coal FOB"},{"year":2023,"value":129.54,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"Northwest Europe thermal coal CIF ARA"},{"year":2023,"value":103.59,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"Australia Newcastle thermal coal FOB"},{"year":2024,"value":89.41,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"Australia Newcastle thermal coal FOB"},{"year":2024,"value":112.0,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"Northwest Europe thermal coal CIF ARA"}],"events":[{"date":"2024","event":"Russian coal exporters remained constrained by sanctions, rail bottlenecks, tariffs, and shifting Asian trade routes","impact":"IEA Coal 2024 describes a continuing reshuffle of trade flows after the EU\ncoal import ban, plus added US sanctions and logistics constraints. The\nresult was lower profitability and a structurally less flexible export\nposition for Russian coal despite still-large production volumes.\n"},{"date":"2024-06-02","event":"OPEC+ agreed to extend core crude-output cuts into 2025 while outlining a gradual unwind of some voluntary cuts","impact":"The oil market's largest coordinated supply-management bloc kept a floor\nunder global liquid-carbon prices and delayed the return of some barrels\nto market. Carbon as a commercial stream remains highly exposed to cartel\npolicy, unlike most mined elements.\n"},{"date":"2024-09","event":"United Kingdom closed its last coal-fired power plant","impact":"The Ratcliffe-on-Soar closure was symbolically important because it marked\nthe first G7 economy to end coal-fired generation, reinforcing the demand\ncollapse for thermal coal in advanced economies even while global coal use\nstill rose elsewhere.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">C</span>
+  <span class="el-name">carbon</span>
+</div>
+<div class="el-meta">
+  Atomic number 6 &bull; reactive_nonmetal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Carbon is the largest commercial element in the world economy by throughput,
+but not in elemental form. Its trade reality is a set of enormous fossil
+carbon streams: coal, crude oil and condensate, and natural gas. In 2024 all
+three remained at or near record levels in global markets. Coal exceeded
+9.2 billion tonnes of output, oil production reached 4.5 billion tonnes, and
+marketed natural gas rose above 4.1 trillion cubic metres. These are not
+interchangeable streams: coal remains most exposed to power generation and
+steel, oil to transport and petrochemicals, and gas to power, heating,
+fertilizer, and industry.
+
+The commercial reality is also unusually political. Oil is shaped by OPEC+
+quota management, gas by pipeline geography and LNG infrastructure, and coal
+by sanctions, rail capacity, and regional power-system stress. IEA&#39;s 2024
+market commentary shows a world in which decarbonization technologies are
+visibly slowing oil demand growth and collapsing coal demand in some advanced
+economies, yet total fossil carbon demand still grew because electricity
+demand, industrial production, cooling loads, and Asian energy consumption
+kept expanding.
+
+For atlas purposes, carbon is best treated as a bundle of traded energy
+molecules rather than a mined elemental commodity. That is why the file is
+stream-based, why end uses are only partial author synthesis from primary
+energy sources, and why graphite is excluded to its own dedicated element
+entry.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":51.7,"quantity":4780.0,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"ZZ","share_pct":38.2,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZZ","share_pct":29.3,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"US","share_pct":25.0,"quantity":1033000.0,"unit":"million_m3_per_year","form":"gas_crude","confidence":"high"},{"country":"US","share_pct":18.9,"quantity":858.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"RU","share_pct":15.3,"quantity":629900.0,"unit":"million_m3_per_year","form":"gas_crude","confidence":"high"},{"country":"IN","share_pct":11.7,"quantity":1085.1,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"RU","share_pct":11.6,"quantity":526.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"SA","share_pct":11.2,"quantity":510.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"ZZ","share_pct":10.5,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ID","share_pct":9.0,"quantity":836.1,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"IR","share_pct":6.4,"quantity":262900.0,"unit":"million_m3_per_year","form":"gas_crude","confidence":"high"},{"country":"CA","share_pct":6.4,"quantity":290.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"CN","share_pct":6.0,"quantity":248400.0,"unit":"million_m3_per_year","form":"gas_crude","confidence":"high"},{"country":"IR","share_pct":5.2,"quantity":234.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"AU","share_pct":5.0,"quantity":462.9,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"US","share_pct":5.0,"quantity":464.6,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"CA","share_pct":4.7,"quantity":194200.0,"unit":"million_m3_per_year","form":"gas_crude","confidence":"high"},{"country":"IQ","share_pct":4.7,"quantity":216.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"CN","share_pct":4.7,"quantity":213.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"RU","share_pct":4.6,"quantity":427.2,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"QA","share_pct":4.4,"quantity":179500.0,"unit":"million_m3_per_year","form":"gas_crude","confidence":"high"},{"country":"AE","share_pct":4.0,"quantity":180.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"BR","share_pct":4.0,"quantity":182.0,"unit":"million_tonnes_per_year","form":"liquid_cryogenic","confidence":"high"},{"country":"ZA","share_pct":2.5,"quantity":235.0,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"}],"refining":[],"completeness":{"mining":"top_producers_only","refining":"partial"},"world_mine":{"value":9241.5,"unit":"million_tonnes_per_year","form":"ore"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"partial","uses":[{"application":"electricity_generation_and_heat","share_pct":38.0,"confidence":"low"},{"application":"transport_fuels","share_pct":31.0,"confidence":"low"},{"application":"industrial_process_heat_and_reducing_agent","share_pct":15.0,"confidence":"low"},{"application":"petrochemicals_and_non_combusted_feedstocks","share_pct":10.0,"confidence":"low"},{"application":"buildings_heating_and_cooking","share_pct":6.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (5)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="energy_institute_statistical_review_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.energyinst.org/__data/assets/pdf_file/0007/1658077/Statistical-Review-of-World-Energy.pdf" target="_blank" rel="noopener">Statistical Review of World Energy 2025</a>
+    </div>
+    <div class='source-card-meta'>Energy Institute &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 3</span><span class="ref-chip">shares 25</span><span class="ref-chip">prices 6</span><span class="ref-chip">feedstocks 3</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_coal_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/coal-2024/executive-summary" target="_blank" rel="noopener">Coal 2024 - Executive summary</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">events 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_global_energy_review_2025_key_findings">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/global-energy-review-2025/key-findings" target="_blank" rel="noopener">Global Energy Review 2025 - Key findings</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 2</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_global_energy_review_2025_oil">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/global-energy-review-2025/oil" target="_blank" rel="noopener">Global Energy Review 2025 - Oil</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="opec_press_release_2024_06_02">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.opec.org/opec_web/en/press_room/7289.htm" target="_blank" rel="noopener">OPEC+ meeting press release, 2 June 2024</a>
+    </div>
+    <div class='source-card-meta'>OPEC &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

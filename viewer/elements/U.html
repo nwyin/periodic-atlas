@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>U — uranium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":73.3466,"unit":"usd_per_kg","form":"oxide","basis":"contract","region":"US"},{"year":2021,"value":74.7575,"unit":"usd_per_kg","form":"oxide","basis":"contract","region":"US"},{"year":2022,"value":86.1552,"unit":"usd_per_kg","form":"oxide","basis":"contract","region":"US"},{"year":2022,"value":105.269,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"nan"},{"year":2023,"value":96.5608,"unit":"usd_per_kg","form":"oxide","basis":"contract","region":"US"},{"year":2023,"value":200.6173,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"nan"},{"year":2024,"value":116.2037,"unit":"usd_per_kg","form":"oxide","basis":"contract","region":"US"}],"events":[{"date":"2022-02","event":"Russia-Ukraine war reshapes global uranium and enrichment supply chains; utilities scramble for non-Russian alternatives","impact":"Russia's invasion of Ukraine in February 2022 triggered a fundamental reassessment of\nnuclear fuel supply security across Europe and North America. Russia's Rosatom/TVEL\nprovides enrichment services to approximately 20% of global nuclear reactors, including\nreactors in Bulgaria, Czech Republic, Finland, Hungary, Slovakia, and Ukraine that use\nRussian-designed VVER reactors with Russian fuel assemblies. EU and US utilities began\nseeking alternative enrichment suppliers (Urenco, Orano, Centrus). The spot uranium\nprice surged from ~$43/lb to ~$64/lb between February and April 2022. Russia also\nsupplies natural uranium UF6 conversion services and had mine equity stakes via\nUranium One in Kazakhstan. Utilities began rebuilding inventories and signing new\nlong-term contracts at sharply higher prices.\n"},{"date":"2023-07","event":"Military coup in Niger disrupts Orano's uranium operations; threatens EU nuclear fuel supply","impact":"A military coup overthrew Niger's elected government on 26 July 2023. Niger had been\nFrance's and the EU's primary source of uranium supply for decades; French operator\nOrano (formerly Areva) operated SOMAIR (open-pit mine at Arlit) and had been developing\nthe large Imouraren deposit. Post-coup, Niger's junta: (1) terminated Orano's Imouraren\nmining permit (June 2024); (2) revoked the SOMAIR operating license (September 2024);\n(3) expelled Orano from Niger entirely. Niger accounted for ~20% of EU uranium imports\nin prior years. Niger's production dropped from 2,020 tU in 2022 to 1,130 tU in 2023.\nThis event accelerated EU diversification efforts toward Kazakhstan, Canada, Australia,\nand Namibia.\n"},{"date":"2023-12","event":"COP28 nuclear declaration: 22+ countries pledge to triple nuclear capacity by 2050, boosting long-term uranium demand outlook","impact":"At the 28th Conference of the Parties (COP28) in Dubai in December 2023, more than 22\ncountries (subsequently expanding to 30+) signed a joint declaration to triple global\ninstalled nuclear power capacity by 2050 relative to 2020 levels (from ~413 GWe to\n~1,200 GWe). Signatories include the United States, France, Japan, South Korea, Canada,\nthe UK, and 15+ others. The NEA/IAEA Red Book 2024 notes this as a significant driver\nof the uranium spot price surge to $91/lb at year-end 2023 and $106/lb in January 2024.\nTripling nuclear capacity would require ~130,000–140,000 tU/yr of uranium demand by 2050\nversus ~59,000 tU in 2023 — more than double current mine production.\n"},{"date":"2024-01","event":"Uranium spot price reaches $106/lb (USD 275/kgU), highest in 17 years, driven by supply security and demand expectations","impact":"In January 2024, the uranium spot price broke through USD 100/lb U₃O₈ for the first\ntime since 2007 and reached a high of USD 106/lb (USD 275/kgU) as utility procurement\naccelerated and financial buyers (Sprott Physical Uranium Trust, Yellow Cake plc)\naccumulated uranium. Supply-side pressures included Kazatomprom's sulphuric acid\nshortages (Kazakhstan), Niger disruptions, and deferred production ramp-ups. From\nMarch through August 2024, the spot price averaged USD 80–90/lb before partially\ncorrecting to ~$73/lb by year-end 2024. The 2024 price surge prompted multiple\nidled US, Australian, and Canadian mines to announce restart plans.\n"},{"date":"2024-05","event":"US Prohibiting Russian Uranium Imports Act bans most Russian low-enriched uranium imports effective August 2024","impact":"The United States enacted the Prohibiting Russian Uranium Imports Act (signed into law\nMay 2024; effective 11 August 2024), banning imports of low-enriched uranium (LEU)\nproduced in Russia for use in US nuclear reactors. The US had been importing Russian\nLEU under long-standing supply agreements (Techsnabexport/TVEL). The Act includes a\nwaiver mechanism for DOE to permit limited Russian imports through 2027 to prevent\nnear-term supply disruptions. The law accelerated US domestic enrichment investment\n(Centrus Energy, Urenco USA) and Canadian enrichment expansion (Cameco/Westinghouse\nGLE centrifuge project). In response to the Act, Russia threatened to suspend its own\nexport of uranium and enrichment services to Western utilities.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">U</span>
+  <span class="el-name">uranium</span>
+</div>
+<div class="el-meta">
+  Atomic number 92 &bull; actinide &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Uranium is the world&#39;s nuclear fuel feedstock: essentially all global mine production
+is converted to enriched uranium for use in commercial nuclear power reactors, which
+together generate approximately 10% of the world&#39;s electricity. The global uranium market
+is concentrated — Kazakhstan alone supplies ~39% of world mine output via in-situ recovery
+(ISR) operations operated or co-owned by state company Kazatomprom, while Canada (McArthur
+River and Cigar Lake, both in the Athabasca Basin) contributes ~20%. The top six producing
+nations — Kazakhstan, Canada, Namibia, Australia, Uzbekistan, and Russia — together account
+for over 92% of world output. Global mine production reached 54,345 tU in 2023, recovering
+from the 47,361 tU COVID-19 low in 2021 but still below the 2016 peak of ~63,000 tU.
+US domestic production effectively ceased in 2017–2022 under sustained low prices, though
+domestic ISR capacity has been rapidly reactivated since 2023, reaching 677,000 lb (~260 tU)
+in 2024. US reactor operators remain heavily import-dependent, purchasing 55.9 million lb
+U₃O₈e from foreign suppliers in 2024.
+
+The uranium market underwent a structural price reset from 2022 to 2024. Spot prices had
+declined from a 2007 peak of ~$140/lb to ~$20/lb by 2016, keeping marginal mines on
+care-and-maintenance for years. The Russia-Ukraine war (February 2022) disrupted enrichment
+supply chains and prompted European and US utilities to rebuild inventory and sign new
+long-term contracts at higher prices. The military coup in Niger (July 2023) removed a key
+EU uranium supply source and reinforced supply-security concerns. The uranium spot price
+surged from ~$47/lb at year-end 2022 to $91/lb at year-end 2023 and $106/lb in January 2024,
+the highest in 17 years. The US Prohibiting Russian Uranium Imports Act (enacted May 2024,
+effective August 2024) further accelerated Western nuclear fuel supply chain restructuring
+away from Russian enrichment services. Meanwhile, at COP28 in December 2023, over 22
+countries pledged to triple global nuclear capacity by 2050, materially raising the long-term
+demand outlook.
+
+The global uranium resource base is sufficient to meet projected demand well into the second
+half of this century. Identified recoverable resources at &lt;USD 130/kgU total 5.9 million tU
+(NEA/IAEA Red Book 2024), with Australia (28%), Kazakhstan (14%), Canada (10%), and Namibia
+(8%) holding the largest shares. However, bringing new mines into production requires 10–15
+years from discovery through permitting and construction, meaning the current price signal
+must be sustained to fund the investment needed to close the anticipated supply gap by
+~2027–2030 under high-demand scenarios. Kazatomprom&#39;s sulphuric acid supply constraints,
+Niger&#39;s political instability, and the concentration of supply in Kazakhstan (a single
+country, further concentrated within Kazatomprom&#39;s portfolio) represent the primary
+near-term supply risks. Uranium is not on the US 2022 Critical Minerals List — it was removed
+in the 2022 revision — and is excluded from the EU Critical Raw Materials framework (nuclear
+materials fall under the Euratom Supply Agency&#39;s separate regulatory mandate). Nevertheless,
+nuclear fuel supply security is a central concern of every energy policy framework in
+countries operating nuclear fleets.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"KZ","share_pct":38.85,"quantity":21112.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CA","share_pct":20.21,"quantity":10986.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"NA","share_pct":12.85,"quantity":6985.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AU","share_pct":8.57,"quantity":4658.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"UZ","share_pct":7.36,"quantity":4000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":4.78,"quantity":2600.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CN","share_pct":2.94,"quantity":1600.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"NE","share_pct":2.08,"quantity":1130.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"IN","share_pct":0.89,"quantity":485.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"UA","share_pct":0.55,"quantity":300.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZZ","share_pct":0.5,"quantity":270.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZA","share_pct":0.37,"quantity":200.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"US","share_pct":0.03,"quantity":19.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"top_producers_only","refining":"partial"},"world_mine":{"value":54345.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":1881100.0,"resources":5925700.0,"unit":"tonnes"},"reserves_by_country":[{"country":"AU","share_pct":28.21,"quantity":1671200.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"KZ","share_pct":13.73,"quantity":813900.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CA","share_pct":9.82,"quantity":582000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"NA","share_pct":8.4,"quantity":497900.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":8.04,"quantity":476600.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ZZ","share_pct":7.93,"quantity":469800.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"NE","share_pct":5.67,"quantity":336000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ZA","share_pct":5.42,"quantity":320900.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CN","share_pct":4.57,"quantity":270500.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BR","share_pct":2.83,"quantity":167800.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"MN","share_pct":2.44,"quantity":144600.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"UA","share_pct":1.8,"quantity":106700.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":1.14,"quantity":67800.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"nuclear_power_fuel","share_pct":99.0,"confidence":"medium"},{"application":"research_reactors_defense_other","share_pct":1.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (5)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eia_domestic_prod_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.eia.gov/uranium/production/annual/" target="_blank" rel="noopener">Domestic Uranium Production Report — Annual 2024</a>
+    </div>
+    <div class='source-card-meta'>US Energy Information Administration &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="eia_umar_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.eia.gov/uranium/marketing/" target="_blank" rel="noopener">2024 Uranium Marketing Annual Report</a>
+    </div>
+    <div class='source-card-meta'>US Energy Information Administration &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">prices 5</span></div>
+  </div>
+  <div class="source-card" data-source-id="nea_iaea_redbook_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.oecd-nea.org/upload/docs/application/pdf/2025-04/7683_uranium_2024_-_resources_production_and_demand_2025-04-22_14-29-2_928.pdf" target="_blank" rel="noopener">Uranium 2024: Resources, Production and Demand (Red Book), NEA No. 7683</a>
+    </div>
+    <div class='source-card-meta'>Nuclear Energy Agency (OECD) / International Atomic Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 26</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 2</span><span class="ref-chip">prices 2</span><span class="ref-chip">events 5</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_overview">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 (overview and critical minerals section)</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="wna_uranium_production_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://world-nuclear.org/information-library/nuclear-fuel-cycle/mining-of-uranium/world-uranium-mining-production" target="_blank" rel="noopener">World Uranium Mining Production</a>
+    </div>
+    <div class='source-card-meta'>World Nuclear Association &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

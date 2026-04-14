@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tb — terbium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":670.0,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"US"},{"year":2021,"value":1346.0,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"US"},{"year":2022,"value":2051.0,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"US"},{"year":2023,"value":1298.0,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"US"},{"year":2024,"value":810.0,"unit":"usd_per_kg","form":"oxide","basis":"spot","region":"US"}],"events":[{"date":"2022","event":"Terbium oxide price peaks at $2,051/kg driven by EV and wind turbine demand forecasts — the highest unit price in the 2020–2024 price series","impact":"USGS MCS 2025 salient statistics show Tb₄O₇ (99.99%) rising from $670/kg in 2020 to\n$1,346/kg in 2021 and peaking at $2,051/kg in 2022, before declining to $1,298/kg in\n2023 and $810/kg in 2024e. The 2022 peak was driven by rapid scaling of EV production\nand accelerated wind farm deployment globally, both of which require NdFeB magnets with\nTb/Dy HREE additions for high-temperature performance. The subsequent price decline\nfrom the 2022 peak reflects partial demand-side adjustment (magnet manufacturers\nreducing Tb loading via grain-boundary diffusion techniques and motor redesign) and\nrecovery of Myanmar ion adsorption clay supply. At $810/kg in 2024e, Tb remains by\nfar the most expensive of the commonly tracked REE oxides.\n"},{"date":"2024","event":"Global REE mine production increases to 390,000 t REO in 2024e; Burma REE production falls 28% YoY, affecting HREE supply","impact":"USGS MCS 2025 reports 2024e world REE production of 390,000 t, up from 376,000 t in\n2023, driven by China, Nigeria, and Thailand growth. However, Burma (Myanmar) fell\nfrom 43,000 t to 31,000 t REO (-28% YoY). Burma's ion adsorption clay deposits are\nHREE-enriched (high Tb content), so its 12,000 t decline has a disproportionate\nimpact on world Tb supply relative to its 8% share of total REO. At 0.1% basket\naverage, Burma's 12,000 t decline implies ~12 t less Tb, but the true reduction may\nbe higher given above-average Tb fractions in Burmese clay deposits. Production data\nfor Burma estimated from China import records (USGS footnote 12).\n"},{"date":"2024","event":"US net import reliance for REE compounds and metals declines to 80% in 2024e; Tb-specific US processing capacity remains absent","impact":"USGS MCS 2025 salient statistics report US net import reliance for REE compounds and\nmetals at 80% in 2024e, down from >95% in 2020–2023, reflecting growth in domestic\ncompound production to 7,600 t total in 2024. However, this improvement is concentrated\nin LREE processing (NdPr compounds in California, RE compounds in Utah). No domestic US\nseparation of Tb₄O₇ at commercial scale is reported. Mountain Pass concentrate, which\ncontains trace quantities of Tb (~0.01–0.02% of REO), is processed in China. US NdFeB\nmagnet manufacturers requiring Tb for high-temperature coercivity remain entirely\ndependent on imported Tb₄O₇ or pre-alloyed NdFeB with Tb additions from Chinese\nprocessors.\n"},{"date":"2025-04","event":"China imposes export controls on 7 REEs including terbium, dysprosium, gadolinium, samarium, lutetium, scandium, and yttrium","impact":"China's April 2025 REE export controls directly targeted terbium by name, requiring\nexport licenses for Tb metal, Tb₄O₇ oxide, and Tb-containing alloy intermediates.\nTerbium is particularly sensitive because (1) its dominant commercial application —\nHREE dopant in NdFeB magnets for EV traction motors and wind turbines — is on a\nstrong growth trajectory with clean energy deployment, and (2) China controls the\nnear-entirety of commercial Tb supply through its ion adsorption clay deposits and\nprocessing facilities. Non-Chinese producers of Tb₄O₇ are essentially absent at\ncommercial scale. The controls placed direct pressure on NdFeB magnet manufacturers\noutside China that use Tb for high-temperature coercivity enhancement, with no\nnear-term alternative supply source.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Tb</span>
+  <span class="el-name">terbium</span>
+</div>
+<div class="el-meta">
+  Atomic number 65 &bull; lanthanide &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Terbium stands apart within the rare earth supply chain as the most commercially
+valuable of the HREE oxides tracked by USGS MCS 2025, priced at $810/kg in 2024e
+(≥99.99% Tb₄O₇) — more than three times the price of dysprosium oxide ($260/kg) and
+nearly 15 times the price of neodymium oxide ($56/kg). This premium reflects Tb&#39;s
+unique combination of high demand growth (driven by clean energy applications) and
+extreme supply concentration in Chinese ion adsorption clay deposits. Unlike the
+light rare earths (La, Ce, Nd), which are produced in large volumes from LREE-dominant
+bastnaesite at Mountain Pass and Bayan Obo, terbium is predominantly recovered from
+heavy-REE-enriched ion adsorption clays in southern China&#39;s Jiangxi, Fujian, and
+Guangdong provinces — a deposit type with essentially no significant non-Chinese
+counterpart at commercial scale. Burma (Myanmar) and Thailand contribute HREE clay
+production, but Chinese processing of their concentrates means China controls the
+full value chain.
+
+Terbium&#39;s fastest-growing and now dominant application is as a coercivity enhancer in
+NdFeB permanent magnets for high-temperature environments — specifically EV traction
+motors and direct-drive wind turbine generators. Both applications require magnets that
+maintain strong fields at operating temperatures well above ambient (EV motors: &gt;150°C);
+adding Tb or Dy at ~0.1–0.5 wt% dramatically increases the magnet&#39;s coercivity and
+operating temperature ceiling. Advanced grain-boundary diffusion techniques reduce the
+required HREE loading per magnet (by concentrating Tb/Dy at grain boundaries rather than
+dissolving it throughout the alloy), partially dampening demand growth per unit of EV or
+wind capacity, but the absolute growth in EV and wind deployment more than offsets this
+efficiency gain. This demand dynamic drove the 2021–2022 price surge to $2,051/kg and
+is the structural force maintaining Tb prices well above the long-run lows seen for bulk
+LREEs. Phosphors — once the dominant Tb end use (Tb³⁺ green emission in tri-color
+fluorescent lamps) — remain significant but are in structural decline with the ongoing
+shift to LED lighting.
+
+China&#39;s direct targeting of terbium in its April 2025 export controls — explicitly naming
+Tb alongside Dy, Sm, Gd, Lu, Sc, and Y — marked the sharpest formalization of Tb supply
+risk since the 2010–2012 REE export restriction era. Unlike neodymium and praseodymium,
+which are targeted indirectly through NdFeB magnet technology and equipment controls, Tb
+was named as a directly controlled substance, with export licenses required for Tb metal,
+Tb₄O₇ oxide, and processed alloy products. Building resilient non-Chinese Tb supply chains
+requires developing non-Chinese ion adsorption clay operations at scale — a decade-long
+challenge involving ore body development, hydromet processing, and separation technology
+— or developing viable magnet designs with substantially reduced or eliminated Tb loading.
+Neither pathway is close to commercial realization at the scale required to replace Chinese
+HREE supply.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":69.2,"quantity":270.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"},{"country":"US","share_pct":11.5,"quantity":45.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"},{"country":"MM","share_pct":7.9,"quantity":31.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"},{"country":"AU","share_pct":3.3,"quantity":13.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"},{"country":"NG","share_pct":3.3,"quantity":13.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"},{"country":"TH","share_pct":3.3,"quantity":13.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"},{"country":"ZZ","share_pct":2.3,"quantity":9.0,"unit":"tonnes_per_year","form":"oxide","confidence":"high"}],"refining":[{"country":"CN","share_pct":93.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"MY","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZZ","share_pct":3.0,"quantity":null,"unit":null,"form":null,"confidence":"high"}],"completeness":{"mining":"top_producers_only","refining":"complete"},"world_mine":{"value":390.0,"unit":"tonnes_per_year","form":"oxide"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":90000.0,"resources":null,"unit":"tonnes"},"reserves_by_country":[{"country":"CN","share_pct":48.9,"quantity":44000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BR","share_pct":23.3,"quantity":21000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"IN","share_pct":7.7,"quantity":6900.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AU","share_pct":6.3,"quantity":5700.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":4.2,"quantity":3800.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"VN","share_pct":3.9,"quantity":3500.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":2.1,"quantity":1900.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"magnets_ndfeb_hree_dopant","share_pct":60.0,"confidence":"low"},{"application":"phosphors_fluorescent_led","share_pct":25.0,"confidence":"low"},{"application":"solid_oxide_fuel_cells_specialty","share_pct":8.0,"confidence":"low"},{"application":"other_uses","share_pct":7.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_rare_earths">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rare-earths.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Rare Earths</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 17</span><span class="ref-chip">reserves 1</span><span class="ref-chip">end_uses 4</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 4</span><span class="ref-chip">feedstocks 3</span><span class="ref-chip">substitutes 2</span><span class="ref-chip">criticality 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

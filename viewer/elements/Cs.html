@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cs — cesium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2024,"value":2.096,"unit":"usd_per_gram","form":"compound_other","basis":"retail","region":"nan"},{"year":2024,"value":98.0,"unit":"usd_per_gram","form":"metal","basis":"retail","region":"nan"},{"year":2025,"value":104.0,"unit":"usd_per_gram","form":"metal","basis":"retail","region":"nan"},{"year":2025,"value":2.244,"unit":"usd_per_gram","form":"compound_other","basis":"retail","region":"nan"}],"events":[{"date":"2020","event":"Cesium iodide recycling from X-ray panels became the industry standard.","impact":"USGS MCS 2026 says one company developed an X-ray panel recycling program\nin 2020 that recovered cesium iodide for reuse in new panels and that this\nwas believed to have become the industry standard. That reduced the need\nfor fresh primary cesium iodide in one of cesium's identifiable\nindustrial applications.\n"},{"date":"2025","event":"U.S. policy continued pushing cesium-137 blood irradiators toward replacement by 2027.","impact":"USGS MCS 2026 states that Congress set a goal for the National Nuclear\nSecurity Administration to eliminate cesium-137 blood irradiators by\n2027 and that X-ray alternatives had been partially implemented. This\ndoes not affect the small elemental-chemical market directly, but it does\nshrink one visible radioactive-cesium application in the United States.\n"},{"date":"2025","event":"Intermittent Tanco production and renewed Bikita tailings recovery defined the visible primary supply.","impact":"USGS MCS 2026 describes one Canadian company reporting intermittent cesium\nproduction and processing from mined ore and stockpiles at Tanco in 2025,\nwhile recovery from Bikita tailings in Zimbabwe for shipment to China had\nalso restarted. The combination underscores that contemporary cesium\nsupply is thin, episodic, and tied to a handful of pollucite or tailings\nstreams rather than a broad mining industry.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Cs</span>
+  <span class="el-name">cesium</span>
+</div>
+<div class="el-meta">
+  Atomic number 55 &bull; alkali_metal &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Cesium is commercially real, but it is not a bulk metal market. The modern
+trade is a thin specialty-chemicals business built on pollucite feedstock and
+sold mainly as carbonate, hydroxide, formate, iodide, chloride, nitrate, and
+other derivative salts. USGS still characterizes the United States as 100%
+import reliant, notes that elemental cesium itself is not traded in
+commercial quantities, and withholds conventional production, consumption,
+and trade series because the market is so small and opaque.
+
+What can be seen publicly is a supply chain with very few moving parts.
+Canada remains the anchor because Tanco is still one of the only named mined
+ore and stockpile processing centers in current USGS reporting, while
+Zimbabwe tailings recovery for shipment to China has re-emerged as a second
+feed. The most recent quantified flow USGS publishes is not a mine tonnage
+but the replacement demand implied by cesium formate drilling brines already
+in circulation. That is typical of cesium: commercial significance is driven
+by niche functionality in catalysts, dense clear brines, X-ray panels,
+scintillators, and timing or isotope applications, not by large tonnage.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[],"completeness":{"mining":"partial","refining":"partial"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":550.0,"unit":"tonnes_per_year","form":"compound_other"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":70000000.0,"resources":110000000.0,"unit":"kg"},"reserves_by_country":[{"country":"CA","share_pct":100.0,"quantity":70000000.0,"quantity_unit":"kg","confidence":"high"}],"end_uses":{"completeness":"partial","uses":[]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (2)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_cesium_profile_2004">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/of/2004/1432/2004-1432.pdf" target="_blank" rel="noopener">Cesium--Mineral Commodity Profiles</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2004 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span><span class="ref-chip">reserves 2</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2026_cesium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2026/mcs2026-cesium.pdf" target="_blank" rel="noopener">Cesium</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2026 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">prices 4</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

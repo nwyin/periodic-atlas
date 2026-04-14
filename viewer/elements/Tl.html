@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Tl — thallium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":8200.0,"unit":"usd_per_kg","form":"metal","basis":"retail","region":"global"},{"year":2021,"value":8400.0,"unit":"usd_per_kg","form":"metal","basis":"retail","region":"global"},{"year":2022,"value":9400.0,"unit":"usd_per_kg","form":"metal","basis":"retail","region":"global"},{"year":2023,"value":8800.0,"unit":"usd_per_kg","form":"metal","basis":"retail","region":"global"},{"year":2024,"value":9500.0,"unit":"usd_per_kg","form":"metal","basis":"retail","region":"global"}],"events":[{"date":"2024-07","event":"Dominican Republic-origin thallium waste and scrap appeared in U.S. import data for Puerto Rico after not being a prior source.","impact":"USGS flagged 1,620 kilograms of waste and scrap imported to Puerto Rico in July\n2024 as likely a commodity misclassification, probably involving medical devices\nor equipment containing thallium rather than genuine thallium scrap. The episode\nillustrates how tiny thallium trade flows can be distorted by customs reporting\nnoise.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Tl</span>
+  <span class="el-name">thallium</span>
+</div>
+<div class="el-meta">
+  Atomic number 81 &bull; post_transition_metal &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Thallium is a tiny, toxic byproduct metal rather than a standalone mining industry.
+USGS reports no U.S. domestic production since 1981 and estimates global production
+at only about 10,000 kilograms in 2023, recovered from flue dust generated while
+roasting copper, lead, and zinc ores. That makes thallium supply structurally
+dependent on base-metal smelting systems and producer willingness to recover a very
+small, hazardous side stream.
+
+Demand is similarly niche. The USGS chapter describes thallium consumption as a
+collection of specialty applications in medical imaging, radiation detection,
+infrared optics, superconductors, specialty glass, catalysts, and dense liquids for
+mineral separation. The most visible demand erosion is in nuclear cardiology, where
+technetium-99m continues to displace thallium-201. Prices remain extremely high on a
+per-kilogram basis because the market is quoted in small 100-gram retail lots of
+99.99%-pure granules rather than in bulk commodity contracts.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[],"completeness":{"mining":"partial","refining":"partial"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":10000.0,"unit":"kg_per_year","form":"metal"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"specialty_medical_electronic_optical_and_chemical_compounds","share_pct":100.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_thallium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-thallium.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025: Thallium</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

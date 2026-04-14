@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>N — nitrogen | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">N</span>
+  <span class="el-name">nitrogen</span>
+</div>
+<div class="el-meta">
+  Atomic number 7 &bull; reactive_nonmetal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Nitrogen is a high-volume industrial utility gas rather than a mined mineral
+commodity. The commercial business is built on air-separation infrastructure:
+large cryogenic ASUs feed captive onsite and pipeline customers in refining,
+chemicals, metals, electronics, and healthcare, while the merchant market
+sells bulk liquid, dewars, and cylinders into food processing, labs,
+fabrication, and distributed industrial users. That is why public reporting on
+nitrogen is much better on market structure and applications than on a single
+world &quot;mine production&quot; number.
+
+The most visible tradable nitrogen stream is liquid nitrogen. Open market
+reporting points to a roughly 299-million-ton 2025 liquid-nitrogen market,
+with Asia-Pacific leading in liquid-nitrogen demand and North America leading
+in the broader nitrogen-gas market depending on scope. Food packaging and
+freezing are the clearest large end use in open data, while electronics,
+pharmaceuticals, chemicals, and metal processing drive premium demand for
+high-purity supply.
+
+Commercial reality is shaped less by geology than by electricity, plant
+density, and customer clustering. Linde and Air Liquide both emphasize
+thousands of plants, long-term contracts, and strong positions in the United
+States, China, India, Germany, South Korea, and other dense industrial
+corridors. For nitrogen, supply-chain risk is therefore mostly about energy
+cost, regional industrial demand, and the buildout of semiconductor, pharma,
+and food-processing capacity rather than ore depletion.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[{"country":"ZZ","share_pct":100.0,"quantity":null,"unit":null,"form":null,"confidence":"low"}],"completeness":{"mining":"partial","refining":"partial"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":298.71,"unit":"million_tonnes_per_year","form":"liquid_cryogenic"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"partial","uses":[{"application":"food_and_beverage_packaging_and_freezing","share_pct":49.8,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (5)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="air_liquide_integrated_annual_report_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.airliquide.com/sites/airliquide.com/files/2025-03/2024-integrated-annual-report.pdf" target="_blank" rel="noopener">Integrated Annual Report 2024</a>
+    </div>
+    <div class='source-card-meta'>Air Liquide &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="grand_view_nitrogen_gas_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://www.grandviewresearch.com/industry-analysis/nitrogen-gas-market-report" target="_blank" rel="noopener">Nitrogen Gas Market Size, Share &amp; Trends Report, 2030</a>
+    </div>
+    <div class='source-card-meta'>Grand View Research &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="linde_annual_report_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://assets.linde.com/-/media/global/corporate/corporate/documents/investors/full-year-financial-reports/2024-annual-report-to-shareholders.pdf" target="_blank" rel="noopener">Annual Report 2024</a>
+    </div>
+    <div class='source-card-meta'>Linde plc &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="linde_nitrogen_page">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.linde-gas.com/what-we-offer/gases/atmospheric-gases/nitrogen" target="_blank" rel="noopener">Atmospheric Gases: Nitrogen</a>
+    </div>
+    <div class='source-card-meta'>Linde &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="mordor_liquid_nitrogen_2026">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://www.mordorintelligence.com/industry-reports/liquid-nitrogen-market" target="_blank" rel="noopener">Liquid Nitrogen Market - Trends, Size &amp; Share</a>
+    </div>
+    <div class='source-card-meta'>Mordor Intelligence &bull; 2026 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 1</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

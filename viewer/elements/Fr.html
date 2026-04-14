@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Fr — francium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Fr</span>
+  <span class="el-name">francium</span>
+</div>
+<div class="el-meta">
+  Atomic number 87 &bull; alkali_metal &bull; Tier 1
+</div>
+<div class="badges-row">
+  <span class="badge badge-no-commercial">No commercial production</span>
+</div>
+<p class="no-commercial-note"><em>No commercial production.</em></p>
+<div class="narrative-block">Francium has no commercial market. Its physical presence is fleeting even in
+nature: IUPAC&#39;s isotopes review describes Fr-223 as the longest-lived isotope,
+formed in uranium minerals through actinium decay, with only about 30 g
+estimated to exist in Earth&#39;s crust at any one time. Because the ground-state
+half-life is only 22.00 minutes, nothing resembling a mine-to-refinery supply
+chain exists; the real-world handling unit is atoms in a beam, trap, or decay
+chain rather than kilograms or tonnes.
+
+The element survives economically only as a laboratory subject. IUPAC notes
+that artificial production for research can be done by proton bombardment of
+thorium, and CERN&#39;s 2024 ISOLDE study shows active beam production of francium
+isotopes from uranium-carbide targets. ORNL publications likewise show
+atom-scale francium chemistry remains experimentally active. The atlas record
+therefore treats francium as a research-only element whose &quot;end use&quot; is
+entirely fundamental nuclear, atomic, and radiochemical research.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"scientific_research","share_pct":100.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (5)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="cern_isolde_fr_beams_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://cds.cern.ch/record/2900414" target="_blank" rel="noopener">Production study of Fr, Ra and Ac radioactive ion beams at ISOLDE, CERN</a>
+    </div>
+    <div class='source-card-meta'>CERN Document Server / Scientific Reports &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="iupac_element_names_2004">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://publications.iupac.org/ci/2004/2601/1_holden.html" target="_blank" rel="noopener">The Naming of the Chemical Elements</a>
+    </div>
+    <div class='source-card-meta'>Chemistry International / International Union of Pure and Applied Chemistry &bull; 2004 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="iupac_iptei_fr_2018">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://iupac.org/wp-content/uploads/2015/02/IPTEI_postprint_20190301.pdf" target="_blank" rel="noopener">IUPAC Periodic Table of the Elements and Isotopes (IPTEI): Francium</a>
+    </div>
+    <div class='source-card-meta'>International Union of Pure and Applied Chemistry &bull; 2018 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nndc_223fr_adopted">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.nndc.bnl.gov/ensnds/223/Fr/adopted.pdf" target="_blank" rel="noopener">223Fr Adopted Levels, Gammas</a>
+    </div>
+    <div class='source-card-meta'>National Nuclear Data Center, Brookhaven National Laboratory &bull; 2001 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="ornl_fr_thermodynamics_2013">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.ornl.gov/publication/first-experimentally-determined-thermodynamic-values-francium-hydration-energy-energy" target="_blank" rel="noopener">First Experimentally Determined Thermodynamic Values of Francium: Hydration Energy, Energy of Partitioning, and Thermodynamic Radius</a>
+    </div>
+    <div class='source-card-meta'>Oak Ridge National Laboratory / Journal of Physical Chemistry B &bull; 2013 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

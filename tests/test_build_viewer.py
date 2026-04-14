@@ -37,6 +37,12 @@ Critical paths:
 Failure modes:
   - missing duckdb → clear error message, sys.exit non-zero
   - empty atlas_elements table → friendly error
+
+Map invariants:
+  - index includes a country map shell, tooltip container, and serialized map payload
+  - map payload excludes aggregate pseudo-countries such as ZZ/XX
+  - tooltip rows are sorted by descending % global and keep mining/refining as separate stages
+  - charts_map.js and world_countries_50m.geojson are deployed into assets
 """
 
 from __future__ import annotations
@@ -229,6 +235,52 @@ def test_d3_cdn_in_pages(viewer_dir):
     for sym in EXPECTED_SYMBOLS:
         page = (viewer_dir / "elements" / f"{sym}.html").read_text()
         assert "d3js.org/d3.v7.min.js" in page, f"{sym}.html missing d3 script"
+
+
+def _extract_country_map_data(index_html: str) -> dict:
+    """Extract and parse the inline country map JSON from the index page."""
+    m = re.search(r'<script id="atlas-country-map-data" type="application/json">(.*?)</script>', index_html, re.DOTALL)
+    assert m, "atlas-country-map-data script tag not found in index page"
+    return json.loads(m.group(1))
+
+
+def test_index_country_map_shell_present(viewer_dir):
+    index = (viewer_dir / "index.html").read_text()
+    assert 'id="country-map-root"' in index, "index missing country map root"
+    assert 'id="country-map-tooltip"' in index, "index missing country map tooltip"
+    assert 'id="country-map-drawer"' in index, "index missing country map drawer"
+    assert 'id="country-map-drawer-backdrop"' in index, "index missing country map drawer backdrop"
+    assert 'id="country-map-drawer-body"' in index, "index missing country map drawer body"
+    assert "Country Hover Map" in index, "index missing map section title"
+    assert "world_countries_50m.geojson" in index, "index missing map geometry asset reference"
+    assert "Click a country for a fuller breakdown" in index, "index missing click-through map copy"
+
+
+def test_index_country_map_payload_sorted_and_filtered(viewer_dir):
+    data = _extract_country_map_data((viewer_dir / "index.html").read_text())
+    countries = data["countries"]
+
+    assert "ZZ" not in countries, "country map payload should not include ZZ aggregate rows"
+    assert "XX" not in countries, "country map payload should not include XX pseudo-country rows"
+    assert data["country_count"] == len(countries), "country_count should reconcile with serialized country entries"
+    assert data["row_count"] == sum(len(rows) for rows in countries.values()), "row_count should reconcile with serialized rows"
+    assert "CN" in countries, "expected China to appear in the country map payload"
+
+    for rows in countries.values():
+        assert rows == sorted(rows, key=lambda row: (-float(row["global_pct"]), row["symbol"], row["stage"], row["stream"] or ""))
+        for row in rows:
+            assert row["stage"] in {"mining", "refining"}, f"unexpected stage label: {row['stage']}"
+            assert row["quantity_value"] is not None, "country map rows must carry quantity_value"
+            assert row["quantity_unit"], "country map rows must carry quantity_unit"
+            assert row["global_pct"] is not None, "country map rows must carry global_pct"
+
+
+def test_index_country_map_assets_deployed(viewer_dir):
+    assert (viewer_dir / "assets" / "charts_map.js").exists(), "charts_map.js must be copied into assets/"
+    assert (viewer_dir / "assets" / "world_countries_50m.geojson").exists(), "world geometry must be copied into assets/"
+
+    index = (viewer_dir / "index.html").read_text()
+    assert "charts_map.js" in index, "index should reference charts_map.js"
 
 
 # ─────────────────────────────────────────────────────────────────────────────

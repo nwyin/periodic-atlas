@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pb — lead | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":2.0128,"unit":"usd_per_kg","form":"metal","basis":"other","region":"North America"},{"year":2021,"value":2.4912,"unit":"usd_per_kg","form":"metal","basis":"other","region":"North America"},{"year":2022,"value":2.5683,"unit":"usd_per_kg","form":"metal","basis":"other","region":"North America"},{"year":2023,"value":2.5154,"unit":"usd_per_kg","form":"metal","basis":"other","region":"North America"},{"year":2024,"value":2.425,"unit":"usd_per_kg","form":"metal","basis":"other","region":"North America"}],"events":[{"date":"2024-01","event":"US domestic lead mine production of recoverable lead increased 10% from 2023 to 290 kt in 2024e","impact":"US mine production recovery increased net mine output by ~27 kt, modestly\nreducing import dependence. Nonetheless, net import reliance for refined metal\nremained 28% in 2024e. All US lead concentrate continues to be exported for\noverseas refining; the US has had no primary lead smelter since 2013.\n"},{"date":"2024-01","event":"20 million spent SLI lead-acid batteries exported in first 9 months of 2024, up 11% from same period in 2023","impact":"Growing US exports of spent batteries reflect the shift in secondary lead\nprocessing to offshore smelters (Mexico, South Korea, Canada). Battery export\ntrade flows are a key indicator of secondary supply dynamics; US secondary\nproduction (1.0 Mt) remained roughly stable even as battery exports grew.\n"},{"date":"2024-09","event":"Global LME lead warehouse stocks reached 199,000 tons at end of September 2024, up 49% from yearend 2023","impact":"Elevated LME warehouse inventories dampened North American lead prices; the\n2024 average price of 110 c/lb was 4% below the 2023 annual average. Higher\nglobal stocks reflect ILZSG's forecast of global refined production (13.5 Mt)\nexceeding consumption (13.1 Mt) by ~400 kt in 2024.\n"},{"date":"2024-09","event":"ILZSG forecasts global refined lead production +2.4% to 13.5 Mt and consumption +0.2% to 13.1 Mt in 2024","impact":"The global lead market moved into slight surplus in 2024. Increased refined\nproduction outpaced modest consumption growth, contributing to higher LME\ninventory levels. Source: International Lead and Zinc Study Group press release,\nLisbon, Portugal, September 30, 2024 (cited as footnote 5 in USGS MCS 2025).\n"},{"date":"2025-01","event":"China and Russia lead reserves revised upward in USGS MCS 2025 based on Government reports","impact":"China reserves revised to 22,000 kt and Russia to 8,900 kt. China's revised\nreserves reinforce its position as the world's second-largest reserve holder\n(after Australia's 35,000 kt). These revisions do not materially change the\nnear-term supply outlook given both nations' existing production levels, but\nextend the long-term resource base.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Pb</span>
+  <span class="el-name">lead</span>
+</div>
+<div class="el-meta">
+  Atomic number 82 &bull; post_transition_metal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Lead is a high-volume industrial metal whose commercial reality is dominated by
+the lead-acid battery supply chain. The lead-acid battery industry absorbed an
+estimated 86% of US lead consumption in 2024, and the metal&#39;s economics are
+deeply intertwined with automotive SLI batteries, standby power systems, and
+industrial motive power. The most distinctive feature of the lead market is its
+closed-loop recycling infrastructure: in the United States, secondary production
+(~1.0 Mt in 2024) accounts for 70% of apparent consumption, and globally,
+secondary smelting of recycled batteries contributes an estimated 9.2 Mt of the
+~13.5 Mt total refined supply — more than double the 4.3 Mt contributed by
+primary mining. This gives lead among the highest secondary-production ratios
+of any major industrial metal.
+
+China dominates primary mine production at 44% of the 4.3 Mt global 2024 total,
+followed by Australia (10%), the United States (7%), Peru (6%), Russia (5%), and
+India (5%). Australia holds the world&#39;s largest identified lead reserves at 35 Mt
+(lead content), with giant Pb-Zn-Ag deposits at Broken Hill, Mount Isa, and
+McArthur River. The United States has not had an operating primary lead refinery
+since 2013; all domestic lead concentrate is exported for overseas smelting, and
+refined metal is reimported mainly from Canada (32%), South Korea (16%), Mexico
+(14%), and Australia (11%). US net import reliance for refined metal was 28% in
+2024e, down from a peak of 38% in 2022. The global refined market moved into
+modest surplus in 2024 per ILZSG forecasts, with LME lead warehouse stocks rising
+49% over the year, pressuring North American prices to 110 c/lb — a 4% decline
+from 2023.
+
+Lead&#39;s long-run demand trajectory faces secular headwinds from environmental and
+health regulation. Lead has been progressively eliminated from cable sheathing
+(replaced by PVC), food-can solder (banned by food safety rules), potable water
+plumbing (replaced by tin alloys), electronics (RoHS-driven shift to SAC alloys),
+CRT displays (rendered obsolete by flat panels), and wheel weights (steel and zinc
+alternatives mandated in many jurisdictions). These substitutions continue to
+erode non-battery uses, concentrating lead demand ever more tightly in the battery
+sector. The trajectory of battery technology — whether competing chemistries such
+as lithium-ion can displace lead-acid in automotive and stationary applications —
+represents the key demand uncertainty for the lead market over the coming decades.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":44.19,"quantity":1900000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZZ","share_pct":12.09,"quantity":520000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AU","share_pct":10.0,"quantity":430000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"US","share_pct":6.98,"quantity":300000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"PE","share_pct":6.28,"quantity":270000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":5.12,"quantity":220000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"IN","share_pct":5.12,"quantity":220000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"MX","share_pct":4.19,"quantity":180000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"TR","share_pct":1.63,"quantity":70000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"SE","share_pct":1.63,"quantity":70000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"IR","share_pct":1.4,"quantity":60000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BO","share_pct":1.4,"quantity":60000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"TJ","share_pct":0.93,"quantity":40000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":4300000.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":13500000.0,"unit":"tonnes_per_year","form":"metal"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":96000000.0,"resources":2000000000.0,"unit":"tonnes"},"reserves_by_country":[{"country":"AU","share_pct":36.46,"quantity":35000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CN","share_pct":22.92,"quantity":22000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":9.27,"quantity":8900000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ZZ","share_pct":6.15,"quantity":5900000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"MX","share_pct":5.83,"quantity":5600000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"PE","share_pct":5.21,"quantity":5000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":4.79,"quantity":4600000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"IR","share_pct":2.08,"quantity":2000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"IN","share_pct":1.98,"quantity":1900000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"SE","share_pct":1.77,"quantity":1700000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"TR","share_pct":1.67,"quantity":1600000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BO","share_pct":1.67,"quantity":1600000.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"partial","uses":[{"application":"lead_acid_batteries","share_pct":86.0,"confidence":"high"},{"application":"other_industrial_uses","share_pct":8.0,"confidence":"low"},{"application":"ammunition_shot_and_weights","share_pct":6.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_lead">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lead.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Lead</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-11</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 2</span><span class="ref-chip">shares 25</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 3</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 5</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 6</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

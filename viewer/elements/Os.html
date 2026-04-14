@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Os — osmium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2024-01","event":"South African PGM output declined amid weak prices, deep-level mining costs, labor disputes, and electricity disruptions","impact":"Osmium supply tightened with the broader South African PGM complex because\nSouth Africa remains the dominant producer of PGM-bearing mined material and\nthe leading osmium source by proxy. The effect was concentrated on byproduct\navailability rather than a separately quoted osmium market.\n"},{"date":"2024-01","event":"Russian PGM production fell because of natural disasters, lower grades, Russia-Ukraine conflict disruptions, and metallurgical outages","impact":"Russian refinery residues are one of the few meaningful non-South African\nosmium supply sources. The same disruptions that reduced Russian palladium and\nplatinum output also constrained osmium recovered from nickel-copper-PGM\nprocessing streams.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Os</span>
+  <span class="el-name">osmium</span>
+</div>
+<div class="el-meta">
+  Atomic number 76 &bull; transition_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Osmium is commercially real but economically tiny: it is one of the rarest
+marketable metals, recovered almost entirely as a byproduct from the same PGM and
+nickel-refining systems that produce platinum and palladium. USGS does not publish
+standalone osmium mine statistics, so any 2024 tonnage estimate has to be derived
+from grouped PGM reporting. A defensible working scale is about 100 kilograms per
+year globally, which is consistent with the Royal Society of Chemistry&#39;s estimate
+that annual osmium production weighs roughly as much as a large tiger.
+
+That tiny scale shapes the whole market. Osmium is not an autocatalyst or bulk
+electronics metal; it is a niche specialty input sold into a handful of hard-alloy,
+catalyst, microscopy, and laboratory applications. More recently, a parallel
+jewelry and investment trade has emerged around highly purified crystalline osmium
+pieces and high-purity granules. Supply risk is therefore less about absolute
+tonnage and more about dependence on a very small number of PGM mining and
+refining systems, especially in South Africa and Russia.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"ZA","share_pct":70.6,"quantity":71.0,"unit":"kg_per_year","form":"contained_element","confidence":"high"},{"country":"ZW","share_pct":11.2,"quantity":11.0,"unit":"kg_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":10.6,"quantity":11.0,"unit":"kg_per_year","form":"contained_element","confidence":"high"},{"country":"ZZ","share_pct":3.3,"quantity":3.0,"unit":"kg_per_year","form":"contained_element","confidence":"high"},{"country":"CA","share_pct":3.1,"quantity":3.0,"unit":"kg_per_year","form":"contained_element","confidence":"high"},{"country":"US","share_pct":1.2,"quantity":1.0,"unit":"kg_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":100.0,"unit":"kg_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":21000.0,"resources":null,"unit":"kg"},"reserves_by_country":[{"country":"ZA","share_pct":77.5,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"RU","share_pct":19.7,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"ZW","share_pct":1.5,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"US","share_pct":1.0,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"CA","share_pct":0.4,"quantity":null,"quantity_unit":"nan","confidence":"high"}],"end_uses":{"completeness":"partial","uses":[{"application":"specialty_chemicals_alloys_and_jewelry","share_pct":100.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (4)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act</a>
+    </div>
+    <div class='source-card-meta'>European Parliament and Council of the European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="osmium_institute_htro">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://www.osmium.com/en/htro/" target="_blank" rel="noopener">High Tech Ready Osmium (HTRO)</a>
+    </div>
+    <div class='source-card-meta'>Osmium-Institute Germany &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="rsc_osmium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://periodic-table.rsc.org/element/76/osmium" target="_blank" rel="noopener">Osmium - Element information, properties and uses</a>
+    </div>
+    <div class='source-card-meta'>Royal Society of Chemistry &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_pgm">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Platinum-Group Metals</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 11</span><span class="ref-chip">reserves 1</span><span class="ref-chip">events 2</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

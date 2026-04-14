@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rb — rubidium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2023,"value":121.0,"unit":"usd_per_gram","form":"metal","basis":"price_list","region":"US"},{"year":2023,"value":29.0,"unit":"usd_per_gram","form":"compound_other","basis":"price_list","region":"US"},{"year":2024,"value":128.0,"unit":"usd_per_gram","form":"metal","basis":"price_list","region":"US"},{"year":2024,"value":30.2,"unit":"usd_per_gram","form":"compound_other","basis":"price_list","region":"US"},{"year":2024,"value":1244.19,"unit":"usd_per_kg","form":"carbonate","basis":"price_list","region":"nan"}],"events":[{"date":"2024","event":"Commercial rubidium supply outside China remained dependent on legacy stockpiles from former mines","impact":"USGS reported that known rubidium ore production outside China had ceased\nwithin the past two decades and that stockpiles at former mine sites were\nstill feeding downstream refineries, with those stockpiles outside China\npotentially nearing depletion at current processing rates. This leaves the\nmarket highly dependent on residual inventories and potential Chinese\nproduction.\n"},{"date":"2024","event":"A Namibian lepidolite project advanced with downstream rubidium conversion planned in Abu Dhabi","impact":"USGS said one company continued developing a lepidolite concentration mine\nand processing facility in Namibia, targeting 5,700 t/yr of lithium\nhydroxide capacity from 2026, with byproduct rubidium intended for a\ndownstream chemical conversion facility in Abu Dhabi. The project shows that\nnew rubidium supply is being pursued indirectly through lithium-led project\neconomics rather than through standalone rubidium mines.\n"},{"date":"2024-08","event":"Mount Edon in Western Australia published an inferred resource containing rubidium oxide","impact":"USGS reports that the Mount Edon Project announced an initial\nJORC-compliant inferred mineral resource of 3.6 million tons containing an\nestimated 7,900 tons of rubidium oxide, with a mining proposal targeted by\nyearend 2025. This is evidence that prospective new rubidium supply remains\ntied to lithium- and cesium-bearing pegmatite developments.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Rb</span>
+  <span class="el-name">rubidium</span>
+</div>
+<div class="el-meta">
+  Atomic number 37 &bull; alkali_metal &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span>
+</div>
+
+<div class="narrative-block">Rubidium is commercially real, but it is not a bulk commodity in the usual
+mining sense. USGS describes a market built around byproduct recovery from
+cesium- and lithium-bearing pegmatites, imported concentrate, and downstream
+processing into small quantities of metal and specialty compounds. The leading
+application is specialty glass for fiber-optic telecommunications, with the
+rest of demand spread across biomedical uses, electronics, catalysts,
+pyrotechnics, ceramics, and atomic-frequency-reference systems. The older USGS
+profile still captures the core commercial fact pattern: the market is tiny,
+measured in only about 1 to 2 metric tons per year in the United States.
+
+The current supply picture is structurally fragile. USGS MCS 2025 says there
+were no official 2024 production statistics, no U.S. mine output, and that
+known ore production outside China had already ceased, leaving downstream
+refiners reliant on legacy stockpiles from former mines. New potential supply
+is coming mainly from lithium- or cesium-led pegmatite projects in Namibia and
+Australia rather than from dedicated rubidium mines. That combination of tiny
+market size, byproduct dependence, and sparse public reporting explains why
+rubidium can be on the U.S. critical minerals list while still looking almost
+invisible in ordinary commodity statistics.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":200000.0,"resources":null,"unit":"tonnes"},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"specialty_glass_and_niche_uses","share_pct":100.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (4)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/AUTO/?uri=CELEX:32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf" target="_blank" rel="noopener">Final 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey / Federal Register &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_rubidium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-rubidium.pdf" target="_blank" rel="noopener">Rubidium</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey, Mineral Commodity Summaries 2025 &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">reserves 1</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_profile_2003_rubidium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/publication/ofr0345" target="_blank" rel="noopener">Mineral Commodity Profiles -- Rubidium</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2003 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sb — antimony | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":5.8862,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2021,"value":11.7063,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2022,"value":13.6243,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2023,"value":12.1032,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2024,"value":20.9436,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"}],"events":[{"date":"2024-02","event":"A mining company in Idaho receives additional US Department of Defense funding to reestablish a domestic antimony source","impact":"USGS reports the conditional February 2024 award raised total Department of Defense\nfunding for the Idaho project to $59.4 million. The project is tied to the Stibnite\nGold Project reserve base and reflects US concern over 85% net import reliance and the\nabsence of marketable domestic mine output.\n"},{"date":"2024-08","event":"China imposes export-license requirements on antimony ore, metal, oxides, hydrides, indium antimonides, organo-antimony compounds, and gold-antimony separation technology","impact":"After the August 2024 announcement, the antimony metal price nearly doubled according\nto the USGS-cited Argus series, rising from $8.91/lb in July to $17.50/lb in November.\nThe licensing regime tightened the already concentrated global antimony supply chain.\n"},{"date":"2024-12","event":"China bans all antimony exports to the United States","impact":"USGS reports that China escalated from licensing to a US-specific export ban in\nDecember 2024. Because China remained the dominant mine producer at 60% of 2024 world\noutput and supplied 63% of US metal-and-oxide imports in 2020–23, the ban materially\nheightened US supply-chain vulnerability.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Sb</span>
+  <span class="el-name">antimony</span>
+</div>
+<div class="el-meta">
+  Atomic number 51 &bull; metalloid &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span>
+</div>
+
+<div class="narrative-block">Antimony sits in the narrow band of industrial minerals that matter far more than their
+tonnage suggests. World mine supply in 2024 was only about 100,000 metric tons antimony
+content, but the market is structurally exposed because China alone accounted for about 60%
+of that output and also dominates trade in oxide and metal. The United States had no
+marketable mine production in 2024, relied on imports for roughly 85% of apparent
+consumption, and kept a secondary stream alive mainly through antimonial lead recovered
+from spent lead-acid batteries.
+
+Commercial demand in the United States is split across metal products such as antimonial
+lead and ammunition (40%), flame retardants (39%), and nonmetal products such as ceramics,
+glass, and rubber (21%). The trade forms match that split: oxide is the largest import
+stream by volume, while secondary recycling feeds directly back into the battery industry.
+Substitutes exist in each major use class, but they are application-specific rather than
+universal, which limits how quickly demand can move away from antimony when supply tightens.
+
+The 2024 market confirmed how geopolitical this element has become. China first imposed
+export-license requirements in August and then banned all antimony exports to the United
+States in December; over the same period the cited antimony metal price jumped from
+$8.91/lb in July to $17.50/lb in November. That shock coincided with US Department of
+Defense funding to restart domestic mine supply in Idaho, underscoring that antimony is
+now treated less as a routine alloying or flame-retardant additive and more as a strategic
+chokepoint material.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":60.0,"quantity":60000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"TJ","share_pct":17.0,"quantity":17000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":13.0,"quantity":13000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"MM","share_pct":4.5,"quantity":4500.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BO","share_pct":3.7,"quantity":3700.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AU","share_pct":2.0,"quantity":2000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"TR","share_pct":1.6,"quantity":1600.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"MX","share_pct":0.8,"quantity":800.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"IR","share_pct":0.5,"quantity":500.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"VN","share_pct":0.3,"quantity":300.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"PK","share_pct":0.25,"quantity":250.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"LA","share_pct":0.2,"quantity":200.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"GT","share_pct":0.05,"quantity":50.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"KZ","share_pct":0.04,"quantity":40.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"KG","share_pct":0.02,"quantity":20.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":100000.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":2000000.0,"resources":null,"unit":"tonnes"},"reserves_by_country":[{"country":"CN","share_pct":29.71,"quantity":670000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":15.52,"quantity":350000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BO","share_pct":13.75,"quantity":310000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"KG","share_pct":11.53,"quantity":260000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AU","share_pct":6.21,"quantity":140000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"MM","share_pct":6.21,"quantity":140000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"TR","share_pct":4.39,"quantity":99000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CA","share_pct":3.46,"quantity":78000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":2.66,"quantity":60000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"VN","share_pct":2.39,"quantity":54000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"TJ","share_pct":2.22,"quantity":50000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"PK","share_pct":1.15,"quantity":26000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"MX","share_pct":0.8,"quantity":18000.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"metal_products","share_pct":40.0,"confidence":"high"},{"application":"flame_retardants","share_pct":39.0,"confidence":"high"},{"application":"nonmetal_products","share_pct":21.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (3)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=OJ:L_202401252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act (Annex II)</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_2025_critical_minerals_list">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf" target="_blank" rel="noopener">Final 2025 List of Critical Minerals (Federal Register Vol. 90, No. 214, November 7, 2025)</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey / US Department of the Interior &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_antimony">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-antimony.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Antimony</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 28</span><span class="ref-chip">reserves 1</span><span class="ref-chip">end_uses 3</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

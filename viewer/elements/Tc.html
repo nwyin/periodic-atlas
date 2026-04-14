@@ -7,6 +7,7 @@
   <link rel="stylesheet" href="../assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
   <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -42,8 +43,81 @@ schedule overlapping maintenance windows.
 <script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"medical_imaging_spect","share_pct":100.0,"confidence":"high"}]}}</script>
 <div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
 <div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
-<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
 
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (1)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Tc-99m","half_life_seconds":21624.0,"half_life_display":"6.0 hours","production_mode":"reactor_generated","precursor":"Mo-99 (half-life 65.932 hours = ~2.75 days). Most Mo-99 is produced\nby neutron irradiation of highly enriched or low enriched uranium\ntargets in research reactors; the resulting U fission products\ninclude Mo-99 which is chemically separated. Mo-99 then decays to\nTc-99m via beta emission, and hospitals extract the Tc-99m by\nsaline elution from a \"generator\" column containing the Mo-99.","delivery_form":"Mo-99/Tc-99m generator: a small shielded column of alumina loaded\nwith ~0.1-100 GBq of Mo-99 (on the day of calibration), eluted\nwith saline to produce pertechnetate (TcO4-) for radiopharmaceutical\npreparation. Generators are shipped by specialized\nradiopharmaceutical companies worldwide. Typical generator is\nuseful for ~1 week before Mo-99 depletion.","reporting_year":2024,"production_quantity":{"value":null,"unit":null},"producers":[{"country":"NL","share_pct":25.0,"confidence":"low","notes":"High Flux Reactor (HFR) at Petten. One of the three reactors\nsupplying Curium's global Mo-99 distribution. Per industry\nreports, HFR had urgent pipe-deformation repairs in late\n2024 that coincided with scheduled maintenance at BR-2 and\nMaria, causing a global Mo-99 shortage of up to 50% for\napproximately three weeks.\n"},{"country":"BE","share_pct":25.0,"confidence":"low","notes":"BR2 reactor in Mol. Second primary Mo-99 source."},{"country":"ZA","share_pct":20.0,"confidence":"low","notes":"SAFARI-1 reactor."},{"country":"AU","share_pct":15.0,"confidence":"low","notes":"OPAL reactor operated by ANSTO."},{"country":"ZZ","share_pct":10.0,"confidence":"low","notes":"Other reactors listed by Wikipedia as active Mo-99 producers:\nMPR RSG-GAS (Indonesia), RA-3 (Argentina), LVR-15 (Czech\nRepublic). Share breakdown not published; 10% rest-of-world\nis a placeholder.\n"},{"country":"PL","share_pct":5.0,"confidence":"low","notes":"Maria reactor in Warsaw. Third reactor in Curium's supply chain."}],"producers_completeness":"top_producers_only","notes":"MEDIUM-LOW CONFIDENCE on producer shares. Neither the OECD/NEA\nHigh-level Group on Medical Radioisotope Supply nor Wikipedia\npublishes precise country-level Mo-99 production shares. The\nshares above are placeholders derived from the qualitative\nimportance of each reactor (HFR/BR2/Maria are Curium's primary\nsuppliers; SAFARI-1 and OPAL are the other large-scale producers;\nRA-3/MPR/LVR-15 contribute less). Should be replaced with cited\nOECD/NEA data during step 3."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Tc-99m">
+    <div class="isotope-card-header">
+      <h3>Tc-99m</h3>
+      <span class="badge badge-mode-reactor_generated">reactor_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 6.0 hours</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> Mo-99 (half-life 65.932 hours = ~2.75 days). Most Mo-99 is produced
+by neutron irradiation of highly enriched or low enriched uranium
+targets in research reactors; the resulting U fission products
+include Mo-99 which is chemically separated. Mo-99 then decays to
+Tc-99m via beta emission, and hospitals extract the Tc-99m by
+saline elution from a &quot;generator&quot; column containing the Mo-99.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> Mo-99/Tc-99m generator: a small shielded column of alumina loaded
+with ~0.1-100 GBq of Mo-99 (on the day of calibration), eluted
+with saline to produce pertechnetate (TcO4-) for radiopharmaceutical
+preparation. Generators are shipped by specialized
+radiopharmaceutical companies worldwide. Typical generator is
+useful for ~1 week before Mo-99 depletion.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2024</div>
+    </div>
+    <div class="producers-section">
+  <h4>Producers <span class="badge badge-no-commercial" style="font-size:0.7rem">Top Producers Only</span></h4>
+  <div class="producers-chart" data-isotope="Tc-99m">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr class="producer-row producer-low-confidence">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">NL</td>
+      <td style="padding:0.2rem 0.5rem">25%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">low</td>
+    </tr>
+    <tr class="producer-row producer-low-confidence">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">BE</td>
+      <td style="padding:0.2rem 0.5rem">25%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">low</td>
+    </tr>
+    <tr class="producer-row producer-low-confidence">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">ZA</td>
+      <td style="padding:0.2rem 0.5rem">20%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">low</td>
+    </tr>
+    <tr class="producer-row producer-low-confidence">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">AU</td>
+      <td style="padding:0.2rem 0.5rem">15%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">low</td>
+    </tr>
+    <tr class="producer-row producer-low-confidence">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">ZZ</td>
+      <td style="padding:0.2rem 0.5rem">10%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">low</td>
+    </tr>
+    <tr class="producer-row producer-low-confidence">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">PL</td>
+      <td style="padding:0.2rem 0.5rem">5%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">low</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
 <div id="sources-panel" class="sources-panel">
   <h2>Sources (1)</h2>
   <div class="source-cards">
@@ -59,7 +133,7 @@ schedule overlapping maintenance windows.
   </div>
 </div>
 <footer>
-Built 2026-04-11T13:23:58Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_production.js"></script>

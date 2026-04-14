@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ta — tantalum | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":158.0,"unit":"usd_per_kg","form":"concentrate","basis":"other","region":"nan"},{"year":2021,"value":158.0,"unit":"usd_per_kg","form":"concentrate","basis":"other","region":"nan"},{"year":2022,"value":196.0,"unit":"usd_per_kg","form":"concentrate","basis":"other","region":"nan"},{"year":2023,"value":170.0,"unit":"usd_per_kg","form":"concentrate","basis":"other","region":"nan"},{"year":2024,"value":170.0,"unit":"usd_per_kg","form":"concentrate","basis":"other","region":"nan"}],"events":[{"date":"2024-09","event":"United States finalized additional section 301 tariffs on Chinese critical-mineral goods including tantalum","impact":"USGS MCS 2025 states that in September 2024 the Office of the United States Trade\nRepresentative announced final tariff modifications that imposed an additional 25%\nad valorem tariff on critical minerals from China, including tantalum. The measure\nraised policy risk for US buyers of Chinese tantalum metal, powder, and downstream\nproducts at the same time that US import reliance remained total.\n"},{"date":"2024-10","event":"CHIPS and Science Act funding commitments expanded projected US semiconductor capacity and tantalum demand","impact":"USGS MCS 2025 reports that by October 2024 the U.S. Department of Commerce had\nannounced preliminary agreements with 20 companies for 32 semiconductor manufacturing\nprojects in 20 States, allocating almost $34 billion of direct funding and almost\n$29 billion in loans. USGS explicitly identifies tantalum capacitors and sputtering\ntargets as materials that will see higher demand from expanded advanced-chip fabrication.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ta</span>
+  <span class="el-name">tantalum</span>
+</div>
+<div class="el-meta">
+  Atomic number 73 &bull; transition_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span>
+</div>
+
+<div class="narrative-block">Tantalum is a small-volume but strategically important capacitor metal whose commercial
+chain is shaped by the contrast between highly specialized end uses and geographically
+concentrated mine supply. USGS MCS 2025 shows no US mine production, no domestic mining
+since 1959, and 100% net import reliance in 2024, yet US companies still produced alloys,
+capacitors, carbides, compounds, and metal from imported ores, concentrates, and other
+tantalum-bearing feedstocks. World mine production was only about 2,100 t Ta in 2024e,
+with Congo (Kinshasa), Nigeria, Rwanda, and Brazil supplying most of the total.
+
+The dominant geological reality is pegmatite and coltan supply rather than a large
+merchant refined-metal market. USGS Professional Paper 1802-M describes tantalum as
+derived mostly from tantalite in lithium-cesium-tantalum pegmatites, while also noting
+the importance of artisanal columbite-tantalite mining across central Africa. That mix
+produces a supply chain with persistent traceability and geopolitical sensitivity: small
+tonnages matter, scrap recycling is meaningful, and policy changes such as the September
+2024 US tariff action can materially affect procurement economics even without changing
+headline mine output.
+
+Demand is anchored in electronics. USGS identifies electronic capacitors as the leading
+use and links 2024 demand recovery to consumer electronics, data centers, and the expected
+build-out of US semiconductor fabrication capacity under the CHIPS and Science Act. The
+result is a market where absolute tonnage is modest, but substitution can impose real
+performance penalties and domestic consumers remain exposed to concentrated foreign mine
+supply and imported intermediate products.
+
+**Within-country analytical limitation (documented, intentionally not modelled):** the DRC
+row at 880 t and Rwanda row at 350 t — together ~59% of world mine output — mask two
+dynamics that the structured data cannot express. First, the DRC↔Rwanda attribution is
+unstable year-to-year because coltan is smuggled across the border; the UN Group of Experts
+(S/2024/969) documents roughly 120 t/month of coltan moving Masisi→Rwanda from May to
+October 2024, which inflates Rwanda&#39;s row and understates DRC&#39;s. Second, the Rubaya mining
+complex — estimated at ~15% of world coltan output on its own — has been controlled by the
+M23 armed group since early 2024, making whatever figure sits under the DRC row partially
+a conflict-financing flow rather than a conventional mining output. ITSCI traceability,
+which underwrites most DRC / Rwanda / Burundi tonnage reporting, had its RMI listing
+suspended in 2024 after Global Witness&#39;s &quot;ITSCI laundromat&quot; investigation, further
+weakening confidence in formal-vs-informal attribution. The atlas schema has no native
+concept for within-country production-mode splits or formal-vs-informal decomposition, so
+none of this is captured in the structured `mining_by_country` data. Per the 2026-04-14
+project scope decision (see `atlas/zz-decomposition-plan.md`), within-country decomposition
+is out of scope; readers querying the DRC and Rwanda tantalum rows should treat them as
+aggregates across conflict-affected ASM, formal ITSCI-traced flows, and cross-border
+smuggled material.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CD","share_pct":41.9,"quantity":880.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"NG","share_pct":18.57,"quantity":390.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RW","share_pct":16.67,"quantity":350.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BR","share_pct":10.0,"quantity":210.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CN","share_pct":3.62,"quantity":76.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"MZ","share_pct":2.62,"quantity":55.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AU","share_pct":2.48,"quantity":52.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ET","share_pct":1.9,"quantity":40.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":1.38,"quantity":29.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BO","share_pct":0.1,"quantity":2.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BI","share_pct":0.1,"quantity":2.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":2100.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[{"country":"CN","share_pct":61.54,"quantity":240000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AU","share_pct":28.21,"quantity":110000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BR","share_pct":10.26,"quantity":40000.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"electronic_capacitors","share_pct":60.0,"confidence":"medium"},{"application":"other_industrial_uses","share_pct":40.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (4)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)</a>
+    </div>
+    <div class='source-card-meta'>European Parliament and Council of the European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.usgs.gov/programs/mineral-resources-program/science/about-2025-list-critical-minerals" target="_blank" rel="noopener">About the 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_tantalum">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-tantalum.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Tantalum</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 14</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 2</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">substitutes 4</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_pp_1802m_niobium_tantalum">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/publication/pp1802M" target="_blank" rel="noopener">Niobium and Tantalum, Chapter M of Critical Mineral Resources of the United States</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2017 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 2</span><span class="ref-chip">feedstocks 2</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bi — bismuth | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":6.0185,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2021,"value":8.2451,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2022,"value":8.5979,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2023,"value":8.9947,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"},{"year":2024,"value":11.6843,"unit":"usd_per_kg","form":"metal","basis":"other","region":"global"}],"events":[{"date":"2024","event":"Chinese feedstock competition tightened the bismuth market and pushed prices sharply higher","impact":"USGS MCS 2025 reports that average monthly in-warehouse Rotterdam bismuth prices rose from\n$3.89 per pound in January 2024 to $6.29 per pound in October, taking the annual average to\n$5.30 per pound, 30% above 2023 and the highest since 2018. The chapter attributes the move\nin part to rising feedstock prices in China as domestic smelters competed for bismuth ore.\nUSGS also reports that U.S. imports of bismuth metal from China fell 40% year over year to\n580 metric tons in 2024 from 964 metric tons in 2023.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Bi</span>
+  <span class="el-name">bismuth</span>
+</div>
+<div class="el-meta">
+  Atomic number 83 &bull; post_transition_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Bismuth is a small, import-reliant, and structurally byproduct-driven market. The United States
+has had no primary refined bismuth production since 1997, and USGS MCS 2025 reports 89% net
+import reliance in 2024 even after secondary scrap supplied a modest 80 metric tons per year.
+Commercial material moves mainly as refined metal, alloys, scrap, and specialty chemical
+compounds used in pharmaceuticals, pigments, ceramics, crystalware, and low-melting alloys.
+
+The supply chain is constrained upstream by other metals rather than by standalone bismuth mines.
+USGS states that bismuth is produced most often as a byproduct of lead-ore processing, with
+additional recovery from tungsten- and zinc-linked process streams in Asia. Because mined bismuth
+ore is not reported as a standalone commodity, the most meaningful global production number is
+refinery output: 16,000 metric tons in 2024, of which China alone accounted for just over 81%.
+That concentration makes the market sensitive to feedstock conditions inside China and to shifts
+in byproduct economics elsewhere.
+
+That thinness showed up clearly in 2024. USGS reports a 30% increase in the annual average
+bismuth price as Chinese smelters competed for ore feed, while U.S. imports of bismuth metal
+from China fell 40% year over year. At the same time, bismuth has policy relevance well beyond
+its tonnage because it often replaces lead in plumbing alloys, solders, hunting shot, and other
+applications where nontoxicity matters. The United States and the European Union both now treat
+bismuth as a critical raw material, and the EU classifies it as strategic as well.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[{"country":"CN","share_pct":81.25,"quantity":13000.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"LA","share_pct":6.88,"quantity":1100.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"KR","share_pct":6.25,"quantity":1000.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"JP","share_pct":3.12,"quantity":500.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"KZ","share_pct":1.12,"quantity":180.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"BO","share_pct":0.44,"quantity":70.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"},{"country":"BG","share_pct":0.31,"quantity":50.0,"unit":"tonnes_per_year","form":"metal","confidence":"high"}],"completeness":{"mining":"partial","refining":"complete"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":16000.0,"unit":"tonnes_per_year","form":"metal"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"partial","uses":[{"application":"alloys","share_pct":30.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (4)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 of the European Parliament and of the Council — Critical Raw Materials Act — Annex I (Strategic Raw Materials) and Annex II (Critical Raw Materials)</a>
+    </div>
+    <div class='source-card-meta'>European Parliament and Council of the European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.usgs.gov/programs/mineral-resources-program/science/about-2025-list-critical-minerals" target="_blank" rel="noopener">About the 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_bismuth">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-bismuth.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Bismuth</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 7</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 4</span><span class="ref-chip">substitutes 6</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_myb_2022_bismuth">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/myb/vol1/2022/myb1-2022-bismuth.pdf" target="_blank" rel="noopener">Bismuth [Advance Release]</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

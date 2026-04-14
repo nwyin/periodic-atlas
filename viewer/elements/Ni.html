@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ni — nickel | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":13772.0,"unit":"usd_per_tonne","form":"metal","basis":"lme","region":"global"},{"year":2021,"value":18476.0,"unit":"usd_per_tonne","form":"metal","basis":"lme","region":"global"},{"year":2022,"value":25815.0,"unit":"usd_per_tonne","form":"metal","basis":"lme","region":"global"},{"year":2023,"value":21495.0,"unit":"usd_per_tonne","form":"metal","basis":"lme","region":"global"},{"year":2024,"value":17000.0,"unit":"usd_per_tonne","form":"metal","basis":"lme","region":"global"}],"events":[{"date":"2024-01","event":"Supply concerns (Indonesia mining quota delays, New Caledonia unrest, Russia ban) push LME nickel to ~$19,000/t in early 2024","impact":"Price spike was short-lived; by June concerns subsided and LME average fell to ~$16,000/t by November; 2024 annual average ended at ~$17,000/t (−21% YoY)."},{"date":"2024-01","event":"New Caledonia nickel production falls ~52% amid widespread social and civil unrest","impact":"New Caledonia output dropped from 231,000 t (2023) to 110,000 t (2024), removing ~3% of global supply and contributing to brief early-2024 price spike."},{"date":"2024-05","event":"US Department of Defense awards $7 million grant to Missouri company under Defense Production Act Title III","impact":"Grant funds a hydrometallurgical demonstration plant capable of extracting cobalt and nickel from a variety of feedstocks, supporting domestic supply chain development."},{"date":"2024-06","event":"New nickel sulfide mine begins commercial production at Kalumbila, Zambia","impact":"Adds greenfield capacity to the 'Other countries' bucket; first major new sulfide mine in the region in years."}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ni</span>
+  <span class="el-name">nickel</span>
+</div>
+<div class="el-meta">
+  Atomic number 28 &bull; transition_metal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Nickel is a high-volume workhorse metal dominated by one country: Indonesia
+accounts for ~60% of world mine production (2.2 of 3.7 million tonnes in 2024)
+via laterite ore processing into nickel pig iron (NPI) and matte. This geographic
+concentration has structurally oversupplied the market: LME nickel cash prices
+fell from $25,815/t in 2022 to $17,000/t in 2024, an estimated 21% drop in a
+single year. The oversupply drove production curtailments in Australia (−26%),
+Philippines (−20%), and New Caledonia (−52%), the last amplified by civil unrest.
+
+The dominant end use is stainless and alloy steel (&gt;85% of US consumption per
+USGS), with electroplating, catalysts, and chemicals accounting for the balance.
+Battery demand (nickel sulfate for EV cathodes) is the fastest-growing application
+but not yet separately quantified in USGS data. Indonesia&#39;s strategy — processing
+ore into NPI domestically rather than exporting raw laterite — has captured most
+of the value chain and made Indonesian export bans on raw ore the central policy
+lever in global nickel markets.
+
+World reserves exceed 130 million tonnes, with 54% of resources in laterites and
+35% in magmatic sulfide deposits. The US holds modest reserves (310,000 t) via
+three projects, and net import reliance was 48% in 2024 (nearly 100% excluding
+scrap). Nickel appears on the US 2022 Critical Minerals List and the EU&#39;s CRMA
+2024 Strategic Raw Materials list (Annex I), reflecting its centrality to
+stainless steel, superalloys, and battery supply chains.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"ID","share_pct":60.0,"quantity":2200000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"PH","share_pct":9.0,"quantity":330000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZZ","share_pct":8.0,"quantity":300000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":6.0,"quantity":210000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CA","share_pct":5.0,"quantity":190000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AU","share_pct":3.0,"quantity":110000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"NC","share_pct":3.0,"quantity":110000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CN","share_pct":3.0,"quantity":120000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BR","share_pct":2.0,"quantity":77000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"US","share_pct":0.0,"quantity":8000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":3700000.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":130000000.0,"resources":350000000.0,"unit":"tonnes"},"reserves_by_country":[{"country":"ID","share_pct":42.0,"quantity":55000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AU","share_pct":18.0,"quantity":24000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BR","share_pct":12.0,"quantity":16000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ZZ","share_pct":7.0,"quantity":9100000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":6.0,"quantity":8300000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"NC","share_pct":5.0,"quantity":7100000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"PH","share_pct":4.0,"quantity":4800000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CN","share_pct":3.0,"quantity":4400000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"CA","share_pct":2.0,"quantity":2200000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":0.0,"quantity":310000.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"stainless_and_alloy_steel","share_pct":85.0,"confidence":"high"},{"application":"electroplating_catalysts_chemicals_other","share_pct":15.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_nickel">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-nickel.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Nickel</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-11</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 20</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 2</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 4</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 1</span><span class="ref-chip">criticality 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

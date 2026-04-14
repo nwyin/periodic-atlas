@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Be — beryllium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":620.0,"unit":"usd_per_kg","form":"alloy","basis":"us_domestic","region":"US"},{"year":2021,"value":680.0,"unit":"usd_per_kg","form":"alloy","basis":"us_domestic","region":"US"},{"year":2022,"value":660.0,"unit":"usd_per_kg","form":"alloy","basis":"us_domestic","region":"US"},{"year":2023,"value":1400.0,"unit":"usd_per_kg","form":"alloy","basis":"us_domestic","region":"US"},{"year":2024,"value":1500.0,"unit":"usd_per_kg","form":"alloy","basis":"us_domestic","region":"US"}],"events":[{"date":"2010","event":"Defense Production Act Title III partnership reestablished domestic beryllium metal production","impact":"USGS MCS 2025 states that the U.S. Department of Defense supported a\npublic-private partnership in 2010 that reestablished domestic beryllium\nmetal production, reinforcing the material's defense-critical domestic\nsupply chain.\n"},{"date":"2024","event":"Beryllium trade flows contracted sharply in key import and export lanes","impact":"USGS MCS 2025 reports apparent consumption rose 18% in 2024 largely\nbecause exports fell 56% while imports fell 20%. Export weakness reflected\nlower beryllium metal shipments to Canada, Germany, Japan, and Mexico;\nimport weakness reflected lower metal imports from Belgium, Kazakhstan,\nand Latvia.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Be</span>
+  <span class="el-name">beryllium</span>
+</div>
+<div class="el-meta">
+  Atomic number 4 &bull; alkaline_earth &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span>
+</div>
+
+<div class="narrative-block">Commercial beryllium remains a small, defense-sensitive specialty market built
+around one vertically integrated U.S. producer. The ore side is simple: Utah
+bertrandite is the only domestic mine feed, supplemented by imported beryl.
+Those feeds move into beryllium hydroxide and then into metal, oxide, and
+beryllium-copper master alloy. USGS estimates 2024 U.S. apparent consumption
+at only 170 metric tons of contained beryllium, yet the value of that market
+was about $260 million because beryllium is sold into performance-critical
+niches rather than bulk tonnage markets.
+
+Supply is concentrated but not purely American. USGS estimates 2024 world mine
+production at about 360 metric tons, with the United States, Brazil, and China
+accounting for nearly all reported output. Reserve visibility is unusually
+thin: USGS reports about 19,000 tons of proven and probable bertrandite
+reserves in Utah but does not publish a world reserve total, only world
+identified resources of more than 100,000 tons. Recycling is economically
+meaningful in this tiny market, with USGS indicating recovered material may
+account for 20% to 25% of total consumption.
+
+Demand is spread across industrial components, aerospace and defense,
+automotive electronics, telecom infrastructure, and a long tail of other
+uses. That mix explains both the lack of full substitutes and the outsized
+role of U.S. policy support. The DoD-backed reestablishment of domestic metal
+production remains part of the market structure, and 2024 trade data showed
+how small shifts in import and export lanes can materially change apparent
+consumption in such a thinly traded commodity.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"US","share_pct":50.0,"quantity":180.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BR","share_pct":22.22,"quantity":80.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CN","share_pct":21.39,"quantity":77.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"MZ","share_pct":6.67,"quantity":24.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RW","share_pct":0.28,"quantity":1.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"UG","share_pct":0.28,"quantity":1.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"MG","share_pct":0.28,"quantity":1.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":180.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":19000.0,"resources":100000.0,"unit":"tonnes"},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"other_applications","share_pct":28.0,"confidence":"high"},{"application":"industrial_components","share_pct":20.0,"confidence":"high"},{"application":"aerospace_and_defense","share_pct":19.0,"confidence":"high"},{"application":"automotive_electronics","share_pct":11.0,"confidence":"high"},{"application":"telecommunications_infrastructure","share_pct":8.0,"confidence":"high"},{"application":"consumer_electronics","share_pct":6.0,"confidence":"high"},{"application":"energy_applications","share_pct":6.0,"confidence":"high"},{"application":"semiconductor_applications","share_pct":2.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (3)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://faolex.fao.org/docs/pdf/eur231131.pdf" target="_blank" rel="noopener">Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials</a>
+    </div>
+    <div class='source-card-meta'>European Parliament and Council of the European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.federalregister.gov/documents/2025/11/07/2025-19813/final-2025-list-of-critical-minerals" target="_blank" rel="noopener">Final 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_beryllium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-beryllium.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Beryllium</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 7</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 8</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 2</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

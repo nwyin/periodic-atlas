@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ca — calcium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":131.4,"unit":"usd_per_tonne","form":"oxide","basis":"us_domestic","region":"US"},{"year":2020,"value":156.0,"unit":"usd_per_tonne","form":"hydroxide","basis":"us_domestic","region":"US"},{"year":2021,"value":133.4,"unit":"usd_per_tonne","form":"oxide","basis":"us_domestic","region":"US"},{"year":2021,"value":159.6,"unit":"usd_per_tonne","form":"hydroxide","basis":"us_domestic","region":"US"},{"year":2022,"value":151.3,"unit":"usd_per_tonne","form":"oxide","basis":"us_domestic","region":"US"},{"year":2022,"value":183.1,"unit":"usd_per_tonne","form":"hydroxide","basis":"us_domestic","region":"US"},{"year":2023,"value":235.0,"unit":"usd_per_tonne","form":"hydroxide","basis":"us_domestic","region":"US"},{"year":2023,"value":183.1,"unit":"usd_per_tonne","form":"oxide","basis":"us_domestic","region":"US"},{"year":2024,"value":190.0,"unit":"usd_per_tonne","form":"oxide","basis":"us_domestic","region":"US"},{"year":2024,"value":240.0,"unit":"usd_per_tonne","form":"hydroxide","basis":"us_domestic","region":"US"}],"events":[{"date":"2024-01","event":"US lime production estimated unchanged from 2023 at 16 million tons; some producers increased pricing owing to higher production costs","impact":"Steady domestic supply despite flat volume; value of US production ~$3.2 billion in\n2024. Higher production costs (energy, labor, compliance) driving price increases\nfor both quicklime ($190/t estimated) and hydrated lime ($240/t estimated).\n"},{"date":"2024-01","event":"73 quicklime plants and 10 hydrating plants in operation in the United States in 2024; net import reliance <1%","impact":"US lime industry remained broadly self-sufficient. Import sources 2020-23: Canada\n82%, Mexico 13%, other 5%. Quicklime and slaked lime imports duty-free; calcined\ndolomite carries 3% ad valorem tariff. Hydrated lime described: dry calcium hydroxide\npowder produced by reacting quicklime with controlled water in a hydrator.\n"},{"date":"2024-01","event":"Several US lime companies announced plans to accelerate decarbonization efforts in lime production","impact":"Lime kilns are inherently CO₂-intensive: calcination of limestone (CaCO3 → CaO +\nCO₂) releases ~440 kg CO₂ per tonne of quicklime as process emissions, in addition\nto combustion CO₂. Carbon capture, alternative fuels (hydrogen, biomass), and\nefficiency improvements are under development by industry. Decarbonization pressure\nwill likely add costs but may open new markets (e.g., carbon mineralization).\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ca</span>
+  <span class="el-name">calcium</span>
+</div>
+<div class="el-meta">
+  Atomic number 20 &bull; alkaline_earth &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Lime — primarily quicklime (CaO) and hydrated lime (Ca(OH)₂) — is the dominant
+commercial form of calcium in global trade, with world production of approximately
+420 million tonnes per year in 2024. China is overwhelmingly the largest producer
+at ~74% of world output (310 Mt), with India a distant second at ~4% (17 Mt) and
+the United States third at ~4% (16 Mt). The US lime industry is essentially
+self-sufficient (&lt;1% net import reliance), with 26 companies operating 73 primary
+lime plants in 28 States and Puerto Rico; the five largest companies account for
+roughly 80% of US production. US lime production was valued at approximately
+$3.2 billion in 2024. The major end uses — steelmaking, chemical and industrial
+processing, flue gas desulfurization, construction, water treatment, and nonferrous
+metal mining — reflect lime&#39;s role as an inexpensive, versatile alkali and flux
+across the industrial economy.
+
+US quicklime prices rose steadily from $131/t in 2020 to an estimated $190/t in
+2024, and hydrated lime from $156/t to $240/t over the same period. Production
+costs — energy (fuel for kilns), labor, and regulatory compliance — have been the
+primary drivers of price increases; USGS notes that &quot;some of the lime producers
+have increased product pricing owing to increased costs of production.&quot; The lime
+industry faces a fundamental decarbonization challenge: calcination of limestone
+releases ~440 kg of CO₂ per tonne of quicklime as unavoidable process emissions,
+separate from combustion. Several US companies announced plans in 2024 to accelerate
+decarbonization efforts. The limestone and dolomite resource base is effectively
+unlimited globally; USGS describes resources as &quot;very large&quot; and states reserves are
+&quot;adequate for all countries with listed production.&quot;
+
+Lime is not classified as a critical material under any major national or multilateral
+framework (US Critical Minerals List, EU Critical Raw Materials, EU Strategic Raw
+Materials). The global supply base is geographically distributed — limestone is among
+the most common sedimentary rocks — and production capacity is closely matched to
+regional demand because transport costs limit trade radius. Key substitutes exist for
+specific applications (limestone in agriculture and fluxing, magnesium hydroxide for
+pH control, cement and fly ash in construction) but none replicate lime&#39;s combination
+of reactivity, availability, and low cost across the full range of applications.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":73.81,"quantity":310.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"IN","share_pct":4.05,"quantity":17.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"ZZ","share_pct":4.05,"quantity":17.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"US","share_pct":3.81,"quantity":16.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"RU","share_pct":2.62,"quantity":11.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"BR","share_pct":1.93,"quantity":8.1,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"JP","share_pct":1.43,"quantity":6.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"DE","share_pct":1.36,"quantity":5.7,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"KR","share_pct":1.21,"quantity":5.1,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"TR","share_pct":0.98,"quantity":4.1,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"IR","share_pct":0.95,"quantity":4.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"FR","share_pct":0.83,"quantity":3.5,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"IT","share_pct":0.57,"quantity":2.4,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"AU","share_pct":0.48,"quantity":2.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"CA","share_pct":0.45,"quantity":1.9,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"ES","share_pct":0.4,"quantity":1.7,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"MY","share_pct":0.36,"quantity":1.5,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"GB","share_pct":0.33,"quantity":1.4,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"BG","share_pct":0.31,"quantity":1.3,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"PL","share_pct":0.31,"quantity":1.3,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"ZA","share_pct":0.26,"quantity":1.1,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"UA","share_pct":0.24,"quantity":1.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"},{"country":"BE","share_pct":0.24,"quantity":1.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":420.0,"unit":"million_tonnes_per_year","form":"unspecified"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"partial","uses":[{"application":"steelmaking","share_pct":35.0,"confidence":"low"},{"application":"chemical_and_industrial","share_pct":27.0,"confidence":"low"},{"application":"flue_gas_treatment","share_pct":15.0,"confidence":"low"},{"application":"construction","share_pct":10.0,"confidence":"low"},{"application":"water_treatment","share_pct":8.0,"confidence":"low"},{"application":"nonferrous_metal_mining","share_pct":5.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_lime">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lime.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Lime</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-11</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 23</span><span class="ref-chip">end_uses 6</span><span class="ref-chip">prices 10</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 5</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

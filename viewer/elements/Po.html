@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Po — polonium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"1999","event":"Contamination incident involving Po-210 static eliminators prompted scrutiny of device integrity","impact":"A Brookhaven/OSTI paper examined six static eliminators after a contamination\nincident at a commercial facility and found cracked or broken microspheres and\nleakage risk under handling, heat, moisture, solvent exposure, or vibration.\nThe incident illustrated that polonium demand depends as much on device design\napproval and regulatory confidence as on isotope availability.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Po</span>
+  <span class="el-name">polonium</span>
+</div>
+<div class="el-meta">
+  Atomic number 84 &bull; post_transition_metal &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Polonium is commercially real only in very small isotope markets. The main
+industrial isotope is Po-210, which the NRC says is produced in reactors, used
+mainly in static eliminators, and manufactured worldwide at only about 100 grams
+per year. In the device supply chain, the isotope is embedded in silver-bearing or
+similar foil inside protective cages rather than traded as free metal. Source:
+`nrc_polonium_2024`.
+
+The present U.S. catalog evidence for broader polonium commerce is DOE/NIDC&#39;s
+Po-209 product sheet, which offers stock material in nitric-acid solution and
+quotes it in microcuries. That makes polonium a clear fit for the atlas
+isotope-market pattern: reactor or legacy-inventory supply, radiological controls,
+no transparent country-share tables, and no public bulk price series. The most
+important commercial constraint is not ore or smelting capacity but regulatory
+control of source fabrication, containment, and disposal. Sources:
+`nidc_po209_product_2024`, `osti_static_eliminators_1999`, `nea_bi209_capture_2022`.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"static_elimination_devices","share_pct":90.0,"confidence":"low"},{"application":"instrument_calibration_and_check_sources","share_pct":5.0,"confidence":"low"},{"application":"research_tracer_sources","share_pct":5.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (2)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Po-209","half_life_seconds":3912624000.0,"half_life_display":"124.0 years","production_mode":"stockpile_separated","precursor":"DOE/NIDC's current product sheet lists the production route simply as \"legacy\nmaterial\", indicating sale from existing isotope inventory rather than a\ncontinuously disclosed current production campaign. Source:\n`nidc_po209_product_2024`.","delivery_form":"DOE/NIDC lists Po-209 in 5 M nitric acid solution with about 185 kBq\n(~5 microcuries) per milliliter, glass-bottle primary containment, stock\navailability, and microcuries as the unit of sale. Source:\n`nidc_po209_product_2024`.","reporting_year":2024,"production_quantity":{"value":null,"unit":null},"producers":[],"producers_completeness":"partial","notes":"This is a niche research/tracer isotope listing rather than an industrial bulk\nmarket. The product sheet does not disclose annual output or pricing, only\ncurrent trade form and stock availability. Source:\n`nidc_po209_product_2024`."},{"isotope":"Po-210","half_life_seconds":11955686.4,"half_life_display":"138.4 days","production_mode":"reactor_generated","precursor":"Commercial Po-210 is produced by neutron capture on Bi-209 to form Bi-210,\nwhich then decays to Po-210. The NEA's nuclear-data entry describes the route\nexplicitly as 209Bi(n,g)210Bi followed by rapid decay into 210Po. Source:\n`nea_bi209_capture_2022`.","delivery_form":"The NRC describes the dominant industrial form as Po-210 combined with silver\nor other metals in a foil mounted inside a protective cage for static\nelimination devices. Exempt calibration/check sources are also used at 0.1\nmicrocurie activity. Source: `nrc_polonium_2024`.","reporting_year":2024,"production_quantity":{"value":100.0,"unit":"grams_per_year"},"producers":[],"producers_completeness":"partial","notes":"Public primary sources reviewed here describe world scale and trade form, but\nnot a country-by-country producer split or public list pricing. The U.S.\nmarket is mostly an import-and-distribution channel for NRC-regulated devices\nrather than a transparent domestic commodity market. Source:\n`nrc_polonium_2024`."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Po-209">
+    <div class="isotope-card-header">
+      <h3>Po-209</h3>
+      <span class="badge badge-mode-stockpile_separated">stockpile_separated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 124.0 years</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> DOE/NIDC&#39;s current product sheet lists the production route simply as &quot;legacy
+material&quot;, indicating sale from existing isotope inventory rather than a
+continuously disclosed current production campaign. Source:
+`nidc_po209_product_2024`.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> DOE/NIDC lists Po-209 in 5 M nitric acid solution with about 185 kBq
+(~5 microcuries) per milliliter, glass-bottle primary containment, stock
+availability, and microcuries as the unit of sale. Source:
+`nidc_po209_product_2024`.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2024</div>
+    </div>
+    
+  </div>
+  <div class="isotope-card" data-isotope="Po-210">
+    <div class="isotope-card-header">
+      <h3>Po-210</h3>
+      <span class="badge badge-mode-reactor_generated">reactor_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 138.4 days</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> Commercial Po-210 is produced by neutron capture on Bi-209 to form Bi-210,
+which then decays to Po-210. The NEA&#39;s nuclear-data entry describes the route
+explicitly as 209Bi(n,g)210Bi followed by rapid decay into 210Po. Source:
+`nea_bi209_capture_2022`.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> The NRC describes the dominant industrial form as Po-210 combined with silver
+or other metals in a foil mounted inside a protective cage for static
+elimination devices. Exempt calibration/check sources are also used at 0.1
+microcurie activity. Source: `nrc_polonium_2024`.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2024</div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (4)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="nea_bi209_capture_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.oecd-nea.org/jcms/pl_68900/83-bi-209-n-g-bi-210g-m" target="_blank" rel="noopener">83-Bi-209(n,g)Bi-210g,m</a>
+    </div>
+    <div class='source-card-meta'>OECD Nuclear Energy Agency &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_po209_product_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://isotopes.gov/sites/default/files/2024-11/Polonium-209%20Product%20Information.pdf" target="_blank" rel="noopener">Polonium-209 Product Information</a>
+    </div>
+    <div class='source-card-meta'>U.S. Department of Energy / National Isotope Development Center &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nrc_polonium_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.nrc.gov/reading-rm/doc-collections/fact-sheets/polonium" target="_blank" rel="noopener">Backgrounder on Polonium-210</a>
+    </div>
+    <div class='source-card-meta'>U.S. Nuclear Regulatory Commission &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 2</span><span class="ref-chip">isotope_markets 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="osti_static_eliminators_1999">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.osti.gov/biblio/338399" target="_blank" rel="noopener">Evaluation of static eliminators containing polonium-210</a>
+    </div>
+    <div class='source-card-meta'>U.S. Department of Energy Office of Scientific and Technical Information &bull; 1999 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

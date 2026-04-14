@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>O — oxygen | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2021-02","event":"WHO and partners launched an oxygen-emergency response as COVID-19 sharply increased medical oxygen demand","impact":"WHO reported that the pandemic accelerated global oxygen demand and that\nmore than half a million COVID-19 patients in low- and middle-income\ncountries were estimated to need oxygen treatment every day. The episode\nexposed the fragility of medical-oxygen logistics, cylinder supply, power\nreliability for concentrators and PSA plants, and the distinction between\nindustrial oxygen capacity and patient-ready medical oxygen systems.\n"},{"date":"2024-05","event":"Linde signed a long-term agreement to supply oxygen, nitrogen, and argon to H2 Green Steel's first large-scale green-steel plant in Sweden","impact":"The project shows that oxygen remains infrastructure-critical even in lower\nemissions steel routes. Decarbonization does not remove oxygen from the\nsteel value chain; instead it shifts new ASU investment toward DRI-EAF and\nintegrated green-steel hubs.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">O</span>
+  <span class="el-name">oxygen</span>
+</div>
+<div class="el-meta">
+  Atomic number 8 &bull; reactive_nonmetal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Oxygen is one of the highest-volume industrial elements, but unlike sulfur,
+chlorine, or helium it is not reported by USGS as a dedicated mineral
+commodity. The commercial reality is an industrial-gas business layered on top
+of atmospheric air: very large customers take pipeline oxygen from on-site
+cryogenic ASUs, merchant customers receive liquid oxygen by tanker, and
+healthcare systems use either air-liquefaction product that meets
+pharmacopoeial purity or regulated on-site generation such as PSA plants.
+
+The dominant oxygen sink is still steelmaking, which is why the most
+defensible production metric in public primary sources is a steel-linked
+captive stream rather than a single global oxygen total for every market. The
+secondary anchors are fuels-and-chemicals complexes, followed by the medical
+oxygen system that became strategically visible during the COVID-19 emergency.
+Decarbonization changes where new ASUs get built, but it does not eliminate
+oxygen demand: low-emissions steel, gasification, and many chemical processes
+still require large oxygen flows.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[{"country":"CN","share_pct":55.0,"quantity":58.6,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"ZZ","share_pct":11.0,"quantity":11.7,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"IN","share_pct":10.0,"quantity":10.7,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"JP","share_pct":6.0,"quantity":6.4,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"RU","share_pct":5.0,"quantity":5.3,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"KR","share_pct":5.0,"quantity":5.3,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"DE","share_pct":3.0,"quantity":3.2,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"BR","share_pct":3.0,"quantity":3.2,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"IR","share_pct":2.0,"quantity":2.1,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"}],"completeness":{"mining":"partial","refining":"top_producers_only"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":106.6,"unit":"million_tonnes_per_year","form":"unspecified"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"steelmaking_and_metallurgy","share_pct":55.0,"confidence":"low"},{"application":"chemicals_fuels_and_refining","share_pct":20.0,"confidence":"low"},{"application":"glass_water_wastewater_cutting_welding_pulp_paper_and_other","share_pct":15.0,"confidence":"low"},{"application":"healthcare_medical_oxygen","share_pct":10.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (8)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="airliquide_secunda_2018">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://za.airliquide.com/south-africa-air-liquide-starts-worlds-largest-oxygen-production-unit" target="_blank" rel="noopener">South Africa: Air Liquide starts up the world&#39;s largest oxygen production unit</a>
+    </div>
+    <div class='source-card-meta'>Air Liquide &bull; 2018 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="epa_bof_background_1978">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://nepis.epa.gov/Exe/ZyPURL.cgi?Dockey=9100INPU.txt" target="_blank" rel="noopener">Revised Standards for Basic Oxygen Process Furnaces - Background Information for Proposed Standards, Preliminary Draft</a>
+    </div>
+    <div class='source-card-meta'>United States Environmental Protection Agency &bull; 1978 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="iea_breakthrough_2025_steel">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/breakthrough-agenda-report-2025/steel" target="_blank" rel="noopener">Steel</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="linde_annual_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://assets.linde.com/-/media/global/corporate/corporate/documents/investors/full-year-financial-reports/2024-annual-report-to-shareholders.pdf" target="_blank" rel="noopener">2024 Annual Report to Shareholders</a>
+    </div>
+    <div class='source-card-meta'>Linde plc &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="linde_h2greensteel_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.linde.com/news-and-media/2024/linde-signs-agreement-to-supply-industrial-gases-to-world%E2%80%99s-first-large-scale-green-steel-plant" target="_blank" rel="noopener">Linde Signs Agreement to Supply Industrial Gases to World&#39;s First Large-Scale Green Steel Plant</a>
+    </div>
+    <div class='source-card-meta'>Linde plc &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="who_covid_oxygen_emergency_2021">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.who.int/news/item/25-02-2021-covid-19-oxygen-emergency-impacting-more-than-half-a-million-people-in-low--and-middle-income-countries-every-day-as-demand-surges" target="_blank" rel="noopener">COVID-19 oxygen emergency impacting more than half a million people in low- and middle-income countries every day, as demand surges</a>
+    </div>
+    <div class='source-card-meta'>World Health Organization &bull; 2021 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="who_oxygen_topic_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.who.int/teams/health-product-policy-and-standards/assistive-and-medical-technology/medical-devices/oxygen" target="_blank" rel="noopener">Oxygen</a>
+    </div>
+    <div class='source-card-meta'>World Health Organization &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="worldsteel_2024_global_steel">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://worldsteel.org/media/press-releases/2025/december-2024-crude-steel-production-and-2024-global-totals/" target="_blank" rel="noopener">December 2024 crude steel production and 2024 global crude steel production totals</a>
+    </div>
+    <div class='source-card-meta'>World Steel Association &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 9</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

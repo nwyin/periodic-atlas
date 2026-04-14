@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ir — iridium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":1633.51,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2021,"value":5158.4,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2022,"value":4581.93,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2023,"value":4672.78,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2024,"value":4800.0,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"}],"events":[{"date":"2024-01","event":"South African PGM mined-material output declined amid low prices, deep-level mining costs, labor disputes, and electricity disruptions","impact":"Because South Africa is the dominant iridium supplier, the same constraints that\nreduced 2024 South African PGM output tightened the iridium market even as the\nbroader PGM complex weakened.\n"},{"date":"2024-01","event":"Russian PGM output declined because of natural disasters, lower grades and recovery, Ukraine-war disruptions, and planned metallurgical outages","impact":"Russia is a much smaller iridium source than it is for palladium, but any loss of\nRussian nickel-copper-PGM feed further narrows the already concentrated iridium\nsupply base.\n"},{"date":"2024-06","event":"Heraeus acquired McCol Metals, a specialist in recovering iridium from spent mixed-metal-oxide electrodes","impact":"The transaction expanded industrial recycling capacity focused specifically on\niridium-bearing MMO anodes, improving circular supply options in one of iridium's\nlargest end-use chains.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ir</span>
+  <span class="el-name">iridium</span>
+</div>
+<div class="el-meta">
+  Atomic number 77 &bull; transition_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Iridium is the smallest-volume mainstream platinum-group metal and one of the most
+supply-constrained. Commercial supply is a byproduct stream rather than a primary
+mining target: most metal comes from South African Bushveld reefs, especially UG2,
+with much smaller additions from Zimbabwe and nickel-copper-PGM sulfide districts in
+Canada and Russia. That geology matters commercially because UG2 is unusually rich in
+iridium relative to other major PGM ores, so the metal&#39;s supply concentration is even
+tighter than platinum&#39;s or palladium&#39;s.
+
+Demand is industrial rather than decorative. DOE&#39;s breakdown shows electrochemical
+applications as the largest bucket, followed by a broad industrial residual category,
+electronics, and chemical catalysts. In practice that means MMO anodes, electrolyzer
+catalysts, crucibles and other high-temperature hardware, and specialized electronics
+components. Substitution exists only at the margin: ruthenium can reduce iridium
+loading in some electrochemical systems, but usually with performance or durability
+penalties.
+
+The market stayed structurally tight even as the wider PGM complex softened in 2024.
+USGS recorded an iridium price increase to about $4,800/troy ounce while palladium,
+rhodium, and ruthenium all fell. That divergence fits the underlying commercial
+reality: iridium is tiny, concentrated, and hard to replace, while new recycling and
+low-iridium catalyst technologies are advancing precisely because the supply base is so
+narrow.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"ZA","share_pct":83.0,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"ZW","share_pct":10.2,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"CA","share_pct":3.7,"quantity":null,"unit":null,"form":null,"confidence":"high"},{"country":"RU","share_pct":3.1,"quantity":null,"unit":null,"form":null,"confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":8200.0,"unit":"kg_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":2430000.0,"resources":3000000.0,"unit":"kg"},"reserves_by_country":[{"country":"ZA","share_pct":77.8,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"RU","share_pct":19.8,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"ZW","share_pct":1.5,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"US","share_pct":1.0,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"CA","share_pct":0.4,"quantity":null,"quantity_unit":"nan","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"electrochemical_applications","share_pct":36.0,"confidence":"medium"},{"application":"other_industrial","share_pct":32.0,"confidence":"medium"},{"application":"electronics","share_pct":22.0,"confidence":"medium"},{"application":"chemical_catalysts","share_pct":10.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (6)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="doe_pgm_supply_chain_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.energy.gov/sites/default/files/2022-02/PGM%20catalyst%20supply%20chain%20report%20-%20final%20draft%202.25.22.pdf" target="_blank" rel="noopener">Platinum Group Metals Supply Chain Deep Dive Assessment</a>
+    </div>
+    <div class='source-card-meta'>U.S. Department of Energy &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 4</span><span class="ref-chip">end_uses 4</span><span class="ref-chip">feedstocks 3</span></div>
+  </div>
+  <div class="source-card" data-source-id="eu_crma_annex_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 — Critical Raw Materials Act, Annex I (Strategic) and Annex II (Critical Raw Materials)</a>
+    </div>
+    <div class='source-card-meta'>European Commission &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="heraeus_mccol_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.heraeus-precious-metals.com/en/company/press-and-news/inclusion-of-mccol-metals-brand/" target="_blank" rel="noopener">Inclusion of McCol Metals in the Heraeus Precious Metals Brand</a>
+    </div>
+    <div class='source-card-meta'>Heraeus Precious Metals &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="heraeus_ruthenium_pem_catalyst_2023">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.heraeus-precious-metals.com/en/company/press-and-news/heraeus-and-sibanye-stillwater-introduce-a-ruthenium-based-catalyst-to-reduce-reliance-on-iridium-for-pem-water-electrolysis/" target="_blank" rel="noopener">Heraeus and Sibanye-Stillwater introduce a ruthenium-based catalyst to reduce reliance on iridium for PEM water electrolysis</a>
+    </div>
+    <div class='source-card-meta'>Heraeus Precious Metals &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.federalregister.gov/documents/2022/02/22/2022-03247/2022-final-list-of-critical-minerals" target="_blank" rel="noopener">2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 22, 2022)</a>
+    </div>
+    <div class='source-card-meta'>U.S. Department of the Interior / U.S. Geological Survey &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_pgm">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Platinum-Group Metals (pp. 136-137)</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 5</span><span class="ref-chip">reserves 2</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 2</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Rn — radon | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Rn</span>
+  <span class="el-name">radon</span>
+</div>
+<div class="el-meta">
+  Atomic number 86 &bull; noble_gas &bull; Tier 1
+</div>
+<div class="badges-row">
+  <span class="badge badge-no-commercial">No commercial production</span>
+</div>
+<p class="no-commercial-note"><em>No commercial production.</em></p>
+<div class="narrative-block">Radon is a naturally arising radioactive noble gas, not a commercial gas
+business. The atlas treatment is research-only because the element has no
+stable isotope, the IUPAC table anchors it to mass number 222 rather than a
+standard atomic weight, and the longest-lived nuclide lasts only 3.8222
+days. That lifetime is long enough for environmental measurement and
+laboratory use but far too short for a durable mined-and-refined commodity
+chain.
+
+The historical discovery path also differs from mined elements. IUPAC&#39;s
+history of radioactivity credits Rutherford with thorium emanation in 1899
+and Ernst Dorn with radium emanation in 1900; the radium-derived gas was the
+longer-lived isotope later identified as radon-222. Commercial reality
+therefore centers on on-site generation from radioactive parents and on
+hazard monitoring, not on reserves, prices, or traded end-use markets.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"partial","uses":[]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (3)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="iupac_periodic_table_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://iupac.org/what-we-do/periodic-table-of-elements/" target="_blank" rel="noopener">Periodic Table of Elements</a>
+    </div>
+    <div class='source-card-meta'>International Union of Pure and Applied Chemistry &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="iupac_radvanyi_2011">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://publications.iupac.org/publications/ci/2011/3301/8_radvanyi.html" target="_blank" rel="noopener">Physics and Radioactivity after the Discovery of Polonium and Radium</a>
+    </div>
+    <div class='source-card-meta'>Chemistry International / International Union of Pure and Applied Chemistry &bull; 2011 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nndc_nudat_rn222">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.nndc.bnl.gov/nudat3/getdecaydataset.jsp?dsid=226ra+a+decay+%281603+y%29&amp;nucleus=222RN" target="_blank" rel="noopener">ENSDF decay dataset for 222Rn</a>
+    </div>
+    <div class='source-card-meta'>National Nuclear Data Center, Brookhaven National Laboratory &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Mc — moscovium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Mc</span>
+  <span class="el-name">moscovium</span>
+</div>
+<div class="el-meta">
+  Atomic number 115 &bull; synthetic_superheavy &bull; Tier 1
+</div>
+<div class="badges-row">
+  <span class="badge badge-no-commercial">No commercial production</span>
+</div>
+<p class="no-commercial-note"><em>No commercial production.</em></p>
+<div class="narrative-block">Moscovium has no commercial supply chain. It exists only as a research-only
+superheavy element synthesized in accelerator experiments, with discovery
+experiments at JINR Dubna and IUPAC recognition of the JINR-LLNL-ORNL
+collaboration in 2015. The accepted name &quot;moscovium&quot; and symbol &quot;Mc&quot; were
+formally approved by IUPAC in 2016.
+
+The practical production route is fusion of calcium-48 beams with
+americium-243 targets at Dubna. NNDC&#39;s ENSDF dataset identifies Mc-290 as
+the longest-lived moscovium isotope currently established in the evaluated
+data, with a half-life of about 0.65 s. JINR&#39;s SHE Factory program was still
+actively generating new Mc decay statistics in 2021, underscoring that the
+element&#39;s &quot;market&quot; is pure nuclear-physics experimentation.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"partial","uses":[]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (6)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="iupac_discovery_2015">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://iupac.org/news/news-detail/article/discovery-and-assignment-of-elements-with-atomic-numbers-113-115-117-and-118.html" target="_blank" rel="noopener">Discovery and Assignment of Elements with Atomic Numbers 113, 115, 117 and 118</a>
+    </div>
+    <div class='source-card-meta'>International Union of Pure and Applied Chemistry &bull; 2015 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="iupac_names_2016">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://iupac.org/iupac-announces-the-names-of-the-elements-113-115-117-and-118/" target="_blank" rel="noopener">IUPAC Announces the Names of the Elements 113, 115, 117, and 118</a>
+    </div>
+    <div class='source-card-meta'>International Union of Pure and Applied Chemistry &bull; 2016 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="jinr_naming_2016">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.jinr.ru/posts/names-for-the-new-elements-113-115-117-and-118/" target="_blank" rel="noopener">Names for the new elements 113, 115, 117 and 118</a>
+    </div>
+    <div class='source-card-meta'>Joint Institute for Nuclear Research &bull; 2016 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="jinr_she_factory_2021">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.jinr.ru/posts/discussing-nuclear-physics-extensively/" target="_blank" rel="noopener">Discussing nuclear physics extensively</a>
+    </div>
+    <div class='source-card-meta'>Joint Institute for Nuclear Research &bull; 2021 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="jinr_timeline_2003">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.jinr.ru/about-en/history-jinr/jinr-chronology/" target="_blank" rel="noopener">JINR Timeline</a>
+    </div>
+    <div class='source-card-meta'>Joint Institute for Nuclear Research &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nndc_mc290_ensdf_2019">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.nndc.bnl.gov/ensnds/290/Mc/a_decay_51_ms.pdf" target="_blank" rel="noopener">290Mc Levels from ENSDF</a>
+    </div>
+    <div class='source-card-meta'>National Nuclear Data Center, Brookhaven National Laboratory &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

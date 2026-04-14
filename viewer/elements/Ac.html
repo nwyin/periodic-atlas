@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ac — actinium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2020-02","event":"FDA accepted DOE's Type II Drug Master File for accelerator-produced actinium-225 nitrate","impact":"DOE said the accepted filing lets clinical investigators and pharmaceutical\ncompanies reference a regulatory manufacturing dossier for accelerator-produced\nAc-225, lowering a key commercialization barrier for therapeutic programs that\ndepend on this supply route.\n"},{"date":"2023-03-21","event":"DOE and NRC held a roundtable on accelerator-produced actinium-225 regulation","impact":"DOE said it was increasing routine supply and used the roundtable to clarify\nthe licensing and impurity-management framework for accelerator-produced Ac-225\nthat can contain up to 2% Ac-227 activity at release.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ac</span>
+  <span class="el-name">actinium</span>
+</div>
+<div class="el-meta">
+  Atomic number 89 &bull; actinide &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Actinium is commercially real in 2025, but the business is Ac-225 for targeted
+radiopharmaceuticals rather than elemental actinium metal. The mature legacy route
+is decay-product Ac-225 milked from thorium-229 inventory at Oak Ridge, sold by
+DOE/NIDC as solid actinium nitrate in millicuries and constrained by the size of
+the thorium-229 stock. That route is the main clinically used source identified by
+the IAEA, but DOE describes it as limited enough that it primarily supports basic
+science, pre-clinical work, and small-volume supply.
+
+The scaling route is accelerator-produced Ac-225: thorium targets are irradiated
+at Brookhaven and Los Alamos, purified at Oak Ridge, and then sold either as
+Ac-225 nitrate or incorporated into Ac-225/Bi-213 generators. DOE&#39;s public record
+shows why the isotope sits in tier 2 rather than the atlas&#39; bulk-material tiers:
+production is measured in millicuries per batch or per month, supply expansion is
+driven by regulatory and hot-cell capability, and demand is tied to a fast-growing
+pipeline of targeted alpha therapy clinical trials rather than tonnage.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"targeted_alpha_radiopharmaceuticals","share_pct":100.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (2)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Ac-225","half_life_seconds":857088.0,"half_life_display":"9.9 days","production_mode":"decay_product","precursor":"Thorium-229 decay at Oak Ridge National Laboratory. DOE/NIDC's product sheet\ndescribes the production route as thorium-229 decay followed by ion exchange\nchromatography.","delivery_form":"Solid actinium nitrate in a glass screw-top V-vial, >99% Ac-225 by activity,\nsold in millicuries. DOE/NIDC lists the material as routinely available\nweekly, but recommends ordering far in advance because supply is limited.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[{"country":"US","share_pct":100.0,"confidence":"medium","notes":"The primary-source set used here documents the DOE isotope-program route\nonly: thorium-229 \"cows\" at Oak Ridge National Laboratory with routine\nNIDC distribution. Public sources reviewed here do not provide a global\nmarket-share table for all Ac-225 suppliers.\n"},{"country":"US","share_pct":100.0,"confidence":"medium","notes":"The accelerator supply chain described in DOE/NIDC primary sources is\nentirely US-based: irradiation at Brookhaven and Los Alamos, with\npurification and generator assembly at Oak Ridge and Brookhaven. The\nreviewed sources do not quantify non-US accelerator production shares.\n"}],"producers_completeness":"partial","notes":"DOE's 2018 availability notice states that the thorium-229 decay route is\nlimited by the capacity of the Oak Ridge thorium-229 inventory and is suitable\nfor basic science and pre-clinical research rather than the larger clinical\nvolumes sought by later-stage radiopharmaceutical programs."},{"isotope":"Ac-225","half_life_seconds":857088.0,"half_life_display":"9.9 days","production_mode":"accelerator_generated","precursor":"Proton bombardment of thorium-232 or natural thorium targets at Brookhaven\nand Los Alamos National Laboratories, with subsequent separation and\npurification at Oak Ridge National Laboratory.","delivery_form":"DOE/NIDC distributes accelerator-produced actinium-225 nitrate for\nradiopharmaceutical development and also assembles Ac-225/Bi-213 generators\nat Oak Ridge and Brookhaven. The generator is ordered in millicuries and\nhoused in a 1.25 inch lead pig with inlet/outlet holes.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[{"country":"US","share_pct":100.0,"confidence":"medium","notes":"The primary-source set used here documents the DOE isotope-program route\nonly: thorium-229 \"cows\" at Oak Ridge National Laboratory with routine\nNIDC distribution. Public sources reviewed here do not provide a global\nmarket-share table for all Ac-225 suppliers.\n"},{"country":"US","share_pct":100.0,"confidence":"medium","notes":"The accelerator supply chain described in DOE/NIDC primary sources is\nentirely US-based: irradiation at Brookhaven and Los Alamos, with\npurification and generator assembly at Oak Ridge and Brookhaven. The\nreviewed sources do not quantify non-US accelerator production shares.\n"}],"producers_completeness":"partial","notes":"DOE's 2018 and 2019 availability notices describe the accelerator route as\ncapable of producing hundreds of millicuries per month, with campaigns roughly\nevery six weeks to every other month, and scale-up toward multi-curie monthly\noutput to support clinical trials."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Ac-225">
+    <div class="isotope-card-header">
+      <h3>Ac-225</h3>
+      <span class="badge badge-mode-decay_product">decay_product</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 9.9 days</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> Thorium-229 decay at Oak Ridge National Laboratory. DOE/NIDC&#39;s product sheet
+describes the production route as thorium-229 decay followed by ion exchange
+chromatography.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> Solid actinium nitrate in a glass screw-top V-vial, &gt;99% Ac-225 by activity,
+sold in millicuries. DOE/NIDC lists the material as routinely available
+weekly, but recommends ordering far in advance because supply is limited.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    <div class="producers-section">
+  <h4>Producers <span class="badge badge-no-commercial" style="font-size:0.7rem">Partial</span></h4>
+  <div class="producers-chart" data-isotope="Ac-225">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  <div class="isotope-card" data-isotope="Ac-225">
+    <div class="isotope-card-header">
+      <h3>Ac-225</h3>
+      <span class="badge badge-mode-accelerator_generated">accelerator_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 9.9 days</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> Proton bombardment of thorium-232 or natural thorium targets at Brookhaven
+and Los Alamos National Laboratories, with subsequent separation and
+purification at Oak Ridge National Laboratory.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> DOE/NIDC distributes accelerator-produced actinium-225 nitrate for
+radiopharmaceutical development and also assembles Ac-225/Bi-213 generators
+at Oak Ridge and Brookhaven. The generator is ordered in millicuries and
+housed in a 1.25 inch lead pig with inlet/outlet holes.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    <div class="producers-section">
+  <h4>Producers <span class="badge badge-no-commercial" style="font-size:0.7rem">Partial</span></h4>
+  <div class="producers-chart" data-isotope="Ac-225">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (9)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="doe_ac225_dmf_2020">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/531" target="_blank" rel="noopener">Actinium-225 DMF Accepted by the FDA</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2020 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="doe_ac225_generator_spotlight_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/1461" target="_blank" rel="noopener">February Isotope Spotlights</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="doe_ac225_nrc_roundtable_2023">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://isotopes.gov/NRC-roundtable" target="_blank" rel="noopener">DOE Isotope Program virtual roundtable with NRC on accelerator-produced actinium-225</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="doe_ac225_routine_2018">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/71" target="_blank" rel="noopener">Isotope Routinely Available: Actinium-225</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2018 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://faolex.fao.org/docs/pdf/eur231131.pdf" target="_blank" rel="noopener">Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="iaea_ac225_tecdoc_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www-pub.iaea.org/MTCD/publications/PDF/TE-2057web.pdf" target="_blank" rel="noopener">Production and Quality Control of Actinium-225 Radiopharmaceuticals</a>
+    </div>
+    <div class='source-card-meta'>International Atomic Energy Agency &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_ac225_decay_product">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://isotopes.gov/sites/default/files/2025-07/Actinium-225%20%28Thorium-229%20Decay%20Product%29%20Product%20Information.pdf" target="_blank" rel="noopener">Actinium-225 (Thorium-229 Decay Product) Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_ac225_info">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/information/actinium-225" target="_blank" rel="noopener">Multiple Production Methods Underway to Provide Actinium-225</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf" target="_blank" rel="noopener">Final 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey / Federal Register &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

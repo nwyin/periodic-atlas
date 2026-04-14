@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>W — tungsten | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":21.69,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"Rotterdam"},{"year":2021,"value":28.37,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"Rotterdam"},{"year":2022,"value":34.68,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"Rotterdam"},{"year":2023,"value":32.53,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"Rotterdam"},{"year":2024,"value":31.53,"unit":"usd_per_kg","form":"oxide","basis":"other","region":"Rotterdam"}],"events":[{"date":"2024","event":"Non-Chinese tungsten concentrate production increased in 2024 as two new Australian operations came online and the Sangdong project in the Republic of Korea approached production","impact":"This was one of the few concrete signs of diversification away from China in the\ncurrent cycle. Even so, USGS still characterized supply as dominated by Chinese\nproduction and exports, implying that the diversification impact remained modest in\n2024 relative to China's scale.\n"},{"date":"2024-12-11","event":"USTR finalized a 25% Section 301 tariff increase on certain tungsten products from China, effective January 1, 2025","impact":"The tariff action covered certain tungsten products after a 2024 review cycle and was\naimed at strategic supply-chain resilience. It raised the U.S. landed cost of Chinese\ntungsten carbides, concentrates, oxides, powders, and tungstates and reinforced policy\npressure to diversify supply away from China.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">W</span>
+  <span class="el-name">tungsten</span>
+</div>
+<div class="el-meta">
+  Atomic number 74 &bull; transition_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Tungsten is a strategically important but comparatively small-volume refractory-metal
+market whose commercial center of gravity is cemented carbides. USGS reports that about
+60% of U.S. tungsten consumption goes into cemented carbide parts for cutting and
+wear-resistant uses in construction, metalworking, mining, and oil and gas drilling.
+Downstream trade forms are specialized: processors work from concentrate, APT, oxide, and
+scrap to make tungsten metal powder, tungsten carbide powder, and tungsten chemicals rather
+than shipping large tonnages of commodity-grade refined metal.
+
+The supply picture is dominated by China. USGS estimates 2024 world mine production at
+81,000 metric tons W content, of which China supplied about 67,000 metric tons, or almost
+83%. The United States had no mine production and has not mined tungsten commercially since
+2015, leaving U.S. net import reliance above 50% of apparent consumption. Non-Chinese
+output improved in 2024 thanks partly to new Australian operations, and a Korean project
+was nearing production, but these moves only marginally changed a market still anchored by
+Chinese production, consumption, and exports. Scrap remains an important secondary feed.
+
+Reserves are not geologically scarce in an absolute sense: USGS reports world reserves of
+more than 4.6 million metric tons W content and notes that resources are widespread across
+every continent except Antarctica. The issue is commercial concentration and processing
+leverage, not elemental rarity. That is consistent with tungsten&#39;s policy status: it is on
+both the U.S. critical-minerals list and the EU&#39;s strategic and critical raw-materials
+lists, and late-2024 U.S. tariff action on Chinese tungsten products shows that trade
+policy is now part of the supply-chain landscape.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"CN","share_pct":82.72,"quantity":67000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"VN","share_pct":4.2,"quantity":3400.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RU","share_pct":2.47,"quantity":2000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"KP","share_pct":2.1,"quantity":1700.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BO","share_pct":1.98,"quantity":1600.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"RW","share_pct":1.48,"quantity":1200.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AU","share_pct":1.23,"quantity":1000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AT","share_pct":0.99,"quantity":800.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ES","share_pct":0.86,"quantity":700.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZZ","share_pct":0.64,"quantity":520.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"low"},{"country":"PT","share_pct":0.62,"quantity":500.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CD","share_pct":0.49,"quantity":400.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"medium"},{"country":"MN","share_pct":0.37,"quantity":300.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"medium"},{"country":"BR","share_pct":0.35,"quantity":280.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"medium"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":81000.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":4600000.0,"resources":null,"unit":"tonnes"},"reserves_by_country":[{"country":"CN","share_pct":52.17,"quantity":2400000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ZZ","share_pct":20.65,"quantity":950000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AU","share_pct":12.39,"quantity":570000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"RU","share_pct":8.7,"quantity":400000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"VN","share_pct":3.04,"quantity":140000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ES","share_pct":1.43,"quantity":66000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"KP","share_pct":0.63,"quantity":29000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"AT","share_pct":0.22,"quantity":10000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"PT","share_pct":0.07,"quantity":3400.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"cemented_carbides","share_pct":60.0,"confidence":"high"},{"application":"other_alloys_electrical_and_chemical_applications","share_pct":40.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (7)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="bgs_wmp_2019_2023_tungsten">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://nora.nerc.ac.uk/id/eprint/539285/1/WMP_2019-2023_COMPLETE.pdf" target="_blank" rel="noopener">World Mineral Production 2019–2023 (tungsten tables)</a>
+    </div>
+    <div class='source-card-meta'>British Geological Survey &bull; 2025 &bull; retrieved 2026-04-14</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 3</span></div>
+  </div>
+  <div class="source-card" data-source-id="eu_crma_annex_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 — Critical Raw Materials Act, Annex I and Annex II</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.federalregister.gov/documents/2022/02/24/2022-04027/2022-final-list-of-critical-minerals" target="_blank" rel="noopener">2022 Final List of Critical Minerals, Federal Register Vol. 87 No. 37 (February 24, 2022)</a>
+    </div>
+    <div class='source-card-meta'>US Department of the Interior / US Geological Survey &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_tungsten">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-tungsten.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Tungsten</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 20</span><span class="ref-chip">reserves 1</span><span class="ref-chip">end_uses 2</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 4</span><span class="ref-chip">substitutes 6</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_myb_congo_kinshasa_2022_tungsten">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/myb/vol3/2022/myb3-2022-congo-kinshasa.pdf" target="_blank" rel="noopener">USGS Minerals Yearbook — Congo (Kinshasa) 2022</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2024 &bull; retrieved 2026-04-14</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="usgs_myb_mongolia_2022_tungsten">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/myb/vol3/2022/myb3-2022-mongolia.pdf" target="_blank" rel="noopener">USGS Minerals Yearbook — Mongolia 2022</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2024 &bull; retrieved 2026-04-14</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="ustr_section_301_tungsten_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://ustr.gov/about-us/policy-offices/press-office/press-releases/2024/december/ustr-increases-tariffs-under-section-301-tungsten-products-wafers-and-polysilicon-concluding" target="_blank" rel="noopener">USTR Increases Tariffs Under Section 301 on Tungsten Products, Wafers, and Polysilicon, Concluding the Statutory Four-Year Review</a>
+    </div>
+    <div class='source-card-meta'>Office of the United States Trade Representative &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

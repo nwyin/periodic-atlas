@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Ru — ruthenium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":271.83,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2021,"value":576.12,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2022,"value":577.02,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2023,"value":466.49,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"},{"year":2024,"value":440.0,"unit":"usd_per_troy_oz","form":"metal","basis":"spot","region":"nan"}],"events":[{"date":"2024-01","event":"South Africa PGM output declines owing to lower prices, deep-level mining costs, labor disputes, and electricity disruptions","impact":"World Pt output fell from 179,000 kg (2023) to 170,000 kg (2024e, −5%); world Pd from\n208,000 to 190,000 kg (−9%). As SA produces ~75% of world Ru, this supply contraction\ntightened Ru availability. Ruthenium price declined only ~6% to $440/troy oz, suggesting\nthe market remained broadly balanced despite lower South African output.\n"},{"date":"2024-01","event":"Russia PGM production decreases due to natural disasters, ore grade decline, Ukraine conflict, and metallurgical plant outages","impact":"Russian Pd fell from 87,000 to 75,000 kg (−14%), Pt from 21,000 to 18,000 kg (−14%).\nRussia produces ~12% of world Ru (primarily from Norilsk Nickel's Talnakh complex).\nDisruptions attributed to natural disasters, declining ore grades, Russia-Ukraine conflict\nlogistics impacts, and planned outages at a major metallurgical plant.\n"},{"date":"2024-01","event":"Ruthenium price declines 6% in 2024; modest versus palladium (−27%) and rhodium (−31%)","impact":"Annual average Ru price declined from $466.49/troy oz (2023) to $440/troy oz (2024e, −6%).\nUSGS attributes PGM price decreases to decreased demand, investor uncertainty, and oversupply.\nRu's modest decline relative to autocatalyst-dominated Pd and Rh reflects its more stable\nindustrial demand base in electrochemical anodes and thick-film electronics.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Ru</span>
+  <span class="el-name">ruthenium</span>
+</div>
+<div class="el-meta">
+  Atomic number 44 &bull; transition_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Ruthenium is the lightest platinum-group metal (Z=44) and is produced almost entirely as
+a byproduct of platinum mining from the Bushveld Igneous Complex in South Africa (~75% of
+world supply) and nickel-PGM mining at Russia&#39;s Norilsk complex (~12%). World primary Ru
+production is estimated at approximately 28–33 tonnes per year; USGS MCS 2025 does not
+separately report per-element world Ru tonnage, tabulating only palladium (190,000 kg, 2024e)
+and platinum (170,000 kg, 2024e) by country. In 2024, both South Africa and Russia experienced
+PGM production declines driven by falling prices, deep-level mining costs, electricity and
+labor disruptions, and geopolitical factors.
+
+Unlike platinum (autocatalysts, jewelry) or palladium (gasoline autocatalysts), ruthenium&#39;s
+demand is dominated by industrial electrochemistry and electronics. The largest end use is
+ruthenium oxide (RuO₂) coating on dimensionally stable anodes (DSA) for the global chlor-alkali
+industry&#39;s electrolytic production of chlorine and caustic soda. Thick-film resistor pastes
+containing RuO₂ are foundational to surface-mount electronics manufacturing; ruthenium-based
+multilayer ceramic capacitors and chip resistors appear in virtually every electronic assembly.
+A sub-nanometer Ru interlayer in perpendicular magnetic recording hard disk drives enables the
+antiferromagnetic exchange coupling required for high-density storage — no commercially viable
+substitute for this application has been identified. Ammonia synthesis catalysts and PEM
+electrolyzer anodes for green hydrogen represent growing segments.
+
+The annual average ruthenium price was $440 per troy ounce in 2024 (estimated), down 6% from
+$466.49 in 2023 and well below the 2021–2022 peak of ~$577/troy oz. The price approximately
+doubled between 2020 ($272/troy oz) and 2021–2022, driven by electrochemical and electronics
+demand, before declining modestly. This price trajectory is markedly more stable than palladium
+(−27% in 2024) and rhodium (−31%), reflecting Ru&#39;s insulation from autocatalyst demand cycles.
+Ruthenium is designated as critical under the US 2022 Critical Minerals List (&quot;platinum-group
+metals&quot;) and the EU Critical Raw Materials Act 2024, with South African supply concentration,
+non-substitutability in DSA and hard disk applications, and Russian supply exposure as primary
+risk drivers.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"ZA","share_pct":75.0,"quantity":null,"unit":null,"form":null,"confidence":"medium"},{"country":"RU","share_pct":12.0,"quantity":null,"unit":null,"form":null,"confidence":"medium"},{"country":"ZW","share_pct":7.0,"quantity":null,"unit":null,"form":null,"confidence":"medium"},{"country":"CA","share_pct":4.0,"quantity":null,"unit":null,"form":null,"confidence":"medium"},{"country":"ZZ","share_pct":2.0,"quantity":null,"unit":null,"form":null,"confidence":"low"}],"refining":[],"completeness":{"mining":"top_producers_only","refining":"partial"},"world_mine":{"value":30000.0,"unit":"kg_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":5700.0,"resources":null,"unit":"tonnes"},"reserves_by_country":[{"country":"ZA","share_pct":77.5,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"RU","share_pct":19.7,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"ZW","share_pct":1.5,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"US","share_pct":1.0,"quantity":null,"quantity_unit":"nan","confidence":"high"},{"country":"CA","share_pct":0.4,"quantity":null,"quantity_unit":"nan","confidence":"high"}],"end_uses":{"completeness":"complete","uses":[{"application":"electrochemical_anodes","share_pct":30.0,"confidence":"medium"},{"application":"electronics_thick_film_resistors","share_pct":25.0,"confidence":"medium"},{"application":"chemical_catalysts","share_pct":20.0,"confidence":"medium"},{"application":"hard_disk_interlayer","share_pct":15.0,"confidence":"medium"},{"application":"other_industrial","share_pct":10.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (3)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/legal-content/EN/TXT/?uri=CELEX%3A32024R1252" target="_blank" rel="noopener">Regulation (EU) 2024/1252 — Critical Raw Materials Act</a>
+    </div>
+    <div class='source-card-meta'>European Parliament and Council of the European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_critical_minerals_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2022-05-20/pdf/2022-10965.pdf" target="_blank" rel="noopener">2022 Final List of Critical Minerals, Federal Register Vol. 87, No. 97 (May 20, 2022)</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey / US Department of the Interior &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_pgm">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-platinum-group.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Platinum-Group Metals</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 10</span><span class="ref-chip">reserves 1</span><span class="ref-chip">end_uses 5</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 2</span><span class="ref-chip">substitutes 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

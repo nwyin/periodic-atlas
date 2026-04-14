@@ -28,6 +28,8 @@ VIEWER_DIR = ROOT / "viewer"
 CHARTS_PRICES_JS = ROOT / "viewer" / "assets" / "charts_prices.js"
 CHARTS_PRODUCTION_JS = ROOT / "viewer" / "assets" / "charts_production.js"
 CHARTS_ISOTOPES_JS = ROOT / "viewer" / "assets" / "charts_isotopes.js"
+CHARTS_MAP_JS = ROOT / "viewer" / "assets" / "charts_map.js"
+WORLD_COUNTRIES_GEOJSON = ROOT / "viewer" / "assets" / "world_countries_50m.geojson"
 
 # 1 lb = 0.4536 kg; usd_per_lb → usd_per_kg by dividing by this factor.
 # Preferred normalisation unit for price charts: usd_per_kg.
@@ -278,6 +280,10 @@ CSS = """\
   --tier-primary:        #0369a1;
   --tier-secondary:      #6b7280;
   --tier-tertiary:       #92400e;
+  --map-land:            #dbe4ee;
+  --map-land-stroke:     #94a3b8;
+  --map-land-hover:      #bfdbfe;
+  --map-land-hover-stroke: #2563eb;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -288,6 +294,10 @@ CSS = """\
     --text:    #e8eaf0;
     --muted:   #9ca3af;
     --accent:  #60a5fa;
+    --map-land:            #374151;
+    --map-land-stroke:     #4b5563;
+    --map-land-hover:      #1d4ed8;
+    --map-land-hover-stroke: #93c5fd;
   }
 }
 
@@ -490,6 +500,284 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   font-style: italic;
 }
 
+/* ── index map ── */
+.map-panel {
+  margin: 0 0 1.75rem;
+}
+
+.map-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+
+.map-panel-header h2 {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.map-panel-copy {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+  max-width: 70ch;
+}
+
+.country-map-shell {
+  position: relative;
+  background: linear-gradient(180deg, var(--surface), var(--bg));
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.country-map-root {
+  min-height: 420px;
+  padding: 0.5rem;
+}
+
+.country-map-root svg {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.country-map-fallback {
+  padding: 2rem 1.25rem;
+  color: var(--muted);
+  font-size: 0.9rem;
+}
+
+.country-shape {
+  fill: var(--map-land);
+  stroke: var(--map-land-stroke);
+  stroke-width: 0.7;
+  transition: fill 120ms ease, stroke 120ms ease, stroke-width 120ms ease;
+}
+
+.country-shape:hover,
+.country-shape.is-hovered,
+.country-shape.is-pinned {
+  fill: var(--map-land-hover);
+  stroke: var(--map-land-hover-stroke);
+  stroke-width: 1.2;
+}
+
+.country-map-tooltip {
+  position: fixed;
+  z-index: 20;
+  width: min(360px, calc(100vw - 2rem));
+  padding: 0.85rem 0.95rem;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  box-shadow: 0 12px 35px rgba(15, 23, 42, 0.16);
+  pointer-events: none;
+}
+
+.country-map-tooltip[hidden] {
+  display: none;
+}
+
+.country-map-tooltip-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+.country-map-tooltip-subtitle {
+  color: var(--muted);
+  font-size: 0.74rem;
+  margin-bottom: 0.5rem;
+}
+
+.country-map-tooltip-table-wrap {
+  max-height: 320px;
+  overflow-y: auto;
+}
+
+.country-map-tooltip-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.78rem;
+}
+
+.country-map-tooltip-table th {
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 0.3rem;
+  white-space: nowrap;
+}
+
+.country-map-tooltip-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.28rem 0;
+  vertical-align: top;
+}
+
+.country-map-tooltip-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.country-map-tooltip-col-el {
+  font-weight: 700;
+  padding-right: 0.55rem;
+  white-space: nowrap;
+}
+
+.country-map-tooltip-col-stage {
+  color: var(--muted);
+  padding-right: 0.55rem;
+  white-space: nowrap;
+}
+
+.country-map-tooltip-col-global {
+  text-align: right;
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.country-map-drawer-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.28);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 140ms ease;
+  z-index: 25;
+}
+
+.country-map-drawer-backdrop.is-open {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.country-map-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: min(460px, calc(100vw - 1rem));
+  height: 100vh;
+  background: var(--bg);
+  border-left: 1px solid var(--border);
+  box-shadow: -16px 0 40px rgba(15, 23, 42, 0.16);
+  transform: translateX(100%);
+  transition: transform 180ms ease;
+  z-index: 30;
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+
+.country-map-drawer.is-open {
+  transform: translateX(0);
+}
+
+.country-map-drawer-header {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: flex-start;
+  padding: 1rem 1rem 0.75rem;
+  border-bottom: 1px solid var(--border);
+}
+
+.country-map-drawer-title {
+  margin: 0;
+  font-size: 1.05rem;
+}
+
+.country-map-drawer-subtitle {
+  margin: 0.2rem 0 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.country-map-drawer-close {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: 999px;
+  width: 2rem;
+  height: 2rem;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.country-map-drawer-body {
+  padding: 0.9rem 1rem 1rem;
+  overflow-y: auto;
+}
+
+.country-map-drawer-summary {
+  color: var(--muted);
+  font-size: 0.82rem;
+  margin: 0 0 0.75rem;
+}
+
+.country-map-drawer-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.82rem;
+}
+
+.country-map-drawer-table th {
+  position: sticky;
+  top: 0;
+  background: var(--bg);
+  text-align: left;
+  color: var(--muted);
+  font-weight: 600;
+  border-bottom: 1px solid var(--border);
+  padding: 0 0 0.45rem;
+}
+
+.country-map-drawer-table td {
+  border-bottom: 1px solid var(--border);
+  padding: 0.45rem 0;
+  vertical-align: top;
+}
+
+.country-map-drawer-table td a {
+  font-weight: 700;
+}
+
+.country-map-drawer-stream {
+  display: block;
+  color: var(--muted);
+  font-size: 0.75rem;
+  margin-top: 0.1rem;
+}
+
+.country-map-drawer-global {
+  color: var(--accent);
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.country-map-drawer-empty {
+  color: var(--muted);
+  font-size: 0.84rem;
+}
+
+.country-map-empty {
+  color: var(--muted);
+  font-size: 0.82rem;
+}
+
+@media (max-width: 860px) {
+  .country-map-drawer {
+    width: 100vw;
+    max-width: 100vw;
+  }
+}
+
 /* ── footer ── */
 footer {
   border-top: 1px solid var(--border);
@@ -585,6 +873,73 @@ def _build_sources_data(con: "duckdb.DuckDBPyConnection", symbol: str) -> list[d
     return result
 
 
+def _build_country_map_data(con: "duckdb.DuckDBPyConnection") -> dict[str, object]:  # type: ignore[name-defined]
+    """Return country-level mining/refining rows for the index hover map."""
+    rows = con.execute(
+        """
+        SELECT
+            s.country,
+            s.symbol,
+            s.share_type,
+            s.stream,
+            s.quantity_value,
+            s.quantity_unit,
+            CASE
+                WHEN s.share_pct IS NOT NULL THEN s.share_pct
+                WHEN s.quantity_value IS NOT NULL AND p.value IS NOT NULL AND p.value <> 0
+                    THEN 100.0 * s.quantity_value / p.value
+                ELSE NULL
+            END AS global_pct
+        FROM atlas_shares s
+        JOIN atlas_production p
+          ON p.symbol = s.symbol
+         AND p.snapshot_year = s.snapshot_year
+         AND p.stream IS NOT DISTINCT FROM s.stream
+         AND (
+            (s.share_type = 'mining' AND p.stage = 'mine')
+            OR
+            (s.share_type = 'refining' AND p.stage = 'refined')
+         )
+        WHERE s.share_type IN ('mining', 'refining')
+          AND s.country IS NOT NULL
+          AND s.country NOT IN ('ZZ', 'XX')
+          AND s.quantity_value IS NOT NULL
+          AND p.value IS NOT NULL
+        """
+    ).fetchall()
+
+    countries: dict[str, list[dict[str, object]]] = {}
+    for country, symbol, share_type, stream, quantity_value, quantity_unit, global_pct in rows:
+        if country is None or symbol is None or quantity_value is None or quantity_unit is None or global_pct is None:
+            continue
+        country_code = str(country)
+        entry = {
+            "symbol": str(symbol),
+            "stage": "mining" if share_type == "mining" else "refining",
+            "stream": str(stream) if stream else None,
+            "quantity_value": float(quantity_value),
+            "quantity_unit": str(quantity_unit),
+            "global_pct": round(float(global_pct), 3),
+        }
+        countries.setdefault(country_code, []).append(entry)
+
+    for entries in countries.values():
+        entries.sort(
+            key=lambda row: (
+                -float(row["global_pct"]),
+                str(row["symbol"]),
+                str(row["stage"]),
+                str(row["stream"] or ""),
+            )
+        )
+
+    return {
+        "countries": countries,
+        "country_count": len(countries),
+        "row_count": sum(len(entries) for entries in countries.values()),
+    }
+
+
 # ─────────────────────────────────────────────────────────────────────────────
 # Page builders
 # ─────────────────────────────────────────────────────────────────────────────
@@ -600,6 +955,7 @@ def _page_shell(title: str, body: str, footer: str) -> str:
   <title>{_html_escape(title)}</title>
   <link rel="stylesheet" href="assets/atlas.css">
   <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="assets/charts_map.js" defer></script>
 </head>
 <body>
 <div class="container">
@@ -641,11 +997,12 @@ def _element_page_shell(title: str, body: str, footer: str) -> str:
 </html>"""
 
 
-def _index_body(elements: list[dict], stats: dict, snapshot_year: int) -> str:
+def _index_body(elements: list[dict], stats: dict, snapshot_year: int, country_map_data: dict[str, object]) -> str:
     total = stats["total_elements"]
     commercial = stats["commercial_production"]
     us_crit = stats["us_critical_list_as_of_2025"]
     eu_crm = stats["eu_crm_list_as_of_2024"]
+    country_map_json = json.dumps(country_map_data, ensure_ascii=False, separators=(",", ":"))
 
     stat_cards = f"""\
   <div class="stat-card"><div class="stat-value">{total}</div><div class="stat-label">elements</div></div>
@@ -681,6 +1038,30 @@ def _index_body(elements: list[dict], stats: dict, snapshot_year: int) -> str:
   <h1>Periodic Element Supply Chain Atlas &mdash; {snapshot_year}</h1>
   <p class="subtitle">A structured, source-cited snapshot of critical element supply chains.</p>
 </header>
+<section class="map-panel">
+  <div class="map-panel-header">
+    <h2>Country Hover Map</h2>
+    <p class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output.</p>
+  </div>
+  <div class="country-map-shell">
+    <div id="country-map-root" class="country-map-root" data-geojson-src="assets/world_countries_50m.geojson">
+      <div class="country-map-fallback">Loading country map&hellip;</div>
+    </div>
+  </div>
+  <div id="country-map-tooltip" class="country-map-tooltip" hidden></div>
+  <div id="country-map-drawer-backdrop" class="country-map-drawer-backdrop" hidden></div>
+  <aside id="country-map-drawer" class="country-map-drawer" hidden aria-hidden="true">
+    <div class="country-map-drawer-header">
+      <div>
+        <h3 id="country-map-drawer-title" class="country-map-drawer-title">Country detail</h3>
+        <p id="country-map-drawer-subtitle" class="country-map-drawer-subtitle">Click a country to pin a detailed view.</p>
+      </div>
+      <button id="country-map-drawer-close" class="country-map-drawer-close" type="button" aria-label="Close country detail">&times;</button>
+    </div>
+    <div id="country-map-drawer-body" class="country-map-drawer-body"></div>
+  </aside>
+  <script id="atlas-country-map-data" type="application/json">{country_map_json}</script>
+</section>
 <div class="stats-row">
 {stat_cards}
 </div>
@@ -1244,6 +1625,8 @@ def generate_viewer(
         for sym in [el["symbol"] for el in elements_list]:
             sources_by_symbol[sym] = _build_sources_data(con, sym)
 
+        country_map_data = _build_country_map_data(con)
+
         # Prepare reserves dict: symbol -> list of reserve rows
         reserves_df = con.execute("SELECT symbol, kind, value, unit FROM atlas_reserves ORDER BY symbol, kind").df()
         reserves_by_symbol: dict[str, list[dict]] = {}
@@ -1364,13 +1747,19 @@ def generate_viewer(
     if CHARTS_ISOTOPES_JS.exists():
         (assets_dir / "charts_isotopes.js").write_text(CHARTS_ISOTOPES_JS.read_text(encoding="utf-8"), encoding="utf-8")
 
+    if CHARTS_MAP_JS.exists():
+        (assets_dir / "charts_map.js").write_text(CHARTS_MAP_JS.read_text(encoding="utf-8"), encoding="utf-8")
+
+    if WORLD_COUNTRIES_GEOJSON.exists():
+        (assets_dir / "world_countries_50m.geojson").write_text(WORLD_COUNTRIES_GEOJSON.read_text(encoding="utf-8"), encoding="utf-8")
+
     # Footer shared across pages
     repo_url = "https://github.com/anomalyco/opencode"
     footer_index = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
     footer_element = f'Built {ts} &bull; Snapshot year {snapshot_year} &bull; <a href="{repo_url}" target="_blank" rel="noopener">repo</a>'
 
     # index.html
-    index_body = _index_body(elements_list, stats, snapshot_year)
+    index_body = _index_body(elements_list, stats, snapshot_year, country_map_data)
     index_html = _page_shell(f"Periodic Element Supply Chain Atlas — {snapshot_year}", index_body, footer_index)
     (viewer_dir / "index.html").write_text(index_html, encoding="utf-8")
 
@@ -1408,6 +1797,10 @@ def generate_viewer(
         print("viewer/assets/charts_production.js written")
     if CHARTS_ISOTOPES_JS.exists():
         print("viewer/assets/charts_isotopes.js written")
+    if CHARTS_MAP_JS.exists():
+        print("viewer/assets/charts_map.js written")
+    if WORLD_COUNTRIES_GEOJSON.exists():
+        print("viewer/assets/world_countries_50m.geojson written")
 
 
 def main() -> None:

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Np — neptunium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2010","event":"DOE and NASA set the restart plan for domestic Pu-238 production around DOE's Np-237 inventory.","impact":"The plan formalized Np-237's role as the feed isotope for a rebuilt U.S.\nPu-238 supply chain serving NASA radioisotope power systems after Russian\ndeliveries became uncertain in 2009.\n"},{"date":"2025-05-21","event":"DOE Isotope Program announced first-ever market availability of Np-236.","impact":"The announcement added a second commercial neptunium isotope stream, expanding\nthe element's market beyond Np-237 target-feed material into forensics,\nsafeguards, nonproliferation, environmental, and research uses.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Np</span>
+  <span class="el-name">neptunium</span>
+</div>
+<div class="el-meta">
+  Atomic number 93 &bull; actinide &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Neptunium has no ordinary bulk commodity market in the atlas sense. The commercial
+reality in 2025 is a tightly controlled DOE isotope catalog centered on Np-237,
+sold as oxide powder in gram quantities, plus the first market introduction of
+Np-236 in microgram quantities. What customers buy is isotope-specific nuclear
+material, not neptunium metal for mainstream alloying or chemical demand.
+
+Np-237 matters because it is the front end of DOE&#39;s domestic Pu-238 production
+chain. DOE&#39;s restart plan and later production updates describe neptunium oxide
+mixed into target pellets, irradiated in HFIR and ATR, and chemically processed
+into Pu-238 for NASA radioisotope power systems. In parallel, DOE brought Np-236
+to market in 2025 after a decade of R&amp;D, positioning it as a specialty isotope for
+nuclear forensics, safeguards, nonproliferation, environmental work, and research.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"isotope_feedstock_and_nuclear_research","share_pct":100.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (2)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Np-236","half_life_seconds":48283128000000.0,"half_life_display":"1,530,000 years","production_mode":"accelerator_generated","precursor":"DOE Isotope Program produced Np-236 by irradiating a depleted uranium target\nwith protons at Los Alamos National Laboratory, chemically processing the target\nat Idaho National Laboratory, and providing further enrichment capability at\nPacific Northwest National Laboratory.","delivery_form":"NIDC lists Np-236 in microgram quantities and the 2025 launch notice offers\nquotes for 8%-enriched material, with higher enrichments available on request.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[],"producers_completeness":"partial","notes":"DOE announced Np-236 availability on May 21, 2025 as the first time the isotope\nhad been brought to market. DOE identified nuclear forensics, nuclear safeguards,\nnonproliferation, environmental work, and research as the demand drivers."},{"isotope":"Np-237","half_life_seconds":67659494400000.0,"half_life_display":"2,144,000 years","production_mode":"reactor_generated","precursor":"DOE's current downstream industrial use for Np-237 is as neptunium oxide feed\nthat is fabricated into irradiation targets for plutonium-238 production. DOE's\n2010 restart plan states that Np-237 stored at Idaho National Laboratory would\nbe fabricated into targets, irradiated in HFIR and ATR, and chemically processed\nto recover Pu-238 for radioisotope power systems.","delivery_form":"NIDC lists Np-237 as oxide powder with grams as the unit of sale, stock\navailability, a glass vial as the primary container, and DOE/NRC Form 741\ntransfer documentation because it is classed as nuclear material.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[],"producers_completeness":"partial","notes":"The product sheet describes Np-237 as a reactor product processed through\ntransuranic processing and sold as oxide powder. DOE's Pu-238 supply-chain\ndocuments show the same isotope serving as the front-end target material for\ndomestic Pu-238 production used in NASA radioisotope power systems."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Np-236">
+    <div class="isotope-card-header">
+      <h3>Np-236</h3>
+      <span class="badge badge-mode-accelerator_generated">accelerator_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 1,530,000 years</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> DOE Isotope Program produced Np-236 by irradiating a depleted uranium target
+with protons at Los Alamos National Laboratory, chemically processing the target
+at Idaho National Laboratory, and providing further enrichment capability at
+Pacific Northwest National Laboratory.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> NIDC lists Np-236 in microgram quantities and the 2025 launch notice offers
+quotes for 8%-enriched material, with higher enrichments available on request.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    
+  </div>
+  <div class="isotope-card" data-isotope="Np-237">
+    <div class="isotope-card-header">
+      <h3>Np-237</h3>
+      <span class="badge badge-mode-reactor_generated">reactor_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 2,144,000 years</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> DOE&#39;s current downstream industrial use for Np-237 is as neptunium oxide feed
+that is fabricated into irradiation targets for plutonium-238 production. DOE&#39;s
+2010 restart plan states that Np-237 stored at Idaho National Laboratory would
+be fabricated into targets, irradiated in HFIR and ATR, and chemically processed
+to recover Pu-238 for radioisotope power systems.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> NIDC lists Np-237 as oxide powder with grams as the unit of sale, stock
+availability, a glass vial as the primary container, and DOE/NRC Form 741
+transfer documentation because it is classed as nuclear material.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (6)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="doe_inl_target_campaign_2021">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.energy.gov/ne/articles/idaho-national-lab-starts-second-plutonium-target-campaign-nasa-space-missions" target="_blank" rel="noopener">Idaho National Lab Starts Second Plutonium Target Campaign for NASA Space Missions</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy, Office of Nuclear Energy &bull; 2021 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="doe_nidc_np236_launch_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/node/1481" target="_blank" rel="noopener">Unleashing America&#39;s Isotopes: Introducing Neptunium-236</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="doe_pu238_startup_plan_2010">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.energy.gov/ne/articles/start-plan-plutonium-238-production-radioisotope-power-system-report-congress-june-2010" target="_blank" rel="noopener">Start-up Plan for Plutonium-238 Production for Radioisotope Power Systems</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy &bull; 2010 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_neptunium_catalog_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/products/neptunium" target="_blank" rel="noopener">Neptunium</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_np237_product_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://isotopes.gov/sites/default/files/2024-11/Neptunium-237%20Product%20Information.pdf" target="_blank" rel="noopener">Neptunium-237 Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nndc_ensdf_np236_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.nndc.bnl.gov/nudat3/getdecaydataset.jsp?dsid=236np+ec+decay+%28155eP3+y%29&amp;nucleus=236U" target="_blank" rel="noopener">ENSDF decay dataset for 236Np EC decay (155E+3 y)</a>
+    </div>
+    <div class='source-card-meta'>National Nuclear Data Center, Brookhaven National Laboratory &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cr — chromium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":6.8342,"unit":"usd_per_kg","form":"metal","basis":"other","region":"US"},{"year":2020,"value":1.9621,"unit":"usd_per_kg","form":"alloy","basis":"other","region":"US"},{"year":2020,"value":158.0,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"US"},{"year":2021,"value":199.0,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"US"},{"year":2021,"value":3.3069,"unit":"usd_per_kg","form":"alloy","basis":"other","region":"US"},{"year":2021,"value":9.3254,"unit":"usd_per_kg","form":"metal","basis":"other","region":"US"},{"year":2022,"value":277.0,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"US"},{"year":2022,"value":7.0326,"unit":"usd_per_kg","form":"alloy","basis":"other","region":"US"},{"year":2022,"value":15.873,"unit":"usd_per_kg","form":"metal","basis":"other","region":"US"},{"year":2023,"value":321.0,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"US"},{"year":2023,"value":5.6217,"unit":"usd_per_kg","form":"alloy","basis":"other","region":"US"},{"year":2023,"value":11.1332,"unit":"usd_per_kg","form":"metal","basis":"other","region":"US"},{"year":2024,"value":3.9683,"unit":"usd_per_kg","form":"alloy","basis":"other","region":"US"},{"year":2024,"value":12.3457,"unit":"usd_per_kg","form":"metal","basis":"other","region":"US"},{"year":2024,"value":340.0,"unit":"usd_per_tonne","form":"ore","basis":"other","region":"US"}],"events":[{"date":"2024-01","event":"South Africa chromite production increased an estimated 7% in 2024 vs 2023, driven by higher average chromite ore prices","impact":"South Africa strengthened its position as the world's leading chromite producer\n(~44.7% of world output in 2024), contributing to a ~4% global production increase.\nStructural risks remain: deep-level mining complexity, higher labor costs, Transnet\nrail transportation reliability, and electricity grid instability (load-shedding)\ncontinue to affect supply predictability from the world's most critical chromite source.\n"},{"date":"2024-01","event":"China ferrochromium and stainless steel production affected by oversupply, weakened consumer demand, and escalating trade tensions","impact":"As the leading ferrochromium-producing, stainless-steel-producing, and chromium-consuming\ncountry, China's market conditions set the global floor for chromium demand. Ferrochromium\nprices fell from $2.55/lb in 2023 to $1.80/lb in 2024 (−29%), reflecting Chinese\novercapacity and weak end-market demand, even as upstream chromite ore prices rose.\n"},{"date":"2025-01","event":"Kazakhstan chromite reserves revised upward based on a Government report, reflected in USGS MCS 2025","impact":"Kazakhstan's published reserves increased to 320,000 kt shipping-grade chromite ore.\nKazakhstan is both a major chromite producer (6,500 kt in 2024e) and a major\nferrochromium smelter; it supplied 11% of total US chromium imports and 14% of\nUS primary metal imports over 2020–23.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Cr</span>
+  <span class="el-name">chromium</span>
+</div>
+<div class="el-meta">
+  Atomic number 24 &bull; transition_metal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span>
+</div>
+
+<div class="narrative-block">Chromium is an indispensable transition metal with no viable substitute in its two
+dominant strategic applications — stainless steel and superalloys. The global chromite
+ore market is highly geographically concentrated: South Africa alone produced 44.7% of
+the estimated 47 million metric ton world output in 2024, followed by Turkey (17%) and
+Kazakhstan (14%). The United States has had no domestic chromite mine production since
+the 1960s and depends almost entirely on imports (net import reliance: 77% in 2024),
+sourcing 96% of its chromite ore from South Africa and 11% of total chromium imports
+from Kazakhstan. World reserves exceed 1.2 billion metric tons of shipping-grade
+chromite ore, overwhelmingly concentrated in Zimbabwe (540 Mt), Kazakhstan (320 Mt),
+and South Africa (200 Mt) — together 88% of world reserves — providing centuries of
+supply at current production rates.
+
+China dominates the demand side: as the world&#39;s leading ferrochromium producer, stainless
+steel producer, and chromium consumer, China&#39;s industrial cycle sets the global price tone
+for downstream chromium products. In 2024, Chinese stainless steel was pressured by
+domestic overcapacity, weakening consumer demand, and escalating trade tensions, driving
+ferrochromium prices down 29% to $1.80/lb — even as upstream chromite ore prices rose
+6% to $340/metric ton. This inverted price move reflects margin compression at the
+ferrochromium smelting step. The value of US chromium material consumption reached $900
+million in 2024 (up 6% from 2023), suggesting stable or growing volumes despite falling
+metal prices. Recycled chromium from stainless-steel scrap provided 23% of US apparent
+consumption, partially offsetting import dependence.
+
+The supply concentration and import reliance that define the chromium supply chain have
+earned it formal critical-mineral designation in both the US (2022 Critical Minerals List)
+and the EU (EU Critical Raw Materials Act, Regulation (EU) 2024/1252). South Africa&#39;s
+Bushveld Igneous Complex is the single most important chromite source globally; operational
+risks there — deep-level mining, rail logistics, and electricity reliability — represent
+the primary near-term supply-side vulnerability. Kazakhstan&#39;s reserve upgrade in 2025
+modestly improved the long-term supply picture for the second-largest producing country.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"ZA","share_pct":44.7,"quantity":21.0,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"TR","share_pct":17.0,"quantity":8.0,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"KZ","share_pct":13.8,"quantity":6.5,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"IN","share_pct":8.7,"quantity":4.1,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"ZZ","share_pct":6.2,"quantity":2.9,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"FI","share_pct":4.0,"quantity":1.9,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"BR","share_pct":3.0,"quantity":1.4,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"},{"country":"ZW","share_pct":2.3,"quantity":1.1,"unit":"million_tonnes_per_year","form":"ore","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":47.0,"unit":"million_tonnes_per_year","form":"ore"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":1200000000.0,"resources":12000000000.0,"unit":"tonnes"},"reserves_by_country":[{"country":"ZW","share_pct":45.0,"quantity":540000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"KZ","share_pct":26.7,"quantity":320000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"ZA","share_pct":16.7,"quantity":200000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"IN","share_pct":6.6,"quantity":79000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"TR","share_pct":2.25,"quantity":27000000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"FI","share_pct":0.69,"quantity":8300000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"BR","share_pct":0.55,"quantity":6600000.0,"quantity_unit":"tonnes","confidence":"high"},{"country":"US","share_pct":0.05,"quantity":630000.0,"quantity_unit":"tonnes","confidence":"high"}],"end_uses":{"completeness":"partial","uses":[{"application":"stainless_and_heat_resisting_steel","share_pct":70.0,"confidence":"low"},{"application":"alloy_steels","share_pct":19.0,"confidence":"low"},{"application":"superalloys_and_nonferrous_alloys","share_pct":5.0,"confidence":"low"},{"application":"refractories","share_pct":3.0,"confidence":"low"},{"application":"chromium_chemicals","share_pct":3.0,"confidence":"low"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (1)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="usgs_mcs_2025_chromium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-chromium.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Chromium</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey &bull; 2025 &bull; retrieved 2026-04-11</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 16</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 5</span><span class="ref-chip">prices 15</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">substitutes 3</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

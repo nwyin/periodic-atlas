@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Li — lithium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[{"year":2020,"value":10100.0,"unit":"usd_per_tonne","form":"carbonate","basis":"us_domestic","region":"US"},{"year":2021,"value":14200.0,"unit":"usd_per_tonne","form":"carbonate","basis":"us_domestic","region":"US"},{"year":2022,"value":71100.0,"unit":"usd_per_tonne","form":"carbonate","basis":"us_domestic","region":"US"},{"year":2023,"value":41300.0,"unit":"usd_per_tonne","form":"carbonate","basis":"us_domestic","region":"US"},{"year":2024,"value":14000.0,"unit":"usd_per_tonne","form":"carbonate","basis":"us_domestic","region":"US"}],"events":[{"date":"2024","event":"Lithium prices fell sharply amid short-term oversupply and weaker-than-expected EV sales in early 2024","impact":"USGS reports China spot carbonate prices fell from about $14,500 per ton in January to $9,400 per ton in November;\nChina spot hydroxide fell from about $17,000 to $9,900 per ton; Australian spodumene concentrate fell from about\n$1,250 to $730 per ton. Low prices led to project postponements and cancellations.\n"},{"date":"2024","event":"Utah brine-sourced tailings lithium production was idled","impact":"USGS attributes the idling of this U.S. commercial production stream directly to lower lithium prices in 2024."},{"date":"2024","event":"U.S. Department of Energy announced $3 billion across 25 projects supporting lithium extraction, processing, recycling, and battery manufacturing","impact":"Signals active industrial policy to build domestic lithium supply security and downstream battery capacity."}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Li</span>
+  <span class="el-name">lithium</span>
+</div>
+<div class="el-meta">
+  Atomic number 3 &bull; alkali_metal &bull; Tier 3
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span><span class="badge badge-us-critical">US Critical</span><span class="badge badge-eu-crm">EU CRM</span><span class="badge badge-eu-strategic">EU Strategic</span>
+</div>
+
+<div class="narrative-block">Lithium in 2025 is a battery metal first and foremost: USGS assigns 87% of global end use to batteries, with the
+rest fragmented across ceramics and glass, greases, air treatment, mold fluxes, medical uses, and minor applications.
+The market is split between hard-rock mineral supply led by Australia and brine supply led by Chile and Argentina,
+while China combines meaningful mine output with dominant downstream conversion capacity that the USGS chapter
+references through its discussion of carbonate and hydroxide markets.
+
+The commercial reality in 2024 was a sharp transition from scarcity to oversupply. USGS reports world production up
+18% to about 240,000 tons of lithium content while consumption rose to about 220,000 tons. Prices fell across all major
+reference streams, forcing some project delays and idling one U.S. tailings-based operation, even as capacity expansions
+still occurred in Argentina, Chile, China, and Zimbabwe.
+
+Supply security remains a strategic policy priority on both sides of the Atlantic. The United States remained more than
+50% net import reliant, sourcing most imports from Chile and Argentina, while Washington funded new domestic extraction,
+processing, recycling, and battery projects. The EU classified lithium as both critical and, in battery-grade form,
+strategic, reflecting its central role in electrification supply chains.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[{"country":"AU","share_pct":36.7,"quantity":88000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CL","share_pct":20.4,"quantity":49000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CN","share_pct":17.1,"quantity":41000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZW","share_pct":9.2,"quantity":22000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"AR","share_pct":7.5,"quantity":18000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"BR","share_pct":4.2,"quantity":10000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"CA","share_pct":1.8,"quantity":4300.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"US","share_pct":1.5,"quantity":3500.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"medium"},{"country":"NA","share_pct":1.1,"quantity":2700.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"},{"country":"ZZ","share_pct":0.4,"quantity":1000.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"low"},{"country":"PT","share_pct":0.2,"quantity":380.0,"unit":"tonnes_per_year","form":"contained_element","confidence":"high"}],"refining":[],"completeness":{"mining":"complete","refining":"partial"},"world_mine":{"value":240000.0,"unit":"tonnes_per_year","form":"contained_element"},"world_refined":{"value":null,"unit":null,"form":null}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":30000000.0,"resources":115000000.0,"unit":"tonnes"},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"batteries","share_pct":87.0,"confidence":"high"},{"application":"ceramics_and_glass","share_pct":5.0,"confidence":"high"},{"application":"other","share_pct":3.0,"confidence":"high"},{"application":"lubricating_greases","share_pct":2.0,"confidence":"high"},{"application":"air_treatment","share_pct":1.0,"confidence":"high"},{"application":"continuous_casting_mold_flux_powders","share_pct":1.0,"confidence":"high"},{"application":"medical","share_pct":1.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (5)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="albemarle_silver_peak_10k_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://www.sec.gov/Archives/edgar/data/915913/000091591325000024/exhibit964silverpeak2024.htm" target="_blank" rel="noopener">Silver Peak Lithium Mine Technical Report Summary (SEC Exhibit 96.4, Albemarle FY2024 Form 10-K)</a>
+    </div>
+    <div class='source-card-meta'>Albemarle Corporation (via US SEC EDGAR) &bull; 2025 &bull; retrieved 2026-04-14</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://eur-lex.europa.eu/eli/reg/2024/1252/oj" target="_blank" rel="noopener">Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="nevada_independent_silver_peak_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-secondary">secondary</span>
+      <a href="https://thenevadaindependent.com/article/even-as-lithium-prices-drop-industry-expansion-in-nevada-still-underway" target="_blank" rel="noopener">Even as lithium prices drop, industry expansion in Nevada still underway (citing Nevada Division of Minerals 2024 production data for Silver Peak)</a>
+    </div>
+    <div class='source-card-meta'>The Nevada Independent &bull; 2024 &bull; retrieved 2026-04-14</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_critical_minerals_list_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf" target="_blank" rel="noopener">Final 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey / Federal Register &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="usgs_mcs_2025_lithium">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://pubs.usgs.gov/periodicals/mcs2025/mcs2025-lithium.pdf" target="_blank" rel="noopener">Mineral Commodity Summaries 2025 — Lithium</a>
+    </div>
+    <div class='source-card-meta'>U.S. Geological Survey &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">shares 10</span><span class="ref-chip">reserves 2</span><span class="ref-chip">end_uses 7</span><span class="ref-chip">prices 5</span><span class="ref-chip">events 3</span><span class="ref-chip">feedstocks 3</span><span class="ref-chip">substitutes 3</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

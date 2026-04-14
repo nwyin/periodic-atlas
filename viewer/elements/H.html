@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>H — hydrogen | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2025-01-03","event":"U.S. Treasury and IRS issued final Section 45V clean hydrogen tax credit rules","impact":"The final rules provided investment certainty and clarified eligibility for\nelectrolysis-, natural-gas-, renewable-natural-gas- and coal-mine-methane-\nbased hydrogen pathways. For the commercial market, the event mattered less\nfor incumbent grey hydrogen volumes than for whether announced low-emissions\nprojects could move toward financing and construction.\n"},{"date":"2025-04-11","event":"IMO approved the Net-Zero Framework for global shipping","impact":"The framework introduced a marine fuel standard and GHG pricing signal that\ncould create future demand for hydrogen-derived fuels such as e-methanol and\nammonia. IEA notes, however, that in the short term the same framework may\nalso favour biofuels or LNG, so the demand pull for hydrogen molecules is\nreal but still uncertain.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">H</span>
+  <span class="el-name">hydrogen</span>
+</div>
+<div class="el-meta">
+  Atomic number 1 &bull; reactive_nonmetal &bull; Tier 4
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Hydrogen is one of the world&#39;s largest industrial molecules, but most of the
+market is still invisible to end users because it is produced onsite or next
+door to refineries, ammonia plants, methanol plants and a smaller set of steel
+operations. IEA&#39;s 2025 review puts 2024 supply at almost 100 Mt, still almost
+entirely fossil-based and still overwhelmingly tied to long-established feedstock
+uses rather than to the clean-energy use cases that dominate public discussion.
+
+Commercially, hydrogen is a split market. A minority moves through merchant
+pipelines, tube trailers or as liquid cryogenic hydrogen; the majority is
+captive production embedded in refinery and chemical complexes. Natural gas is
+the dominant feedstock, coal remains important in China, and by-product hydrogen
+from petrochemical processes still supplies roughly a sixth of the market.
+Electrolysis is growing quickly from a tiny base, but low-emissions hydrogen
+remained below 1% of global output in 2024.
+
+The strategic story in 2025 is therefore not scarcity of hydrogen itself, but
+whether policy can turn a huge incumbent fossil hydrogen business into a
+low-emissions one. The U.S. 45V rules and the IMO shipping framework both
+improved the policy architecture for future demand and investment, but the IEA&#39;s
+assessment is that cost gaps, uncertain offtake and slow infrastructure buildout
+still dominate the commercial reality.
+</div>
+<script id="production-data" type="application/json">{"streams":[{"stream_id":null,"mining":[],"refining":[{"country":"ZZ","share_pct":67.0,"quantity":67.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"low"},{"country":"CN","share_pct":33.0,"quantity":33.0,"unit":"million_tonnes_per_year","form":"unspecified","confidence":"medium"}],"completeness":{"mining":"partial","refining":"top_producers_only"},"world_mine":{"value":null,"unit":null,"form":null},"world_refined":{"value":100.0,"unit":"million_tonnes_per_year","form":"unspecified"}}]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"oil_refining","share_pct":68.0,"confidence":"high"},{"application":"ammonia_and_fertilizers","share_pct":21.0,"confidence":"high"},{"application":"other_chemicals_metals_foods_and_new_uses","share_pct":11.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="chart-placeholder">Isotope markets — see B5</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (8)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="eia_hydrogen_consumption_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.eia.gov/todayinenergy/detail.php?id=61763" target="_blank" rel="noopener">U.S. refiners and chemical manufacturers lead hydrogen production and consumption</a>
+    </div>
+    <div class='source-card-meta'>U.S. Energy Information Administration &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 3</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_ghr_2025_demand">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/global-hydrogen-review-2025/demand" target="_blank" rel="noopener">Global Hydrogen Review 2025 - Demand</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_ghr_2025_exec">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/global-hydrogen-review-2025/executive-summary" target="_blank" rel="noopener">Global Hydrogen Review 2025 - Executive summary</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">production 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_ghr_2025_five_questions">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/global-hydrogen-review-2025/five-key-questions-about-hydrogen" target="_blank" rel="noopener">Global Hydrogen Review 2025 - Five key questions about hydrogen</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_ghr_2025_prod">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/global-hydrogen-review-2025/production-highlights-2" target="_blank" rel="noopener">Global Hydrogen Review 2025 - Production highlights</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="iea_hydrogen_tracking_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.iea.org/reports/hydrogen" target="_blank" rel="noopener">Hydrogen - IEA tracking page</a>
+    </div>
+    <div class='source-card-meta'>International Energy Agency &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="imo_net_zero_framework_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.imo.org/en/MediaCentre/PressBriefings/pages/IMO-approves-netzero-regulations.aspx" target="_blank" rel="noopener">IMO approves net-zero regulations for global shipping</a>
+    </div>
+    <div class='source-card-meta'>International Maritime Organization &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="treasury_45v_final_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://home.treasury.gov/news/press-releases/jy2768" target="_blank" rel="noopener">U.S. Department of the Treasury Releases Final Rules for Clean Hydrogen Production Tax Credit</a>
+    </div>
+    <div class='source-card-meta'>U.S. Department of the Treasury &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pu — plutonium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2012","event":"DOE and NASA agreed to restart domestic Pu-238 production after a roughly 30-year U.S. gap.","impact":"Re-established a domestic supply chain for NASA radioisotope power systems, with ORNL\nleading target fabrication and chemical processing.\n"},{"date":"2023-07-18","event":"DOE shipped 0.5 kg of new heat-source plutonium oxide from ORNL to LANL.","impact":"DOE called this the largest shipment of new heat-source plutonium oxide in more than a\ndecade and said it kept the program on track for an average production target of\n1.5 kg/yr by 2026.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Pu</span>
+  <span class="el-name">plutonium</span>
+</div>
+<div class="el-meta">
+  Atomic number 94 &bull; actinide &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Plutonium has no conventional bulk commodity market in the atlas sense. The commercial
+reality is a tightly controlled isotope catalog, with DOE/NIDC offering isotope-specific
+plutonium in milligram quantities and the only clearly industrial market centered on
+Pu-238. That isotope is bought and fabricated into ceramic plutonium oxide heat sources
+for radioisotope power systems used on deep-space spacecraft and planetary missions.
+
+The supply chain is state-run and reactor-based rather than mine-based. DOE&#39;s current
+route starts with neptunium-bearing targets, irradiates them in U.S. research reactors,
+processes the irradiated material into heat-source plutonium oxide at Oak Ridge, converts
+it into fueled clads at Los Alamos, and integrates the fuel into radioisotope power
+systems at Idaho National Laboratory. The modern market structure was rebuilt after DOE
+and NASA restarted domestic production in 2012; a 0.5-kilogram shipment in July 2023
+marked the biggest delivery of new heat-source oxide in more than a decade.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"radioisotope_power_systems","share_pct":100.0,"confidence":"high"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (1)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Pu-238","half_life_seconds":2767673520.0,"half_life_display":"87.7 years","production_mode":"reactor_generated","precursor":"DOE produces Pu-238 by transmutation of neptunium-237 through neutron capture. DOE's\ncurrent domestic route presses neptunium oxide-aluminum pellets, irradiates targets in\nthe High Flux Isotope Reactor at Oak Ridge National Laboratory and the Advanced Test\nReactor at Idaho National Laboratory, and chemically processes the irradiated material\ninto heat-source plutonium oxide.","delivery_form":"DOE/NIDC sells Pu-238 as oxide powder with stock availability and milligram unit of\nsale. For the space-power supply chain, the oxide is converted into ceramic heat-source\npellets, then into fueled clads and radioisotope power systems.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[],"producers_completeness":"partial","notes":"The NIDC plutonium catalog page shows multiple plutonium isotopes available for quote,\nbut the distinct commercial market described here is Pu-238 because it is the isotope\nused in radioisotope power systems for NASA missions."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Pu-238">
+    <div class="isotope-card-header">
+      <h3>Pu-238</h3>
+      <span class="badge badge-mode-reactor_generated">reactor_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 87.7 years</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> DOE produces Pu-238 by transmutation of neptunium-237 through neutron capture. DOE&#39;s
+current domestic route presses neptunium oxide-aluminum pellets, irradiates targets in
+the High Flux Isotope Reactor at Oak Ridge National Laboratory and the Advanced Test
+Reactor at Idaho National Laboratory, and chemically processes the irradiated material
+into heat-source plutonium oxide.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> DOE/NIDC sells Pu-238 as oxide powder with stock availability and milligram unit of
+sale. For the space-power supply chain, the oxide is converted into ceramic heat-source
+pellets, then into fueled clads and radioisotope power systems.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    
+  </div>
+  </div>
+</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (6)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="doe_pu238_restart_automation_2019">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.energy.gov/ne/articles/oak-ridge-national-laboratory-automates-key-process-plutonium-238-production" target="_blank" rel="noopener">Oak Ridge National Laboratory Automates Key Process in Plutonium-238 Production</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy, Office of Nuclear Energy &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="doe_pu238_shipment_2023">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.energy.gov/ne/articles/us-department-energy-completes-major-shipment-plutonium-238-nasa-missions" target="_blank" rel="noopener">U.S. Department of Energy Completes Major Shipment of Plutonium-238 for NASA Missions</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy, Office of Nuclear Energy &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nasa_about_pu238_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/about-plutonium-238/" target="_blank" rel="noopener">About Plutonium-238</a>
+    </div>
+    <div class='source-card-meta'>NASA Science &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nasa_rps_overview_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://science.nasa.gov/planetary-science/programs/radioisotope-power-systems/overview/" target="_blank" rel="noopener">RPS Technology Overview</a>
+    </div>
+    <div class='source-card-meta'>NASA Science &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_plutonium_catalog_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/products/plutonium" target="_blank" rel="noopener">Plutonium</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_pu238_product_2023">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/sites/default/files/2023-07/Pu-238.pdf" target="_blank" rel="noopener">Plutonium-238 Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2023 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>

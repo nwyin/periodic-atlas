@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Pm — promethium | Atlas 2025</title>
+  <link rel="stylesheet" href="../assets/atlas.css">
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <script src="../assets/charts_prices.js" defer></script>
+  <script src="../assets/charts_isotopes.js" defer></script>
+</head>
+<body>
+<div class="container">
+<script type="application/json" id="atlas-chart-data">{"prices":[],"events":[{"date":"2022-06-23","event":"DOE entered the promethium-147 market after international supply disruptions.","impact":"DOE said it was entering the market to fill critical needs after disruptions in the\ninternational supply chain and noted that Pm-147 had previously been produced solely\nfrom fuel reprocessing in Russia. The event shifted commercially available supply\ntoward a US government-backed source.\n"}]}</script>
+<p><a href="../index.html">&larr; Back to index</a></p>
+<div class="el-header">
+  <span class="el-symbol">Pm</span>
+  <span class="el-name">promethium</span>
+</div>
+<div class="el-meta">
+  Atomic number 61 &bull; lanthanide &bull; Tier 2
+</div>
+<div class="badges-row">
+  <span class="badge badge-commercial">Commercial</span>
+</div>
+
+<div class="narrative-block">Promethium is commercially real in 2025, but only as a tiny isotope business centered on
+Pm-147. Customers do not buy promethium metal by the tonne; they buy curie quantities of a
+radioactive chloride or nitrate salt from the DOE isotope catalog. The isotope&#39;s demand is
+tied to its behavior as a low-energy beta emitter, which is why official DOE and ORNL
+sources consistently frame the market around thickness gauges, compact nuclear batteries
+and other long-lived low-power devices, luminous products, and a handful of specialized
+imaging uses.
+
+The supply chain is reactor and hot-cell infrastructure, not mining. DOE&#39;s initial
+commercial batches came from recovery of Pm-147 from a plutonium-program waste stream after
+international disruptions hit the prior Russia-centered supply route. In parallel, ORNL has
+developed a direct HFIR route using enriched Nd-146 targets that decay through Nd-147 to
+Pm-147 before chemical purification. By 2025 DOE described itself as the only global
+producer of Pm-147, underscoring how concentrated and policy-shaped this market is.
+</div>
+<script id="production-data" type="application/json">{"streams":[]}</script>
+<div id="production-chart" class="chart-placeholder">Production charts — see B1</div>
+<script id="reserves-data" type="application/json">{"reserves":{"economic_reserves":null,"resources":null,"unit":null},"reserves_by_country":[],"end_uses":{"completeness":"complete","uses":[{"application":"beta_emitter_power_and_gauge_sources","share_pct":100.0,"confidence":"medium"}]}}</script>
+<div id="reserves-chart" class="chart-placeholder">Reserves + end uses — see B2</div>
+<div id="prices-chart" class="chart-placeholder">Prices + events — see B3</div>
+
+<div id="isotope-panel" class="isotope-panel">
+  <h2>Isotope Markets (1)</h2>
+  <script id="isotope-data" type="application/json">[{"isotope":"Pm-147","half_life_seconds":82680912.0,"half_life_display":"2.62 years","production_mode":"reactor_generated","precursor":"DOE said in 2022 that its initial commercial Pm-147 supply was being extracted from\na plutonium waste stream associated with the Pu-238 program, and that it would also\nbe produced through direct irradiation of enriched Nd-146 in ORNL's High Flux\nIsotope Reactor. The ORNL reactor-production paper describes the Nd-146(n,gamma)Nd-147\nto Pm-147 route and the post-irradiation extraction-chromatography purification step.","delivery_form":"DOE/NIDC sells Pm-147 as chloride or nitrate salt, with radionuclide purity of\n99.99%, routinely available status, and curies as the unit of sale. The sheet lists\n>=483 Ci/g for 147PmCl3 and >=834.3 Ci/g for elemental 147Pm.","reporting_year":2025,"production_quantity":{"value":null,"unit":null},"producers":[{"country":"US","share_pct":100.0,"confidence":"medium","notes":"DOE's 2025 promethium production highlight states that the DOE Isotope Program\nis currently the only global producer of promethium-147.\n"}],"producers_completeness":"complete","notes":"Public primary sources reviewed here describe trade form, production routes, and sole\nproducer status, but do not publish annual curie output or a price list for Pm-147."}]</script>
+  <div class="isotope-cards">
+  <div class="isotope-card" data-isotope="Pm-147">
+    <div class="isotope-card-header">
+      <h3>Pm-147</h3>
+      <span class="badge badge-mode-reactor_generated">reactor_generated</span>
+    </div>
+    <div class="isotope-meta">
+<div class="isotope-meta-row"><span class="isotope-meta-label">Half-life:</span> 2.62 years</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Precursor:</span> DOE said in 2022 that its initial commercial Pm-147 supply was being extracted from
+a plutonium waste stream associated with the Pu-238 program, and that it would also
+be produced through direct irradiation of enriched Nd-146 in ORNL&#39;s High Flux
+Isotope Reactor. The ORNL reactor-production paper describes the Nd-146(n,gamma)Nd-147
+to Pm-147 route and the post-irradiation extraction-chromatography purification step.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Delivery form:</span> DOE/NIDC sells Pm-147 as chloride or nitrate salt, with radionuclide purity of
+99.99%, routinely available status, and curies as the unit of sale. The sheet lists
+&gt;=483 Ci/g for 147PmCl3 and &gt;=834.3 Ci/g for elemental 147Pm.</div>
+<div class="isotope-meta-row"><span class="isotope-meta-label">Reporting year:</span> 2025</div>
+    </div>
+    <div class="producers-section">
+  <h4>Producers <span class="badge badge-no-commercial" style="font-size:0.7rem">Complete</span></h4>
+  <div class="producers-chart" data-isotope="Pm-147">
+    <table style="border-collapse:collapse;font-size:0.85rem;width:100%">
+      <thead>
+        <tr style="font-size:0.75rem;color:var(--muted)">
+          <th style="padding:0.2rem 0.5rem;text-align:left">Country</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Share</th>
+          <th style="padding:0.2rem 0.5rem;text-align:left">Confidence</th>
+        </tr>
+      </thead>
+      <tbody>
+    <tr class="producer-row">
+      <td style="padding:0.2rem 0.5rem;font-weight:600">US</td>
+      <td style="padding:0.2rem 0.5rem">100%</td>
+      <td style="padding:0.2rem 0.5rem;font-size:0.75rem;color:var(--muted)">medium</td>
+    </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+  </div>
+  </div>
+</div>
+<div id="sources-panel" class="sources-panel">
+  <h2>Sources (7)</h2>
+  <div class="source-cards">
+  <div class="source-card" data-source-id="broderick_pm147_2019">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://doi.org/10.1016/j.apradiso.2018.10.025" target="_blank" rel="noopener">Reactor production of promethium-147</a>
+    </div>
+    <div class='source-card-meta'>Applied Radiation and Isotopes / Oak Ridge National Laboratory &bull; 2019 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">feedstocks 1</span><span class="ref-chip">substitutes 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="doe_science_pm147_highlight_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://science.osti.gov/Isotope-Research-Development-and-Production/Science-Highlights/2025/3a" target="_blank" rel="noopener">In an Advance for Promethium Production, Researchers Get a New View of the Element&#39;s Properties</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy, Office of Science &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">shares 1</span><span class="ref-chip">end_uses 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="eu_crma_2024">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://faolex.fao.org/docs/pdf/eur231131.pdf" target="_blank" rel="noopener">Regulation (EU) 2024/1252 establishing a framework for ensuring a secure and sustainable supply of critical raw materials</a>
+    </div>
+    <div class='source-card-meta'>European Union &bull; 2024 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 2</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_pm147_entering_market_2022">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/Entering_Market_Promethium-147" target="_blank" rel="noopener">Entering Market: Promethium-147</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2022 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">events 1</span><span class="ref-chip">feedstocks 1</span></div>
+  </div>
+  <div class="source-card" data-source-id="nidc_pm147_product_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://isotopes.gov/sites/default/files/2025-10/Promethium-147%20Product%20Information.pdf" target="_blank" rel="noopener">Promethium-147 Product Information</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="nidc_promethium_catalog_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.isotopes.gov/products/promethium" target="_blank" rel="noopener">Promethium</a>
+    </div>
+    <div class='source-card-meta'>US Department of Energy / National Isotope Development Center &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    
+  </div>
+  <div class="source-card" data-source-id="us_federal_register_critical_minerals_2025">
+    <div class="source-card-header">
+      <span class="badge badge-tier-primary">primary</span>
+      <a href="https://www.govinfo.gov/content/pkg/FR-2025-11-07/pdf/FR-2025-11-07.pdf" target="_blank" rel="noopener">Final 2025 List of Critical Minerals</a>
+    </div>
+    <div class='source-card-meta'>US Geological Survey / Federal Register &bull; 2025 &bull; retrieved 2026-04-13</div>
+    
+    <div class="source-card-refs"><span class="refs-label">referenced by:</span><span class="ref-chip">criticality 1</span></div>
+  </div>
+  </div>
+</div>
+<footer>
+Built 2026-04-14T04:29:26Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+</footer>
+</div>
+<script src="../assets/charts_production.js"></script>
+<script src="../assets/charts_reserves.js"></script>
+</body>
+</html>
