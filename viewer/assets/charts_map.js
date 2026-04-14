@@ -362,6 +362,9 @@
   };
 
   // ── Heatmap fill application ──────────────────────────────────────────────
+  // NOTE: uses .style("fill", ...) rather than .attr("fill", ...) because the
+  // CSS rule `.country-shape { fill: var(--map-land) }` — and its :hover / .is-hovered
+  // siblings — override SVG presentation attributes. Inline styles win over CSS rules.
   function applyHeatmapFills() {
     if (!activeSymbol) return;
     const stageData = (heatmapIndex[activeSymbol] || {})[activeStage] || {};
@@ -369,7 +372,7 @@
       .selectAll(".country-shape")
       .transition()
       .duration(300)
-      .attr("fill", function () {
+      .style("fill", function () {
         const iso = this.dataset.countryCode;
         const entry = stageData[iso];
         return entry && entry.share_pct != null ? heatFill(entry.share_pct) : noDataFill;
@@ -381,7 +384,7 @@
       .selectAll(".country-shape")
       .transition()
       .duration(200)
-      .attr("fill", null); // remove inline fill, revert to CSS var(--map-land)
+      .style("fill", null); // remove inline style, revert to CSS var(--map-land)
   }
 
   // ── Legend ─────────────────────────────────────────────────────────────────
@@ -482,25 +485,41 @@
     }
   }
 
+  // ── Stage data helpers ────────────────────────────────────────────────────
+  // Source of truth: the heatmap payload (not elementIndex.has_*). The element
+  // index flags count raw atlas_shares rows, but the map payload is filtered
+  // through a JOIN with atlas_production, so an element can have share rows
+  // but no heatmap-renderable data (e.g. B has 8 mining share rows but no
+  // atlas_production mine row, so nothing shows on the map in mining mode).
+  const STAGE_ORDER = ["mining", "refining", "reserves"];
+
+  function stageHasData(symbol, stage) {
+    const stageData = (heatmapIndex[symbol] || {})[stage];
+    if (!stageData) return false;
+    for (const iso in stageData) {
+      if (stageData[iso] && stageData[iso].share_pct != null) return true;
+    }
+    return false;
+  }
+
+  function firstStageWithData(symbol) {
+    for (const s of STAGE_ORDER) {
+      if (stageHasData(symbol, s)) return s;
+    }
+    return null;
+  }
+
   // ── Main heatmap activation / deactivation ────────────────────────────────
   function activateHeatmap(symbol, stage) {
     if (!symbol) return;
     activeSymbol = symbol;
     activeStage = stage || "mining";
 
-    // Auto-advance stage if selected element has no data for it
-    const elMeta = elementIndex.find((e) => e.symbol === symbol);
-    if (elMeta) {
-      const stageOrder = ["mining", "refining", "reserves"];
-      const stageFlagMap = { mining: "has_mining", refining: "has_refining", reserves: "has_reserves" };
-      if (!elMeta[stageFlagMap[activeStage]]) {
-        for (const s of stageOrder) {
-          if (elMeta[stageFlagMap[s]]) {
-            activeStage = s;
-            break;
-          }
-        }
-      }
+    // Auto-advance: if the requested stage has no country-level data for this
+    // symbol, walk STAGE_ORDER for the first stage that does.
+    if (!stageHasData(symbol, activeStage)) {
+      const fallback = firstStageWithData(symbol);
+      if (fallback) activeStage = fallback;
     }
 
     // Update select value
@@ -509,6 +528,7 @@
 
     // Update stage buttons
     updateStageButtons();
+    updateStageButtonAvailability();
 
     // Enable stage toggle
     const stageToggle = document.getElementById("heatmap-stage-toggle");
@@ -549,6 +569,7 @@
 
     // Reset stage buttons to Mining
     updateStageButtons();
+    updateStageButtonAvailability();
 
     // Disable stage toggle
     const stageToggle = document.getElementById("heatmap-stage-toggle");
@@ -583,14 +604,27 @@
     });
   }
 
+  function updateStageButtonAvailability() {
+    document.querySelectorAll(".heatmap-stage-btn").forEach((btn) => {
+      const stage = btn.dataset.stage;
+      const has = activeSymbol ? stageHasData(activeSymbol, stage) : true;
+      btn.disabled = !has;
+      btn.classList.toggle("is-unavailable", !has);
+      btn.title = has ? "" : `No attributed country data for ${stage}.`;
+    });
+  }
+
   // ── Populate <select> and chips ────────────────────────────────────────────
   function populateElementSelector() {
     const sel = document.getElementById("heatmap-element-select");
     const chipsEl = document.getElementById("heatmap-chips");
     if (!sel || !elementIndex.length) return;
 
-    // Only elements that have at least one stage
-    const usable = elementIndex.filter((e) => e.has_mining || e.has_refining || e.has_reserves);
+    // Only elements that have at least one stage with actual heatmap data
+    // (the has_mining/has_refining/has_reserves flags on elementIndex count
+    // raw share rows, which can be > 0 even when the JOIN against production
+    // drops every country — e.g. boron for mining).
+    const usable = elementIndex.filter((e) => firstStageWithData(e.symbol) !== null);
 
     // Group by tier descending: 3 = Critical & Scarce, 4 = High-Volume, 2 = Niche, 0/1 = Other
     const tierGroups = [

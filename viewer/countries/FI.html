@@ -15,9 +15,9 @@
 <p><a href="../index.html">&larr; Atlas index</a></p>
 <div class="country-header-row"><div><div class="country-stat-pills">
   <div class="country-stat-pill"><strong>2</strong>Elements mined</div>
-  <div class="country-stat-pill"><strong>0</strong>Elements refined</div>
+  <div class="country-stat-pill"><strong>1</strong>Elements refined</div>
   <div class="country-stat-pill"><strong>0</strong>Top-3 reserves</div>
-  <div class="country-stat-pill"><strong>2</strong>Critical elements</div>
+  <div class="country-stat-pill"><strong>3</strong>Critical elements</div>
 </div></div><div class="country-map-thumbnail" id="country-map-thumb" data-country-code="FI"></div></div>
 <nav class="country-jump-nav">
   <a href="#mining">Mining</a>
@@ -62,11 +62,36 @@ reserve figures are normalized to 26% Cr₂O₃ (…</span></td>
 </table>
 </section>
 <section id="refining">
-  <h2>Refining (0 elements)</h2>
-  <p class="country-page-empty">No attributed data for this stage.</p>
+  <h2>Refining (1 element)</h2>
+  <table class="country-page-table sortable-table">
+<thead>
+  <tr>
+    <th>Element</th>
+    <th style="text-align:right">Share %</th>
+    <th>Quantity</th>
+    <th style="text-align:center">Global rank</th>
+    <th>Confidence</th>
+    <th>Notes</th>
+  </tr>
+</thead>
+<tbody>
+  <tr class="">
+    <td><a href="../elements/Se.html">Se</a><br><small>selenium</small></td>
+    <td style="text-align:right">5.0%</td>
+    <td>170 tonnes per year</td>
+    <td style="text-align:center">4th</td>
+    <td class="">high</td>
+    <td><span title="USGS MCS 2025 p.159: &quot;Finland … 170&quot; metric tons 2024e (footnote 8: reported),
+up from 122 in 2023. Boliden&#39;s Harjavalta copper refinery is the primary source.
+Share = 170/3700 = 4.6%.
+">USGS MCS 2025 p.159: &quot;Finland … 170&quot; metric tons 2024e (footnote 8: reported),
+up from 122 in 2023. Boliden&#39;s Harjavalta…</span> <span class="byproduct-note">byproduct of Cu, Pb, Zn</span></td>
+  </tr>
+</tbody>
+</table>
 </section>
 <section id="reserves">
-  <h2>Reserves (2 elements)</h2>
+  <h2>Reserves (3 elements)</h2>
   <table class="country-page-table sortable-table">
 <thead>
   <tr>
@@ -99,17 +124,25 @@ grade-adjusted reserves would be considerably smaller at standard Cr₂O₃ cuto
 ">USGS MCS 2025 table: Finland reserves = 8,300 thousand metric tons gross weight.
 Note: normalized to 26% Cr₂O₃ (not the …</span></td>
   </tr>
+  <tr class="">
+    <td><a href="../elements/Se.html">Se</a><br><small>selenium</small></td>
+    <td style="text-align:right">0.0%</td>
+    <td>300 tonnes</td>
+    <td style="text-align:center">9th</td>
+    <td class="">high</td>
+    <td><span title="USGS MCS 2025 p.159: &#39;Finland … 300&#39; metric tons. Share = 300/92000 = 0.3% — rounds to 0%.">USGS MCS 2025 p.159: &#39;Finland … 300&#39; metric tons. Share = 300/92000 = 0.3% — rounds to 0%.</span> <span class="byproduct-note">byproduct of Cu, Pb, Zn</span></td>
+  </tr>
 </tbody>
 </table>
 </section>
 
-<script id="country-chart-data" type="application/json">[{"symbol":"Cr","element_name":"chromium","stage":"mining","share_pct":4.0},{"symbol":"P","element_name":"phosphorus","stage":"reserves","share_pct":1.4},{"symbol":"Cr","element_name":"chromium","stage":"reserves","share_pct":0.69},{"symbol":"P","element_name":"phosphorus","stage":"mining","share_pct":0.4}]</script>
+<script id="country-chart-data" type="application/json">[{"symbol":"Se","element_name":"selenium","stage":"refining","share_pct":5.0},{"symbol":"Cr","element_name":"chromium","stage":"mining","share_pct":4.0},{"symbol":"P","element_name":"phosphorus","stage":"reserves","share_pct":1.4},{"symbol":"Cr","element_name":"chromium","stage":"reserves","share_pct":0.69},{"symbol":"P","element_name":"phosphorus","stage":"mining","share_pct":0.4},{"symbol":"Se","element_name":"selenium","stage":"reserves","share_pct":0.0}]</script>
 <div id="country-bar-chart" class="country-bar-chart"></div>
 <section class="country-related">
   <!-- Critical minerals overview: placeholder for future link -->
 </section>
 <footer>
-Built 2026-04-14T12:15:24Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
+Built 2026-04-14T12:49:42Z &bull; Snapshot year 2025 &bull; <a href="https://github.com/anomalyco/opencode" target="_blank" rel="noopener">repo</a>
 </footer>
 </div>
 <script src="../assets/charts_country.js"></script>

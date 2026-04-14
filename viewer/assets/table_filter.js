@@ -7,7 +7,7 @@
  * URL params:
  *   q        - free-text search (symbol, name, atomic number)
  *   filters  - comma-separated active chip keys (us_critical, eu_crm, eu_strategic,
- *              doe_rank, tier_0…tier_4, cat_*, commercial_only, no_commercial, byproduct_only)
+ *              doe_rank, tier_1…tier_4, cat_*, commercial_only, no_commercial, byproduct_only)
  *   enduse   - active end-use bucket slug
  *   country  - active producer country ISO-2
  *   sort     - column key + _asc or _desc (e.g. hhi_mining_desc)
@@ -378,7 +378,7 @@ function matchesAllFilters(tr, q) {
   if (activeFilters.has("doe_rank")     && (!ds.doeRank || ds.doeRank === "0")) return false;
 
   // Tier chips (OR within tier group if multiple selected, AND with other groups)
-  const tierFilters = ["0","1","2","3","4"].filter((v) => activeFilters.has(`tier_${v}`));
+  const tierFilters = ["1","2","3","4"].filter((v) => activeFilters.has(`tier_${v}`));
   if (tierFilters.length && !tierFilters.includes(ds.tier)) return false;
 
   // Category chips (OR within category group)

@@ -129,6 +129,50 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   pointer-events: none;
 }
 
+/* ── filter group info popover (the "?" next to each filter-group-label) ── */
+.filter-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-left: 0.25rem;
+  border-radius: 50%;
+  background: var(--muted);
+  color: var(--bg);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: help;
+  user-select: none;
+  outline: none;
+}
+.filter-tip:hover,
+.filter-tip:focus { background: var(--text); }
+.filter-tip:hover::after,
+.filter-tip:focus::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.55rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  width: 280px;
+  z-index: 30;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
 /* ── source tier badges — distinct colors required by INV-2 ── */
 .badge-tier-primary   { background: var(--tier-primary); }
 .badge-tier-secondary { background: var(--tier-secondary); }
@@ -803,6 +847,12 @@ footer a { color: var(--muted); }
 }
 .heatmap-clear:hover { color: var(--text); border-color: var(--text); }
 
+.heatmap-stage-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .heatmap-stage-toggle {
   display: flex;
   border: 1px solid var(--border);
@@ -830,6 +880,17 @@ footer a { color: var(--muted); }
 .heatmap-stage-toggle[aria-disabled="true"] .heatmap-stage-btn {
   opacity: 0.4;
   pointer-events: none;
+}
+.heatmap-stage-btn[disabled],
+.heatmap-stage-btn.is-unavailable {
+  opacity: 0.35;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+.heatmap-stage-btn[disabled]:hover,
+.heatmap-stage-btn.is-unavailable:hover {
+  background: var(--bg);
+  color: var(--muted);
 }
 
 .heatmap-chips {

@@ -902,6 +902,50 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   pointer-events: none;
 }
 
+/* ── filter group info popover (the "?" next to each filter-group-label) ── */
+.filter-tip {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.05rem;
+  height: 1.05rem;
+  margin-left: 0.25rem;
+  border-radius: 50%;
+  background: var(--muted);
+  color: var(--bg);
+  font-size: 0.68rem;
+  font-weight: 700;
+  line-height: 1;
+  cursor: help;
+  user-select: none;
+  outline: none;
+}
+.filter-tip:hover,
+.filter-tip:focus { background: var(--text); }
+.filter-tip:hover::after,
+.filter-tip:focus::after {
+  content: attr(data-tip);
+  position: absolute;
+  top: calc(100% + 6px);
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--text);
+  color: var(--bg);
+  padding: 0.55rem 0.7rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  font-weight: 400;
+  line-height: 1.45;
+  letter-spacing: 0;
+  text-transform: none;
+  white-space: normal;
+  width: 280px;
+  z-index: 30;
+  box-shadow: 0 6px 16px rgba(0,0,0,0.2);
+  pointer-events: none;
+}
+
 /* ── source tier badges — distinct colors required by INV-2 ── */
 .badge-tier-primary   { background: var(--tier-primary); }
 .badge-tier-secondary { background: var(--tier-secondary); }
@@ -1576,6 +1620,12 @@ footer a { color: var(--muted); }
 }
 .heatmap-clear:hover { color: var(--text); border-color: var(--text); }
 
+.heatmap-stage-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
 .heatmap-stage-toggle {
   display: flex;
   border: 1px solid var(--border);
@@ -1603,6 +1653,17 @@ footer a { color: var(--muted); }
 .heatmap-stage-toggle[aria-disabled="true"] .heatmap-stage-btn {
   opacity: 0.4;
   pointer-events: none;
+}
+.heatmap-stage-btn[disabled],
+.heatmap-stage-btn.is-unavailable {
+  opacity: 0.35;
+  cursor: not-allowed;
+  text-decoration: line-through;
+}
+.heatmap-stage-btn[disabled]:hover,
+.heatmap-stage-btn.is-unavailable:hover {
+  background: var(--bg);
+  color: var(--muted);
 }
 
 .heatmap-chips {
@@ -2446,7 +2507,7 @@ def _index_body(
 </header>
 <section class="map-panel">
   <div class="map-panel-header">
-    <p id="map-panel-copy" class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output.</p>
+    <p id="map-panel-copy" class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output. Pick an element below to colour the map by country share for a chosen supply-chain stage.</p>
   </div>
   <div class="heatmap-controls" id="heatmap-controls">
     <div class="heatmap-selector-wrap">
@@ -2456,10 +2517,13 @@ def _index_body(
       </select>
       <button id="heatmap-clear" class="heatmap-clear" hidden aria-label="Clear element selection">&times;</button>
     </div>
-    <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true">
-      <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
-      <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
-      <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+    <div class="heatmap-stage-group">
+      <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true" role="group" aria-label="Supply-chain stage">
+        <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
+        <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
+        <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+      </div>
+      <span class="filter-tip heatmap-stage-tip" tabindex="0" data-tip="Supply-chain stages. Mining = primary ore extraction (tonnes mined per country). Refining = processed / refined metal output (smelting, electro-refining, chemical separation). Reserves = in-ground economic reserves (stock, not flow). Stages with no attributed country data for the selected element are greyed out \u2014 the map auto-picks the first stage that does.">?</span>
     </div>
   </div>
   <div class="heatmap-chips" id="heatmap-chips"></div>
@@ -2480,9 +2544,7 @@ def _index_body(
     </div>
     <div id="country-map-drawer-body" class="country-map-drawer-body"></div>
   </aside>
-  <script id="atlas-element-index" type="application/json">{element_index_json}</script>
   <script id="atlas-country-map-data" type="application/json">{country_map_json}</script>
-  <script id="atlas-element-index" type="application/json">{element_index_json}</script>
 </section>
 <script id="atlas-element-index" type="application/json">{element_index_json}</script>
 <div class="table-controls" id="table-controls"
@@ -2494,35 +2556,34 @@ def _index_body(
     <button class="clear-all-btn" id="clear-all-btn" hidden>Clear all filters \u00d7</button>
   </div>
   <div class="filter-row" data-filter-group="criticality" aria-label="Criticality filters">
-    <span class="filter-group-label">Criticality</span>
+    <span class="filter-group-label">Criticality <span class="filter-tip" tabindex="0" data-tip="Government lists flagging elements as critical/strategic. Each chip is an AND filter (selecting US Critical + EU CRM shows elements on BOTH lists). US Critical = USGS 2022 final list (50 commodities). EU CRM = EU Critical Raw Materials Act 2024 Annex II (34 CRMs). EU Strategic = Annex I (17 strategic, subset of CRM). DOE rank = US DOE short-term criticality ranking > 0.">?</span></span>
     <button class="filter-chip" data-filter-key="us_critical">US Critical</button>
     <button class="filter-chip" data-filter-key="eu_crm">EU CRM</button>
     <button class="filter-chip" data-filter-key="eu_strategic">EU Strategic</button>
     <button class="filter-chip" data-filter-key="doe_rank">DOE rank</button>
   </div>
   <div class="filter-row" data-filter-group="tier" aria-label="Industrial tier filters">
-    <span class="filter-group-label">Tier</span>
-    <button class="filter-chip" data-filter-key="tier" data-filter-val="0">0</button>
+    <span class="filter-group-label">Tier <span class="filter-tip" tabindex="0" data-tip="Industrial tier (1\u20134). 1 = no real supply chain (Fr, At, superheavies); 2 = niche / novelty (Pu, Cf, Tc, Os\u2026); 3 = critical &amp; scarce (REEs, PGMs, Li, Co, Ga, Ge\u2026); 4 = high-volume workhorse (Fe, Al, Cu, Si, Ni\u2026). Chips OR within this group.">?</span></span>
     <button class="filter-chip" data-filter-key="tier" data-filter-val="1">1</button>
     <button class="filter-chip" data-filter-key="tier" data-filter-val="2">2</button>
     <button class="filter-chip" data-filter-key="tier" data-filter-val="3">3</button>
     <button class="filter-chip" data-filter-key="tier" data-filter-val="4">4</button>
   </div>
   <div class="filter-row" data-filter-group="category" aria-label="Category filters">
-    <span class="filter-group-label">Category</span>
+    <span class="filter-group-label">Category <span class="filter-tip" tabindex="0" data-tip="IUPAC element family (alkali metal, transition metal, lanthanide, halogen, noble gas, etc.). Chips OR within this group \u2014 selecting multiple widens the match.">?</span></span>
 {category_chips_html}  </div>
   <div class="filter-row" data-filter-group="misc" aria-label="Other filters">
-    <span class="filter-group-label">Other</span>
+    <span class="filter-group-label">Other <span class="filter-tip" tabindex="0" data-tip="Production-status filters. Commercial only = elements with commercial_production=true. No commercial production = research / lab-scale / synthetic elements. Byproduct-only = primary supply comes as a byproduct of another metal (Ge from Zn, Te from Cu, Re from Mo\u2026).">?</span></span>
     <button class="filter-chip" data-filter-key="commercial_only">Commercial only</button>
     <button class="filter-chip" data-filter-key="no_commercial">No commercial production</button>
     <button class="filter-chip" data-filter-key="byproduct_only">Byproduct-only</button>
   </div>
   <div class="filter-row" data-filter-group="selects">
-    <span class="filter-group-label">End-use</span>
+    <span class="filter-group-label">End-use <span class="filter-tip" tabindex="0" data-tip="Filter to elements where at least one end-use row falls in the selected bucket (batteries, magnets, catalysts, alloys, etc.). Uses the canonical end_use_bucket enum from the data.">?</span></span>
     <select class="filter-select" id="enduse-select" aria-label="Filter by end-use bucket">
       <option value="">All end-uses</option>
     </select>
-    <span class="filter-group-label">Country</span>
+    <span class="filter-group-label">Country <span class="filter-tip" tabindex="0" data-tip="Filter to elements where the selected country holds a named mining share (ZZ / XX rest-of-world buckets excluded). Click &ldquo;View country page&rdquo; for the full per-country breakdown.">?</span></span>
     <select class="filter-select" id="country-select" aria-label="Filter by producer country (mining)">
       <option value="">All countries</option>
     </select>
@@ -2545,7 +2606,7 @@ def _index_body(
       <th class="crit-cell th-sortable" data-sort-key="eu_crm" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="EU Critical Raw Materials Act (March 2024), Annex II. 34 critical raw materials with high economic importance and elevated supply-risk.">EU CRM</span></th>
       <th class="crit-cell th-sortable" data-sort-key="eu_strategic" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="EU Critical Raw Materials Act (March 2024), Annex I. 17 strategic raw materials prioritised for the green and digital transitions (subset of CRM).">EU Strategic</span></th>
       <th class="th-sortable" data-sort-key="top_country_share" role="columnheader" aria-sort="none" tabindex="0">Top country</th>
-      <th class="th-sortable" data-sort-key="hhi_mining" role="columnheader" aria-sort="none" tabindex="0">HHI <sup title="Herfindahl-Hirschman Index (mining). Higher = more concentrated. Max 10,000 = single-country monopoly.">?</sup></th>
+      <th class="th-sortable" data-sort-key="hhi_mining" role="columnheader" aria-sort="none" tabindex="0"><span class="th-tip" tabindex="-1" data-tip="Herfindahl\u2013Hirschman Index (mining). Sum of squared country mining shares (in %\u00b2). Scale: &lt;1500 = unconcentrated; 1500\u20132500 = moderately concentrated; &gt;2500 = highly concentrated; 10 000 = single-country monopoly. Rest-of-world buckets (ZZ / XX) excluded.">HHI</span></th>
     </tr>
   </thead>
   <tbody>
