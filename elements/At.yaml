@@ -1,0 +1,145 @@
+symbol: At
+atomic_number: 85
+name: astatine
+category: reactive_nonmetal
+industrial_tier: 1
+commercial_production: false
+snapshot_year: 2025
+form_notes: |
+  No bulk commodity form exists. Present-day astatine activity is limited to
+  special-order At-211 batches produced for radiopharmaceutical work and sold in
+  millicuries rather than mass units. DOE NIDC's 12/2024 product sheet lists
+  two shipment forms: sodium astatide in NaCl solution at pH 6.5-7 from the
+  University of Washington, or At-211 absorbed on a 3-octanone impregnated
+  column from Texas A&M University; both originate from alpha irradiation of
+  bismuth metal and must move on an hours-scale because the isotope half-life is
+  7.214 hours.
+
+production: []
+isotope_markets: []
+byproduct_of: []
+feedstock_origins: []
+substitutes: []
+prices: []
+
+end_uses:
+  uses: []
+  completeness: partial
+
+criticality:
+  us_critical_list_as_of_2025: false
+  eu_crm_list_as_of_2024: false
+  eu_strategic_list_as_of_2024: false
+
+research_only:
+  longest_lived_isotope: At-210
+  half_life_seconds: 29160
+  discovered_year: 1940
+  iupac_recognized_year: 1940
+  discovered_at: |
+    Radiation Laboratory of the University of California, Berkeley. Corson,
+    MacKenzie, and Segre reported preparing element 85 mass-211 in 1940 by
+    bombarding bismuth with alpha particles in the 60-inch cyclotron.
+  production_mode: accelerator_generated
+  active_production_labs:
+    - University of Washington
+    - Texas A&M University
+  notes: |
+    NNDC ENSDF lists no stable astatine nuclide; the longest-lived adopted
+    ground state is At-210 at 8.1 hours, only modestly longer than the medically
+    useful At-211 at 7.214 hours. That rules out stockpiling, mining, or any
+    conventional metal trade. The current real-world activity is a narrow
+    accelerator service model around At-211 for targeted alpha therapy research
+    and early clinical work.
+
+geopolitical_events:
+  - date: 2025-01-07
+    event: DOE Isotope Program highlighted an automated Texas A&M processing route for At-211.
+    impact: |
+      NIDC reported that only five U.S. facilities could produce At-211 and that
+      the new workflow cut target-dissolution through purification time to about
+      20 minutes while achieving roughly 95% yield, improving the practicality
+      of shipping this short-lived isotope.
+    source_id: nidc_at211_automation_2025
+  - date: 2025-03-31
+    event: First astatine-labeled compound was shipped in the United States.
+    impact: |
+      NIDC described this as the first demonstrated long-distance transport of
+      wet-chemistry-isolated At-211 already attached to a biologically active
+      compound, marking a step beyond shipment of bare isotope and showing the
+      supply chain can support more clinically relevant delivery formats.
+    source_id: nidc_at211_first_labeled_shipment_2025
+
+narrative: |
+  Astatine has no commodity-scale supply chain. Every isotope is radioactive,
+  and the longest-lived adopted nuclide in NNDC ENSDF, At-210, lasts only
+  8.1 hours. In atlas terms that makes astatine a research-only element: there
+  is nothing to mine, refine, warehouse, or quote by tonne. What exists instead
+  is a tightly time-constrained isotope service centered on At-211, the alpha
+  emitter used in targeted radiopharmaceutical research.
+
+  The current operating model is essentially cyclotron-to-clinic logistics. The
+  original 1940 Berkeley synthesis used alpha bombardment of bismuth, and the
+  same basic nuclear reaction family still underlies modern At-211 production.
+  DOE NIDC's current product information shows special-order, non-cGMP At-211
+  supplied from the University of Washington or Texas A&M University, in either
+  sodium astatide solution or a 3-octanone column, with sale units in
+  millicuries rather than mass.
+
+  Recent 2025 NIDC updates show progress, not industrialization. Automated
+  processing at Texas A&M improved recovery speed and yield, and the first U.S.
+  shipment of an astatine-labeled compound demonstrated a more clinically useful
+  transport format. Even so, astatine remains a short-lived, geographically
+  narrow accelerator product whose economic reality is research and early-stage
+  therapeutic development rather than a commercial element market.
+
+sources:
+  - id: nature_astatine_discovery_1947
+    title: "Astatine: The Element of Atomic Number 85"
+    publisher: Nature
+    url: https://www.nature.com/articles/159024b0
+    retrieved: 2026-04-13
+    publication_year: 1947
+    source_tier: primary
+  - id: nndc_210at_adopted_2014
+    title: "210At Adopted Levels, Gammas"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensnds/210/At/adopted.pdf
+    retrieved: 2026-04-13
+    publication_year: 2014
+    source_tier: primary
+  - id: nndc_211at_adopted_2013
+    title: "211At Adopted Levels, Gammas"
+    publisher: National Nuclear Data Center, Brookhaven National Laboratory
+    url: https://www.nndc.bnl.gov/ensdf/getadopted.jsp?nuc=211At
+    retrieved: 2026-04-13
+    publication_year: 2013
+    source_tier: primary
+  - id: nidc_at211_product_2024
+    title: "Astatine-211 Product Information"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/sites/default/files/2024-12/Astatine-211%20Product%20Information.pdf
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: nidc_at211_availability_2024
+    title: "New Understanding of Astatine's Chemical Properties Will Aid Targeted Alpha Therapy for Cancer"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/1410
+    retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: nidc_at211_automation_2025
+    title: "Automated Nuclear Chemistry Boosts Astatine Production for Cancer Therapy"
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://isotopes.gov/Automated-Nuclear-Chemistry-Boosts-Astatine-Production-for-Cancer-Therapy
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
+  - id: nidc_at211_first_labeled_shipment_2025
+    title: "Unleashing Medical Innovation: First Astatine-labeled Compound Shipped in the U.S."
+    publisher: US Department of Energy / National Isotope Development Center
+    url: https://www.isotopes.gov/node/1463
+    retrieved: 2026-04-13
+    publication_year: 2025
+    source_tier: primary
