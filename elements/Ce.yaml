@@ -121,10 +121,10 @@ production:
           among tracked countries. Production is from rare-earth recovery in
           legacy alluvial tin-mining residues (monazite / xenotime byproduct);
           this stream moves to Chinese processors via Shenghe-adjacent channels.
-          [2026-04-14: this row was previously mis-labelled as Tanzania (TZ) —
-          corrected during the ZZ-decomposition pass. Tanzania has zero 2024
-          mine production per USGS MCS 2025; it holds 890,000 t REO in reserves
-          only (Ngualla remains pre-commercial).]
+          Note: this row was previously mis-labelled as Tanzania (TZ); it has
+          since been corrected. Tanzania has zero 2024 mine production per USGS
+          MCS 2025; it holds 890,000 t REO in reserves only (Ngualla remains
+          pre-commercial).
         source_id: usgs_mcs_2025_rare_earths
       - country: IN
         share_pct: 0.7

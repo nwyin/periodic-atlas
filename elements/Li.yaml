@@ -121,8 +121,7 @@ production:
             in 2024. USGS MCS 2025 withholds US output (W-code); this figure is
             reconstructed from Nevada state filings and Albemarle's Silver Peak
             SEC Exhibit 96.4 (FY2024 10-K). Confidence: medium given wide
-            reconstruction range. Added via secondary-source decomposition of the
-            USGS "withheld" U.S. entry.
+            reconstruction range. Added from secondary reporting (outside the USGS MCS 2025 named-country list).
           source_id: nevada_independent_silver_peak_2024
         - country: ZZ
           share_pct: 0.4
@@ -135,7 +134,7 @@ production:
             source_id: usgs_mcs_2025_lithium
           confidence: low
           notes: |
-            Remaining unnamed producers after secondary-source decomposition. USGS
+            Remaining unnamed producers after secondary reporting. USGS
             MCS 2025 attributes additional smaller operations to Australia, Brazil,
             China, Namibia, Portugal, and the United States — countries already
             named at their primary figures. The residual ~1,000 t represents

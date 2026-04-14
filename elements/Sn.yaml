@@ -215,8 +215,7 @@ production:
           Andrada Mining's Uis mine (Erongo) produced ~880 t contained Sn in FY24
           (Mar 2023–Feb 2024), ramping through CY2025 toward a 2,600 tpa concentrate
           target. ITA coverage and Thaisarco feedstock lists corroborate Namibia as
-          a material source. Added via secondary-source decomposition of the USGS
-          'Other countries' residual.
+          a material source. Added from secondary reporting (outside the USGS MCS 2025 named-country list).
         source_id: andrada_mining_fy24_results
       - country: UG
         share_pct: 0.27
@@ -233,8 +232,7 @@ production:
           producer. Woodcross Resources commissioned Uganda's first tin refinery at
           Mbarara (Ruti) in May 2024 — 1,600 tpa nameplate producing ~99.85% Sn ingots;
           domestic artisanal mine output plus some imported DRC/Rwanda feedstock.
-          Added via secondary-source decomposition of the USGS 'Other countries'
-          residual.
+          Added from secondary reporting (outside the USGS MCS 2025 named-country list).
         source_id: ita_woodcross_uganda_refinery_2024
       - country: ZZ
         share_pct: 0.07
@@ -247,7 +245,7 @@ production:
           source_id: usgs_mcs_2025_tin
         confidence: low
         notes: |
-          Remaining unnamed producers after secondary-source decomposition. Originally
+          Remaining unnamed producers after secondary reporting. Originally
           1,800 t / 0.6% per USGS MCS 2025 'Other countries' row; this atlas has
           extracted ~1,600 t / 0.54% into Namibia and Uganda. The residual ~200 t
           covers Burundi (~200–400 t ASM, ITSCI-monitored, declining), small legacy

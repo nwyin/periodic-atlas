@@ -97,8 +97,7 @@ production:
             from 148 t in 2022). Wolframite from ASM; 3TG-relevant. Confidence
             medium given ITSCI credibility issues (RMI suspension 2024) and documented
             DRC→Rwanda smuggling flagged by Global Witness ("ITSCI laundromat").
-            Reporting year 2023 vs USGS MCS 2025 reporting year 2024e. Added via
-            secondary-source decomposition.
+            Reporting year 2023 vs USGS MCS 2025 reporting year 2024e. Added from secondary reporting.
           source_id: bgs_wmp_2019_2023_tungsten
         - country: MN
           share_pct: 0.37
@@ -113,8 +112,7 @@ production:
           notes: |
             Mongolia 2023: ~300 t W content (BGS WMP: 320 t; corroborated by USGS MYB
             Mongolia 2022). Recovering from COVID-era collapse (40 t in 2020).
-            Reporting year 2023 vs USGS MCS 2025 reporting year 2024e. Added via
-            secondary-source decomposition.
+            Reporting year 2023 vs USGS MCS 2025 reporting year 2024e. Added from secondary reporting.
           source_id: bgs_wmp_2019_2023_tungsten
         - country: BR
           share_pct: 0.35
@@ -130,7 +128,7 @@ production:
             Brazil 2023: ~280 t W content (BGS WMP: 284 t). Scheelite operations in
             Rio Grande do Norte (MNB Mineração Nordeste Brasil); stable 250-300 t
             across 2019-2023. Reporting year 2023 vs USGS MCS 2025 reporting year
-            2024e. Added via secondary-source decomposition.
+            2024e. Added from secondary reporting.
           source_id: bgs_wmp_2019_2023_tungsten
         - country: ZZ
           share_pct: 0.64
@@ -143,7 +141,7 @@ production:
             source_id: usgs_mcs_2025_tungsten
           confidence: low
           notes: |
-            Remaining unnamed producers after secondary-source decomposition. Originally
+            Remaining unnamed producers after secondary reporting. Originally
             1,500 t / 1.85% per USGS MCS 2025 'Other countries' row; this atlas has
             extracted ~980 t / 1.21% into DR Congo, Mongolia, and Brazil (all BGS 2023
             data). The residual ~520 t covers Malaysia (~100 t), Kyrgyzstan (~100 t),

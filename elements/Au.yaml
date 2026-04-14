@@ -220,8 +220,7 @@ production:
           reported via Sudan Tribune. Outside USGS MCS 2025 named list. SWISSAID
           "On the Trail of African Gold" (2024) estimates 70–90 t including
           smuggled/ASM flows; an estimated 50–70% of Sudan's gold is smuggled out
-          (primarily to UAE). Added via secondary-source decomposition of the USGS
-          'Other countries' residual. Confidence: medium for the official 64 t;
+          (primarily to UAE). Added from secondary reporting (outside the USGS MCS 2025 named-country list). Confidence: medium for the official 64 t;
           informal total is low-confidence.
         source_id: sudan_tribune_smrc_2024_gold
       - country: CI
@@ -236,8 +235,7 @@ production:
           Côte d'Ivoire 2024e: ~58 metric tons (record high, up from ~51 t in 2023).
           Endeavour Mining's Lafigué mine poured first gold in mid-2024; national
           target 62 t for 2025. Not on USGS MCS 2025 named list despite now exceeding
-          Tanzania (60 t) and Burkina Faso (60 t). Added via secondary-source
-          decomposition of the USGS 'Other countries' residual.
+          Tanzania (60 t) and Burkina Faso (60 t). Added from secondary reporting (outside the USGS MCS 2025 named-country list).
         source_id: mining_com_cote_divoire_2024_gold
       - country: GN
         share_pct: 1.67
@@ -254,7 +252,7 @@ production:
           Siguiri (~7 t), SMD Lefa (~4–5 t), Hummingbird's Kouroussa (~3–4 t), plus
           substantial artisanal output. West African producer aggregate (Ghana + Mali +
           Burkina Faso + Guinea) totaled ~11.83 Moz in 2024 per industry coverage.
-          Added via secondary-source decomposition.
+          Added from secondary reporting.
         source_id: usgs_myb_guinea_2023_gold
       - country: AR
         share_pct: 1.61
@@ -268,7 +266,7 @@ production:
           Argentina 2024e: ~53 metric tons; 13th-largest global producer per industry
           coverage. Veladero (Barrick/Shandong Gold) 15.7 t (+22% YoY), Cerro Negro
           ~7 t, Cerro Vanguardia ~5 t, plus Don Nicolás, Lindero, Gualcamayo. Not on
-          USGS MCS 2025 named list; added via secondary-source decomposition.
+          USGS MCS 2025 named list; added from secondary reporting.
         source_id: panorama_minero_argentina_2024_gold
       - country: VE
         share_pct: 1.52
@@ -286,7 +284,7 @@ production:
           Orinoco Mining Arc; formal production negligible due to sanctions. OECD
           estimates 25–37.5 t; US State Department Congressional Report (2024) cites
           ~75 t (2021). Confidence: low due to wide source disagreement and sanctions
-          opacity. Added via secondary-source decomposition.
+          opacity. Added from secondary reporting.
         source_id: icg_venezuela_gold_2025
       - country: PG
         share_pct: 1.36
@@ -303,7 +301,7 @@ production:
           the largest single contributor; Porgera (Barrick/Zijin, restart year)
           ~5–10 t; Simberi ~3 t; Hidden Valley, K92 Kainantu (~4–5 t), Ok Tedi
           byproduct. Down from ~50 t (2022) and ~41 t (2023) per Statista/PNG
-          government data. Added via secondary-source decomposition.
+          government data. Added from secondary reporting.
         source_id: newmont_fy2024_results
       - country: CL
         share_pct: 1.27
@@ -318,8 +316,7 @@ production:
         notes: |
           Chile 2024e: ~42 metric tons (up from ~34 t in 2023). Gold Fields's Salares
           Norte poured first gold in March 2024, adding ~5–10 t as it ramps; plus
-          byproduct gold from Chile's copper operations. Added via secondary-source
-          decomposition.
+          byproduct gold from Chile's copper operations. Added from secondary reporting.
         source_id: ey_chile_mining_2025
       - country: BO
         share_pct: 1.21
@@ -335,8 +332,7 @@ production:
           Bolivia 2024e: ~40 metric tons (down ~14% from 47 t in 2023 per CEIC data).
           Overwhelmingly ASM in the Amazon; substantial informal flows to UAE and
           India documented by InsightCrime. Under-discussed in mainstream supply
-          tables despite exceeding several USGS-named producers. Added via
-          secondary-source decomposition.
+          tables despite exceeding several USGS-named producers. Added from secondary reporting.
         source_id: ceic_bolivia_gold_2024
       - country: ZW
         share_pct: 1.12
@@ -350,8 +346,7 @@ production:
           Zimbabwe 2024: 36.48 metric tons (record high, +21% YoY) per Fidelity Gold
           Refineries (Zimbabwe's sole authorised gold buyer), via Pindula/EquityAxis
           coverage. Split: 23.7 t small-scale + 12.7 t large-scale. The surge followed
-          VAT removal and prompt Fidelity payment reforms. Added via secondary-source
-          decomposition.
+          VAT removal and prompt Fidelity payment reforms. Added from secondary reporting.
         source_id: pindula_fidelity_zimbabwe_2024
       - country: PH
         share_pct: 0.97
@@ -368,7 +363,7 @@ production:
           of the Philippines. 2023 was 31.0 t; MGB reports gold and silver drove the
           metallic mining sector's growth in 2024. Below the 1% naming floor (32/3300
           = 0.97%) but admitted under the 2-secondary-source rule (MGB + CEIC
-          corroborate). Added via secondary-source decomposition.
+          corroborate). Added from secondary reporting.
         source_id: mgb_philippines_metallic_2024
       - country: CD
         share_pct: 0.85
@@ -387,7 +382,7 @@ production:
           a real total well above 100 t with the balance smuggled (primarily via
           Uganda and Rwanda to UAE). The figure here is the formal/reported number;
           confidence: medium. Below the 1% floor but admitted under 2-source rule.
-          Added via secondary-source decomposition.
+          Added from secondary reporting.
         source_id: ecofin_kibali_drc_2024
       - country: DO
         share_pct: 0.79
@@ -402,7 +397,7 @@ production:
           (Barrick 60% / Newmont 40%). Phase 1 expansion reached commercial production
           in Q3 2024; operator targeting 800+ koz/yr (~25+ t). Below the 1% floor but
           admitted under 2-source rule (Barrick disclosure + Mining Weekly).
-          Added via secondary-source decomposition.
+          Added from secondary reporting.
         source_id: barrick_pueblo_viejo_2024
       - country: TR
         share_pct: 0.70
@@ -419,8 +414,7 @@ production:
           because SSR Mining's Çöpler mine was offline all of 2024 following the
           February 2024 heap-leach failure (~6–7 t removed). Kışladağ, Ağı Dağı,
           Efemçukuru, and Öksüt continued. WGC Q3 2024 supply data corroborates.
-          Below the 1% floor but admitted under 2-source rule. Added via
-          secondary-source decomposition.
+          Below the 1% floor but admitted under 2-source rule. Added from secondary reporting.
         source_id: nordic_monitor_turkey_gold_2024
       - country: ZZ
         share_pct: 6.87
@@ -433,7 +427,7 @@ production:
           source_id: usgs_mcs_2025_gold
         confidence: medium
         notes: |
-          Remaining unnamed producers after secondary-source decomposition. Originally
+          Remaining unnamed producers after secondary reporting. Originally
           780 t / 23.64% per USGS MCS 2025 'Other countries' row; this atlas has
           extracted ~553 t / 16.77% into 13 named producers (SD, CI, GN, AR, VE, PG,
           CL, BO, ZW, PH, CD, DO, TR). The residual 227 t comprises smaller producers
