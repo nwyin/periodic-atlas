@@ -7,3 +7,6 @@ build/*.duckdb
 build/*.json
 !build/.gitkeep
 .DS_Store
+.hive/
+.hive.toml
+.worktrees/
