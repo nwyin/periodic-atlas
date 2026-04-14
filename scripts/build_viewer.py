@@ -582,7 +582,6 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.9rem; }
   margin: 0;
   color: var(--muted);
   font-size: 0.88rem;
-  max-width: 70ch;
 }
 
 .country-map-shell {
@@ -1105,7 +1104,6 @@ def _index_body(elements: list[dict], stats: dict, snapshot_year: int, country_m
 </header>
 <section class="map-panel">
   <div class="map-panel-header">
-    <h2>Country Hover Map</h2>
     <p class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output.</p>
   </div>
   <div class="country-map-shell">
