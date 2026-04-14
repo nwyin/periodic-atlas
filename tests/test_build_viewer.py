@@ -821,7 +821,7 @@ def _make_multistream_db(tmp_path: Path) -> Path:
     """Create a minimal DuckDB with two synthetic stream IDs for Co."""
     db_path = tmp_path / "multistream.duckdb"
     real = duckdb.connect(str(REAL_DB), read_only=True)
-    con  = duckdb.connect(str(db_path))
+    con = duckdb.connect(str(db_path))
     try:
         tables = [row[0] for row in real.execute("SHOW TABLES").fetchall()]
         for t in tables:
@@ -848,7 +848,7 @@ def _make_multistream_db(tmp_path: Path) -> Path:
 def test_b1_inv5_multistream_produces_separate_stream_entries(tmp_path):
     """Each unique stream_id in atlas_shares must produce its own stream entry."""
     db_path = _make_multistream_db(tmp_path)
-    out_dir  = tmp_path / "viewer_multistream"
+    out_dir = tmp_path / "viewer_multistream"
     build_viewer.generate_viewer(db_path, out_dir, timestamp=FIXED_TS)
 
     co_html = (out_dir / "elements" / "Co.html").read_text()
@@ -1088,3 +1088,211 @@ def test_b5_format_half_life_seconds():
     assert "second" in result, f"Expected 'second' in {result!r}"
     numeric = float(_re.search(r"[\d.]+", result).group())
     assert abs(numeric - 30.0) < 0.1
+
+
+# =============================================================================
+# CP — Country page tests
+# =============================================================================
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-1: Must-exist country pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp1_must_exist_country_pages(viewer_dir):
+    for iso in ("CD", "CN", "US", "AU", "RU"):
+        page = viewer_dir / "countries" / f"{iso}.html"
+        assert page.exists(), f"missing country page for {iso}"
+        text = page.read_text()
+        assert iso in text, f"{iso}.html missing ISO code in content"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-2: No ZZ page generated
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp2_no_zz_page(viewer_dir):
+    assert not (viewer_dir / "countries" / "ZZ.html").exists()
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-3: Country pages link back to element pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp3_country_pages_link_to_elements(viewer_dir):
+    cd_page = (viewer_dir / "countries" / "CD.html").read_text()
+    assert 'href="../elements/Co.html"' in cd_page
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-4: Element pages link to country pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp4_element_pages_link_to_countries(viewer_dir):
+    co_page = (viewer_dir / "elements" / "Co.html").read_text()
+    assert 'href="../countries/CD.html"' in co_page
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-5: Map drawer contains "View full page" link
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp5_drawer_js_has_full_page_link(viewer_dir):
+    js = (viewer_dir / "assets" / "charts_map.js").read_text()
+    assert "countries/" in js and "View full page" in js
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-6: Thin-data country page renders without error
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp6_thin_country_page_renders(viewer_dir):
+    # US has thin Co mining data (share_pct=0, quantity=300t) — page must still exist
+    page = viewer_dir / "countries" / "US.html"
+    assert page.exists()
+    text = page.read_text()
+    assert "Mining" in text and "Reserves" in text
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-7: Relative path correctness
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp7_country_page_relative_paths(viewer_dir):
+    cd = (viewer_dir / "countries" / "CD.html").read_text()
+    assert 'href="../assets/atlas.css"' in cd
+    assert 'src="../assets/' in cd  # JS scripts
+    assert 'href="../index.html"' in cd  # back-link
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-8: ISO name map covers all generated country pages
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp8_iso_name_map_covers_all_countries(viewer_dir):
+    iso_map, _ = build_viewer._build_iso_name_map()
+    countries_dir = viewer_dir / "countries"
+    for page in countries_dir.glob("*.html"):
+        iso = page.stem
+        # page must contain more than just the ISO code as its heading
+        text = page.read_text()
+        assert len(text) > 500, f"{iso}.html suspiciously short ({len(text)} bytes)"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-9: _build_country_page_data returns expected shape for CD/Co
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp9_build_country_page_data_cd_co():
+    """CD must have a Co mining row with global_rank=1."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        data = build_viewer._build_country_page_data(con)
+    finally:
+        con.close()
+
+    assert "CD" in data, "CD not in country page data"
+    cd_rows = data["CD"]
+    co_mining = next((r for r in cd_rows if r["symbol"] == "Co" and r["stage"] == "mining"), None)
+    assert co_mining is not None, "CD missing Co mining row"
+    assert co_mining["global_rank"] == 1, f"CD Co mining should be rank 1, got {co_mining['global_rank']}"
+    assert co_mining["share_pct"] == 76.0, f"CD Co mining share should be 76%, got {co_mining['share_pct']}"
+    assert "ZZ" not in data, "ZZ must be excluded from country page data"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-10: _compute_country_summary returns correct stats for CD
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp10_compute_country_summary_cd():
+    """CD should have n_mined > 0 and n_critical > 0."""
+    con = duckdb.connect(str(REAL_DB), read_only=True)
+    try:
+        data = build_viewer._build_country_page_data(con)
+    finally:
+        con.close()
+
+    cd_rows = data["CD"]
+    summary = build_viewer._compute_country_summary(cd_rows)
+    assert summary["n_mined"] > 0, "CD should mine at least one element"
+    assert summary["n_critical"] > 0, "CD should have at least one critical element"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-11: _build_iso_name_map covers key countries
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp11_iso_name_map_key_countries():
+    iso_map, sov_map = build_viewer._build_iso_name_map()
+    assert "CD" in iso_map, "CD missing from ISO name map"
+    assert "NC" in iso_map, "NC missing from ISO name map"
+    assert "CN" in iso_map, "CN missing from ISO name map"
+    # NC is a French territory
+    assert sov_map.get("NC") == "France", f"NC sovereignt should be France, got {sov_map.get('NC')!r}"
+    # ZZ should not be in the GeoJSON at all
+    assert "ZZ" not in iso_map, "ZZ should not appear in ISO name map"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-12: Site nav appears in all page shells
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp12_site_nav_in_pages(viewer_dir):
+    """index.html, element pages, and country pages all include the site nav."""
+    index = (viewer_dir / "index.html").read_text()
+    assert 'class="site-nav"' in index, "index.html missing site-nav"
+    assert "byproducts.html" in index, "index.html nav missing byproducts.html link"
+
+    co = (viewer_dir / "elements" / "Co.html").read_text()
+    assert 'class="site-nav"' in co, "Co.html missing site-nav"
+
+    cd = (viewer_dir / "countries" / "CD.html").read_text()
+    assert 'class="site-nav"' in cd, "CD.html missing site-nav"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-13: _flag_emoji helper
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp13_flag_emoji():
+    assert build_viewer._flag_emoji("CD") == "\U0001f1e8\U0001f1e9"  # 🇨🇩
+    assert build_viewer._flag_emoji("US") == "\U0001f1fa\U0001f1f8"  # 🇺🇸
+    assert build_viewer._flag_emoji("ZZ") == "\U0001f1ff\U0001f1ff"  # renders as letter pair on most platforms
+    assert build_viewer._flag_emoji("X") == ""  # too short
+    assert build_viewer._flag_emoji("123") == ""  # not alpha
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-14: Country page stage sections have correct headings
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp14_cd_page_has_stage_sections(viewer_dir):
+    """CD page must have Mining, Refining, Reserves section headings."""
+    cd = (viewer_dir / "countries" / "CD.html").read_text()
+    assert 'id="mining"' in cd, "CD.html missing #mining section"
+    assert 'id="refining"' in cd, "CD.html missing #refining section"
+    assert 'id="reserves"' in cd, "CD.html missing #reserves section"
+
+
+# ─────────────────────────────────────────────────────────────────────────────
+# CP-15: charts_country.js deployed
+# ─────────────────────────────────────────────────────────────────────────────
+
+
+def test_cp15_charts_country_js_deployed(viewer_dir):
+    """charts_country.js must be written into assets/ during generation."""
+    assert (viewer_dir / "assets" / "charts_country.js").exists(), "charts_country.js not deployed"
