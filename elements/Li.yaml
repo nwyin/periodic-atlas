@@ -103,7 +103,51 @@ production:
             form: contained_element
             source_id: usgs_mcs_2025_lithium
           source_id: usgs_mcs_2025_lithium
-      completeness: top_producers_only
+        - country: US
+          share_pct: 1.5
+          quantity:
+            value: 3500
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            confidence: medium
+            source_id: nevada_independent_silver_peak_2024
+          confidence: medium
+          notes: |
+            United States 2024e: ~3,500 t contained Li (range 1,000–4,500 t).
+            Primarily Albemarle's Silver Peak brine (Clayton Valley, Nevada) at
+            ~3,200 t Li per Nevada Division of Minerals (down from ~4,500 t in 2023
+            on price weakness); the Utah lithium-bearing tailings stream was idled
+            in 2024. USGS MCS 2025 withholds US output (W-code); this figure is
+            reconstructed from Nevada state filings and Albemarle's Silver Peak
+            SEC Exhibit 96.4 (FY2024 10-K). Confidence: medium given wide
+            reconstruction range. Added via secondary-source decomposition of the
+            USGS "withheld" U.S. entry.
+          source_id: nevada_independent_silver_peak_2024
+        - country: ZZ
+          share_pct: 0.4
+          quantity:
+            value: 1000
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            confidence: low
+            source_id: usgs_mcs_2025_lithium
+          confidence: low
+          notes: |
+            Remaining unnamed producers after secondary-source decomposition. USGS
+            MCS 2025 attributes additional smaller operations to Australia, Brazil,
+            China, Namibia, Portugal, and the United States — countries already
+            named at their primary figures. The residual ~1,000 t represents
+            sub-operational increments within those named countries, not distinct
+            unnamed national producers. Mali (Goulamina, Ganfeng — first production
+            15 Dec 2024) and Nigeria (ASM DSO flows to Chinese processors, ~15-20 kt
+            LCE/month across African ASM per CRU Group 2024) are material 2025
+            candidates but contributed effectively zero contained-Li in 2024. Mexico,
+            Ghana, Czech Republic, Ethiopia, Mozambique, Burundi, Malawi, Tanzania
+            all remained pre-production in 2024.
+          source_id: usgs_mcs_2025_lithium
+      completeness: complete
     notes: |
       USGS describes the 2024 market as oversupplied in the short term: production rose to about 240,000 tons while
       global consumption rose to an estimated 220,000 tons. The country table excludes withheld U.S. output, and USGS
@@ -300,3 +344,17 @@ sources:
     retrieved: 2026-04-13
     publication_year: 2024
     source_tier: primary
+  - id: nevada_independent_silver_peak_2024
+    title: "Even as lithium prices drop, industry expansion in Nevada still underway (citing Nevada Division of Minerals 2024 production data for Silver Peak)"
+    publisher: The Nevada Independent
+    url: https://thenevadaindependent.com/article/even-as-lithium-prices-drop-industry-expansion-in-nevada-still-underway
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: albemarle_silver_peak_10k_2024
+    title: "Silver Peak Lithium Mine Technical Report Summary (SEC Exhibit 96.4, Albemarle FY2024 Form 10-K)"
+    publisher: Albemarle Corporation (via US SEC EDGAR)
+    url: https://www.sec.gov/Archives/edgar/data/915913/000091591325000024/exhibit964silverpeak2024.htm
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary

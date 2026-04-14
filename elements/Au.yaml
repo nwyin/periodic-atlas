@@ -205,21 +205,259 @@ production:
           source_id: usgs_mcs_2025_gold
         notes: "Tanzania 2024e: 60 metric tons. Reserves revised 2024: 400 t."
         source_id: usgs_mcs_2025_gold
-      - country: ZZ
-        share_pct: 23.64
+      - country: SD
+        share_pct: 1.94
         quantity:
-          value: 780
+          value: 64
           unit: tonnes_per_year
           form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: sudan_tribune_smrc_2024_gold
+        confidence: medium
+        notes: |
+          Sudan 2024e: ~64 metric tons per Sudan Mineral Resources Company (SMRC),
+          reported via Sudan Tribune. Outside USGS MCS 2025 named list. SWISSAID
+          "On the Trail of African Gold" (2024) estimates 70–90 t including
+          smuggled/ASM flows; an estimated 50–70% of Sudan's gold is smuggled out
+          (primarily to UAE). Added via secondary-source decomposition of the USGS
+          'Other countries' residual. Confidence: medium for the official 64 t;
+          informal total is low-confidence.
+        source_id: sudan_tribune_smrc_2024_gold
+      - country: CI
+        share_pct: 1.76
+        quantity:
+          value: 58
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: mining_com_cote_divoire_2024_gold
+        notes: |
+          Côte d'Ivoire 2024e: ~58 metric tons (record high, up from ~51 t in 2023).
+          Endeavour Mining's Lafigué mine poured first gold in mid-2024; national
+          target 62 t for 2025. Not on USGS MCS 2025 named list despite now exceeding
+          Tanzania (60 t) and Burkina Faso (60 t). Added via secondary-source
+          decomposition of the USGS 'Other countries' residual.
+        source_id: mining_com_cote_divoire_2024_gold
+      - country: GN
+        share_pct: 1.67
+        quantity:
+          value: 55
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: usgs_myb_guinea_2023_gold
+        confidence: medium
+        notes: |
+          Guinea 2024e: ~55 metric tons. Major operations include AngloGold Ashanti's
+          Siguiri (~7 t), SMD Lefa (~4–5 t), Hummingbird's Kouroussa (~3–4 t), plus
+          substantial artisanal output. West African producer aggregate (Ghana + Mali +
+          Burkina Faso + Guinea) totaled ~11.83 Moz in 2024 per industry coverage.
+          Added via secondary-source decomposition.
+        source_id: usgs_myb_guinea_2023_gold
+      - country: AR
+        share_pct: 1.61
+        quantity:
+          value: 53
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: panorama_minero_argentina_2024_gold
+        notes: |
+          Argentina 2024e: ~53 metric tons; 13th-largest global producer per industry
+          coverage. Veladero (Barrick/Shandong Gold) 15.7 t (+22% YoY), Cerro Negro
+          ~7 t, Cerro Vanguardia ~5 t, plus Don Nicolás, Lindero, Gualcamayo. Not on
+          USGS MCS 2025 named list; added via secondary-source decomposition.
+        source_id: panorama_minero_argentina_2024_gold
+      - country: VE
+        share_pct: 1.52
+        quantity:
+          value: 50
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
+          source_id: icg_venezuela_gold_2025
+        confidence: low
+        notes: |
+          Venezuela 2024e: ~50 metric tons (central estimate; range 25–75 t across
+          sources). Almost entirely illicit/state-linked ASM concentrated in the
+          Orinoco Mining Arc; formal production negligible due to sanctions. OECD
+          estimates 25–37.5 t; US State Department Congressional Report (2024) cites
+          ~75 t (2021). Confidence: low due to wide source disagreement and sanctions
+          opacity. Added via secondary-source decomposition.
+        source_id: icg_venezuela_gold_2025
+      - country: PG
+        share_pct: 1.36
+        quantity:
+          value: 45
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: newmont_fy2024_results
+        confidence: medium
+        notes: |
+          Papua New Guinea 2024e: ~45 metric tons. Newmont's Lihir 19.1 t (614 koz) is
+          the largest single contributor; Porgera (Barrick/Zijin, restart year)
+          ~5–10 t; Simberi ~3 t; Hidden Valley, K92 Kainantu (~4–5 t), Ok Tedi
+          byproduct. Down from ~50 t (2022) and ~41 t (2023) per Statista/PNG
+          government data. Added via secondary-source decomposition.
+        source_id: newmont_fy2024_results
+      - country: CL
+        share_pct: 1.27
+        quantity:
+          value: 42
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: ey_chile_mining_2025
+        confidence: medium
+        notes: |
+          Chile 2024e: ~42 metric tons (up from ~34 t in 2023). Gold Fields's Salares
+          Norte poured first gold in March 2024, adding ~5–10 t as it ramps; plus
+          byproduct gold from Chile's copper operations. Added via secondary-source
+          decomposition.
+        source_id: ey_chile_mining_2025
+      - country: BO
+        share_pct: 1.21
+        quantity:
+          value: 40
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: ceic_bolivia_gold_2024
+        confidence: medium
+        notes: |
+          Bolivia 2024e: ~40 metric tons (down ~14% from 47 t in 2023 per CEIC data).
+          Overwhelmingly ASM in the Amazon; substantial informal flows to UAE and
+          India documented by InsightCrime. Under-discussed in mainstream supply
+          tables despite exceeding several USGS-named producers. Added via
+          secondary-source decomposition.
+        source_id: ceic_bolivia_gold_2024
+      - country: ZW
+        share_pct: 1.12
+        quantity:
+          value: 37
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: pindula_fidelity_zimbabwe_2024
+        notes: |
+          Zimbabwe 2024: 36.48 metric tons (record high, +21% YoY) per Fidelity Gold
+          Refineries (Zimbabwe's sole authorised gold buyer), via Pindula/EquityAxis
+          coverage. Split: 23.7 t small-scale + 12.7 t large-scale. The surge followed
+          VAT removal and prompt Fidelity payment reforms. Added via secondary-source
+          decomposition.
+        source_id: pindula_fidelity_zimbabwe_2024
+      - country: PH
+        share_pct: 0.97
+        quantity:
+          value: 32
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: mgb_philippines_metallic_2024
+        confidence: medium
+        notes: |
+          Philippines 2024e: ~32 metric tons per Mines and Geosciences Bureau (MGB)
+          of the Philippines. 2023 was 31.0 t; MGB reports gold and silver drove the
+          metallic mining sector's growth in 2024. Below the 1% naming floor (32/3300
+          = 0.97%) but admitted under the 2-secondary-source rule (MGB + CEIC
+          corroborate). Added via secondary-source decomposition.
+        source_id: mgb_philippines_metallic_2024
+      - country: CD
+        share_pct: 0.85
+        quantity:
+          value: 28
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: ecofin_kibali_drc_2024
+        confidence: medium
+        notes: |
+          DR Congo 2024e (formal): ~28 metric tons. AngloGold/Barrick's Kibali alone
+          produced 21.3 t (686 koz, -10% YoY). Formal exports ~27.9 t. SWISSAID
+          estimates formal channels capture <20% of actual DRC gold output, implying
+          a real total well above 100 t with the balance smuggled (primarily via
+          Uganda and Rwanda to UAE). The figure here is the formal/reported number;
+          confidence: medium. Below the 1% floor but admitted under 2-source rule.
+          Added via secondary-source decomposition.
+        source_id: ecofin_kibali_drc_2024
+      - country: DO
+        share_pct: 0.79
+        quantity:
+          value: 26
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          source_id: barrick_pueblo_viejo_2024
+        notes: |
+          Dominican Republic 2024e: ~26 metric tons, essentially all from Pueblo Viejo
+          (Barrick 60% / Newmont 40%). Phase 1 expansion reached commercial production
+          in Q3 2024; operator targeting 800+ koz/yr (~25+ t). Below the 1% floor but
+          admitted under 2-source rule (Barrick disclosure + Mining Weekly).
+          Added via secondary-source decomposition.
+        source_id: barrick_pueblo_viejo_2024
+      - country: TR
+        share_pct: 0.70
+        quantity:
+          value: 23
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: nordic_monitor_turkey_gold_2024
+        confidence: medium
+        notes: |
+          Turkey 2024e: ~23 metric tons (range 22–25 t). Down from ~36 t in 2023
+          because SSR Mining's Çöpler mine was offline all of 2024 following the
+          February 2024 heap-leach failure (~6–7 t removed). Kışladağ, Ağı Dağı,
+          Efemçukuru, and Öksüt continued. WGC Q3 2024 supply data corroborates.
+          Below the 1% floor but admitted under 2-source rule. Added via
+          secondary-source decomposition.
+        source_id: nordic_monitor_turkey_gold_2024
+      - country: ZZ
+        share_pct: 6.87
+        quantity:
+          value: 227
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
           source_id: usgs_mcs_2025_gold
-        notes: "USGS 'Other countries' row 2024e: 780 metric tons."
+        confidence: medium
+        notes: |
+          Remaining unnamed producers after secondary-source decomposition. Originally
+          780 t / 23.64% per USGS MCS 2025 'Other countries' row; this atlas has
+          extracted ~553 t / 16.77% into 13 named producers (SD, CI, GN, AR, VE, PG,
+          CL, BO, ZW, PH, CD, DO, TR). The residual 227 t comprises smaller producers
+          including Kyrgyzstan (~22 t), Suriname (~32 t), Ecuador (~18 t), Mongolia
+          (~13 t), Egypt (~15 t), Saudi Arabia (~14 t), Tajikistan (~14 t), Nicaragua
+          (~14 t), Guyana (~13.5 t), Ethiopia (~15–25 t calendar-2024), Senegal (~10 t),
+          and a long tail of smaller national producers. USGS 'rounded' attribution
+          is retained as the source of record for this residual row.
         source_id: usgs_mcs_2025_gold
     completeness: complete
   notes: |
     World mine production increased from 3,250 metric tons (2023) to 3,300 metric tons
     (2024e). China, Russia, Australia, Canada, and the United States together accounted
     for 41% of estimated global production in 2024. Burkina Faso has no reported reserves
-    (NA). Named country entries sum to 3,300 t, matching the rounded world total.
+    (NA). USGS MCS 2025 names 17 producers directly; this atlas extends the list with
+    13 additional producers drawn from secondary sources (World Gold Council, SWISSAID,
+    USGS country-yearbook chapters, corporate disclosures, national geological surveys),
+    shrinking the USGS 'Other countries' residual from 780 t to ~227 t. Coverage
+    threshold for secondary-source naming: ≥1% of world production, OR cited in ≥2
+    authoritative secondary sources at material tonnage. Sudan (~64 t), Venezuela
+    (~50 t), and DR Congo (~28 t) figures are formal/reported; real totals including
+    smuggled/ASM flows are materially higher per SWISSAID, ICG, and US State Department
+    analyses. Secondary-sourced shares carry `confidence: medium|low` and `approximate:
+    true` on their quantities; each row's `source_id` traces provenance.
 
 reserves:
   economic_reserves:
@@ -628,7 +866,18 @@ narrative: |
   The annual average gold price reached a record $2,400 per troy ounce in 2024, a 23%
   increase over the prior record of $1,945 set in 2023, driven by geopolitical uncertainty,
   central bank demand, and investment flows, even as ETF-based gold investments declined
-  sharply.
+  sharply. Beyond the 17 countries USGS names directly, authoritative secondary sources
+  (World Gold Council, SWISSAID, USGS country yearbooks, corporate disclosures) identify
+  13 additional producers with 2024 output between ~23 and ~64 metric tons — Sudan
+  (~64 t, largely artisanal), Côte d'Ivoire (58 t, record), Guinea (~55 t), Argentina
+  (~53 t), Venezuela (~50 t, mostly informal/illicit), Papua New Guinea (~45 t), Chile
+  (~42 t), Bolivia (~40 t, overwhelmingly ASM), Zimbabwe (~37 t, record), Philippines
+  (~32 t), DR Congo (~28 t formal), Dominican Republic (~26 t), and Turkey (~23 t) —
+  collectively ~553 t (17% of world output), shrinking the USGS 'Other countries'
+  residual from 780 t to ~227 t. Formal production materially understates real totals
+  in Sudan, Venezuela, and DR Congo, where smuggled and artisanal flows are large and
+  tracked only by analytical organizations (SWISSAID, International Crisis Group, US
+  State Department).
 
   Global gold consumption (excluding exchange-traded funds) in 2024 was dominated by
   jewelry (45%), central bank and institutional demand (21%), and physical investment bars
@@ -663,4 +912,102 @@ sources:
     url: https://www.gold.org/goldhub/research/gold-demand-trends
     retrieved: 2026-04-12
     publication_year: 2024
+    source_tier: secondary
+  - id: sudan_tribune_smrc_2024_gold
+    title: "Sudan produced over 64 tonnes of gold in 2024 (citing Sudan Mineral Resources Company)"
+    publisher: Sudan Tribune
+    url: https://sudantribune.com/article/302984
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: swissaid_african_gold_2024
+    title: "On the Trail of African Gold — Quantifying Production, Trade, and Financial Flows"
+    publisher: SWISSAID
+    url: https://www.swissaid.ch/en/media/press-release-gold-study-2024/
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: mining_com_cote_divoire_2024_gold
+    title: "Ivory Coast gold output expected to reach record high this year"
+    publisher: Mining.com
+    url: https://www.mining.com/web/ivory-coast-gold-output-expected-to-reach-record-high-this-year/
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: usgs_myb_guinea_2023_gold
+    title: "USGS Minerals Yearbook — Africa and Middle East volume (Guinea chapter, 2023)"
+    publisher: US Geological Survey
+    url: https://www.usgs.gov/centers/national-minerals-information-center/africa-and-middle-east
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: primary
+  - id: panorama_minero_argentina_2024_gold
+    title: "Gold in Argentina, with Great Prospects"
+    publisher: Panorama Minero
+    url: https://www.panorama-minero.com/en/news/gold-in-argentina-with-great-prospects
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: icg_venezuela_gold_2025
+    title: "A Curse of Gold: Mining and Violence in Venezuela's South"
+    publisher: International Crisis Group
+    url: https://www.crisisgroup.org/brf/latin-america-caribbean/andes/venezuela/b53-curse-gold-mining-and-violence-venezuelas-south
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: newmont_fy2024_results
+    title: "Newmont Reports Fourth Quarter and Full Year 2024 Results; Provides Full Year 2025 Guidance"
+    publisher: Newmont Corporation
+    url: https://www.newmont.com/investors/news-release/news-details/2025/Newmont-Reports-Fourth-Quarter-and-Full-Year-2024-Results-Provides-Full-Year-2025-Guidance/default.aspx
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: ey_chile_mining_2025
+    title: "Chile Mining & Metals Report 2025 (Informe Minero)"
+    publisher: EY Chile
+    url: https://www.ey.com/content/dam/ey-unified-site/ey-com/es-cl/about-us/documents/informe-minero-2025.pdf
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: ceic_bolivia_gold_2024
+    title: "Bolivia Gold Production — indicator series"
+    publisher: CEIC Data
+    url: https://www.ceicdata.com/en/indicator/bolivia/gold-production
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: pindula_fidelity_zimbabwe_2024
+    title: "Zimbabwe Hits Record Gold Production Of 36.48 Tonnes In 2024 (Fidelity Gold Refineries data)"
+    publisher: Pindula News
+    url: https://news.pindula.co.zw/2025/01/04/zimbabwe-hits-record-gold-production-of-36-48-tonnes-in-2024/
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: mgb_philippines_metallic_2024
+    title: "Gold & Silver Fuel 2024 Growth in PH Metallic Mineral Sector — MGB Report"
+    publisher: Mines and Geosciences Bureau (Philippines)
+    url: https://angminero.com/gold-silver-fuel-2024-growth-in-ph-metallic-mineral-sector-mgb-report/
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: ecofin_kibali_drc_2024
+    title: "Kibali delivers strong results amid Congo's gold sector disruptions (citing AngloGold Ashanti / Barrick)"
+    publisher: Ecofin Agency
+    url: https://www.ecofinagency.com/news/0812-51193-kibali-delivers-strong-results-amid-congo-s-gold-sector-disruptions
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: barrick_pueblo_viejo_2024
+    title: "Pueblo Viejo operations (Dominican Republic) — corporate operations page"
+    publisher: Barrick Gold Corporation
+    url: https://www.barrick.com/English/operations/pueblo-viejo/default.aspx
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: nordic_monitor_turkey_gold_2024
+    title: "From Ankara to Wall Street: The Political Shielding and Global Fallout of Turkey's Mine Disaster (gold production context)"
+    publisher: Nordic Monitor
+    url: https://nordicmonitor.com/2025/11/from-ankara-to-wall-street-the-political-shielding-and-global-fallout-of-turkeys-mine-disaster/
+    retrieved: 2026-04-14
+    publication_year: 2025
     source_tier: secondary

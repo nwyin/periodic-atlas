@@ -358,6 +358,25 @@ narrative: |
   performance penalties and domestic consumers remain exposed to concentrated foreign mine
   supply and imported intermediate products.
 
+  **Within-country analytical limitation (documented, intentionally not modelled):** the DRC
+  row at 880 t and Rwanda row at 350 t — together ~59% of world mine output — mask two
+  dynamics that the structured data cannot express. First, the DRC↔Rwanda attribution is
+  unstable year-to-year because coltan is smuggled across the border; the UN Group of Experts
+  (S/2024/969) documents roughly 120 t/month of coltan moving Masisi→Rwanda from May to
+  October 2024, which inflates Rwanda's row and understates DRC's. Second, the Rubaya mining
+  complex — estimated at ~15% of world coltan output on its own — has been controlled by the
+  M23 armed group since early 2024, making whatever figure sits under the DRC row partially
+  a conflict-financing flow rather than a conventional mining output. ITSCI traceability,
+  which underwrites most DRC / Rwanda / Burundi tonnage reporting, had its RMI listing
+  suspended in 2024 after Global Witness's "ITSCI laundromat" investigation, further
+  weakening confidence in formal-vs-informal attribution. The atlas schema has no native
+  concept for within-country production-mode splits or formal-vs-informal decomposition, so
+  none of this is captured in the structured `mining_by_country` data. Per the 2026-04-14
+  project scope decision (see `atlas/zz-decomposition-plan.md`), within-country decomposition
+  is out of scope; readers querying the DRC and Rwanda tantalum rows should treat them as
+  aggregates across conflict-affected ASM, formal ITSCI-traced flows, and cross-border
+  smuggled material.
+
 sources:
   - id: usgs_mcs_2025_tantalum
     title: "Mineral Commodity Summaries 2025 — Tantalum"

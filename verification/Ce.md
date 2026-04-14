@@ -133,3 +133,32 @@ The Ce.yaml geopolitical event[3] states "FY2025 potential acquisitions of 1,100
 **Mischmetall 2021–2024 price trend**: YAML claims mischmetall was "$5–7/kg over 2020–2024." Confirmed: 2020=$5, 2021=$6, 2022=$7, 2023=$5, 2024e=$5. The range $5–7 is accurate.
 
 **USGS Events text (country attribution)**: The USGS Events, Trends, and Issues paragraph explicitly names "China, Nigeria, and Thailand" as drivers of the 2024 global production increase to 390,000 t. Ce.yaml's geopolitical_events[2] event title substitutes Tanzania for Thailand — a clear error that is also the root cause of the TZ/TH mining country swap throughout the production section.
+
+## ZZ-bucket decomposition (2026-04-14) — REEs (group-level)
+
+Per `atlas/zz-decomposition-plan.md`, the rare_earths grouped production block (carried canonically on `Ce.yaml`) was reviewed at the group level (not per-lanthanide). USGS residual (1,100 t / 0.28%) is already very small — USGS names 13 producers down to Brazil (20 t / 0.005%) — and **no new countries qualified** at the 1%-or-two-sources threshold for 2024. The primary analytical output was therefore a **data correction** rather than a decomposition.
+
+### Data correction
+
+The `mining_by_country` row for Tanzania (TZ) at 13,000 t REO (3.3%) was **incorrect**. USGS MCS 2025 places Tanzania at **zero 2024 mine production** (Ngualla remains pre-commercial; Tanzania holds 890,000 t REO in reserves only). The 13,000 t / +261% YoY value actually belongs to **Thailand (TH)**, produced from rare-earth recovery in legacy alluvial tin-mining residues (monazite / xenotime byproduct). This pass:
+- **Renamed** the TZ row to TH and rewrote its notes to reference Thailand's surge driver.
+- **Removed** the phantom TH row at 300 t (0.08%) that was a duplicate label from a prior draft.
+
+The pre-existing verification note (above) had already flagged this discrepancy on the `geopolitical_events` side but no remediation had been applied. With this correction, Ce.yaml's mining_by_country row set matches USGS MCS 2025 table exactly.
+
+**Follow-up needed (out of this pass's scope):** Ce.yaml likely still has `geopolitical_events[2]` naming Tanzania where Thailand belongs; separate TZ→TH sweep of narrative/events needed.
+
+### ZZ decomposition (not applied)
+
+**Candidates researched, all non-qualifying for 2024:**
+- Malawi (Songwe Hill), Tanzania (Ngualla), South Africa (Steenkampskraal), Canada (Nechalacho Tardiff), Greenland (Tanbreez), Burundi (Gakara), Mozambique, Turkey (Beylikova pilot), Kazakhstan (small re-exports, included in USGS ZZ). All are pre-production, dormant, or de-minimis for 2024.
+- **Brazil** is a special case: USGS shows BR at 20 t (2024e, from Araxá residual), but Serra Verde (Pela Ema) entered commercial production Jan 2024 ramping toward a 2,700 t/yr run rate and 5,000 t nameplate. USGS likely has not yet captured Serra Verde in MCS 2025 (accounting lag; MREC sales to Solvay France and Chinese processors). Brazil probably crosses the 1% threshold in 2025–2026. **Flagged as a candidate for the next-cycle refresh.**
+
+**Schema location of the grouped block:**
+- **`elements/Ce.yaml`** — canonical grouped block with full country breakdown and `completeness: complete` (edit target for this pass).
+- `elements/La.yaml` — top-producers-only variant.
+- `elements/Nd.yaml` — schema spike with placeholder ZZ.
+- `elements/Y.yaml` — separate grouped block keyed to the USGS Yttrium chapter (17,500 t Y₂O₃ midpoint), distinct decomposition problem.
+
+**Methodology:** `atlas/zz-decomposition-plan.md`.
+

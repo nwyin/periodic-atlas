@@ -416,6 +416,24 @@ narrative: |
   China. 2024 was a record-high production year for both mine and
   refinery output, driving prices down and idling the US Idaho operation.
 
+  **Within-country analytical limitation (documented, intentionally not
+  modelled):** the DRC row at 220,000 t aggregates two very different
+  supply modes. Large-scale industrial operations — principally Chinese-
+  owned, including CMOC's Tenke Fungurume and Kisanfu, plus Glencore's
+  Katanga and Mutanda — account for the bulk of the figure. Artisanal
+  and small-scale mining (ASM), estimated at roughly 15–30% of DRC
+  cobalt output, is the other mode: it raises distinct concerns around
+  child labour, human-rights violations, and opaque routing through
+  Chinese trading houses, and the Entreprise Générale du Cobalt (EGC)
+  monopoly set up to formalize the ASM stream has struggled with volume
+  uptake. The atlas schema has no native concept for within-country
+  production-mode splits, so this ASM-vs-industrial distinction is not
+  modelled in the structured `mining_by_country` data — the single DRC
+  row contains both. Per the 2026-04-14 project scope decision (see
+  `atlas/zz-decomposition-plan.md`), within-country decomposition and
+  formal-vs-informal splits are out of scope for the atlas; anyone
+  querying the DRC cobalt row should treat it as an aggregate.
+
 sources:
   - id: usgs_mcs_2025_cobalt
     title: Mineral Commodity Summaries 2025 — Cobalt

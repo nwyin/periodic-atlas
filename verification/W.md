@@ -100,3 +100,27 @@
 - `reserves.economic_reserves.value` is a floor because the source prints `>4,600,000`; every reserve share is therefore an approximate upper bound.
 - Australia's reserve figure is not cleanly typeset in the PDF (`11570,000`). The YAML interpretation of `570,000` is plausible and internally consistent with footnote 11, but it is still an inference from a malformed source rendering rather than a cleanly printed value.
 - I treated the U.S. critical-mineral flag as `inferred` because the cited Federal Register document proves tungsten is on the 2022 list, but the field name says `as_of_2025`.
+
+## ZZ-bucket decomposition (2026-04-14)
+
+Per `atlas/zz-decomposition-plan.md`, the USGS "Other countries" residual (1,500 t / 1.85% of 2024 world production) was decomposed using BGS World Mineral Production 2019-2023 and USGS Minerals Yearbook country chapters. Three producers were named on the 2-secondary-sources rule (the 1% threshold = 810 t, which no single candidate clears).
+
+| Country | ISO2 | 2023 t W | share_pct | Confidence | Primary source | Corroborating |
+|---|---|---|---|---|---|---|
+| DR Congo | CD | 400 | 0.49 | medium | `bgs_wmp_2019_2023_tungsten` (BGS 418 t) | `usgs_myb_congo_kinshasa_2022_tungsten` |
+| Mongolia | MN | 300 | 0.37 | medium | `bgs_wmp_2019_2023_tungsten` (BGS 320 t) | `usgs_myb_mongolia_2022_tungsten` |
+| Brazil | BR | 280 | 0.35 | medium | `bgs_wmp_2019_2023_tungsten` (BGS 284 t) | MNB Mineração Nordeste Brasil (scheelite, Rio Grande do Norte) |
+
+**Sum of new named shares:** 980 t / 1.21%. **Remaining ZZ:** 520 t / 0.64%.
+
+**Non-qualifying countries researched (stay in ZZ):** Malaysia (~100 t), Kyrgyzstan (~100 t, BGS estimate), Burundi (~70 t, 3TG-adjacent, declining), Mexico (~50 t), Nigeria (~50 t, rising), Thailand (~40 t, scheelite byproduct), Uganda (~30 t, artisanal, 3TG-adjacent), Myanmar (~20 t, collapsed from 220 t in 2019 due to civil war), Uzbekistan (~15 t).
+
+**Caveats:**
+- **BGS vs USGS world total divergence:** BGS 2023 reports 85,700 t vs USGS 2024e 81,000 t. The gap is dominated by Vietnam reporting basis — BGS appears to report gross concentrate mass; USGS reports contained W. **Do not blindly reconcile.**
+- **Rwanda overstatement risk:** Rwanda's BGS 2023 figure (1,800 t) exceeds USGS 2024e (1,200 t) by ~50%; discrepancy is consistent with DRC→Rwanda smuggling documented by Global Witness's "ITSCI laundromat" investigation. USGS's lower figure may reflect discounting of laundered volumes.
+- **ITSCI credibility** is impaired (RMI suspension 2022/2024) — affects confidence in all Rwanda/DRC/Burundi/Uganda tonnages.
+- **Reporting year lag:** BGS WMP 2019-2023 reports 2023 data, so long-tail shares are on a 2023 basis while USGS-named rows are on 2024e. Within-year changes may introduce drift; noted per row.
+- **Post-snapshot:** South Korea's Sangdong mine (Almonty Industries) restarted December 2025 — will appear in USGS MCS 2026+ at ~2–3% of world output.
+
+**Methodology:** `atlas/zz-decomposition-plan.md`.
+

@@ -79,3 +79,30 @@ All numeric lithium claims with a `source_id` in `elements/Li.yaml` were checked
 The nine country `share_pct` values are `inferred` rather than `verified` because the USGS chapter lists country tonnages and the world total, but not percentage shares. The YAML percentages are arithmetic derivations from those table values.
 
 `feedstock_origins` and `substitutes` both cite `usgs_mcs_2025_lithium`, but those sections contain qualitative statements only and no distinct numeric claims to tabulate. `reserves_by_country` is absent in the YAML, so there were no country-reserve-share claims to verify in this pass.
+
+## ZZ-bucket decomposition (2026-04-14)
+
+Per `atlas/zz-decomposition-plan.md`, the USGS residual (implicit ~4,520 t / ~1.9% of 2024 world output; the original YAML used `completeness: top_producers_only` without an explicit ZZ row) was decomposed. Only one producer cleared the threshold: the United States, whose output USGS explicitly withheld (W-code in the country table).
+
+| Country | ISO2 | 2024e t Li | share_pct | Confidence | Primary source | Corroborating |
+|---|---|---|---|---|---|---|
+| United States | US | 3,500 | 1.5 | medium | `nevada_independent_silver_peak_2024` (Nevada Division of Minerals data) | `albemarle_silver_peak_10k_2024` (SEC Exhibit 96.4, Albemarle FY2024 10-K) |
+
+**Reconstruction:** Nevada state filings report Silver Peak (Albemarle) at ~3,200 t Li for 2024, down from ~4,500 t in 2023 on price weakness. The Utah lithium-bearing tailings stream was idled in 2024. Central estimate 3,500 t; range 1,000–4,500 t. Confidence medium given wide reconstruction range and USGS's own withholding.
+
+**Share list transition:** completeness changed from `top_producers_only` to `complete` after adding US + explicit ZZ residual (~1,000 t / 0.4%). Share totals: 98.2% (pre) + 1.5% (US) + 0.4% (explicit ZZ) = 100.1%.
+
+**Non-qualifying candidates researched (stay in ZZ):**
+- **Mali (ML):** Goulamina (Ganfeng) first production 15 Dec 2024; first shipment June 2025 — 2024 Li contribution effectively zero. Material for 2025+ data.
+- **Nigeria (NG):** ASM DSO flows to Chinese processors, ~15–20 kt LCE/month across African ASM per CRU Group 2024 (~2.8–3.8 kt Li/month aggregate). Not country-decomposed by USGS; partially hidden inside Zimbabwe (22,000 t) and Chinese feed imports. Confidence too low to attribute standalone tonnage in 2024.
+- **Bolivia (BO):** ~400 t Li from YLB Llipi pilot plant — below threshold and sparsely sourced.
+- **Mexico (MX), Ghana (GH), Czech Republic (CZ), Ethiopia (ET), Mozambique (MZ), Malawi (MW), Burundi (BI), Tanzania (TZ):** All pre-production or dormant in 2024.
+
+**Caveats:**
+- USGS narrative attributes the residual to "additional smaller operations in Australia, Brazil, China, Namibia, Portugal, and the United States" — countries already named at their primary figures. The explicit ZZ row therefore represents sub-operational increments within named countries, not distinct unnamed producers.
+- Schema: Li.yaml has a single `production` block (not stream-split). USGS also does not split its country table by brine / spodumene / lepidolite — that distinction lives in narrative only. Decomposition was applied at the single-block level.
+- **Market shift context:** 2024 saw the sharp transition from scarcity to glut (China spot carbonate $14,500 → $9,400/t; spodumene $1,250 → $730/t). Numerous curtailments and expansion delays occurred; reconstruction figures reflect that environment.
+- **Out-of-scope but flagged:** Sinomine's partial idling of Bikita petalite (Zimbabwe, Oct 2024) is already captured in Zimbabwe's 22,000 t USGS-named figure. Mali Goulamina is a 2025 decomposition candidate.
+
+**Methodology:** `atlas/zz-decomposition-plan.md`.
+

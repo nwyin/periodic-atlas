@@ -108,7 +108,7 @@ production:
           and Issues section cites increased processing in Nigeria as one of
           the drivers of the 2024 global production increase.
         source_id: usgs_mcs_2025_rare_earths
-      - country: TZ
+      - country: TH
         share_pct: 3.3
         quantity:
           value: 13000
@@ -116,9 +116,15 @@ production:
           form: oxide
           source_id: usgs_mcs_2025_rare_earths
         notes: |
-          USGS MCS 2025: Tanzania 13,000 t REO (2024e), 3.3% of world total.
+          USGS MCS 2025: Thailand 13,000 t REO (2024e), 3.3% of world total.
           Up from 3,600 t in 2023 (+261% YoY), the largest percentage increase
-          among tracked countries. Tanzania holds 890,000 t REO in reserves.
+          among tracked countries. Production is from rare-earth recovery in
+          legacy alluvial tin-mining residues (monazite / xenotime byproduct);
+          this stream moves to Chinese processors via Shenghe-adjacent channels.
+          [2026-04-14: this row was previously mis-labelled as Tanzania (TZ) —
+          corrected during the ZZ-decomposition pass. Tanzania has zero 2024
+          mine production per USGS MCS 2025; it holds 890,000 t REO in reserves
+          only (Ngualla remains pre-commercial).]
         source_id: usgs_mcs_2025_rare_earths
       - country: IN
         share_pct: 0.7
@@ -158,15 +164,6 @@ production:
           USGS MCS 2025: Vietnam 300 t REO (2024e), unchanged from 2023.
           Vietnam holds 3,500,000 t REO in reserves, suggesting significant
           future production potential.
-        source_id: usgs_mcs_2025_rare_earths
-      - country: TH
-        share_pct: 0.08
-        quantity:
-          value: 300
-          unit: tonnes_per_year
-          form: oxide
-          source_id: usgs_mcs_2025_rare_earths
-        notes: "USGS MCS 2025: Thailand 300 t REO (2024e), unchanged from 2023."
         source_id: usgs_mcs_2025_rare_earths
       - country: MY
         share_pct: 0.03

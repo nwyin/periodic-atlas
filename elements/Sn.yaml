@@ -200,15 +200,60 @@ production:
           source_id: usgs_mcs_2025_tin
         notes: "USGS MCS 2025 table: Laos 1,500 metric tons (estimated) 2024e, down from 1,700e in 2023."
         source_id: usgs_mcs_2025_tin
-      - country: ZZ
-        share_pct: 0.6
+      - country: NA
+        share_pct: 0.27
         quantity:
-          value: 1800
+          value: 800
           unit: tonnes_per_year
           form: contained_element
           approximate: true
+          confidence: medium
+          source_id: andrada_mining_fy24_results
+        confidence: medium
+        notes: |
+          Namibia 2024e: ~800 t contained Sn (range 700–900 t). Single-asset country:
+          Andrada Mining's Uis mine (Erongo) produced ~880 t contained Sn in FY24
+          (Mar 2023–Feb 2024), ramping through CY2025 toward a 2,600 tpa concentrate
+          target. ITA coverage and Thaisarco feedstock lists corroborate Namibia as
+          a material source. Added via secondary-source decomposition of the USGS
+          'Other countries' residual.
+        source_id: andrada_mining_fy24_results
+      - country: UG
+        share_pct: 0.27
+        quantity:
+          value: 800
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: medium
+          source_id: ita_woodcross_uganda_refinery_2024
+        confidence: medium
+        notes: |
+          Uganda 2024e: ~800 t contained Sn. ITA characterises Uganda as "<1,000 tpa"
+          producer. Woodcross Resources commissioned Uganda's first tin refinery at
+          Mbarara (Ruti) in May 2024 — 1,600 tpa nameplate producing ~99.85% Sn ingots;
+          domestic artisanal mine output plus some imported DRC/Rwanda feedstock.
+          Added via secondary-source decomposition of the USGS 'Other countries'
+          residual.
+        source_id: ita_woodcross_uganda_refinery_2024
+      - country: ZZ
+        share_pct: 0.07
+        quantity:
+          value: 200
+          unit: tonnes_per_year
+          form: contained_element
+          approximate: true
+          confidence: low
           source_id: usgs_mcs_2025_tin
-        notes: "USGS MCS 2025 'Other countries' row: 1,800 metric tons (estimated) 2024e, down from 1,840 in 2023."
+        confidence: low
+        notes: |
+          Remaining unnamed producers after secondary-source decomposition. Originally
+          1,800 t / 0.6% per USGS MCS 2025 'Other countries' row; this atlas has
+          extracted ~1,600 t / 0.54% into Namibia and Uganda. The residual ~200 t
+          covers Burundi (~200–400 t ASM, ITSCI-monitored, declining), small legacy
+          operations in Thailand, Portugal, Spain, and byproduct streams elsewhere.
+          Note: USGS's Sn ZZ bucket is genuinely small — unlike Au, Li, or W, tin's
+          long tail has almost no analytical headroom after USGS's own coverage.
         source_id: usgs_mcs_2025_tin
     completeness: complete
   notes: |
@@ -642,3 +687,31 @@ sources:
     retrieved: 2026-04-11
     publication_year: 2022
     source_tier: primary
+  - id: andrada_mining_fy24_results
+    title: "Andrada increases tin production at Uis (FY24 results)"
+    publisher: Mining Weekly / Andrada Mining plc
+    url: https://www.miningweekly.com/article/andrada-increases-tin-production-2024-03-27
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: mining_energy_namibia_andrada_tin
+    title: "Andrada tin output rises 15% to 1,740 tonnes as processing hits 1.04M tonnes"
+    publisher: Mining & Energy Namibia
+    url: https://miningandenergy.com.na/andrada-tin-output-rises-15-to-1740-tonnes-as-processing-hits-1-04m-tonnes/
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: secondary
+  - id: ita_woodcross_uganda_refinery_2024
+    title: "Woodcross opens Uganda's first tin refinery"
+    publisher: International Tin Association
+    url: https://www.internationaltin.org/woodcross-opens-ugandas-first-tin-refinery/
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary
+  - id: ecofin_uganda_tin_hub_2024
+    title: "Tin: Uganda seeks to become a processing hub in Central Africa"
+    publisher: Ecofin Agency
+    url: https://www.ecofinagency.com/mining/0504-45357-tin-uganda-seeks-to-become-a-processing-hub-in-central-africa
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: secondary

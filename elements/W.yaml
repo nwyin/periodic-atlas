@@ -82,14 +82,79 @@ production:
             source_id: usgs_mcs_2025_tungsten
           notes: "USGS 2024e mine production table: Bolivia 1,600 t W content."
           source_id: usgs_mcs_2025_tungsten
-        - country: ZZ
-          share_pct: 1.85
+        - country: CD
+          share_pct: 0.49
           quantity:
-            value: 1500
+            value: 400
             unit: tonnes_per_year
             form: contained_element
+            approximate: true
+            confidence: medium
+            source_id: bgs_wmp_2019_2023_tungsten
+          confidence: medium
+          notes: |
+            DR Congo 2023: ~400 t W content (BGS WMP 2019-2023: 418 t, up sharply
+            from 148 t in 2022). Wolframite from ASM; 3TG-relevant. Confidence
+            medium given ITSCI credibility issues (RMI suspension 2024) and documented
+            DRC→Rwanda smuggling flagged by Global Witness ("ITSCI laundromat").
+            Reporting year 2023 vs USGS MCS 2025 reporting year 2024e. Added via
+            secondary-source decomposition.
+          source_id: bgs_wmp_2019_2023_tungsten
+        - country: MN
+          share_pct: 0.37
+          quantity:
+            value: 300
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            confidence: medium
+            source_id: bgs_wmp_2019_2023_tungsten
+          confidence: medium
+          notes: |
+            Mongolia 2023: ~300 t W content (BGS WMP: 320 t; corroborated by USGS MYB
+            Mongolia 2022). Recovering from COVID-era collapse (40 t in 2020).
+            Reporting year 2023 vs USGS MCS 2025 reporting year 2024e. Added via
+            secondary-source decomposition.
+          source_id: bgs_wmp_2019_2023_tungsten
+        - country: BR
+          share_pct: 0.35
+          quantity:
+            value: 280
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            confidence: medium
+            source_id: bgs_wmp_2019_2023_tungsten
+          confidence: medium
+          notes: |
+            Brazil 2023: ~280 t W content (BGS WMP: 284 t). Scheelite operations in
+            Rio Grande do Norte (MNB Mineração Nordeste Brasil); stable 250-300 t
+            across 2019-2023. Reporting year 2023 vs USGS MCS 2025 reporting year
+            2024e. Added via secondary-source decomposition.
+          source_id: bgs_wmp_2019_2023_tungsten
+        - country: ZZ
+          share_pct: 0.64
+          quantity:
+            value: 520
+            unit: tonnes_per_year
+            form: contained_element
+            approximate: true
+            confidence: low
             source_id: usgs_mcs_2025_tungsten
-          notes: "USGS 2024e mine production table 'Other countries': 1,500 t W content."
+          confidence: low
+          notes: |
+            Remaining unnamed producers after secondary-source decomposition. Originally
+            1,500 t / 1.85% per USGS MCS 2025 'Other countries' row; this atlas has
+            extracted ~980 t / 1.21% into DR Congo, Mongolia, and Brazil (all BGS 2023
+            data). The residual ~520 t covers Malaysia (~100 t), Kyrgyzstan (~100 t),
+            Burundi (~70 t), Mexico (~50 t), Nigeria (~50 t), Thailand (~40 t), Uganda
+            (~30 t), Myanmar (~20 t — collapsed from 220 t in 2019 due to civil war),
+            Uzbekistan (~15 t), and minor byproduct streams. Note: BGS and USGS world
+            totals diverge materially (BGS 2023: 85,700 t vs USGS 2024e: 81,000 t) due
+            to a Vietnam reporting-basis difference (BGS appears to report gross
+            concentrate mass; USGS reports W content) — do not blindly reconcile.
+            South Korea's Sangdong (Almonty Industries) restarted December 2025 —
+            post-snapshot; will be named in USGS MCS 2026+.
           source_id: usgs_mcs_2025_tungsten
         - country: RW
           share_pct: 1.48
@@ -465,5 +530,26 @@ sources:
     publisher: Office of the United States Trade Representative
     url: https://ustr.gov/about-us/policy-offices/press-office/press-releases/2024/december/ustr-increases-tariffs-under-section-301-tungsten-products-wafers-and-polysilicon-concluding
     retrieved: 2026-04-13
+    publication_year: 2024
+    source_tier: primary
+  - id: bgs_wmp_2019_2023_tungsten
+    title: "World Mineral Production 2019–2023 (tungsten tables)"
+    publisher: British Geological Survey
+    url: https://nora.nerc.ac.uk/id/eprint/539285/1/WMP_2019-2023_COMPLETE.pdf
+    retrieved: 2026-04-14
+    publication_year: 2025
+    source_tier: primary
+  - id: usgs_myb_congo_kinshasa_2022_tungsten
+    title: "USGS Minerals Yearbook — Congo (Kinshasa) 2022"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/myb/vol3/2022/myb3-2022-congo-kinshasa.pdf
+    retrieved: 2026-04-14
+    publication_year: 2024
+    source_tier: primary
+  - id: usgs_myb_mongolia_2022_tungsten
+    title: "USGS Minerals Yearbook — Mongolia 2022"
+    publisher: US Geological Survey
+    url: https://pubs.usgs.gov/myb/vol3/2022/myb3-2022-mongolia.pdf
+    retrieved: 2026-04-14
     publication_year: 2024
     source_tier: primary

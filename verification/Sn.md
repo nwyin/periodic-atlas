@@ -180,3 +180,27 @@
 **Recycling data** (in narrative, not in structured YAML fields): The USGS chapter states "About 18,000 tons of tin from old and new scrap was estimated to have been recycled in 2024 … accounting for 27% of apparent consumption." These values appear in the YAML narrative only, which has no source_id tags; they are not included in the Claims table but are confirmed by the source (Salient Statistics: old scrap 10,000 + new scrap 7,900 = 17,900 ≈ 18,000).
 
 **Australia JORC footnote**: Footnote 7 of USGS MCS 2025 tin explicitly states "For Australia, Joint Ore Reserves Committee-compliant or equivalent reserves were 320,000 tons." This value appears in both the AU mining_by_country.notes (row 37) and the reserves_by_country[AU].notes (row 74) and is verified in both locations.
+
+## ZZ-bucket decomposition (2026-04-14)
+
+Per `atlas/zz-decomposition-plan.md`, the USGS "Other countries" residual (1,800 t / 0.6% of 2024 world production) was reviewed and decomposed. Unlike gold, the Sn ZZ bucket is genuinely small — USGS already names 14 producers down to 0.5% share — so the analytical payoff is modest.
+
+**Naming threshold:** ≥ 1% of world (3,000 t) — no candidate clears this; OR appears at material tonnage in ≥ 2 authoritative secondary sources.
+
+| Country | ISO2 | 2024e t | share_pct | Confidence | Primary source | Corroborating |
+|---|---|---|---|---|---|---|
+| Namibia | NA | 800 | 0.27 | medium | `andrada_mining_fy24_results` (Mining Weekly / Andrada plc) | `mining_energy_namibia_andrada_tin`; Thaisarco Tin Code feedstock list |
+| Uganda | UG | 800 | 0.27 | medium | `ita_woodcross_uganda_refinery_2024` (International Tin Association) | `ecofin_uganda_tin_hub_2024`; Uganda DGSM; USGS MIS Tin April 2024 |
+
+**Sum of new named shares:** 1,600 t / 0.54%. **Remaining ZZ:** 200 t / 0.07%.
+
+**Non-qualifying countries researched (stay in ZZ):** Burundi (~200–400 t ASM, ITSCI-monitored, declining), Thailand (<200 t; Thaisarco smelter feed is imported not mined), Portugal (<100 t Panasqueira W byproduct), Spain (<50 t trace).
+
+**Caveats:**
+- Single-asset countries: NA = Andrada Uis only; UG = Woodcross Mbarara refinery (combined domestic ASM + some DRC/Rwanda imported feedstock).
+- Reporting year: Andrada FY24 = Mar 2023–Feb 2024 (straddles calendar-2024). Uganda refinery commissioning was May 2024; 2024 contribution is partial-year. Confidence medium on both.
+- **ITSCI credibility** is impaired (RMI suspension 2022/2024); figures derived from ITSCI traceability for Rwanda/DRC/Burundi/Uganda should be flagged if used.
+- **Out-of-scope but worth flagging for a follow-up:** Minsur's sale of Mineração Taboca (Brazil, ~29,000 t Sn) to China Nonferrous for US$340M in 2024 is a material Chinese geopolitical expansion into Brazilian tin not currently captured in Sn.yaml geopolitical_events.
+
+**Methodology:** `atlas/zz-decomposition-plan.md`.
+

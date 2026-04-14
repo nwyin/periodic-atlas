@@ -183,3 +183,36 @@
 - **Australia JORC vs USGS reserves**: The USGS reports Australia reserves as 12,000 t in USGS format; footnote 11 notes JORC-compliant reserves were 4,600 t. Both figures are cited in the YAML and verified.
 - **Criticality flags**: No source_id is assigned to criticality fields in the YAML. Flags are marked inferred based on absence of gold from the USGS MCS 2025 critical minerals context and general regulatory knowledge. A dedicated critical-minerals list fetch would be needed for full verification.
 - **Bullion import sources** (narrative): Switzerland 35%, Canada 27%, South Africa 8%, Australia 7% — verified from Import Sources section p.82: "Bullion: Switzerland, 35%; Canada, 27%; South Africa, 8%; Australia, 7%; and other, 23%."
+
+## ZZ-bucket decomposition (2026-04-14)
+
+Per `atlas/zz-decomposition-plan.md`, the USGS "Other countries" residual (780 t / 23.64% of 2024 world production) was decomposed using secondary sources. Thirteen producers were named at a naming threshold of **≥1% of world production OR ≥2 authoritative secondary sources at material tonnage**. New named shares reallocate ~553 t out of the 780 t ZZ bucket, leaving ~227 t / 6.87% in the residual row.
+
+| Country | ISO2 | 2024 t | share_pct | Confidence | Primary source | Corroborating source |
+|---|---|---|---|---|---|---|
+| Sudan | SD | 64 | 1.94 | medium | `sudan_tribune_smrc_2024_gold` (SMRC official) | SWISSAID African Gold 2024 (70–90 t inc. informal) |
+| Côte d'Ivoire | CI | 58 | 1.76 | high | `mining_com_cote_divoire_2024_gold` | Endeavour Mining corporate disclosures (Lafigué first pour 2024) |
+| Guinea | GN | 55 | 1.67 | medium | `usgs_myb_guinea_2023_gold` | AngloGold Siguiri disclosures; West Africa aggregate coverage |
+| Argentina | AR | 53 | 1.61 | high | `panorama_minero_argentina_2024_gold` | BN Americas / Barrick Veladero 2024 results |
+| Venezuela | VE | 50 | 1.52 | low | `icg_venezuela_gold_2025` (central estimate) | US State Dept Congressional Report 2024 (~75 t, 2021); OECD (25–37.5 t). Wide range; sanctions opacity. |
+| Papua New Guinea | PG | 45 | 1.36 | medium | `newmont_fy2024_results` (Lihir 19.1 t) | Statista PNG historical series; Barrick/Zijin Porgera restart; K92 Kainantu |
+| Chile | CL | 42 | 1.27 | medium | `ey_chile_mining_2025` | GBR Chile Mining 2024; Gold Fields Salares Norte first-pour 2024 |
+| Bolivia | BO | 40 | 1.21 | medium | `ceic_bolivia_gold_2024` | InsightCrime analytical coverage (ASM, informal flows to UAE/India) |
+| Zimbabwe | ZW | 37 | 1.12 | high | `pindula_fidelity_zimbabwe_2024` (Fidelity Gold Refineries, sole buyer) | EquityAxis corroborating coverage |
+| Philippines | PH | 32 | 0.97 | medium | `mgb_philippines_metallic_2024` | CEIC Philippines gold series (31.0 t 2023 baseline). Below 1% floor; admitted on 2-source rule. |
+| DR Congo | CD | 28 | 0.85 | medium | `ecofin_kibali_drc_2024` (Kibali 21.3 t formal) | SWISSAID Africa gold 2024 (formal captures <20% of real output). Below 1% floor; admitted on 2-source rule. |
+| Dominican Republic | DO | 26 | 0.79 | high | `barrick_pueblo_viejo_2024` | Mining Weekly / Barrick Q4 2024 results; Phase 1 expansion commercial Q3 2024. Below 1% floor; admitted on 2-source rule. |
+| Turkey | TR | 23 | 0.70 | medium | `nordic_monitor_turkey_gold_2024` | WGC Q3 2024 supply. Çöpler offline all of 2024 (~6–7 t removed). Below 1% floor; admitted on 2-source rule. |
+
+**Sum of new named shares:** 553 t / 16.77% of world. **New ZZ residual:** 227 t / 6.87%.
+
+**Non-qualifying countries (researched but kept in ZZ):** Kyrgyzstan (~22 t), Suriname (~32 t; right at threshold but formal/ASM split is ambiguous), Ecuador (~18 t, Lundin Fruta del Norte 15.6 t), Mongolia (~13 t), Egypt (~15 t, Sukari-dominated), Saudi Arabia (~14 t, Ma'aden), Tajikistan (~14 t, Zarafshon), Nicaragua (~14 t, Calibre + Equinox), Guyana (~13.5 t), Ethiopia (~15–25 t calendar 2024 vs 37 t FY 2024/25 — the step-change happened H2 2024 post-FX reform), Senegal (~10 t, Endeavour Sabodala-Massawa), Eritrea (~4 t), Niger (~2.4 t), North Korea (~1–2 t).
+
+**Caveats:**
+- **Sudan, Venezuela, DR Congo** figures are formal/official. SWISSAID, ICG, and US State Department analyses indicate real totals including smuggled/ASM flows are materially higher — in DRC's case, by 3–5× (SWISSAID: formal captures <20% of real). These rows carry `confidence: medium` (SD, CD) or `low` (VE) and their notes describe the informal picture.
+- **Côte d'Ivoire (58 t) is the single biggest omission from the USGS MCS 2025 named list** — it now exceeds Tanzania, Burkina Faso, and Colombia (all USGS-named at 60 t).
+- **Argentina, Papua New Guinea, and Chile** are borderline on the 33-t threshold and would historically have been USGS-named; their exclusion from the USGS MCS 2025 named list is notable.
+- **Ethiopia** sits awkwardly between calendar and fiscal-year reporting: FY2024/25 (July 2024 – June 2025) is ~37 t, but calendar-2024 is closer to ~15–25 t. Kept in ZZ rather than split the difference.
+
+**Methodology:** `atlas/zz-decomposition-plan.md` (pilot element, 2026-04-14).
+

@@ -83,3 +83,26 @@ No numeric discrepancies were found in the USGS MCS 2025 tantalum production, re
 `usgs_pp_1802m_niobium_tantalum` was directly accessible as a USGS publication page, but not as the underlying PDF text. The accessible USGS page confirms that electronic capacitors are the leading tantalum use, and web search snippets tied to the same USGS publication supply the explicit "approximately 60 percent" wording used for the end-use split.
 
 The scoped `feedstock_origins` and `substitutes` entries all carry source IDs, but they are qualitative in `Ta.yaml` and do not add distinct numeric claims. They were reviewed against the accessible source text and did not require Claims-table rows to satisfy the numeric-claim invariant.
+
+## ZZ-bucket decomposition (2026-04-14) — not applied
+
+Per `atlas/zz-decomposition-plan.md`, the USGS "Other countries" residual was reviewed. **The Ta ZZ bucket is only 14 t / 0.67%** of the 2,100 t 2024 world total — USGS already names 11 producers down to Bolivia and Burundi at 2 t each (0.1%). No new country clears the 1%-or-two-sources threshold. **No YAML decomposition was applied.** This verification note documents the review.
+
+**Candidates researched, all non-qualifying:**
+- **Canada** (Tanco): Sinomine-owned since 2019; primarily Li/Cs with sporadic Ta output well below 21-t threshold.
+- **Egypt** (Abu Dabbab, Nuweibi): development-stage projects, no 2024 commercial production.
+- **Malaysia, Thailand**: downstream processors / import hubs for US, not mine producers.
+- **Kazakhstan** (Ulba Metallurgical): processes imported feedstock, no primary mine production.
+- **Uganda, Madagascar, Namibia, Zimbabwe, DPRK**: historical ASM/small-mine presence but none surface above 1% in authoritative 2023–2024 sources.
+
+**Analytical findings flagged for follow-up (separate pass):**
+1. **USGS year-over-year revisions are large for ASM-dominated rows.** Rwanda 2023e published as 520 t in MCS 2024 then revised down to 350 t in MCS 2025. Burundi: MCS 2024 printed 36 t for 2023 but MCS 2025 shows 2 t for 2024. These revisions exceed the 1% threshold, so 1–2% rows are vintage-sensitive. Consider a narrative caveat.
+2. **Rubaya under M23 control from early 2024.** Rubaya is estimated to produce ~15% of world coltan on its own; analytically significant for the CD row and its interaction with smuggling flows. Argus Media and UN Group of Experts (S/2024/969) document the shift. Not in current Ta.yaml geopolitical_events.
+3. **DRC↔Rwanda attribution uncertainty.** UN GoE (S/2024/969) and Global Witness document ~120 t/month of coltan smuggled Masisi→Rwanda from May–Oct 2024. This flow is already inside the aggregated USGS CD+RW figure but its attribution between the two countries is unstable year-over-year. The interesting decomposition is **formal-vs-informal within DRC/Rwanda, not new countries** — same architectural problem as the deferred cobalt case.
+4. **ITSCI unit-basis confusion.** ITSCI Annex 1 (Feb 2025) documents only +12% YoY Rwanda tantalum concentrate exports (2,297 t *concentrate*, not Ta content) — explicitly flags confusion with USGS Ta-content tonnages. Any narrative using Rwanda export figures needs unit-basis discipline.
+5. **Kenticha (Ethiopia) operational status contested** — license surrender notice May 2024 (The Reporter Ethiopia). USGS still attributes 40 t to Ethiopia for 2024e.
+
+**Conclusion:** No data change warranted in this pass. `Ta.yaml` mining_by_country shares stand as published. Recommended follow-up: add 2–3 `geopolitical_events` entries covering Rubaya / M23 / ITSCI and a narrative sentence on inter-MCS-vintage revision risk for 1–2% producers.
+
+**Methodology:** `atlas/zz-decomposition-plan.md`.
+
