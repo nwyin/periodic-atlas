@@ -42,7 +42,7 @@
         reserves: "#16a34a",
       };
 
-      const margin = { top: 8, right: 60, bottom: 24, left: 120 };
+      const margin = { top: 8, right: 60, bottom: 52, left: 120 };
       const width = Math.min(600, chartEl.clientWidth || 600);
       const barHeight = 20;
       const barGap = 4;
@@ -75,8 +75,7 @@
           .attr("y", y)
           .attr("width", barW)
           .attr("height", barHeight)
-          .attr("fill", color)
-          .attr("rx", 2);
+          .attr("fill", color);
 
         // Symbol label (left)
         g.append("text")
@@ -104,13 +103,21 @@
         .call(d3.axisBottom(xScale).ticks(4).tickFormat((d) => `${d}%`))
         .call((axis) => axis.select(".domain").remove());
 
-      // Legend
+      // Legend (sits below x-axis tick labels with a clear gap)
       const legendItems = [...new Set(chartData.map((d) => d.stage))];
-      const legendG = svg.append("g").attr("transform", `translate(${margin.left},${totalHeight - 10})`);
+      const legendY = margin.top + innerHeight + 40;
+      const legendG = svg.append("g").attr("transform", `translate(${margin.left},${legendY})`);
       legendItems.forEach((stage, idx) => {
-        const lx = idx * 90;
-        legendG.append("rect").attr("x", lx).attr("y", -8).attr("width", 12).attr("height", 12).attr("fill", STAGE_COLORS[stage] || "#999").attr("rx", 2);
-        legendG.append("text").attr("x", lx + 16).attr("y", 2).attr("font-size", "10px").attr("fill", "currentColor").text(stage);
+        const lx = idx * 100;
+        legendG.append("rect").attr("x", lx).attr("y", -9).attr("width", 10).attr("height", 10).attr("fill", STAGE_COLORS[stage] || "#999");
+        legendG
+          .append("text")
+          .attr("x", lx + 15)
+          .attr("y", 0)
+          .attr("font-size", "10px")
+          .attr("letter-spacing", "0.06em")
+          .attr("fill", "currentColor")
+          .text(String(stage).toUpperCase());
       });
     }
   }
