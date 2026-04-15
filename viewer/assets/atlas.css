@@ -266,10 +266,11 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.82rem; }
   border-radius: 0;
   padding: 0.75rem 1rem;
   margin: 1.25rem 0;
-  white-space: pre-wrap;
   font-size: 0.85rem;
   line-height: 1.7;
 }
+.narrative-block p { margin: 0 0 0.75em; }
+.narrative-block p:last-child { margin-bottom: 0; }
 
 /* ── chart placeholders ── */
 .chart-placeholder {

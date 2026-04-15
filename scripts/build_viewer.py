@@ -16,6 +16,7 @@ from __future__ import annotations
 
 import argparse
 import json
+import re
 import sys
 import urllib.parse
 from datetime import datetime, timezone
@@ -1040,10 +1041,11 @@ header p.subtitle { margin: 0; color: var(--muted); font-size: 0.82rem; }
   border-radius: 0;
   padding: 0.75rem 1rem;
   margin: 1.25rem 0;
-  white-space: pre-wrap;
   font-size: 0.85rem;
   line-height: 1.7;
 }
+.narrative-block p { margin: 0 0 0.75em; }
+.narrative-block p:last-child { margin-bottom: 0; }
 
 /* ── chart placeholders ── */
 .chart-placeholder {
@@ -3378,6 +3380,35 @@ def _render_producer_country_links(shares_rows: list[dict]) -> str:
     return '<p class="el-producer-links" style="font-size:0.85rem;color:var(--muted)">Top producers: ' + ", ".join(parts) + "</p>"
 
 
+def _render_narrative(raw: object) -> str:
+    """Render an element's narrative block.
+
+    YAML source wraps lines at ~80 chars; those soft breaks should become
+    spaces, not hard breaks, so mobile viewports can reflow. A blank line
+    starts a new paragraph. Minimal **bold** markdown is also honoured.
+    """
+    if raw is None:
+        return ""
+    text = str(raw).strip()
+    if not text or text in ("nan", "None"):
+        return ""
+    paragraphs = re.split(r"\n\s*\n+", text)
+    rendered: list[str] = []
+    for para in paragraphs:
+        # Authors soft-wrap at hyphenated compound modifiers ("Chinese-\n  owned");
+        # glue those back together before collapsing general whitespace.
+        dehyphenated = re.sub(r"(\w-)\n\s*(\w)", r"\1\2", para)
+        collapsed = re.sub(r"\s*\n\s*", " ", dehyphenated).strip()
+        if not collapsed:
+            continue
+        escaped = _html_escape(collapsed)
+        escaped = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", escaped)
+        rendered.append(f"<p>{escaped}</p>")
+    if not rendered:
+        return ""
+    return '<div class="narrative-block">' + "".join(rendered) + "</div>"
+
+
 def _element_body(
     el: dict,
     sources: list[dict],
@@ -3398,9 +3429,7 @@ def _element_body(
     comm_html = _commercial_badge(commercial)
     ext_links_html = _render_ext_links(symbol, name)
 
-    narrative_html = ""
-    if el.get("narrative") and str(el["narrative"]) not in ("nan", "None", ""):
-        narrative_html = f'<div class="narrative-block">{_html_escape(str(el["narrative"]))}</div>'
+    narrative_html = _render_narrative(el.get("narrative"))
 
     # Build placeholders — skip panels rendered separately below
     placeholders_html = ""
