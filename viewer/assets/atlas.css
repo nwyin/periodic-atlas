@@ -752,8 +752,8 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .country-jump-nav { display: flex; gap: 1rem; margin: 1rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
 .country-page-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 .country-page-table th { text-align: left; padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--border); color: var(--muted); font-weight: 600; cursor: pointer; user-select: none; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; }
-.country-page-table th[aria-sort="ascending"]::after { content: " 91"; }
-.country-page-table th[aria-sort="descending"]::after { content: " 93"; }
+.country-page-table th[aria-sort="ascending"]::after { content: " ↑"; }
+.country-page-table th[aria-sort="descending"]::after { content: " ↓"; }
 .country-page-table td { padding: 0.4rem 0.4rem; border-bottom: 1px solid var(--border); vertical-align: top; }
 .country-page-table tr:hover td { background: var(--surface); }
 .country-page-empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; }

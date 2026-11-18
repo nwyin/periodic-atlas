@@ -50,7 +50,7 @@ BYPRODUCT_GRAPH_ENABLED: bool = True
 # CC-6: shared nav links embedded in every page shell.
 _NAV_LINKS: list[tuple[str, str]] = [
     ("Elements", "index.html"),
-    ("Byproduct graph", "byproducts.html"),
+    ("Byproduct table", "byproducts.html"),
     ("About", "about.html"),
 ]
 
@@ -1527,8 +1527,8 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .country-jump-nav { display: flex; gap: 1rem; margin: 1rem 0; border-bottom: 1px solid var(--border); padding-bottom: 0.5rem; font-size: 0.72rem; text-transform: uppercase; letter-spacing: 0.06em; }
 .country-page-table { width: 100%; border-collapse: collapse; font-size: 0.82rem; }
 .country-page-table th { text-align: left; padding: 0.5rem 0.4rem; border-bottom: 1px solid var(--border); color: var(--muted); font-weight: 600; cursor: pointer; user-select: none; white-space: nowrap; text-transform: uppercase; letter-spacing: 0.05em; font-size: 0.7rem; }
-.country-page-table th[aria-sort="ascending"]::after { content: " \2191"; }
-.country-page-table th[aria-sort="descending"]::after { content: " \2193"; }
+.country-page-table th[aria-sort="ascending"]::after { content: " ↑"; }
+.country-page-table th[aria-sort="descending"]::after { content: " ↓"; }
 .country-page-table td { padding: 0.4rem 0.4rem; border-bottom: 1px solid var(--border); vertical-align: top; }
 .country-page-table tr:hover td { background: var(--surface); }
 .country-page-empty { color: var(--muted); font-style: italic; padding: 0.5rem 0; }
@@ -2637,9 +2637,9 @@ def _country_page_shell(title: str, body: str, footer: str, description: str = "
 def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: int, footer: str) -> str:
     """Render the full byproducts.html page."""
     nav = _nav_html(prefix="")
-    byproducts_title = f"Byproduct dependency graph | Atlas {snapshot_year}"
+    byproducts_title = f"Byproduct table | Atlas {snapshot_year}"
     byproducts_desc = (
-        "Dependency graph of industrial elements whose supply is governed by "
+        "Table of industrial elements whose supply is governed by "
         "another commodity's economics — Re\u2190Mo\u2190Cu, Te\u2190Cu, Ga\u2190Al, and so on."
     )
     return f"""\
@@ -2660,7 +2660,7 @@ def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: in
 <div class="container">
 {nav}
 <header>
-  <h1>Byproduct dependency graph</h1>
+  <h1>Byproduct table</h1>
   <p class="subtitle">Read across a host to see its byproducts, or down a byproduct to find its hosts. Select a dot to inspect a link.</p>
 </header>
 <section class="byproduct-graph-panel">
@@ -2744,13 +2744,13 @@ many minor metals are reported only as ranges or order-of-magnitude
 estimates; the atlas surfaces those as published rather than smoothing
 them.</p>
 
-<h2 class="section-head">The byproduct graph</h2>
-<p>A separate <a href="byproducts.html">byproduct dependency graph</a>
+<h2 class="section-head">The byproduct table</h2>
+<p>A separate <a href="byproducts.html">byproduct table</a>
 tracks the elements whose supply is governed by another commodity&rsquo;s
 economics. Rhenium follows molybdenum follows copper; tellurium follows
 copper; gallium follows aluminium. These elements cannot meaningfully
 respond to their own demand, because their production volume is set by
-the host metal&rsquo;s market. The graph makes those dependency chains
+the host metal&rsquo;s market. The table makes those dependency chains
 visible.</p>
 """
 
@@ -2961,7 +2961,7 @@ def _index_body(
   </div>
 </div>
 <div class="byproduct-graph-cta" id="byproduct-graph-cta" hidden>
-  <a href="byproducts.html">Open byproduct dependency graph \u2192</a>
+  <a href="byproducts.html">Open byproduct table \u2192</a>
 </div>
 <table class="element-table" id="element-table">
   <thead>
