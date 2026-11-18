@@ -1859,6 +1859,85 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
 .heatmap-chip:hover { background: var(--accent); color: var(--bg); }
 .heatmap-chip.is-active { background: var(--accent); color: var(--bg); }
 
+
+.periodic-scroll { overflow-x: auto; margin-bottom: 0.75rem; }
+#periodic-picker {
+  display: grid;
+  grid-template-columns: repeat(18, minmax(2rem, 1fr));
+  gap: 0.2rem;
+  max-width: 54rem;
+}
+#periodic-picker .heatmap-chip {
+  padding: 0.35rem 0;
+  text-transform: none;
+  font-variant-numeric: tabular-nums;
+}
+#periodic-picker button[aria-pressed="true"] { background: var(--text); color: var(--bg); }
+#periodic-picker button:disabled { opacity: 0.45; cursor: default; background: var(--surface); color: var(--muted); }
+
+
+/* Keep the selector and its geographic result in one reading frame. */
+.container:has(.map-panel) {
+  max-width: 90rem;
+  width: calc(100% - clamp(2rem, 7vw, 7rem));
+}
+.map-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  gap: 1.5rem;
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 1.25rem;
+}
+.map-panel h2 { margin: 0; font-size: 1.1rem; line-height: 1.4; }
+.pane-note { margin: 0.2rem 0 0.8rem; color: var(--muted); font-size: 0.78rem; }
+.periodic-scroll { margin: 0; padding: 3px; }
+#periodic-picker {
+  max-width: none;
+  grid-template-columns: repeat(18, minmax(1.65rem, 1fr));
+  grid-auto-rows: clamp(2rem, 4.8vh, 3rem);
+  gap: 2px;
+}
+#periodic-picker .heatmap-chip { font-weight: 600; }
+.map-panel .country-map-shell { margin: 0; width: 100%; background: var(--bg); }
+.map-panel .country-map-root { min-height: 0; padding: 0; aspect-ratio: 16 / 9; }
+.map-panel .heatmap-controls { min-height: 2rem; }
+.map-panel .heatmap-clear { order: 1; }
+@media (min-width: 66rem) {
+  .map-panel { grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); }
+  .geography-pane { padding-left: 1.25rem; border-left: 1px solid var(--border); }
+}
+
+
+.map-zoom-controls {
+  position: absolute;
+  z-index: 1;
+  bottom: 0.4rem;
+  left: 0.4rem;
+  display: flex;
+  overflow: hidden;
+  background: var(--bg);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+}
+.map-zoom-controls[hidden] { display: none; }
+.map-zoom-controls button {
+  min-width: 2rem;
+  min-height: 2rem;
+  padding-inline: 0.45rem;
+  background: transparent;
+  color: var(--text);
+  font: inherit;
+  border: 0;
+  cursor: pointer;
+}
+.map-zoom-controls button + button { border-left: 1px solid var(--border); }
+.map-zoom-controls button:disabled { color: var(--muted); opacity: 0.65; cursor: default; }
+.map-zoom-controls button:enabled:hover { background: var(--surface); }
+.map-zoom-controls button:focus-visible { outline-offset: -3px; }
+.country-map-root svg { touch-action: none; }
+.country-map-root svg.zoomed { cursor: grab; }
+.country-map-root svg.zoomed:active { cursor: grabbing; }
+
 /* ── heatmap legend ── */
 .heatmap-legend {
   display: flex;
@@ -1936,85 +2015,85 @@ footer a:hover { color: var(--accent); border-bottom-color: var(--accent); }
   padding-top: 0.5rem;
 }
 
-/* ── byproduct graph page ── */
-.byproduct-graph-panel {
-  position: relative;
-  margin: 0 0 2rem;
-}
-
-#byproduct-graph-root {
-  overflow: visible;
-  min-height: 300px;
-}
-
-#byproduct-graph-root svg {
-  display: block;
-  width: 100%;
-  height: auto;
-  overflow: visible;
-}
-
-.byproduct-tooltip {
-  position: fixed;
-  z-index: 50;
-  max-width: 300px;
-  padding: 0.75rem 0.85rem;
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: 0;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.14);
-  pointer-events: none;
-  font-size: 0.78rem;
-  line-height: 1.55;
-}
-
-.byproduct-tooltip[hidden] { display: none; }
-
-.byproduct-tooltip-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  margin-bottom: 0.25rem;
-}
-
-.byproduct-tooltip-row {
-  color: var(--muted);
-  margin-bottom: 0.1rem;
-}
-
-.byproduct-tooltip-row strong {
-  color: var(--text);
-  font-weight: 600;
-}
-
-/* byproduct graph legend */
-.byproduct-legend {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem 1.5rem;
-  margin: 0.5rem 0 1rem;
-  font-size: 0.8rem;
-  color: var(--muted);
-}
-
-.byproduct-legend-item {
+/* Host rows stay in view as the reader moves across byproduct columns. */
+.byproduct-graph-panel { margin: 0 0 2rem; }
+.dependency-detail {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.75rem;
 }
-
-.byproduct-legend-swatch {
-  width: 14px;
-  height: 14px;
-  border-radius: 0;
-  flex-shrink: 0;
+.dependency-summary { display: block; margin-bottom: 0.6rem; }
+.dependency-scroll {
+  overflow-x: auto;
+  border: 1px solid var(--border);
+  scroll-padding-inline-start: 10rem;
 }
-
-.byproduct-legend-swatch-sq {
-  width: 14px;
-  height: 14px;
-  border-radius: 0;
-  flex-shrink: 0;
+.dependency-matrix {
+  --mark: #4c72b0;
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  text-transform: none;
 }
+.dependency-matrix :is(th, td) {
+  border: 0;
+  border-right: 1px solid var(--border);
+  border-bottom: 1px solid var(--border);
+  padding: 0;
+  text-align: center;
+}
+.dependency-matrix thead th {
+  padding: 0.5rem 0.25rem;
+  min-width: 4.7rem;
+  background: var(--surface);
+}
+.dependency-matrix th small { display: block; font-size: 0.67rem; color: var(--muted); font-weight: 400; }
+.dependency-matrix th:first-child {
+  position: sticky;
+  left: 0;
+  z-index: 1;
+  min-width: 9.25rem;
+  padding-inline: 0.6rem;
+  text-align: left;
+  background: var(--bg);
+}
+.dependency-matrix tbody th { font-size: 0.76rem; font-weight: 400; }
+.dependency-matrix tbody th strong { display: inline-block; width: 2ch; }
+.dependency-count { float: right; color: var(--muted); font-variant-numeric: tabular-nums; }
+.dependency-matrix td { height: 1.95rem; }
+.dependency-matrix tr.is-selected > *, .dependency-matrix thead th.is-selected {
+  background: color-mix(in srgb, var(--bg) 90%, var(--mark));
+}
+.dependency-mark {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: 1.95rem;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+.dependency-mark::after {
+  content: "";
+  width: 0.68rem;
+  height: 0.68rem;
+  border-radius: 50%;
+  background: var(--mark);
+}
+.dependency-mark:is([aria-pressed="true"], :hover, :focus-visible)::after {
+  outline: 1px solid var(--text);
+  outline-offset: 3px;
+}
+.dependency-mark:focus-visible { outline-offset: -2px; }
+.dependency-detail {
+  flex-wrap: wrap;
+  padding: 0.7rem 0;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+.dependency-pair { font-size: 1rem; color: var(--text); text-transform: capitalize; }
+.dependency-detail a { text-decoration: underline; text-underline-offset: 0.2em; }
 """
 
 
@@ -2582,11 +2661,10 @@ def _byproducts_page(graph_json: str, element_index_json: str, snapshot_year: in
 {nav}
 <header>
   <h1>Byproduct dependency graph</h1>
-  <p class="subtitle">Elements whose supply is governed by another commodity&rsquo;s economics.</p>
+  <p class="subtitle">Read across a host to see its byproducts, or down a byproduct to find its hosts. Select a dot to inspect a link.</p>
 </header>
 <section class="byproduct-graph-panel">
   <div id="byproduct-graph-root"></div>
-  <div id="byproduct-tooltip" class="byproduct-tooltip" hidden></div>
   <script id="byproduct-graph-data" type="application/json">{graph_json}</script>
   <script id="atlas-element-index" type="application/json">{element_index_json}</script>
 </section>
@@ -2674,12 +2752,6 @@ copper; gallium follows aluminium. These elements cannot meaningfully
 respond to their own demand, because their production volume is set by
 the host metal&rsquo;s market. The graph makes those dependency chains
 visible.</p>
-
-<h2 class="section-head">Corrections</h2>
-<p>If you spot a figure that disagrees with the cited source, or a citation
-that doesn&rsquo;t resolve, please open an issue against the repo (linked in the
-footer of every page). The data is intended to be reproducible from the
-listed sources end-to-end.</p>
 """
 
 
@@ -2802,32 +2874,36 @@ def _index_body(
   <p class="subtitle">A structured, source-cited snapshot of critical element supply chains.</p>
 </header>
 <section class="map-panel">
-  <div class="map-panel-header">
-    <p id="map-panel-copy" class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output. Pick an element below to colour the map by country share for a chosen supply-chain stage.</p>
-  </div>
-  <div class="heatmap-controls" id="heatmap-controls">
-    <div class="heatmap-selector-wrap">
-      <label for="heatmap-element-select" class="sr-only">Element</label>
-      <select id="heatmap-element-select" class="heatmap-element-select">
-        <option value="">&mdash; select element &mdash;</option>
-      </select>
-      <button id="heatmap-clear" class="heatmap-clear" hidden aria-label="Clear element selection">&times;</button>
-    </div>
-    <div class="heatmap-stage-group">
-      <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true" role="group" aria-label="Supply-chain stage">
-        <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
-        <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
-        <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+  <section class="element-pane" aria-labelledby="picker-title">
+    <h2 id="picker-title">Periodic table</h2>
+    <p class="pane-note">Choose an element. Faded cells have no mapped data.</p>
+    <div class="periodic-scroll"><div id="periodic-picker" role="group" aria-label="Select an element"></div></div>
+  </section>
+  <section class="geography-pane" aria-labelledby="map-panel-copy">
+    <h2 id="map-panel-copy" aria-live="polite">Country supply map</h2>
+    <p class="pane-note">Select a country for details. Zoom in, then drag to explore.</p>
+    <div class="heatmap-controls" id="heatmap-controls">
+        <button id="heatmap-clear" class="heatmap-clear" hidden aria-label="Clear element selection">&times;</button>
+      <div class="heatmap-stage-group">
+        <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true" role="group" aria-label="Supply-chain stage">
+          <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
+          <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
+          <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+        </div>
+        <span class="filter-tip heatmap-stage-tip" tabindex="0" data-tip="Supply-chain stages. Mining = primary ore extraction (tonnes mined per country). Refining = processed / refined metal output (smelting, electro-refining, chemical separation). Reserves = in-ground economic reserves (stock, not flow). Stages with no attributed country data for the selected element are greyed out \u2014 the map auto-picks the first stage that does.">?</span>
       </div>
-      <span class="filter-tip heatmap-stage-tip" tabindex="0" data-tip="Supply-chain stages. Mining = primary ore extraction (tonnes mined per country). Refining = processed / refined metal output (smelting, electro-refining, chemical separation). Reserves = in-ground economic reserves (stock, not flow). Stages with no attributed country data for the selected element are greyed out \u2014 the map auto-picks the first stage that does.">?</span>
     </div>
-  </div>
-  <div class="heatmap-chips" id="heatmap-chips"></div>
-  <div class="country-map-shell">
-    <div id="country-map-root" class="country-map-root" data-geojson-src="assets/world_countries_50m.geojson">
-      <div class="country-map-fallback">Loading country map&hellip;</div>
+    <div class="country-map-shell">
+      <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden>
+        <button type="button" data-zoom="in" aria-label="Zoom in" title="Zoom in">+</button>
+        <button type="button" data-zoom="out" aria-label="Zoom out" title="Zoom out" disabled>&minus;</button>
+        <button type="button" data-zoom="reset" disabled>Reset view</button>
+      </div>
+      <div id="country-map-root" class="country-map-root" data-geojson-src="assets/world_countries_50m.geojson">
+        <div class="country-map-fallback">Loading country map&hellip;</div>
+      </div>
     </div>
-  </div>
+  </section>
   <div id="country-map-tooltip" class="country-map-tooltip" hidden></div>
   <div id="country-map-drawer-backdrop" class="country-map-drawer-backdrop" hidden></div>
   <aside id="country-map-drawer" class="country-map-drawer" hidden aria-hidden="true">
@@ -2876,12 +2952,10 @@ def _index_body(
   </div>
   <div class="filter-row" data-filter-group="selects">
     <span class="filter-group-label">End-use <span class="filter-tip" tabindex="0" data-tip="Filter to elements where at least one end-use row falls in the selected bucket (batteries, magnets, catalysts, alloys, etc.). Uses the canonical end_use_bucket enum from the data.">?</span></span>
-    <select class="filter-select" id="enduse-select" aria-label="Filter by end-use bucket">
-      <option value="">All end-uses</option>
+    <select class="filter-select" id="enduse-select" multiple size="4" aria-label="Filter by end-use bucket">
     </select>
     <span class="filter-group-label">Country <span class="filter-tip" tabindex="0" data-tip="Filter to elements where the selected country holds a named mining share (ZZ / XX rest-of-world buckets excluded). Click &ldquo;View country page&rdquo; for the full per-country breakdown.">?</span></span>
-    <select class="filter-select" id="country-select" aria-label="Filter by producer country (mining)">
-      <option value="">All countries</option>
+    <select class="filter-select" id="country-select" multiple size="4" aria-label="Filter by producer country (mining)">
     </select>
     <a class="country-page-link" id="country-page-link" href="#" hidden>View country page \u2192</a>
   </div>

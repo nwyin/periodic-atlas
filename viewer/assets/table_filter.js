@@ -59,8 +59,8 @@ const NUMERIC_SORT_KEYS = new Set([
 // ─── State ───────────────────────────────────────────────────────────────────
 
 let activeFilters = new Set(); // chip filter keys
-let activeEnduse  = null;      // end-use bucket slug | null
-let activeCountry = null;      // ISO-2 | null
+let activeEnduse = [];
+let activeCountry = [];
 let sortKey       = null;      // column sort key | null
 let sortDir       = null;      // 'asc' | 'desc' | null
 let searchQuery   = "";
@@ -114,8 +114,57 @@ function init() {
   initDerivedColumns(elementIndex);
 
   parseUrlState();
+  setupDropdown(enduseSelect, "All end-uses", "end-uses");
+  setupDropdown(countrySelect, "All countries", "countries");
   attachEventListeners(countryPagesEnabled, byproductGraphEnabled);
   applyState();
+}
+
+// The selects retain URL and filtering state. Checkboxes let each click toggle
+// one option without closing the disclosure or requiring a modifier key.
+const refreshDropdowns = [];
+function setupDropdown(select, emptyLabel, plural) {
+  if (!select) return;
+  const menu = document.createElement("details");
+  menu.className = "atlas-multiselect";
+  const trigger = document.createElement("summary");
+  const choices = document.createElement("div");
+  choices.className = "atlas-multiselect-options";
+  const pairs = Array.from(select.options, option => {
+    const label = document.createElement("label");
+    const checkbox = document.createElement("input");
+    checkbox.type = "checkbox";
+    checkbox.addEventListener("change", () => {
+      option.selected = checkbox.checked;
+      select.dispatchEvent(new Event("change", { bubbles: true }));
+    });
+    label.append(checkbox, option.text);
+    choices.append(label);
+    return { option, checkbox };
+  });
+  refreshDropdowns.push(() => {
+    for (const { option, checkbox } of pairs) checkbox.checked = option.selected;
+    const selected = select.selectedOptions;
+    trigger.textContent = selected.length > 1 ? selected.length + " " + plural + " selected"
+      : selected.length ? selected[0].text : emptyLabel;
+    trigger.setAttribute("aria-label", select.getAttribute("aria-label") + ": " + trigger.textContent);
+  });
+  menu.append(trigger, choices);
+  select.after(menu);
+  select.hidden = true;
+  document.addEventListener("pointerdown", event => {
+    if (!menu.contains(event.target)) menu.open = false;
+  });
+  menu.addEventListener("focusout", event => {
+    if (!menu.contains(event.relatedTarget)) menu.open = false;
+  });
+  menu.addEventListener("keydown", event => {
+    if (event.key === "Escape" && menu.open) {
+      menu.open = false;
+      trigger.focus();
+      event.preventDefault();
+    }
+  });
 }
 
 // ─── Element index ────────────────────────────────────────────────────────────
@@ -205,8 +254,8 @@ function parseUrlState() {
   const params = new URLSearchParams(window.location.search);
 
   searchQuery = params.get("q") || "";
-  activeEnduse  = params.get("enduse") || null;
-  activeCountry = params.get("country") || null;
+  activeEnduse = params.getAll("enduse").filter(Boolean);
+  activeCountry = params.getAll("country").filter(Boolean);
 
   const filtersParam = params.get("filters") || "";
   activeFilters = new Set(filtersParam ? filtersParam.split(",").filter(Boolean) : []);
@@ -223,19 +272,20 @@ function parseUrlState() {
 
   // Sync UI controls
   if (searchInput) searchInput.value = searchQuery;
-  if (enduseSelect) enduseSelect.value = activeEnduse || "";
-  if (countrySelect) countrySelect.value = activeCountry || "";
+  for (const option of enduseSelect?.options || []) option.selected = activeEnduse.includes(option.value);
+  for (const option of countrySelect?.options || []) option.selected = activeCountry.includes(option.value);
 }
 
 function pushUrlState() {
-  const params = new URLSearchParams();
+  const params = new URLSearchParams(location.search);
+  for (const key of ["q", "filters", "country", "enduse", "sort"]) params.delete(key);
   if (searchQuery)   params.set("q", searchQuery);
   if (activeFilters.size) params.set("filters", Array.from(activeFilters).join(","));
-  if (activeEnduse)  params.set("enduse", activeEnduse);
-  if (activeCountry) params.set("country", activeCountry);
+  for (const value of activeEnduse) params.append("enduse", value);
+  for (const value of activeCountry) params.append("country", value);
   if (sortKey && sortDir) params.set("sort", `${sortKey}_${sortDir}`);
   const qs = params.toString();
-  history.replaceState(null, "", qs ? `?${qs}` : window.location.pathname);
+  history.replaceState(null, "", window.location.pathname + (qs ? `?${qs}` : "") + window.location.hash);
 }
 
 // ─── Event listeners ──────────────────────────────────────────────────────────
@@ -282,7 +332,7 @@ function attachEventListeners(countryPagesEnabled, byproductGraphEnabled) {
   // End-use select
   if (enduseSelect) {
     enduseSelect.addEventListener("change", () => {
-      activeEnduse = enduseSelect.value || null;
+      activeEnduse = Array.from(enduseSelect.selectedOptions, option => option.value);
       applyState();
     });
   }
@@ -290,7 +340,7 @@ function attachEventListeners(countryPagesEnabled, byproductGraphEnabled) {
   // Country select
   if (countrySelect) {
     countrySelect.addEventListener("change", () => {
-      activeCountry = countrySelect.value || null;
+      activeCountry = Array.from(countrySelect.selectedOptions, option => option.value);
       updateCountryPageLink(countryPagesEnabled);
       applyState();
     });
@@ -328,6 +378,7 @@ function applyState() {
   const countryPagesEnabled   = tableControls && tableControls.dataset.countryPagesEnabled === "true";
   const byproductGraphEnabled = tableControls && tableControls.dataset.byproductGraphEnabled === "true";
 
+  for (const refresh of refreshDropdowns) refresh();
   filterRows();
   // Sort is managed by table_sort.js; we just re-apply the current sort state
   if (tableSorter && sortKey && sortDir) {
@@ -345,8 +396,8 @@ function applyState() {
 
 function clearAll() {
   activeFilters.clear();
-  activeEnduse  = null;
-  activeCountry = null;
+  activeEnduse = [];
+  activeCountry = [];
   searchQuery   = "";
   sortKey       = null;
   sortDir       = null;
@@ -398,16 +449,16 @@ function matchesAllFilters(tr, q) {
   // Byproduct-only
   if (activeFilters.has("byproduct_only") && ds.byproduct !== "true") return false;
 
-  // End-use bucket (single-select)
-  if (activeEnduse) {
-    const buckets = ds.endusesBuckets ? ds.endusesBuckets.split(" ") : [];
-    if (!buckets.includes(activeEnduse)) return false;
+  // End-use bucket
+  if (activeEnduse.length) {
+    const buckets = ds.enduseBuckets ? ds.enduseBuckets.split(" ") : [];
+    if (!activeEnduse.some(value => buckets.includes(value))) return false;
   }
 
-  // Producer country (single-select)
-  if (activeCountry) {
+  // Producer country
+  if (activeCountry.length) {
     const countries = ds.producerCountries ? ds.producerCountries.split(" ") : [];
-    if (!countries.includes(activeCountry)) return false;
+    if (!activeCountry.some(value => countries.includes(value))) return false;
   }
 
   return true;
@@ -446,14 +497,14 @@ function updateEmptyState() {
 
 function updateClearAllBtn() {
   if (!clearAllBtn) return;
-  const hasState = activeFilters.size > 0 || activeEnduse || activeCountry || searchQuery || (sortKey && sortDir);
+  const hasState = activeFilters.size > 0 || activeEnduse.length || activeCountry.length || searchQuery || (sortKey && sortDir);
   clearAllBtn.hidden = !hasState;
 }
 
 function updateCountryPageLink(countryPagesEnabled) {
   if (!countryPageLink) return;
-  if (countryPagesEnabled && activeCountry) {
-    countryPageLink.href = `countries/${activeCountry}.html`;
+  if (countryPagesEnabled && activeCountry.length === 1) {
+    countryPageLink.href = `countries/${encodeURIComponent(activeCountry[0])}.html`;
     countryPageLink.hidden = false;
   } else {
     countryPageLink.hidden = true;
@@ -464,5 +515,5 @@ function updateByproductCta(byproductGraphEnabled) {
   if (!byproductCta) return;
   // Show only when byproduct_only is the sole active filter and graph is enabled
   const onlyByproduct = activeFilters.size === 1 && activeFilters.has("byproduct_only");
-  byproductCta.hidden = !(byproductGraphEnabled && onlyByproduct && !activeEnduse && !activeCountry && !searchQuery);
+  byproductCta.hidden = !(byproductGraphEnabled && onlyByproduct && !activeEnduse.length && !activeCountry.length && !searchQuery);
 }

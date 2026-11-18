@@ -83,10 +83,13 @@
     return idx;
   }
 
-  // ── Log color scale (d3.interpolateYlOrRd, domain [0.1, 100]) ─────────────
+  // ── Log color scale (domain [0.1, 100]) ─────────────
   const LOG_MIN = Math.log10(0.1);
   const LOG_MAX = Math.log10(100);
-  const colorInterp = window.d3.interpolateYlOrRd;
+  // Sampled from Seaborn's sequential mako palette.
+  const colorInterp = window.d3.interpolateRgbBasis([
+    "#241628", "#3e356b", "#3b5698", "#347fa4", "#38aaac", "#65d0ad", "#baebd4",
+  ]);
   const neutralFill = "var(--map-land)";
   const noDataFill = "var(--map-no-data)";
 
@@ -418,8 +421,8 @@
       ctx.fillRect(i, 0, 1, 12);
     }
 
-    // Tick marks at 0.1%, 1%, 5%, 20%, 100%
-    const ticks = [0.1, 1, 5, 20, 100];
+    // Tick marks at equal log intervals
+    const ticks = [0.1, 1, 10, 100];
     const ticksHtml = ticks
       .map((v) => `<span>${v < 1 ? v.toFixed(1) : v}%</span>`)
       .join("");
@@ -433,12 +436,13 @@
     ticksEl.innerHTML = ticksHtml;
     barWrap.appendChild(ticksEl);
 
-    legendEl.innerHTML = '<span class="heatmap-legend-label">Share of global output:</span>';
+    const measure = activeStage === "reserves" ? "reserves" : "output";
+    legendEl.innerHTML = `<span class="heatmap-legend-label">Share of global ${measure}</span>`;
     legendEl.appendChild(barWrap);
 
     const footnote = document.createElement("span");
     footnote.className = "heatmap-legend-footnote";
-    footnote.textContent = "Uncolored: no data or rest-of-world aggregate.";
+    footnote.textContent = "Unshaded countries have no attributed share.";
     legendEl.appendChild(footnote);
 
     parentEl.appendChild(legendEl);
@@ -453,14 +457,15 @@
 
   // ── URL state ─────────────────────────────────────────────────────────────
   function updateURL() {
-    const params = new URLSearchParams();
+    const url = new URL(location.href);
     if (activeSymbol) {
-      params.set("heatmap", activeSymbol);
-      params.set("stage", activeStage);
-      history.replaceState(null, "", "?" + params.toString());
+      url.searchParams.set("heatmap", activeSymbol);
+      url.searchParams.set("stage", activeStage);
     } else {
-      history.replaceState(null, "", location.pathname);
+      url.searchParams.delete("heatmap");
+      url.searchParams.delete("stage");
     }
+    history.replaceState(null, "", url);
   }
 
   function parseURL() {
@@ -479,9 +484,9 @@
       const elMeta = elementIndex.find((e) => e.symbol === activeSymbol);
       const elName = elMeta ? elMeta.name : activeSymbol;
       const stageLabel = activeStage.charAt(0).toUpperCase() + activeStage.slice(1);
-      mapPanelCopy.textContent = `${elName} — ${stageLabel} share by country. Click a country for detail.`;
+      mapPanelCopy.textContent = `${elName.charAt(0).toUpperCase() + elName.slice(1)} · ${stageLabel.toLowerCase()} by country`;
     } else {
-      mapPanelCopy.textContent = "Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output.";
+      mapPanelCopy.textContent = "Country supply map";
     }
   }
 
@@ -522,10 +527,6 @@
       if (fallback) activeStage = fallback;
     }
 
-    // Update select value
-    const sel = document.getElementById("heatmap-element-select");
-    if (sel) sel.value = activeSymbol;
-
     // Update stage buttons
     updateStageButtons();
     updateStageButtonAvailability();
@@ -540,7 +541,7 @@
 
     // Update chip styles
     document.querySelectorAll(".heatmap-chip").forEach((chip) => {
-      chip.classList.toggle("is-active", chip.dataset.symbol === activeSymbol);
+      chip.setAttribute("aria-pressed", String(chip.dataset.symbol === activeSymbol));
     });
 
     // Apply fills
@@ -563,10 +564,6 @@
     activeSymbol = null;
     activeStage = "mining";
 
-    // Reset select
-    const sel = document.getElementById("heatmap-element-select");
-    if (sel) sel.value = "";
-
     // Reset stage buttons to Mining
     updateStageButtons();
     updateStageButtonAvailability();
@@ -580,7 +577,7 @@
     if (clearBtn) clearBtn.hidden = true;
 
     // Clear all chip active states
-    document.querySelectorAll(".heatmap-chip").forEach((chip) => chip.classList.remove("is-active"));
+    document.querySelectorAll(".heatmap-chip").forEach((chip) => chip.setAttribute("aria-pressed", "false"));
 
     // Reset fills
     clearHeatmapFills();
@@ -601,6 +598,7 @@
   function updateStageButtons() {
     document.querySelectorAll(".heatmap-stage-btn").forEach((btn) => {
       btn.classList.toggle("is-active", btn.dataset.stage === activeStage);
+      btn.setAttribute("aria-pressed", String(!!activeSymbol && btn.dataset.stage === activeStage));
     });
   }
 
@@ -614,69 +612,46 @@
     });
   }
 
-  // ── Populate <select> and chips ────────────────────────────────────────────
+  // Dots preserve empty group positions; the two f-block series sit below period seven.
+  const periods = [
+    "H . . . . . . . . . . . . . . . . He",
+    "Li Be . . . . . . . . . . B C N O F Ne",
+    "Na Mg . . . . . . . . . . Al Si P S Cl Ar",
+    "K Ca Sc Ti V Cr Mn Fe Co Ni Cu Zn Ga Ge As Se Br Kr",
+    "Rb Sr Y Zr Nb Mo Tc Ru Rh Pd Ag Cd In Sn Sb Te I Xe",
+    "Cs Ba . Hf Ta W Re Os Ir Pt Au Hg Tl Pb Bi Po At Rn",
+    "Fr Ra . Rf Db Sg Bh Hs Mt Ds Rg Cn Nh Fl Mc Lv Ts Og",
+    ". . La Ce Pr Nd Pm Sm Eu Gd Tb Dy Ho Er Tm Yb Lu",
+    ". . Ac Th Pa U Np Pu Am Cm Bk Cf Es Fm Md No Lr",
+  ];
+
   function populateElementSelector() {
-    const sel = document.getElementById("heatmap-element-select");
-    const chipsEl = document.getElementById("heatmap-chips");
-    if (!sel || !elementIndex.length) return;
-
-    // Only elements that have at least one stage with actual heatmap data
-    // (the has_mining/has_refining/has_reserves flags on elementIndex count
-    // raw share rows, which can be > 0 even when the JOIN against production
-    // drops every country — e.g. boron for mining).
-    const usable = elementIndex.filter((e) => firstStageWithData(e.symbol) !== null);
-
-    // Group by tier descending: 3 = Critical & Scarce, 4 = High-Volume, 2 = Niche, 0/1 = Other
-    const tierGroups = [
-      { label: "Critical & Scarce", tiers: [3] },
-      { label: "High-Volume", tiers: [4] },
-      { label: "Niche", tiers: [2] },
-      { label: "Other", tiers: [0, 1] },
-    ];
-
-    for (const group of tierGroups) {
-      const items = usable.filter((e) => group.tiers.includes(e.tier));
-      if (!items.length) continue;
-      const og = document.createElement("optgroup");
-      og.label = group.label;
-      for (const e of items) {
-        const opt = document.createElement("option");
-        opt.value = e.symbol;
-        opt.textContent = `${e.symbol} — ${e.name}`;
-        og.appendChild(opt);
-      }
-      sel.appendChild(og);
-    }
-
-    // Chips: critical elements only
-    if (chipsEl) {
-      const criticals = usable.filter((e) => e.critical);
-      for (const e of criticals) {
-        const chip = document.createElement("button");
-        chip.type = "button";
-        chip.className = "heatmap-chip";
-        chip.dataset.symbol = e.symbol;
-        chip.textContent = e.symbol;
-        chip.title = e.name;
-        chip.addEventListener("click", () => {
-          if (activeSymbol === e.symbol) {
-            deactivateHeatmap();
-          } else {
-            activateHeatmap(e.symbol, activeStage);
-          }
-        });
-        chipsEl.appendChild(chip);
-      }
-    }
-
-    // Select onChange
-    sel.addEventListener("change", () => {
-      const val = sel.value;
-      if (val) {
-        activateHeatmap(val, activeStage);
-      } else {
-        deactivateHeatmap();
-      }
+    const picker = document.getElementById("periodic-picker");
+    const metadata = new Map(elementIndex.map(el => [el.symbol, el]));
+    // Group 1 starts each main period. Detached series start at La and Ac.
+    const rowStarts = [1, 3, 11, 19, 37, 55, 87, 57, 89];
+    periods.forEach((period, row) => {
+      let atomicNumber = rowStarts[row];
+      period.split(" ").forEach((symbol, col) => {
+        if (symbol === ".") return;
+        const el = metadata.get(symbol);
+        const button = document.createElement("button");
+        button.type = "button";
+        button.className = "heatmap-chip";
+        button.dataset.symbol = symbol;
+        button.disabled = !firstStageWithData(symbol);
+        button.setAttribute("aria-pressed", "false");
+        button.style.gridArea = (row + 1) + " / " + (col + 1);
+        button.title = (el ? el.name : symbol) + (button.disabled ? " — no mapped data" : "");
+        button.setAttribute("aria-label", button.title);
+        const number = document.createElement("small");
+        if ((row === 5 || row === 6) && col === 3) atomicNumber += 15;
+        number.textContent = atomicNumber++;
+        button.append(number);
+        button.append(symbol);
+        button.addEventListener("click", () => activateHeatmap(symbol, activeStage));
+        picker.append(button);
+      });
     });
 
     // Clear button
@@ -742,13 +717,14 @@
       });
       const path = window.d3.geoPath(projection);
 
-      svg
-        .append("g")
+      const geography = svg.append("g");
+      geography
         .selectAll("path")
         .data(features)
         .join("path")
         .attr("class", "country-shape")
         .attr("data-country-code", (feature) => featureCode(feature))
+        .attr("vector-effect", "non-scaling-stroke")
         .attr("d", path)
         .on("mouseenter", function (event, feature) {
           setHoveredNode(this);
@@ -767,6 +743,45 @@
           openDrawer(feature, this);
         });
 
+      const controls = root.parentElement.querySelector(".map-zoom-controls");
+      const zoomIn = controls.querySelector('[data-zoom="in"]');
+      const zoomOut = controls.querySelector('[data-zoom="out"]');
+      const reset = controls.querySelector('[data-zoom="reset"]');
+      const bounds = [[0, 0], [width, height]];
+      const maxZoom = 16;
+      const zoom = window.d3.zoom()
+        .extent(bounds)
+        .translateExtent(bounds)
+        .scaleExtent([1, maxZoom])
+        .clickDistance(4)
+        .filter(event => {
+          if (event.type === "wheel") return event.ctrlKey || event.metaKey;
+          if (event.type === "mousedown") return !event.button && window.d3.zoomTransform(svg.node()).k > 1;
+          return event.type === "touchstart";
+        })
+        .on("zoom", ({ transform }) => {
+          geography.attr("transform", transform);
+          svg.classed("zoomed", transform.k > 1);
+          zoomIn.disabled = transform.k >= maxZoom;
+          zoomOut.disabled = reset.disabled = transform.k <= 1;
+          hideTooltip();
+          clearHoveredNode();
+        });
+
+      svg.call(zoom).attr("tabindex", 0)
+        .attr("aria-label", "World supply map. When zoomed in, use arrow keys to pan.")
+        .on("keydown", event => {
+          const delta = { ArrowLeft: [1, 0], ArrowRight: [-1, 0], ArrowUp: [0, 1], ArrowDown: [0, -1] }[event.key];
+          const scale = window.d3.zoomTransform(svg.node()).k;
+          if (!delta || scale <= 1) return;
+          event.preventDefault();
+          svg.call(zoom.translateBy, delta[0] * 80 / scale, delta[1] * 80 / scale);
+        });
+      zoomIn.addEventListener("click", () => svg.call(zoom.scaleBy, 2));
+      zoomOut.addEventListener("click", () => svg.call(zoom.scaleBy, 0.5));
+      reset.addEventListener("click", () => svg.call(zoom.transform, window.d3.zoomIdentity));
+      controls.hidden = false;
+
       drawerClose.addEventListener("click", closeDrawer);
       drawerBackdrop.addEventListener("click", closeDrawer);
       document.addEventListener("keydown", (event) => {
@@ -783,9 +798,10 @@
 
       // Apply URL state
       const { sym, stage } = parseURL();
-      if (sym && elementIndex.find((e) => e.symbol === sym)) {
-        activateHeatmap(sym, stage);
-      }
+      const first = elementIndex.filter(el => firstStageWithData(el.symbol))
+        .sort((a, b) => a.atomic_number - b.atomic_number)[0];
+      const initial = firstStageWithData(sym) ? sym : first?.symbol;
+      if (initial) activateHeatmap(initial, stage);
     })
     .catch(() => {
       root.innerHTML = '<div class="country-map-fallback">Country map geometry could not be loaded.</div>';

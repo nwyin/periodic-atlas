@@ -29,32 +29,36 @@
   <p class="subtitle">A structured, source-cited snapshot of critical element supply chains.</p>
 </header>
 <section class="map-panel">
-  <div class="map-panel-header">
-    <p id="map-panel-copy" class="map-panel-copy">Hover for a compact scan of attributed 2025 mining/refining rows. Click a country for a fuller breakdown with native quantities and share of global annual output. Pick an element below to colour the map by country share for a chosen supply-chain stage.</p>
-  </div>
-  <div class="heatmap-controls" id="heatmap-controls">
-    <div class="heatmap-selector-wrap">
-      <label for="heatmap-element-select" class="sr-only">Element</label>
-      <select id="heatmap-element-select" class="heatmap-element-select">
-        <option value="">&mdash; select element &mdash;</option>
-      </select>
-      <button id="heatmap-clear" class="heatmap-clear" hidden aria-label="Clear element selection">&times;</button>
-    </div>
-    <div class="heatmap-stage-group">
-      <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true" role="group" aria-label="Supply-chain stage">
-        <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
-        <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
-        <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+  <section class="element-pane" aria-labelledby="picker-title">
+    <h2 id="picker-title">Periodic table</h2>
+    <p class="pane-note">Choose an element. Faded cells have no mapped data.</p>
+    <div class="periodic-scroll"><div id="periodic-picker" role="group" aria-label="Select an element"></div></div>
+  </section>
+  <section class="geography-pane" aria-labelledby="map-panel-copy">
+    <h2 id="map-panel-copy" aria-live="polite">Country supply map</h2>
+    <p class="pane-note">Select a country for details. Zoom in, then drag to explore.</p>
+    <div class="heatmap-controls" id="heatmap-controls">
+        <button id="heatmap-clear" class="heatmap-clear" hidden aria-label="Clear element selection">&times;</button>
+      <div class="heatmap-stage-group">
+        <div class="heatmap-stage-toggle" id="heatmap-stage-toggle" aria-disabled="true" role="group" aria-label="Supply-chain stage">
+          <button class="heatmap-stage-btn is-active" data-stage="mining">Mining</button>
+          <button class="heatmap-stage-btn" data-stage="refining">Refining</button>
+          <button class="heatmap-stage-btn" data-stage="reserves">Reserves</button>
+        </div>
+        <span class="filter-tip heatmap-stage-tip" tabindex="0" data-tip="Supply-chain stages. Mining = primary ore extraction (tonnes mined per country). Refining = processed / refined metal output (smelting, electro-refining, chemical separation). Reserves = in-ground economic reserves (stock, not flow). Stages with no attributed country data for the selected element are greyed out — the map auto-picks the first stage that does.">?</span>
       </div>
-      <span class="filter-tip heatmap-stage-tip" tabindex="0" data-tip="Supply-chain stages. Mining = primary ore extraction (tonnes mined per country). Refining = processed / refined metal output (smelting, electro-refining, chemical separation). Reserves = in-ground economic reserves (stock, not flow). Stages with no attributed country data for the selected element are greyed out — the map auto-picks the first stage that does.">?</span>
     </div>
-  </div>
-  <div class="heatmap-chips" id="heatmap-chips"></div>
-  <div class="country-map-shell">
-    <div id="country-map-root" class="country-map-root" data-geojson-src="assets/world_countries_50m.geojson">
-      <div class="country-map-fallback">Loading country map&hellip;</div>
+    <div class="country-map-shell">
+      <div class="map-zoom-controls" role="group" aria-label="Map zoom" hidden>
+        <button type="button" data-zoom="in" aria-label="Zoom in" title="Zoom in">+</button>
+        <button type="button" data-zoom="out" aria-label="Zoom out" title="Zoom out" disabled>&minus;</button>
+        <button type="button" data-zoom="reset" disabled>Reset view</button>
+      </div>
+      <div id="country-map-root" class="country-map-root" data-geojson-src="assets/world_countries_50m.geojson">
+        <div class="country-map-fallback">Loading country map&hellip;</div>
+      </div>
     </div>
-  </div>
+  </section>
   <div id="country-map-tooltip" class="country-map-tooltip" hidden></div>
   <div id="country-map-drawer-backdrop" class="country-map-drawer-backdrop" hidden></div>
   <aside id="country-map-drawer" class="country-map-drawer" hidden aria-hidden="true">
@@ -113,12 +117,10 @@
   </div>
   <div class="filter-row" data-filter-group="selects">
     <span class="filter-group-label">End-use <span class="filter-tip" tabindex="0" data-tip="Filter to elements where at least one end-use row falls in the selected bucket (batteries, magnets, catalysts, alloys, etc.). Uses the canonical end_use_bucket enum from the data.">?</span></span>
-    <select class="filter-select" id="enduse-select" aria-label="Filter by end-use bucket">
-      <option value="">All end-uses</option>
+    <select class="filter-select" id="enduse-select" multiple size="4" aria-label="Filter by end-use bucket">
     </select>
     <span class="filter-group-label">Country <span class="filter-tip" tabindex="0" data-tip="Filter to elements where the selected country holds a named mining share (ZZ / XX rest-of-world buckets excluded). Click &ldquo;View country page&rdquo; for the full per-country breakdown.">?</span></span>
-    <select class="filter-select" id="country-select" aria-label="Filter by producer country (mining)">
-      <option value="">All countries</option>
+    <select class="filter-select" id="country-select" multiple size="4" aria-label="Filter by producer country (mining)">
     </select>
     <a class="country-page-link" id="country-page-link" href="#" hidden>View country page →</a>
   </div>
